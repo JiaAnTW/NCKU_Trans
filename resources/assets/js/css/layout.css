@@ -1,0 +1,56 @@
+
+
+body{
+    
+    font-family: 'Noto Sans TC';
+}
+@media (min-width: 576px) { 
+    
+}
+
+@media (min-width: 768px) { 
+    
+ }
+
+@media (min-width: 992px) { 
+
+}
+
+@media (min-width: 1200px) {
+    nav{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        color: rgb(248, 224, 227);
+        height: 55px;
+        font-size: 20px;
+        background-color: rgb(229,68,109);
+    }
+    nav a{
+        float: right;
+        margin:  12.5px 50px;
+    }
+
+    .Menu{
+        position: absolute;
+        top:60px;
+        left:5px;
+        width: 150px;
+    }
+
+    .Split_btn{
+        width: 85%;
+    }
+
+    #dropdown-split-basic{
+        width: 5%;
+    }
+
+    .index{
+        position:absolute;
+        width: 75vw;
+        left: 200px;
+        top:60px;
+    }
+}
