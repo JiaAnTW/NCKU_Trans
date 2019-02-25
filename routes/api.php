@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('getAll', 'CommentsController@index');
 
 Route::post('create','CommentsController@create');
+
+Route::put('post/{id}','CommentsController@update');
+
+Route::delete('post/{id}','CommentsController@destroy');

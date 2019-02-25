@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
+import {Container,Collapse,Button,ListGroup} from 'react-bootstrap';
+import Menu from './menu';
+
 
 class home extends Component {
     constructor(props) {
     super(props)
-    this.state = {users: []}
+    this.state = {users: [],open: false}
     this.handleClick = this.handleClick.bind(this)
     this.printData = this.printData.bind(this)
   }
   handleClick() {
+    var id=3;
+    const url='/api/post/'+id.toString();
     fetch(
-      '/api/getAll'
+      url, {method: 'DELETE',
+        }
     )
       .then(res => res.json())
-      .then(data => {
-        this.setState({users: data})
-      })
       .catch(e => console.log('錯誤:', e))
   }
 
@@ -36,11 +39,10 @@ class home extends Component {
   }
 
   render() {
+    const { open } = this.state;
     return (
       <div className="App">
-      hey
-        {this.printData()}
-        <button onClick={this.handleClick}>我在比較上面啦</button>
+        <button onClick={this.handleClick}>測試刪除</button>   
       </div>
     );
   }

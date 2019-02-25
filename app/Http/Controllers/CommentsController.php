@@ -50,13 +50,19 @@ class CommentsController extends Controller
     //更新一筆資料
     public function update(Request $request, $id)
     {
-        //
+        $data=$request->only(["trans_type","year","out_maj","in_maj","comment"]);
+        $type=$data["trans_type"];
+        $year=(int) $data["year"];
+        $out_maj = $data["out_maj"];
+        $in_maj = $data["in_maj"];
+        $comment = $data["comment"];
+        DB::table('entry')->where('id',$id)->update(array('type' => $type,'year'=>$year,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'comment'=>$comment));
     }
 
     //刪除一筆資料
     public function destroy($id)
     {
-        //
+        DB::table('entry')->where('id',$id)->delete();
     }
 }
 
