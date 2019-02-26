@@ -57,21 +57,6 @@ nav a:hover{
         outline: none;
     }
 
-    .Menu{
-        position: absolute;
-        top:60px;
-        left:5px;
-        width: 150px;
-    }
-
-
-    .index{
-        position:absolute;
-        width: 70%;
-        left: 26%;
-        top:70px;
-        
-    }
 }
 
 @media (min-width: 768px) { 
@@ -86,21 +71,6 @@ nav a:hover{
         outline: none;
     }
 
-    .Menu{
-        position: absolute;
-        top:60px;
-        left:5px;
-        width: 150px;
-    }
-
-
-    .index{
-        position:absolute;
-        width: 70%;
-        left: 24%;
-        top:70px;
-        height: auto;
-    }
  }
 
 @media (min-width: 992px) { 
@@ -115,21 +85,6 @@ nav a:hover{
         outline: none;
     }
 
-    .Menu{
-        position: absolute;
-        top:60px;
-        left:5px;
-        width: 150px;
-    }
-
-
-    .index{
-        position:absolute;
-        width: 75%;
-        left: 22%;
-        top:70px;
-        height: auto;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -142,25 +97,5 @@ nav a:hover{
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);
         outline: none;
-    }
-
-    .Menu{
-        position: absolute;
-        top:60px;
-        left:5px;
-        width: 150px;
-        border: 1px solid #d9d9d9;
-        box-shadow: 0 0 4px #d9d9d9;
-    }
-
-
-    .index{
-        position:absolute;
-        width: 1024px;
-        height: auto;
-        width: 75%;
-        left: 20%;
-        top:70px;
-        
     }
 }

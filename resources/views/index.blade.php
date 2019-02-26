@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
     </head>
     <body>
-        <div id="root">我想被換掉</div>
+        <div id="root"></div>
          <script src="{{ mix('js/app.js') }}"></script>
         <button onclick="sendMessage()">點我啊</button>
     </body>

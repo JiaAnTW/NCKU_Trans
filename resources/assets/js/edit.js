@@ -7,7 +7,8 @@ class home extends Component {
     super(props)
     this.state = {
         id: 0,
-        new_id: 0,
+        new_id: "不變",
+        id_array:[],
         datas: [],
         is_fetch: false,
         type: "轉系",
@@ -31,9 +32,14 @@ class home extends Component {
     )
       .then(res => res.json())
       .then(data => {
+        let input=[];
+            for(var i=0;i<data.length;++i)
+              input.push(data[i]["id"]);
         this.setState({
             datas: data,
-            is_fetch:true})
+            is_fetch:true,
+            id_array: input});
+          
       })
       .catch(e => console.log('錯誤:', e));
   }
@@ -42,7 +48,7 @@ class home extends Component {
   handleClick() {
     const url='/api/post/'+this.state.id.toString();
     const data={
-        'id': this.state.new_id,
+        'id': (this.state.new_id!="不變")?this.state.new_id:this.state.id,
         'trans_type':this.state.type,
         'year':this.state.year,
         'in_maj':this.state.in_maj,
@@ -58,6 +64,9 @@ class home extends Component {
         }
     )
       .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
       .catch(e => console.log('錯誤:', e))
   }
 
@@ -76,7 +85,8 @@ class home extends Component {
     }
 
     changeNewId(e){
-      this.setState({new_id: e.target.value});
+      if(e.target.value!="不變")
+        this.setState({new_id: e.target.value});
     }
 
 
@@ -90,15 +100,22 @@ class home extends Component {
         e.preventDefault();
     }
 
+    checkSameId(n){
+      return
+    }
+
+
     changeId(e){
         var i=e.target.value;
+        var real_i=this.state.id_array.findIndex(function(value, index, arr){return value.toString()===i});
         this.setState({
           id: i,
-          type:this.state.datas[i]["type"],
-          year:this.state.datas[i]["year"],
-          in_maj:this.state.datas[i]["in_maj"],
-          out_maj:this.state.datas[i]["out_maj"],
-          comment:this.state.datas[i]["comment"]
+          new_id: "不變",
+          type:this.state.datas[real_i]["type"],
+          year:this.state.datas[real_i]["year"],
+          in_maj:this.state.datas[real_i]["in_maj"],
+          out_maj:this.state.datas[real_i]["out_maj"],
+          comment:this.state.datas[real_i]["comment"]
         });
     }
 
@@ -119,11 +136,11 @@ class home extends Component {
             </select>
             <br/>
             文章的新id:   
-            <input id="new_id" type="text" value={this.state.id} onChange={this.changeNewId}/>
+            <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
         轉系/轉學: 
             <select id="trans_type" name ="trans_type" onChange={this.changeType}>
-  	            <option selected value="轉系">轉系</option>
+  	            <option value="轉系">轉系</option>
                 <option value="轉學">轉學</option>
             </select>
             <br/> 

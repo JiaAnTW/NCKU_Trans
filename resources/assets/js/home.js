@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
 import {Container,Collapse,Button,ListGroup} from 'react-bootstrap';
-import Menu from './menu';
+import Icon from './icon';
 
 
 class home extends Component {
@@ -42,7 +42,8 @@ class home extends Component {
     const { open } = this.state;
     return (
       <div className="App">
-        <button onClick={this.handleClick}>測試刪除</button>   
+        <button onClick={this.handleClick}>測試刪除</button>
+ 
       </div>
     );
   }

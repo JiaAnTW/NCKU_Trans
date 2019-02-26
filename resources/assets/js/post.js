@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
 import './css/layout.css';
+import Icon from './icon';
 
 class post extends Component {
     constructor(props) {
@@ -101,6 +102,7 @@ class post extends Component {
             <br/>
             <button onClick={this.handleClick}>送出</button>
         </div>
+        <Icon style={{ position: 'absolute',margin: "50% 50%" }}/>
       </div>
     );
   }
