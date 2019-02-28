@@ -10,10 +10,12 @@ class commentIndex extends Component {
     this.sponSingleCard=this.sponSingleCard.bind(this);
     this.sponManyCard=this.sponManyCard.bind(this);
     this.changeRowCard=this.changeRowCard.bind(this);
-    this.fliter=this.fliter.bind(this);
+    this.handleOpenContent=this.handleOpenContent.bind(this);
   }
   
-
+  handleOpenContent(id){
+    this.props.onClick(id);
+  }
 
   componentDidMount() {
     this.changeRowCard();
@@ -22,19 +24,6 @@ class commentIndex extends Component {
   
   componentWillUnmount() {
     window.removeEventListener('resize', this.changeRowCard);
-  }
-
-  fliter(name){
-    if(name==="none")
-      return this.props.datas;
-    else{
-      var output=[];
-      this.props.datas.forEach(element => {
-        if(element["department"]===name)
-          output.push(element);
-      });
-      return output;
-    }
   }
 
   changeRowCard(){
@@ -52,9 +41,9 @@ class commentIndex extends Component {
 
 
 
-  sponCard(fliter){
+  sponCard(){
     if(this.props.is_fetch){
-    const datas=this.fliter(fliter);
+    const datas=this.props.datas;
     var output=[];
     for(var i=0;i<=datas.length/this.state.row;++i){
         output.push(this.sponManyCard(i,datas));
@@ -75,6 +64,7 @@ class commentIndex extends Component {
       <Card.Text  style={{ height: '6.06rem' }}>
         {comment}
       </Card.Text>
+      <button className="showBtn" onClick={this.handleOpenContent.bind(this,datas[number]["id"])} style={{ position:"absolute",top:"0",left:"0",width:"100%",height:"15rem",backgroundColor: "rgba(0, 0, 0,0)",border: "none",outline:"none"}}></button>
       <Card.Link style={{ color: 'rgb(30,144,255)' }}>{"#"+datas[number]["id"]}</Card.Link>
       <Card.Link style={{ color:'rgb(30,144,255)' }}>{datas[number]["year"]}</Card.Link>
       <Card.Link style={{ color: 'rgb(30,144,255)' }}>{datas[number]["department"]}</Card.Link>
@@ -95,7 +85,7 @@ class commentIndex extends Component {
   render() {
     return (
       <div className="commentIndex">     
-          {this.sponCard(this.props.fliter)}
+          {this.sponCard()}
       </div>
     );
   }

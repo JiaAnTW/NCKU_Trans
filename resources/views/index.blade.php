@@ -13,6 +13,5 @@
     <body>
         <div id="root"></div>
          <script src="{{ mix('js/app.js') }}"></script>
-        <button onclick="sendMessage()">點我啊</button>
     </body>
 </html>

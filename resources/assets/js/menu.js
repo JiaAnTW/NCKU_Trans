@@ -15,7 +15,7 @@ class menu extends Component {
 //props must have: number,width
 
 onClickHandle(value){
-  this.props.onClick(value);
+  this.props.onClick(value,"department");
 }
 
 

@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import {Button,Badge} from 'react-bootstrap';
 import CommentIndex from './commentIndex';
+import Content from './content';
 import Menu from './menu';
 import './css/comment.css';
 class comment extends Component {
     constructor(props) {
     super(props);
     this.state = {
+        showModal: false,
         fliter :"none",
+        showContentId: -1,
+        showContent:{
+          comment:"",
+          department:"",
+          id:-1,
+          in_maj:"",
+          out_maj:"",
+          type:"",
+          year:-1,
+        },
+        show:[],
         is_fetch:false,
-        users: [],
+        datas: [],
         NCKU: {
           "LIB":[["中文系",0],["外文系",0],["台文系",0]],
           "SCE":[["數學系",0],["物理系",0],["化學系",0],["地科系",0],["光電系",0]],
@@ -22,12 +35,39 @@ class comment extends Component {
           "BIO":[["生科系",0],["生技系",0]]
         },
     };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleShowContent=this.handleShowContent.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
   }
 
+  handleShowContent(type){
+    const data=this.state.show;
+    const find=this.state.showContentId;
+    const value=(type==="next")?1:-1;
+    
+      const nowIndex=data.findIndex(function(element,index,array){
+          return element["id"]==find.toString();
+      });
+      if(nowIndex-value<data.length && nowIndex-value>=0)
+        this.setState({showContent: this.state.show[nowIndex-value],showContentId: this.state.show[nowIndex-value]["id"]});
+  }
+
+  handleOpenModal (id) {
+    let i=0;
+    while(this.state.show[i]["id"]!=id)
+      i++;
+    if(i<this.state.show.length)
+      this.setState({ showContent:this.state.show[i],showContentId: id,showModal: true });
+  }
+  
+  handleCloseModal () {
+
+    this.setState({ showModal: false });
+  }
 
   handleClick() {
     fetch(
@@ -36,23 +76,34 @@ class comment extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-            users: data,
-            is_fetch:true})
+            datas: data,
+            is_fetch:true,
+            show:data})
       })
       .catch(e => console.log('錯誤:', e));
   }
 
   countDepartment(name){
      var counter=0;
-     this.state.users.forEach(function(item, index, array){
+     this.state.datas.forEach(function(item, index, array){
       if(item["in_maj"]==name)
         counter++;
     });
     return counter;
   }
 
-  changeFliter(e){
-      this.setState({fliter:e});
+  changeFliter(new_fliter,type){
+      this.setState({fliter:new_fliter});
+      if(new_fliter==="none")
+        this.setState({show:this.state.datas});
+      else{
+        var output=[];
+        this.state.datas.forEach(element => {
+        if(element[type]===new_fliter)
+          output.push(element);
+        });
+        this.setState({show:output});
+    }
   }
 
   sponCommentMenu(){
@@ -87,7 +138,7 @@ class comment extends Component {
         const number=this.countDepartment(NCKU[ department[i][1] ][j]);
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }}>{NCKU[department[i][1]][j]}
+            <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >{NCKU[department[i][1]][j]}
               <Badge pill variant="secondary" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
                 {number}
               </Badge>
@@ -107,14 +158,15 @@ class comment extends Component {
     this.handleClick();
   }
 
+
   render() {
     return (
       <div className="comment">
           <div className="Menu" style={{}}>
               <div style={{position:"relative", top:"0%", width: '100%' }}>
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none")}>全部心得
+                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
                 </Button>
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }}>不分系
+                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
                   <Badge pill variant="secondary" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
                     {this.countDepartment("不分系")}
                   </Badge>
@@ -123,8 +175,9 @@ class comment extends Component {
               {this.sponCommentMenu()}
           </div>
         <div className="index">
-            <CommentIndex datas={this.state.users} is_fetch={this.state.is_fetch} fliter={this.state.fliter}/>
+            <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal}/>
         </div>
+        <div className="content_container"><Content data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
       </div>
     );
   }

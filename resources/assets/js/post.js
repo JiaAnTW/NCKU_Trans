@@ -102,7 +102,6 @@ class post extends Component {
             <br/>
             <button onClick={this.handleClick}>送出</button>
         </div>
-        <Icon style={{ position: 'absolute',margin: "50% 50%" }}/>
       </div>
     );
   }
