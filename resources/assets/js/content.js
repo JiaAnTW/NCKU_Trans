@@ -15,7 +15,6 @@ class content extends React.Component {
     }
     
 
-
     handleOpenModal () {
       this.props.open();
     }
@@ -27,17 +26,42 @@ class content extends React.Component {
     render () {
       const customStyles = {
         content : {
-          top                   : '50%',
+          top                   : (this.props.mobile==="none")?"45%":'50%',
           left                  : '50%',
           right                 : 'auto',
           bottom                : 'auto',
           marginRight           : '-50%',
           transform             : 'translate(-50%, -50%)',
-          width:"800px",
-          height: "500px",
+          width: (this.props.mobile==="none")?"95vw":"800px",
+          height: (this.props.mobile==="none")?"75vh":"500px",
           maxHeight: '500px',
         }
       };
+
+      const cardHeight= (this.props.mobile==="none")?"75vh":"500px";
+      const cardBodyWidth=(this.props.mobile==="none")?"95vw":"800px";
+      const  containerMargin=(this.props.mobile==="none")?"30px 12vw":"30px 80px";
+
+      const tableType=(this.props.mobile==="none")?
+      <thead>
+      <tr><th>{"申請年度: "+this.props.data["year"]}</th></tr>
+      <tr><th>{"申請類別: 平轉"}</th></tr>
+      <tr><th>{"學年分數: 87.9"}</th></tr>
+      <tr><th>{"轉出科系: "+this.props.data["out_maj"]}</th></tr>
+    </thead>
+      //PC
+      :<thead>
+      <tr>
+        <th>{"申請年度: "+this.props.data["year"]}</th>
+        <th>{"申請類別: 平轉"}</th>
+        <th>{"學年分數: 87.9"}</th>
+        <th>{"轉出科系: "+this.props.data["out_maj"]}</th>
+      </tr>
+    </thead>;
+
+      const tableStyle=(this.props.mobile==="none")?{position:"relative",top: "15px",fontSize: "5vw",fontWeight: 100}:{position:"relative",top: "15px",fontSize: "20px",fontWeight: 100};
+
+
       return (
         <div>
           <Modal 
@@ -46,20 +70,13 @@ class content extends React.Component {
              overlayClassName="Overlay"
           >
             
-            <Card className="card-box" style={{position:"absolute",top: "0px",height: "500px", overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
-              <Card.Body style={{width:"800px"}}>  
-              <div className="card_container" style={{maxWidth: "100%", margin: "30px 80px"}}>
+            <Card className="card-box" style={{position:"absolute",top: "0px",height: cardHeight, overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
+              <Card.Body className="cardBody"style={{width:cardBodyWidth}}>  
+              <div className="card_container" style={{maxWidth: "100%", margin: containerMargin}}>
                 <div className="id_container">{"#"+this.props.data["id"]}</div>
                 <h1 className="title">{"轉入科系: "+this.props.data["in_maj"]}</h1>
-                <Table striped bordered hover style={{position:"relative",top: "10px",fontSize: "20px",fontWeight: 100}}>
-                  <thead>
-                    <tr>
-                      <th>{"申請年度: "+this.props.data["year"]}</th>
-                      <th>{"申請類別: 平轉"}</th>
-                      <th>{"學年分數: 87.9"}</th>
-                      <th>{"轉出科系: "+this.props.data["out_maj"]}</th>
-                    </tr>
-                  </thead>
+                <Table striped bordered hover  className="type_table" >
+                  {tableType}
                 </Table>
               <Card.Text style={{position:"relative",top: "20px"}}>
                 <span>
@@ -69,7 +86,6 @@ class content extends React.Component {
                 <Button variant="light" className="closeBtn2" style={{position:"absolute",left:"45%" }} onClick={this.handleCloseModal}>關閉</Button>
                 </p>
                 </Card.Text>
-                
                 </div>
                 </Card.Body>  
             </Card>

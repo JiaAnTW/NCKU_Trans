@@ -1046,7 +1046,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\n\r\nnav{\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n}\r\n\r\nnav a{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n}\r\n\r\nnav a:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 75%;\r\n    max-width:75%;\r\n    left: 22%;\r\n    top:70px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 576px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 26%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:55px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1065,7 +1065,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n@media (min-width: 576px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n@media (min-width: 596px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        margin: 0 10px;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        margin: 0 10px;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .commentIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1084,7 +1084,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n\r\n.Modal {\r\n    position: absolute;   \r\n  }\r\n\r\n  .Overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    background-color: rgba(0, 0, 0,0.5);\r\n  }\r\n\r\n\r\n  .id_container{\r\n    width: 100px;\r\n    height:100px;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 90px;\r\n    font-size: 40px;\r\n    color: white;\r\n  }\r\n\r\n  .title{\r\n    position: absolute;\r\n    left: 215px;\r\n    top: 50px;\r\n  }\r\n\r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n\r\n  .card_container span{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n}\r\n  \r\n\r\n  .card-box::-webkit-scrollbar\r\n  {\r\n    width: 6px;\r\n    background-color: #F5F5F5;\r\n    border: none;\r\n  }\r\n  \r\n  .card-box::-webkit-scrollbar-thumb\r\n  {\r\n    border-radius: 10px;\r\n    background-color: #555;\r\n    opacity: 0.5;\r\n  }\r\n\r\n  .card-box::-webkit-scrollbar-track\r\n{\r\n  background-color: #F5F5F5;\r\n  border: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n   /* 4 */ \r\n   border: none;\r\n  }\r\n\r\n.closeBtn{\r\n  position: absolute;\r\n  right:15px;\r\n  top:20px;\r\n  width: 65px;\r\n  height: 50px;\r\n  font-size: 20px;\r\n  background-color: rgba(0, 0, 0,0.001);\r\n  border: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n  \r\n  width: 65px;\r\n  height: 50px;\r\n  font-size: 20px;\r\n  background-color: rgba(0, 0, 0,0.001);\r\n  border: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\n  font-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\n  position: absolute;\r\n  top:125px;\r\n  width: 80px;\r\n  height: 360px;\r\n  background-color: rgba(0, 0, 0,0);\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n#rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n#leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n#leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\n  right: 6px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  width: 15vw;\r\n  height:15vw;\r\n  border-radius:100px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 14vw;\r\n  font-size: 7vw;\r\n  color: white;\r\n}\r\n\r\n.title{\r\n  position: absolute;\r\n  left: 35vw;\r\n  top: 5.5vw;\r\n  width: 30vw;\r\n  font-size: 7vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container span{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 15px;\r\n  font-size: 5vw;\r\n  font-weight: 100;\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 100px;\r\n    height:100px;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 90px;\r\n    font-size: 40px;\r\n    color: white;\r\n  }\r\n\r\n  .title{\r\n    position: absolute;\r\n    left: 215px;\r\n    top: 50px;\r\n    width: 400px;\r\n    font-size: 48px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container span{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n#rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n#leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n#leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/home.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".rc-menu {\r\n    outline: none;\r\n    margin-bottom: 0;\r\n    padding-left: 0;\r\n    list-style: none;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    border-radius: 3px;\r\n    color: #666;\r\n}\r\n\r\n.menu-container a{\r\n    background-color:\"rgb(229,68,109)\";\r\n    color:\"white\";\r\n    background-image:\"none\";\r\n}\r\n\r\n.menu_btn{\r\n    position:\"absolute\";\r\n    top:0;\r\n    right:0;\r\n    font-size: 30px;\r\n    height:40px;\r\n    width:40px;\r\n    background-color:rgb(229,68,109);\r\n    color:\"white\";\r\n    outline:\"none\";\r\n    border:2px solid white;\r\n    border-radius:10px;\r\n}", ""]);
 
 // exports
 
@@ -1122,7 +1141,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n}\r\n\r\nnav a{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n}\r\n\r\nnav a:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 75%;\r\n    max-width:75%;\r\n    left: 22%;\r\n    top:70px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    nav a{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    nav a{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    nav a{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    nav a{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/mobileMenu.css":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/mobileMenu.css ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".menu_mobile{\r\n    position: absolute;\r\n    top:0px;\r\n    right:0px;\r\n    width: 100vw;\r\n    max-width: 100%;\r\n    height: auto;\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    .menu_mobile{\r\n        display: none;\r\n    }\r\n\r\n }\r\n\r\n.menuBtn{\r\n    position:absolute;\r\n    top:10px;\r\n    right:10px;\r\n    font-size: 30px;\r\n    line-height: 5px;\r\n    text-align: center;\r\n    height:40px;\r\n    width:40px;\r\n    background-color:rgb(229,68,109);\r\n    color:white ;\r\n    outline: none;\r\n    border:none;\r\n    border-radius:10px;\r\n}", ""]);
 
 // exports
 
@@ -49087,7 +49125,10 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(comment).call(this, props));
     _this.state = {
       showModal: false,
+      mobile_display: "block",
       fliter: "none",
+      contentWidth: "800px",
+      contentHeight: "500px",
       showContentId: -1,
       showContent: {
         comment: "",
@@ -49117,6 +49158,7 @@ function (_Component) {
     _this.handleCloseModal = _this.handleCloseModal.bind(_assertThisInitialized(_this));
     _this.handleShowContent = _this.handleShowContent.bind(_assertThisInitialized(_this));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
     _this.sponCommentMenu = _this.sponCommentMenu.bind(_assertThisInitialized(_this));
     _this.countDepartment = _this.countDepartment.bind(_assertThisInitialized(_this));
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
@@ -49124,6 +49166,19 @@ function (_Component) {
   }
 
   _createClass(comment, [{
+    key: "handleRWD",
+    value: function handleRWD(is_mobile) {
+      if (is_mobile) this.setState({
+        mobile_display: "none",
+        contentWidth: "85vw",
+        contentHeight: "800px"
+      });else this.setState({
+        mobile_display: "block",
+        contentWidth: "800px",
+        contentHeight: "500px"
+      });
+    }
+  }, {
     key: "handleShowContent",
     value: function handleShowContent(type) {
       var data = this.state.show;
@@ -49268,7 +49323,9 @@ function (_Component) {
         className: "comment"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Menu",
-        style: {}
+        style: {
+          display: this.state.mobile_display
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           position: "relative",
@@ -49304,10 +49361,13 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
         is_fetch: this.state.is_fetch,
-        onClick: this.handleOpenModal
+        onClick: this.handleOpenModal,
+        handleRWD: this.handleRWD
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content_container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        mobile: this.state.mobile_display,
+        height: this.state.contentHeight,
         data: this.state.showContent,
         showModal: this.state.showModal,
         close: this.handleCloseModal,
@@ -49374,13 +49434,20 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(commentIndex).call(this, props));
     _this.state = {
-      row: 3
+      row: 3,
+      cardWidth: "20rem",
+      cardHeight: "20rem",
+      cardPadding: "3rem",
+      btnHeight: "15rem",
+      cardTextHeight: "6.06rem",
+      wordsNumber: 35
     };
     _this.sponCard = _this.sponCard.bind(_assertThisInitialized(_this));
     _this.sponSingleCard = _this.sponSingleCard.bind(_assertThisInitialized(_this));
     _this.sponManyCard = _this.sponManyCard.bind(_assertThisInitialized(_this));
     _this.changeRowCard = _this.changeRowCard.bind(_assertThisInitialized(_this));
     _this.handleOpenContent = _this.handleOpenContent.bind(_assertThisInitialized(_this));
+    _this.handleCardSize = _this.handleCardSize.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -49388,6 +49455,25 @@ function (_Component) {
     key: "handleOpenContent",
     value: function handleOpenContent(id) {
       this.props.onClick(id);
+    }
+  }, {
+    key: "handleCardSize",
+    value: function handleCardSize(is_mobile) {
+      if (is_mobile) this.setState({
+        btnHeight: "11rem",
+        cardWidth: "100vw",
+        cardHeight: "16.5rem",
+        cardPadding: "0rem",
+        cardTextHeight: "2.06rem",
+        wordsNumber: 20
+      });else this.setState({
+        btnHeight: "15rem",
+        cardWidth: "20rem",
+        cardHeight: "20rem",
+        cardPadding: "3rem",
+        cardTextHeight: "6.06rem",
+        wordsNumber: 35
+      });
     }
   }, {
     key: "componentDidMount",
@@ -49403,17 +49489,37 @@ function (_Component) {
   }, {
     key: "changeRowCard",
     value: function changeRowCard() {
-      if (window.innerWidth > 1400) this.setState({
-        row: 5
-      });else if (window.innerWidth >= 1140) this.setState({
-        row: 4
-      });else if (window.innerWidth >= 870) this.setState({
-        row: 3
-      });else if (window.innerWidth >= 596) this.setState({
-        row: 2
-      });else this.setState({
-        row: 1
-      });
+      if (window.innerWidth > 1400) {
+        this.setState({
+          row: 5
+        });
+        this.props.handleRWD(false);
+        this.handleCardSize(false);
+      } else if (window.innerWidth >= 1140) {
+        this.setState({
+          row: 4
+        });
+        this.props.handleRWD(false);
+        this.handleCardSize(false);
+      } else if (window.innerWidth >= 870) {
+        this.setState({
+          row: 3
+        });
+        this.props.handleRWD(false);
+        this.handleCardSize(false);
+      } else if (window.innerWidth >= 596) {
+        this.setState({
+          row: 2
+        });
+        this.props.handleRWD(true);
+        this.handleCardSize(false);
+      } else {
+        this.setState({
+          row: 1
+        });
+        this.handleCardSize(true);
+        this.props.handleRWD(true);
+      }
     }
   }, {
     key: "sponCard",
@@ -49428,7 +49534,8 @@ function (_Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
           style: {
-            width: '100%'
+            width: '100%',
+            maxWidth: "100%"
           }
         }, output);
       } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -49442,13 +49549,18 @@ function (_Component) {
   }, {
     key: "sponSingleCard",
     value: function sponSingleCard(number, datas) {
-      var comment = datas[number]["comment"].length < 35 ? datas[number]["comment"] : datas[number]["comment"].substr(0, 34) + "  (...)";
+      var comment = datas[number]["comment"].length < this.state.wordsNumber ? datas[number]["comment"] : datas[number]["comment"].substr(0, this.state.wordsNumber - 1) + "  (...)";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         style: {
-          width: '20rem',
-          height: '20rem'
+          width: this.state.cardWidth,
+          height: this.state.cardHeight,
+          maxWidth: "100%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
+        style: {
+          maxHeight: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
         style: {
           fontSize: '3.5rem'
         }
@@ -49456,7 +49568,7 @@ function (_Component) {
         className: "mb-2 text-muted"
       }, "由 " + datas[number]["out_maj"] + " 轉出"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
         style: {
-          height: '6.06rem'
+          height: this.state.cardTextHeight
         }
       }, comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "showBtn",
@@ -49466,7 +49578,7 @@ function (_Component) {
           top: "0",
           left: "0",
           width: "100%",
-          height: "15rem",
+          height: this.state.btnHeight,
           backgroundColor: "rgba(0, 0, 0,0)",
           border: "none",
           outline: "none"
@@ -49494,11 +49606,19 @@ function (_Component) {
         output.push(this.sponSingleCard(datas.length - numberRow * this.state.row - i - 1, datas));
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+      if (this.state.row > 1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
         style: {
-          paddingBottom: '3rem'
+          paddingBottom: this.state.cardPadding
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["CardDeck"], null, output));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["CardDeck"], {
+        style: {
+          height: this.state.cardHeight
+        }
+      }, output));else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+        style: {
+          paddingBottom: this.state.cardPadding
+        }
+      }, output);
     }
   }, {
     key: "render",
@@ -49589,16 +49709,32 @@ function (_React$Component) {
     value: function render() {
       var customStyles = {
         content: {
-          top: '50%',
+          top: this.props.mobile === "none" ? "45%" : '50%',
           left: '50%',
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
-          width: "800px",
-          height: "500px",
+          width: this.props.mobile === "none" ? "95vw" : "800px",
+          height: this.props.mobile === "none" ? "75vh" : "500px",
           maxHeight: '500px'
         }
+      };
+      var cardHeight = this.props.mobile === "none" ? "75vh" : "500px";
+      var cardBodyWidth = this.props.mobile === "none" ? "95vw" : "800px";
+      var containerMargin = this.props.mobile === "none" ? "30px 12vw" : "30px 80px";
+      var tableType = this.props.mobile === "none" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請類別: 平轉")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: 87.9")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"]))) //PC
+      : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請類別: 平轉"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: 87.9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"])));
+      var tableStyle = this.props.mobile === "none" ? {
+        position: "relative",
+        top: "15px",
+        fontSize: "5vw",
+        fontWeight: 100
+      } : {
+        position: "relative",
+        top: "15px",
+        fontSize: "20px",
+        fontWeight: 100
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_2___default.a, {
         isOpen: this.props.showModal,
@@ -49611,7 +49747,7 @@ function (_React$Component) {
         style: {
           position: "absolute",
           top: "0px",
-          height: "500px",
+          height: cardHeight,
           overflowX: 'inline',
           overflowY: 'auto',
           left: "0px",
@@ -49620,14 +49756,15 @@ function (_React$Component) {
           transform: "translate(0,0)"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
+        className: "cardBody",
         style: {
-          width: "800px"
+          width: cardBodyWidth
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card_container",
         style: {
           maxWidth: "100%",
-          margin: "30px 80px"
+          margin: containerMargin
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "id_container"
@@ -49637,13 +49774,8 @@ function (_React$Component) {
         striped: true,
         bordered: true,
         hover: true,
-        style: {
-          position: "relative",
-          top: "10px",
-          fontSize: "20px",
-          fontWeight: 100
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請類別: 平轉"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: 87.9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"])))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
+        className: "type_table"
+      }, tableType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
         style: {
           position: "relative",
           top: "20px"
@@ -49787,6 +49919,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/assets/js/css/home.css":
+/*!******************************************!*\
+  !*** ./resources/assets/js/css/home.css ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./home.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/assets/js/css/icon.css":
 /*!******************************************!*\
   !*** ./resources/assets/js/css/icon.css ***!
@@ -49826,6 +49988,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./layout.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/layout.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/assets/js/css/mobileMenu.css":
+/*!************************************************!*\
+  !*** ./resources/assets/js/css/mobileMenu.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./mobileMenu.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/mobileMenu.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -50127,7 +50319,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./content */ "./resources/assets/js/content.js");
+/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/home.css */ "./resources/assets/js/css/home.css");
+/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_home_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50151,6 +50345,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var home =
 /*#__PURE__*/
 function (_Component) {
@@ -50163,7 +50358,6 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(home).call(this, props));
     _this.state = {
-      users: [],
       open: false
     };
     return _this;
@@ -50172,17 +50366,96 @@ function (_Component) {
   _createClass(home, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var open = this.state.open;
+      var ListStyle = {
+        textAlign: "center",
+        backgroundColor: "rgb(229,68,109)",
+        color: "white",
+        backgroundImage: "none",
+        textShadow: "none",
+        borderRadius: "0px",
+        borderTop: "0.5px solid rgba(243,243,243,0.5)",
+        borderBottom: "0.5px solid rgba(243,243,243,0.5)",
+        borderLeft: "0px solid rgba(243,243,243,0.5)",
+        borderRight: "0px solid rgba(243,243,243,0.5)"
+      };
+      var ListStyleLast = {
+        textAlign: "center",
+        backgroundColor: "rgb(229,68,109)",
+        color: "white",
+        backgroundImage: "none",
+        textShadow: "none",
+        borderRadius: "0px",
+        borderTop: "0.5px solid rgba(243,243,243,0.5)",
+        borderBottom: "0px solid rgba(243,243,243,0.5)",
+        borderLeft: "0px solid rgba(243,243,243,0.5)",
+        borderRight: "0px solid rgba(243,243,243,0.5)"
+      };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "menu_btn",
         style: {
-          width: "100vw",
-          height: "100vw",
-          maxWidth: "100%"
+          position: "absolute",
+          top: "0",
+          right: "0",
+          height: "50px",
+          width: "50px",
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          outline: "none",
+          border: "2px solid white",
+          borderRadius: "10px"
         },
-        id: "test"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+        onClick: function onClick() {
+          return _this2.setState({
+            open: !open
+          });
+        },
+        "aria-controls": "menu_container",
+        "aria-expanded": open
+      }, "\u2261"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Collapse"], {
+        in: this.state.open
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "menu_container",
+        style: {
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          position: "absolute",
+          top: "50px",
+          right: "0",
+          width: "100vw",
+          maxWidth: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"], {
+        defaultActiveKey: "#link1",
+        style: {
+          border: "none",
+          boxShadow: "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
+        action: true,
+        href: "#link1",
+        className: "list",
+        style: ListStyle
+      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyle
+      }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyle
+      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyleLast
+      }, "\u806F\u7D61\u6211\u5011")))));
     }
   }]);
 
@@ -50274,6 +50547,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/layout.css */ "./resources/assets/js/css/layout.css");
 /* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_layout_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mobileMenu.js */ "./resources/assets/js/mobileMenu.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50295,6 +50569,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var layout =
 /*#__PURE__*/
 function (_Component) {
@@ -50311,11 +50586,17 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "layout"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u806F\u7D61\u6211\u5011"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/post"
-      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/comment"
-      }, "\u700F\u89BD\u5FC3\u5F97")), this.props.children);
+      }, this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "navItem"
+      }, "\u806F\u7D61\u6211\u5011"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/post",
+        className: "navItem"
+      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "navItem"
+      }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/comment",
+        className: "navItem"
+      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);
 
@@ -50451,6 +50732,165 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (menu);
+
+/***/ }),
+
+/***/ "./resources/assets/js/mobileMenu.js":
+/*!*******************************************!*\
+  !*** ./resources/assets/js/mobileMenu.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_mobileMenu_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/mobileMenu.css */ "./resources/assets/js/css/mobileMenu.css");
+/* harmony import */ var _css_mobileMenu_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_mobileMenu_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var mobileMenu =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(mobileMenu, _Component);
+
+  function mobileMenu(props) {
+    var _this;
+
+    _classCallCheck(this, mobileMenu);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(mobileMenu).call(this, props));
+    _this.state = {
+      open: false
+    };
+    return _this;
+  }
+
+  _createClass(mobileMenu, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var open = this.state.open;
+      var ListStyleFirst = {
+        textAlign: "center",
+        backgroundColor: "rgb(229,68,109)",
+        color: "white",
+        backgroundImage: "none",
+        textShadow: "none",
+        borderRadius: "0px",
+        borderTop: "0px solid rgba(243,243,243,0.5)",
+        borderBottom: "0.5px solid rgba(243,243,243,0.5)",
+        borderLeft: "0px solid rgba(243,243,243,0.5)",
+        borderRight: "0px solid rgba(243,243,243,0.5)"
+      };
+      var ListStyle = {
+        textAlign: "center",
+        backgroundColor: "rgb(229,68,109)",
+        color: "white",
+        backgroundImage: "none",
+        textShadow: "none",
+        borderRadius: "0px",
+        borderTop: "0.5px solid rgba(243,243,243,0.5)",
+        borderBottom: "0.5px solid rgba(243,243,243,0.5)",
+        borderLeft: "0px solid rgba(243,243,243,0.5)",
+        borderRight: "0px solid rgba(243,243,243,0.5)"
+      };
+      var ListStyleLast = {
+        textAlign: "center",
+        backgroundColor: "rgb(229,68,109)",
+        color: "white",
+        backgroundImage: "none",
+        textShadow: "none",
+        borderRadius: "0px",
+        borderTop: "0.5px solid rgba(243,243,243,0.5)",
+        borderBottom: "0px solid rgba(243,243,243,0.5)",
+        borderLeft: "0px solid rgba(243,243,243,0.5)",
+        borderRight: "0px solid rgba(243,243,243,0.5)"
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "menu_mobile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "menuBtn",
+        style: {
+          outline: "none"
+        },
+        onClick: function onClick() {
+          return _this2.setState({
+            open: !open
+          });
+        },
+        "aria-controls": "menu_container",
+        "aria-expanded": open
+      }, "\u2261"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
+        in: this.state.open
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "menu_container",
+        style: {
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          position: "absolute",
+          top: "54px",
+          right: "0",
+          width: "100vw",
+          maxWidth: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"], {
+        defaultActiveKey: "#link1",
+        style: {
+          border: "none",
+          boxShadow: "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+        action: true,
+        href: "#link1",
+        className: "list",
+        style: ListStyleFirst
+      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyle
+      }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyle
+      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+        action: true,
+        href: "#link2",
+        className: "list",
+        style: ListStyleLast
+      }, "\u806F\u7D61\u6211\u5011")))));
+    }
+  }]);
+
+  return mobileMenu;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (mobileMenu);
 
 /***/ }),
 

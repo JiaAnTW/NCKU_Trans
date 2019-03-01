@@ -13,47 +13,36 @@ nav{
     height: 55px;
     font-size: 20px;
     background-color: rgb(229,68,109);
+    
 }
 
-nav a{
+.navItem{
     float: right;
     margin:  12.5px 50px;
     color: rgb(248, 224, 227);
     outline: none;
+    display: none;
 }
 
-nav a:hover{
+.navItem:hover{
     color: gray;
     text-decoration:none;
 }
 
-.Menu{
-    position: absolute;
-    top:60px;
-    left:5px;
-    width: 150px;
-}
 
-
-.index{
-    position:absolute;
-    width: 75%;
-    max-width:75%;
-    left: 22%;
-    top:70px;
-    height: auto;
-}
 
 @media (min-width: 576px) { 
     nav{
         height: 55px;
         font-size: 20px;
+        
     }
-    nav a{
+    .navItem{
         float: right;
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);
         outline: none;
+        
     }
 
 }
@@ -63,11 +52,12 @@ nav a:hover{
         height: 55px;
         font-size: 20px;
     }
-    nav a{
+    .navItem{
         float: right;
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);
         outline: none;
+        display: block;
     }
 
  }
@@ -77,7 +67,7 @@ nav a:hover{
         height: 55px;
         font-size: 20px;
     }
-    nav a{
+    .navItem{
         float: right;
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);
@@ -91,7 +81,7 @@ nav a:hover{
         height: 55px;
         font-size: 20px;
     }
-    nav a{
+    .navItem{
         float: right;
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);

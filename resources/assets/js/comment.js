@@ -9,7 +9,10 @@ class comment extends Component {
     super(props);
     this.state = {
         showModal: false,
+        mobile_display: "block",
         fliter :"none",
+        contentWidth: "800px",
+        contentHeight: "500px",
         showContentId: -1,
         showContent:{
           comment:"",
@@ -39,9 +42,25 @@ class comment extends Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleShowContent=this.handleShowContent.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleRWD =this.handleRWD.bind(this);
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
+  }
+
+  handleRWD(is_mobile){
+    if(is_mobile)
+      this.setState({
+        mobile_display: "none",
+        contentWidth: "85vw",
+      contentHeight: "800px",
+    });
+    else
+      this.setState({
+        mobile_display: "block",
+        contentWidth: "800px",
+        contentHeight: "500px",
+    });
   }
 
   handleShowContent(type){
@@ -162,8 +181,8 @@ class comment extends Component {
   render() {
     return (
       <div className="comment">
-          <div className="Menu" style={{}}>
-              <div style={{position:"relative", top:"0%", width: '100%' }}>
+          <div className="Menu" style={{display: this.state.mobile_display}}>
+              <div style={{position:"relative", top:"0%", width: '100%'}}>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
                 </Button>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
@@ -175,9 +194,9 @@ class comment extends Component {
               {this.sponCommentMenu()}
           </div>
         <div className="index">
-            <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal}/>
+            <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
         </div>
-        <div className="content_container"><Content data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
+        <div className="content_container"><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
       </div>
     );
   }

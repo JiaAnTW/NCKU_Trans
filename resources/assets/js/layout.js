@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/layout.css';
+import MobileMenu from './mobileMenu.js' 
 class layout extends Component {
     constructor(props) {
     super(props);
@@ -8,8 +9,11 @@ class layout extends Component {
   render() {
     return (
       <div className="layout">
-        <nav><a>聯絡我們</a><a href="/#/post">分享心得</a><a>常見QA</a><a href="/#/comment">瀏覽心得</a></nav>
         {this.props.children}
+        <nav>
+          <a className="navItem">聯絡我們</a><a href="/#/post" className="navItem">分享心得</a><a className="navItem">常見QA</a><a href="/#/comment" className="navItem">瀏覽心得</a>
+          <MobileMenu/>
+        </nav>
       </div>
     );
   }

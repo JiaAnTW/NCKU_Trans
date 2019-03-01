@@ -9,13 +9,22 @@
     color: #666;
 }
 
-ul{
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+.menu-container a{
+    background-color:"rgb(229,68,109)";
+    color:"white";
+    background-image:"none";
 }
 
+.menu_btn{
+    position:"absolute";
+    top:0;
+    right:0;
+    font-size: 30px;
+    height:40px;
+    width:40px;
+    background-color:rgb(229,68,109);
+    color:"white";
+    outline:"none";
+    border:2px solid white;
+    border-radius:10px;
+}
