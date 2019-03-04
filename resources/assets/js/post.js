@@ -29,7 +29,7 @@ class post extends Component {
         'comment':this.state.comment,
     };
     fetch(
-      '/api/create', {method: 'POST',
+      '/api/create/major', {method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({
             'Content-Type': 'application/json'

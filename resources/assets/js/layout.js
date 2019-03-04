@@ -11,7 +11,7 @@ class layout extends Component {
       <div className="layout">
         {this.props.children}
         <nav>
-          <a className="navItem">聯絡我們</a><a href="/#/post" className="navItem">分享心得</a><a className="navItem">常見QA</a><a href="/#/comment" className="navItem">瀏覽心得</a>
+          <a className="navItem">聯絡我們</a><a href="/#/post" className="navItem">分享心得</a><a href="/#/QA/~" className="navItem">常見QA</a><a href="/#/comment" className="navItem">瀏覽心得</a>
           <MobileMenu/>
         </nav>
       </div>

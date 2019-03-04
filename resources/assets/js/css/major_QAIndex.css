@@ -1,0 +1,38 @@
+
+@media (min-width: 596px) { 
+    .QAIndex{
+        width: 1024px;
+        width: 100%;
+        height: 100%;
+        width: 1024px;
+        width: 100%;
+        height: 100%;
+        margin: 0 10px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .QAIndex{
+        width: 1024px;
+        width: 100%;
+        height: 100%;
+        margin: 0 10px;
+    }
+ }
+
+@media (min-width: 992px) { 
+    .QAIndex{
+        width: 1024px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .QAIndex{
+        width: 1024px;
+        width: 100%;
+        height: 100%;
+        
+    }
+}

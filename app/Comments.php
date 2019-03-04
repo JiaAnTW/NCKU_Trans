@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class Comments extends Model
 {
-    protected $table='entry';
+    protected $table='major';
     public function inser($data){
         $type=$data["trans_type"];
         $year=$data["year"];

@@ -17,10 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getAll', 'CommentsController@index');
+Route::get('get/major', 'CommentsController@index');
 
-Route::post('create','CommentsController@create');
+Route::post('create/major','CommentsController@create');
 
 Route::put('post/{id}','CommentsController@update');
 
 Route::delete('post/{id}','CommentsController@destroy');
+
+Route::get('get/major_QA', 'maj_QAController@index');

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Comments;
+use App\maj_QA;
 use Illuminate\Support\Facades\DB;
 
-class CommentsController extends Controller
+class maj_QAController extends Controller
 {
     //顯示所有資料
     public function index()
     {
-        $data=Comments::all();
+        $data=maj_QA::all();
         return $data;
         //
     }

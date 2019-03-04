@@ -25,7 +25,7 @@
   color: white;
 }
 
-.title{
+ .title{
   position: absolute;
   left: 35vw;
   top: 5.5vw;
@@ -181,8 +181,7 @@ right: 6px;
     font-size: 40px;
     color: white;
   }
-
-  .title{
+.title{
     position: absolute;
     left: 215px;
     top: 50px;

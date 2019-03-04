@@ -1034,6 +1034,25 @@ exports.push([module.i, "/*!\n * Bootstrap v3.4.1 (https://getbootstrap.com/)\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/QA.css":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/QA.css ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n  .QA_container .QA_cardBody{\r\n    width: 95vw;\r\n  }\r\n\r\n\r\n  .QA_card_container .id_container{\r\n    width: 15vw;\r\n    height:15vw;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 14vw;\r\n    font-size: 7vw;\r\n    color: white;\r\n  }\r\n  \r\n  .QA_card_container .title2{\r\n    max-width: 100%;\r\n    font-size: 6vw;\r\n  }\r\n  \r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n  \r\n  .QA_card_container span{\r\n    position: relative;\r\n    top: 50px;\r\n    font-size: 4vw;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 8vw;\r\n    text-align:justify;\r\n  }\r\n  \r\n  \r\n  .QA_container  .Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 5vw;\r\n  width: 5vw;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n  position: absolute;\r\n  top: 197.5px;\r\n  font-size: 3vw;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n  right: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n  left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n  left: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container #before{\r\n  right: 6px;\r\n  }\r\n  \r\n  .QA_container .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 5vw;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .QA_container .QA_cardBody{\r\n      width: 95%;\r\n    }\r\n\r\n\r\n     .QA_card_container .id_container{\r\n      width: 100px;\r\n      height:100px;\r\n      border-radius:100px;\r\n      background-color: rgb(229,68,109);\r\n      text-align: center;\r\n      line-height: 90px;\r\n      font-size: 40px;\r\n      color: white;\r\n    }\r\n  \r\n    .QA_card_container .title2{\r\n      max-width: 100%;\r\n      font-size: 36px;\r\n    }\r\n  \r\n    .QA_container.closeBtn{\r\n      position: absolute;\r\n      right:15px;\r\n      top:20px;\r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n    .QA_card_container span{\r\n      position: relative;\r\n      top: 50px;\r\n      font-size: 20px;\r\n      font-weight: 100;\r\n      letter-spacing: 2.5px;\r\n      line-height: 35px;\r\n      text-align:justify;\r\n    }\r\n  \r\n    .QA_container.closeBtn2{\r\n    \r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n  \r\n    .QA_container .Arrow{\r\n    position: absolute;\r\n    top: 175px;\r\n    border-right: 4px solid gray;\r\n    border-top: 4px solid gray;\r\n    height: 50px;\r\n    width: 50px;\r\n    border-left: 2px solid transparent;\r\n    border-bottom: 2px solid transparent;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n    position: absolute;\r\n    top: 187.5px;\r\n    font-size: 15px;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n    right: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n    left: 5px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n    left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n    left: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n    right: 10px;\r\n    transform: rotate(-135deg);\r\n    -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container  #before{\r\n      right: 6px;\r\n    }\r\n  }\r\n  \r\n  \r\n  @media (min-width: 870px) {\r\n  \r\n  }\r\n  \r\n  \r\n  \r\n  ", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/comment.css":
 /*!*****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/comment.css ***!
@@ -1046,7 +1065,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:55px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1084,26 +1103,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  width: 15vw;\r\n  height:15vw;\r\n  border-radius:100px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 14vw;\r\n  font-size: 7vw;\r\n  color: white;\r\n}\r\n\r\n.title{\r\n  position: absolute;\r\n  left: 35vw;\r\n  top: 5.5vw;\r\n  width: 30vw;\r\n  font-size: 7vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container span{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 15px;\r\n  font-size: 5vw;\r\n  font-weight: 100;\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 100px;\r\n    height:100px;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 90px;\r\n    font-size: 40px;\r\n    color: white;\r\n  }\r\n\r\n  .title{\r\n    position: absolute;\r\n    left: 215px;\r\n    top: 50px;\r\n    width: 400px;\r\n    font-size: 48px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container span{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n#rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n#leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n#leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/home.css ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".rc-menu {\r\n    outline: none;\r\n    margin-bottom: 0;\r\n    padding-left: 0;\r\n    list-style: none;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    border-radius: 3px;\r\n    color: #666;\r\n}\r\n\r\n.menu-container a{\r\n    background-color:\"rgb(229,68,109)\";\r\n    color:\"white\";\r\n    background-image:\"none\";\r\n}\r\n\r\n.menu_btn{\r\n    position:\"absolute\";\r\n    top:0;\r\n    right:0;\r\n    font-size: 30px;\r\n    height:40px;\r\n    width:40px;\r\n    background-color:rgb(229,68,109);\r\n    color:\"white\";\r\n    outline:\"none\";\r\n    border:2px solid white;\r\n    border-radius:10px;\r\n}", ""]);
+exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  width: 15vw;\r\n  height:15vw;\r\n  border-radius:100px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 14vw;\r\n  font-size: 7vw;\r\n  color: white;\r\n}\r\n\r\n .title{\r\n  position: absolute;\r\n  left: 35vw;\r\n  top: 5.5vw;\r\n  width: 30vw;\r\n  font-size: 7vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container span{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 15px;\r\n  font-size: 5vw;\r\n  font-weight: 100;\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 100px;\r\n    height:100px;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 90px;\r\n    font-size: 40px;\r\n    color: white;\r\n  }\r\n.title{\r\n    position: absolute;\r\n    left: 215px;\r\n    top: 50px;\r\n    width: 400px;\r\n    font-size: 48px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container span{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n#rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n#leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n#leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -1141,7 +1141,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/major_QA.css":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/major_QA.css ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -49020,6 +49039,161 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/assets/js/QA.js":
+/*!***********************************!*\
+  !*** ./resources/assets/js/QA.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_QA_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/QA.css */ "./resources/assets/js/css/QA.css");
+/* harmony import */ var _css_QA_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_QA_css__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var QA =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(QA, _React$Component);
+
+  function QA(props) {
+    var _this;
+
+    _classCallCheck(this, QA);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(QA).call(this, props));
+    _this.state = {
+      showModal: false
+    };
+    _this.sponFB = _this.sponFB.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(QA, [{
+    key: "sponFB",
+    value: function sponFB() {
+      var targetId = "demo",
+          // 留言框出現的位置 id
+      ver = "3.2",
+          // API 版本
+      url = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v" + ver,
+          script = document.createElement("script"),
+          elem = document.getElementById("fb-comments"),
+          target = document.getElementById(targetId);
+      elem.setAttribute("data-href", location.protocol + "//" + location.hostname + location.pathname.split("?")[0]);
+
+      if (target) {
+        target.parentNode.insertBefore(elem, target);
+      }
+
+      script.src = url;
+      document.getElementsByTagName("head")[0].appendChild(script);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.sponFB();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var cardHeight = "500px";
+      var cardBodyWidth = "800px";
+      var containerMargin = "30px 80px";
+      var show = this.props.is_fetch === true ? this.props.data : {
+        id: "",
+        question: "",
+        answer: ""
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+        className: "QA_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+        className: "card-box",
+        style: {
+          height: "auto",
+          border: "none",
+          transform: "translate(0,0)"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
+        className: "QA_cardBody"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "QA_card_container",
+        style: {
+          maxWidth: "100%",
+          margin: containerMargin
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "id_container"
+      }, "#" + show["id"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
+        className: "title2"
+      }, show["question"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, show["answer"])))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "fb-comments",
+        className: "fb-comments",
+        "data-href": "",
+        "data-colorscheme": "light",
+        "data-numposts": "5",
+        style: {
+          maxWidth: "100%",
+          margin: containerMargin
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "contentBtn",
+        onClick: this.props.next.bind(this, "next"),
+        id: "rightBtn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Arrow",
+        id: "rightArrow"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btnText",
+        id: "next"
+      }, "\u4E0B\u4E00\u7BC7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "contentBtn",
+        onClick: this.props.next.bind(this, "before"),
+        id: "leftBtn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Arrow",
+        id: "leftArrow"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btnText",
+        id: "before"
+      }, "\u4E0A\u4E00\u7BC7")));
+    }
+  }]);
+
+  return QA;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (QA);
+
+/***/ }),
+
 /***/ "./resources/assets/js/app.js":
 /*!************************************!*\
   !*** ./resources/assets/js/app.js ***!
@@ -49039,10 +49213,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout */ "./resources/assets/js/layout.js");
 /* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post */ "./resources/assets/js/post.js");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./edit */ "./resources/assets/js/edit.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _major_QA__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./major_QA */ "./resources/assets/js/major_QA.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_10__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
@@ -49053,20 +49245,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-  exact: true,
-  path: "/",
-  component: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-  path: "/comment",
-  component: _comment__WEBPACK_IMPORTED_MODULE_4__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-  path: "/post",
-  component: _post__WEBPACK_IMPORTED_MODULE_6__["default"]
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-  path: "/admin/edit",
-  component: _edit__WEBPACK_IMPORTED_MODULE_7__["default"]
-})))), document.getElementById('root'));
+
+
+
+var App =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(App, _Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/",
+        component: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/comment",
+        component: _comment__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/post",
+        component: _post__WEBPACK_IMPORTED_MODULE_6__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/admin/edit",
+        component: _edit__WEBPACK_IMPORTED_MODULE_7__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/QA/:id",
+        component: _major_QA__WEBPACK_IMPORTED_MODULE_8__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/home",
+        component: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }))));
+    }
+  }]);
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('root'));
 
 /***/ }),
 
@@ -49085,8 +49307,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _commentIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./commentIndex */ "./resources/assets/js/commentIndex.js");
 /* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./content */ "./resources/assets/js/content.js");
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ "./resources/assets/js/menu.js");
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _mobileFliter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mobileFliter */ "./resources/assets/js/mobileFliter.js");
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -49111,6 +49334,19 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+var NCKU = {
+  "LIB": ["中文系", "外文系", "台文系"],
+  "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
+  "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
+  "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
+  "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
+  "SOC": ["政治系", "經濟系", "法律系", "心理系"],
+  "EECS": ["電機系", "資訊系"],
+  "CPD": ["建築系", "都計系", "工設系"],
+  "BIO": ["生科系", "生技系"]
+};
+var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"]];
 
 var comment =
 /*#__PURE__*/
@@ -49162,6 +49398,7 @@ function (_Component) {
     _this.sponCommentMenu = _this.sponCommentMenu.bind(_assertThisInitialized(_this));
     _this.countDepartment = _this.countDepartment.bind(_assertThisInitialized(_this));
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
+    _this.sponMobileMenu = _this.sponMobileMenu.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -49219,7 +49456,7 @@ function (_Component) {
     value: function handleClick() {
       var _this2 = this;
 
-      fetch('/api/getAll').then(function (res) {
+      fetch('/api/get/major').then(function (res) {
         return res.json();
       }).then(function (data) {
         _this2.setState({
@@ -49261,18 +49498,6 @@ function (_Component) {
   }, {
     key: "sponCommentMenu",
     value: function sponCommentMenu() {
-      var NCKU = {
-        "LIB": ["中文系", "外文系", "台文系"],
-        "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
-        "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
-        "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
-        "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
-        "SOC": ["政治系", "經濟系", "法律系", "心理系"],
-        "EECS": ["電機系", "資訊系"],
-        "CPD": ["建築系", "都計系", "工設系"],
-        "BIO": ["生科系", "生技系"]
-      };
-      var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"]];
       var output = [];
 
       for (var i = 0; i < department.length; ++i) {
@@ -49312,6 +49537,35 @@ function (_Component) {
       return output;
     }
   }, {
+    key: "sponMobileMenu",
+    value: function sponMobileMenu() {
+      var object = [];
+      object.push({
+        id: 0,
+        name: "全部學院",
+        now: -1,
+        option: [["全部學院", -1], ["文學院", 1], ["理學院", 2], ["工學院", 3], ["管理學院", 4], ["醫學院", 5], ["社科院", 6], ["電資學院", 7], ["規設院", 8], ["生科院", 9]]
+      });
+
+      for (var i = 0; i < department.length; ++i) {
+        var singleObject = [];
+        singleObject.push(["全部學系", -1]);
+
+        for (var j = 0; j < NCKU[department[i][1]].length; ++j) {
+          singleObject.push([NCKU[department[i][1]][j], -1]);
+        }
+
+        object.push({
+          id: i + 1,
+          now: -1,
+          name: "全部學系",
+          option: singleObject
+        });
+      }
+
+      return object;
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.handleClick();
@@ -49319,6 +49573,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var fliter_2 = [{
+        id: 0,
+        now: -1,
+        name: "順序",
+        option: [["由大而小", -1], ["由小而大", -1]]
+      }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -49357,15 +49617,49 @@ function (_Component) {
           fontWeight: "400"
         }
       }, this.countDepartment("不分系")))), this.sponCommentMenu()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MobileMenu",
+        style: {
+          position: "absolute",
+          top: "55px",
+          left: "0px",
+          width: "100vw",
+          maxWidth: "100%",
+          height: "30px",
+          backgroundColor: "rgb(229,68,109)",
+          display: this.state.mobile_display === "none" ? "block" : "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        type: "\u4F9D\u5B78\u9662/\u7CFB",
+        value: this.sponMobileMenu(),
+        style: {
+          position: "absolute",
+          top: "0px",
+          left: "3%",
+          width: '62%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "8vw"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        type: "\u4F9D\u7DE8\u865F",
+        value: fliter_2,
+        style: {
+          position: "absolute",
+          top: "0px",
+          left: "65%",
+          width: '40%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "8vw"
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
         is_fetch: this.state.is_fetch,
         onClick: this.handleOpenModal,
         handleRWD: this.handleRWD
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content_container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
         mobile: this.state.mobile_display,
         height: this.state.contentHeight,
         data: this.state.showContent,
@@ -49736,7 +50030,9 @@ function (_React$Component) {
         fontSize: "20px",
         fontWeight: 100
       };
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content_container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_2___default.a, {
         isOpen: this.props.showModal,
         contentLabel: "Minimal Modal Example",
         style: customStyles,
@@ -49826,6 +50122,36 @@ function (_React$Component) {
 
 react_modal__WEBPACK_IMPORTED_MODULE_2___default.a.setAppElement('body');
 /* harmony default export */ __webpack_exports__["default"] = (content);
+
+/***/ }),
+
+/***/ "./resources/assets/js/css/QA.css":
+/*!****************************************!*\
+  !*** ./resources/assets/js/css/QA.css ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./QA.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/QA.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -49919,36 +50245,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/assets/js/css/home.css":
-/*!******************************************!*\
-  !*** ./resources/assets/js/css/home.css ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./home.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./resources/assets/js/css/icon.css":
 /*!******************************************!*\
   !*** ./resources/assets/js/css/icon.css ***!
@@ -49988,6 +50284,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./layout.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/layout.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/assets/js/css/major_QA.css":
+/*!**********************************************!*\
+  !*** ./resources/assets/js/css/major_QA.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./major_QA.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/major_QA.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -50112,7 +50438,7 @@ function (_Component) {
     value: function getData() {
       var _this2 = this;
 
-      fetch('/api/getAll').then(function (res) {
+      fetch('/api/get/major').then(function (res) {
         return res.json();
       }).then(function (data) {
         var input = [];
@@ -50315,13 +50641,12 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/home.css */ "./resources/assets/js/css/home.css");
-/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_home_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _mobileFliter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mobileFliter */ "./resources/assets/js/mobileFliter.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50332,13 +50657,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -50358,104 +50684,87 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(home).call(this, props));
     _this.state = {
-      open: false
+      open: false,
+      pathname: ""
     };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(home, [{
+    key: "handleClick",
+    value: function handleClick(e) {
+      var url = '/home/' + '1';
+      console.log(url);
+      this.setState({
+        id: url
+      });
+      var location = {
+        pathname: url,
+        state: {
+          id: "1"
+        }
+      };
+      this.props.history.push(location);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var major1 = ["物理系", "化學系"];
+      var major2 = ["生科系", "生技系"];
+      var depart = [["理學院", []], ["生科院"], []]; //const test=[["學系",depart],["id",[]]];
 
-      var open = this.state.open;
-      var ListStyle = {
-        textAlign: "center",
-        backgroundColor: "rgb(229,68,109)",
-        color: "white",
-        backgroundImage: "none",
-        textShadow: "none",
-        borderRadius: "0px",
-        borderTop: "0.5px solid rgba(243,243,243,0.5)",
-        borderBottom: "0.5px solid rgba(243,243,243,0.5)",
-        borderLeft: "0px solid rgba(243,243,243,0.5)",
-        borderRight: "0px solid rgba(243,243,243,0.5)"
-      };
-      var ListStyleLast = {
-        textAlign: "center",
-        backgroundColor: "rgb(229,68,109)",
-        color: "white",
-        backgroundImage: "none",
-        textShadow: "none",
-        borderRadius: "0px",
-        borderTop: "0.5px solid rgba(243,243,243,0.5)",
-        borderBottom: "0px solid rgba(243,243,243,0.5)",
-        borderLeft: "0px solid rgba(243,243,243,0.5)",
-        borderRight: "0px solid rgba(243,243,243,0.5)"
-      };
+      var test = [{
+        id: 0,
+        name: "全部學院",
+        now: -1,
+        option: [["全部學院", -1], ["理學院", 1], ["生科院", 2], ["工學院", 3]]
+      }, {
+        id: 1,
+        now: -1,
+        name: "全部學系",
+        option: [["全部學系", -1], ["物理系", -1], ["化學系", -1]]
+      }, {
+        id: 2,
+        now: -1,
+        name: "全部學系",
+        option: [["全部學系", -1], ["生科系", -1], ["生技系", -1]]
+      }, {
+        id: 3,
+        now: -1,
+        name: "全部學系",
+        option: [["全部學系", -1], ["機械系", -1], ["化工系", -1], ["材料系", -1], ["資源系", -1], ["土木系", -1], ["水利系", -1], ["工科系", -1], ["系統系", -1], ["航太系", -1], ["環工系", -1], ["測量系", -1], ["醫工系", -1], ["能源學程", -1]]
+      }];
+      var test2 = [{
+        id: 0,
+        now: -1,
+        name: "順序",
+        option: [["由大而小", -1], ["由小而大", -1]]
+      }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "menu_btn",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "\u4F9D\u5B78\u9662/\u7CFB",
+        value: test,
+        style: {
+          width: '62%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "8vw"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "\u4F9D\u7DE8\u865F",
+        value: test2,
         style: {
           position: "absolute",
           top: "0",
-          right: "0",
-          height: "50px",
-          width: "50px",
+          left: "60%",
+          width: '40%',
           backgroundColor: "rgb(229,68,109)",
           color: "white",
-          outline: "none",
-          border: "2px solid white",
-          borderRadius: "10px"
-        },
-        onClick: function onClick() {
-          return _this2.setState({
-            open: !open
-          });
-        },
-        "aria-controls": "menu_container",
-        "aria-expanded": open
-      }, "\u2261"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Collapse"], {
-        in: this.state.open
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "menu_container",
-        style: {
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          position: "absolute",
-          top: "50px",
-          right: "0",
-          width: "100vw",
-          maxWidth: "100%"
+          lineHeight: "8vw"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"], {
-        defaultActiveKey: "#link1",
-        style: {
-          border: "none",
-          boxShadow: "none"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
-        action: true,
-        href: "#link1",
-        className: "list",
-        style: ListStyle
-      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
-        action: true,
-        href: "#link2",
-        className: "list",
-        style: ListStyle
-      }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
-        action: true,
-        href: "#link2",
-        className: "list",
-        style: ListStyle
-      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["ListGroup"].Item, {
-        action: true,
-        href: "#link2",
-        className: "list",
-        style: ListStyleLast
-      }, "\u806F\u7D61\u6211\u5011")))));
+      }));
     }
   }]);
 
@@ -50592,6 +50901,7 @@ function (_Component) {
         href: "/#/post",
         className: "navItem"
       }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/QA/~",
         className: "navItem"
       }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/#/comment",
@@ -50604,6 +50914,536 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (layout);
+
+/***/ }),
+
+/***/ "./resources/assets/js/major_QA.js":
+/*!*****************************************!*\
+  !*** ./resources/assets/js/major_QA.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _major_QAIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./major_QAIndex */ "./resources/assets/js/major_QAIndex.js");
+/* harmony import */ var _QA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./QA */ "./resources/assets/js/QA.js");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ "./resources/assets/js/menu.js");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/major_QA.css */ "./resources/assets/js/css/major_QA.css");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_css_major_QA_css__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+var maj_QA =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(maj_QA, _Component);
+
+  function maj_QA(props) {
+    var _this;
+
+    _classCallCheck(this, maj_QA);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(maj_QA).call(this, props));
+    _this.state = {
+      mobile_display: "block",
+      fliter: "none",
+      showContentId: -1,
+      show: [],
+      showContent: {
+        question: "",
+        answer: "",
+        id: -1
+      },
+      is_fetch: false,
+      datas: []
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
+    _this.handleOpenQA = _this.handleOpenQA.bind(_assertThisInitialized(_this));
+    _this.handleShowContent = _this.handleShowContent.bind(_assertThisInitialized(_this));
+    _this.sponCommentMenu = _this.sponCommentMenu.bind(_assertThisInitialized(_this));
+    _this.countDepartment = _this.countDepartment.bind(_assertThisInitialized(_this));
+    _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(maj_QA, [{
+    key: "handleRWD",
+    value: function handleRWD(is_mobile) {
+      if (is_mobile) this.setState({
+        mobile_display: "none",
+        contentWidth: "85vw",
+        contentHeight: "800px"
+      });else this.setState({
+        mobile_display: "block",
+        contentWidth: "800px",
+        contentHeight: "500px"
+      });
+    }
+  }, {
+    key: "handleOpenQA",
+    value: function handleOpenQA(id) {
+      var i = 0;
+
+      while (this.state.show[i]["id"] != id) {
+        i++;
+      }
+
+      if (i < this.state.show.length) this.setState({
+        showContent: this.state.show[i],
+        showContentId: id,
+        showModal: true
+      });
+      var url = '/QA/' + id;
+      var location = {
+        pathname: url,
+        state: {
+          id: id
+        }
+      };
+      this.props.history.push(location);
+    }
+  }, {
+    key: "handleShowContent",
+    value: function handleShowContent(type) {
+      var data = this.state.show;
+      var find = Number(this.props.match.params.id);
+      var value = type === "next" ? 1 : -1;
+      var nowIndex = data.findIndex(function (element, index, array) {
+        return element["id"] == find.toString();
+      });
+
+      if (nowIndex - value < data.length && nowIndex - value >= 0) {
+        this.setState({
+          showContent: this.state.show[nowIndex - value],
+          showContentId: this.state.show[nowIndex - value]["id"]
+        });
+        var url = '/QA/' + this.state.show[nowIndex - value]["id"];
+        var location = {
+          pathname: url,
+          state: {
+            id: find
+          }
+        };
+        this.props.history.push(location);
+      }
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      var _this2 = this;
+
+      fetch('/api/get/major_QA').then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        _this2.setState({
+          datas: data,
+          is_fetch: true,
+          show: data,
+          showContent: data[Number(_this2.props.match.params.id)]
+        });
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      });
+    }
+  }, {
+    key: "countDepartment",
+    value: function countDepartment(name) {
+      var counter = 0;
+      this.state.datas.forEach(function (item, index, array) {
+        if (item["in_maj"] == name) counter++;
+      });
+      return counter;
+    }
+  }, {
+    key: "changeFliter",
+    value: function changeFliter(new_fliter, type) {
+      this.setState({
+        fliter: new_fliter
+      });
+      if (new_fliter === "none") this.setState({
+        show: this.state.datas
+      });else {
+        var output = [];
+        this.state.datas.forEach(function (element) {
+          if (element[type] === new_fliter) output.push(element);
+        });
+        this.setState({
+          show: output
+        });
+      }
+    }
+  }, {
+    key: "sponCommentMenu",
+    value: function sponCommentMenu() {
+      var NCKU = {
+        "LIB": ["中文系", "外文系", "台文系"],
+        "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
+        "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
+        "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
+        "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
+        "SOC": ["政治系", "經濟系", "法律系", "心理系"],
+        "EECS": ["電機系", "資訊系"],
+        "CPD": ["建築系", "都計系", "工設系"],
+        "BIO": ["生科系", "生技系"]
+      };
+      var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"]];
+      var output = [];
+
+      for (var i = 0; i < department.length; ++i) {
+        var singleOutput = [];
+        var dep_number = 0;
+
+        for (var j = 0; j < NCKU[department[i][1]].length; ++j) {
+          var number = this.countDepartment(NCKU[department[i][1]][j]);
+          dep_number += number;
+          singleOutput.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+            variant: "light",
+            style: {
+              borderRadius: "0px",
+              width: '100%',
+              outline: "none"
+            },
+            onClick: this.changeFliter.bind(this, NCKU[department[i][1]][j], "in_maj")
+          }, NCKU[department[i][1]][j], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+            pill: true,
+            variant: "secondary",
+            style: {
+              position: "relative",
+              marginLeft: "10px",
+              fontWeight: "400"
+            }
+          }, number)));
+        }
+
+        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: department[i][1],
+          title: department[i][0],
+          number: dep_number,
+          onClick: this.changeFliter
+        }, singleOutput));
+      }
+
+      return output;
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.handleClick();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var show = this.props.location.pathname === "/QA/~" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_major_QAIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        datas: this.state.show,
+        is_fetch: this.state.is_fetch,
+        onClick: this.handleOpenQA,
+        handleRWD: this.handleRWD
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QA__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        data: this.state.showContent,
+        is_fetch: this.state.is_fetch,
+        next: this.handleShowContent
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "major_QA"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Menu"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "relative",
+          top: "0%",
+          width: '100%'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        variant: "light",
+        style: {
+          borderRadius: "0px",
+          width: '100%',
+          outline: "none"
+        },
+        onClick: this.changeFliter.bind(this, "不分系", "in_maj")
+      }, "\u4E0D\u5206\u7CFB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+        pill: true,
+        variant: "secondary",
+        style: {
+          position: "relative",
+          marginLeft: "10px",
+          fontWeight: "400"
+        }
+      }, this.countDepartment("不分系"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index"
+      }, show));
+    }
+  }]);
+
+  return maj_QA;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (maj_QA);
+
+/***/ }),
+
+/***/ "./resources/assets/js/major_QAIndex.js":
+/*!**********************************************!*\
+  !*** ./resources/assets/js/major_QAIndex.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/commentIndex.css */ "./resources/assets/js/css/commentIndex.css");
+/* harmony import */ var _css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./resources/assets/js/icon.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var major_QAIndex =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(major_QAIndex, _Component);
+
+  function major_QAIndex(props) {
+    var _this;
+
+    _classCallCheck(this, major_QAIndex);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(major_QAIndex).call(this, props));
+    _this.state = {
+      row: 1,
+      cardWidth: "100%",
+      cardHeight: "auto",
+      cardPadding: "0rem",
+      btnHeight: "15rem",
+      cardTextHeight: "auto",
+      wordsNumber: 35
+    };
+    _this.sponCard = _this.sponCard.bind(_assertThisInitialized(_this));
+    _this.sponSingleCard = _this.sponSingleCard.bind(_assertThisInitialized(_this));
+    _this.sponManyCard = _this.sponManyCard.bind(_assertThisInitialized(_this));
+    _this.changeRowCard = _this.changeRowCard.bind(_assertThisInitialized(_this));
+    _this.handleOpenContent = _this.handleOpenContent.bind(_assertThisInitialized(_this)); //this.handleCardSize=this.handleCardSize.bind(this);
+
+    return _this;
+  }
+
+  _createClass(major_QAIndex, [{
+    key: "handleOpenContent",
+    value: function handleOpenContent(id) {
+      this.props.onClick(id);
+    } //handleCardSize(is_mobile){
+    //if(is_mobile)
+    //this.setState({btnHeight:"11rem",cardWidth:"100vw",cardHeight:"16.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
+    //else
+    //this.setState({btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
+    //}
+
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.changeRowCard();
+      window.addEventListener('resize', this.changeRowCard);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.changeRowCard);
+    }
+  }, {
+    key: "changeRowCard",
+    value: function changeRowCard() {//if(window.innerWidth>1400){
+      //this.setState({row:5});
+      //this.props.handleRWD(false);
+      //this.handleCardSize(false);
+      //}
+      //else if(window.innerWidth>=1140){
+      //this.setState({row:4});
+      //this.props.handleRWD(false);
+      //this.handleCardSize(false);
+      //}
+      //else if(window.innerWidth>=870){
+      //this.setState({row:3});
+      /// this.props.handleRWD(false);
+      //this.handleCardSize(false);
+      //}
+      //else if(window.innerWidth>=596){
+      //this.setState({row:2});
+      //this.props.handleRWD(true);
+      //this.handleCardSize(false);
+      //}
+      //else{
+      //this.setState({row:1});
+      //this.handleCardSize(true);
+      //this.props.handleRWD(true);
+      //}
+    }
+  }, {
+    key: "sponCard",
+    value: function sponCard() {
+      if (this.props.is_fetch) {
+        var datas = this.props.datas;
+        var output = [];
+
+        for (var i = 0; i <= datas.length / 1; ++i) {
+          output.push(this.sponManyCard(i, datas));
+        }
+
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+          style: {
+            width: '100%',
+            maxWidth: "100%"
+          }
+        }, output);
+      } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        style: {
+          position: 'absolute',
+          left: "40%",
+          top: "200px"
+        }
+      });
+    }
+  }, {
+    key: "sponSingleCard",
+    value: function sponSingleCard(number, datas) {
+      var comment = datas[number]["answer"];
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+        style: {
+          width: this.state.cardWidth,
+          height: this.state.cardHeight,
+          maxWidth: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
+        style: {
+          maxHeight: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
+        style: {
+          fontSize: '2.5rem',
+          height: "55px",
+          maxWidth: "90%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "circle",
+        style: {
+          fontSize: '2.5rem',
+          lineHeight: "4.5rem",
+          textAlign: "center",
+          color: "white",
+          height: "50px",
+          width: "50px",
+          borderRadius: "50px",
+          backgroundColor: "rgb(229,68,109)"
+        }
+      }, "#" + datas[number]["id"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "relative",
+          top: "-50px",
+          left: "60px"
+        }
+      }, datas[number]["question"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "showBtn",
+        onClick: this.handleOpenContent.bind(this, datas[number]["id"]),
+        style: {
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: "100%",
+          height: "55px",
+          backgroundColor: "rgba(0, 0, 0,0)",
+          border: "none",
+          outline: "none"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Link, {
+        style: {
+          color: 'rgb(30,144,255)'
+        }
+      }, "#" + datas[number]["id"])));
+    }
+  }, {
+    key: "sponManyCard",
+    value: function sponManyCard(numberRow, datas) {
+      var output = [];
+
+      for (var i = 0; numberRow * this.state.row + i < datas.length && i < this.state.row; ++i) {
+        output.push(this.sponSingleCard(datas.length - numberRow * this.state.row - i - 1, datas));
+      }
+
+      if (this.state.row > 1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+        style: {
+          paddingBottom: this.state.cardPadding
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["CardDeck"], {
+        style: {
+          height: this.state.cardHeight
+        }
+      }, output));else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+        style: {
+          paddingBottom: this.state.cardPadding
+        }
+      }, output);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "QAIndex"
+      }, this.sponCard());
+    }
+  }]);
+
+  return major_QAIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (major_QAIndex);
 
 /***/ }),
 
@@ -50732,6 +51572,202 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (menu);
+
+/***/ }),
+
+/***/ "./resources/assets/js/mobileFliter.js":
+/*!*********************************************!*\
+  !*** ./resources/assets/js/mobileFliter.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var mobileFliter =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(mobileFliter, _Component);
+
+  function mobileFliter(props) {
+    var _this;
+
+    _classCallCheck(this, mobileFliter);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(mobileFliter).call(this, props));
+    _this.state = {
+      select: [],
+      value: [[]],
+      type: [],
+      styleBtn: [],
+      showTag: [],
+      data: []
+    };
+    _this.spawnDropdown = _this.spawnDropdown.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(mobileFliter, [{
+    key: "handleClick",
+    value: function handleClick(name, next, id, now) {
+      var new_now = -1;
+
+      for (var i = 0; i < this.state.data[id]["option"].length; ++i) {
+        if (this.state.data[id]["option"][i][0] === name) {
+          new_now = i;
+          break;
+        }
+      }
+
+      var showTag = this.state.showTag;
+      showTag[id] = name;
+      this.setState({
+        showTag: showTag
+      });
+
+      if (next != -1) {
+        var new_style = this.state.styleBtn;
+        new_style[next] = {
+          display: "block"
+        };
+        this.setState({
+          styleBtn: new_style
+        });
+      }
+
+      var new_data = this.state.data;
+
+      if (now != -1 && now != 0) {
+        var blockItem = now;
+        var checkItem = id;
+
+        while (new_data[checkItem]["option"][1][1] != -1) {
+          var new_style = this.state.styleBtn;
+          var next_id = new_data[checkItem]["option"][blockItem][1];
+          new_style[next_id] = {
+            display: "none"
+          };
+          new_data[checkItem]["now"] = -1;
+          showTag[next_id] = new_data[next_id]["option"][0][0];
+          this.setState({
+            styleBtn: new_style,
+            showTag: showTag
+          });
+          blockItem = new_data[next_id]["option"]["now"];
+          checkItem = new_data[next_id]["id"];
+        }
+      }
+
+      new_data[id]["now"] = new_now;
+      this.setState({
+        data: new_data
+      });
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var test = this.props.value;
+      var new_style = [];
+      var showTag = [];
+
+      for (var i = 0; i < test.length; ++i) {
+        var style = test[i]["id"] === 0 ? {
+          display: "block",
+          backgroundColor: "rgb(229,68,109)"
+        } : {
+          display: "none",
+          backgroundColor: "rgb(229,68,109)"
+        };
+        new_style.push(style);
+        var tag = test[i]["option"][0][0];
+        showTag.push(tag);
+      }
+
+      this.setState({
+        styleBtn: new_style,
+        showTag: showTag,
+        data: test
+      });
+    }
+  }, {
+    key: "spawnDropdown",
+    value: function spawnDropdown() {
+      var _this2 = this;
+
+      var data = this.state.data;
+      var output = [];
+
+      for (var i = 0; i < data.length; ++i) {
+        var object = data[i];
+        var o_output = object["option"].map(function (option) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
+            style: {
+              backgroundColor: "rgb(229,68,109)",
+              color: "white",
+              fontSize: "12px"
+            },
+            onClick: _this2.handleClick.bind(_this2, option[0], option[1], object["id"], object["now"])
+          }, option[0]);
+        });
+        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
+          style: this.state.styleBtn[i]
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Toggle, {
+          variant: "Info",
+          id: "dropdown-basic",
+          style: {
+            backgroundColor: "rgb(229,68,109)",
+            color: "white",
+            fontSize: "12px",
+            width: "75px"
+          }
+        }, this.state.showTag[i]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
+          style: {
+            backgroundColor: "rgb(229,68,109)",
+            color: "white"
+          }
+        }, o_output)));
+      }
+
+      return output;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
+        style: this.props.style
+      }, this.props.type + ": ", this.spawnDropdown());
+    }
+  }]);
+
+  return mobileFliter;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (mobileFliter);
 
 /***/ }),
 
@@ -50969,7 +52005,7 @@ function (_Component) {
         'out_maj': this.state.out_maj,
         'comment': this.state.comment
       };
-      fetch('/api/create', {
+      fetch('/api/create/major', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({

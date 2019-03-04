@@ -1,10 +1,36 @@
+html::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+  border: none;
+}
+
+html::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #555;
+  opacity: 0.5;
+}
+
+html::-webkit-scrollbar-track
+{
+background-color: #F5F5F5;
+border: 0px solid;
+}
+
+html::-webkit-scrollbar-track-piece  {
+ /* 4 */ 
+ border: none;
+}
+
+
 
 body{
     max-width: 100%;
     font-family: 'Noto Sans TC';
 }
 nav{
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;

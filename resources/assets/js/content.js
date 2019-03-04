@@ -63,7 +63,7 @@ class content extends React.Component {
 
 
       return (
-        <div>
+        <div className="content_container">
           <Modal 
              isOpen={this.props.showModal}
              contentLabel="Minimal Modal Example" style={customStyles} className="Modal"
@@ -71,7 +71,7 @@ class content extends React.Component {
           >
             
             <Card className="card-box" style={{position:"absolute",top: "0px",height: cardHeight, overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
-              <Card.Body className="cardBody"style={{width:cardBodyWidth}}>  
+              <Card.Body className="cardBody" style={{width:cardBodyWidth}}>  
               <div className="card_container" style={{maxWidth: "100%", margin: containerMargin}}>
                 <div className="id_container">{"#"+this.props.data["id"]}</div>
                 <h1 className="title">{"轉入科系: "+this.props.data["in_maj"]}</h1>

@@ -3,7 +3,31 @@ import {Button,Badge} from 'react-bootstrap';
 import CommentIndex from './commentIndex';
 import Content from './content';
 import Menu from './menu';
+import MobileFliter from "./mobileFliter";
 import './css/comment.css';
+var NCKU=
+{
+"LIB":["中文系","外文系","台文系"],
+"SCE":["數學系","物理系","化學系","地科系","光電系"],
+"ENG":["機械系","化工系","材料系","資源系","土木系","水利系","工科系","系統系","航太系","環工系","測量系","醫工系","能源學程"],
+"MAN":["工資系","交管系","企管系","統計系","會計系"],
+"MC":["醫學系","醫技系","護理系","職治系","物治系","藥學系"],
+"SOC":["政治系","經濟系","法律系","心理系"],
+"EECS":["電機系","資訊系"],
+"CPD":["建築系","都計系","工設系"],
+"BIO":["生科系","生技系"]
+};
+const department=[
+["文學院","LIB"],
+["理學院","SCE"],
+["工學院","ENG"],
+["管理學院","MAN"],
+["醫學院","MC"],
+["社會科學院","SOC"],
+["電資學院","EECS"],
+["規設院","CPD"],
+["生科院","BIO"]
+];
 class comment extends Component {
     constructor(props) {
     super(props);
@@ -46,6 +70,7 @@ class comment extends Component {
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
+    this.sponMobileMenu=this.sponMobileMenu.bind(this);
   }
 
   handleRWD(is_mobile){
@@ -90,7 +115,7 @@ class comment extends Component {
 
   handleClick() {
     fetch(
-      '/api/getAll'
+      '/api/get/major'
     )
       .then(res => res.json())
       .then(data => {
@@ -126,29 +151,6 @@ class comment extends Component {
   }
 
   sponCommentMenu(){
-    var NCKU=
-      {
-      "LIB":["中文系","外文系","台文系"],
-      "SCE":["數學系","物理系","化學系","地科系","光電系"],
-      "ENG":["機械系","化工系","材料系","資源系","土木系","水利系","工科系","系統系","航太系","環工系","測量系","醫工系","能源學程"],
-      "MAN":["工資系","交管系","企管系","統計系","會計系"],
-      "MC":["醫學系","醫技系","護理系","職治系","物治系","藥學系"],
-      "SOC":["政治系","經濟系","法律系","心理系"],
-      "EECS":["電機系","資訊系"],
-      "CPD":["建築系","都計系","工設系"],
-      "BIO":["生科系","生技系"]
-    };
-    const department=[
-      ["文學院","LIB"],
-      ["理學院","SCE"],
-      ["工學院","ENG"],
-      ["管理學院","MAN"],
-      ["醫學院","MC"],
-      ["社會科學院","SOC"],
-      ["電資學院","EECS"],
-      ["規設院","CPD"],
-      ["生科院","BIO"]
-    ];
     var output=[];
     for(var i=0;i<department.length;++i){
       let singleOutput=[];
@@ -173,12 +175,53 @@ class comment extends Component {
     return output;
   }
 
+  sponMobileMenu(){
+    var object=[];
+    object.push(
+      {
+        id:0,
+        name: "全部學院",
+        now:-1,
+        option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社科院",6],["電資學院",7],["規設院",8],["生科院",9]]
+      }
+    );
+    for(var i=0;i<department.length;++i){
+      let singleObject=[];
+      singleObject.push(
+        ["全部學系",-1]
+      );
+      for(var j=0;j<NCKU[department[i][1]].length;++j){
+        singleObject.push(
+          [NCKU[ department[i][1] ][j],-1]
+        );
+      }
+      object.push(
+          {
+            id: i+1,
+            now:-1,
+            name: "全部學系",
+            option: singleObject,
+          }
+      );
+    }
+    return object;
+  }
+
   componentDidMount(){
     this.handleClick();
   }
 
 
   render() {
+    const fliter_2= [{
+      id:0,
+      now:-1,
+      name: "順序",
+      option:[["由大而小",-1],["由小而大",-1]]
+    }];
+
+
+
     return (
       <div className="comment">
           <div className="Menu" style={{display: this.state.mobile_display}}>
@@ -193,10 +236,14 @@ class comment extends Component {
               </div>
               {this.sponCommentMenu()}
           </div>
+          <div className="MobileMenu" style={{position:"absolute",top:"55px",left:"0px",width:"100vw",maxWidth:"100%",height:"30px",backgroundColor:"rgb(229,68,109)",display: (this.state.mobile_display==="none")?"block":"none"}}>
+            <MobileFliter type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"3%",width:'62%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
+            <MobileFliter type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
+          </div>
         <div className="index">
             <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
         </div>
-        <div className="content_container"><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
+        <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
       </div>
     );
   }

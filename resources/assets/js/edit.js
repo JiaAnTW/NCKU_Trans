@@ -28,7 +28,7 @@ class home extends Component {
 
   getData() {
     fetch(
-      '/api/getAll'
+      '/api/get/major'
     )
       .then(res => res.json())
       .then(data => {
