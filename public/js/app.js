@@ -1065,7 +1065,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        \r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1160,7 +1160,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:70px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -49542,7 +49542,8 @@ function (_Component) {
       var object = [];
       object.push({
         id: 0,
-        name: "全部學院",
+        name: "none",
+        type: "department",
         now: -1,
         option: [["全部學院", -1], ["文學院", 1], ["理學院", 2], ["工學院", 3], ["管理學院", 4], ["醫學院", 5], ["社科院", 6], ["電資學院", 7], ["規設院", 8], ["生科院", 9]]
       });
@@ -49558,7 +49559,8 @@ function (_Component) {
         object.push({
           id: i + 1,
           now: -1,
-          name: "全部學系",
+          name: ["department", department[i][0]],
+          type: "in_maj",
           option: singleObject
         });
       }
@@ -49577,6 +49579,7 @@ function (_Component) {
         id: 0,
         now: -1,
         name: "順序",
+        type: "none",
         option: [["由大而小", -1], ["由小而大", -1]]
       }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -49617,48 +49620,46 @@ function (_Component) {
           fontWeight: "400"
         }
       }, this.countDepartment("不分系")))), this.sponCommentMenu()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "MobileMenu",
-        style: {
-          position: "absolute",
-          top: "55px",
-          left: "0px",
-          width: "100vw",
-          maxWidth: "100%",
-          height: "30px",
-          backgroundColor: "rgb(229,68,109)",
-          display: this.state.mobile_display === "none" ? "block" : "none"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        type: "\u4F9D\u5B78\u9662/\u7CFB",
-        value: this.sponMobileMenu(),
-        style: {
-          position: "absolute",
-          top: "0px",
-          left: "3%",
-          width: '62%',
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          lineHeight: "8vw"
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        type: "\u4F9D\u7DE8\u865F",
-        value: fliter_2,
-        style: {
-          position: "absolute",
-          top: "0px",
-          left: "65%",
-          width: '40%',
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          lineHeight: "8vw"
-        }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
         is_fetch: this.state.is_fetch,
         onClick: this.handleOpenModal,
         handleRWD: this.handleRWD
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MobileMenu",
+        style: {
+          display: this.state.mobile_display === "none" ? "block" : "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        fliter: this.changeFliter,
+        type: "\u4F9D\u5B78\u9662/\u7CFB",
+        value: this.sponMobileMenu(),
+        style: {
+          position: "absolute",
+          top: "0px",
+          left: "6%",
+          width: '59%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px",
+          outline: "none"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        fliter: this.changeFliter,
+        type: "\u4F9D\u7DE8\u865F",
+        value: fliter_2,
+        style: {
+          position: "absolute",
+          top: "0px",
+          left: "65%",
+          width: '34%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px"
+        }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
         mobile: this.state.mobile_display,
         height: this.state.contentHeight,
@@ -51634,7 +51635,7 @@ function (_Component) {
 
   _createClass(mobileFliter, [{
     key: "handleClick",
-    value: function handleClick(name, next, id, now) {
+    value: function handleClick(name, next, id, now, type) {
       var new_now = -1;
 
       for (var i = 0; i < this.state.data[id]["option"].length; ++i) {
@@ -51642,6 +51643,12 @@ function (_Component) {
           new_now = i;
           break;
         }
+      }
+
+      if (new_now === 0) {
+        if (id === 0) this.props.fliter("none", "none");else this.props.fliter(this.state.data[id]["name"][1], this.state.data[id]["name"][0]);
+      } else {
+        this.props.fliter(name, type);
       }
 
       var showTag = this.state.showTag;
@@ -51698,10 +51705,12 @@ function (_Component) {
       for (var i = 0; i < test.length; ++i) {
         var style = test[i]["id"] === 0 ? {
           display: "block",
-          backgroundColor: "rgb(229,68,109)"
+          backgroundColor: "rgb(229,68,109)",
+          outline: "none"
         } : {
           display: "none",
-          backgroundColor: "rgb(229,68,109)"
+          backgroundColor: "rgb(229,68,109)",
+          outline: "none"
         };
         new_style.push(style);
         var tag = test[i]["option"][0][0];
@@ -51727,11 +51736,13 @@ function (_Component) {
         var o_output = object["option"].map(function (option) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
             style: {
+              outline: "none",
               backgroundColor: "rgb(229,68,109)",
               color: "white",
-              fontSize: "12px"
+              fontSize: "12px",
+              width: "20.5vw"
             },
-            onClick: _this2.handleClick.bind(_this2, option[0], option[1], object["id"], object["now"])
+            onClick: _this2.handleClick.bind(_this2, option[0], option[1], object["id"], object["now"], object["type"])
           }, option[0]);
         });
         output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
@@ -51740,15 +51751,20 @@ function (_Component) {
           variant: "Info",
           id: "dropdown-basic",
           style: {
+            margin: "2px 0px",
+            height: "85%",
+            outline: "none",
             backgroundColor: "rgb(229,68,109)",
             color: "white",
             fontSize: "12px",
-            width: "75px"
+            width: "20.5vw"
           }
         }, this.state.showTag[i]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
           style: {
             backgroundColor: "rgb(229,68,109)",
-            color: "white"
+            color: "white",
+            width: "80px",
+            minWidth: "20.5vw"
           }
         }, o_output)));
       }

@@ -180,7 +180,8 @@ class comment extends Component {
     object.push(
       {
         id:0,
-        name: "全部學院",
+        name: "none",
+        type: "department",
         now:-1,
         option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社科院",6],["電資學院",7],["規設院",8],["生科院",9]]
       }
@@ -199,7 +200,8 @@ class comment extends Component {
           {
             id: i+1,
             now:-1,
-            name: "全部學系",
+            name: ["department",department[i][0]],
+            type: "in_maj",
             option: singleObject,
           }
       );
@@ -217,6 +219,7 @@ class comment extends Component {
       id:0,
       now:-1,
       name: "順序",
+      type: "none",
       option:[["由大而小",-1],["由小而大",-1]]
     }];
 
@@ -236,13 +239,14 @@ class comment extends Component {
               </div>
               {this.sponCommentMenu()}
           </div>
-          <div className="MobileMenu" style={{position:"absolute",top:"55px",left:"0px",width:"100vw",maxWidth:"100%",height:"30px",backgroundColor:"rgb(229,68,109)",display: (this.state.mobile_display==="none")?"block":"none"}}>
-            <MobileFliter type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"3%",width:'62%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
-            <MobileFliter type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
-          </div>
+          
         <div className="index">
             <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
         </div>
+        <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
+            <MobileFliter fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+            <MobileFliter fliter={this.changeFliter} type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+          </div>
         <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
       </div>
     );

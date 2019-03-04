@@ -18,13 +18,23 @@ class mobileFliter extends Component {
     this.handleClick=this.handleClick.bind(this);
   }
 
-  handleClick(name,next,id,now){
+  handleClick(name,next,id,now,type){
     var new_now=-1;
     for(var i=0;i<this.state.data[id]["option"].length;++i){
       if(this.state.data[id]["option"][i][0]===name){
         new_now=i;
         break;
       }
+    }
+
+    if(new_now===0){
+      if(id===0)
+        this.props.fliter("none","none");
+      else
+        this.props.fliter(this.state.data[id]["name"][1],this.state.data[id]["name"][0]);
+    }
+    else{
+      this.props.fliter(name,type);
     }
     var showTag=this.state.showTag;
     showTag[id]=name;
@@ -58,7 +68,7 @@ class mobileFliter extends Component {
     var new_style=[];
     var showTag=[];
     for(var i=0;i<test.length;++i){
-      const style=(test[i]["id"]===0)?{display:"block",backgroundColor:"rgb(229,68,109)"}:{display:"none",backgroundColor:"rgb(229,68,109)"};
+      const style=(test[i]["id"]===0)?{display:"block",backgroundColor:"rgb(229,68,109)",outline:"none"}:{display:"none",backgroundColor:"rgb(229,68,109)",outline:"none"};
       new_style.push(style);
       const tag=test[i]["option"][0][0];
       showTag.push(tag);
@@ -72,14 +82,14 @@ class mobileFliter extends Component {
         var object=data[i];
         const o_output=object["option"].map(option=>{
             return(
-                <Dropdown.Item  style={{backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"])}>{option[0]}</Dropdown.Item>
+                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:"20.5vw"}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
                 )});
       output.push(
         <Dropdown style={this.state.styleBtn[i]}>
-            <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:"75px"}}>
+            <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{margin:"2px 0px",height:"85%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:"20.5vw"}}>
                 {this.state.showTag[i]}
             </Dropdown.Toggle>
-            <Dropdown.Menu style={{backgroundColor:"rgb(229,68,109)",color:"white"}}>
+            <Dropdown.Menu style={{backgroundColor:"rgb(229,68,109)",color:"white",width:"80px",minWidth:"20.5vw"}}>
                 {o_output}
             </Dropdown.Menu>
         </Dropdown>
