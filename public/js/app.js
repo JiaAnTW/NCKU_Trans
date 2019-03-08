@@ -1160,7 +1160,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        max-width:100%;\r\n    }\r\n\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/major_QAIndex.css":
+/*!***********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/major_QAIndex.css ***!
+  \***********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".QAIndex{\r\n    width: 100%;\r\n    max-width: 100%;\r\n    margin: 0 0%;\r\n}\r\n\r\n\r\n@media (min-width: 596px) { \r\n    .QAIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        margin: 0 0px;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    .QAIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        margin: 0 10px;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .QAIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .QAIndex{\r\n        width: 1024px;\r\n        width: 100%;\r\n        height: 100%;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -1180,6 +1199,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".menu_mobile{\r\n    position: absolute;\r\n    top:0px;\r\n    right:0px;\r\n    width: 100vw;\r\n    max-width: 100%;\r\n    height: auto;\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    .menu_mobile{\r\n        display: none;\r\n    }\r\n\r\n }\r\n\r\n.menuBtn{\r\n    position:absolute;\r\n    top:10px;\r\n    right:10px;\r\n    font-size: 30px;\r\n    line-height: 5px;\r\n    text-align: center;\r\n    height:40px;\r\n    width:40px;\r\n    background-color:rgb(229,68,109);\r\n    color:white ;\r\n    outline: none;\r\n    border:none;\r\n    border-radius:10px;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/post.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/post.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".form_container{\r\n    margin: 5% 5%;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#year,#id,#out_maj, #in_maj{\r\n    /* 4 */ \r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    .form_container{\r\n        margin: 5% 20%;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n\r\n}", ""]);
 
 // exports
 
@@ -50336,6 +50374,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/assets/js/css/major_QAIndex.css":
+/*!***************************************************!*\
+  !*** ./resources/assets/js/css/major_QAIndex.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./major_QAIndex.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/major_QAIndex.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/assets/js/css/mobileMenu.css":
 /*!************************************************!*\
   !*** ./resources/assets/js/css/mobileMenu.css ***!
@@ -50345,6 +50413,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./mobileMenu.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/mobileMenu.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/assets/js/css/post.css":
+/*!******************************************!*\
+  !*** ./resources/assets/js/css/post.css ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./post.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/post.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -50933,8 +51031,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _major_QAIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./major_QAIndex */ "./resources/assets/js/major_QAIndex.js");
 /* harmony import */ var _QA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./QA */ "./resources/assets/js/QA.js");
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./menu */ "./resources/assets/js/menu.js");
-/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/major_QA.css */ "./resources/assets/js/css/major_QA.css");
-/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_css_major_QA_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _mobileFliter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mobileFliter */ "./resources/assets/js/mobileFliter.js");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/major_QA.css */ "./resources/assets/js/css/major_QA.css");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_major_QA_css__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50952,6 +51051,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -51084,21 +51184,17 @@ function (_Component) {
     }
   }, {
     key: "changeFliter",
-    value: function changeFliter(new_fliter, type) {
-      this.setState({
-        fliter: new_fliter
-      });
-      if (new_fliter === "none") this.setState({
-        show: this.state.datas
-      });else {
-        var output = [];
-        this.state.datas.forEach(function (element) {
-          if (element[type] === new_fliter) output.push(element);
-        });
-        this.setState({
-          show: output
-        });
-      }
+    value: function changeFliter(new_fliter, type) {//this.setState({fliter:new_fliter});
+      //if(new_fliter==="none")
+      //this.setState({show:this.state.datas});
+      //else{
+      //var output=[];
+      //this.state.datas.forEach(element => {
+      //if(element[type]===new_fliter)
+      //output.push(element);
+      //});
+      //this.setState({show:output});
+      //}
     }
   }, {
     key: "sponCommentMenu",
@@ -51161,6 +51257,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var fliter_2 = [{
+        id: 0,
+        now: -1,
+        name: "順序",
+        type: "none",
+        option: [["由大而小", -1], ["由小而大", -1]]
+      }];
       var show = this.props.location.pathname === "/QA/~" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_major_QAIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
         is_fetch: this.state.is_fetch,
@@ -51199,7 +51302,23 @@ function (_Component) {
         }
       }, this.countDepartment("不分系"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
-      }, show));
+      }, show), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MobileMenu"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        fliter: this.changeFliter,
+        type: "\u4F9D\u7DE8\u865F",
+        value: fliter_2,
+        style: {
+          position: "absolute",
+          top: "0px",
+          left: "65%",
+          width: '34%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px"
+        }
+      })));
     }
   }]);
 
@@ -51222,8 +51341,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var _css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/commentIndex.css */ "./resources/assets/js/css/commentIndex.css");
-/* harmony import */ var _css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_commentIndex_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/major_QAIndex.css */ "./resources/assets/js/css/major_QAIndex.css");
+/* harmony import */ var _css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./resources/assets/js/icon.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -51261,7 +51380,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(major_QAIndex).call(this, props));
     _this.state = {
       row: 1,
-      cardWidth: "100%",
+      cardWidth: "100vw",
       cardHeight: "auto",
       cardPadding: "0rem",
       btnHeight: "15rem",
@@ -51338,9 +51457,9 @@ function (_Component) {
           output.push(this.sponManyCard(i, datas));
         }
 
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
-            width: '100%',
+            width: '100vw',
             maxWidth: "100%"
           }
         }, output);
@@ -51359,18 +51478,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         style: {
           width: this.state.cardWidth,
-          height: this.state.cardHeight,
+          height: "auto",
           maxWidth: "100%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
         style: {
-          maxHeight: "100%"
+          width: "100vw",
+          height: "auto",
+          maxWidth: "100%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
         style: {
           fontSize: '2.5rem',
-          height: "55px",
-          maxWidth: "90%"
+          height: "auto",
+          maxWidth: "87%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "circle",
@@ -51388,7 +51509,9 @@ function (_Component) {
         style: {
           position: "relative",
           top: "-50px",
-          left: "60px"
+          left: "60px",
+          maxWidth: "95%",
+          textAlign: "justify"
         }
       }, datas[number]["question"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "showBtn",
@@ -51398,7 +51521,7 @@ function (_Component) {
           top: "0",
           left: "0",
           width: "100%",
-          height: "55px",
+          height: "75%",
           backgroundColor: "rgba(0, 0, 0,0)",
           border: "none",
           outline: "none"
@@ -51420,7 +51543,8 @@ function (_Component) {
 
       if (this.state.row > 1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
         style: {
-          paddingBottom: this.state.cardPadding
+          paddingBottom: this.state.cardPadding,
+          maxWidth: "100%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["CardDeck"], {
         style: {
@@ -51428,7 +51552,10 @@ function (_Component) {
         }
       }, output));else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
         style: {
-          paddingBottom: this.state.cardPadding
+          paddingBottom: this.state.cardPadding,
+          maxWidth: "100%",
+          marginLeft: "0",
+          marginRight: "0"
         }
       }, output);
     }
@@ -51910,29 +52037,29 @@ function (_Component) {
           maxWidth: "100%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"], {
-        defaultActiveKey: "#link1",
+        defaultActiveKey: "/#/",
         style: {
           border: "none",
           boxShadow: "none"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
-        href: "#link1",
+        href: "/#/comment",
         className: "list",
         style: ListStyleFirst
       }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
-        href: "#link2",
+        href: "/#/QA/~",
         className: "list",
         style: ListStyle
       }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
-        href: "#link2",
+        href: "/#/post",
         className: "list",
         style: ListStyle
       }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
-        href: "#link2",
+        href: "/#/",
         className: "list",
         style: ListStyleLast
       }, "\u806F\u7D61\u6211\u5011")))));
@@ -51958,8 +52085,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/layout.css */ "./resources/assets/js/css/layout.css");
-/* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_layout_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_post_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/post.css */ "./resources/assets/js/css/post.css");
+/* harmony import */ var _css_post_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_post_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./resources/assets/js/icon.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -51983,6 +52110,17 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var NCKU = {
+  "LIB": ["中文系", "外文系", "台文系"],
+  "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
+  "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
+  "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
+  "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
+  "SOC": ["政治系", "經濟系", "法律系", "心理系"],
+  "EECS": ["電機系", "資訊系"],
+  "CPD": ["建築系", "都計系", "工設系"],
+  "BIO": ["生科系", "生技系"]
+};
 
 var post =
 /*#__PURE__*/
@@ -52078,62 +52216,90 @@ function (_Component) {
       }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/#/comment"
       }, "\u700F\u89BD\u5FC3\u5F97")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Menu"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
-        show: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, null, "\u6587\u5B78\u9662"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        eventKey: "2"
-      }, "Another action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        eventKey: "3"
-      }, "Something else here"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
-        as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"]
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "light",
-        className: "Split_btn",
-        style: {
-          borderRadius: '0rem',
-          width: '85%'
-        }
-      }, "Split Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Toggle, {
-        split: true,
-        variant: "light",
-        id: "dropdown-split-basic"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
-        alignRight: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        hred: "#/action-1"
-      }, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        hred: "#/action-2"
-      }, "Another action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        hred: "#/action-3"
-      }, "Something else"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
-      }, "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form_container",
+        style: {
+          boxShadow: "0 0px 12px rgba(0,0,0,.175)",
+          width: "500px",
+          height: "500px",
+          maxWidth: "90%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "absolute",
+          margin: "3% 10%",
+          color: "rgb(229,68,109)"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        style: {}
+      }, "\u5206\u4EAB\u4F60\u7684\u5FC3\u5F97\u5427!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: {
+          marginLeft: "5%",
+          marginRight: "5%"
+        }
+      }, "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "trans_type",
         name: "trans_type",
-        onChange: this.changeType
+        onChange: this.changeType,
+        style: {
+          color: "black"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "\u8F49\u7CFB"
       }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "\u8F49\u5B78"
-      }, "\u8F49\u5B78")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "\u8F49\u5B78"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: {
+          marginLeft: "5%",
+          marginRight: "5%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "year",
         type: "text",
+        placeholder: "\u7533\u8ACB\u5E74\u5EA6:",
         onChange: this.changeYear
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: {
+          marginLeft: "5%",
+          marginRight: "5%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "out_maj",
+        placeholder: "\u8F49\u51FA\u79D1\u7CFB:",
         type: "text",
         onChange: this.changeOut
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: {
+          marginLeft: "5%",
+          marginRight: "5%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "in_maj",
         type: "text",
+        placeholder: "\u8F49\u5165\u79D1\u7CFB:",
         onChange: this.changeIn
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5FC3\u5F97:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: {
+          marginLeft: "5%",
+          marginRight: "5%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         id: "comment",
+        placeholder: "\u5FC3\u5F97:",
         onChange: this.changeComment
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleClick
-      }, "\u9001\u51FA")));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleClick,
+        style: {
+          marginLeft: "10%",
+          marginRight: "10%",
+          width: "80%",
+          borderRadius: "0",
+          border: "0px solid rgb(229,68,109)",
+          color: "white",
+          backgroundColor: "rgb(229,68,109)"
+        }
+      }, "\u9001\u51FA")))));
     }
   }]);
 

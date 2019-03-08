@@ -1,0 +1,75 @@
+.form_container{
+    margin: 5% 5%;
+}
+
+#comment::-webkit-scrollbar
+{
+  width: 3px;
+  background-color: #F5F5F5;
+  border: none;
+}
+
+#comment::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #555;
+  opacity: 0.5;
+}
+
+#comment::-webkit-scrollbar-track
+{
+background-color: #F5F5F5;
+border: 0px solid;
+}
+
+#comment::-webkit-scrollbar-track-piece  {
+ /* 4 */ 
+ border: none;
+}
+
+#year,#id,#out_maj, #in_maj{
+    /* 4 */ 
+    width:100%;
+    border:0.5px solid grey;
+    color:black;
+}
+
+#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus {
+    /* 4 */ 
+    border: 1px solid  rgb(229,68,109);
+    outline: none;
+}
+
+
+#comment{
+    /* 4 */ 
+    height:80px;
+    width:100%;
+    border:0.5px solid grey;
+    color:black;
+}
+
+#comment:focus  {
+    /* 4 */ 
+    border: 1px solid  rgb(229,68,109);
+    outline: none;
+}
+
+@media (min-width: 596px) { 
+    .form_container{
+        margin: 5% 20%;
+    }
+}
+
+@media (min-width: 768px) { 
+
+ }
+
+@media (min-width: 992px) { 
+
+}
+
+@media (min-width: 1200px) {
+
+
+}

@@ -3,6 +3,7 @@ import {Button,Badge} from 'react-bootstrap';
 import QAIndex from './major_QAIndex';
 import QA from './QA';
 import Menu from './menu';
+import MobileFliter from "./mobileFliter";
 import './css/major_QA.css';
 class maj_QA extends Component {
     constructor(props) {
@@ -106,17 +107,17 @@ class maj_QA extends Component {
   }
 
   changeFliter(new_fliter,type){
-      this.setState({fliter:new_fliter});
-      if(new_fliter==="none")
-        this.setState({show:this.state.datas});
-      else{
-        var output=[];
-        this.state.datas.forEach(element => {
-        if(element[type]===new_fliter)
-          output.push(element);
-        });
-        this.setState({show:output});
-    }
+      //this.setState({fliter:new_fliter});
+      //if(new_fliter==="none")
+        //this.setState({show:this.state.datas});
+      //else{
+        //var output=[];
+        //this.state.datas.forEach(element => {
+        //if(element[type]===new_fliter)
+          //output.push(element);
+        //});
+        //this.setState({show:output});
+    //}
   }
 
   sponCommentMenu(){
@@ -173,6 +174,13 @@ class maj_QA extends Component {
 
 
   render() {
+    const fliter_2= [{
+      id:0,
+      now:-1,
+      name: "順序",
+      type: "none",
+      option:[["由大而小",-1],["由小而大",-1]]
+    }];
     const show=(this.props.location.pathname==="/QA/~")?
     <QAIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenQA} handleRWD={this.handleRWD}/>
     :
@@ -191,6 +199,9 @@ class maj_QA extends Component {
         <div className="index">
             {show}
         </div>
+        <div className="MobileMenu">
+            <MobileFliter fliter={this.changeFliter} type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+          </div>
       </div>
     );
   }
