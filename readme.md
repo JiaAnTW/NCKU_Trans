@@ -6,7 +6,7 @@ However, I'm looking for frontend developers who can help me build this website.
 
 If you are in search of frontend works in this website, please check <code>resources/assets</code>.
 
-## OverView
+## Overview
 ![](https://i.imgur.com/bawM320.png)  
 ![](https://i.imgur.com/soSTRGP.png)![](https://i.imgur.com/lLdEPUM.png)
 ![](https://i.imgur.com/TtGqZaQ.png)
