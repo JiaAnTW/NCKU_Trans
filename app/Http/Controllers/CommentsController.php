@@ -18,15 +18,16 @@ class CommentsController extends Controller
     //新增一筆資料
     public function create(Request $request)
     {
-        $data=$request->only(["trans_type","year","out_maj","in_maj","comment"]);
+        $data=$request->only(["trans_type","year","score","out_maj","in_maj","comment"]);
         $id=1+DB::table('major')->where('id', DB::raw("(select max(`id`) from major)"))->value('id');
         $type=$data["trans_type"];
         $year=(int) $data["year"];
+        $score = $data["score"];
         $out_maj = $data["out_maj"];
         $in_maj = $data["in_maj"];
         $department= $this->defineDepartment($data["in_maj"]);
         $comment = $data["comment"];
-        DB::insert("INSERT INTO major VALUES('$id','$type', '$year', '$out_maj','$in_maj','$department','$comment')") or die('MySQL query error');
+        DB::insert("INSERT INTO major VALUES('$id','$type', '$year','$score', '$out_maj','$in_maj','$department','$comment')") or die('MySQL query error');
         
     }
 
@@ -51,15 +52,16 @@ class CommentsController extends Controller
     //更新一筆資料
     public function update(Request $request, $id)
     {
-        $data=$request->only(["id","trans_type","year","out_maj","in_maj","comment"]);
+        $data=$request->only(["id","trans_type","year","score","out_maj","in_maj","comment"]);
         $new_id=$data["id"];
         $type=$data["trans_type"];
         $year=(int) $data["year"];
+        $score = $data["score"];
         $out_maj = $data["out_maj"];
         $in_maj = $data["in_maj"];
         $department= $this->defineDepartment($data["in_maj"]);
         $comment = $data["comment"];
-        DB::table('major')->where('id',$id)->update(array('id'=>$new_id,'type' => $type,'year'=>$year,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment))or die('MySQL query error');
+        DB::table('major')->where('id',$id)->update(array('id'=>$new_id,'type' => $type,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment))or die('MySQL query error');
     }
 
     //刪除一筆資料

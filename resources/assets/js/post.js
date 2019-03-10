@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
 import './css/post.css';
-import Icon from './icon';
+import Icon from './components/icon';
 
 const NCKU=
 {
@@ -23,6 +23,7 @@ class post extends Component {
     this.state = {
         type: "轉系",
         year: "",
+        score: 0,
         out_maj: "",
         in_maj: "",
         comment: ""
@@ -31,6 +32,7 @@ class post extends Component {
     this.changeType = this.changeType.bind(this)
     this.changeYear = this.changeYear.bind(this)
     this.changeOut = this.changeOut.bind(this)
+    this.changeScore=this.changeScore.bind(this)
     this.changeIn = this.changeIn.bind(this)
     this.changeComment = this.changeComment.bind(this)
   }
@@ -38,6 +40,7 @@ class post extends Component {
     const data={
         'trans_type':this.state.type,
         'year':this.state.year,
+        'score':this.state.score,
         'in_maj':this.state.in_maj,
         'out_maj':this.state.out_maj,
         'comment':this.state.comment,
@@ -62,6 +65,10 @@ class post extends Component {
     changeYear(e){
         this.setState({year: e.target.value});
     }
+
+    changeScore(e){
+      this.setState({score: e.target.value});
+  }
 
     changeOut(e){
         this.setState({out_maj: e.target.value});
@@ -93,6 +100,10 @@ class post extends Component {
             <p style={{marginLeft: "5%",marginRight: "5%"}}>
             <br/>    
             <input id="year" type="text" placeholder="申請年度:" onChange={this.changeYear}/>
+            </p>
+            <p style={{marginLeft: "5%",marginRight: "5%"}}>
+            <br/>    
+            <input id="score" type="text" placeholder="學年分數:" onChange={this.changeScore}/>
             </p>
             <p style={{marginLeft: "5%",marginRight: "5%"}}>
             <br/>    

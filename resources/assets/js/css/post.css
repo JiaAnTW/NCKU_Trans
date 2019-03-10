@@ -27,14 +27,14 @@ border: 0px solid;
  border: none;
 }
 
-#year,#id,#out_maj, #in_maj{
+#year,#id,#out_maj, #in_maj,#score{
     /* 4 */ 
     width:100%;
     border:0.5px solid grey;
     color:black;
 }
 
-#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus {
+#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {
     /* 4 */ 
     border: 1px solid  rgb(229,68,109);
     outline: none;

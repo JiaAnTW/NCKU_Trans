@@ -13,6 +13,7 @@ class home extends Component {
         is_fetch: false,
         type: "轉系",
         year: 106,
+        score: 0,
         out_maj: "",
         in_maj: "",
         comment: ""
@@ -21,6 +22,7 @@ class home extends Component {
     this.getData=this.getData.bind(this)
     this.changeNewId=this.changeNewId.bind(this)
     this.changeType = this.changeType.bind(this)
+    this.changeScore=this.changeScore.bind(this)
     this.changeId=this.changeId.bind(this)
     this.deleteComment=this.deleteComment.bind(this)
   }
@@ -51,6 +53,7 @@ class home extends Component {
         'id': (this.state.new_id!="不變")?this.state.new_id:this.state.id,
         'trans_type':this.state.type,
         'year':this.state.year,
+        'score': this.state.score,
         'in_maj':this.state.in_maj,
         'out_maj':this.state.out_maj,
         'comment':this.state.comment,
@@ -94,6 +97,9 @@ class home extends Component {
         this.setState({type: e.target.value});
     }
 
+    changeScore(e){
+      this.setState({score: e.target.value});
+  }
 
     changeComment(e){
         this.setState({comment: e.target.value});
@@ -113,6 +119,7 @@ class home extends Component {
           new_id: "不變",
           type:this.state.datas[real_i]["type"],
           year:this.state.datas[real_i]["year"],
+          score: this.state.datas[real_i]["score"],
           in_maj:this.state.datas[real_i]["in_maj"],
           out_maj:this.state.datas[real_i]["out_maj"],
           comment:this.state.datas[real_i]["comment"]
@@ -147,6 +154,11 @@ class home extends Component {
             申請年度:   
             <input id="year" type="text" value={this.state.year} onChange={(e) => this.setState({ year: e.target.value })}/>
             <br/>
+            <p style={{marginLeft: "5%",marginRight: "5%"}}>
+            學年分數:
+            <br/>    
+            <input id="score" type="text" value={this.state.score} onChange={(e) => this.setState({ score: e.target.value })}/>
+            </p>
             轉出科系:   
             <input id="out_maj"  type="text" value={this.state.out_maj}  onChange={(e) => this.setState({ out_maj: e.target.value })}/>
             <br/>

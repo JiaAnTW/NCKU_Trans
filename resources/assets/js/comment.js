@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import {Button,Badge} from 'react-bootstrap';
-import CommentIndex from './commentIndex';
-import Content from './content';
-import Menu from './menu';
-import MobileFliter from "./mobileFliter";
+import {Button,Badge,Dropdown,ButtonToolbar} from 'react-bootstrap';
+import CommentIndex from './components/commentIndex';
+import Content from './components/content';
+import Menu from './components/menu';
+import MobileFliter from "./components/mobileFliter";
+import Progress from "./components/Progress";
+
 import './css/comment.css';
 var NCKU=
 {
@@ -50,21 +52,11 @@ class comment extends Component {
         show:[],
         is_fetch:false,
         datas: [],
-        NCKU: {
-          "LIB":[["中文系",0],["外文系",0],["台文系",0]],
-          "SCE":[["數學系",0],["物理系",0],["化學系",0],["地科系",0],["光電系",0]],
-          "ENG":[["機械系",0],["化工系",0],["材料系",0],["資源系",0],["土木系",0],["水利系",0],["工科系",0],["系統系",0],["航太系",0],["環工系",0],["測量系",0],["醫工系",0],["能源學程"]],
-          "MAN":[["工資系",0],["交管系",0],["企管系",0],["統計系",0],["會計系",0]],
-          "MC":[["醫學系",0],["醫技系",0],["護理系",0],["職治系",0],["物治系",0],["藥學系",0]],
-          "SOC":[["政治系",0],["經濟系",0],["法律系",0],["心理系",0]],
-          "EECS":[["電機系",0],["資訊系",0]],
-          "CPD":[["建築系",0],["都計系",0],["工設系",0]],
-          "BIO":[["生科系",0],["生技系",0]]
-        },
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleShowContent=this.handleShowContent.bind(this);
+    this.spawnStatistic-this.spawnStatistic.bind.bind(this)
     this.handleClick = this.handleClick.bind(this);
     this.handleRWD =this.handleRWD.bind(this);
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
@@ -209,6 +201,66 @@ class comment extends Component {
     return object;
   }
 
+  spawnStatistic(){
+    if(this.state.is_fetch==true){
+      let count=0;
+      let min=100;
+      var array=[];
+      for(let i=0;i<this.state.show.length;++i){
+        count=count+this.state.show[i]["score"];
+        array.push(this.state.show[i]["score"]);
+        if(this.state.show[i]["score"]<min)
+          min=this.state.show[i]["score"];
+      }
+      array.sort(function(a, b) {
+        return a-b;
+      });
+      console.log(array);
+      return(
+        <div className="statistic">
+          <ul>
+            <li>
+              <div style={{width: "190px",height:"auto"}}>
+              <h2 style={{color:"rgb(229,68,109)"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
+              <ButtonToolbar style={{backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
+              {" 包含"}<Dropdown style={{width:"30%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
+                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",margin:"2px 0px",height:"22px",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
+                  107
+                </Dropdown.Toggle>
+                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
+                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >107</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              到
+              <Dropdown style={{width:"30%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
+                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",margin:"2px 0px",height:"22px",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
+                  107
+                </Dropdown.Toggle>
+                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
+                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >107</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              年
+              </ButtonToolbar>
+              </div>
+            </li>
+            <li>
+              <Progress title="平均錄取分數" value={(this.state.show.length==0)?"null":count/this.state.show.length}/>
+            </li>
+            <li>
+              <Progress title="最低錄取分數" value={(this.state.show.length==0)?"null":min}/>
+            </li>
+            <li>
+              <Progress title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
+            </li>
+
+          </ul>
+        </div>
+      );
+    }
+
+  }
+
   componentDidMount(){
     this.handleClick();
   }
@@ -224,11 +276,22 @@ class comment extends Component {
     }];
 
 
-
     return (
       <div className="comment">
           <div className="Menu" style={{display: this.state.mobile_display}}>
               <div style={{position:"relative", top:"0%", width: '100%'}}>
+              <ButtonToolbar style={{lineHeight:"29px",fontSize:"14px",height:"30px"}}>
+              文章排序
+              <Dropdown style={{width:"55%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
+                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",height:"22px",margin:"2px 0px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
+                由大到小
+                </Dropdown.Toggle>
+                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
+                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >由大到小</Dropdown.Item>
+                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >由小到大</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              </ButtonToolbar>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
                 </Button>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
@@ -243,6 +306,7 @@ class comment extends Component {
         <div className="index">
             <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
         </div>
+        {this.spawnStatistic()}
         <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
             <MobileFliter fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
             <MobileFliter fliter={this.changeFliter} type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>

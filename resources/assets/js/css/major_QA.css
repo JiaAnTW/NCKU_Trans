@@ -1,5 +1,5 @@
 
-.Menu{
+.major_QA .Menu{
     position: absolute;
     top:60px;
     left:5px;
@@ -10,7 +10,7 @@
 }
 
 
-.index{
+.major_QA .index{
     position:absolute;
     width: 100vw;
     max-width:100%;
@@ -19,7 +19,7 @@
     height: auto;
 }
 
-.MobileMenu{
+.major_QA .MobileMenu{
     position:fixed;
     top:55px;
     left:0px;
@@ -32,7 +32,7 @@
 
 @media (min-width: 596px) { 
 
-    .Menu{
+    .major_QA .Menu{
         position: absolute;
         top:60px;
         left:5px;
@@ -40,7 +40,7 @@
     }
 
 
-    .index{
+    .major_QA .index{
         position:absolute;
         width: 70%;
         left: 15%;
@@ -48,7 +48,7 @@
         max-width:100%;
     }
 
-    .MobileMenu{
+    .major_QA .MobileMenu{
         position:fixed;
         top:55px;
         left:0px;
@@ -62,7 +62,7 @@
 
 @media (min-width: 859px) { 
 
-    .Menu{
+    .major_QA .Menu{
         position: absolute;
         top:60px;
         left:5px;
@@ -71,7 +71,7 @@
     }
 
 
-    .index{
+    .major_QA .index{
         position:absolute;
         width: 70%;
         left: 24%;
@@ -79,7 +79,7 @@
         height: auto;
     }
 
-    .MobileMenu{
+    .major_QA .MobileMenu{
         position:fixed;
         top:55px;
         left:0px;
@@ -93,7 +93,7 @@
 
 @media (min-width: 992px) { 
 
-    .Menu{
+    .major_QA .Menu{
         position: absolute;
         top:60px;
         left:5px;
@@ -101,7 +101,7 @@
     }
 
 
-    .index{
+    .major_QA .index{
         position:absolute;
         width: 75%;
         left: 22%;
@@ -109,14 +109,14 @@
         height: auto;
     }
 
-    .MobileMenu{
+    .major_QA .MobileMenu{
         display: none;
     }
 }
 
 @media (min-width: 1200px) {
 
-    .Menu{
+    .major_QA .Menu{
         position: absolute;
         top:60px;
         left:5px;
@@ -126,7 +126,7 @@
     }
 
 
-    .index{
+    .major_QA .index{
         position:absolute;
         width: 1024px;
         height: auto;

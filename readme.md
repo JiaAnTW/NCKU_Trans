@@ -8,7 +8,7 @@ If you are in search of frontend works in this website, please check <code>resou
 
 ## OverView
 ![](https://i.imgur.com/bawM320.png)  
-![](https://i.imgur.com/soSTRGP.png =300x493)![](https://i.imgur.com/lLdEPUM.png =300x493)
+![](https://i.imgur.com/soSTRGP.png)![](https://i.imgur.com/lLdEPUM.png)
 ![](https://i.imgur.com/TtGqZaQ.png)
 
 

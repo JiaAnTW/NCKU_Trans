@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Card,CardDeck,Container,Row,Col} from 'react-bootstrap';
 import './css/comment.css';
-import Icon from './icon';
+import Icon from './components/icon';
 class index extends Component {
     constructor(props) {
     super(props);

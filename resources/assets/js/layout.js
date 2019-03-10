@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './css/layout.css';
-import MobileMenu from './mobileMenu.js' 
+import MobileMenu from './components/mobileMenu.js' 
 class layout extends Component {
     constructor(props) {
     super(props);

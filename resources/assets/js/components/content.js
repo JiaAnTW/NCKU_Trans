@@ -46,7 +46,7 @@ class content extends React.Component {
       <thead>
       <tr><th>{"申請年度: "+this.props.data["year"]}</th></tr>
       <tr><th>{"申請類別: 平轉"}</th></tr>
-      <tr><th>{"學年分數: 87.9"}</th></tr>
+      <tr><th>{"學年分數: "+this.props.data["score"]}</th></tr>
       <tr><th>{"轉出科系: "+this.props.data["out_maj"]}</th></tr>
     </thead>
       //PC
@@ -54,7 +54,7 @@ class content extends React.Component {
       <tr>
         <th>{"申請年度: "+this.props.data["year"]}</th>
         <th>{"申請類別: 平轉"}</th>
-        <th>{"學年分數: 87.9"}</th>
+        <th>{"學年分數: "+this.props.data["score"]}</th>
         <th>{"轉出科系: "+this.props.data["out_maj"]}</th>
       </tr>
     </thead>;

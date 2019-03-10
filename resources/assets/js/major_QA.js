@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Button,Badge} from 'react-bootstrap';
-import QAIndex from './major_QAIndex';
-import QA from './QA';
-import Menu from './menu';
-import MobileFliter from "./mobileFliter";
+import QAIndex from './components/major_QAIndex';
+import QA from './components/QA';
+import Menu from './components/menu';
+import MobileFliter from "./components/mobileFliter";
 import './css/major_QA.css';
 class maj_QA extends Component {
     constructor(props) {

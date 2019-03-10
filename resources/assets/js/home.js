@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import MobileFliter from './mobileFliter'
+import MobileFliter from './components/mobileFliter'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
-import mobileFliter from './mobileFliter';
+import mobileFliter from './components/mobileFliter';
 
 
 
