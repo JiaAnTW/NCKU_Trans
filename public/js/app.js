@@ -3073,6 +3073,25 @@ exports.push([module.i, "/*!\n * Bootstrap v3.4.1 (https://getbootstrap.com/)\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-tagsinput/react-tagsinput.css":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-tagsinput/react-tagsinput.css ***!
+  \******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".react-tagsinput {\n  background-color: #fff;\n  border: 1px solid #ccc;\n  overflow: hidden;\n  padding-left: 5px;\n  padding-top: 5px;\n}\n\n.react-tagsinput--focused {\n  border-color: #a5d24a;\n}\n\n.react-tagsinput-tag {\n  background-color: #cde69c;\n  border-radius: 2px;\n  border: 1px solid #a5d24a;\n  color: #638421;\n  display: inline-block;\n  font-family: sans-serif;\n  font-size: 13px;\n  font-weight: 400;\n  margin-bottom: 5px;\n  margin-right: 5px;\n  padding: 5px;\n}\n\n.react-tagsinput-remove {\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.react-tagsinput-tag a::before {\n  content: \" \\D7\";\n}\n\n.react-tagsinput-input {\n  background: transparent;\n  border: 0;\n  color: #777;\n  font-family: sans-serif;\n  font-size: 13px;\n  font-weight: 400;\n  margin-bottom: 6px;\n  margin-top: 1px;\n  outline: none;\n  padding: 5px;\n  width: 80px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/components/css/QA.css":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/components/css/QA.css ***!
@@ -46075,6 +46094,691 @@ function pathToRegexp (path, keys, options) {
 
 /***/ }),
 
+/***/ "./node_modules/react-tagsinput/react-tagsinput.css":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-tagsinput/react-tagsinput.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../css-loader??ref--6-1!../postcss-loader/src??ref--6-2!./react-tagsinput.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-tagsinput/react-tagsinput.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/react-tagsinput/react-tagsinput.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-tagsinput/react-tagsinput.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, exports, __webpack_require__(/*! react */ "./node_modules/react/index.js"), __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function (module, exports, _react, _propTypes) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  function _objectWithoutProperties(obj, keys) {
+    var target = {};
+
+    for (var i in obj) {
+      if (keys.indexOf(i) >= 0) continue;
+      if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+      target[i] = obj[i];
+    }
+
+    return target;
+  }
+
+  function uniq(arr) {
+    var out = [];
+
+    for (var i = 0; i < arr.length; i++) {
+      if (out.indexOf(arr[i]) === -1) {
+        out.push(arr[i]);
+      }
+    }
+
+    return out;
+  }
+
+  /* istanbul ignore next */
+  function getClipboardData(e) {
+    if (window.clipboardData) {
+      return window.clipboardData.getData('Text');
+    }
+
+    if (e.clipboardData) {
+      return e.clipboardData.getData('text/plain');
+    }
+
+    return '';
+  }
+
+  function defaultRenderTag(props) {
+    var tag = props.tag,
+        key = props.key,
+        disabled = props.disabled,
+        onRemove = props.onRemove,
+        classNameRemove = props.classNameRemove,
+        getTagDisplayValue = props.getTagDisplayValue,
+        other = _objectWithoutProperties(props, ['tag', 'key', 'disabled', 'onRemove', 'classNameRemove', 'getTagDisplayValue']);
+
+    return _react2.default.createElement(
+      'span',
+      _extends({ key: key }, other),
+      getTagDisplayValue(tag),
+      !disabled && _react2.default.createElement('a', { className: classNameRemove, onClick: function onClick(e) {
+          return onRemove(key);
+        } })
+    );
+  }
+
+  function defaultRenderInput(_ref) {
+    var addTag = _ref.addTag,
+        props = _objectWithoutProperties(_ref, ['addTag']);
+
+    var onChange = props.onChange,
+        value = props.value,
+        other = _objectWithoutProperties(props, ['onChange', 'value']);
+
+    return _react2.default.createElement('input', _extends({ type: 'text', onChange: onChange, value: value }, other));
+  }
+
+  function defaultRenderLayout(tagComponents, inputComponent) {
+    return _react2.default.createElement(
+      'span',
+      null,
+      tagComponents,
+      inputComponent
+    );
+  }
+
+  function defaultPasteSplit(data) {
+    return data.split(' ').map(function (d) {
+      return d.trim();
+    });
+  }
+
+  var defaultInputProps = {
+    className: 'react-tagsinput-input',
+    placeholder: 'Add a tag'
+  };
+
+  var TagsInput = function (_React$Component) {
+    _inherits(TagsInput, _React$Component);
+
+    /* istanbul ignore next */
+    function TagsInput() {
+      _classCallCheck(this, TagsInput);
+
+      var _this = _possibleConstructorReturn(this, (TagsInput.__proto__ || Object.getPrototypeOf(TagsInput)).call(this));
+
+      _this.state = { tag: '', isFocused: false };
+      _this.focus = _this.focus.bind(_this);
+      _this.blur = _this.blur.bind(_this);
+      return _this;
+    }
+
+    _createClass(TagsInput, [{
+      key: '_getTagDisplayValue',
+      value: function _getTagDisplayValue(tag) {
+        var tagDisplayProp = this.props.tagDisplayProp;
+
+
+        if (tagDisplayProp) {
+          return tag[tagDisplayProp];
+        }
+
+        return tag;
+      }
+    }, {
+      key: '_makeTag',
+      value: function _makeTag(tag) {
+        var tagDisplayProp = this.props.tagDisplayProp;
+
+
+        if (tagDisplayProp) {
+          return _defineProperty({}, tagDisplayProp, tag);
+        }
+
+        return tag;
+      }
+    }, {
+      key: '_removeTag',
+      value: function _removeTag(index) {
+        var value = this.props.value.concat([]);
+        if (index > -1 && index < value.length) {
+          var changed = value.splice(index, 1);
+          this.props.onChange(value, changed, [index]);
+        }
+      }
+    }, {
+      key: '_clearInput',
+      value: function _clearInput() {
+        if (this.hasControlledInput()) {
+          this.props.onChangeInput('');
+        } else {
+          this.setState({ tag: '' });
+        }
+      }
+    }, {
+      key: '_tag',
+      value: function _tag() {
+        if (this.hasControlledInput()) {
+          return this.props.inputValue;
+        }
+
+        return this.state.tag;
+      }
+    }, {
+      key: '_addTags',
+      value: function _addTags(tags) {
+        var _this2 = this;
+
+        var _props = this.props,
+            validationRegex = _props.validationRegex,
+            onChange = _props.onChange,
+            onValidationReject = _props.onValidationReject,
+            onlyUnique = _props.onlyUnique,
+            maxTags = _props.maxTags,
+            value = _props.value;
+
+
+        if (onlyUnique) {
+          tags = uniq(tags);
+          tags = tags.filter(function (tag) {
+            return value.every(function (currentTag) {
+              return _this2._getTagDisplayValue(currentTag) !== _this2._getTagDisplayValue(tag);
+            });
+          });
+        }
+
+        var rejectedTags = tags.filter(function (tag) {
+          return !validationRegex.test(_this2._getTagDisplayValue(tag));
+        });
+        tags = tags.filter(function (tag) {
+          return validationRegex.test(_this2._getTagDisplayValue(tag));
+        });
+        tags = tags.filter(function (tag) {
+          var tagDisplayValue = _this2._getTagDisplayValue(tag);
+          if (typeof tagDisplayValue.trim === 'function') {
+            return tagDisplayValue.trim().length > 0;
+          } else {
+            return tagDisplayValue;
+          }
+        });
+
+        if (maxTags >= 0) {
+          var remainingLimit = Math.max(maxTags - value.length, 0);
+          tags = tags.slice(0, remainingLimit);
+        }
+
+        if (onValidationReject && rejectedTags.length > 0) {
+          onValidationReject(rejectedTags);
+        }
+
+        if (tags.length > 0) {
+          var newValue = value.concat(tags);
+          var indexes = [];
+          for (var i = 0; i < tags.length; i++) {
+            indexes.push(value.length + i);
+          }
+          onChange(newValue, tags, indexes);
+          this._clearInput();
+          return true;
+        }
+
+        if (rejectedTags.length > 0) {
+          return false;
+        }
+
+        this._clearInput();
+        return false;
+      }
+    }, {
+      key: '_shouldPreventDefaultEventOnAdd',
+      value: function _shouldPreventDefaultEventOnAdd(added, empty, keyCode) {
+        if (added) {
+          return true;
+        }
+
+        if (keyCode === 13) {
+          return this.props.preventSubmit || !this.props.preventSubmit && !empty;
+        }
+
+        return false;
+      }
+    }, {
+      key: 'focus',
+      value: function focus() {
+        if (this.input && typeof this.input.focus === 'function') {
+          this.input.focus();
+        }
+
+        this.handleOnFocus();
+      }
+    }, {
+      key: 'blur',
+      value: function blur() {
+        if (this.input && typeof this.input.blur === 'function') {
+          this.input.blur();
+        }
+
+        this.handleOnBlur();
+      }
+    }, {
+      key: 'accept',
+      value: function accept() {
+        var tag = this._tag();
+
+        if (tag !== '') {
+          tag = this._makeTag(tag);
+          return this._addTags([tag]);
+        }
+
+        return false;
+      }
+    }, {
+      key: 'addTag',
+      value: function addTag(tag) {
+        return this._addTags([tag]);
+      }
+    }, {
+      key: 'clearInput',
+      value: function clearInput() {
+        this._clearInput();
+      }
+    }, {
+      key: 'handlePaste',
+      value: function handlePaste(e) {
+        var _this3 = this;
+
+        var _props2 = this.props,
+            addOnPaste = _props2.addOnPaste,
+            pasteSplit = _props2.pasteSplit;
+
+
+        if (!addOnPaste) {
+          return;
+        }
+
+        e.preventDefault();
+
+        var data = getClipboardData(e);
+        var tags = pasteSplit(data).map(function (tag) {
+          return _this3._makeTag(tag);
+        });
+
+        this._addTags(tags);
+      }
+    }, {
+      key: 'handleKeyDown',
+      value: function handleKeyDown(e) {
+        if (e.defaultPrevented) {
+          return;
+        }
+
+        var _props3 = this.props,
+            value = _props3.value,
+            removeKeys = _props3.removeKeys,
+            addKeys = _props3.addKeys;
+
+        var tag = this._tag();
+        var empty = tag === '';
+        var keyCode = e.keyCode;
+        var key = e.key;
+        var add = addKeys.indexOf(keyCode) !== -1 || addKeys.indexOf(key) !== -1;
+        var remove = removeKeys.indexOf(keyCode) !== -1 || removeKeys.indexOf(key) !== -1;
+
+        if (add) {
+          var added = this.accept();
+          if (this._shouldPreventDefaultEventOnAdd(added, empty, keyCode)) {
+            e.preventDefault();
+          }
+        }
+
+        if (remove && value.length > 0 && empty) {
+          e.preventDefault();
+          this._removeTag(value.length - 1);
+        }
+      }
+    }, {
+      key: 'handleClick',
+      value: function handleClick(e) {
+        if (e.target === this.div) {
+          this.focus();
+        }
+      }
+    }, {
+      key: 'handleChange',
+      value: function handleChange(e) {
+        var onChangeInput = this.props.onChangeInput;
+        var onChange = this.props.inputProps.onChange;
+
+        var tag = e.target.value;
+
+        if (onChange) {
+          onChange(e);
+        }
+
+        if (this.hasControlledInput()) {
+          onChangeInput(tag);
+        } else {
+          this.setState({ tag: tag });
+        }
+      }
+    }, {
+      key: 'handleOnFocus',
+      value: function handleOnFocus(e) {
+        var onFocus = this.props.inputProps.onFocus;
+
+
+        if (onFocus) {
+          onFocus(e);
+        }
+
+        this.setState({ isFocused: true });
+      }
+    }, {
+      key: 'handleOnBlur',
+      value: function handleOnBlur(e) {
+        var onBlur = this.props.inputProps.onBlur;
+
+
+        this.setState({ isFocused: false });
+
+        if (e == null) {
+          return;
+        }
+
+        if (onBlur) {
+          onBlur(e);
+        }
+
+        if (this.props.addOnBlur) {
+          var tag = this._makeTag(e.target.value);
+          this._addTags([tag]);
+        }
+      }
+    }, {
+      key: 'handleRemove',
+      value: function handleRemove(tag) {
+        this._removeTag(tag);
+      }
+    }, {
+      key: 'inputProps',
+      value: function inputProps() {
+        var _props$inputProps = this.props.inputProps,
+            onChange = _props$inputProps.onChange,
+            onFocus = _props$inputProps.onFocus,
+            onBlur = _props$inputProps.onBlur,
+            otherInputProps = _objectWithoutProperties(_props$inputProps, ['onChange', 'onFocus', 'onBlur']);
+
+        var props = _extends({}, defaultInputProps, otherInputProps);
+
+        if (this.props.disabled) {
+          props.disabled = true;
+        }
+
+        return props;
+      }
+    }, {
+      key: 'inputValue',
+      value: function inputValue(props) {
+        return props.currentValue || props.inputValue || '';
+      }
+    }, {
+      key: 'hasControlledInput',
+      value: function hasControlledInput() {
+        var _props4 = this.props,
+            inputValue = _props4.inputValue,
+            onChangeInput = _props4.onChangeInput;
+
+
+        return typeof onChangeInput === 'function' && typeof inputValue === 'string';
+      }
+    }, {
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        if (this.hasControlledInput()) {
+          return;
+        }
+
+        this.setState({
+          tag: this.inputValue(this.props)
+        });
+      }
+    }, {
+      key: 'componentWillReceiveProps',
+      value: function componentWillReceiveProps(nextProps) {
+        /* istanbul ignore next */
+        if (this.hasControlledInput()) {
+          return;
+        }
+
+        if (!this.inputValue(nextProps)) {
+          return;
+        }
+
+        this.setState({
+          tag: this.inputValue(nextProps)
+        });
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _this4 = this;
+
+        var _props5 = this.props,
+            value = _props5.value,
+            onChange = _props5.onChange,
+            tagProps = _props5.tagProps,
+            renderLayout = _props5.renderLayout,
+            renderTag = _props5.renderTag,
+            renderInput = _props5.renderInput,
+            addKeys = _props5.addKeys,
+            removeKeys = _props5.removeKeys,
+            className = _props5.className,
+            focusedClassName = _props5.focusedClassName,
+            addOnBlur = _props5.addOnBlur,
+            addOnPaste = _props5.addOnPaste,
+            inputProps = _props5.inputProps,
+            pasteSplit = _props5.pasteSplit,
+            onlyUnique = _props5.onlyUnique,
+            maxTags = _props5.maxTags,
+            validationRegex = _props5.validationRegex,
+            disabled = _props5.disabled,
+            tagDisplayProp = _props5.tagDisplayProp,
+            inputValue = _props5.inputValue,
+            onChangeInput = _props5.onChangeInput,
+            other = _objectWithoutProperties(_props5, ['value', 'onChange', 'tagProps', 'renderLayout', 'renderTag', 'renderInput', 'addKeys', 'removeKeys', 'className', 'focusedClassName', 'addOnBlur', 'addOnPaste', 'inputProps', 'pasteSplit', 'onlyUnique', 'maxTags', 'validationRegex', 'disabled', 'tagDisplayProp', 'inputValue', 'onChangeInput']);
+
+        var isFocused = this.state.isFocused;
+
+
+        if (isFocused) {
+          className += ' ' + focusedClassName;
+        }
+
+        var tagComponents = value.map(function (tag, index) {
+          return renderTag(_extends({
+            key: index,
+            tag: tag,
+            onRemove: _this4.handleRemove.bind(_this4),
+            disabled: disabled,
+            getTagDisplayValue: _this4._getTagDisplayValue.bind(_this4)
+          }, tagProps));
+        });
+
+        var inputComponent = renderInput(_extends({
+          ref: function ref(r) {
+            _this4.input = r;
+          },
+          value: this._tag(),
+          onPaste: this.handlePaste.bind(this),
+          onKeyDown: this.handleKeyDown.bind(this),
+          onChange: this.handleChange.bind(this),
+          onFocus: this.handleOnFocus.bind(this),
+          onBlur: this.handleOnBlur.bind(this),
+          addTag: this.addTag.bind(this)
+        }, this.inputProps()));
+
+        return _react2.default.createElement(
+          'div',
+          { ref: function ref(r) {
+              _this4.div = r;
+            }, onClick: this.handleClick.bind(this), className: className },
+          renderLayout(tagComponents, inputComponent)
+        );
+      }
+    }]);
+
+    return TagsInput;
+  }(_react2.default.Component);
+
+  TagsInput.defaultProps = {
+    className: 'react-tagsinput',
+    focusedClassName: 'react-tagsinput--focused',
+    addKeys: [9, 13],
+    addOnBlur: false,
+    addOnPaste: false,
+    inputProps: {},
+    removeKeys: [8],
+    renderInput: defaultRenderInput,
+    renderTag: defaultRenderTag,
+    renderLayout: defaultRenderLayout,
+    pasteSplit: defaultPasteSplit,
+    tagProps: { className: 'react-tagsinput-tag', classNameRemove: 'react-tagsinput-remove' },
+    onlyUnique: false,
+    maxTags: -1,
+    validationRegex: /.*/,
+    disabled: false,
+    tagDisplayProp: null,
+    preventSubmit: true
+  };
+  exports.default = TagsInput;
+  module.exports = exports['default'];
+});
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/Transition.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-transition-group/Transition.js ***!
@@ -51958,14 +52662,19 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
             width: "190px",
-            height: "auto"
+            height: "auto",
+            border: "1px solid rgb(229,68,109)"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           style: {
-            color: "rgb(229,68,109)"
+            color: "rgb(229,68,109)",
+            width: "100%",
+            textAlign: "center"
           }
         }, this.state.fliter === "none" ? "全部心得" : this.state.fliter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
           style: {
+            marginBottom: "0",
+            marginLeft: "0",
             backgroundColor: "rgb(229,68,109)",
             lineHeight: "29px",
             fontSize: "14px",
@@ -52082,58 +52791,7 @@ function (_Component) {
           top: "0%",
           width: '100%'
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
-        style: {
-          lineHeight: "29px",
-          fontSize: "14px",
-          height: "30px"
-        }
-      }, "\u6587\u7AE0\u6392\u5E8F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
-        style: {
-          width: "55%",
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          height: "24px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Toggle, {
-        variant: "Info",
-        id: "dropdown-basic",
-        style: {
-          lineHeight: "0.43px",
-          height: "22px",
-          margin: "2px 0px",
-          width: "100%",
-          outline: "none",
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          fontSize: "12px"
-        }
-      }, "\u7531\u5927\u5230\u5C0F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
-        style: {
-          width: "100%",
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          minWidth: "100%"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        style: {
-          height: "22px",
-          width: "100%",
-          outline: "none",
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          fontSize: "12px"
-        }
-      }, "\u7531\u5927\u5230\u5C0F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-        style: {
-          height: "22px",
-          width: "100%",
-          outline: "none",
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          fontSize: "12px"
-        }
-      }, "\u7531\u5C0F\u5230\u5927")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "light",
         style: {
           borderRadius: "0px",
@@ -54103,9 +54761,11 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/layout.css */ "./resources/assets/js/css/layout.css");
-/* harmony import */ var _css_layout_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_layout_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput */ "./node_modules/react-tagsinput/react-tagsinput.js");
+/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54128,18 +54788,20 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var home =
+
+var edit =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(home, _Component);
+  _inherits(edit, _Component);
 
-  function home(props) {
+  function edit(props) {
     var _this;
 
-    _classCallCheck(this, home);
+    _classCallCheck(this, edit);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(home).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(edit).call(this, props));
     _this.state = {
+      now_handle: "心得",
       id: 0,
       new_id: "不變",
       id_array: [],
@@ -54150,19 +54812,26 @@ function (_Component) {
       score: 0,
       out_maj: "",
       in_maj: "",
-      comment: ""
+      comment: "",
+      qa_datas: [],
+      qa_new_id: "不變",
+      qa_id_array: [],
+      qa_id: 0,
+      qa_q: "",
+      qa_a: "",
+      tags: []
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.getData = _this.getData.bind(_assertThisInitialized(_this));
     _this.changeNewId = _this.changeNewId.bind(_assertThisInitialized(_this));
     _this.changeType = _this.changeType.bind(_assertThisInitialized(_this));
-    _this.changeScore = _this.changeScore.bind(_assertThisInitialized(_this));
     _this.changeId = _this.changeId.bind(_assertThisInitialized(_this));
     _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(home, [{
+  _createClass(edit, [{
     key: "getData",
     value: function getData() {
       var _this2 = this;
@@ -54178,51 +54847,110 @@ function (_Component) {
 
         _this2.setState({
           datas: data,
-          is_fetch: true,
           id_array: input
+        });
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      });
+      fetch('/api/get/major_QA').then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        var input = [];
+
+        for (var i = 0; i < data.length; ++i) {
+          input.push(data[i]["id"]);
+        }
+
+        _this2.setState({
+          qa_datas: data,
+          is_fetch: true,
+          qa_id_array: input
         });
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
     }
   }, {
+    key: "handleChange",
+    value: function handleChange(tags) {
+      this.setState({
+        tags: tags
+      });
+    }
+  }, {
     key: "handleClick",
     value: function handleClick() {
-      var url = '/api/post/' + this.state.id.toString();
-      var data = {
-        'id': this.state.new_id != "不變" ? this.state.new_id : this.state.id,
-        'trans_type': this.state.type,
-        'year': this.state.year,
-        'score': this.state.score,
-        'in_maj': this.state.in_maj,
-        'out_maj': this.state.out_maj,
-        'comment': this.state.comment
-      };
-      fetch(url, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-        headers: new Headers({
-          'Content-Type': 'application/json'
-        })
-      }).then(function (res) {
-        return res.json();
-      }).then(function (data) {
-        console.log(data);
-      }).catch(function (e) {
-        return console.log('錯誤:', e);
-      });
+      if (this.state.now_handle === "心得") {
+        var url = '/api/post/major/' + this.state.id.toString();
+        var data = {
+          'id': this.state.new_id != "不變" ? this.state.new_id : this.state.id,
+          'trans_type': this.state.type,
+          'year': this.state.year,
+          'score': this.state.score,
+          'in_maj': this.state.in_maj,
+          'out_maj': this.state.out_maj,
+          'comment': this.state.comment
+        };
+        fetch(url, {
+          method: 'PUT',
+          body: JSON.stringify(data),
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          console.log(data);
+        }).catch(function (e) {
+          return console.log('錯誤:', e);
+        });
+      } else {
+        var _url = '/api/post/major_QA/' + this.state.qa_id.toString();
+
+        var _data = {
+          'id': this.state.qa_new_id != "不變" ? this.state.qa_new_id : this.state.qa_id,
+          'question': this.state.qa_q,
+          'answer': this.state.qa_a,
+          'tags': this.state.tags
+        };
+        fetch(_url, {
+          method: 'PUT',
+          body: JSON.stringify(_data),
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          console.log(data);
+        }).catch(function (e) {
+          return console.log('錯誤:', e);
+        });
+      }
     }
   }, {
     key: "deleteComment",
     value: function deleteComment() {
-      var url = '/api/post/' + this.state.id.toString();
-      fetch(url, {
-        method: 'DELETE'
-      }).then(function (res) {
-        return res.json();
-      }).catch(function (e) {
-        return console.log('錯誤:', e);
-      });
+      if (this.state.now_handle === "心得") {
+        var url = '/api/post/major/' + this.state.id.toString();
+        fetch(url, {
+          method: 'DELETE'
+        }).then(function (res) {
+          return res.json();
+        }).catch(function (e) {
+          return console.log('錯誤:', e);
+        });
+      } else {
+        var _url2 = '/api/post/major_QA/' + this.state.qa_id.toString();
+
+        fetch(_url2, {
+          method: 'DELETE'
+        }).then(function (res) {
+          return res.json();
+        }).catch(function (e) {
+          return console.log('錯誤:', e);
+        });
+      }
     }
   }, {
     key: "componentDidMount",
@@ -54244,130 +54972,166 @@ function (_Component) {
       });
     }
   }, {
-    key: "changeScore",
-    value: function changeScore(e) {
-      this.setState({
-        score: e.target.value
-      });
-    }
-  }, {
-    key: "changeComment",
-    value: function changeComment(e) {
-      this.setState({
-        comment: e.target.value
-      });
-      e.preventDefault();
-    }
-  }, {
-    key: "checkSameId",
-    value: function checkSameId(n) {
-      return;
-    }
-  }, {
     key: "changeId",
     value: function changeId(e) {
       var i = e.target.value;
-      var real_i = this.state.id_array.findIndex(function (value, index, arr) {
-        return value.toString() === i;
-      });
-      this.setState({
-        id: i,
-        new_id: "不變",
-        type: this.state.datas[real_i]["type"],
-        year: this.state.datas[real_i]["year"],
-        score: this.state.datas[real_i]["score"],
-        in_maj: this.state.datas[real_i]["in_maj"],
-        out_maj: this.state.datas[real_i]["out_maj"],
-        comment: this.state.datas[real_i]["comment"]
-      });
+
+      if (this.state.now_handle === "心得") {
+        var real_i = this.state.id_array.findIndex(function (value, index, arr) {
+          return value.toString() === i;
+        });
+        this.setState({
+          id: i,
+          new_id: "不變",
+          type: this.state.datas[real_i]["type"],
+          year: this.state.datas[real_i]["year"],
+          score: this.state.datas[real_i]["score"],
+          in_maj: this.state.datas[real_i]["in_maj"],
+          out_maj: this.state.datas[real_i]["out_maj"],
+          comment: this.state.datas[real_i]["comment"]
+        });
+      } else {
+        var real_i = this.state.qa_id_array.findIndex(function (value, index, arr) {
+          return value.toString() === i;
+        });
+        this.setState({
+          qa_id: i,
+          new_id: "不變",
+          qa_q: this.state.qa_datas[real_i]["question"],
+          qa_a: this.state.qa_datas[real_i]["answer"]
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
-      var option = this.state.datas.map(function (data) {
+      var option = this.state.now_handle === "心得" ? this.state.datas.map(function (data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: data["id"].toString()
+        }, data["id"]);
+      }) : this.state.qa_datas.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: data["id"].toString()
         }, data["id"]);
       });
+
+      var form = function form() {
+        if (_this3.state.now_handle === "心得") {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "new_id",
+            type: "text",
+            value: _this3.state.new_id,
+            onChange: _this3.changeNewId
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+            id: "trans_type",
+            name: "trans_type",
+            onChange: _this3.changeType
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: "\u8F49\u7CFB"
+          }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: "\u8F49\u5B78"
+          }, "\u8F49\u5B78")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "year",
+            type: "text",
+            value: _this3.state.year,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                year: e.target.value
+              });
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+            style: {
+              marginLeft: "5%",
+              marginRight: "5%"
+            }
+          }, "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "score",
+            type: "text",
+            value: _this3.state.score,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                score: e.target.value
+              });
+            }
+          })), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "out_maj",
+            type: "text",
+            value: _this3.state.out_maj,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                out_maj: e.target.value
+              });
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "in_maj",
+            type: "text",
+            value: _this3.state.in_maj,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                in_maj: e.target.value
+              });
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5FC3\u5F97:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+            id: "comment",
+            value: _this3.state.comment,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                comment: e.target.value
+              });
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          id: "new_id",
+          type: "text",
+          value: _this3.state.new_id,
+          onChange: _this3.changeNewId
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          id: "comment",
+          value: _this3.state.qa_q,
+          onChange: function onChange(e) {
+            return _this3.setState({
+              qa_q: e.target.value
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          id: "comment",
+          value: _this3.state.qa_a,
+          onChange: function onChange(e) {
+            return _this3.setState({
+              qa_a: e.target.value
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
+          value: _this3.state.tags,
+          onChange: _this3.handleChange
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u806F\u7D61\u6211\u5011"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/post"
-      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/comment"
-      }, "\u700F\u89BD\u5FC3\u5F97")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Menu"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
-      }, "\u8981\u7DE8\u8F2F\u7684\u6587\u7AE0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, "\u7DE8\u8F2F\u7684\u985E\u5225:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        id: "comment_id",
+        name: "comment_id",
+        onChange: function onChange(e) {
+          _this3.setState({
+            now_handle: e.target.value
+          });
+
+          _this3.changeId;
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "\u5FC3\u5F97"
+      }, "\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "QA"
+      }, "QA")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8981\u7DE8\u8F2F\u7684\u6587\u7AE0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "comment_id",
         name: "comment_id",
         onChange: this.changeId
-      }, option), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "new_id",
-        type: "text",
-        value: this.state.new_id,
-        onChange: this.changeNewId
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        id: "trans_type",
-        name: "trans_type",
-        onChange: this.changeType
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "\u8F49\u7CFB"
-      }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "\u8F49\u5B78"
-      }, "\u8F49\u5B78")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "year",
-        type: "text",
-        value: this.state.year,
-        onChange: function onChange(e) {
-          return _this3.setState({
-            year: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: {
-          marginLeft: "5%",
-          marginRight: "5%"
-        }
-      }, "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "score",
-        type: "text",
-        value: this.state.score,
-        onChange: function onChange(e) {
-          return _this3.setState({
-            score: e.target.value
-          });
-        }
-      })), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "out_maj",
-        type: "text",
-        value: this.state.out_maj,
-        onChange: function onChange(e) {
-          return _this3.setState({
-            out_maj: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "in_maj",
-        type: "text",
-        value: this.state.in_maj,
-        onChange: function onChange(e) {
-          return _this3.setState({
-            in_maj: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5FC3\u5F97:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        id: "comment",
-        value: this.state.comment,
-        onChange: function onChange(e) {
-          return _this3.setState({
-            comment: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, option), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), form(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick
       }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.deleteComment
@@ -54375,10 +55139,10 @@ function (_Component) {
     }
   }]);
 
-  return home;
+  return edit;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (home);
+/* harmony default export */ __webpack_exports__["default"] = (edit);
 
 /***/ }),
 

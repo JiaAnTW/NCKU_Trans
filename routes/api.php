@@ -21,8 +21,12 @@ Route::get('get/major', 'CommentsController@index');
 
 Route::post('create/major','CommentsController@create');
 
-Route::put('post/{id}','CommentsController@update');
+Route::put('post/major/{id}','CommentsController@update');
 
-Route::delete('post/{id}','CommentsController@destroy');
+Route::delete('post/major/{id}','CommentsController@destroy');
 
 Route::get('get/major_QA', 'maj_QAController@index');
+
+Route::put('post/major_QA/{id}', 'maj_QAController@update');
+
+Route::delete('post/major_QA/{id}','maj_QAController@destroy');

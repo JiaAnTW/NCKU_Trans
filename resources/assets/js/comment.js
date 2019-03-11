@@ -220,9 +220,9 @@ class comment extends Component {
         <div className="statistic">
           <ul>
             <li>
-              <div style={{width: "190px",height:"auto"}}>
-              <h2 style={{color:"rgb(229,68,109)"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
-              <ButtonToolbar style={{backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
+              <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
+              <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
+              <ButtonToolbar style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
               {" 包含"}<Dropdown style={{width:"30%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
                 <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",margin:"2px 0px",height:"22px",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
                   107
@@ -280,18 +280,6 @@ class comment extends Component {
       <div className="comment">
           <div className="Menu" style={{display: this.state.mobile_display}}>
               <div style={{position:"relative", top:"0%", width: '100%'}}>
-              <ButtonToolbar style={{lineHeight:"29px",fontSize:"14px",height:"30px"}}>
-              文章排序
-              <Dropdown style={{width:"55%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
-                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",height:"22px",margin:"2px 0px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
-                由大到小
-                </Dropdown.Toggle>
-                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
-                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >由大到小</Dropdown.Item>
-                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >由小到大</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              </ButtonToolbar>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
                 </Button>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
