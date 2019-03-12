@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card,CardDeck,Container,Row,CardGroup} from 'react-bootstrap';
+import {Card,CardDeck,Container,Row,Badge} from 'react-bootstrap';
 import './css/major_QAIndex.css';
 import Icon from './icon';
 class major_QAIndex extends Component {
@@ -87,12 +87,19 @@ class major_QAIndex extends Component {
 
   sponSingleCard(number,datas){
     var comment=datas[number]["answer"];
+    const tags=datas[number]["tag"].split(",").map(tag=>{
+      return(
+        <Badge variant="secondary" style={{fontSize:"15px",fontWeight:"400",margin:"0 10px",borderRadius:"2"}}>
+          {tag}
+        </Badge>
+      );
+    });
     return(
       <Card style={{ width: this.state.cardWidth,height:"auto",maxWidth:"100%" }}>
       <Card.Body style={{width:"100vw",height:"auto",maxWidth:"100%"}}>
       <Card.Title style={{fontSize: '2.5rem',height:"auto",maxWidth: "87%" }}><div className="circle" style={{fontSize: '2.5rem',lineHeight:"4.5rem",textAlign:"center",color:"white",height:"50px",width:"50px",borderRadius:"50px",backgroundColor: "rgb(229,68,109)"}}>{"#"+datas[number]["id"]}</div><div style={{position:"relative",top:"-50px",left:"60px",maxWidth: "95%",textAlign:"justify"}}>{datas[number]["question"]}</div></Card.Title>
       <button className="showBtn" onClick={this.handleOpenContent.bind(this,datas[number]["id"])} style={{ position:"absolute",top:"0",left:"0",width:"100%",height:"75%",backgroundColor: "rgba(0, 0, 0,0)",border: "none",outline:"none"}}></button>
-      <Card.Link style={{ color: 'rgb(30,144,255)' }}>{"#"+datas[number]["id"]}</Card.Link>
+      {tags}
       </Card.Body>
       </Card>
     );

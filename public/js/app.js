@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 70%;\r\n    height: auto;\r\n    left: 20%;\r\n    top:80px;\r\n    display: none;\r\n    \r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        \r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 70%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 6%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 8%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 95%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    left: 2%;\r\n    top:105px;\r\n    \r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    padding: 0 0.5%;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -52656,10 +52656,11 @@ function (_Component) {
         array.sort(function (a, b) {
           return a - b;
         });
-        console.log(array);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "statistic"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "board"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
             width: "190px",
             height: "auto",
@@ -54032,6 +54033,17 @@ function (_Component) {
     key: "sponSingleCard",
     value: function sponSingleCard(number, datas) {
       var comment = datas[number]["answer"];
+      var tags = datas[number]["tag"].split(",").map(function (tag) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+          variant: "secondary",
+          style: {
+            fontSize: "15px",
+            fontWeight: "400",
+            margin: "0 10px",
+            borderRadius: "2"
+          }
+        }, tag);
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         style: {
           width: this.state.cardWidth,
@@ -54083,11 +54095,7 @@ function (_Component) {
           border: "none",
           outline: "none"
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Link, {
-        style: {
-          color: 'rgb(30,144,255)'
-        }
-      }, "#" + datas[number]["id"])));
+      }), tags));
     }
   }, {
     key: "sponManyCard",
@@ -54994,11 +55002,13 @@ function (_Component) {
         var real_i = this.state.qa_id_array.findIndex(function (value, index, arr) {
           return value.toString() === i;
         });
+        var tags = this.state.qa_datas[real_i]["tag"].split(",");
         this.setState({
           qa_id: i,
           new_id: "不變",
           qa_q: this.state.qa_datas[real_i]["question"],
-          qa_a: this.state.qa_datas[real_i]["answer"]
+          qa_a: this.state.qa_datas[real_i]["answer"],
+          tags: tags
         });
       }
     }

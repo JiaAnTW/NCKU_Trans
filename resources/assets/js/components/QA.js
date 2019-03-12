@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container,Button,Table,Card} from 'react-bootstrap';
+import {Container,Badge,Card} from 'react-bootstrap';
 import Modal from 'react-modal';
 import './css/QA.css'
 
@@ -40,6 +40,7 @@ class QA extends React.Component {
             question:"",
             answer:"",
         };
+
       return (
         <Container className="QA_container">
               <Card className="card-box" style={{ height: "auto",border:"none",transform:"translate(0,0)"}}>

@@ -215,11 +215,10 @@ class comment extends Component {
       array.sort(function(a, b) {
         return a-b;
       });
-      console.log(array);
       return(
         <div className="statistic">
           <ul>
-            <li>
+            <li className="board">
               <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
               <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
               <ButtonToolbar style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>

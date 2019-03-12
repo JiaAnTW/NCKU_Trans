@@ -182,11 +182,13 @@ class edit extends Component {
         }
         else{
           var real_i=this.state.qa_id_array.findIndex(function(value, index, arr){return value.toString()===i});
+          var tags=this.state.qa_datas[real_i]["tag"].split(",");
           this.setState({
             qa_id: i,
             new_id: "不變",
             qa_q:this.state.qa_datas[real_i]["question"],
             qa_a:this.state.qa_datas[real_i]["answer"],
+            tags:tags,
           });
         }
     }

@@ -8,13 +8,16 @@
     box-shadow: 0 0 4px #d9d9d9;
 }
 
+.board{
+    display: none;
+}
 
 .index{
     position:absolute;
     width: 100%;
     max-width:100%;
     left: 0%;
-    top:85px;
+    top:235px;
     height: auto;
     z-index: 0;
 }
@@ -30,15 +33,29 @@
 }
 .statistic{
     position:absolute;
-    width: 70%;
+    width: 95%;
+    max-width: 97%;
     height: auto;
-    left: 20%;
-    top:80px;
-    display: none;
+    left: 2%;
+    top:105px;
     
 }
 
+.statistic ul{
+    list-style-type: none;
+    width: 100%;
+    max-width: 100%;
+    float:left;
+    padding:0;
+	margin: 0;
+}
+.statistic li{
+    float:left;
+    padding: 0 0.5%;
+}
+
 @media (min-width: 596px) { 
+    
 
     .Menu{
         position: absolute;
@@ -52,7 +69,7 @@
         position:absolute;
         width: 70%;
         left: 15%;
-        top:115px;
+        top:235px;
         
     }
     .MobileMenu{
@@ -64,9 +81,35 @@
         height:37px;
         background-color:rgb(229,68,109);
     }
+
+    .statistic{
+        position:absolute;
+        width: 85%;
+        max-width: 85%;
+        height: auto;
+        left: 10%;
+        top:105px;
+        
+    }
+    
+    .statistic ul{
+        list-style-type: none;
+        width: 100%;
+        max-width: 100%;
+        float:left;
+        padding:0;
+        margin: 0;
+    }
+    .statistic li{
+        float:left;
+        padding: 0 5%;
+    }
 }
 
 @media (min-width: 870px) { 
+    .board{
+        display: block;
+    }
 
     .Menu{
         position: absolute;
@@ -95,20 +138,19 @@
 
     .statistic{
         position:absolute;
-        width: 70%;
+        width: 80%;
         height: auto;
-        left: 20%;
+        left: 15%;
         top:80px;
         display: block;
     }
     .statistic ul{
         list-style-type: none;
-        width: 100%;
         float:left;
     }
     .statistic li{
         float:left;
-        padding: 0 6%;
+        padding: 0 2%;
     }
  }
 
@@ -125,7 +167,7 @@
     .index{
         position:absolute;
         width: 75%;
-        left: 22%;
+        left: 20%;
         top:220px;
         height: auto;
     }
@@ -145,7 +187,7 @@
     }
     .statistic li{
         float:left;
-        padding: 0 8%;
+        padding: 0 3%;
     }
 }
 
@@ -185,6 +227,6 @@
     }
     .statistic li{
         float:left;
-        padding: 0 5%;
+        padding: 0 4%;
     }
 }
