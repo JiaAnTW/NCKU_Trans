@@ -89,7 +89,7 @@ class major_QAIndex extends Component {
     var comment=datas[number]["answer"];
     const tags=datas[number]["tag"].split(",").map(tag=>{
       return(
-        <Badge variant="secondary" style={{fontSize:"15px",fontWeight:"400",margin:"0 10px",borderRadius:"2"}}>
+        <Badge variant="secondary" style={{fontSize:"15px",fontWeight:"200",margin:"0 10px",borderRadius:"3px"}}>
           {tag}
         </Badge>
       );

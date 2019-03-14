@@ -30,6 +30,14 @@ const department=[
 ["規設院","CPD"],
 ["生科院","BIO"]
 ];
+const fliter_2= [{
+  id:0,
+  now:-1,
+  name: "申請年",
+  type: "year",
+  option:[["全部年度",-1],[107,-1],[106,-1],[105,-1],[104,-1]]
+}];
+
 class comment extends Component {
     constructor(props) {
     super(props);
@@ -50,6 +58,7 @@ class comment extends Component {
           year:-1,
         },
         show:[],
+        resetFliter: false,
         is_fetch:false,
         datas: [],
     };
@@ -129,16 +138,26 @@ class comment extends Component {
   }
 
   changeFliter(new_fliter,type){
-      this.setState({fliter:new_fliter});
-      if(new_fliter==="none")
-        this.setState({show:this.state.datas});
-      else{
+      if(type==="year"){
         var output=[];
         this.state.datas.forEach(element => {
-        if(element[type]===new_fliter)
+        if(element[type]==new_fliter&&(this.state.fliter==="none"||element["department"]===this.state.fliter||element["in_maj"]===this.state.fliter))
           output.push(element);
         });
         this.setState({show:output});
+      }
+      else{
+        this.setState({fliter:new_fliter,resetFliter: !this.state.resetFliter});
+        if(new_fliter==="none")
+          this.setState({show:this.state.datas});
+        else{
+          var output=[];
+          this.state.datas.forEach(element => {
+          if(element[type]===new_fliter)
+            output.push(element);
+          });
+          this.setState({show:output});
+        }
     }
   }
 
@@ -221,26 +240,9 @@ class comment extends Component {
             <li className="board">
               <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
               <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
-              <ButtonToolbar style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
-              {" 包含"}<Dropdown style={{width:"30%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
-                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",margin:"2px 0px",height:"22px",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
-                  107
-                </Dropdown.Toggle>
-                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
-                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >107</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              到
-              <Dropdown style={{width:"30%",backgroundColor:"rgb(229,68,109)",color:"white",height:"24px"}}>
-                <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{lineHeight:"0.43px",margin:"2px 0px",height:"22px",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}}>
-                  107
-                </Dropdown.Toggle>
-                <Dropdown.Menu style={{width:"100%",backgroundColor:"rgb(229,68,109)",color:"white",minWidth:"100%"}}>
-                <Dropdown.Item  style={{height:"22px",width:"100%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px"}} >107</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              年
-              </ButtonToolbar>
+              <div style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
+                <MobileFliter mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="包含年份" value={fliter_2} style={{marginLeft:"12%",width:'76%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+              </div>
               </div>
             </li>
             <li>
@@ -266,14 +268,6 @@ class comment extends Component {
 
 
   render() {
-    const fliter_2= [{
-      id:0,
-      now:-1,
-      name: "順序",
-      type: "none",
-      option:[["由大而小",-1],["由小而大",-1]]
-    }];
-
 
     return (
       <div className="comment">
@@ -295,8 +289,8 @@ class comment extends Component {
         </div>
         {this.spawnStatistic()}
         <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
-            <MobileFliter fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
-            <MobileFliter fliter={this.changeFliter} type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+            <MobileFliter mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+            <MobileFliter mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
           </div>
         <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
       </div>

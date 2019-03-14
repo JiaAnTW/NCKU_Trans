@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import MobileFliter from './components/mobileFliter'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
-import mobileFliter from './components/mobileFliter';
+import {Container,Button} from 'react-bootstrap';
 
 
 
@@ -68,10 +68,22 @@ class home extends Component {
       name: "順序",
       option:[["由大而小",-1],["由小而大",-1]]
     }];
+
+    const btn=()=>{
+      var output=[];
+      for(var i=0;i<20;++i)
+        output.push(
+          <Button variant="dark" style={{margin: "5px 10px"}}> 測試 {i} </Button>
+        );
+      return output;
+    }
     return (
       <div className="App">
         <MobileFliter type="依學院/系" value={test} style={{width:'62%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
         <MobileFliter type="依編號" value={test2} style={{position:"absolute",top:"0",left:"60%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
+        <Container style={{position:"absolute",top:"20%",left:"30%",width:'20%',backgroundColor:"rgb(229,68,109)",color:"white",height:"auto"}}>
+          {btn()}
+        </Container>
       </div>
     );
   }

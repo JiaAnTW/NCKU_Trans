@@ -12,7 +12,7 @@ class mobileFliter extends Component {
       type:[],
       styleBtn:[],
       showTag:[],
-      data:[]
+      data:[],
     };
     this.spawnDropdown=this. spawnDropdown.bind(this);
     this.handleClick=this.handleClick.bind(this);
@@ -68,7 +68,7 @@ class mobileFliter extends Component {
     var new_style=[];
     var showTag=[];
     for(var i=0;i<test.length;++i){
-      const style=(test[i]["id"]===0)?{display:"block",backgroundColor:"rgb(229,68,109)",outline:"none"}:{display:"none",backgroundColor:"rgb(229,68,109)",outline:"none"};
+      const style=(test[i]["id"]===0)?{display:"block",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"}:{display:"none",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"};
       new_style.push(style);
       const tag=test[i]["option"][0][0];
       showTag.push(tag);
@@ -76,20 +76,21 @@ class mobileFliter extends Component {
     this.setState({styleBtn: new_style,showTag: showTag,data: test}); 
   }
   spawnDropdown(){
+    const width=(this.props.mobile==="none")?"20.5vw":"85px";
     const data=this.state.data;
       var output=[];
       for(var i=0;i<data.length;++i){
         var object=data[i];
         const o_output=object["option"].map(option=>{
             return(
-                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:"20.5vw"}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
+                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:width}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
                 )});
       output.push(
         <Dropdown style={this.state.styleBtn[i]}>
-            <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{margin:"2px 0px",height:"85%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:"20.5vw"}}>
+            <Dropdown.Toggle variant='Info' id="dropdown-basic" style={{margin:"2px 0px",height:"85%",outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:width}}>
                 {this.state.showTag[i]}
             </Dropdown.Toggle>
-            <Dropdown.Menu style={{backgroundColor:"rgb(229,68,109)",color:"white",width:"80px",minWidth:"20.5vw"}}>
+            <Dropdown.Menu style={{backgroundColor:"rgb(229,68,109)",color:"white",width:"80px",minWidth:width}}>
                 {o_output}
             </Dropdown.Menu>
         </Dropdown>
@@ -98,6 +99,20 @@ class mobileFliter extends Component {
     return  output;
 }
 
+componentDidUpdate(prevProps, prevState){
+  if(prevProps.reset!=this.props.reset){
+    var output=[];
+    var style=[];
+    for(var i=0;i<this.state.data.length;i++){
+      output.push(this.state.data[i]["option"][0][0]);
+      if(i!=0)
+        style.push({display:"none",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"})
+      else
+        style.push({display:"block",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"})
+    }
+    this.setState({showTag:output, styleBtn:style})
+  }
+}
 
   render() {
     return (

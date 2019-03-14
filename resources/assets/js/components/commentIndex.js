@@ -82,7 +82,7 @@ class commentIndex extends Component {
     return <Container style={{ width: '100%',maxWidth:"100%" }}>{output}</Container>;
   }
     else
-      return <Icon style={{ position: 'absolute',left: "40%",top: "200px" }}/> ;
+      return <Icon/> ;
   }
 
   sponSingleCard(number,datas){

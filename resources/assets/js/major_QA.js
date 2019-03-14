@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button,Badge} from 'react-bootstrap';
+import {Button,Badge,Container} from 'react-bootstrap';
 import QAIndex from './components/major_QAIndex';
 import QA from './components/QA';
 import Menu from './components/menu';
@@ -18,8 +18,10 @@ class maj_QA extends Component {
           answer:"",
           id:-1,
         },
+        btnSelect:[],
         is_fetch:false,
         datas: [],
+        total_tags:[],
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -29,6 +31,8 @@ class maj_QA extends Component {
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
+    this.spawnMenu=this.spawnMenu.bind(this);
+    this.changeSelectBtn=this.changeSelectBtn.bind(this)
   }
 
   handleRWD(is_mobile){
@@ -93,8 +97,10 @@ class maj_QA extends Component {
             show:data,
             showContent:data[Number(this.props.match.params.id)],
           })
+        this.spawnMenu(data);
       })
       .catch(e => console.log('錯誤:', e));
+    
   }
 
   countDepartment(name){
@@ -106,18 +112,38 @@ class maj_QA extends Component {
     return counter;
   }
 
-  changeFliter(new_fliter,type){
-      //this.setState({fliter:new_fliter});
-      //if(new_fliter==="none")
-        //this.setState({show:this.state.datas});
-      //else{
-        //var output=[];
-        //this.state.datas.forEach(element => {
-        //if(element[type]===new_fliter)
-          //output.push(element);
-        //});
-        //this.setState({show:output});
-    //}
+  changeFliter(type){
+      var show=[];
+      if(type!="none"){  
+        var tag=[];
+        for(var i=0;i<this.state.total_tags.length;++i){
+          if(this.state.total_tags[i][1]===true)
+            tag.push(this.state.total_tags[i][0]);
+        }
+        this.state.datas.forEach(element => {
+          const array=element["tag"].split(",");
+          for(var i=0;i<array.length;++i){
+            for(var j=0;j<tag.length;++j){
+              if(array[i]===tag[j]){
+                show.push(element);
+                return;
+              }
+            }
+          }
+        });
+        this.setState({show:show});
+      }
+      else{
+        show=this.state.datas;
+      }
+      var rst_tag=this.state.total_tags;
+      rst_tag.forEach(element => {
+        element[1]=false
+        }
+      );
+      this.setState({show:show,total_tags: rst_tag});
+      return;
+      
   }
 
   sponCommentMenu(){
@@ -172,6 +198,28 @@ class maj_QA extends Component {
     this.handleClick();
   }
 
+  spawnMenu(datas){
+    var total_tags=[];
+    datas.forEach((element)=>{
+        if(element["tag"]!=""){
+          element["tag"].split(",").forEach((tag)=>{
+            for(var i=0;i<total_tags.length;++i){
+              if(total_tags[i][0]===tag)
+                return;
+            }
+            total_tags.push([tag,false]);
+          });
+        }
+    });
+    this.setState({total_tags:total_tags});
+  }
+
+  changeSelectBtn(index){
+    var new_tags=this.state.total_tags;
+    new_tags[index][1]=!new_tags[index][1];
+    this.setState({total_tags:new_tags})
+  }
+
 
   render() {
     const fliter_2= [{
@@ -185,23 +233,28 @@ class maj_QA extends Component {
     <QAIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenQA} handleRWD={this.handleRWD}/>
     :
     <QA  data={this.state.showContent} is_fetch={this.state.is_fetch} next={this.handleShowContent}/>;
+
+    const Menu=()=>{
+      var output=[];
+      for(var i=0;i<this.state.total_tags.length;++i){
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 10px",backgroundColor:(this.state.total_tags[i][1]==false)?"white":"#6c757d"}}>{this.state.total_tags[i][0]}</Button>);
+      }
+      return output;
+    }
+
     return (
       <div className="major_QA">
           <div className="Menu">
-              <div style={{position:"relative", top:"0%", width: '100%'}}>
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
-                  <Badge pill variant="secondary" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
-                    {this.countDepartment("不分系")}
-                  </Badge>
-                </Button>
-              </div>
+            <Button variant="secondary" onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"85%",margin:"5px 10px"}}>全部心得</Button>
+            <Button variant="secondary" onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"85%",margin:"20px 10px"}}>送出篩選</Button>
+              {Menu()}
           </div>
         <div className="index">
             {show}
         </div>
         <div className="MobileMenu">
-            <MobileFliter fliter={this.changeFliter} type="依編號" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
-          </div>
+        <MobileFliter fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+        </div>
       </div>
     );
   }

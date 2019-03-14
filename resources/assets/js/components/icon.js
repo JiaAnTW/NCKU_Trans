@@ -8,7 +8,7 @@ class icon extends Component {
       }
   render() {
     return (
-        <div className="lds-css ng-scope" style={this.props.style}><div style={{width:"100%",height:"100%"}} className="lds-ripple"><div></div><div></div></div>
+        <div className="lds-css-ng-scope"><div style={{width:"100%",height:"100%"}} className="lds-ripple"><div></div><div></div></div>
         </div>
     );
   }

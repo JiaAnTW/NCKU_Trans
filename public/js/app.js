@@ -3161,7 +3161,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "@keyframes lds-ripple {\r\n    0% {\r\n      top: 96px;\r\n      left: 96px;\r\n      width: 0;\r\n      height: 0;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      top: 18px;\r\n      left: 18px;\r\n      width: 156px;\r\n      height: 156px;\r\n      opacity: 0;\r\n    }\r\n  }\r\n  @-webkit-keyframes lds-ripple {\r\n    0% {\r\n      top: 96px;\r\n      left: 96px;\r\n      width: 0;\r\n      height: 0;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      top: 18px;\r\n      left: 18px;\r\n      width: 156px;\r\n      height: 156px;\r\n      opacity: 0;\r\n    }\r\n  }\r\n  .lds-ripple {\r\n    position: relative;\r\n  }\r\n  .lds-ripple div {\r\n    box-sizing: content-box;\r\n    position: absolute;\r\n    border-width: 4px;\r\n    border-style: solid;\r\n    opacity: 1;\r\n    border-radius: 50%;\r\n    -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\r\n    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\r\n  }\r\n  .lds-ripple div:nth-child(1) {\r\n    border-color: #cc3d61;\r\n  }\r\n  .lds-ripple div:nth-child(2) {\r\n    border-color: #ff98b2;\r\n    -webkit-animation-delay: -0.5s;\r\n    animation-delay: -0.5s;\r\n  }\r\n  .lds-ripple {\r\n    width: 200px !important;\r\n    height: 200px !important;\r\n    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);\r\n    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);\r\n  }", ""]);
+exports.push([module.i, "@keyframes lds-ripple {\r\n    0% {\r\n      top: 96px;\r\n      left: 96px;\r\n      width: 0;\r\n      height: 0;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      top: 18px;\r\n      left: 18px;\r\n      width: 156px;\r\n      height: 156px;\r\n      opacity: 0;\r\n    }\r\n  }\r\n  @-webkit-keyframes lds-ripple {\r\n    0% {\r\n      top: 96px;\r\n      left: 96px;\r\n      width: 0;\r\n      height: 0;\r\n      opacity: 1;\r\n    }\r\n    100% {\r\n      top: 18px;\r\n      left: 18px;\r\n      width: 156px;\r\n      height: 156px;\r\n      opacity: 0;\r\n    }\r\n  }\r\n\r\n  .lds-css-ng-scope{ \r\n    position: absolute;\r\n    top: 20vw;\r\n    margin-left:  30vw; \r\n  }\r\n\r\n  @media (min-width: 870px) {\r\n    .lds-css-ng-scope{ \r\n      top: 10vw;\r\n      margin-left:  30vw; \r\n    }\r\n   }\r\n\r\n  .lds-ripple {\r\n    position: relative;\r\n  }\r\n  .lds-ripple div {\r\n    box-sizing: content-box;\r\n    position: absolute;\r\n    border-width: 4px;\r\n    border-style: solid;\r\n    opacity: 1;\r\n    border-radius: 50%;\r\n    -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\r\n    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\r\n  }\r\n  .lds-ripple div:nth-child(1) {\r\n    border-color: #cc3d61;\r\n  }\r\n  .lds-ripple div:nth-child(2) {\r\n    border-color: #ff98b2;\r\n    -webkit-animation-delay: -0.5s;\r\n    animation-delay: -0.5s;\r\n  }\r\n  .lds-ripple {\r\n    width: 200px !important;\r\n    height: 200px !important;\r\n    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);\r\n    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);\r\n  }", ""]);
 
 // exports
 
@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 95%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    left: 2%;\r\n    top:105px;\r\n    \r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    padding: 0 0.5%;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 95%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    \r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    padding: 0 0.7vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(242,82,110);\r\n    \r\n}\r\n\r\n.navItem{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: gray;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3256,7 +3256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        max-width:100%;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    display: none;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        max-width:100%;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 200px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n        background-color: #F3BCC8;\r\n\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3275,7 +3275,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".form_container{\r\n    margin: 5% 5%;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    .form_container{\r\n        margin: 5% 20%;\r\n    }\r\n}\r\n\r\n@media (min-width: 768px) { \r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n\r\n}", ""]);
+exports.push([module.i, ".form_container{\r\n    margin: 1% 5%;\r\n    width: 90%;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:60%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n    border-radius: 1px;\r\n}\r\n\r\n.post p{\r\n    width:40%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:50px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    .post .index{\r\n        position:absolute;\r\n        width: 100%;\r\n        left: 0%;\r\n        top:50px;\r\n        \r\n    }\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n    } \r\n    .post .index{\r\n        position:absolute;\r\n        width: 100%;\r\n        left: 0%;\r\n        top:50px;\r\n        height: auto;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        position:absolute;\r\n        width: 100%;\r\n        left: 0%;\r\n        top:50px;\r\n        height: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .post .index{\r\n        position:absolute;\r\n        height: auto;\r\n        width: 100%;\r\n        left: 0%;\r\n        top:50px;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -52429,6 +52429,13 @@ var NCKU = {
   "BIO": ["生科系", "生技系"]
 };
 var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"]];
+var fliter_2 = [{
+  id: 0,
+  now: -1,
+  name: "申請年",
+  type: "year",
+  option: [["全部年度", -1], [107, -1], [106, -1], [105, -1], [104, -1]]
+}];
 
 var comment =
 /*#__PURE__*/
@@ -52458,6 +52465,7 @@ function (_Component) {
         year: -1
       },
       show: [],
+      resetFliter: false,
       is_fetch: false,
       datas: []
     };
@@ -52552,19 +52560,32 @@ function (_Component) {
   }, {
     key: "changeFliter",
     value: function changeFliter(new_fliter, type) {
-      this.setState({
-        fliter: new_fliter
-      });
-      if (new_fliter === "none") this.setState({
-        show: this.state.datas
-      });else {
+      var _this3 = this;
+
+      if (type === "year") {
         var output = [];
         this.state.datas.forEach(function (element) {
-          if (element[type] === new_fliter) output.push(element);
+          if (element[type] == new_fliter && (_this3.state.fliter === "none" || element["department"] === _this3.state.fliter || element["in_maj"] === _this3.state.fliter)) output.push(element);
         });
         this.setState({
           show: output
         });
+      } else {
+        this.setState({
+          fliter: new_fliter,
+          resetFliter: !this.state.resetFliter
+        });
+        if (new_fliter === "none") this.setState({
+          show: this.state.datas
+        });else {
+          var output = [];
+          this.state.datas.forEach(function (element) {
+            if (element[type] === new_fliter) output.push(element);
+          });
+          this.setState({
+            show: output
+          });
+        }
       }
     }
   }, {
@@ -52672,7 +52693,7 @@ function (_Component) {
             width: "100%",
             textAlign: "center"
           }
-        }, this.state.fliter === "none" ? "全部心得" : this.state.fliter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonToolbar"], {
+        }, this.state.fliter === "none" ? "全部心得" : this.state.fliter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
             marginBottom: "0",
             marginLeft: "0",
@@ -52682,77 +52703,22 @@ function (_Component) {
             height: "30px",
             color: "white"
           }
-        }, " 包含", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          mobile: this.state.mobile_display,
+          reset: this.state.resetFliter,
+          fliter: this.changeFliter,
+          type: "\u5305\u542B\u5E74\u4EFD",
+          value: fliter_2,
           style: {
-            width: "30%",
+            marginLeft: "12%",
+            width: '76%',
             backgroundColor: "rgb(229,68,109)",
             color: "white",
-            height: "24px"
+            lineHeight: "31px",
+            fontSize: "12px",
+            height: "30px"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Toggle, {
-          variant: "Info",
-          id: "dropdown-basic",
-          style: {
-            lineHeight: "0.43px",
-            margin: "2px 0px",
-            height: "22px",
-            outline: "none",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            fontSize: "12px"
-          }
-        }, "107"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
-          style: {
-            width: "100%",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            minWidth: "100%"
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-          style: {
-            height: "22px",
-            width: "100%",
-            outline: "none",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            fontSize: "12px"
-          }
-        }, "107"))), "\u5230", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"], {
-          style: {
-            width: "30%",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            height: "24px"
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Toggle, {
-          variant: "Info",
-          id: "dropdown-basic",
-          style: {
-            lineHeight: "0.43px",
-            margin: "2px 0px",
-            height: "22px",
-            outline: "none",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            fontSize: "12px"
-          }
-        }, "107"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
-          style: {
-            width: "100%",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            minWidth: "100%"
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Item, {
-          style: {
-            height: "22px",
-            width: "100%",
-            outline: "none",
-            backgroundColor: "rgb(229,68,109)",
-            color: "white",
-            fontSize: "12px"
-          }
-        }, "107"))), "\u5E74"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           title: "\u5E73\u5747\u9304\u53D6\u5206\u6578",
           value: this.state.show.length == 0 ? "null" : count / this.state.show.length
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -52772,13 +52738,6 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var fliter_2 = [{
-        id: 0,
-        now: -1,
-        name: "順序",
-        type: "none",
-        option: [["由大而小", -1], ["由小而大", -1]]
-      }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -52829,6 +52788,7 @@ function (_Component) {
           display: this.state.mobile_display === "none" ? "block" : "none"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        mobile: this.state.mobile_display,
         fliter: this.changeFliter,
         type: "\u4F9D\u5B78\u9662/\u7CFB",
         value: this.sponMobileMenu(),
@@ -52844,8 +52804,10 @@ function (_Component) {
           outline: "none"
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        mobile: this.state.mobile_display,
+        reset: this.state.resetFliter,
         fliter: this.changeFliter,
-        type: "\u4F9D\u7DE8\u865F",
+        type: "\u7533\u8ACB\u5E74",
         value: fliter_2,
         style: {
           position: "absolute",
@@ -52940,7 +52902,7 @@ function (_Component) {
     key: "increase",
     value: function increase() {
       var percent = this.state.percent + 0.1;
-      var std = this.props.value == "null" ? 100 : this.props.value;
+      var std = this.props.value == "null" ? 100 : this.props.value + 0.09;
 
       if (percent > std) {
         clearTimeout(this.tm);
@@ -52960,7 +52922,7 @@ function (_Component) {
     value: function decrease() {
       var percent = this.state.percent - 0.1;
 
-      if (percent <= this.props.value) {
+      if (percent < this.props.value) {
         clearTimeout(this.tm);
         this.setState({
           is_finish: true
@@ -52994,7 +52956,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           position: "relative",
-          width: "112.5px",
+          width: "107.5px",
           height: "auto"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rc_progress__WEBPACK_IMPORTED_MODULE_3__["Circle"], {
@@ -53008,7 +52970,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         style: {
           position: "absolute",
-          margin: "0 11.25px",
+          margin: "0 10.75px",
           width: "90px",
           left: "0px",
           top: "22.5px",
@@ -53021,7 +52983,7 @@ function (_Component) {
           position: "absolute",
           top: "100%",
           width: "100%",
-          left: "0px",
+          margin: "0 1px",
           textAlign: "center",
           fontSize: "16.5px",
           color: "#E5446D"
@@ -53346,13 +53308,7 @@ function (_Component) {
             maxWidth: "100%"
           }
         }, output);
-      } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        style: {
-          position: 'absolute',
-          left: "40%",
-          top: "200px"
-        }
-      });
+      } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon__WEBPACK_IMPORTED_MODULE_3__["default"], null);
     }
   }, {
     key: "sponSingleCard",
@@ -53868,8 +53824,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "lds-css ng-scope",
-        style: this.props.style
+        className: "lds-css-ng-scope"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           width: "100%",
@@ -54038,9 +53993,9 @@ function (_Component) {
           variant: "secondary",
           style: {
             fontSize: "15px",
-            fontWeight: "400",
+            fontWeight: "200",
             margin: "0 10px",
-            borderRadius: "2"
+            borderRadius: "3px"
           }
         }, tag);
       });
@@ -54398,11 +54353,13 @@ function (_Component) {
         var style = test[i]["id"] === 0 ? {
           display: "block",
           backgroundColor: "rgb(229,68,109)",
-          outline: "none"
+          outline: "none",
+          height: "85%"
         } : {
           display: "none",
           backgroundColor: "rgb(229,68,109)",
-          outline: "none"
+          outline: "none",
+          height: "85%"
         };
         new_style.push(style);
         var tag = test[i]["option"][0][0];
@@ -54420,6 +54377,7 @@ function (_Component) {
     value: function spawnDropdown() {
       var _this2 = this;
 
+      var width = this.props.mobile === "none" ? "20.5vw" : "85px";
       var data = this.state.data;
       var output = [];
 
@@ -54432,7 +54390,7 @@ function (_Component) {
               backgroundColor: "rgb(229,68,109)",
               color: "white",
               fontSize: "12px",
-              width: "20.5vw"
+              width: width
             },
             onClick: _this2.handleClick.bind(_this2, option[0], option[1], object["id"], object["now"], object["type"])
           }, option[0]);
@@ -54449,19 +54407,47 @@ function (_Component) {
             backgroundColor: "rgb(229,68,109)",
             color: "white",
             fontSize: "12px",
-            width: "20.5vw"
+            width: width
           }
         }, this.state.showTag[i]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Dropdown"].Menu, {
           style: {
             backgroundColor: "rgb(229,68,109)",
             color: "white",
             width: "80px",
-            minWidth: "20.5vw"
+            minWidth: width
           }
         }, o_output)));
       }
 
       return output;
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.reset != this.props.reset) {
+        var output = [];
+        var style = [];
+
+        for (var i = 0; i < this.state.data.length; i++) {
+          output.push(this.state.data[i]["option"][0][0]);
+          if (i != 0) style.push({
+            display: "none",
+            backgroundColor: "rgb(229,68,109)",
+            outline: "none",
+            height: "85%"
+          });else style.push({
+            display: "block",
+            backgroundColor: "rgb(229,68,109)",
+            outline: "none",
+            height: "85%"
+          });
+        }
+
+        this.setState({
+          showTag: output,
+          styleBtn: style
+        });
+      }
     }
   }, {
     key: "render",
@@ -55173,6 +55159,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55267,6 +55254,22 @@ function (_Component) {
         name: "順序",
         option: [["由大而小", -1], ["由小而大", -1]]
       }];
+
+      var btn = function btn() {
+        var output = [];
+
+        for (var i = 0; i < 20; ++i) {
+          output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+            variant: "dark",
+            style: {
+              margin: "5px 10px"
+            }
+          }, " \u6E2C\u8A66 ", i, " "));
+        }
+
+        return output;
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -55290,7 +55293,17 @@ function (_Component) {
           color: "white",
           lineHeight: "8vw"
         }
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
+        style: {
+          position: "absolute",
+          top: "20%",
+          left: "30%",
+          width: '20%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          height: "auto"
+        }
+      }, btn()));
     }
   }]);
 
@@ -55440,8 +55453,10 @@ function (_Component) {
         answer: "",
         id: -1
       },
+      btnSelect: [],
       is_fetch: false,
-      datas: []
+      datas: [],
+      total_tags: []
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
@@ -55450,6 +55465,8 @@ function (_Component) {
     _this.sponCommentMenu = _this.sponCommentMenu.bind(_assertThisInitialized(_this));
     _this.countDepartment = _this.countDepartment.bind(_assertThisInitialized(_this));
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
+    _this.spawnMenu = _this.spawnMenu.bind(_assertThisInitialized(_this));
+    _this.changeSelectBtn = _this.changeSelectBtn.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -55528,6 +55545,8 @@ function (_Component) {
           show: data,
           showContent: data[Number(_this2.props.match.params.id)]
         });
+
+        _this2.spawnMenu(data);
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
@@ -55543,17 +55562,44 @@ function (_Component) {
     }
   }, {
     key: "changeFliter",
-    value: function changeFliter(new_fliter, type) {//this.setState({fliter:new_fliter});
-      //if(new_fliter==="none")
-      //this.setState({show:this.state.datas});
-      //else{
-      //var output=[];
-      //this.state.datas.forEach(element => {
-      //if(element[type]===new_fliter)
-      //output.push(element);
-      //});
-      //this.setState({show:output});
-      //}
+    value: function changeFliter(type) {
+      var show = [];
+
+      if (type != "none") {
+        var tag = [];
+
+        for (var i = 0; i < this.state.total_tags.length; ++i) {
+          if (this.state.total_tags[i][1] === true) tag.push(this.state.total_tags[i][0]);
+        }
+
+        this.state.datas.forEach(function (element) {
+          var array = element["tag"].split(",");
+
+          for (var i = 0; i < array.length; ++i) {
+            for (var j = 0; j < tag.length; ++j) {
+              if (array[i] === tag[j]) {
+                show.push(element);
+                return;
+              }
+            }
+          }
+        });
+        this.setState({
+          show: show
+        });
+      } else {
+        show = this.state.datas;
+      }
+
+      var rst_tag = this.state.total_tags;
+      rst_tag.forEach(function (element) {
+        element[1] = false;
+      });
+      this.setState({
+        show: show,
+        total_tags: rst_tag
+      });
+      return;
     }
   }, {
     key: "sponCommentMenu",
@@ -55614,8 +55660,38 @@ function (_Component) {
       this.handleClick();
     }
   }, {
+    key: "spawnMenu",
+    value: function spawnMenu(datas) {
+      var total_tags = [];
+      datas.forEach(function (element) {
+        if (element["tag"] != "") {
+          element["tag"].split(",").forEach(function (tag) {
+            for (var i = 0; i < total_tags.length; ++i) {
+              if (total_tags[i][0] === tag) return;
+            }
+
+            total_tags.push([tag, false]);
+          });
+        }
+      });
+      this.setState({
+        total_tags: total_tags
+      });
+    }
+  }, {
+    key: "changeSelectBtn",
+    value: function changeSelectBtn(index) {
+      var new_tags = this.state.total_tags;
+      new_tags[index][1] = !new_tags[index][1];
+      this.setState({
+        total_tags: new_tags
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var fliter_2 = [{
         id: 0,
         now: -1,
@@ -55633,39 +55709,52 @@ function (_Component) {
         is_fetch: this.state.is_fetch,
         next: this.handleShowContent
       });
+
+      var Menu = function Menu() {
+        var output = [];
+
+        for (var i = 0; i < _this3.state.total_tags.length; ++i) {
+          output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+            variant: "light",
+            onClick: _this3.changeSelectBtn.bind(_this3, i),
+            style: {
+              outline: "none",
+              margin: "5px 10px",
+              backgroundColor: _this3.state.total_tags[i][1] == false ? "white" : "#6c757d"
+            }
+          }, _this3.state.total_tags[i][0]));
+        }
+
+        return output;
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "major_QA"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Menu"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          position: "relative",
-          top: "0%",
-          width: '100%'
-        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "light",
-        style: {
-          borderRadius: "0px",
-          width: '100%',
-          outline: "none"
-        },
-        onClick: this.changeFliter.bind(this, "不分系", "in_maj")
-      }, "\u4E0D\u5206\u7CFB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
-        pill: true,
         variant: "secondary",
+        onClick: this.changeFliter.bind(this, "none"),
         style: {
-          position: "relative",
-          marginLeft: "10px",
-          fontWeight: "400"
+          outline: "none",
+          width: "85%",
+          margin: "5px 10px"
         }
-      }, this.countDepartment("不分系"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "\u5168\u90E8\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        variant: "secondary",
+        onClick: this.changeFliter.bind(this, "tag"),
+        style: {
+          outline: "none",
+          width: "85%",
+          margin: "20px 10px"
+        }
+      }, "\u9001\u51FA\u7BE9\u9078"), Menu()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, show), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "MobileMenu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
         fliter: this.changeFliter,
-        type: "\u4F9D\u7DE8\u865F",
+        type: "\u7533\u8ACB\u5E74",
         value: fliter_2,
         style: {
           position: "absolute",
@@ -55725,17 +55814,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var NCKU = {
-  "LIB": ["中文系", "外文系", "台文系"],
-  "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
-  "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
-  "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
-  "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
-  "SOC": ["政治系", "經濟系", "法律系", "心理系"],
-  "EECS": ["電機系", "資訊系"],
-  "CPD": ["建築系", "都計系", "工設系"],
-  "BIO": ["生科系", "生技系"]
-};
+var NCKU = ["中文系", "外文系", "台文系", "數學系", "物理系", "化學系", "地科系", "光電系", "機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程", "工資系", "交管系", "企管系", "統計系", "會計系", "醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系", "政治系", "經濟系", "法律系", "心理系", "電機系", "資訊系", "建築系", "都計系", "工設系", "生科系", "生技系"];
 
 var post =
 /*#__PURE__*/
@@ -55754,7 +55833,8 @@ function (_Component) {
       score: 0,
       out_maj: "",
       in_maj: "",
-      comment: ""
+      comment: "",
+      is_send: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.changeType = _this.changeType.bind(_assertThisInitialized(_this));
@@ -55787,6 +55867,9 @@ function (_Component) {
         return res.json();
       }).catch(function (e) {
         return console.log('錯誤:', e);
+      });
+      this.setState({
+        is_send: true
       });
     }
   }, {
@@ -55834,36 +55917,28 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u806F\u7D61\u6211\u5011"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/post"
-      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/comment"
-      }, "\u700F\u89BD\u5FC3\u5F97")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var maj_option = NCKU.map(function (department) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: department,
+          style: {
+            textAlign: "center"
+          }
+        }, department);
+      });
+      var display = this.state.is_send === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u611F\u8B1D\u4F60\u7684\u586B\u5BEB!", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5BE9\u67E5\u901A\u904E\u5F8C\u5C31\u6703\u770B\u5230\u4F60\u7684\u5FC3\u5F97\u56C9!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form_container",
         style: {
+          position: "absolute",
+          color: "rgb(229,68,109)",
           boxShadow: "0 0px 12px rgba(0,0,0,.175)",
-          width: "500px",
-          height: "500px",
           maxWidth: "90%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          position: "absolute",
-          margin: "3% 10%",
-          color: "rgb(229,68,109)"
-        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        style: {}
-      }, "\u5206\u4EAB\u4F60\u7684\u5FC3\u5F97\u5427!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         style: {
-          marginLeft: "5%",
-          marginRight: "5%"
+          width: "100%",
+          textAlign: "left"
         }
-      }, "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, "\u5206\u4EAB\u4F60\u7684\u5FC3\u5F97\u5427!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "trans_type",
         name: "trans_type",
         onChange: this.changeType,
@@ -55874,56 +55949,31 @@ function (_Component) {
         value: "\u8F49\u7CFB"
       }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "\u8F49\u5B78"
-      }, "\u8F49\u5B78"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: {
-          marginLeft: "5%",
-          marginRight: "5%"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "\u8F49\u5B78"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "year",
         type: "text",
-        placeholder: "\u7533\u8ACB\u5E74\u5EA6:",
         onChange: this.changeYear
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: {
-          marginLeft: "5%",
-          marginRight: "5%"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "score",
         type: "text",
-        placeholder: "\u5B78\u5E74\u5206\u6578:",
         onChange: this.changeScore
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: {
-          marginLeft: "5%",
-          marginRight: "5%"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "out_maj",
-        placeholder: "\u8F49\u51FA\u79D1\u7CFB:",
-        type: "text",
-        onChange: this.changeOut
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        onChange: this.changeOut,
         style: {
-          marginLeft: "5%",
-          marginRight: "5%"
+          color: "black"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, maj_option)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "in_maj",
-        type: "text",
-        placeholder: "\u8F49\u5165\u79D1\u7CFB:",
-        onChange: this.changeIn
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        onChange: this.changeIn,
         style: {
-          marginLeft: "5%",
-          marginRight: "5%"
+          color: "black"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      }, maj_option)), "\u5FC3\u5F97:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         id: "comment",
-        placeholder: "\u5FC3\u5F97:",
+        placeholder: "",
         onChange: this.changeComment
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleClick,
         style: {
           marginLeft: "10%",
@@ -55934,7 +55984,16 @@ function (_Component) {
           color: "white",
           backgroundColor: "rgb(229,68,109)"
         }
-      }, "\u9001\u51FA")))));
+      }, "\u9001\u51FA"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u806F\u7D61\u6211\u5011"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/post"
+      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/comment"
+      }, "\u700F\u89BD\u5FC3\u5F97")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index"
+      }, display));
     }
   }]);
 

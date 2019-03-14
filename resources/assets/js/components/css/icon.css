@@ -30,6 +30,20 @@
       opacity: 0;
     }
   }
+
+  .lds-css-ng-scope{ 
+    position: absolute;
+    top: 20vw;
+    margin-left:  30vw; 
+  }
+
+  @media (min-width: 870px) {
+    .lds-css-ng-scope{ 
+      top: 10vw;
+      margin-left:  30vw; 
+    }
+   }
+
   .lds-ripple {
     position: relative;
   }

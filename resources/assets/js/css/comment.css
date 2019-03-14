@@ -36,9 +36,9 @@
     width: 95%;
     max-width: 97%;
     height: auto;
-    left: 2%;
-    top:105px;
     
+    top:105px;
+    margin: 0 2%;
 }
 
 .statistic ul{
@@ -51,7 +51,7 @@
 }
 .statistic li{
     float:left;
-    padding: 0 0.5%;
+    padding: 0 0.7vw;
 }
 
 @media (min-width: 596px) { 
