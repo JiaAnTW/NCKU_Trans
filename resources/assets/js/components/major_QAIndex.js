@@ -43,11 +43,11 @@ class major_QAIndex extends Component {
   }
 
   changeRowCard(){
-    //if(window.innerWidth>1400){
+    if(window.innerWidth>860){
       //this.setState({row:5});
-      //this.props.handleRWD(false);
+      this.props.handleRWD(false);
       //this.handleCardSize(false);
-    //}
+    }
     //else if(window.innerWidth>=1140){
       //this.setState({row:4});
       //this.props.handleRWD(false);
@@ -63,11 +63,11 @@ class major_QAIndex extends Component {
       //this.props.handleRWD(true);
       //this.handleCardSize(false);
     //}
-    //else{
+    else{
       //this.setState({row:1});
       //this.handleCardSize(true);
-      //this.props.handleRWD(true);
-    //}
+      this.props.handleRWD(true);
+    }
   }
 
 

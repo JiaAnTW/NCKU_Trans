@@ -10,6 +10,7 @@ class commentIndex extends Component {
       cardWidth:"20rem",
       cardHeight:"20rem",
       cardPadding:"3rem",
+      fontSize:"3.5rem",
       btnHeight:"15rem",
       cardTextHeight:"6.06rem",
       wordsNumber: 35,
@@ -28,9 +29,9 @@ class commentIndex extends Component {
 
   handleCardSize(is_mobile){
     if(is_mobile)
-      this.setState({btnHeight:"11rem",cardWidth:"100vw",cardHeight:"16.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
+      this.setState({fontSize:"2.5rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"14.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
     else
-      this.setState({btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
+      this.setState({fontSize:"3.5rem",btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   }
 
   componentDidMount() {
@@ -90,7 +91,7 @@ class commentIndex extends Component {
     return(
       <Card style={{ width: this.state.cardWidth,height:this.state.cardHeight,maxWidth:"100%" }}>
       <Card.Body style={{maxHeight: "100%"}}>
-      <Card.Title style={{ fontSize: '3.5rem' }}>{"轉 "+datas[number]["in_maj"]}</Card.Title>
+      <Card.Title style={{ fontSize: this.state.fontSize }}>{"轉 "+datas[number]["in_maj"]}</Card.Title>
       <Card.Subtitle className="mb-2 text-muted">{"由 "+datas[number]["out_maj"]+" 轉出"}</Card.Subtitle>
       <Card.Text  style={{ height: this.state.cardTextHeight }}>
         {comment}

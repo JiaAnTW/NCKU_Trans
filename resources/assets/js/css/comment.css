@@ -22,7 +22,7 @@
     z-index: 0;
 }
 
-.MobileMenu{
+.comment .MobileMenu{
     position:fixed;
     top:55px;
     left:0px;
@@ -36,7 +36,6 @@
     width: 95%;
     max-width: 97%;
     height: auto;
-    
     top:105px;
     margin: 0 2%;
 }
@@ -72,7 +71,7 @@
         top:235px;
         
     }
-    .MobileMenu{
+    .comment .MobileMenu{
         position:fixed;
         top:55px;
         left:0px;
@@ -126,7 +125,7 @@
         top:220px;
         height: auto;
     }
-    .MobileMenu{
+    .comment .MobileMenu{
         position:fixed;
         top:55px;
         left:0px;

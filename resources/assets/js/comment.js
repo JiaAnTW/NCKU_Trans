@@ -246,14 +246,15 @@ class comment extends Component {
               </div>
             </li>
             <li>
-              <Progress title="平均錄取分數" value={(this.state.show.length==0)?"null":count/this.state.show.length}/>
+              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(this.state.show.length==0)?"null":count/this.state.show.length}/>
             </li>
             <li>
-              <Progress title="最低錄取分數" value={(this.state.show.length==0)?"null":min}/>
+              <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
             </li>
             <li>
-              <Progress title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
+              <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length==0)?"null":min}/>
             </li>
+
 
           </ul>
         </div>

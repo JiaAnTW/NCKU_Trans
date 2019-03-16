@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "bootstrap": "^3.4.1",
+        "jsonwebtoken": "^8.5.0",
         "rc-drawer": "^1.7.7",
         "rc-menu": "^7.4.21",
         "rc-progress": "^2.3.0",

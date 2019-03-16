@@ -23,7 +23,9 @@ html::-webkit-scrollbar-track-piece  {
  border: none;
 }
 
-
+.btn-primary{
+    background-image: none;
+}
 
 body{
     max-width: 100%;
@@ -38,11 +40,11 @@ nav{
     color: rgb(248, 224, 227);
     height: 55px;
     font-size: 20px;
-    background-color: rgb(242,82,110);
+    background-color: rgb(229,68,109);
     
 }
 
-.navItem{
+.navItem,.navItem:visited{
     float: right;
     margin:  12.5px 50px;
     color: rgb(248, 224, 227);
@@ -51,7 +53,7 @@ nav{
 }
 
 .navItem:hover{
-    color: gray;
+    color: #FEABCF;
     text-decoration:none;
 }
 

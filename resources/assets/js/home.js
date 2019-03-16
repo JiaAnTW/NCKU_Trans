@@ -13,8 +13,12 @@ class home extends Component {
     this.state = {
       open: false,
       pathname: "",
+      data:[],
+      email:"",
+      password:"",
     };
     this.handleClick=this.handleClick.bind(this);
+    this.handleTest=this.handleTest.bind(this);
   }
 
   handleClick(e){
@@ -30,6 +34,23 @@ class home extends Component {
   }
 
 
+  handleTest() {
+    const user={"email":this.state.email,"password":this.state.password};
+    fetch(
+      '/api/post/user/login', {method: 'POST',
+        body: JSON.stringify(user),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+        }
+    )
+      .then(res => res.json())
+      .then(json =>{  
+        if (json.data["success"]) {
+        console.log("Login Successful!");
+      }})
+      .catch(e => console.log('錯誤:', e));
+  }
 
   render() {
     const major1=["物理系","化學系"];
@@ -83,7 +104,12 @@ class home extends Component {
         <MobileFliter type="依編號" value={test2} style={{position:"absolute",top:"0",left:"60%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"8vw"}}/>
         <Container style={{position:"absolute",top:"20%",left:"30%",width:'20%',backgroundColor:"rgb(229,68,109)",color:"white",height:"auto"}}>
           {btn()}
+          
         </Container>
+        <input placeholder="email" onChange={(e)=>this.setState({email: e.target.value})}/>
+        <input placeholder="password" onChange={(e)=>this.setState({password: e.target.value})}/>
+        <button onClick={this.handleTest}>按我啊</button>
+        <div>{this.state.data}</div>
       </div>
     );
   }

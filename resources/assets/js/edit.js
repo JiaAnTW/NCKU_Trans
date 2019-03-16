@@ -91,7 +91,8 @@ class edit extends Component {
         url, {method: 'PUT',
           body: JSON.stringify(data),
           headers: new Headers({
-              'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization':"Bearer "+this.props.token,
             })
           }
       )
@@ -113,7 +114,8 @@ class edit extends Component {
         url, {method: 'PUT',
           body: JSON.stringify(data),
           headers: new Headers({
-              'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization':"Bearer "+this.props.token,
             })
           }
       )
@@ -130,6 +132,10 @@ class edit extends Component {
       const url='/api/post/major/'+this.state.id.toString();
       fetch(
         url, {method: 'DELETE',
+          headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization':"Bearer "+this.props.token,
+          })
         }
       )
       .then(res => res.json())
@@ -139,6 +145,10 @@ class edit extends Component {
         const url='/api/post/major_QA/'+this.state.qa_id.toString();
         fetch(
           url, {method: 'DELETE',
+            headers: new Headers({
+              'Content-Type': 'application/json',
+              'Authorization':"Bearer "+this.props.token,
+            })
           }
         )
         .then(res => res.json())
@@ -216,7 +226,7 @@ class edit extends Component {
             申請年度:   
             <input id="year" type="text" value={this.state.year} onChange={(e) => this.setState({ year: e.target.value })}/>
             <br/>
-            <p style={{marginLeft: "5%",marginRight: "5%"}}>
+            <p>
             學年分數:
             <br/>    
             <input id="score" type="text" value={this.state.score} onChange={(e) => this.setState({ score: e.target.value })}/>
@@ -247,8 +257,9 @@ class edit extends Component {
         </div>);
     }
     return (
-      <div className="post">
-        <div className="index">
+      <div className="edit">
+        <div className="index" style={{width:"100%",height:"100vh",position:"absolute",top:"0px",left:"0px"}}>
+          <div style={{width:"60%",margin:"6% 20%"}}>
         編輯的類別:<select id="comment_id" name ="comment_id" onChange={(e) =>{ this.setState({ now_handle: e.target.value });this.changeId}}>
                     <option value="心得">心得</option>
                     <option value="QA">QA</option>
@@ -263,6 +274,7 @@ class edit extends Component {
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
+            </div>
         </div>
       </div>
     );

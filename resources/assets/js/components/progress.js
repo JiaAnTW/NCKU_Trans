@@ -9,6 +9,7 @@ class progress extends Component {
     this.state = {
         percent: 100,
         is_finish: false,
+        prevValue:"",
       };
       this.increase = this.increase.bind(this);
       this.decrease = this.decrease.bind(this);
@@ -21,22 +22,30 @@ increase() {
     const std=(this.props.value=="null")?100:this.props.value+0.09;
     if (percent > std) {
         clearTimeout(this.tm);
-        this.setState({is_finish: true});
+        console.log("let'stop increasing!")
+        if(this.state.prevValue==="null"||this.state.prevValue>this.props.value)
+          this.decrease()
+        else
+          this.setState({is_finish: true});
       return;
     }
     this.setState({ percent });
-    this.tm = setTimeout(this.increase, 0.01);
+    this.tm = setTimeout(this.increase, 0.0001);
   }
 
   decrease() {
     const percent = this.state.percent - 0.1;
-    if (percent < this.props.value) {
+    if (this.props.value==="null"||percent < this.props.value) {
         clearTimeout(this.tm);
+        console.log("let'stop decreasing!")
+      if(this.props.value==="null"||this.state.prevValue<this.props.value)
+        this.increase()
+      else
         this.setState({is_finish: true});
       return;
     }
     this.setState({ percent });
-    this.tm = setTimeout(this.decrease, 0.001);
+    this.tm = setTimeout(this.decrease, 0.0001);
   }
 
 
@@ -47,10 +56,14 @@ increase() {
 
 
   componentDidUpdate(prevProps, prevState){
-    if((this.state.is_finish==true&&prevProps.value!=this.props.value)){
-        this.setState({is_finish: false});
-        if(prevProps.value=="null"||prevProps.value>this.props.value)
+    if(prevProps.value!=this.props.value)
+      this.setState({prevValue:prevProps.value});
+    if(this.state.is_finish===true&&(prevProps.value!=this.props.value)){
+        this.setState({is_finish: false, prevValue:prevProps.value});
+        if(prevProps.value=="null"||prevProps.value>this.props.value){
+            console.log("let's change to decrease!")
             this.decrease();
+        }
         else
             this.increase();
     }

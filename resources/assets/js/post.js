@@ -89,7 +89,7 @@ class post extends Component {
 
     const display=(this.state.is_send===true)?<span>感謝你的填寫!<br/>審查通過後就會看到你的心得囉!</span>:
     <div className="form_container" style={{position:"absolute",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%"}}>
-    <h1 style={{width:"100%",textAlign:"left"}}>分享你的心得吧!</h1>
+    <div style={{margin:"5% 5%"}}>
     <p>
       轉系/轉學:<br/>   
       <select id="trans_type" name ="trans_type" onChange={this.changeType} style={{color:"black"}}>
@@ -122,12 +122,13 @@ class post extends Component {
     <textarea id="comment" placeholder="" onChange={this.changeComment} ></textarea>
     <button onClick={this.handleClick} style={{marginLeft: "10%",marginRight: "10%",width:"80%",borderRadius:"0",border:"0px solid rgb(229,68,109)",color:"white",backgroundColor:"rgb(229,68,109)"}}>送出</button>
     </div>
+    </div>
     ;
 
     return (
       <div className="post">
-                <nav><a>聯絡我們</a><a href="/#/post">分享心得</a><a>常見QA</a><a href="/#/comment">瀏覽心得</a></nav>
         <div className="index">
+          <h1 style={{width:"100%",textAlign:"center",color: "white", marginTop:"7rem"}}>分享你的心得吧!</h1>
           {display}
         </div>
       </div>

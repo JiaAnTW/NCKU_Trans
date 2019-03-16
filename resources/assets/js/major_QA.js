@@ -22,6 +22,7 @@ class maj_QA extends Component {
         is_fetch:false,
         datas: [],
         total_tags:[],
+        openFliter: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -39,14 +40,11 @@ class maj_QA extends Component {
     if(is_mobile)
       this.setState({
         mobile_display: "none",
-        contentWidth: "85vw",
-      contentHeight: "800px",
+        openFliter: false,
     });
     else
       this.setState({
         mobile_display: "block",
-        contentWidth: "800px",
-        contentHeight: "500px",
     });
   }
 
@@ -113,6 +111,8 @@ class maj_QA extends Component {
   }
 
   changeFliter(type){
+      if(this.state.mobile_display==="none")
+        this.setState({openFliter: false})
       var show=[];
       if(type!="none"){  
         var tag=[];
@@ -244,17 +244,17 @@ class maj_QA extends Component {
 
     return (
       <div className="major_QA">
-          <div className="Menu">
-            <Button variant="secondary" onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"85%",margin:"5px 10px"}}>全部心得</Button>
-            <Button variant="secondary" onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"85%",margin:"20px 10px"}}>送出篩選</Button>
-              {Menu()}
-          </div>
         <div className="index">
             {show}
         </div>
         <div className="MobileMenu">
-        <MobileFliter fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+          <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
+          <div className="Menu" style={{display:(this.state.openFliter===true)?"block":this.state.mobile_display}}>
+            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>全部心得</Button>
+            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"20px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>送出篩選</Button>
+              {Menu()}
+          </div>
       </div>
     );
   }

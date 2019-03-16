@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -35,5 +39,36 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function login()
+    {
+    $input = Input::all();
+
+    $rules = ['email'=>'required|email',
+              'password'=>'required'
+              ];
+
+    $validator = Validator::make($input, $rules);
+
+    if ($validator->passes()) {
+        $attempt = Auth::attempt([
+            'email' => $input['email'],
+            'password' => $input['password']
+        ]);
+
+        if ($attempt) {
+            return Redirect::intended('post');
+        }
+
+        return Redirect::to('login')
+                ->withErrors(['fail'=>'Email or password is wrong!']);
+    }
+
+    //fails
+    return Redirect::to('login')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
     }
 }
