@@ -45,7 +45,7 @@ class content extends React.Component {
       const tableType=(this.props.mobile==="none")?
       <thead>
       <tr><th>{"申請年度: "+this.props.data["year"]}</th></tr>
-      <tr><th>{"申請類別: 平轉"}</th></tr>
+      <tr><th>{"排名: "+this.props.data["rank_1"]+" / "+this.props.data["rank_2"]}</th></tr>
       <tr><th>{"學年分數: "+this.props.data["score"]}</th></tr>
       <tr><th>{"轉出科系: "+this.props.data["out_maj"]}</th></tr>
     </thead>
@@ -53,7 +53,7 @@ class content extends React.Component {
       :<thead>
       <tr>
         <th>{"申請年度: "+this.props.data["year"]}</th>
-        <th>{"申請類別: 平轉"}</th>
+        <th>{"排名: "+this.props.data["rank_1"]+" / "+this.props.data["rank_2"]}</th>
         <th>{"學年分數: "+this.props.data["score"]}</th>
         <th>{"轉出科系: "+this.props.data["out_maj"]}</th>
       </tr>

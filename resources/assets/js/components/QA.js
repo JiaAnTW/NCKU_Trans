@@ -55,7 +55,7 @@ class QA extends React.Component {
                 </Card.Text>
                 </div>
                 </Card.Body> 
-                <div id="fb-comments" className="fb-comments" data-href="" data-colorscheme="light" data-numposts="5" style={{maxWidth: "100%",margin:containerMargin}}></div>
+                <div id="fb-comments" className="fb-comments" data-href="" data-width="95%" data-colorscheme="light" data-numposts="5" style={{maxWidth: "95%",margin:containerMargin}}></div>
                  
             </Card>
             <button className="contentBtn" onClick={this.props.next.bind(this,"next")} id="rightBtn" ><div className="Arrow" id="rightArrow"></div><div className="btnText" id="next">下一篇</div></button>

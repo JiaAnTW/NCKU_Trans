@@ -78,10 +78,19 @@ class admin extends Component {
   render() {
       const loginForm=()=>{
           return(
-        <div style={{position:"absolute",width:"80%",margin:"20% 10%"}}>
-            <input placeholder="email" onChange={(e)=>this.setState({email: e.target.value})}/>
-            <input placeholder="password" onChange={(e)=>this.setState({password: e.target.value})}/>
-            <button onClick={this.handleLogin}>按我啊</button>
+        <div className="post">
+        <div className="index">
+        <h1 style={{width:"100%",textAlign:"center",color: "white", marginTop:"7rem"}}>管理員介面</h1>
+        <div className="form_container" style={{position:"absolute",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%"}}>
+            <p style={{width:"100%", marginLeft:"20%", marginTop:"5%"}}>
+            <input placeholder="email" id="year" onChange={(e)=>this.setState({email: e.target.value})}/>
+            </p>
+            <p style={{width:"100%", marginLeft:"20%"}}>
+            <input placeholder="password" id="year"  onChange={(e)=>this.setState({password: e.target.value})}/>
+            </p>
+            <button onClick={this.handleLogin} style={{margin: "5% 10%",width:"80%",borderRadius:"0",border:"0px solid rgb(229,68,109)",color:"white",backgroundColor:"rgb(229,68,109)"}}>登入</button>
+            </div>
+            </div>
         </div>
       );
     }

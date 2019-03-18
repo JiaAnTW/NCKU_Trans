@@ -14,6 +14,14 @@
     font-size: 7vw;
     color: white;
   }
+
+  #fb-comments span{
+    width: 70%;
+  }
+
+  .QA_container iframe{
+    width: 100%;
+  }
   
   .QA_card_container .title2{
     max-width: 100%;

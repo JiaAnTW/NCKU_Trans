@@ -59,13 +59,17 @@ border: 0px solid;
 #year,#id,#out_maj, #in_maj,#score{
     /* 4 */ 
     width:60%;
-    border:0.5px solid grey;
     color:black;
-    border-radius: 1px;
+    border-radius: 3px;
+}
+
+#rank,#year,#id,#out_maj, #in_maj,#score,#comment{
+    border:0px solid grey;
+    background-color: #d9d9d9;
 }
 
 .post p{
-    width:40%;
+    width:50%;
     margin-left: 0%;
 }
 
@@ -80,7 +84,6 @@ border: 0px solid;
     /* 4 */ 
     height:80px;
     width:100%;
-    border:0.5px solid grey;
     color:black;
 }
 
@@ -111,12 +114,15 @@ border: 0px solid;
         margin: 1% 32%;
         width: 36%;
     } 
-
  }
 
 @media (min-width: 992px) { 
     .post .index{
         height: 100vh;
+    }
+    .post p{
+        width:40%;
+        margin-left: 0%;
     }
 }
 

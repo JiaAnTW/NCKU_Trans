@@ -194,7 +194,7 @@ class comment extends Component {
         name: "none",
         type: "department",
         now:-1,
-        option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社科院",6],["電資學院",7],["規設院",8],["生科院",9]]
+        option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社會科學院",6],["電資學院",7],["規設院",8],["生科院",9]]
       }
     );
     for(var i=0;i<department.length;++i){
@@ -222,15 +222,17 @@ class comment extends Component {
 
   spawnStatistic(){
     if(this.state.is_fetch==true){
-      let count=0;
-      let min=100;
+      var count=0;
+      var min=100;
       var array=[];
+      var length=this.state.show.length;
       for(let i=0;i<this.state.show.length;++i){
-        count=count+this.state.show[i]["score"];
+        count=count+Number(this.state.show[i]["score"]);
         array.push(this.state.show[i]["score"]);
         if(this.state.show[i]["score"]<min)
           min=this.state.show[i]["score"];
       }
+      console.log(count/length)
       array.sort(function(a, b) {
         return a-b;
       });
@@ -246,13 +248,13 @@ class comment extends Component {
               </div>
             </li>
             <li>
-              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(this.state.show.length==0)?"null":count/this.state.show.length}/>
+              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":Math.round(count/length)}/>
             </li>
             <li>
               <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
             </li>
             <li>
-              <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length==0)?"null":min}/>
+              <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length===0)?"null":min}/>
             </li>
 
 

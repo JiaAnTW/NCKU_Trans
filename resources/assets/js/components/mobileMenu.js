@@ -59,7 +59,7 @@ class mobileMenu extends Component {
               <ListGroup.Item action href="/#/comment" className="list" style={ListStyleFirst}>瀏覽心得</ListGroup.Item>
               <ListGroup.Item action href="/#/QA/~" className="list" style={ListStyle}>常見QA</ListGroup.Item>
               <ListGroup.Item action href="/#/post" className="list" style={ListStyle}>分享心得</ListGroup.Item>
-              <ListGroup.Item action href="/#/" className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
+              <ListGroup.Item action className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
             </ListGroup>
           </div>
         </Collapse>

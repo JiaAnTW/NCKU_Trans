@@ -3104,7 +3104,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\r\n  .QA_container .QA_cardBody{\r\n    width: 95vw;\r\n  }\r\n\r\n\r\n  .QA_card_container .id_container{\r\n    width: 15vw;\r\n    height:15vw;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 14vw;\r\n    font-size: 7vw;\r\n    color: white;\r\n  }\r\n  \r\n  .QA_card_container .title2{\r\n    max-width: 100%;\r\n    font-size: 6vw;\r\n  }\r\n  \r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n  \r\n  .QA_card_container span{\r\n    position: relative;\r\n    top: 50px;\r\n    font-size: 4vw;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 8vw;\r\n    text-align:justify;\r\n  }\r\n  \r\n  \r\n  .QA_container  .Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 5vw;\r\n  width: 5vw;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n  position: absolute;\r\n  top: 197.5px;\r\n  font-size: 3vw;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n  right: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n  left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n  left: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container #before{\r\n  right: 6px;\r\n  }\r\n  \r\n  .QA_container .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 5vw;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .QA_container .QA_cardBody{\r\n      width: 95%;\r\n    }\r\n\r\n\r\n     .QA_card_container .id_container{\r\n      width: 100px;\r\n      height:100px;\r\n      border-radius:100px;\r\n      background-color: rgb(229,68,109);\r\n      text-align: center;\r\n      line-height: 90px;\r\n      font-size: 40px;\r\n      color: white;\r\n    }\r\n  \r\n    .QA_card_container .title2{\r\n      max-width: 100%;\r\n      font-size: 36px;\r\n    }\r\n  \r\n    .QA_container.closeBtn{\r\n      position: absolute;\r\n      right:15px;\r\n      top:20px;\r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n    .QA_card_container span{\r\n      position: relative;\r\n      top: 50px;\r\n      font-size: 20px;\r\n      font-weight: 100;\r\n      letter-spacing: 2.5px;\r\n      line-height: 35px;\r\n      text-align:justify;\r\n    }\r\n  \r\n    .QA_container.closeBtn2{\r\n    \r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n  \r\n    .QA_container .Arrow{\r\n    position: absolute;\r\n    top: 175px;\r\n    border-right: 4px solid gray;\r\n    border-top: 4px solid gray;\r\n    height: 50px;\r\n    width: 50px;\r\n    border-left: 2px solid transparent;\r\n    border-bottom: 2px solid transparent;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n    position: absolute;\r\n    top: 187.5px;\r\n    font-size: 15px;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n    right: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n    left: 5px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n    left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n    left: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n    right: 10px;\r\n    transform: rotate(-135deg);\r\n    -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container  #before{\r\n      right: 6px;\r\n    }\r\n  }\r\n  \r\n  \r\n  @media (min-width: 870px) {\r\n  \r\n  }\r\n  \r\n  \r\n  \r\n  ", ""]);
+exports.push([module.i, "\r\n  .QA_container .QA_cardBody{\r\n    width: 95vw;\r\n  }\r\n\r\n\r\n  .QA_card_container .id_container{\r\n    width: 15vw;\r\n    height:15vw;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 14vw;\r\n    font-size: 7vw;\r\n    color: white;\r\n  }\r\n\r\n  .QA_container iframe{\r\n    width: 95%;\r\n  }\r\n  \r\n  .QA_card_container .title2{\r\n    max-width: 100%;\r\n    font-size: 6vw;\r\n  }\r\n  \r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n  \r\n  .QA_card_container span{\r\n    position: relative;\r\n    top: 50px;\r\n    font-size: 4vw;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 8vw;\r\n    text-align:justify;\r\n  }\r\n  \r\n  \r\n  .QA_container  .Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 5vw;\r\n  width: 5vw;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n  position: absolute;\r\n  top: 197.5px;\r\n  font-size: 3vw;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n  right: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n  left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n  left: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container #before{\r\n  right: 6px;\r\n  }\r\n  \r\n  .QA_container .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 5vw;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .QA_container .QA_cardBody{\r\n      width: 95%;\r\n    }\r\n\r\n\r\n     .QA_card_container .id_container{\r\n      width: 100px;\r\n      height:100px;\r\n      border-radius:100px;\r\n      background-color: rgb(229,68,109);\r\n      text-align: center;\r\n      line-height: 90px;\r\n      font-size: 40px;\r\n      color: white;\r\n    }\r\n  \r\n    .QA_card_container .title2{\r\n      max-width: 100%;\r\n      font-size: 36px;\r\n    }\r\n  \r\n    .QA_container.closeBtn{\r\n      position: absolute;\r\n      right:15px;\r\n      top:20px;\r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n    .QA_card_container span{\r\n      position: relative;\r\n      top: 50px;\r\n      font-size: 20px;\r\n      font-weight: 100;\r\n      letter-spacing: 2.5px;\r\n      line-height: 35px;\r\n      text-align:justify;\r\n    }\r\n  \r\n    .QA_container.closeBtn2{\r\n    \r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n  \r\n    .QA_container .Arrow{\r\n    position: absolute;\r\n    top: 175px;\r\n    border-right: 4px solid gray;\r\n    border-top: 4px solid gray;\r\n    height: 50px;\r\n    width: 50px;\r\n    border-left: 2px solid transparent;\r\n    border-bottom: 2px solid transparent;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n    position: absolute;\r\n    top: 187.5px;\r\n    font-size: 15px;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n    right: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n    left: 5px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n    left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n    left: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n    right: 10px;\r\n    transform: rotate(-135deg);\r\n    -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container  #before{\r\n      right: 6px;\r\n    }\r\n  }\r\n  \r\n  \r\n  @media (min-width: 870px) {\r\n  \r\n  }\r\n  \r\n  \r\n  \r\n  ", ""]);
 
 // exports
 
@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem,.navItem:visited{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\n.btn:focus,.btn.focus{\r\n    box-shadow: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem,.navItem:visited{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3275,7 +3275,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".post .form_container{\r\n    margin: 1% 5%;\r\n    width: 90%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:60%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n    border-radius: 1px;\r\n}\r\n\r\n.post p{\r\n    width:40%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    border:0.5px solid grey;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:0px;\r\n    height: 120vh;\r\n    z-index: 0;\r\n    background-color: rgb(229,68,109);\r\n}\r\n\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n    } \r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        height: 100vh;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}", ""]);
+exports.push([module.i, ".post .form_container{\r\n    margin: 1% 5%;\r\n    width: 90%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:60%;\r\n    color:black;\r\n    border-radius: 3px;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:50%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:0px;\r\n    height: 120vh;\r\n    z-index: 0;\r\n    background-color: rgb(229,68,109);\r\n}\r\n\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n    } \r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        height: 100vh;\r\n    }\r\n    .post p{\r\n        width:40%;\r\n        margin-left: 0%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}", ""]);
 
 // exports
 
@@ -52479,28 +52479,62 @@ function (_Component) {
 
       var loginForm = function loginForm() {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "post"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "index"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          style: {
+            width: "100%",
+            textAlign: "center",
+            color: "white",
+            marginTop: "7rem"
+          }
+        }, "\u7BA1\u7406\u54E1\u4ECB\u9762"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form_container",
           style: {
             position: "absolute",
-            width: "80%",
-            margin: "20% 10%"
+            color: "rgb(229,68,109)",
+            boxShadow: "0 0px 12px rgba(0,0,0,.175)",
+            maxWidth: "90%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          style: {
+            width: "100%",
+            marginLeft: "20%",
+            marginTop: "5%"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           placeholder: "email",
+          id: "year",
           onChange: function onChange(e) {
             return _this3.setState({
               email: e.target.value
             });
           }
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          style: {
+            width: "100%",
+            marginLeft: "20%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           placeholder: "password",
+          id: "year",
           onChange: function onChange(e) {
             return _this3.setState({
               password: e.target.value
             });
           }
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.handleLogin
-        }, "\u6309\u6211\u554A"));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this3.handleLogin,
+          style: {
+            margin: "5% 10%",
+            width: "80%",
+            borderRadius: "0",
+            border: "0px solid rgb(229,68,109)",
+            color: "white",
+            backgroundColor: "rgb(229,68,109)"
+          }
+        }, "\u767B\u5165"))));
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -52882,7 +52916,7 @@ function (_Component) {
         name: "none",
         type: "department",
         now: -1,
-        option: [["全部學院", -1], ["文學院", 1], ["理學院", 2], ["工學院", 3], ["管理學院", 4], ["醫學院", 5], ["社科院", 6], ["電資學院", 7], ["規設院", 8], ["生科院", 9]]
+        option: [["全部學院", -1], ["文學院", 1], ["理學院", 2], ["工學院", 3], ["管理學院", 4], ["醫學院", 5], ["社會科學院", 6], ["電資學院", 7], ["規設院", 8], ["生科院", 9]]
       });
 
       for (var i = 0; i < department.length; ++i) {
@@ -52911,13 +52945,15 @@ function (_Component) {
         var count = 0;
         var min = 100;
         var array = [];
+        var length = this.state.show.length;
 
         for (var i = 0; i < this.state.show.length; ++i) {
-          count = count + this.state.show[i]["score"];
+          count = count + Number(this.state.show[i]["score"]);
           array.push(this.state.show[i]["score"]);
           if (this.state.show[i]["score"] < min) min = this.state.show[i]["score"];
         }
 
+        console.log(count / length);
         array.sort(function (a, b) {
           return a - b;
         });
@@ -52965,7 +53001,7 @@ function (_Component) {
         })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u5E73\u5747\u9304\u53D6\u5206\u6578",
-          value: this.state.show.length == 0 ? "null" : count / this.state.show.length
+          value: length === 0 ? "null" : Math.round(count / length)
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u7B2C\u4E00\u56DB\u5206\u4F4D\u6578",
@@ -52973,7 +53009,7 @@ function (_Component) {
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u6700\u4F4E\u9304\u53D6\u5206\u6578",
-          value: this.state.show.length == 0 ? "null" : min
+          value: this.state.show.length === 0 ? "null" : min
         }))));
       }
     }
@@ -53138,7 +53174,8 @@ function (_Component) {
     _this.state = {
       percent: 100,
       is_finish: false,
-      prevValue: ""
+      is_Mount: false,
+      prevValue: 101
     };
     _this.increase = _this.increase.bind(_assertThisInitialized(_this));
     _this.decrease = _this.decrease.bind(_assertThisInitialized(_this));
@@ -53150,12 +53187,12 @@ function (_Component) {
     key: "increase",
     value: function increase() {
       var percent = this.state.percent + 0.1;
-      var std = this.props.value == "null" ? 100 : this.props.value + 0.09;
+      var std = this.props.value == "null" ? 100 : Number(this.props.value) + 0.09;
 
       if (percent > std) {
         clearTimeout(this.tm);
         console.log("let'stop increasing!");
-        if (this.state.prevValue === "null" || this.state.prevValue > this.props.value) this.decrease();else this.setState({
+        if (this.state.prevValue === "null" || Number(this.state.prevValue) > Number(this.props.value)) this.decrease();else this.setState({
           is_finish: true
         });
         return;
@@ -53171,10 +53208,10 @@ function (_Component) {
     value: function decrease() {
       var percent = this.state.percent - 0.1;
 
-      if (this.props.value === "null" || percent < this.props.value) {
+      if (this.props.value === "null" || percent < Number(this.props.value)) {
         clearTimeout(this.tm);
         console.log("let'stop decreasing!");
-        if (this.props.value === "null" || this.state.prevValue < this.props.value) this.increase();else this.setState({
+        if (this.props.value === "null" || Number(this.state.prevValue) < Number(this.props.value)) this.increase();else this.setState({
           is_finish: true
         });
         return;
@@ -53188,25 +53225,30 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.setState({
+        is_Mount: true
+      });
       this.decrease();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevProps.value != this.props.value) this.setState({
-        prevValue: prevProps.value
-      });
-
-      if (this.state.is_finish === true && prevProps.value != this.props.value) {
-        this.setState({
-          is_finish: false,
+      if (this.state.is_Mount == true) {
+        if (prevProps.value != this.props.value) this.setState({
           prevValue: prevProps.value
         });
 
-        if (prevProps.value == "null" || prevProps.value > this.props.value) {
-          console.log("let's change to decrease!");
-          this.decrease();
-        } else this.increase();
+        if (this.state.is_finish === true && prevProps.value != this.props.value) {
+          this.setState({
+            is_finish: false,
+            prevValue: prevProps.value
+          });
+
+          if (prevProps.value == "null" || Number(prevProps.value) > Number(this.props.value)) {
+            console.log("let's change to decrease!");
+            this.decrease();
+          } else this.increase();
+        }
       }
     }
   }, {
@@ -53376,10 +53418,11 @@ function (_React$Component) {
         id: "fb-comments",
         className: "fb-comments",
         "data-href": "",
+        "data-width": "95%",
         "data-colorscheme": "light",
         "data-numposts": "5",
         style: {
-          maxWidth: "100%",
+          maxWidth: "95%",
           margin: containerMargin
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -53749,8 +53792,8 @@ function (_React$Component) {
       var cardHeight = this.props.mobile === "none" ? "75vh" : "500px";
       var cardBodyWidth = this.props.mobile === "none" ? "95vw" : "800px";
       var containerMargin = this.props.mobile === "none" ? "30px 12vw" : "30px 80px";
-      var tableType = this.props.mobile === "none" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請類別: 平轉")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: " + this.props.data["score"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"]))) //PC
-      : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請類別: 平轉"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: " + this.props.data["score"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"])));
+      var tableType = this.props.mobile === "none" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "排名: " + this.props.data["rank_1"] + " / " + this.props.data["rank_2"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: " + this.props.data["score"])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"]))) //PC
+      : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "申請年度: " + this.props.data["year"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "排名: " + this.props.data["rank_1"] + " / " + this.props.data["rank_2"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "學年分數: " + this.props.data["score"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "轉出科系: " + this.props.data["out_maj"])));
       var tableStyle = this.props.mobile === "none" ? {
         position: "relative",
         top: "15px",
@@ -54871,7 +54914,6 @@ function (_Component) {
         style: ListStyle
       }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
-        href: "/#/",
         className: "list",
         style: ListStyleLast
       }, "\u806F\u7D61\u6211\u5011")))));
@@ -55018,9 +55060,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput */ "./node_modules/react-tagsinput/react-tagsinput.js");
 /* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
-/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _components_commentIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/commentIndex */ "./resources/assets/js/components/commentIndex.js");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55038,6 +55081,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55062,7 +55106,8 @@ function (_Component) {
       id_array: [],
       datas: [],
       is_fetch: false,
-      type: "轉系",
+      rank_1: "",
+      rank_2: "",
       year: 106,
       score: 0,
       out_maj: "",
@@ -55074,15 +55119,20 @@ function (_Component) {
       qa_id: 0,
       qa_q: "",
       qa_a: "",
-      tags: []
+      confirm: "",
+      tags: [],
+      showContent: [],
+      display: "block"
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.getData = _this.getData.bind(_assertThisInitialized(_this));
     _this.changeNewId = _this.changeNewId.bind(_assertThisInitialized(_this));
-    _this.changeType = _this.changeType.bind(_assertThisInitialized(_this));
+    _this.changeRank = _this.changeRank.bind(_assertThisInitialized(_this));
     _this.changeId = _this.changeId.bind(_assertThisInitialized(_this));
     _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleOpenModal = _this.handleOpenModal.bind(_assertThisInitialized(_this));
+    _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -55091,7 +55141,12 @@ function (_Component) {
     value: function getData() {
       var _this2 = this;
 
-      fetch('/api/get/major').then(function (res) {
+      fetch('/api/get/major/all', {
+        method: 'GET',
+        headers: new Headers({
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
         return res.json();
       }).then(function (data) {
         var input = [];
@@ -55133,18 +55188,45 @@ function (_Component) {
       });
     }
   }, {
+    key: "handleRWD",
+    value: function handleRWD(mobile) {
+      if (mobile) this.setState({
+        display: "none"
+      });else this.setState({
+        display: "block"
+      });
+    }
+  }, {
+    key: "handleOpenModal",
+    value: function handleOpenModal(id) {
+      var i = 0;
+
+      while (this.state.datas[i]["id"] != id) {
+        i++;
+      }
+
+      if (i < this.state.datas.length) {
+        this.setState({
+          showContent: this.state.datas[i]
+        });
+        this.changeId(i);
+      }
+    }
+  }, {
     key: "handleClick",
     value: function handleClick() {
       if (this.state.now_handle === "心得") {
         var url = '/api/post/major/' + this.state.id.toString();
         var data = {
           'id': this.state.new_id != "不變" ? this.state.new_id : this.state.id,
-          'trans_type': this.state.type,
+          'rank_1': this.state.rank_1,
+          'rank_2': this.state.rank_2,
           'year': this.state.year,
           'score': this.state.score,
           'in_maj': this.state.in_maj,
           'out_maj': this.state.out_maj,
-          'comment': this.state.comment
+          'comment': this.state.comment,
+          'confirm': this.state.confirm
         };
         fetch(url, {
           method: 'PUT',
@@ -55230,30 +55312,30 @@ function (_Component) {
       });
     }
   }, {
-    key: "changeType",
-    value: function changeType(e) {
+    key: "changeRank",
+    value: function changeRank(e) {
       this.setState({
-        type: e.target.value
+        rank: e.target.value
       });
     }
   }, {
     key: "changeId",
     value: function changeId(e) {
-      var i = e.target.value;
+      var i = e;
 
       if (this.state.now_handle === "心得") {
-        var real_i = this.state.id_array.findIndex(function (value, index, arr) {
-          return value.toString() === i;
-        });
+        var real_i = i;
         this.setState({
           id: i,
           new_id: "不變",
-          type: this.state.datas[real_i]["type"],
+          rank_1: this.state.datas[real_i]["rank_1"],
+          rank_2: this.state.datas[real_i]["rank_2"],
           year: this.state.datas[real_i]["year"],
           score: this.state.datas[real_i]["score"],
           in_maj: this.state.datas[real_i]["in_maj"],
           out_maj: this.state.datas[real_i]["out_maj"],
-          comment: this.state.datas[real_i]["comment"]
+          comment: this.state.datas[real_i]["comment"],
+          confirm: this.state.datas[real_i]["confirm"]
         });
       } else {
         var real_i = this.state.qa_id_array.findIndex(function (value, index, arr) {
@@ -55291,15 +55373,25 @@ function (_Component) {
             type: "text",
             value: _this3.state.new_id,
             onChange: _this3.changeNewId
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-            id: "trans_type",
-            name: "trans_type",
-            onChange: _this3.changeType
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-            value: "\u8F49\u7CFB"
-          }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-            value: "\u8F49\u5B78"
-          }, "\u8F49\u5B78")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u6392\u540D\u4E0A:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "rank",
+            type: "text",
+            value: _this3.state.rank_1,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                rank_1: e.target.value
+              });
+            }
+          }), "\u4E0B:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            id: "rank",
+            type: "text",
+            value: _this3.state.rank_2,
+            onChange: function onChange(e) {
+              return _this3.setState({
+                rank_2: e.target.value
+              });
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "year",
             type: "text",
             value: _this3.state.year,
@@ -55343,7 +55435,19 @@ function (_Component) {
                 comment: e.target.value
               });
             }
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u662F\u5426\u78BA\u8A8D", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+            id: "confirm",
+            name: "confirm",
+            onChange: function onChange(e) {
+              _this3.setState({
+                confirm: e.target.value
+              });
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: "false"
+          }, "\u5426"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: "true"
+          }, "\u662F")));
         } else return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           id: "new_id",
           type: "text",
@@ -55374,9 +55478,9 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "index",
+        className: "Menu",
         style: {
-          width: "100%",
+          width: "20%",
           height: "100vh",
           position: "absolute",
           top: "0px",
@@ -55384,8 +55488,8 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          width: "60%",
-          margin: "6% 20%"
+          width: "90%",
+          margin: "10% 5%"
         }
       }, "\u7DE8\u8F2F\u7684\u985E\u5225:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "comment_id",
@@ -55409,7 +55513,17 @@ function (_Component) {
         onClick: this.handleClick
       }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.deleteComment
-      }, "\u522A\u9664\u8A72\u6587\u7AE0"))));
+      }, "\u522A\u9664\u8A72\u6587\u7AE0"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index",
+        style: {
+          display: this.state.display
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        datas: this.state.datas,
+        is_fetch: this.state.is_fetch,
+        onClick: this.handleOpenModal,
+        handleRWD: this.handleRWD
+      })));
     }
   }]);
 
@@ -56156,7 +56270,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(post).call(this, props));
     _this.state = {
-      type: "轉系",
+      rank_1: "",
+      rank_2: "",
       year: "",
       score: 0,
       out_maj: "",
@@ -56165,7 +56280,7 @@ function (_Component) {
       is_send: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
-    _this.changeType = _this.changeType.bind(_assertThisInitialized(_this));
+    _this.changeRank = _this.changeRank.bind(_assertThisInitialized(_this));
     _this.changeYear = _this.changeYear.bind(_assertThisInitialized(_this));
     _this.changeOut = _this.changeOut.bind(_assertThisInitialized(_this));
     _this.changeScore = _this.changeScore.bind(_assertThisInitialized(_this));
@@ -56178,7 +56293,8 @@ function (_Component) {
     key: "handleClick",
     value: function handleClick() {
       var data = {
-        'trans_type': this.state.type,
+        'rank_1': this.state.rank_1,
+        'rank_2': this.state.rank_2,
         'year': this.state.year,
         'score': this.state.score,
         'in_maj': this.state.in_maj,
@@ -56201,10 +56317,10 @@ function (_Component) {
       });
     }
   }, {
-    key: "changeType",
-    value: function changeType(e) {
+    key: "changeRank",
+    value: function changeRank(e) {
       this.setState({
-        type: e.target.value
+        rank: e.target.value
       });
     }
   }, {
@@ -56245,6 +56361,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var maj_option = NCKU.map(function (department) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: department,
@@ -56265,32 +56383,43 @@ function (_Component) {
         style: {
           margin: "5% 5%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u8F49\u7CFB/\u8F49\u5B78:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        id: "trans_type",
-        name: "trans_type",
-        onChange: this.changeType,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u6392\u540D\u4E0A:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "rank",
+        type: "text",
+        onChange: function onChange(e) {
+          return _this2.setState({
+            rank_1: e.target.value
+          });
+        },
         style: {
           color: "black"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "\u8F49\u7CFB"
-      }, "\u8F49\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "\u8F49\u5B78"
-      }, "\u8F49\u5B78"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "\u6392\u540D\u4E0B:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "rank",
+        type: "text",
+        onChange: function onChange(e) {
+          return _this2.setState({
+            rank_2: e.target.value
+          });
+        },
+        style: {
+          color: "black"
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "year",
         type: "text",
         onChange: this.changeYear
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "score",
         type: "text",
         onChange: this.changeScore
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "out_maj",
         onChange: this.changeOut,
         style: {
           color: "black"
         }
-      }, maj_option)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, maj_option)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "in_maj",
         onChange: this.changeIn,
         style: {

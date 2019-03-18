@@ -19,7 +19,8 @@ class post extends Component {
     constructor(props) {
     super(props)
     this.state = {
-        type: "轉系",
+        rank_1: "",
+        rank_2: "",
         year: "",
         score: 0,
         out_maj: "",
@@ -28,7 +29,7 @@ class post extends Component {
         is_send: false,
     }
     this.handleClick = this.handleClick.bind(this)
-    this.changeType = this.changeType.bind(this)
+    this.changeRank = this.changeRank.bind(this)
     this.changeYear = this.changeYear.bind(this)
     this.changeOut = this.changeOut.bind(this)
     this.changeScore=this.changeScore.bind(this)
@@ -37,7 +38,8 @@ class post extends Component {
   }
   handleClick() {
     const data={
-        'trans_type':this.state.type,
+        'rank_1':this.state.rank_1,
+        'rank_2':this.state.rank_2,
         'year':this.state.year,
         'score':this.state.score,
         'in_maj':this.state.in_maj,
@@ -58,8 +60,8 @@ class post extends Component {
   }
 
 
-    changeType(e){
-        this.setState({type: e.target.value});
+    changeRank(e){
+        this.setState({rank: e.target.value});
     }
 
     changeYear(e){
@@ -91,30 +93,29 @@ class post extends Component {
     <div className="form_container" style={{position:"absolute",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%"}}>
     <div style={{margin:"5% 5%"}}>
     <p>
-      轉系/轉學:<br/>   
-      <select id="trans_type" name ="trans_type" onChange={this.changeType} style={{color:"black"}}>
-        <option value="轉系">轉系</option>
-        <option value="轉學">轉學</option>
-      </select>
+      排名上:  
+      <input id="rank" type="text" onChange={(e)=>this.setState({rank_1:e.target.value})} style={{color:"black"}}/>
+      排名下:  
+      <input id="rank" type="text" onChange={(e)=>this.setState({rank_2:e.target.value})} style={{color:"black"}}/>
     </p>
     <p >
      
-    申請年度:<br/><input id="year" type="text" onChange={this.changeYear}/>
+    申請年度:<input id="year" type="text" onChange={this.changeYear}/>
     </p>
     <p >
     <br/>    
-    學年分數:<br/><input id="score" type="text" onChange={this.changeScore}/>
+    學年分數:<input id="score" type="text" onChange={this.changeScore}/>
     </p>
     <p>
     <br/>    
-    轉出科系:<br/>
+    轉出科系:
     <select id="out_maj"  onChange={this.changeOut} style={{color:"black"}}>
         {maj_option}
       </select>
     </p>
     <p >
     <br/>
-    轉入科系:<br/><select id="in_maj"  onChange={this.changeIn} style={{color:"black"}}>
+    轉入科系:<select id="in_maj"  onChange={this.changeIn} style={{color:"black"}}>
         {maj_option}
       </select>    
     </p>

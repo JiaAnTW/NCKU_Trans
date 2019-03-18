@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TagsInput from 'react-tagsinput'
-
+import CommentIndex from './components/commentIndex'
 import 'react-tagsinput/react-tagsinput.css'
 import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
 
@@ -14,7 +14,8 @@ class edit extends Component {
         id_array:[],
         datas: [],
         is_fetch: false,
-        type: "轉系",
+        rank_1: "",
+        rank_2: "",
         year: 106,
         score: 0,
         out_maj: "",
@@ -26,21 +27,30 @@ class edit extends Component {
         qa_id: 0,
         qa_q:"",
         qa_a:"",
+        confirm:"",
         tags:[],
+        showContent: [],
+        display: "block",
     }
     this.handleClick = this.handleClick.bind(this)
     this.getData=this.getData.bind(this)
     this.changeNewId=this.changeNewId.bind(this)
-    this.changeType = this.changeType.bind(this)
+    this.changeRank = this.changeRank.bind(this)
     this.changeId=this.changeId.bind(this)
     this.deleteComment=this.deleteComment.bind(this)
     this.handleChange=this.handleChange.bind(this)
+    this.handleOpenModal=this.handleOpenModal.bind(this)
+    this.handleRWD=this.handleRWD.bind(this)
   }
 
 
   getData() {
     fetch(
-      '/api/get/major'
+      '/api/get/major/all',{method: 'GET',
+      headers: new Headers({
+        'Authorization':"Bearer "+this.props.token,
+        })
+      }
     )
       .then(res => res.json())
       .then(data => {
@@ -75,17 +85,36 @@ class edit extends Component {
     this.setState({tags})
   }
 
+  handleRWD(mobile){
+    if(mobile)
+      this.setState({display:"none"})
+    else
+      this.setState({display:"block"})
+    }
+
+  handleOpenModal (id) {
+    let i=0;
+    while(this.state.datas[i]["id"]!=id)
+      i++;
+    if(i<this.state.datas.length){
+      this.setState({ showContent:this.state.datas[i]});
+      this.changeId(i);
+    }
+  }
+
   handleClick() {
     if(this.state.now_handle==="心得"){
       const url='/api/post/major/'+this.state.id.toString();
       const data={
           'id': (this.state.new_id!="不變")?this.state.new_id:this.state.id,
-          'trans_type':this.state.type,
+          'rank_1':this.state.rank_1,
+          'rank_2':this.state.rank_2,
           'year':this.state.year,
           'score': this.state.score,
           'in_maj':this.state.in_maj,
           'out_maj':this.state.out_maj,
           'comment':this.state.comment,
+          'confirm':this.state.confirm,
       };
       fetch(
         url, {method: 'PUT',
@@ -166,8 +195,8 @@ class edit extends Component {
     }
 
 
-    changeType(e){
-        this.setState({type: e.target.value});
+    changeRank(e){
+        this.setState({rank: e.target.value});
     }
 
 
@@ -176,18 +205,20 @@ class edit extends Component {
 
 
     changeId(e){
-        var i=e.target.value;
+        var i=e;
         if(this.state.now_handle==="心得"){
-          var real_i=this.state.id_array.findIndex(function(value, index, arr){return value.toString()===i});
+          var real_i=i;
           this.setState({
             id: i,
             new_id: "不變",
-            type:this.state.datas[real_i]["type"],
+            rank_1:this.state.datas[real_i]["rank_1"],
+            rank_2:this.state.datas[real_i]["rank_2"],
             year:this.state.datas[real_i]["year"],
             score: this.state.datas[real_i]["score"],
             in_maj:this.state.datas[real_i]["in_maj"],
             out_maj:this.state.datas[real_i]["out_maj"],
-            comment:this.state.datas[real_i]["comment"]
+            comment:this.state.datas[real_i]["comment"],
+            confirm:this.state.datas[real_i]["confirm"]
           });
         }
         else{
@@ -217,11 +248,9 @@ class edit extends Component {
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
-        轉系/轉學: 
-            <select id="trans_type" name ="trans_type" onChange={this.changeType}>
-  	            <option value="轉系">轉系</option>
-                <option value="轉學">轉學</option>
-            </select>
+        排名上: 
+            <input id="rank" type="text" value={this.state.rank_1} onChange={(e) => this.setState({ rank_1: e.target.value })}/>
+            下:<input id="rank" type="text" value={this.state.rank_2} onChange={(e) => this.setState({ rank_2: e.target.value })}/>
             <br/> 
             申請年度:   
             <input id="year" type="text" value={this.state.year} onChange={(e) => this.setState({ year: e.target.value })}/>
@@ -240,7 +269,10 @@ class edit extends Component {
             心得:
             <textarea id="comment" value={this.state.comment} onChange={(e) => this.setState({ comment: e.target.value})}></textarea>
             <br/>
-
+            是否確認<select id="confirm" name ="confirm" onChange={(e) =>{ this.setState({ confirm: e.target.value })}}>
+                    <option value="false">否</option>
+                    <option value="true">是</option>
+            </select>
         </div>);
       }
       else
@@ -258,8 +290,8 @@ class edit extends Component {
     }
     return (
       <div className="edit">
-        <div className="index" style={{width:"100%",height:"100vh",position:"absolute",top:"0px",left:"0px"}}>
-          <div style={{width:"60%",margin:"6% 20%"}}>
+        <div className="Menu" style={{width:"20%",height:"100vh",position:"absolute",top:"0px",left:"0px"}}>
+          <div style={{width:"90%",margin:"10% 5%"}}>
         編輯的類別:<select id="comment_id" name ="comment_id" onChange={(e) =>{ this.setState({ now_handle: e.target.value });this.changeId}}>
                     <option value="心得">心得</option>
                     <option value="QA">QA</option>
@@ -271,10 +303,14 @@ class edit extends Component {
             </select>
             <br/>
             {form()}
+            
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
             </div>
+        </div>
+        <div className="index" style={{display:this.state.display}}>
+          <CommentIndex datas={this.state.datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
         </div>
       </div>
     );

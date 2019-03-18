@@ -27,6 +27,10 @@ html::-webkit-scrollbar-track-piece  {
     background-image: none;
 }
 
+.btn:focus,.btn.focus{
+    box-shadow: none;
+}
+
 body{
     max-width: 100%;
     font-family: 'Noto Sans TC';

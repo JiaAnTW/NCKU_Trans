@@ -9,7 +9,8 @@ class progress extends Component {
     this.state = {
         percent: 100,
         is_finish: false,
-        prevValue:"",
+        is_Mount: false,
+        prevValue:101,
       };
       this.increase = this.increase.bind(this);
       this.decrease = this.decrease.bind(this);
@@ -19,11 +20,11 @@ class progress extends Component {
 
 increase() {
     const percent = this.state.percent + 0.1;
-    const std=(this.props.value=="null")?100:this.props.value+0.09;
+    const std=(this.props.value=="null")?100:Number(this.props.value)+0.09;
     if (percent > std) {
         clearTimeout(this.tm);
         console.log("let'stop increasing!")
-        if(this.state.prevValue==="null"||this.state.prevValue>this.props.value)
+        if(this.state.prevValue==="null"||Number(this.state.prevValue)>Number(this.props.value))
           this.decrease()
         else
           this.setState({is_finish: true});
@@ -35,10 +36,10 @@ increase() {
 
   decrease() {
     const percent = this.state.percent - 0.1;
-    if (this.props.value==="null"||percent < this.props.value) {
+    if (this.props.value==="null"||percent < Number(this.props.value)) {
         clearTimeout(this.tm);
         console.log("let'stop decreasing!")
-      if(this.props.value==="null"||this.state.prevValue<this.props.value)
+      if(this.props.value==="null"||Number(this.state.prevValue)<Number(this.props.value))
         this.increase()
       else
         this.setState({is_finish: true});
@@ -50,22 +51,26 @@ increase() {
 
 
   componentDidMount(){
+        this.setState({is_Mount:true})
         this.decrease();
+        
   }
 
 
 
   componentDidUpdate(prevProps, prevState){
-    if(prevProps.value!=this.props.value)
-      this.setState({prevValue:prevProps.value});
+    if(this.state.is_Mount==true){
+      if(prevProps.value!=this.props.value)
+        this.setState({prevValue:prevProps.value});
     if(this.state.is_finish===true&&(prevProps.value!=this.props.value)){
         this.setState({is_finish: false, prevValue:prevProps.value});
-        if(prevProps.value=="null"||prevProps.value>this.props.value){
+        if(prevProps.value=="null"||Number(prevProps.value)>Number(this.props.value)){
             console.log("let's change to decrease!")
             this.decrease();
         }
         else
             this.increase();
+    }
     }
   }
 

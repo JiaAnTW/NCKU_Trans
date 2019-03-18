@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('get/major', 'CommentsController@index');
+Route::get('get/major', 'CommentsController@show');
 
 Route::post('create/major','CommentsController@create');
 
@@ -36,6 +36,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     
     // all routes to protected resources are registered here  
+    Route::get('get/major/all', 'CommentsController@index');
 
     Route::put('post/major/{id}','CommentsController@update');
 
