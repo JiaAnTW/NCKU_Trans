@@ -44,21 +44,25 @@ nav{
     color: rgb(248, 224, 227);
     height: 55px;
     font-size: 20px;
+    background-image: none;
     background-color: rgb(229,68,109);
+    
     
 }
 
-.navItem,.navItem:visited{
+.navItem,.navItem:visited,.navItem:active{
     float: right;
     margin:  12.5px 50px;
     color: rgb(248, 224, 227);
     outline: none;
+    text-decoration:none;
     display: none;
 }
 
 .navItem:hover{
     color: #FEABCF;
     text-decoration:none;
+    outline: none;
 }
 
 
@@ -69,7 +73,7 @@ nav{
         font-size: 20px;
         
     }
-    .navItem{
+    .navItem,.navItem:visited,.navItem:active{
         float: right;
         margin:  12.5px 50px;
         color: rgb(248, 224, 227);
@@ -79,17 +83,15 @@ nav{
 
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 870px) { 
     nav{
         height: 55px;
         font-size: 20px;
+        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
     }
-    .navItem{
-        float: right;
-        margin:  12.5px 50px;
-        color: rgb(248, 224, 227);
-        outline: none;
+    .navItem,.navItem:visited,.navItem:active{
         display: block;
+        outline: none;
     }
 
  }
@@ -99,11 +101,9 @@ nav{
         height: 55px;
         font-size: 20px;
     }
-    .navItem{
-        float: right;
-        margin:  12.5px 50px;
-        color: rgb(248, 224, 227);
+    .navItem,.navItem:visited,.navItem:active{
         outline: none;
+        display: block;
     }
 
 }
@@ -113,10 +113,8 @@ nav{
         height: 55px;
         font-size: 20px;
     }
-    .navItem{
-        float: right;
-        margin:  12.5px 50px;
-        color: rgb(248, 224, 227);
+    .navItem,.navItem:visited,.navItem:active{
         outline: none;
+        display: block;
     }
 }

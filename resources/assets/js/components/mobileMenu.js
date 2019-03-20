@@ -11,7 +11,6 @@ class mobileMenu extends Component {
     };
   }
 
-
   render() {
     const { open } = this.state;
     const ListStyleFirst={
@@ -56,10 +55,10 @@ class mobileMenu extends Component {
         <Collapse in={this.state.open}>
           <div className="menu_container" style={{backgroundColor:"rgb(229,68,109)",color:"white",position:"absolute",top:"54px",right:"0",width:"100vw",maxWidth:"100%"}}>
             <ListGroup defaultActiveKey="/#/" style={{border: "none",boxShadow:"none"}}>
-              <ListGroup.Item action href="/#/comment" className="list" style={ListStyleFirst}>瀏覽心得</ListGroup.Item>
-              <ListGroup.Item action href="/#/QA/~" className="list" style={ListStyle}>常見QA</ListGroup.Item>
-              <ListGroup.Item action href="/#/post" className="list" style={ListStyle}>分享心得</ListGroup.Item>
-              <ListGroup.Item action className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
+              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/comment" className="list" style={ListStyleFirst}>瀏覽心得</ListGroup.Item>
+              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/QA/~" className="list" style={ListStyle}>常見QA</ListGroup.Item>
+              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/post" className="list" style={ListStyle}>分享心得</ListGroup.Item>
+              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
             </ListGroup>
           </div>
         </Collapse>

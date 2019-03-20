@@ -19,7 +19,7 @@ class progress extends Component {
 //props must have: number,width
 
 increase() {
-    const percent = this.state.percent + 0.1;
+    const percent = this.state.percent + 1.1;
     const std=(this.props.value=="null")?100:Number(this.props.value)+0.09;
     if (percent > std) {
         clearTimeout(this.tm);
@@ -27,26 +27,26 @@ increase() {
         if(this.state.prevValue==="null"||Number(this.state.prevValue)>Number(this.props.value))
           this.decrease()
         else
-          this.setState({is_finish: true});
+          this.setState({is_finish: true,percent: (this.props.value==="null")?100:Number(this.props.value)})
       return;
     }
     this.setState({ percent });
-    this.tm = setTimeout(this.increase, 0.0001);
+    this.tm = setTimeout(this.increase, 20);
   }
 
   decrease() {
-    const percent = this.state.percent - 0.1;
+    const percent = this.state.percent - 1.1;
     if (this.props.value==="null"||percent < Number(this.props.value)) {
         clearTimeout(this.tm);
         console.log("let'stop decreasing!")
       if(this.props.value==="null"||Number(this.state.prevValue)<Number(this.props.value))
         this.increase()
       else
-        this.setState({is_finish: true});
+        this.setState({is_finish: true,percent: (this.props.value==="null")?100:Number(this.props.value)});
       return;
     }
     this.setState({ percent });
-    this.tm = setTimeout(this.decrease, 0.0001);
+    this.tm = setTimeout(this.decrease, 20);
   }
 
 

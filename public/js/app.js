@@ -3104,7 +3104,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\r\n  .QA_container .QA_cardBody{\r\n    width: 95vw;\r\n  }\r\n\r\n\r\n  .QA_card_container .id_container{\r\n    width: 15vw;\r\n    height:15vw;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 14vw;\r\n    font-size: 7vw;\r\n    color: white;\r\n  }\r\n\r\n  .QA_container iframe{\r\n    width: 95%;\r\n  }\r\n  \r\n  .QA_card_container .title2{\r\n    max-width: 100%;\r\n    font-size: 6vw;\r\n  }\r\n  \r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n  \r\n  .QA_card_container span{\r\n    position: relative;\r\n    top: 50px;\r\n    font-size: 4vw;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 8vw;\r\n    text-align:justify;\r\n  }\r\n  \r\n  \r\n  .QA_container  .Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 5vw;\r\n  width: 5vw;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n  position: absolute;\r\n  top: 197.5px;\r\n  font-size: 3vw;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n  right: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n  left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n  left: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container #before{\r\n  right: 6px;\r\n  }\r\n  \r\n  .QA_container .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 5vw;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .QA_container .QA_cardBody{\r\n      width: 95%;\r\n    }\r\n\r\n\r\n     .QA_card_container .id_container{\r\n      width: 100px;\r\n      height:100px;\r\n      border-radius:100px;\r\n      background-color: rgb(229,68,109);\r\n      text-align: center;\r\n      line-height: 90px;\r\n      font-size: 40px;\r\n      color: white;\r\n    }\r\n  \r\n    .QA_card_container .title2{\r\n      max-width: 100%;\r\n      font-size: 36px;\r\n    }\r\n  \r\n    .QA_container.closeBtn{\r\n      position: absolute;\r\n      right:15px;\r\n      top:20px;\r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n    .QA_card_container span{\r\n      position: relative;\r\n      top: 50px;\r\n      font-size: 20px;\r\n      font-weight: 100;\r\n      letter-spacing: 2.5px;\r\n      line-height: 35px;\r\n      text-align:justify;\r\n    }\r\n  \r\n    .QA_container.closeBtn2{\r\n    \r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n  \r\n    .QA_container .Arrow{\r\n    position: absolute;\r\n    top: 175px;\r\n    border-right: 4px solid gray;\r\n    border-top: 4px solid gray;\r\n    height: 50px;\r\n    width: 50px;\r\n    border-left: 2px solid transparent;\r\n    border-bottom: 2px solid transparent;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n    position: absolute;\r\n    top: 187.5px;\r\n    font-size: 15px;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n    right: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n    left: 5px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n    left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n    left: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n    right: 10px;\r\n    transform: rotate(-135deg);\r\n    -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container  #before{\r\n      right: 6px;\r\n    }\r\n  }\r\n  \r\n  \r\n  @media (min-width: 870px) {\r\n  \r\n  }\r\n  \r\n  \r\n  \r\n  ", ""]);
+exports.push([module.i, "\r\n  .QA_container .QA_cardBody{\r\n    width: 95vw;\r\n  }\r\n\r\n\r\n  .QA_card_container .id_container{\r\n    width: 15vw;\r\n    height:15vw;\r\n    border-radius:100px;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 14vw;\r\n    font-size: 7vw;\r\n    color: white;\r\n  }\r\n\r\n  #fb-comments span{\r\n    width: 70%;\r\n  }\r\n\r\n  .QA_container iframe{\r\n    width: 100%;\r\n  }\r\n  \r\n  .QA_card_container .title2{\r\n    max-width: 100%;\r\n    font-size: 6vw;\r\n  }\r\n  \r\n  .card_container h2{\r\n      font-size: 25px;\r\n  }\r\n  \r\n  .QA_card_container span{\r\n    position: relative;\r\n    top: 50px;\r\n    font-size: 4vw;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 8vw;\r\n    text-align:justify;\r\n  }\r\n  \r\n  \r\n  .QA_container  .Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 5vw;\r\n  width: 5vw;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n  position: absolute;\r\n  top: 197.5px;\r\n  font-size: 3vw;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n  right: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n  left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n  left: 0px;\r\n  outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container #before{\r\n  right: 6px;\r\n  }\r\n  \r\n  .QA_container .type_table{\r\n    position:relative;\r\n    top: 15px;\r\n    font-size: 5vw;\r\n    font-weight: 100;\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .QA_container .QA_cardBody{\r\n      width: 95%;\r\n    }\r\n\r\n\r\n     .QA_card_container .id_container{\r\n      width: 100px;\r\n      height:100px;\r\n      border-radius:100px;\r\n      background-color: rgb(229,68,109);\r\n      text-align: center;\r\n      line-height: 90px;\r\n      font-size: 40px;\r\n      color: white;\r\n    }\r\n  \r\n    .QA_card_container .title2{\r\n      max-width: 100%;\r\n      font-size: 36px;\r\n    }\r\n  \r\n    .QA_container.closeBtn{\r\n      position: absolute;\r\n      right:15px;\r\n      top:20px;\r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n    .QA_card_container span{\r\n      position: relative;\r\n      top: 50px;\r\n      font-size: 20px;\r\n      font-weight: 100;\r\n      letter-spacing: 2.5px;\r\n      line-height: 35px;\r\n      text-align:justify;\r\n    }\r\n  \r\n    .QA_container.closeBtn2{\r\n    \r\n      width: 65px;\r\n      height: 50px;\r\n      font-size: 20px;\r\n      background-color: rgba(0, 0, 0,0.001);\r\n      border: 0.5px solid gray;\r\n    }\r\n  \r\n  \r\n    .QA_container .Arrow{\r\n    position: absolute;\r\n    top: 175px;\r\n    border-right: 4px solid gray;\r\n    border-top: 4px solid gray;\r\n    height: 50px;\r\n    width: 50px;\r\n    border-left: 2px solid transparent;\r\n    border-bottom: 2px solid transparent;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .QA_container .btnText{\r\n    position: absolute;\r\n    top: 187.5px;\r\n    font-size: 15px;\r\n  }\r\n  \r\n  \r\n  \r\n  .QA_container #rightBtn{\r\n    right: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #rightArrow{\r\n    left: 5px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n  }\r\n  \r\n  .QA_container #next{\r\n    left: 1px;\r\n  }\r\n  \r\n  .QA_container #leftBtn{\r\n    left: 10px;\r\n    outline: none;\r\n  }\r\n  \r\n  .QA_container #leftArrow{\r\n    right: 10px;\r\n    transform: rotate(-135deg);\r\n    -webkit-transform: rotate(-135deg);\r\n  }\r\n  \r\n  .QA_container  #before{\r\n      right: 6px;\r\n    }\r\n  }\r\n  \r\n  \r\n  @media (min-width: 870px) {\r\n  \r\n  }\r\n  \r\n  \r\n  \r\n  ", ""]);
 
 // exports
 
@@ -3225,6 +3225,25 @@ exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/home.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".rc-menu {\r\n    outline: none;\r\n    margin-bottom: 0;\r\n    padding-left: 0;\r\n    list-style: none;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    border-radius: 3px;\r\n    color: #666;\r\n}\r\n\r\n.App{\r\n    background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    color: white;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n .webName{\r\n    position: absolute;\r\n    width: 50%;\r\n    margin-left: 25%;\r\n    margin-top: 20%;\r\n    font-size: 2.5vw;\r\n    text-align: center;\r\n    -webkit-animation-name:fadeInUp;\r\n            animation-name:fadeInUp;\r\n    -webkit-animation-duration:1s;\r\n            animation-duration:1s;\r\n    \r\n}\r\n\r\n.warning{\r\n    position: absolute;\r\n    width: 50%;\r\n    font-size: 1.2vw;\r\n    font-weight: 100;\r\n    margin-top: 24%;\r\n    margin-left:  25%;\r\n    text-align: center;\r\n    -webkit-animation-name:fadeInDownText;\r\n            animation-name:fadeInDownText;\r\n    -webkit-animation-duration:1.5s;\r\n            animation-duration:1.5s;\r\n}\r\n\r\n.know{\r\n    position: absolute;\r\n    width: 10%;\r\n    height: 2.5vw;\r\n    font-size: 1.2vw;\r\n    font-weight: 500;\r\n    margin-top: 30%;\r\n    margin-left:  45%;\r\n    background-color:white;\r\n    border: none;\r\n    outline: none;\r\n    color: rgb(229,68,109);\r\n    border-radius: 10px;\r\n    -webkit-animation-name:fadeInDownBtn;\r\n            animation-name:fadeInDownBtn;\r\n    -webkit-animation-duration:2s;\r\n            animation-duration:2s;\r\n}\r\n\r\n\r\n@-webkit-keyframes fadeInUp{\r\n    0%{\r\n        margin-top: 22%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 20%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n@keyframes fadeInUp{\r\n    0%{\r\n        margin-top: 22%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 20%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n@-webkit-keyframes fadeInDownText{\r\n    0%{\r\n        margin-top: 24%;\r\n        opacity: 0;\r\n    }\r\n    50%{\r\n        margin-top: 23%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 24%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n@keyframes fadeInDownText{\r\n    0%{\r\n        margin-top: 24%;\r\n        opacity: 0;\r\n    }\r\n    50%{\r\n        margin-top: 23%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 24%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@-webkit-keyframes fadeInDownBtn{\r\n    0%{\r\n        margin-top: 28%;\r\n        opacity: 0;\r\n    }\r\n    67%{\r\n        margin-top: 28%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 30%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes fadeInDownBtn{\r\n    0%{\r\n        margin-top: 28%;\r\n        opacity: 0;\r\n    }\r\n    67%{\r\n        margin-top: 28%;\r\n        opacity: 0;\r\n    }\r\n    100%{\r\n        margin-top: 30%;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/layout.css":
 /*!****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/layout.css ***!
@@ -3237,7 +3256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\n.btn:focus,.btn.focus{\r\n    box-shadow: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-color: rgb(229,68,109);\r\n    \r\n}\r\n\r\n.navItem,.navItem:visited{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 768px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\n.btn:focus,.btn.focus{\r\n    box-shadow: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-image: none;\r\n    background-color: rgb(229,68,109);\r\n    \r\n    \r\n}\r\n\r\n.navItem,.navItem:visited,.navItem:active{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    text-decoration:none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n    outline: none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        display: block;\r\n        outline: none;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3256,7 +3275,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:92px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: #F3BCC8;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:92px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        max-width:100%;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 200px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n\r\n\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n        \r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:92px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: #F3BCC8;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:92px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:115px;\r\n        max-width:100%;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 200px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n\r\n\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3275,7 +3294,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".post .form_container{\r\n    margin: 1% 5%;\r\n    width: 90%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:60%;\r\n    color:black;\r\n    border-radius: 3px;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:50%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:0px;\r\n    height: 120vh;\r\n    z-index: 0;\r\n    background-color: rgb(229,68,109);\r\n}\r\n\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n    } \r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        height: 100vh;\r\n    }\r\n    .post p{\r\n        width:40%;\r\n        margin-left: 0%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}", ""]);
+exports.push([module.i, ".post .form_container{\r\n    margin: 1% 5%;\r\n    width: 90%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:60%;\r\n    color:black;\r\n    border-radius: 3px;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:50%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:80px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:0px;\r\n    height: 120vh;\r\n    z-index: 0;\r\n    background-image: none;\r\n    background-color:rgb(229,68,109);\r\n}\r\n\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n        \r\n    }\r\n    .post .index{\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    } \r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        height: 100vh;\r\n    }\r\n    .post p{\r\n        width:40%;\r\n        margin-left: 0%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}", ""]);
 
 // exports
 
@@ -52888,7 +52907,7 @@ function (_Component) {
             onClick: this.changeFliter.bind(this, NCKU[department[i][1]][j], "in_maj")
           }, NCKU[department[i][1]][j], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
             pill: true,
-            variant: "secondary",
+            variant: "light",
             style: {
               position: "relative",
               marginLeft: "10px",
@@ -53001,7 +53020,7 @@ function (_Component) {
         })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u5E73\u5747\u9304\u53D6\u5206\u6578",
-          value: length === 0 ? "null" : Math.round(count / length)
+          value: length === 0 ? "null" : count / length
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u7B2C\u4E00\u56DB\u5206\u4F4D\u6578",
@@ -53052,7 +53071,7 @@ function (_Component) {
         onClick: this.changeFliter.bind(this, "不分系", "in_maj")
       }, "\u4E0D\u5206\u7CFB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
         pill: true,
-        variant: "secondary",
+        variant: "light",
         style: {
           position: "relative",
           marginLeft: "10px",
@@ -53186,14 +53205,15 @@ function (_Component) {
   _createClass(progress, [{
     key: "increase",
     value: function increase() {
-      var percent = this.state.percent + 0.1;
+      var percent = this.state.percent + 1.1;
       var std = this.props.value == "null" ? 100 : Number(this.props.value) + 0.09;
 
       if (percent > std) {
         clearTimeout(this.tm);
         console.log("let'stop increasing!");
         if (this.state.prevValue === "null" || Number(this.state.prevValue) > Number(this.props.value)) this.decrease();else this.setState({
-          is_finish: true
+          is_finish: true,
+          percent: this.props.value === "null" ? 100 : Number(this.props.value)
         });
         return;
       }
@@ -53201,18 +53221,19 @@ function (_Component) {
       this.setState({
         percent: percent
       });
-      this.tm = setTimeout(this.increase, 0.0001);
+      this.tm = setTimeout(this.increase, 20);
     }
   }, {
     key: "decrease",
     value: function decrease() {
-      var percent = this.state.percent - 0.1;
+      var percent = this.state.percent - 1.1;
 
       if (this.props.value === "null" || percent < Number(this.props.value)) {
         clearTimeout(this.tm);
         console.log("let'stop decreasing!");
         if (this.props.value === "null" || Number(this.state.prevValue) < Number(this.props.value)) this.increase();else this.setState({
-          is_finish: true
+          is_finish: true,
+          percent: this.props.value === "null" ? 100 : Number(this.props.value)
         });
         return;
       }
@@ -53220,7 +53241,7 @@ function (_Component) {
       this.setState({
         percent: percent
       });
-      this.tm = setTimeout(this.decrease, 0.0001);
+      this.tm = setTimeout(this.decrease, 20);
     }
   }, {
     key: "componentDidMount",
@@ -54899,21 +54920,41 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
+        onClick: function onClick(e) {
+          return _this2.setState({
+            open: !open
+          });
+        },
         href: "/#/comment",
         className: "list",
         style: ListStyleFirst
       }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
+        onClick: function onClick(e) {
+          return _this2.setState({
+            open: !open
+          });
+        },
         href: "/#/QA/~",
         className: "list",
         style: ListStyle
       }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
+        onClick: function onClick(e) {
+          return _this2.setState({
+            open: !open
+          });
+        },
         href: "/#/post",
         className: "list",
         style: ListStyle
       }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
         action: true,
+        onClick: function onClick(e) {
+          return _this2.setState({
+            open: !open
+          });
+        },
         className: "list",
         style: ListStyleLast
       }, "\u806F\u7D61\u6211\u5011")))));
@@ -54936,6 +54977,36 @@ function (_Component) {
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./comment.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/comment.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/assets/js/css/home.css":
+/*!******************************************!*\
+  !*** ./resources/assets/js/css/home.css ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./home.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/home.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -55545,13 +55616,12 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/home.css */ "./resources/assets/js/css/home.css");
+/* harmony import */ var _css_home_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_home_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55562,15 +55632,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
 
 
 
@@ -55588,159 +55656,25 @@ function (_Component) {
     _classCallCheck(this, home);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(home).call(this, props));
-    _this.state = {
-      open: false,
-      pathname: "",
-      data: [],
-      email: "",
-      password: ""
-    };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
-    _this.handleTest = _this.handleTest.bind(_assertThisInitialized(_this));
+    _this.state = {};
     return _this;
   }
 
   _createClass(home, [{
-    key: "handleClick",
-    value: function handleClick(e) {
-      var url = '/home/' + '1';
-      console.log(url);
-      this.setState({
-        id: url
-      });
-      var location = {
-        pathname: url,
-        state: {
-          id: "1"
-        }
-      };
-      this.props.history.push(location);
-    }
-  }, {
-    key: "handleTest",
-    value: function handleTest() {
-      var user = {
-        "email": this.state.email,
-        "password": this.state.password
-      };
-      fetch('/api/post/user/login', {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: new Headers({
-          'Content-Type': 'application/json'
-        })
-      }).then(function (res) {
-        return res.json();
-      }).then(function (json) {
-        if (json.data["success"]) {
-          console.log("Login Successful!");
-        }
-      }).catch(function (e) {
-        return console.log('錯誤:', e);
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var major1 = ["物理系", "化學系"];
-      var major2 = ["生科系", "生技系"];
-      var depart = [["理學院", []], ["生科院"], []]; //const test=[["學系",depart],["id",[]]];
-
-      var test = [{
-        id: 0,
-        name: "全部學院",
-        now: -1,
-        option: [["全部學院", -1], ["理學院", 1], ["生科院", 2], ["工學院", 3]]
-      }, {
-        id: 1,
-        now: -1,
-        name: "全部學系",
-        option: [["全部學系", -1], ["物理系", -1], ["化學系", -1]]
-      }, {
-        id: 2,
-        now: -1,
-        name: "全部學系",
-        option: [["全部學系", -1], ["生科系", -1], ["生技系", -1]]
-      }, {
-        id: 3,
-        now: -1,
-        name: "全部學系",
-        option: [["全部學系", -1], ["機械系", -1], ["化工系", -1], ["材料系", -1], ["資源系", -1], ["土木系", -1], ["水利系", -1], ["工科系", -1], ["系統系", -1], ["航太系", -1], ["環工系", -1], ["測量系", -1], ["醫工系", -1], ["能源學程", -1]]
-      }];
-      var test2 = [{
-        id: 0,
-        now: -1,
-        name: "順序",
-        option: [["由大而小", -1], ["由小而大", -1]]
-      }];
-
-      var btn = function btn() {
-        var output = [];
-
-        for (var i = 0; i < 20; ++i) {
-          output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
-            variant: "dark",
-            style: {
-              margin: "5px 10px"
-            }
-          }, " \u6E2C\u8A66 ", i, " "));
-        }
-
-        return output;
-      };
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        type: "\u4F9D\u5B78\u9662/\u7CFB",
-        value: test,
-        style: {
-          width: '62%',
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          lineHeight: "8vw"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "webName"
+      }, "\u6210\u5927\u8F49\u7CFB\u751F\u5FC3\u5F97\u5E73\u53F0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "warning"
+      }, "\u672C\u7DB2\u7AD9\u5167\u7D71\u8A08\u6578\u5B57\u70BA\u5B78\u751F\u63D0\u4F9B\uFF0C\u50C5\u4F9B\u53C3\u8003", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8207\u5BE6\u969B\u72C0\u6CC1\u53EF\u80FD\u6709\u51FA\u5165"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "know",
+        onClick: function onClick(e) {
+          return location.href = '/#/comment';
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        type: "\u4F9D\u7DE8\u865F",
-        value: test2,
-        style: {
-          position: "absolute",
-          top: "0",
-          left: "60%",
-          width: '40%',
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          lineHeight: "8vw"
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
-        style: {
-          position: "absolute",
-          top: "20%",
-          left: "30%",
-          width: '20%',
-          backgroundColor: "rgb(229,68,109)",
-          color: "white",
-          height: "auto"
-        }
-      }, btn()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "email",
-        onChange: function onChange(e) {
-          return _this2.setState({
-            email: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "password",
-        onChange: function onChange(e) {
-          return _this2.setState({
-            password: e.target.value
-          });
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleTest
-      }, "\u6309\u6211\u554A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.data));
+      }, "\u6211\u77E5\u9053\u4E86"));
     }
   }]);
 
@@ -56183,7 +56117,8 @@ function (_Component) {
           width: "60%",
           margin: "0px 20%",
           backgroundColor: "rgb(229,68,109)",
-          border: "none"
+          border: "none",
+          boxShadow: "none"
         }
       }, this.state.openFliter === true ? "X 關閉" : "+添加篩選")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Menu",

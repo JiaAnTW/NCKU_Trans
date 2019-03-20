@@ -101,7 +101,8 @@ border: 0px solid;
     top:0px;
     height: 120vh;
     z-index: 0;
-    background-color: rgb(229,68,109);
+    background-image: none;
+    background-color:rgb(229,68,109);
 }
 
 
@@ -113,6 +114,10 @@ border: 0px solid;
     .post .form_container{
         margin: 1% 32%;
         width: 36%;
+        
+    }
+    .post .index{
+        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
     } 
  }
 

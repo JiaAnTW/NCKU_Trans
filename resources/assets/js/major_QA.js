@@ -248,7 +248,7 @@ class maj_QA extends Component {
             {show}
         </div>
         <div className="MobileMenu">
-          <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
+          <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
           <div className="Menu" style={{display:(this.state.openFliter===true)?"block":this.state.mobile_display}}>
             <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>全部心得</Button>

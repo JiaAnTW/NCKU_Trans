@@ -170,8 +170,8 @@ class comment extends Component {
         const number=this.countDepartment(NCKU[ department[i][1] ][j]);
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >{NCKU[department[i][1]][j]}
-              <Badge pill variant="secondary" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
+            <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >{NCKU[department[i][1]][j]}
+              <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
                 {number}
               </Badge>
             </Button>
@@ -248,7 +248,7 @@ class comment extends Component {
               </div>
             </li>
             <li>
-              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":Math.round(count/length)}/>
+              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":count/length}/>
             </li>
             <li>
               <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
@@ -278,8 +278,8 @@ class comment extends Component {
               <div style={{position:"relative", top:"0%", width: '100%'}}>
                 <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
                 </Button>
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
-                  <Badge pill variant="secondary" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
+                <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
+                  <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
                     {this.countDepartment("不分系")}
                   </Badge>
                 </Button>

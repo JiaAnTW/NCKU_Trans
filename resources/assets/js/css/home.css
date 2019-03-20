@@ -9,22 +9,98 @@
     color: #666;
 }
 
-.menu-container a{
-    background-color:"rgb(229,68,109)";
-    color:"white";
-    background-image:"none";
+.App{
+    background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
 }
 
-.menu_btn{
-    position:"absolute";
-    top:0;
-    right:0;
-    font-size: 30px;
-    height:40px;
-    width:40px;
-    background-color:rgb(229,68,109);
-    color:"white";
-    outline:"none";
-    border:2px solid white;
-    border-radius:10px;
+ .webName{
+    position: absolute;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20%;
+    font-size: 2.5vw;
+    text-align: center;
+    animation-name:fadeInUp;
+    animation-duration:1s;
+    
 }
+
+.warning{
+    position: absolute;
+    width: 50%;
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-top: 24%;
+    margin-left:  25%;
+    text-align: center;
+    animation-name:fadeInDownText;
+    animation-duration:1.5s;
+}
+
+.know{
+    position: absolute;
+    width: 10%;
+    height: 2.5vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-top: 30%;
+    margin-left:  45%;
+    background-color:white;
+    border: none;
+    outline: none;
+    color: rgb(229,68,109);
+    border-radius: 10px;
+    animation-name:fadeInDownBtn;
+    animation-duration:2s;
+}
+
+
+@keyframes fadeInUp{
+    0%{
+        margin-top: 22%;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 20%;
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInDownText{
+    0%{
+        margin-top: 24%;
+        opacity: 0;
+    }
+    50%{
+        margin-top: 23%;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 24%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDownBtn{
+    0%{
+        margin-top: 28%;
+        opacity: 0;
+    }
+    67%{
+        margin-top: 28%;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 30%;
+        opacity: 1;
+    }
+}
+
+
+
+
