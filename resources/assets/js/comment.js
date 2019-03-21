@@ -232,7 +232,6 @@ class comment extends Component {
         if(this.state.show[i]["score"]<min)
           min=this.state.show[i]["score"];
       }
-      console.log(count/length)
       array.sort(function(a, b) {
         return a-b;
       });

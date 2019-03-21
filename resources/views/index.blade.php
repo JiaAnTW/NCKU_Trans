@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" charset="utf-8">
+<html lang="zh-Hant-TW" charset="utf-8">
     <head>
         <title>測試中</title>
         <!--setting-->

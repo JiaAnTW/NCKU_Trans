@@ -43,10 +43,10 @@
 
     .major_QA .index{
         position:absolute;
-        width: 70%;
-        left: 15%;
-        top:115px;
+        width: 100vw;
         max-width:100%;
+        left: 0%;
+        top:85px;
     }
 
     .major_QA .MobileMenu{

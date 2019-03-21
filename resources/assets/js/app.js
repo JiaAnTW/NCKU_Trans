@@ -7,6 +7,7 @@ import Layout from './layout';
 import Post from './post';
 import Admin from './admin'
 import QA from './major_QA';
+import error from './error';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
 class App extends Component{
@@ -25,8 +26,8 @@ class App extends Component{
                     <Route path="/admin" component={Admin}/>
                     <Route path="/QA/:id" component={QA}/>
                     <Route path="/home" component={Home}/>
-                    
                 </Layout>
+                <Route path="" component={error}/>         
             </Switch>
         </HashRouter>
         );

@@ -14,6 +14,8 @@ class commentIndex extends Component {
       btnHeight:"15rem",
       cardTextHeight:"6.06rem",
       wordsNumber: 35,
+      IconX: "30vw",
+      IconY: "10vw"
     };
     this.sponCard=this.sponCard.bind(this);
     this.sponSingleCard=this.sponSingleCard.bind(this);
@@ -55,7 +57,7 @@ class commentIndex extends Component {
       this.handleCardSize(false);
     }
     else if(window.innerWidth>=870){
-      this.setState({row:3});
+      this.setState({row:3,IconX:"20vw",IconY:"10vw"});
       this.props.handleRWD(false);
       this.handleCardSize(false);
     }
@@ -65,7 +67,7 @@ class commentIndex extends Component {
       this.handleCardSize(false);
     }
     else{
-      this.setState({row:1});
+      this.setState({row:1,IconX:"25vw",IconY:"10vw"});
       this.handleCardSize(true);
       this.props.handleRWD(true);
     }
@@ -83,7 +85,7 @@ class commentIndex extends Component {
     return <Container style={{ width: '100%',maxWidth:"100%" }}>{output}</Container>;
   }
     else
-      return <Icon/> ;
+      return <Icon style={{marginLeft:this.state.IconX,top:this.state.IconY}}/> ;
   }
 
   sponSingleCard(number,datas){

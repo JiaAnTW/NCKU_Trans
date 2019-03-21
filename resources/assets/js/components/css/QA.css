@@ -19,8 +19,10 @@
     width: 70%;
   }
 
-  .QA_container iframe{
+  #fb-comments iframe, #fb-comments span, .fb_iframe_widget_fluid_desktop iframe{
     width: 100%;
+    min-width: 70%;
+    max-width: 80%;
   }
   
   .QA_card_container .title2{
@@ -100,7 +102,7 @@
     font-weight: 100;
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: 596px) {
     .QA_container .QA_cardBody{
       width: 95%;
     }

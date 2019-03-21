@@ -24,7 +24,7 @@ class maj_QA extends Component {
         total_tags:[],
         openFliter: false
     };
-
+    this.handleBackIndex =this.handleBackIndex.bind(this)
     this.handleClick = this.handleClick.bind(this);
     this.handleRWD =this.handleRWD.bind(this);
     this.handleOpenQA =this.handleOpenQA.bind(this);
@@ -60,6 +60,15 @@ class maj_QA extends Component {
       state: { id: id }
     }
     
+    this.props.history.push(location);  
+  }
+
+  handleBackIndex(){
+    const url='/QA/~';
+    const location = {
+      pathname: url,
+      state: { id: -1 }
+    }
     this.props.history.push(location);  
   }
 
@@ -232,12 +241,12 @@ class maj_QA extends Component {
     const show=(this.props.location.pathname==="/QA/~")?
     <QAIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenQA} handleRWD={this.handleRWD}/>
     :
-    <QA  data={this.state.showContent} is_fetch={this.state.is_fetch} next={this.handleShowContent}/>;
+    <QA is_mobile={this.state.mobile_display} data={this.state.showContent} is_fetch={this.state.is_fetch} next={this.handleShowContent} handleBackIndex={this.handleBackIndex}/>;
 
     const Menu=()=>{
       var output=[];
       for(var i=0;i<this.state.total_tags.length;++i){
-        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 10px",backgroundColor:(this.state.total_tags[i][1]==false)?"white":"#6c757d"}}>{this.state.total_tags[i][0]}</Button>);
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 10px",backgroundColor:(this.state.total_tags[i][1]==false)?"white":"rgba(128,128,128,0.7)"}}>{this.state.total_tags[i][0]}</Button>);
       }
       return output;
     }

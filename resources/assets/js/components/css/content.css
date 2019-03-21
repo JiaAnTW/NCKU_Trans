@@ -109,7 +109,7 @@ outline: none;
 
 .contentBtn:hover{
 
-background-color: rgba(0, 0, 0,0.1);
+background-color: rgba(0, 0, 0,0);
 
 }
 
@@ -166,27 +166,27 @@ right: 6px;
 .type_table{
   position:relative;
   top: 15px;
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 100;
 }
 
 @media (min-width: 596px) {
     .id_container{
-    width: 100px;
-    height:100px;
+    width: 72px;
+    height:72px;
     border-radius:100px;
     background-color: rgb(229,68,109);
     text-align: center;
-    line-height: 90px;
-    font-size: 40px;
+    line-height: 70px;
+    font-size: 30px;
     color: white;
   }
 .title{
     position: absolute;
-    left: 215px;
-    top: 50px;
+    left: 180px;
+    top: 36px;
     width: 400px;
-    font-size: 48px;
+    font-size: 36px;
   }
 
   .closeBtn{
@@ -258,12 +258,12 @@ right: 6px;
 
 
 
-#rightBtn{
+.content_container #rightBtn{
   right: 10px;
   outline: none;
 }
 
-#rightArrow{
+.content_container #rightArrow{
   left: 5px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -273,12 +273,12 @@ right: 6px;
   left: 1px;
 }
 
-#leftBtn{
+.content_container #leftBtn{
   left: 10px;
   outline: none;
 }
 
-#leftArrow{
+.content_container #leftArrow{
   right: 10px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -290,7 +290,7 @@ right: 6px;
   
   .type_table{
     position:relative;
-    top: 15px;
+    top: 10px;
     font-size: 20px;
     font-weight: 100;
   }

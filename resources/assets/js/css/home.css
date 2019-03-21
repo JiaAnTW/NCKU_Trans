@@ -17,12 +17,13 @@
     position: absolute;
 }
 
+
  .webName{
     position: absolute;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 20%;
-    font-size: 2.5vw;
+    margin-top: 43vh;
+    width: 100%;
+    font-size: 32px;
+    margin-left:  0%;
     text-align: center;
     animation-name:fadeInUp;
     animation-duration:1s;
@@ -31,11 +32,11 @@
 
 .warning{
     position: absolute;
-    width: 50%;
-    font-size: 1.2vw;
     font-weight: 100;
-    margin-top: 24%;
-    margin-left:  25%;
+    margin-top: 51.6vh;
+    width: 86%;
+    font-size: 14.2px;
+    margin-left:  7%;
     text-align: center;
     animation-name:fadeInDownText;
     animation-duration:1.5s;
@@ -43,12 +44,12 @@
 
 .know{
     position: absolute;
-    width: 10%;
-    height: 2.5vw;
-    font-size: 1.2vw;
+    width: 30%;
+    height: 40px;
+    font-size: 19.2px;
+    margin-left: 35%;
     font-weight: 500;
-    margin-top: 30%;
-    margin-left:  45%;
+    margin-top: 60.2vh;
     background-color:white;
     border: none;
     outline: none;
@@ -59,13 +60,51 @@
 }
 
 
+@media (min-width: 596px) {
+    .know{
+        width: 20%;
+        margin-left: 40%;
+    }
+
+
+}
+
+
+@media (min-width: 890px) {
+    .webName{
+        position: absolute;
+        width: 50%;
+        margin-left: 25%;
+        font-size: 40px;
+        
+    }
+    
+    .warning{
+        position: absolute;
+        width: 50%;
+        font-size: 19.2px;
+        margin-left:  25%;
+    }
+    
+    .know{
+        width: 10%;
+        font-size: 19.2px;
+        margin-left:  45%;
+    }
+}
+
+
+
+
+
+
 @keyframes fadeInUp{
     0%{
-        margin-top: 22%;
+        margin-top: 40.7vh;
         opacity: 0;
     }
     100%{
-        margin-top: 20%;
+        margin-top: 43vh;
         opacity: 1;
     }
 }
@@ -73,30 +112,30 @@
 
 @keyframes fadeInDownText{
     0%{
-        margin-top: 24%;
+        margin-top: 49.45vh;
         opacity: 0;
     }
     50%{
-        margin-top: 23%;
+        margin-top: 49.45vh;
         opacity: 0;
     }
     100%{
-        margin-top: 24%;
+        margin-top: 51.6vh;
         opacity: 1;
     }
 }
 
 @keyframes fadeInDownBtn{
     0%{
-        margin-top: 28%;
+        margin-top: 58.05vh;
         opacity: 0;
     }
     67%{
-        margin-top: 28%;
+        margin-top: 58.05vh;
         opacity: 0;
     }
     100%{
-        margin-top: 30%;
+        margin-top: 60.2vh;
         opacity: 1;
     }
 }

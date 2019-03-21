@@ -23,7 +23,6 @@ increase() {
     const std=(this.props.value=="null")?100:Number(this.props.value)+0.09;
     if (percent > std) {
         clearTimeout(this.tm);
-        console.log("let'stop increasing!")
         if(this.state.prevValue==="null"||Number(this.state.prevValue)>Number(this.props.value))
           this.decrease()
         else
@@ -38,7 +37,6 @@ increase() {
     const percent = this.state.percent - 1.1;
     if (this.props.value==="null"||percent < Number(this.props.value)) {
         clearTimeout(this.tm);
-        console.log("let'stop decreasing!")
       if(this.props.value==="null"||Number(this.state.prevValue)<Number(this.props.value))
         this.increase()
       else
@@ -65,7 +63,6 @@ increase() {
     if(this.state.is_finish===true&&(prevProps.value!=this.props.value)){
         this.setState({is_finish: false, prevValue:prevProps.value});
         if(prevProps.value=="null"||Number(prevProps.value)>Number(this.props.value)){
-            console.log("let's change to decrease!")
             this.decrease();
         }
         else

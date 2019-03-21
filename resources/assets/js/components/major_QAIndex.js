@@ -13,6 +13,9 @@ class major_QAIndex extends Component {
       btnHeight:"15rem",
       cardTextHeight:"auto",
       wordsNumber: 35,
+      fontSize:"2.5rem",
+      IconX: "30vw",
+      IconY: "10vw"
     };
     this.sponCard=this.sponCard.bind(this);
     this.sponSingleCard=this.sponSingleCard.bind(this);
@@ -44,7 +47,7 @@ class major_QAIndex extends Component {
 
   changeRowCard(){
     if(window.innerWidth>860){
-      //this.setState({row:5});
+      this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
       this.props.handleRWD(false);
       //this.handleCardSize(false);
     }
@@ -64,7 +67,7 @@ class major_QAIndex extends Component {
       //this.handleCardSize(false);
     //}
     else{
-      //this.setState({row:1});
+      this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
       //this.handleCardSize(true);
       this.props.handleRWD(true);
     }
@@ -82,14 +85,14 @@ class major_QAIndex extends Component {
     return <div style={{ width: '100vw',maxWidth:"100%" }}>{output}</div >;
   }
     else
-      return <Icon style={{ position: 'absolute',left: "40%",top: "200px" }}/> ;
+      return <Icon style={{ position: 'absolute',marginLeft: this.state.IconX ,top: this.state.IconY }}/> ;
   }
 
   sponSingleCard(number,datas){
     var comment=datas[number]["answer"];
     const tags=datas[number]["tag"].split(",").map(tag=>{
       return(
-        <Badge variant="secondary" style={{fontSize:"15px",fontWeight:"200",margin:"0 10px",borderRadius:"3px"}}>
+        <Badge style={{lineHeight:"1.5",fontSize:"13px",fontWeight:"200",margin:"5px 10px",borderRadius:"3px",color:"black",backgroundColor:"rgba(128,128,128,0.4)"}}>
           {tag}
         </Badge>
       );
@@ -97,8 +100,9 @@ class major_QAIndex extends Component {
     return(
       <Card style={{ width: this.state.cardWidth,height:"auto",maxWidth:"100%" }}>
       <Card.Body style={{width:"100vw",height:"auto",maxWidth:"100%"}}>
-      <Card.Title style={{fontSize: '2.5rem',height:"auto",maxWidth: "87%" }}><div className="circle" style={{fontSize: '2.5rem',lineHeight:"4.5rem",textAlign:"center",color:"white",height:"50px",width:"50px",borderRadius:"50px",backgroundColor: "rgb(229,68,109)"}}>{"#"+datas[number]["id"]}</div><div style={{position:"relative",top:"-50px",left:"60px",maxWidth: "95%",textAlign:"justify"}}>{datas[number]["question"]}</div></Card.Title>
+      <Card.Title style={{fontSize: this.state.fontSize, height:"auto" }}><div style={{maxWidth: "95%",textAlign:"justify"}}>{datas[number]["question"]}</div></Card.Title>
       <button className="showBtn" onClick={this.handleOpenContent.bind(this,datas[number]["id"])} style={{ position:"absolute",top:"0",left:"0",width:"100%",height:"75%",backgroundColor: "rgba(0, 0, 0,0)",border: "none",outline:"none"}}></button>
+      <Card.Link style={{ color: 'rgb(30,144,255)' }}>{"#"+datas[number]["id"]}</Card.Link>
       {tags}
       </Card.Body>
       </Card>

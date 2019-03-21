@@ -77,13 +77,14 @@ class mobileFliter extends Component {
   }
   spawnDropdown(){
     const width=(this.props.mobile==="none")?"20.5vw":"85px";
+    const itemWidth=(this.props.mobile==="none")?"20.2vw":"80px";
     const data=this.state.data;
       var output=[];
       for(var i=0;i<data.length;++i){
         var object=data[i];
         const o_output=object["option"].map(option=>{
             return(
-                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:width}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
+                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:itemWidth}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
                 )});
       output.push(
         <Dropdown style={this.state.styleBtn[i]}>

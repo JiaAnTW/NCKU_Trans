@@ -40,7 +40,7 @@ class content extends React.Component {
 
       const cardHeight= (this.props.mobile==="none")?"75vh":"500px";
       const cardBodyWidth=(this.props.mobile==="none")?"95vw":"800px";
-      const  containerMargin=(this.props.mobile==="none")?"30px 12vw":"30px 80px";
+      const  containerMargin=(this.props.mobile==="none")?"30px 11vw":"30px 80px";
 
       const tableType=(this.props.mobile==="none")?
       <thead>
@@ -78,7 +78,7 @@ class content extends React.Component {
                 <Table striped bordered hover  className="type_table" >
                   {tableType}
                 </Table>
-              <Card.Text style={{position:"relative",top: "20px"}}>
+              <Card.Text style={{position:"relative",top: "5px",textAlign:"justify"}}>
                 <span>
                 {this.props.data["comment"]}
                 </span>
