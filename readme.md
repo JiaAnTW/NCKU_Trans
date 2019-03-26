@@ -1,6 +1,7 @@
 # NCKU Trans (Work in progress)
-https://nckutrans.000webhostapp.com/#/comment
+https://nckutrans.000webhostapp.com/#/
 (The information showed in this website are test data for debugging now.)
+![](https://i.imgur.com/Hpx7oJ0.jpg)
 
 Using **React.js(Javascript ES6)** to build frontend, **PHP Laravel** to build backend, and **MySQL** to build database. Expected to be finished before March or April, 2019.
 
@@ -14,14 +15,17 @@ If you are in search of frontend works in this website, please check <code>resou
 (The information showed in image below now are test data for debugging.)
 
 ### (1/5) Platform for sharing experience:
-![](https://i.imgur.com/Mo3RE8n.png)
-![](https://i.imgur.com/3dQvAza.png)
+![](https://i.imgur.com/GbVnETF.png)
+![](https://i.imgur.com/agR4XHM.png)
+
 
 ### (2/5) Platform for common Q&A:
-![](https://i.imgur.com/XtNGQyO.png)
+![](https://i.imgur.com/Jtv5X4b.png)
+
 
 ### (3/5) Posting page:
-![](https://i.imgur.com/xFZsI8y.png)
+![](https://i.imgur.com/RTVcIz8.png)
+
 
 ### (4/5) Authentication system:
 ![](https://i.imgur.com/Fxr5B7D.png)
