@@ -31,7 +31,7 @@ class commentIndex extends Component {
 
   handleCardSize(is_mobile){
     if(is_mobile)
-      this.setState({fontSize:"2.5rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"14.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
+      this.setState({fontSize:"2.5rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"13.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
     else
       this.setState({fontSize:"3.5rem",btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   }
@@ -99,7 +99,6 @@ class commentIndex extends Component {
         {comment}
       </Card.Text>
       <button className="showBtn" onClick={this.handleOpenContent.bind(this,datas[number]["id"])} style={{ position:"absolute",top:"0",left:"0",width:"100%",height:this.state.btnHeight,backgroundColor: "rgba(0, 0, 0,0)",border: "none",outline:"none"}}></button>
-      <Card.Link style={{ color: 'rgb(30,144,255)' }}>{"#"+datas[number]["id"]}</Card.Link>
       <Card.Link style={{ color:'rgb(30,144,255)' }}>{datas[number]["year"]}</Card.Link>
       <Card.Link style={{ color: 'rgb(30,144,255)' }}>{datas[number]["department"]}</Card.Link>
       </Card.Body>

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import TagsInput from 'react-tagsinput'
 import CommentIndex from './components/commentIndex'
+import QAIndex from './components/major_QAIndex'
+import MobileFliter from "./components/mobileFliter";
 import 'react-tagsinput/react-tagsinput.css'
+import './css/edit.css'
 import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
 
 class edit extends Component {
     constructor(props) {
     super(props)
     this.state = {
-        now_handle: "心得",
-        id: 0,
+        now_handle: "QA",
+        id: -1,
         new_id: "不變",
         id_array:[],
         datas: [],
@@ -24,7 +27,7 @@ class edit extends Component {
         qa_datas: [],
         qa_new_id: "不變",
         qa_id_array:[],
-        qa_id: 0,
+        qa_id: -1,
         qa_q:"",
         qa_a:"",
         confirm:"",
@@ -32,6 +35,7 @@ class edit extends Component {
         showContent: [],
         display: "block",
     }
+    this.changeFliter=this.changeFliter.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.getData=this.getData.bind(this)
     this.changeNewId=this.changeNewId.bind(this)
@@ -43,6 +47,9 @@ class edit extends Component {
     this.handleRWD=this.handleRWD.bind(this)
   }
 
+  changeFliter(new_fliter,type){
+    this.setState({now_handle:new_fliter,qa_id:-1,id:-1})
+  }
 
   getData() {
     fetch(
@@ -93,13 +100,14 @@ class edit extends Component {
     }
 
   handleOpenModal (id) {
+    const object=(this.state.now_handle==="心得")?this.state.datas:this.state.qa_datas;
     let i=0;
-    while(this.state.datas[i]["id"]!=id)
+    while(object[i]["id"]!=id)
       i++;
-    if(i<this.state.datas.length){
-      this.setState({ showContent:this.state.datas[i]});
+    if(i<object.length){
+      this.setState({ showContent:object[i]});
       this.changeId(i);
-    }
+    } 
   }
 
   handleClick() {
@@ -119,6 +127,8 @@ class edit extends Component {
       fetch(
         url, {method: 'PUT',
           body: JSON.stringify(data),
+          mode: 'cors',
+          credentials: 'include',
           headers: new Headers({
             'Content-Type': 'application/json',
             'Authorization':"Bearer "+this.props.token,
@@ -222,7 +232,8 @@ class edit extends Component {
           });
         }
         else{
-          var real_i=this.state.qa_id_array.findIndex(function(value, index, arr){return value.toString()===i});
+          var real_i=e;
+          //this.state.qa_id_array.findIndex(function(value, index, arr){return value.toString()===i});
           var tags=this.state.qa_datas[real_i]["tag"].split(",");
           this.setState({
             qa_id: i,
@@ -235,14 +246,30 @@ class edit extends Component {
     }
 
   render() {
+    const fliter=[{
+      id: 0,
+      now:-1,
+      name: "none",
+      type: "null",
+      option: [["QA",-1],["心得",-1]],
+    }];
     const option=(this.state.now_handle==="心得")?this.state.datas.map(data=>{
       return(<option value={data["id"].toString()}>{data["id"]}</option>);
     }):this.state.qa_datas.map(data=>{
       return(<option value={data["id"].toString()}>{data["id"]}</option>);
     });
 
-    const form=()=>{
+    const switchIndex=()=>{
       if(this.state.now_handle==="心得"){
+        return(<CommentIndex datas={this.state.datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
+      }
+      else{
+        return(<QAIndex datas={this.state.qa_datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
+      }
+    }
+
+    const form=()=>{
+      if(this.state.now_handle==="心得"&&this.state.id!=-1){
         return (
         <div>
             文章的新id:   
@@ -250,7 +277,7 @@ class edit extends Component {
             <br/>
         排名上: 
             <input id="rank" type="text" value={this.state.rank_1} onChange={(e) => this.setState({ rank_1: e.target.value })}/>
-            下:<input id="rank" type="text" value={this.state.rank_2} onChange={(e) => this.setState({ rank_2: e.target.value })}/>
+            <br/>下:<input id="rank" type="text" value={this.state.rank_2} onChange={(e) => this.setState({ rank_2: e.target.value })}/>
             <br/> 
             申請年度:   
             <input id="year" type="text" value={this.state.year} onChange={(e) => this.setState({ year: e.target.value })}/>
@@ -275,7 +302,7 @@ class edit extends Component {
             </select>
         </div>);
       }
-      else
+      else if(this.state.qa_id!=-1)
         return(<div>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
@@ -290,8 +317,8 @@ class edit extends Component {
     }
     return (
       <div className="edit">
-        <div className="Menu" style={{width:"20%",height:"100vh",position:"absolute",top:"0px",left:"0px"}}>
-          <div style={{width:"90%",margin:"10% 5%"}}>
+        <div className="Menu" style={{height:"auto",position:"absolute",top:"0px",left:"0px",width: "100%"}}>
+          <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1&&this.state.qa_id===-1)?"none":"block"}}>
         編輯的類別:<select id="comment_id" name ="comment_id" onChange={(e) =>{ this.setState({ now_handle: e.target.value });this.changeId}}>
                     <option value="心得">心得</option>
                     <option value="QA">QA</option>
@@ -309,8 +336,11 @@ class edit extends Component {
             <button onClick={this.deleteComment}>刪除該文章</button>
             </div>
         </div>
-        <div className="index" style={{display:this.state.display}}>
-          <CommentIndex datas={this.state.datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
+        <div className="index" style={{display:(this.state.id===-1&&this.state.qa_id===-1)?"block":"none", top:"100px"}}>
+          {switchIndex()}
+        </div>
+        <div className="MobileMenu" style={{marginTop:"55px"}}>
+          <MobileFliter mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{marginLeft:"0%",width:'100%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
         </div>
       </div>
     );

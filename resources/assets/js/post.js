@@ -21,10 +21,10 @@ class post extends Component {
     this.state = {
         rank_1: "",
         rank_2: "",
-        year: "",
+        year: 107,
         score: 0,
-        out_maj: "",
-        in_maj: "",
+        out_maj: "中文系",
+        in_maj: "中文系",
         comment: "",
         is_send: false,
     }
@@ -85,6 +85,22 @@ class post extends Component {
     }
 
   render() {
+    const spawnYear=()=>{
+      var output=[];
+      var clock=new Date();
+        for(var i=clock.getFullYear();i>2014;--i){
+        if(i!=clock.getFullYear()||clock.getMonth()>7)
+          output.push(
+            <option value={i-1911}>{i-1911}</option>
+          );
+      }
+      return(
+        <select id="year" onChange={this.changeYear} style={{color:"black",textAlign:"center"}}>
+          {output}
+        </select>
+      );
+  }
+
     const maj_option=NCKU.map(department=>{return(
       <option value={department} style={{textAlign:"center"}}>{department}</option>
     );});
@@ -94,19 +110,19 @@ class post extends Component {
     <div style={{margin:"5% 5%"}}>
     <p>
       排名上:  
-      <input id="rank" type="text" onChange={(e)=>this.setState({rank_1:e.target.value})} style={{color:"black"}}/>
+      <input id="rank" type="number" step="1" min="1" max="200" onChange={(e)=>this.setState({rank_1:e.target.value})} style={{color:"black"}}/>
       </p>
     <p>
       排名下:  
-      <input id="rank" type="text" onChange={(e)=>this.setState({rank_2:e.target.value})} style={{color:"black"}}/>
+      <input id="rank" type="number" step="1" min="1" max="200" onChange={(e)=>this.setState({rank_2:e.target.value})} style={{color:"black"}}/>
     </p>
     <p >
      
-    申請年度:<input id="year" type="text" onChange={this.changeYear}/>
+    申請年度:{spawnYear()}
     </p>
     <p >
     <br/>    
-    學年分數:<input id="score" type="text" onChange={this.changeScore}/>
+    學年分數:<input id="score" type="number" step="0.1" min="1" max="200" onChange={this.changeScore}/>
     </p>
     <p>
     <br/>    

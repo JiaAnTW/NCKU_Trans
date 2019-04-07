@@ -17,6 +17,14 @@
     position: absolute;
 }
 
+.Logo{
+    position: absolute;
+    margin-top: 30vh;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+}
+
 
  .webName{
     position: absolute;
@@ -71,6 +79,10 @@
 
 
 @media (min-width: 890px) {
+    .Logo{
+        font-size: 68px;
+    }
+    
     .webName{
         position: absolute;
         width: 50%;

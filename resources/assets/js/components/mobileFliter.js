@@ -65,16 +65,27 @@ class mobileFliter extends Component {
 
   componentWillMount(){
     const test=this.props.value;
+    const showId=this.props.controllArray;
     var new_style=[];
     var showTag=[];
     for(var i=0;i<test.length;++i){
-      const style=(test[i]["id"]===0)?{display:"block",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"}:{display:"none",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"};
+      var style={};
+      var tag="";
+      if(showId[i]===-1){
+        style={display:"none",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"};
+        tag=test[i]["option"][0][0];
+      }
+      else{
+        style={display:"block",backgroundColor:"rgb(229,68,109)",outline:"none",height:"85%"};
+        tag=test[i]["option"][showId[i]][0];
+        test[i]["now"]=showId[i];
+      }
       new_style.push(style);
-      const tag=test[i]["option"][0][0];
       showTag.push(tag);
     }
     this.setState({styleBtn: new_style,showTag: showTag,data: test}); 
   }
+
   spawnDropdown(){
     const width=(this.props.mobile==="none")?"20.5vw":"85px";
     const itemWidth=(this.props.mobile==="none")?"20.2vw":"80px";
@@ -84,7 +95,7 @@ class mobileFliter extends Component {
         var object=data[i];
         const o_output=object["option"].map(option=>{
             return(
-                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:itemWidth}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
+                <Dropdown.Item  style={{outline:"none",backgroundColor:"rgb(229,68,109)",color:"white",fontSize:"12px",width:itemWidth,textAlign:"center",padding:"0.25rem 0.4rem"}} onClick={this.handleClick.bind(this,option[0],option[1],object["id"],object["now"],object["type"])}>{option[0]}</Dropdown.Item>
                 )});
       output.push(
         <Dropdown style={this.state.styleBtn[i]}>

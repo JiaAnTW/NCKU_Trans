@@ -42,6 +42,7 @@ class comment extends Component {
     constructor(props) {
     super(props);
     this.state = {
+        is_home: false,
         showModal: false,
         mobile_display: "block",
         fliter :"none",
@@ -62,6 +63,8 @@ class comment extends Component {
         is_fetch:false,
         datas: [],
     };
+    this.findMobileFliterShow=this.findMobileFliterShow.bind(this)
+    this.handleInitalMajorFliter =this.handleInitalMajorFliter.bind(this)
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleShowContent=this.handleShowContent.bind(this);
@@ -72,6 +75,26 @@ class comment extends Component {
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
     this.sponMobileMenu=this.sponMobileMenu.bind(this);
+  }
+
+  findMobileFliterShow(fliter){
+      for(var i=0; i<department.length;++i){
+        var controllArray=[0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+        if(department[i][0]===fliter){
+          controllArray[0]=i+1;
+          controllArray[i+1]=0;
+          return controllArray;
+        }
+        else{
+          for(var j=0;j<NCKU[department[i][1]].length;++j)
+            if(NCKU[department[i][1]][j]===fliter){
+              controllArray[0]=i+1;
+              controllArray[i+1]=j+1;
+              return controllArray;
+            }
+        }
+      }
+      return [0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
   }
 
   handleRWD(is_mobile){
@@ -242,7 +265,7 @@ class comment extends Component {
               <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
               <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
               <div style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
-                <MobileFliter mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="包含年份" value={fliter_2} style={{marginLeft:"12%",width:'76%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+                <MobileFliter controllArray={this.findMobileFliterShow("none")} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="包含年份" value={fliter_2} style={{marginLeft:"12%",width:'76%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
               </div>
               </div>
             </li>
@@ -266,35 +289,112 @@ class comment extends Component {
 
   componentDidMount(){
     this.handleClick();
+    var output=[];
+    this.state.datas.forEach(element => {
+      if(element["department"]==="文學院")
+        output.push(element);
+      });
+    this.setState({show:output});
+  }
+
+  handleInitalMajorFliter(value){
+    var i=0;
+    while(i<department.length&&department[i][0]!=value){
+      i++;
+    }
+    const type=(i===department.length)?"in_maj":"department";
+    this.changeFliter(value,type);
   }
 
 
   render() {
+    const spawnDepartment=department.map(option=>{
+      return<option value={option[0]}>{option[0]}</option>
+    });
+    const spawnMajor=(fliter)=>{
+      if(fliter==="none")
+          return <option value="none">請選擇學院</option>
+      var i=0;
+        while(i<department.length&&department[i][0]!=fliter){
+          i++;
+        }
+        if(i==department.length){
+          for(i=0;i<department.length;++i){
+            var j=0
+            while(j<NCKU[department[i][1]].length && NCKU[department[i][1]][j]!=fliter){
+              j++;
+            }
+            if(j<NCKU[department[i][1]].length)
+              break;
+          }
+        }
+        var output=[];
+        output.push(<option value={department[i][0]}>全部科系</option>);
+        for(var j=0;j<NCKU[department[i][1]].length;++j)
+        output.push(<option value={NCKU[department[i][1]][j]}>{NCKU[department[i][1]][j]}</option>);
+        return output;
+    }
+    const spawnYear=()=>{
+        var output=[];
+        var clock=new Date();
+          for(var i=clock.getFullYear();i>2014;--i){
+            if(i!=clock.getFullYear()||clock.getMonth()>7)
+              output.push(
+                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,(i-1911).toString,"year")}>{i-1911}
+                </Button>
+              );
+        }
+        return(
+          <Menu onClick={this.changeFliter.bind(this,"none","year")} title="全部年份" >
+          {output}
+          </Menu>
+        );
+    }
 
+    const indexPage=(
+      <div>
+        <div className="Menu" style={{display: this.state.mobile_display}}>
+          <div style={{position:"relative", top:"0%", width: '100%'}}>
+            <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
+            </Button>
+            <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
+              <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
+                {this.countDepartment("不分系")}
+              </Badge>
+            </Button>
+          </div>
+          {this.sponCommentMenu()}
+      </div>
+      <div className="index">
+        <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
+      </div>
+      {this.spawnStatistic()}
+      <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
+        <MobileFliter controllArray={this.findMobileFliterShow(this.state.fliter)} show={this.state.fliter} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+        <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+      </div>
+      <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
+    </div>
+    );
+
+    const landingPage=(
+      <div className="App" style={{backgroundImage:(this.state.is_mobile!="none")?"linear-gradient(to right, #f77062 0%, #fe5196 100%)":"linear-gradient(to right, rgb(229,68,109) 0%, rgb(229,68,109) 100%)"}}>
+        <h1 className="webName">選擇想查詢的學院/學系</h1>
+        <div className="warning">
+          <select onChange={(e)=>this.changeFliter(e.target.value,"department")} style={{outline:"none",color:"rgb(229,68,109)",fontWeight:300,border:"none",width:"120px",marginLeft:"0%",backgroundColor:"white"}}>
+            <option value="none">全部學院</option>
+          {spawnDepartment}
+          </select>
+          <select style={{outline:"none",color:"rgb(229,68,109)",border:"none",width:"120px",backgroundColor:"white",marginLeft:"5%"}} onChange={(e)=>this.handleInitalMajorFliter(e.target.value)}>{spawnMajor(this.state.fliter)}</select>
+        </div>
+        <button className="know" onClick={(e)=>this.setState({is_home:true})}>確認送出</button>
+      </div>
+
+    );
+  
     return (
       <div className="comment">
-          <div className="Menu" style={{display: this.state.mobile_display}}>
-              <div style={{position:"relative", top:"0%", width: '100%'}}>
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
-                </Button>
-                <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
-                  <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
-                    {this.countDepartment("不分系")}
-                  </Badge>
-                </Button>
-              </div>
-              {this.sponCommentMenu()}
-          </div>
-          
-        <div className="index">
-            <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
-        </div>
-        {this.spawnStatistic()}
-        <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
-            <MobileFliter mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
-            <MobileFliter mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
-          </div>
-        <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
+        {(this.state.is_home)?indexPage:landingPage}
       </div>
     );
   }

@@ -61,6 +61,7 @@ border: 0px solid;
     width:30%;
     color:black;
     border-radius: 3px;
+    text-align: center;
 }
 
 #rank,#year,#id,#out_maj, #in_maj,#score,#comment{

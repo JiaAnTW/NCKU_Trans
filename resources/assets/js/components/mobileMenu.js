@@ -58,7 +58,7 @@ class mobileMenu extends Component {
               <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/comment" className="list" style={ListStyleFirst}>瀏覽心得</ListGroup.Item>
               <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/QA/~" className="list" style={ListStyle}>常見QA</ListGroup.Item>
               <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/post" className="list" style={ListStyle}>分享心得</ListGroup.Item>
-              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
+              <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="https://goo.gl/forms/6MkYePHd03P7Nv8w2" target="_blank" className="list" style={ListStyleLast}>聯絡我們</ListGroup.Item>
             </ListGroup>
           </div>
         </Collapse>

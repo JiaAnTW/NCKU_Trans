@@ -50,6 +50,16 @@ nav{
     
 }
 
+.logo{
+    margin-left: 1%;
+    margin-top: 0.2%;
+    width: auto;
+    height:80%;
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+
 .navItem,.navItem:visited,.navItem:active{
     float: right;
     margin:  12.5px 50px;
