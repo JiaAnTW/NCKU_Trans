@@ -340,7 +340,7 @@ class edit extends Component {
           {switchIndex()}
         </div>
         <div className="MobileMenu" style={{marginTop:"55px"}}>
-          <MobileFliter mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{marginLeft:"0%",width:'100%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+          <MobileFliter controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{marginLeft:"0%",width:'100%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
         </div>
       </div>
     );

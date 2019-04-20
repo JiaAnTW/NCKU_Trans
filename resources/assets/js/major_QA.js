@@ -11,6 +11,7 @@ class maj_QA extends Component {
     this.state = {
         mobile_display: "none",
         fliter :"none",
+        fliterByWord : "",
         showContentId: -1,
         show:[],
         showContent:{
@@ -34,6 +35,13 @@ class maj_QA extends Component {
     this.changeFliter=this.changeFliter.bind(this);
     this.spawnMenu=this.spawnMenu.bind(this);
     this.changeSelectBtn=this.changeSelectBtn.bind(this)
+    this.changeFliterByWord=this.changeFliterByWord.bind(this)
+  }
+
+  changeFliterByWord(e){
+    const changeState=()=>new Promise((resolve,reject)=>this.setState({fliterByWord: e.target.value},()=>resolve()));
+    changeState()
+    .then((value)=>{this.changeFliter("none")})
   }
 
   handleRWD(is_mobile){
@@ -123,19 +131,21 @@ class maj_QA extends Component {
       if(this.state.mobile_display==="none")
         this.setState({openFliter: false})
       var show=[];
-      if(type!="none"){  
-        var tag=[];
-        for(var i=0;i<this.state.total_tags.length;++i){
-          if(this.state.total_tags[i][1]===true)
-            tag.push(this.state.total_tags[i][0]);
-        }
+      var tag=[];
+      for(var i=0;i<this.state.total_tags.length;++i){
+        if(this.state.total_tags[i][1]===true)
+          tag.push(this.state.total_tags[i][0]);
+      }
+      if(type!="none" && tag.length>0){  
         this.state.datas.forEach(element => {
           const array=element["tag"].split(",");
           for(var i=0;i<array.length;++i){
             for(var j=0;j<tag.length;++j){
               if(array[i]===tag[j]){
-                show.push(element);
-                return;
+                if(this.state.fliterByWord==="" || element["question"].search(this.state.fliterByWord)!=-1){
+                  show.push(element);
+                  return;
+                }
               }
             }
           }
@@ -143,7 +153,12 @@ class maj_QA extends Component {
         this.setState({show:show});
       }
       else{
-        show=this.state.datas;
+        this.state.datas.forEach(element => {
+          if(this.state.fliterByWord==="" || element["question"].search(this.state.fliterByWord)!=-1){
+            show.push(element);
+            return;
+            }
+        });
       }
       var rst_tag=this.state.total_tags;
       rst_tag.forEach(element => {
@@ -260,10 +275,13 @@ class maj_QA extends Component {
         <div className="MobileMenu">
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
-          <div className="Menu" style={{display:(this.state.openFliter===true)?"block":menu_display}}>
-            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>全部心得</Button>
-            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"20px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>送出篩選</Button>
+          <div className="Menu" style={{display:(this.state.openFliter===true && (this.state.is_fetch))?"block":menu_display}}> 
+            <input type="text" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{width:"80%",margin:"5px 10%"}}/>
               {Menu()}
+            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>送出篩選</Button>
+            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>全部心得</Button>
+            
+
           </div>
       </div>
     );

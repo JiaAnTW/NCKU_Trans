@@ -52770,7 +52770,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(comment).call(this, props));
     _this.state = {
-      is_home: false,
+      is_home: true,
       showModal: false,
       mobile_display: "block",
       fliter: "none",
@@ -55886,6 +55886,7 @@ function (_Component) {
           marginTop: "55px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        controllArray: [0, -1],
         mobile: this.state.display,
         fliter: this.changeFliter,
         type: "\u7DE8\u8F2F\u985E\u5225",
@@ -56216,6 +56217,7 @@ function (_Component) {
     _this.state = {
       mobile_display: "none",
       fliter: "none",
+      fliterByWord: "",
       showContentId: -1,
       show: [],
       showContent: {
@@ -56239,10 +56241,30 @@ function (_Component) {
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
     _this.spawnMenu = _this.spawnMenu.bind(_assertThisInitialized(_this));
     _this.changeSelectBtn = _this.changeSelectBtn.bind(_assertThisInitialized(_this));
+    _this.changeFliterByWord = _this.changeFliterByWord.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(maj_QA, [{
+    key: "changeFliterByWord",
+    value: function changeFliterByWord(e) {
+      var _this2 = this;
+
+      var changeState = function changeState() {
+        return new Promise(function (resolve, reject) {
+          return _this2.setState({
+            fliterByWord: e.target.value
+          }, function () {
+            return resolve();
+          });
+        });
+      };
+
+      changeState().then(function (value) {
+        _this2.changeFliter("none");
+      });
+    }
+  }, {
     key: "handleRWD",
     value: function handleRWD(is_mobile) {
       if (is_mobile) this.setState({
@@ -56315,19 +56337,19 @@ function (_Component) {
   }, {
     key: "handleClick",
     value: function handleClick() {
-      var _this2 = this;
+      var _this3 = this;
 
       fetch('/api/get/major_QA').then(function (res) {
         return res.json();
       }).then(function (data) {
-        _this2.setState({
+        _this3.setState({
           datas: data,
           is_fetch: true,
           show: data,
-          showContent: data[Number(_this2.props.match.params.id)]
+          showContent: data[Number(_this3.props.match.params.id)]
         });
 
-        _this2.spawnMenu(data);
+        _this3.spawnMenu(data);
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
@@ -56344,26 +56366,29 @@ function (_Component) {
   }, {
     key: "changeFliter",
     value: function changeFliter(type) {
+      var _this4 = this;
+
       if (this.state.mobile_display === "none") this.setState({
         openFliter: false
       });
       var show = [];
+      var tag = [];
 
-      if (type != "none") {
-        var tag = [];
+      for (var i = 0; i < this.state.total_tags.length; ++i) {
+        if (this.state.total_tags[i][1] === true) tag.push(this.state.total_tags[i][0]);
+      }
 
-        for (var i = 0; i < this.state.total_tags.length; ++i) {
-          if (this.state.total_tags[i][1] === true) tag.push(this.state.total_tags[i][0]);
-        }
-
+      if (type != "none" && tag.length > 0) {
         this.state.datas.forEach(function (element) {
           var array = element["tag"].split(",");
 
           for (var i = 0; i < array.length; ++i) {
             for (var j = 0; j < tag.length; ++j) {
               if (array[i] === tag[j]) {
-                show.push(element);
-                return;
+                if (_this4.state.fliterByWord === "" || element["question"].search(_this4.state.fliterByWord) != -1) {
+                  show.push(element);
+                  return;
+                }
               }
             }
           }
@@ -56372,7 +56397,12 @@ function (_Component) {
           show: show
         });
       } else {
-        show = this.state.datas;
+        this.state.datas.forEach(function (element) {
+          if (_this4.state.fliterByWord === "" || element["question"].search(_this4.state.fliterByWord) != -1) {
+            show.push(element);
+            return;
+          }
+        });
       }
 
       var rst_tag = this.state.total_tags;
@@ -56474,7 +56504,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this5 = this;
 
       var menu_display = this.props.location.pathname === "/QA/~" ? this.state.mobile_display : "none";
       var fliter_2 = [{
@@ -56500,16 +56530,16 @@ function (_Component) {
       var Menu = function Menu() {
         var output = [];
 
-        for (var i = 0; i < _this3.state.total_tags.length; ++i) {
+        for (var i = 0; i < _this5.state.total_tags.length; ++i) {
           output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
-            onClick: _this3.changeSelectBtn.bind(_this3, i),
+            onClick: _this5.changeSelectBtn.bind(_this5, i),
             style: {
               outline: "none",
               margin: "5px 10px",
-              backgroundColor: _this3.state.total_tags[i][1] == false ? "white" : "rgba(128,128,128,0.7)"
+              backgroundColor: _this5.state.total_tags[i][1] == false ? "white" : "rgba(128,128,128,0.7)"
             }
-          }, _this3.state.total_tags[i][0]));
+          }, _this5.state.total_tags[i][0]));
         }
 
         return output;
@@ -56523,8 +56553,8 @@ function (_Component) {
         className: "MobileMenu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: function onClick() {
-          return _this3.setState({
-            openFliter: !_this3.state.openFliter
+          return _this5.setState({
+            openFliter: !_this5.state.openFliter
           });
         },
         style: {
@@ -56538,9 +56568,26 @@ function (_Component) {
       }, this.state.openFliter === true ? "X 關閉" : "+添加篩選")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Menu",
         style: {
-          display: this.state.openFliter === true ? "block" : menu_display
+          display: this.state.openFliter === true && this.state.is_fetch ? "block" : menu_display
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "\u641C\u5C0B\u554F\u984C",
+        onChange: this.changeFliterByWord,
+        style: {
+          width: "80%",
+          margin: "5px 10%"
+        }
+      }), Menu(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        onClick: this.changeFliter.bind(this, "tag"),
+        style: {
+          outline: "none",
+          width: "86%",
+          margin: "5px 7%",
+          backgroundColor: "rgb(229,68,109)",
+          border: "none"
+        }
+      }, "\u9001\u51FA\u7BE9\u9078"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: this.changeFliter.bind(this, "none"),
         style: {
           outline: "none",
@@ -56549,16 +56596,7 @@ function (_Component) {
           backgroundColor: "rgb(229,68,109)",
           border: "none"
         }
-      }, "\u5168\u90E8\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        onClick: this.changeFliter.bind(this, "tag"),
-        style: {
-          outline: "none",
-          width: "86%",
-          margin: "20px 7%",
-          backgroundColor: "rgb(229,68,109)",
-          border: "none"
-        }
-      }, "\u9001\u51FA\u7BE9\u9078"), Menu()));
+      }, "\u5168\u90E8\u5FC3\u5F97")));
     }
   }]);
 

@@ -42,7 +42,7 @@ class comment extends Component {
     constructor(props) {
     super(props);
     this.state = {
-        is_home: false,
+        is_home: true,
         showModal: false,
         mobile_display: "block",
         fliter :"none",
