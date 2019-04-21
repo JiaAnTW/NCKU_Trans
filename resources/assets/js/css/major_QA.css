@@ -1,12 +1,14 @@
 
 .major_QA .Menu{
     position: fixed;
-    top:92px;
+    top:89px;
     left:0px;
     width: 100vw;
     border: 1px solid #d9d9d9;
     box-shadow: 0 0 4px #d9d9d9;
-    background-color: #F3BCC8;
+    background-color: rgb(229,68,109);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -21,7 +23,7 @@
 
 .major_QA .MobileMenu{
     position:fixed;
-    top:55px;
+    top:53.5px;
     left:0px;
     width:100vw;
     max-width:100%;
@@ -34,7 +36,7 @@
 
     .major_QA .Menu{
         position: fixed;
-        top:92px;
+        top:89px;
         left:0px;
         width: 100vw;
         max-width: 100%;
@@ -51,7 +53,7 @@
 
     .major_QA .MobileMenu{
         position:fixed;
-        top:55px;
+        top:53.5px;
         left:0px;
         width:100vw;
         max-width:100%;
@@ -96,7 +98,7 @@
 
     .major_QA .Menu{
         position: absolute;
-        top:60px;
+        top:75px;
         left:5px;
         width: 150px;
     }
@@ -119,7 +121,7 @@
 
     .major_QA .Menu{
         position: absolute;
-        top:60px;
+        top:75px;
         left:5px;
         width: 200px;
         border: 1px solid #d9d9d9;

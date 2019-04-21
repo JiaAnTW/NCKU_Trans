@@ -10,7 +10,7 @@ class commentIndex extends Component {
       cardWidth:"20rem",
       cardHeight:"20rem",
       cardPadding:"3rem",
-      fontSize:"3.5rem",
+      fontSize:"2.7rem",
       btnHeight:"15rem",
       cardTextHeight:"6.06rem",
       wordsNumber: 35,
@@ -33,7 +33,7 @@ class commentIndex extends Component {
     if(is_mobile)
       this.setState({fontSize:"2.5rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"13.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
     else
-      this.setState({fontSize:"3.5rem",btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
+      this.setState({fontSize:"2.7rem",btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   }
 
   componentDidMount() {

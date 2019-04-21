@@ -262,7 +262,7 @@ class maj_QA extends Component {
     const Menu=()=>{
       var output=[];
       for(var i=0;i<this.state.total_tags.length;++i){
-        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 10px",backgroundColor:(this.state.total_tags[i][1]==false)?"white":"rgba(128,128,128,0.7)"}}>{this.state.total_tags[i][0]}</Button>);
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 10px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"rgb(229,68,109)":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
       }
       return output;
     }
@@ -275,11 +275,11 @@ class maj_QA extends Component {
         <div className="MobileMenu">
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
-          <div className="Menu" style={{display:(this.state.openFliter===true && (this.state.is_fetch))?"block":menu_display}}> 
-            <input type="text" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{width:"80%",margin:"5px 10%"}}/>
+          <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":menu_display}}> 
               {Menu()}
-            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>送出篩選</Button>
-            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",border:"none"}}>全部心得</Button>
+            <input type="text" border="none" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{width:"80%",margin:"15px 10%"}}/>
+            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"#f77062",border:"none"}}>送出篩選</Button>
+            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",borderColor:"white"}}>全部心得</Button>
             
 
           </div>
