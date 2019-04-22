@@ -3,15 +3,17 @@
     width: 95vw;
   }
 
-
+.QA_card_container{
+  padding: 0px 0px;
+}
   .QA_card_container .id_container{
     width: 15vw;
-    height:15vw;
-    border-radius:100px;
+    height:5vw;
     background-color: rgb(229,68,109);
     text-align: center;
-    line-height: 14vw;
-    font-size: 7vw;
+    margin-left: 0;
+    line-height: 5vw;
+    font-size: 2.5vw;
     color: white;
   }
 
@@ -109,13 +111,12 @@
 
 
      .QA_card_container .id_container{
-      width: 100px;
-      height:100px;
-      border-radius:100px;
+      width: 120px;
+      height:25px;
       background-color: rgb(229,68,109);
       text-align: center;
-      line-height: 90px;
-      font-size: 40px;
+      line-height: 25px;
+      font-size: 15px;
       color: white;
     }
   
@@ -175,34 +176,37 @@
   
   
   
-  .QA_container #rightBtn{
-    right: 10px;
-    outline: none;
-  }
+    .QA_container #rightBtn{
+      right: 10px;
+      outline: none;
+    }
   
-  .QA_container #rightArrow{
-    left: 5px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
+    .QA_container #rightArrow{
+      left: 5px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
   
   .QA_container #next{
     left: 1px;
   }
   
-  .QA_container #leftBtn{
+    .QA_container #leftBtn{
     left: 10px;
     outline: none;
-  }
+    }
   
-  .QA_container #leftArrow{
+    .QA_container #leftArrow{
     right: 10px;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
-  }
+    }
   
-  .QA_container  #before{
+    .QA_container  #before{
       right: 6px;
+    }
+    .QA_card_container{
+      padding: 0 40px;
     }
   }
   

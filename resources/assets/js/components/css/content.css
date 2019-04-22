@@ -15,20 +15,26 @@
 
 
 .id_container{
-  width: 15vw;
-  height:15vw;
-  border-radius:100px;
+  margin-left: 22vw;
+  width: 25vw;
+  height:5vw;
+  border-radius:5px;
   background-color: rgb(229,68,109);
   text-align: center;
-  line-height: 14vw;
-  font-size: 5vw;
+  line-height: 5vw;
+  font-weight: 300;
+  font-size: 3vw;
   color: white;
 }
 
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px solid rgba(0,0,0,0);
+  text-align: center;
+  padding: 3px;
+}
+
  .title{
-  position: absolute;
-  left: 35vw;
-  top: 5.5vw;
+  margin-left: 21vw;
   width: 30vw;
   font-size: 6vw;
 }
@@ -165,28 +171,27 @@ right: 6px;
 
 .type_table{
   position:relative;
-  top: 15px;
+  top: 12px;
   font-size: 4vw;
   font-weight: 100;
+  border: 1px solid rgba(0,0,0,0);
 }
 
 @media (min-width: 596px) {
     .id_container{
-    width: 72px;
-    height:72px;
-    border-radius:100px;
+    width: 120px;
+    height:25px;
+    margin-left: 42%;
     background-color: rgb(229,68,109);
     text-align: center;
-    line-height: 70px;
-    font-size: 30px;
+    line-height: 25px;
+    font-size: 14px;
     color: white;
   }
 .title{
-    position: absolute;
-    left: 180px;
-    top: 36px;
+    margin-left: 41%;
     width: 400px;
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .closeBtn{
@@ -291,8 +296,13 @@ right: 6px;
   .type_table{
     position:relative;
     top: 10px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 100;
+    border: 1px solid #dee2e6;
+  }
+  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #dee2e6;
+    padding: 5px;
   }
 }
 

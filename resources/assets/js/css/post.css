@@ -1,6 +1,6 @@
 .post .form_container{
-    margin: 1% 5%;
-    width: 90%;
+    margin: 1% 10%;
+    width: 80%;
     background-color: #F5F5F5;
     border-radius: 5px;
 }
@@ -106,7 +106,10 @@ border: 0px solid;
     background-color:rgb(229,68,109);
 }
 
-
+.post h1{
+    font-size: 30px;
+    font-weight: 300;
+}
 
 @media (min-width: 596px) { 
 

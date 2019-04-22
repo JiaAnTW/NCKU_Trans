@@ -9,7 +9,6 @@ class QA extends React.Component {
       this.state = {
         showModal: false
       };
-      this.sponFB=this.sponFB.bind(this);
       this.handleBackIndex=this.handleBackIndex.bind(this)
     }
     
@@ -18,23 +17,7 @@ class QA extends React.Component {
       this.props.handleBackIndex();
     }
 
-    sponFB(){
-        var targetId = "demo", // 留言框出現的位置 id
-            ver = "3.2", // API 版本
-            url = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v" + ver,
-            script = document.createElement("script"),
-            elem = document.getElementById("fb-comments"),
-            target = document.getElementById(targetId);
-        elem.setAttribute("data-href", location.protocol + "//" + location.hostname + location.pathname.split("?")[0]);
-        if (target) {
-            target.parentNode.insertBefore(elem, target);
-        }
-        script.src = url;
-        document.getElementsByTagName("head")[0].appendChild(script);      
-    }
-
     componentDidMount(){
-        this.sponFB();
     }
     
     render () {
@@ -52,7 +35,7 @@ class QA extends React.Component {
               <Card className="card-box" style={{ height: "auto",border:"none",overflowY: 'auto',maxHeight:"80vh",transform:"translate(0,0)"}}>
               <Card.Body className="QA_cardBody">  
               <div className="QA_card_container" style={{maxWidth: "100%",margin:containerMargin}}>
-                <div className="id_container">{"#"+show["id"]}</div>
+                <div className="id_container">{"QA編號: "+show["id"]}</div>
                 <Card.Title className="title2" >{show["question"]}</Card.Title>
                 <Card.Text>
                   <span>
@@ -60,8 +43,7 @@ class QA extends React.Component {
                   </span>
                 </Card.Text>
                 </div>
-                </Card.Body> 
-                <div id="fb-comments" className="fb-comments" data-href="" data-width="80%" data-colorscheme="light" data-numposts="5" style={{maxWidth: "80%",margin:containerMargin}}></div>
+                </Card.Body>
                  
             </Card>
             <Button variant="light" className="closeBtn" onClick={this.handleBackIndex.bind(this)}>返回</Button>

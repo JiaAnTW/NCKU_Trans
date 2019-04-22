@@ -59,7 +59,6 @@ class content extends React.Component {
       </tr>
     </thead>;
 
-      const tableStyle=(this.props.mobile==="none")?{position:"relative",top: "15px",fontSize: "5vw",fontWeight: 100}:{position:"relative",top: "15px",fontSize: "20px",fontWeight: 100};
 
 
       return (
@@ -73,8 +72,8 @@ class content extends React.Component {
             <Card className="card-box" style={{position:"absolute",top: "0px",height: cardHeight, overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
               <Card.Body className="cardBody" style={{width:cardBodyWidth}}>  
               <div className="card_container" style={{maxWidth: "100%", margin: containerMargin}}>
-                <div className="id_container">{"#"+this.props.data["id"]}</div>
-                <h1 className="title">{"轉入科系: "+this.props.data["in_maj"]}</h1>
+                <h1 className="title">{"轉: "+this.props.data["in_maj"]}</h1>
+                <div className="id_container">{"心得編號: "+this.props.data["id"]}</div>
                 <Table striped bordered hover  className="type_table" >
                   {tableType}
                 </Table>

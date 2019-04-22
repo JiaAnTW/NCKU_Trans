@@ -271,7 +271,8 @@ class edit extends Component {
     const form=()=>{
       if(this.state.now_handle==="心得"&&this.state.id!=-1){
         return (
-        <div>
+          <div className="post">
+          <div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
@@ -296,14 +297,18 @@ class edit extends Component {
             心得:
             <textarea id="comment" value={this.state.comment} onChange={(e) => this.setState({ comment: e.target.value})}></textarea>
             <br/>
-            是否確認<select id="confirm" name ="confirm" onChange={(e) =>{ this.setState({ confirm: e.target.value })}}>
-                    <option value="false">否</option>
-                    <option value="true">是</option>
-            </select>
-        </div>);
+            <form>
+           是否確認:
+            是<input type="radio" name="comfirm" value="true" checked={this.state.confirm==="true"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
+            否<input type="radio" name="comfirm" value="false" checked={this.state.confirm==="false"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
+            </form>
+            <button onClick={this.handleClick}>送出</button>
+            <br/><br/>
+            <button onClick={this.deleteComment}>刪除該文章</button>
+        </div></div>);
       }
       else if(this.state.qa_id!=-1)
-        return(<div>
+        return(<div className="post"><div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
@@ -312,28 +317,20 @@ class edit extends Component {
             <textarea id="comment" value={this.state.qa_a} onChange={(e) => this.setState({ qa_a: e.target.value})}></textarea>
             <br/>
             <TagsInput value={this.state.tags} onChange={this.handleChange}/>
-            <br/>
-        </div>);
-    }
-    return (
-      <div className="edit">
-        <div className="Menu" style={{height:"auto",position:"absolute",top:"0px",left:"0px",width: "100%"}}>
-          <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1&&this.state.qa_id===-1)?"none":"block"}}>
-        編輯的類別:<select id="comment_id" name ="comment_id" onChange={(e) =>{ this.setState({ now_handle: e.target.value });this.changeId}}>
-                    <option value="心得">心得</option>
-                    <option value="QA">QA</option>
-            </select>
-            <br/>
-        要編輯的文章id:   
-            <select id="comment_id" name ="comment_id" onChange={this.changeId}>
-  	            {option}
-            </select>
-            <br/>
-            {form()}
-            
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
+            <br/>
+        </div></div>);
+    }
+    return (
+      <div className="edit">
+        <div className="Menu" style={{height:"auto",position:"absolute",top:"50px",left:"0px",width: "100%",height:"100%"}}>
+          <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1&&this.state.qa_id===-1)?"none":"block"}}>
+            <br/>
+            {form()}
+            
+
             </div>
         </div>
         <div className="index" style={{display:(this.state.id===-1&&this.state.qa_id===-1)?"block":"none", top:"100px"}}>
