@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
+import {Tab,Tabs} from 'react-bootstrap';
 import './css/post.css';
 import Icon from './components/icon';
 
@@ -26,9 +26,14 @@ class post extends Component {
         out_maj: "中文系",
         in_maj: "中文系",
         comment: "",
+        question:"",
+        answer:"",
         is_send: false,
+        editObject: "comment",
+        start: false,
     }
     this.handleClick = this.handleClick.bind(this)
+    this.handleSendQA= this.handleSendQA.bind(this)
     this.changeRank = this.changeRank.bind(this)
     this.changeYear = this.changeYear.bind(this)
     this.changeOut = this.changeOut.bind(this)
@@ -59,6 +64,23 @@ class post extends Component {
     this.setState({is_send:true})
   }
 
+  handleSendQA(){
+    const data={
+      'question':this.state.question,
+      'answer':this.state.answer,
+  };
+  fetch(
+    '/api/post/major_QA', {method: 'POST',
+      body: JSON.stringify(data),
+      headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }
+  )
+    .then(res => res.json())
+    .catch(e => console.log('錯誤:', e))
+  this.setState({is_send:true})
+}
 
     changeRank(e){
         this.setState({rank: e.target.value});
@@ -100,14 +122,37 @@ class post extends Component {
         </select>
       );
   }
-
     const maj_option=NCKU.map(department=>{return(
       <option value={department} style={{textAlign:"center"}}>{department}</option>
     );});
 
+
+      const startContext=<div style={{height:"80%",display:(this.state.start===true)?"none":"block"}}><div className="start-context">
+          <div className="type-box">
+            <p><h1>心得</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是針對個別科系分享平均分數以及修課等內容</p></p>
+            <p><h1>常見問答</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是解答轉系在行政、審查等流程和規則上的模糊點</p></p>
+          </div>
+          <span style={{width:"70%"}}>感謝你願意為未來以轉系為目標的學弟妹們，留下一條更好走的路。</span>
+          <button onClick={(e)=>this.setState({start:true})}>開始填寫</button>
+          </div>
+      </div>
+
+      const QA_display=<div className="form_container" style={{color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",width:"100%"}}>
+      <div style={{padding:"7% 7%"}}>
+        <p>
+          Q: 
+          <input id="rank" placeholder="簡單描述遇到的狀況" type="text" step="1" min="1" max="200" onChange={(e)=>this.setState({question:e.target.value})} style={{color:"black",width:"90%"}}/>
+        </p>
+        A:<br/>   
+        <textarea id="comment" placeholder="簡單描述解決的方法" onChange={(e)=>this.setState({answer:e.target.value})} ></textarea>
+        <button onClick={this.handleSendQA} style={{marginLeft: "10%",marginRight: "10%",width:"80%",borderRadius:"0",border:"0px solid rgb(229,68,109)",color:"white",backgroundColor:"rgb(229,68,109)"}}>送出</button>
+        </div>
+      </div>
+
+
     const display=(this.state.is_send===true)?<h1 className="webName" style={{color:"white"}}>感謝你的填寫<br/>審查通過後就會看到你的心得囉!</h1>:
-    <div className="form_container" style={{position:"absolute",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%"}}>
-    <div style={{margin:"5% 5%"}}>
+    <div className="form_container" style={{color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",width:"100%"}}>
+    <div style={{padding:"7% 7%"}}>
     <p>
       排名上:  
       <input id="rank" type="number" step="1" min="1" max="200" onChange={(e)=>this.setState({rank_1:e.target.value})} style={{color:"black"}}/>
@@ -147,9 +192,16 @@ class post extends Component {
     return (
       <div className="post">
         <div className="index">
-          <h1 style={{width:"100%",textAlign:"center",color: "white", marginTop:"7rem",display:(this.state.is_send===true)?"none":"block"}}>分享你的心得吧!</h1>
-          {display}
+          {startContext}
+          <div className="input-container" style={{display:(this.state.start===false)?"none":"block"}}>
+            <div className="btn-container">
+              <button style={(this.state.editObject==="comment")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"comment"})}>心得</button>
+              <button style={(this.state.editObject==="QA")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"QA"})}>常見問答</button>
+            </div>
+            {(this.state.editObject==="comment")?display:QA_display}
+          </div>
         </div>
+
       </div>
     );
   }

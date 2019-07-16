@@ -49,7 +49,6 @@ class maj_QA extends Component {
     if(is_mobile)
       this.setState({
         mobile_display: "none",
-        openFliter: false,
     });
     else
       this.setState({
@@ -247,7 +246,7 @@ class maj_QA extends Component {
 
 
   render() {
-    const menu_display=(this.props.location.pathname==="/QA/~")?this.state.mobile_display:"none";
+    const menu_display=(this.props.location.pathname==="/QA/~")?this.state.mobile_display:menu_display;
     const fliter_2= [{
       id:0,
       now:-1,
@@ -276,7 +275,7 @@ class maj_QA extends Component {
         <div className="MobileMenu">
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
-          <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":menu_display}}> 
+          <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 
             <input type="text" border="none" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%"}}/>  
               {Menu()}
             <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"white",border:"none",color:"rgb(229,68,109)",textShadow:"none"}}>送出篩選</Button>

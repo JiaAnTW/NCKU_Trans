@@ -35,7 +35,7 @@ body{
     max-width: 100%;
     font-family: 'Noto Sans TC';
 }
-nav{
+#layout-nav{
     position: fixed;
     top: 0px;
     left: 0px;
@@ -78,7 +78,7 @@ nav{
 
 
 @media (min-width: 576px) { 
-    nav{
+    #layout-nav{
         height: 55px;
         font-size: 20px;
         
@@ -94,7 +94,7 @@ nav{
 }
 
 @media (min-width: 870px) { 
-    nav{
+    #layout-nav{
         height: 55px;
         font-size: 20px;
         background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
@@ -107,7 +107,7 @@ nav{
  }
 
 @media (min-width: 992px) { 
-    nav{
+    #layout-nav{
         height: 55px;
         font-size: 20px;
     }
@@ -119,7 +119,7 @@ nav{
 }
 
 @media (min-width: 1200px) {
-    nav{
+    #layout-nav{
         height: 55px;
         font-size: 20px;
     }

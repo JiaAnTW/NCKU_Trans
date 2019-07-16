@@ -5,6 +5,8 @@ import Content from './components/content';
 import Menu from './components/menu';
 import MobileFliter from "./components/mobileFliter";
 import Progress from "./components/Progress";
+import calender from "./img/calendar.png";
+import book from "./img/book.png";
 
 import './css/comment.css';
 var NCKU=
@@ -13,11 +15,12 @@ var NCKU=
 "SCE":["數學系","物理系","化學系","地科系","光電系"],
 "ENG":["機械系","化工系","材料系","資源系","土木系","水利系","工科系","系統系","航太系","環工系","測量系","醫工系","能源學程"],
 "MAN":["工資系","交管系","企管系","統計系","會計系"],
-"MC":["醫學系","醫技系","護理系","職治系","物治系","藥學系"],
+"MC":["醫學系","牙醫系","醫技系","護理系","職治系","物治系","藥學系"],
 "SOC":["政治系","經濟系","法律系","心理系"],
 "EECS":["電機系","資訊系"],
 "CPD":["建築系","都計系","工設系"],
-"BIO":["生科系","生技系"]
+"BIO":["生科系","生技系"],
+"NON":["不分系"]
 };
 const department=[
 ["文學院","LIB"],
@@ -28,7 +31,8 @@ const department=[
 ["社會科學院","SOC"],
 ["電資學院","EECS"],
 ["規設院","CPD"],
-["生科院","BIO"]
+["生科院","BIO"],
+["其他","NON"]
 ];
 const fliter_2= [{
   id:0,
@@ -46,6 +50,7 @@ class comment extends Component {
         showModal: false,
         mobile_display: "block",
         fliter :"none",
+        selectDepartment:"none",
         contentWidth: "800px",
         contentHeight: "500px",
         showContentId: -1,
@@ -171,8 +176,9 @@ class comment extends Component {
       }
       else{
         this.setState({fliter:new_fliter,resetFliter: !this.state.resetFliter});
-        if(new_fliter==="none")
-          this.setState({show:this.state.datas});
+        if(new_fliter==="none"){
+          this.setState({show:this.state.datas,selectDepartment:"none"});    
+        }
         else{
           var output=[];
           this.state.datas.forEach(element => {
@@ -181,6 +187,16 @@ class comment extends Component {
           });
           this.setState({show:output});
         }
+        if(type=="in_maj"){
+          department.forEach((Element,Index)=>{
+            NCKU[Element[1]].forEach((Item,index)=>{
+              if(Item===new_fliter)
+              this.setState({selectDepartment:Element[0]})
+            })
+          })
+        }
+        else if(type==="department")
+          this.setState({selectDepartment:new_fliter})
     }
   }
 
@@ -193,7 +209,9 @@ class comment extends Component {
         const number=this.countDepartment(NCKU[ department[i][1] ][j]);
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >{NCKU[department[i][1]][j]}
+            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
+              <div style={{ display:(this.state.fliter===NCKU[department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
+              {NCKU[department[i][1]][j]}
               <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
                 {number}
               </Badge>
@@ -201,7 +219,7 @@ class comment extends Component {
         );
       }
       output.push(
-          <Menu id={department[i][1]} title={department[i][0]} number={dep_number} onClick={this.changeFliter} >
+          <Menu id={department[i][1]} title={department[i][0]} number={dep_number} onClick={this.changeFliter} isSelect={this.state.selectDepartment===department[i][0]} >
           {singleOutput}
           </Menu>
       );
@@ -340,7 +358,7 @@ class comment extends Component {
           for(var i=clock.getFullYear();i>2014;--i){
             if(i!=clock.getFullYear()||clock.getMonth()>7)
               output.push(
-                <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,(i-1911).toString,"year")}>{i-1911}
+                <Button variant="light" style={{ textAlign:"right",fontWeight:"100",color:"white",backgroundColor:"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,i-1911,"year")}>{i-1911}
                 </Button>
               );
         }
@@ -354,16 +372,23 @@ class comment extends Component {
     const indexPage=(
       <div>
         <div className="Menu" style={{display: this.state.mobile_display}}>
-          <div style={{position:"relative", top:"0%", width: '100%'}}>
-            <Button variant="light" style={{ borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
-            </Button>
-            <Button variant="light" style={{borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"不分系","in_maj")} >不分系
-              <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
-                {this.countDepartment("不分系")}
-              </Badge>
-            </Button>
+          <div style={{position:"relative", marginTop:"0%", width: '100%'}}>
+            <div style={{position:"relative", marginTop:"0%", width: '100%',fontSize:"16px",height:"40px",lineHeight:"40px",color:"white"}}>
+              <img src={calender} alt="year" style={{ margin:"0% 4%",height:"40%",lineHeight:"40px"}} />
+              依年份篩選:
+              </div>
+            {spawnYear()}
           </div>
-          {this.sponCommentMenu()}
+          <div style={{position:"relative", marginTop:"30px", width: '100%'}}>
+            <div style={{position:"relative", marginTop:"0%", width: '100%',fontSize:"16px",height:"40px",lineHeight:"40px",color:"white"}}>
+              <img src={book} alt="year" style={{ margin:"0% 4%",height:"50%",lineHeight:"40px"}} />
+              依學系篩選:
+            </div>
+            <Button variant="light" style={{ fontWeight:"100",color:(this.state.selectDepartment==="none")?"rgb(229,68,109)":"white",backgroundColor:(this.state.selectDepartment==="none")?"white":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
+            </Button>
+            {this.sponCommentMenu()}
+          </div>
+          
       </div>
       <div className="index">
         <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>

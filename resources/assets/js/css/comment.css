@@ -1,11 +1,36 @@
+.Menu::-webkit-scrollbar
+{
+  width: 0px;
+  background-color: transparent;
+  border: none;
+}
+
+.Menu::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.1);
+  opacity: 0.5;
+}
+
+.Menu::-webkit-scrollbar-track
+{
+background-color: transparent;
+border: 0px solid;
+}
+
+.Menu::-webkit-scrollbar-track-piece  {
+ /* 4 */ 
+ border: none;
+}
+
 
 .Menu{
     position: absolute;
     top:60px;
     left:5px;
     width: 150px;
-    border: 1px solid #d9d9d9;
-    box-shadow: 0 0 4px #d9d9d9;
+    height: 91.8vh;
+    overflow-y: auto;
 }
 
 .board{
@@ -114,9 +139,10 @@
 
     .Menu{
         position: absolute;
-        top:60px;
-        left:5px;
+        top:55px;
+        left:0px;
         width: 150px;
+        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);
     }
 
 
@@ -159,8 +185,8 @@
 
     .Menu{
         position: absolute;
-        top:60px;
-        left:5px;
+        top:55px;
+        left:0px;
         width: 150px;
     }
 
@@ -196,11 +222,9 @@
 
     .Menu{
         position: absolute;
-        top:60px;
-        left:5px;
+        top:55px;
+        left:0px;
         width: 150px;
-        border: 1px solid #d9d9d9;
-        box-shadow: 0 0 4px #d9d9d9;
     }
 
 

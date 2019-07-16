@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3275,7 +3275,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\n.btn:focus,.btn.focus{\r\n    box-shadow: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\nnav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-image: none;\r\n    background-color: rgb(229,68,109);\r\n    \r\n    \r\n}\r\n\r\n.logo{\r\n    margin-left: 1%;\r\n    margin-top: 0.2%;\r\n    width: auto;\r\n    height:80%;\r\n    background-color: rgba(0,0,0,0);\r\n    color: white;\r\n}\r\n\r\n\r\n.navItem,.navItem:visited,.navItem:active{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    text-decoration:none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n    outline: none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        display: block;\r\n        outline: none;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nhtml::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\nhtml::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.btn-primary{\r\n    background-image: none;\r\n}\r\n\r\n.btn:focus,.btn.focus{\r\n    box-shadow: none;\r\n}\r\n\r\nbody{\r\n    max-width: 100%;\r\n    font-family: 'Noto Sans TC';\r\n}\r\n#layout-nav{\r\n    position: fixed;\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    color: rgb(248, 224, 227);\r\n    height: 55px;\r\n    font-size: 20px;\r\n    background-image: none;\r\n    background-color: rgb(229,68,109);\r\n    \r\n    \r\n}\r\n\r\n.logo{\r\n    margin-left: 1%;\r\n    margin-top: 0.2%;\r\n    width: auto;\r\n    height:80%;\r\n    background-color: rgba(0,0,0,0);\r\n    color: white;\r\n}\r\n\r\n\r\n.navItem,.navItem:visited,.navItem:active{\r\n    float: right;\r\n    margin:  12.5px 50px;\r\n    color: rgb(248, 224, 227);\r\n    outline: none;\r\n    text-decoration:none;\r\n    display: none;\r\n}\r\n\r\n.navItem:hover{\r\n    color: #FEABCF;\r\n    text-decoration:none;\r\n    outline: none;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 576px) { \r\n    #layout-nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        \r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        float: right;\r\n        margin:  12.5px 50px;\r\n        color: rgb(248, 224, 227);\r\n        outline: none;\r\n        \r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    #layout-nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        display: block;\r\n        outline: none;\r\n    }\r\n\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    #layout-nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    #layout-nav{\r\n        height: 55px;\r\n        font-size: 20px;\r\n    }\r\n    .navItem,.navItem:visited,.navItem:active{\r\n        outline: none;\r\n        display: block;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3313,7 +3313,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".post .form_container{\r\n    margin: 1% 10%;\r\n    width: 80%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:30%;\r\n    color:black;\r\n    border-radius: 3px;\r\n    text-align: center;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:80%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:160px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100vw;\r\n    left: 0%;\r\n    top:0px;\r\n    height: 120vh;\r\n    z-index: 0;\r\n    background-image: none;\r\n    background-color:rgb(229,68,109);\r\n}\r\n\r\n.post h1{\r\n    font-size: 30px;\r\n    font-weight: 300;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        margin: 1% 32%;\r\n        width: 36%;\r\n        \r\n    }\r\n    .post .index{\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        height: 100vh;\r\n    }\r\n    .post p{\r\n        margin-left: 0%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".post .form_container{\r\n    width: 80%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px; \r\n    border-top-right-radius: 0px; \r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:30%;\r\n    color:black;\r\n    border-radius: 3px;\r\n    text-align: center;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:80%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:160px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top: 55px;\r\n    z-index: 0;\r\n    height: 100vh;\r\n    padding-bottom: 5vh;\r\n    align-items: center;\r\n    background-image: none;\r\n    background-color:rgb(229,68,109);\r\n}\r\n\r\n.post .input-container,.post .index, .post .start-context,.post .type-box p{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    flex-direction: column;\r\n}\r\n\r\n.post .input-container{\r\n    margin-top: 20px;\r\n    width: 90%;\r\n}\r\n\r\n.post, .post .type-box{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.post .type-box p{\r\n    align-items: center;\r\n    width: 70%;\r\n}\r\n\r\n.post .type-box{\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.post .start-context{\r\n    width: 100%;\r\n    height: 100%;\r\n    color: white;\r\n    font-family: 'Noto Sans TC';\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.post h1{\r\n    font-size: 30px;\r\n    font-weight: 300;\r\n}\r\n\r\n.post .start-context button{\r\n    color: #fe5196;\r\n    border-radius: 10px;\r\n    margin-top: 15px;\r\n}\r\n\r\n.post .btn-container button, .post .start-context button{\r\n    background-color: white;\r\n    border: none;\r\n    border-top-left-radius:  10px;\r\n    border-top-right-radius:  10px;\r\n    padding: 5px 15px;\r\n    font-size: 18px;\r\n    outline: none;\r\n    width: 50%;\r\n    font-weight: 700;\r\n\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        width: 36%;     \r\n    }\r\n    .post .index{\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n\r\n    .post .input-container{\r\n        width: 50%;\r\n    }\r\n    \r\n    .post .type-box p{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        \r\n    }\r\n    .post p{\r\n        margin-left: 0%;\r\n    }\r\n    .post .input-container{\r\n        width: 30%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -52710,9 +52710,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/menu */ "./resources/assets/js/components/menu.js");
 /* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
 /* harmony import */ var _components_Progress__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Progress */ "./resources/assets/js/components/Progress.js");
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _img_calendar_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/calendar.png */ "./resources/assets/js/img/calendar.png");
+/* harmony import */ var _img_calendar_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_img_calendar_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _img_book_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/book.png */ "./resources/assets/js/img/book.png");
+/* harmony import */ var _img_book_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_img_book_png__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_9__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -52738,18 +52744,21 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var NCKU = {
   "LIB": ["中文系", "外文系", "台文系"],
   "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
   "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
   "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
-  "MC": ["醫學系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
+  "MC": ["醫學系", "牙醫系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
   "SOC": ["政治系", "經濟系", "法律系", "心理系"],
   "EECS": ["電機系", "資訊系"],
   "CPD": ["建築系", "都計系", "工設系"],
-  "BIO": ["生科系", "生技系"]
+  "BIO": ["生科系", "生技系"],
+  "NON": ["不分系"]
 };
-var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"]];
+var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"], ["其他", "NON"]];
 var fliter_2 = [{
   id: 0,
   now: -1,
@@ -52774,6 +52783,7 @@ function (_Component) {
       showModal: false,
       mobile_display: "block",
       fliter: "none",
+      selectDepartment: "none",
       contentWidth: "800px",
       contentHeight: "500px",
       showContentId: -1,
@@ -52922,9 +52932,13 @@ function (_Component) {
           fliter: new_fliter,
           resetFliter: !this.state.resetFliter
         });
-        if (new_fliter === "none") this.setState({
-          show: this.state.datas
-        });else {
+
+        if (new_fliter === "none") {
+          this.setState({
+            show: this.state.datas,
+            selectDepartment: "none"
+          });
+        } else {
           var output = [];
           this.state.datas.forEach(function (element) {
             if (element[type] === new_fliter) output.push(element);
@@ -52933,6 +52947,18 @@ function (_Component) {
             show: output
           });
         }
+
+        if (type == "in_maj") {
+          department.forEach(function (Element, Index) {
+            NCKU[Element[1]].forEach(function (Item, index) {
+              if (Item === new_fliter) _this3.setState({
+                selectDepartment: Element[0]
+              });
+            });
+          });
+        } else if (type === "department") this.setState({
+          selectDepartment: new_fliter
+        });
       }
     }
   }, {
@@ -52945,17 +52971,33 @@ function (_Component) {
         var dep_number = 0;
 
         for (var j = 0; j < NCKU[department[i][1]].length; ++j) {
+          var _ref;
+
           var number = this.countDepartment(NCKU[department[i][1]][j]);
           dep_number += number;
           singleOutput.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
             style: {
+              fontSize: "12px",
+              fontWeight: "300",
+              textAlign: "right",
+              position: "relative",
+              color: "white",
+              backgroundColor: this.state.fliter === NCKU[department[i][1]][j] ? "rgba(255,255,255,0.3)" : "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
             },
             onClick: this.changeFliter.bind(this, NCKU[department[i][1]][j], "in_maj")
-          }, NCKU[department[i][1]][j], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            style: (_ref = {
+              display: this.state.fliter === NCKU[department[i][1]][j] ? "block" : "none",
+              position: "absolute",
+              height: "100%",
+              backgroundColor: "white",
+              width: '5%'
+            }, _defineProperty(_ref, "height", '100%'), _defineProperty(_ref, "top", "0"), _defineProperty(_ref, "left", "0"), _ref)
+          }), NCKU[department[i][1]][j], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
             pill: true,
             variant: "light",
             style: {
@@ -52970,7 +53012,8 @@ function (_Component) {
           id: department[i][1],
           title: department[i][0],
           number: dep_number,
-          onClick: this.changeFliter
+          onClick: this.changeFliter,
+          isSelect: this.state.selectDepartment === department[i][0]
         }, singleOutput));
       }
 
@@ -53161,11 +53204,15 @@ function (_Component) {
           if (i != clock.getFullYear() || clock.getMonth() > 7) output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
             style: {
+              textAlign: "right",
+              fontWeight: "100",
+              color: "white",
+              backgroundColor: "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
             },
-            onClick: _this4.changeFliter.bind(_this4, (i - 1911).toString, "year")
+            onClick: _this4.changeFliter.bind(_this4, i - 1911, "year")
           }, i - 1911));
         }
 
@@ -53183,34 +53230,63 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           position: "relative",
-          top: "0%",
+          marginTop: "0%",
           width: '100%'
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "relative",
+          marginTop: "0%",
+          width: '100%',
+          fontSize: "16px",
+          height: "40px",
+          lineHeight: "40px",
+          color: "white"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_calendar_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        alt: "year",
+        style: {
+          margin: "0% 4%",
+          height: "40%",
+          lineHeight: "40px"
+        }
+      }), "\u4F9D\u5E74\u4EFD\u7BE9\u9078:"), spawnYear()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "relative",
+          marginTop: "30px",
+          width: '100%'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: "relative",
+          marginTop: "0%",
+          width: '100%',
+          fontSize: "16px",
+          height: "40px",
+          lineHeight: "40px",
+          color: "white"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_book_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+        alt: "year",
+        style: {
+          margin: "0% 4%",
+          height: "50%",
+          lineHeight: "40px"
+        }
+      }), "\u4F9D\u5B78\u7CFB\u7BE9\u9078:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         variant: "light",
         style: {
+          fontWeight: "100",
+          color: this.state.selectDepartment === "none" ? "rgb(229,68,109)" : "white",
+          backgroundColor: this.state.selectDepartment === "none" ? "white" : "transparent",
           borderRadius: "0px",
           width: '100%',
           outline: "none"
         },
         onClick: this.changeFliter.bind(this, "none", "department")
-      }, "\u5168\u90E8\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "light",
-        style: {
-          borderRadius: "0px",
-          width: '100%',
-          outline: "none"
-        },
-        onClick: this.changeFliter.bind(this, "不分系", "in_maj")
-      }, "\u4E0D\u5206\u7CFB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
-        pill: true,
-        variant: "light",
-        style: {
-          position: "relative",
-          marginLeft: "10px",
-          fontWeight: "400"
-        }
-      }, this.countDepartment("不分系")))), this.sponCommentMenu()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "\u5168\u90E8\u5FC3\u5F97"), this.sponCommentMenu())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
@@ -54638,6 +54714,9 @@ function (_Component) {
   _createClass(menu, [{
     key: "onClickHandle",
     value: function onClickHandle(value) {
+      this.setState({
+        open: !this.state.open
+      });
       this.props.onClick(value, "department");
     }
   }, {
@@ -54646,6 +54725,8 @@ function (_Component) {
       var _this2 = this;
 
       var open = this.state.open;
+      var buttonColor = this.props.isSelect ? "rgb(229,68,109)" : "white";
+      var buttonBackground = this.props.isSelect ? "white" : "transparent";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           position: "relative",
@@ -54655,6 +54736,10 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
         type: "button",
         style: {
+          fontWeight: "300",
+          textAlign: "right",
+          color: buttonColor,
+          backgroundColor: buttonBackground,
           borderRadius: "0px",
           width: '70%',
           paddingLeft: '0%',
@@ -54674,6 +54759,8 @@ function (_Component) {
         "aria-controls": this.props.id,
         "aria-expanded": open,
         style: {
+          color: buttonColor,
+          backgroundColor: buttonBackground,
           position: 'relative',
           left: '0',
           borderRadius: "0px",
@@ -56029,6 +56116,28 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/assets/js/img/book.png":
+/*!******************************************!*\
+  !*** ./resources/assets/js/img/book.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/book.png?d534b91e3d3c9417e2957045e9a1775d";
+
+/***/ }),
+
+/***/ "./resources/assets/js/img/calendar.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/js/img/calendar.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/calendar.png?12099fa3acc5ea473dbf9a2accfc2d3e";
+
+/***/ }),
+
 /***/ "./resources/assets/js/layout.js":
 /*!***************************************!*\
   !*** ./resources/assets/js/layout.js ***!
@@ -56081,7 +56190,9 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "layout"
-      }, this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        id: "layout-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logo",
         onClick: function onClick(e) {
           return location.href = '/#/';
@@ -56225,8 +56336,7 @@ function (_Component) {
     key: "handleRWD",
     value: function handleRWD(is_mobile) {
       if (is_mobile) this.setState({
-        mobile_display: "none",
-        openFliter: false
+        mobile_display: "none"
       });else this.setState({
         mobile_display: "block"
       });
@@ -56463,7 +56573,7 @@ function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var menu_display = this.props.location.pathname === "/QA/~" ? this.state.mobile_display : "none";
+      var menu_display = this.props.location.pathname === "/QA/~" ? this.state.mobile_display : menu_display;
       var fliter_2 = [{
         id: 0,
         now: -1,
@@ -56530,7 +56640,7 @@ function (_Component) {
         style: {
           boxShadow: "none",
           border: "none",
-          display: this.state.openFliter === true && this.state.is_fetch ? "block" : menu_display
+          display: this.state.openFliter === true && this.state.is_fetch ? "block" : "none"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -56632,9 +56742,14 @@ function (_Component) {
       out_maj: "中文系",
       in_maj: "中文系",
       comment: "",
-      is_send: false
+      question: "",
+      answer: "",
+      is_send: false,
+      editObject: "comment",
+      start: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.handleSendQA = _this.handleSendQA.bind(_assertThisInitialized(_this));
     _this.changeRank = _this.changeRank.bind(_assertThisInitialized(_this));
     _this.changeYear = _this.changeYear.bind(_assertThisInitialized(_this));
     _this.changeOut = _this.changeOut.bind(_assertThisInitialized(_this));
@@ -56657,6 +56772,28 @@ function (_Component) {
         'comment': this.state.comment
       };
       fetch('/api/create/major', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }).then(function (res) {
+        return res.json();
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      });
+      this.setState({
+        is_send: true
+      });
+    }
+  }, {
+    key: "handleSendQA",
+    value: function handleSendQA() {
+      var data = {
+        'question': this.state.question,
+        'answer': this.state.answer
+      };
+      fetch('/api/post/major_QA', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({
@@ -56746,6 +56883,87 @@ function (_Component) {
           }
         }, department);
       });
+      var startContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          height: "80%",
+          display: this.state.start === true ? "none" : "block"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "start-context"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "type-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          width: "50%",
+          marginBottom: "15px",
+          height: "1px",
+          backgroundColor: "white"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u4E3B\u8981\u662F\u91DD\u5C0D\u500B\u5225\u79D1\u7CFB\u5206\u4EAB\u5E73\u5747\u5206\u6578\u4EE5\u53CA\u4FEE\u8AB2\u7B49\u5167\u5BB9")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\u5E38\u898B\u554F\u7B54"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          width: "50%",
+          marginBottom: "15px",
+          height: "1px",
+          backgroundColor: "white"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u4E3B\u8981\u662F\u89E3\u7B54\u8F49\u7CFB\u5728\u884C\u653F\u3001\u5BE9\u67E5\u7B49\u6D41\u7A0B\u548C\u898F\u5247\u4E0A\u7684\u6A21\u7CCA\u9EDE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          width: "70%"
+        }
+      }, "\u611F\u8B1D\u4F60\u9858\u610F\u70BA\u672A\u4F86\u4EE5\u8F49\u7CFB\u70BA\u76EE\u6A19\u7684\u5B78\u5F1F\u59B9\u5011\uFF0C\u7559\u4E0B\u4E00\u689D\u66F4\u597D\u8D70\u7684\u8DEF\u3002"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          return _this2.setState({
+            start: true
+          });
+        }
+      }, "\u958B\u59CB\u586B\u5BEB")));
+      var QA_display = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form_container",
+        style: {
+          color: "rgb(229,68,109)",
+          boxShadow: "0 0px 12px rgba(0,0,0,.175)",
+          width: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          padding: "7% 7%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Q:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "rank",
+        placeholder: "\u7C21\u55AE\u63CF\u8FF0\u9047\u5230\u7684\u72C0\u6CC1",
+        type: "text",
+        step: "1",
+        min: "1",
+        max: "200",
+        onChange: function onChange(e) {
+          return _this2.setState({
+            question: e.target.value
+          });
+        },
+        style: {
+          color: "black",
+          width: "90%"
+        }
+      })), "A:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        id: "comment",
+        placeholder: "\u7C21\u55AE\u63CF\u8FF0\u89E3\u6C7A\u7684\u65B9\u6CD5",
+        onChange: function onChange(e) {
+          return _this2.setState({
+            answer: e.target.value
+          });
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSendQA,
+        style: {
+          marginLeft: "10%",
+          marginRight: "10%",
+          width: "80%",
+          borderRadius: "0",
+          border: "0px solid rgb(229,68,109)",
+          color: "white",
+          backgroundColor: "rgb(229,68,109)"
+        }
+      }, "\u9001\u51FA")));
       var display = this.state.is_send === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "webName",
         style: {
@@ -56754,14 +56972,13 @@ function (_Component) {
       }, "\u611F\u8B1D\u4F60\u7684\u586B\u5BEB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5BE9\u67E5\u901A\u904E\u5F8C\u5C31\u6703\u770B\u5230\u4F60\u7684\u5FC3\u5F97\u56C9!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form_container",
         style: {
-          position: "absolute",
           color: "rgb(229,68,109)",
           boxShadow: "0 0px 12px rgba(0,0,0,.175)",
-          maxWidth: "90%"
+          width: "100%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
-          margin: "5% 5%"
+          padding: "7% 7%"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u6392\u540D\u4E0A:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "rank",
@@ -56830,15 +57047,40 @@ function (_Component) {
         className: "post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, startContext, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-container",
         style: {
-          width: "100%",
-          textAlign: "center",
-          color: "white",
-          marginTop: "7rem",
-          display: this.state.is_send === true ? "none" : "block"
+          display: this.state.start === false ? "none" : "block"
         }
-      }, "\u5206\u4EAB\u4F60\u7684\u5FC3\u5F97\u5427!"), display));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: this.state.editObject === "comment" ? {
+          backgroundColor: "white",
+          color: "rgb(229,68,109)"
+        } : {
+          backgroundColor: "rgba(255,255,255,0.4)",
+          color: "#555"
+        },
+        onClick: function onClick() {
+          return _this2.setState({
+            editObject: "comment"
+          });
+        }
+      }, "\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: this.state.editObject === "QA" ? {
+          backgroundColor: "white",
+          color: "rgb(229,68,109)"
+        } : {
+          backgroundColor: "rgba(255,255,255,0.4)",
+          color: "#555"
+        },
+        onClick: function onClick() {
+          return _this2.setState({
+            editObject: "QA"
+          });
+        }
+      }, "\u5E38\u898B\u554F\u7B54")), this.state.editObject === "comment" ? display : QA_display)));
     }
   }]);
 
