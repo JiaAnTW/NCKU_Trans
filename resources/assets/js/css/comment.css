@@ -24,11 +24,7 @@ border: 0px solid;
 }
 
 
-.Menu{
-    position: absolute;
-    top:60px;
-    left:5px;
-    width: 150px;
+.comment .Menu{
     height: 91.8vh;
     overflow-y: auto;
 }
@@ -143,6 +139,8 @@ border: 0px solid;
         left:0px;
         width: 150px;
         background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);
+
+        
     }
 
 
@@ -153,6 +151,38 @@ border: 0px solid;
         top:220px;
         height: auto;
     }
+
+    .comment .index{
+        max-height: 65vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .index::-webkit-scrollbar
+    {
+      width: 1px;
+      background-color: #F5F5F5;
+      border: none;
+    }
+    
+    .index::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      background-color: #555;
+      opacity: 0.5;
+    }
+    
+    .index::-webkit-scrollbar-track
+    {
+    background-color: #F5F5F5;
+    border: 0px solid;
+    }
+    
+    .card-box::-webkit-scrollbar-track-piece  {
+     /* 4 */ 
+     border: none;
+    }
+
     .comment .MobileMenu{
         position:fixed;
         top:55px;
@@ -167,7 +197,7 @@ border: 0px solid;
         position:absolute;
         width: 80%;
         height: auto;
-        left: 15%;
+        left: 20%;
         top:80px;
         display: block;
     }

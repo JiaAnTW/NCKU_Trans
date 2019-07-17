@@ -15,7 +15,8 @@ class major_QAIndex extends Component {
       wordsNumber: 35,
       fontSize:"2.5rem",
       IconX: "30vw",
-      IconY: "10vw"
+      IconY: "10vw",
+      isMobile: false,
     };
     this.sponCard=this.sponCard.bind(this);
     this.sponSingleCard=this.sponSingleCard.bind(this);
@@ -48,7 +49,10 @@ class major_QAIndex extends Component {
   changeRowCard(){
     if(window.innerWidth>860){
       this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
-      this.props.handleRWD(false);
+      if(this.state.isMobile=true){
+        this.props.handleRWD(false);
+        this.setState({isMobile:false})
+      }
       //this.handleCardSize(false);
     }
     //else if(window.innerWidth>=1140){
@@ -69,7 +73,10 @@ class major_QAIndex extends Component {
     else{
       this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
       //this.handleCardSize(true);
-      this.props.handleRWD(true);
+      if(this.state.isMobile=false){
+        this.props.handleRWD(true);
+        this.setState({isMobile:true})
+      }
     }
   }
 

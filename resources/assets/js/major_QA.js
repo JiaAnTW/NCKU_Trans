@@ -49,10 +49,12 @@ class maj_QA extends Component {
     if(is_mobile)
       this.setState({
         mobile_display: "none",
+        openFliter: false
     });
     else
       this.setState({
         mobile_display: "block",
+        openFliter: true
     });
   }
 
@@ -262,7 +264,7 @@ class maj_QA extends Component {
     const Menu=()=>{
       var output=[];
       for(var i=0;i<this.state.total_tags.length;++i){
-        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"rgb(229,68,109)":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"transparent":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
       }
       return output;
     }
@@ -273,13 +275,13 @@ class maj_QA extends Component {
             {show}
         </div>
         <div className="MobileMenu">
-          <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"rgb(229,68,109)",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
+          <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"transparent",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
           <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 
             <input type="text" border="none" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%"}}/>  
               {Menu()}
             <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"white",border:"none",color:"rgb(229,68,109)",textShadow:"none"}}>送出篩選</Button>
-            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"rgb(229,68,109)",borderColor:"white",textShadow:"none"}}>全部心得</Button>
+            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"transparent",borderColor:"white",textShadow:"none"}}>全部心得</Button>
             
 
           </div>

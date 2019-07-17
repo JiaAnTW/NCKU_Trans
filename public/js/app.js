@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n.Menu{\r\n    position: absolute;\r\n    top:60px;\r\n    left:5px;\r\n    width: 150px;\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 15%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n.comment .Menu{\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n\r\n        \r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .comment .index{\r\n        max-height: 65vh;\r\n        overflow-y: auto;\r\n        overflow-x: hidden;\r\n    }\r\n\r\n    .index::-webkit-scrollbar\r\n    {\r\n      width: 1px;\r\n      background-color: #F5F5F5;\r\n      border: none;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-thumb\r\n    {\r\n      border-radius: 10px;\r\n      background-color: #555;\r\n      opacity: 0.5;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-track\r\n    {\r\n    background-color: #F5F5F5;\r\n    border: 0px solid;\r\n    }\r\n    \r\n    .card-box::-webkit-scrollbar-track-piece  {\r\n     /* 4 */ \r\n     border: none;\r\n    }\r\n\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3294,7 +3294,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:89px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: rgb(229,68,109);\r\n    padding:10px 15px;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n}\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:53.5px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:89px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 100vw;\r\n        max-width:100%;\r\n        left: 0%;\r\n        top:85px;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:53.5px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:75px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:75px;\r\n        left:5px;\r\n        width: 200px;\r\n        border: 1px solid #d9d9d9;\r\n        box-shadow: 0 0 4px #d9d9d9;\r\n\r\n\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n\r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:89px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: rgb(229,68,109);\r\n    padding:10px 15px;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n    max-height: 91.8vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:53.5px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:89px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 100vw;\r\n        max-width:100%;\r\n        left: 0%;\r\n        top:85px;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:53.5px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 200px;\r\n        height: 91.8vh;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -52782,7 +52782,10 @@ function (_Component) {
       is_home: true,
       showModal: false,
       mobile_display: "block",
-      fliter: "none",
+      fliter: {
+        year: "none",
+        in_maj: "none"
+      },
       selectDepartment: "none",
       contentWidth: "800px",
       contentHeight: "500px",
@@ -52907,10 +52910,10 @@ function (_Component) {
     }
   }, {
     key: "countDepartment",
-    value: function countDepartment(name) {
+    value: function countDepartment(name, type) {
       var counter = 0;
       this.state.datas.forEach(function (item, index, array) {
-        if (item["in_maj"] == name) counter++;
+        if (item[type] == name) counter++;
       });
       return counter;
     }
@@ -52922,26 +52925,39 @@ function (_Component) {
       if (type === "year") {
         var output = [];
         this.state.datas.forEach(function (element) {
-          if (element[type] == new_fliter && (_this3.state.fliter === "none" || element["department"] === _this3.state.fliter || element["in_maj"] === _this3.state.fliter)) output.push(element);
+          if (element[type] == new_fliter && (_this3.state.fliter.in_maj === "none" || element["department"] === _this3.state.fliter.in_maj || element["in_maj"] === _this3.state.fliter.in_maj)) output.push(element);else if (new_fliter === "none") {
+            if (_this3.state.fliter.in_maj === "none" || element["department"] === _this3.state.fliter.in_maj || element["in_maj"] === _this3.state.fliter.in_maj) output.push(element);
+          }
         });
         this.setState({
-          show: output
+          show: output,
+          fliter: {
+            year: new_fliter,
+            in_maj: this.state.fliter.in_maj
+          }
         });
       } else {
         this.setState({
-          fliter: new_fliter,
+          fliter: {
+            year: this.state.fliter.year,
+            in_maj: new_fliter
+          },
           resetFliter: !this.state.resetFliter
         });
 
         if (new_fliter === "none") {
+          var output = [];
+          this.state.datas.forEach(function (element) {
+            if (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year) output.push(element);
+          });
           this.setState({
-            show: this.state.datas,
+            show: output,
             selectDepartment: "none"
           });
         } else {
           var output = [];
           this.state.datas.forEach(function (element) {
-            if (element[type] === new_fliter) output.push(element);
+            if (element[type] === new_fliter && (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year)) output.push(element);
           });
           this.setState({
             show: output
@@ -52973,7 +52989,7 @@ function (_Component) {
         for (var j = 0; j < NCKU[department[i][1]].length; ++j) {
           var _ref;
 
-          var number = this.countDepartment(NCKU[department[i][1]][j]);
+          var number = this.countDepartment(NCKU[department[i][1]][j], "in_maj");
           dep_number += number;
           singleOutput.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
@@ -52983,7 +52999,7 @@ function (_Component) {
               textAlign: "right",
               position: "relative",
               color: "white",
-              backgroundColor: this.state.fliter === NCKU[department[i][1]][j] ? "rgba(255,255,255,0.3)" : "transparent",
+              backgroundColor: this.state.fliter.in_maj === NCKU[department[i][1]][j] ? "rgba(255,255,255,0.3)" : "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
@@ -52991,7 +53007,7 @@ function (_Component) {
             onClick: this.changeFliter.bind(this, NCKU[department[i][1]][j], "in_maj")
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             style: (_ref = {
-              display: this.state.fliter === NCKU[department[i][1]][j] ? "block" : "none",
+              display: this.state.fliter.in_maj === NCKU[department[i][1]][j] ? "block" : "none",
               position: "absolute",
               height: "100%",
               backgroundColor: "white",
@@ -53003,7 +53019,9 @@ function (_Component) {
             style: {
               position: "relative",
               marginLeft: "10px",
-              fontWeight: "400"
+              fontWeight: "400",
+              backgroundColor: "white",
+              color: "rgb(229,68,109)"
             }
           }, number)));
         }
@@ -53084,7 +53102,7 @@ function (_Component) {
             width: "100%",
             textAlign: "center"
           }
-        }, this.state.fliter === "none" ? "全部心得" : this.state.fliter), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.state.fliter.in_maj === "none" ? "全部學系" : this.state.fliter.in_maj), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
             marginBottom: "0",
             marginLeft: "0",
@@ -53092,25 +53110,10 @@ function (_Component) {
             lineHeight: "29px",
             fontSize: "14px",
             height: "30px",
-            color: "white"
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          controllArray: this.findMobileFliterShow("none"),
-          mobile: this.state.mobile_display,
-          reset: this.state.resetFliter,
-          fliter: this.changeFliter,
-          type: "\u5305\u542B\u5E74\u4EFD",
-          value: fliter_2,
-          style: {
-            marginLeft: "12%",
-            width: '76%',
-            backgroundColor: "rgb(229,68,109)",
             color: "white",
-            lineHeight: "31px",
-            fontSize: "12px",
-            height: "30px"
+            textAlign: "center"
           }
-        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, "\u5305\u542B\u5E74\u4EFD: ", this.state.fliter.year === "none" ? "全部年份" : this.state.fliter.year))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u5E73\u5747\u9304\u53D6\u5206\u6578",
           value: length === 0 ? "null" : count / length
@@ -53201,24 +53204,39 @@ function (_Component) {
         var clock = new Date();
 
         for (var i = clock.getFullYear(); i > 2014; --i) {
+          var _ref2;
+
+          var number = _this4.countDepartment(i - 1911, "year");
+
           if (i != clock.getFullYear() || clock.getMonth() > 7) output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
             style: {
               textAlign: "right",
               fontWeight: "100",
-              color: "white",
-              backgroundColor: "transparent",
+              color: _this4.state.fliter.year === i - 1911 ? "rgb(229,68,109)" : "white",
+              backgroundColor: _this4.state.fliter.year === i - 1911 ? "white" : "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
             },
             onClick: _this4.changeFliter.bind(_this4, i - 1911, "year")
-          }, i - 1911));
+          }, i - 1911, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
+            pill: true,
+            variant: "light",
+            style: (_ref2 = {
+              position: "relative",
+              marginLeft: "10px",
+              fontWeight: "400",
+              backgroundColor: "white",
+              color: "rgb(229,68,109)"
+            }, _defineProperty(_ref2, "backgroundColor", "white"), _defineProperty(_ref2, "color", "rgb(229,68,109)"), _ref2)
+          }, number)));
         }
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
           onClick: _this4.changeFliter.bind(_this4, "none", "year"),
-          title: "\u5168\u90E8\u5E74\u4EFD"
+          title: "\u5168\u90E8\u5E74\u4EFD",
+          isSelect: _this4.state.fliter.year === "none"
         }, output);
       };
 
@@ -53286,7 +53304,7 @@ function (_Component) {
           outline: "none"
         },
         onClick: this.changeFliter.bind(this, "none", "department")
-      }, "\u5168\u90E8\u5FC3\u5F97"), this.sponCommentMenu())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "\u5168\u90E8\u5B78\u7CFB"), this.sponCommentMenu())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
         datas: this.state.show,
@@ -53299,8 +53317,8 @@ function (_Component) {
           display: this.state.mobile_display === "none" ? "block" : "none"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        controllArray: this.findMobileFliterShow(this.state.fliter),
-        show: this.state.fliter,
+        controllArray: this.findMobileFliterShow(this.state.fliter.in_maj),
+        show: this.state.fliter.in_maj,
         mobile: this.state.mobile_display,
         fliter: this.changeFliter,
         type: "\u4F9D\u5B78\u9662/\u7CFB",
@@ -53318,7 +53336,7 @@ function (_Component) {
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__["default"], {
         controllArray: this.findMobileFliterShow("none"),
-        show: this.state.fliter,
+        show: this.state.fliter.in_maj,
         mobile: this.state.mobile_display,
         reset: this.state.resetFliter,
         fliter: this.changeFliter,
@@ -53379,7 +53397,7 @@ function (_Component) {
         onChange: function onChange(e) {
           return _this4.handleInitalMajorFliter(e.target.value);
         }
-      }, spawnMajor(this.state.fliter))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, spawnMajor(this.state.fliter.in_maj))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "know",
         onClick: function onClick(e) {
           return _this4.setState({
@@ -54460,7 +54478,8 @@ function (_Component) {
       wordsNumber: 35,
       fontSize: "2.5rem",
       IconX: "30vw",
-      IconY: "10vw"
+      IconY: "10vw",
+      isMobile: false
     };
     _this.sponCard = _this.sponCard.bind(_assertThisInitialized(_this));
     _this.sponSingleCard = _this.sponSingleCard.bind(_assertThisInitialized(_this));
@@ -54502,7 +54521,14 @@ function (_Component) {
           IconX: "30vw",
           IconY: "10vw"
         });
-        this.props.handleRWD(false); //this.handleCardSize(false);
+
+        if (this.state.isMobile = true) {
+          this.props.handleRWD(false);
+          this.setState({
+            isMobile: false
+          });
+        } //this.handleCardSize(false);
+
       } //else if(window.innerWidth>=1140){
       //this.setState({row:4});
       //this.props.handleRWD(false);
@@ -54525,7 +54551,12 @@ function (_Component) {
             IconY: "50vw"
           }); //this.handleCardSize(true);
 
-          this.props.handleRWD(true);
+          if (this.state.isMobile = false) {
+            this.props.handleRWD(true);
+            this.setState({
+              isMobile: true
+            });
+          }
         }
     }
   }, {
@@ -56336,9 +56367,11 @@ function (_Component) {
     key: "handleRWD",
     value: function handleRWD(is_mobile) {
       if (is_mobile) this.setState({
-        mobile_display: "none"
+        mobile_display: "none",
+        openFliter: false
       });else this.setState({
-        mobile_display: "block"
+        mobile_display: "block",
+        openFliter: true
       });
     }
   }, {
@@ -56605,7 +56638,7 @@ function (_Component) {
               outline: "none",
               margin: "5px 2px",
               color: _this4.state.total_tags[i][1] == false ? "white" : "#F8BBD0",
-              backgroundColor: _this4.state.total_tags[i][1] == false ? "rgb(229,68,109)" : "rgba(0,0,0,0.1)",
+              backgroundColor: _this4.state.total_tags[i][1] == false ? "transparent" : "rgba(0,0,0,0.1)",
               borderColor: "rgba(243,243,243,0.5)",
               borderRadius: "0"
             }
@@ -56631,7 +56664,7 @@ function (_Component) {
           outline: "none",
           width: "60%",
           margin: "0px 20%",
-          backgroundColor: "rgb(229,68,109)",
+          backgroundColor: "transparent",
           border: "none",
           boxShadow: "none"
         }
@@ -56669,7 +56702,7 @@ function (_Component) {
           outline: "none",
           width: "86%",
           margin: "5px 7%",
-          backgroundColor: "rgb(229,68,109)",
+          backgroundColor: "transparent",
           borderColor: "white",
           textShadow: "none"
         }

@@ -18,7 +18,11 @@
     left: 0%;
     top:85px;
     height: auto;
+    max-height: 91.8vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
 
 .major_QA .MobileMenu{
     position:fixed;
@@ -66,9 +70,10 @@
 
     .major_QA .Menu{
         position: absolute;
-        top:60px;
-        left:5px;
-        width: 150px;
+        top:55px;
+        left:0px;
+        width: 200px;
+        height: 91.8vh;
         display: block;
     }
 
@@ -95,12 +100,6 @@
 
 @media (min-width: 992px) { 
 
-    .major_QA .Menu{
-        position: absolute;
-        top:75px;
-        left:5px;
-        width: 150px;
-    }
 
 
     .major_QA .index{
@@ -117,19 +116,6 @@
 }
 
 @media (min-width: 1200px) {
-
-    .major_QA .Menu{
-        position: absolute;
-        top:75px;
-        left:5px;
-        width: 200px;
-        border: 1px solid #d9d9d9;
-        box-shadow: 0 0 4px #d9d9d9;
-
-
-    }
-
-
     .major_QA .index{
         position:absolute;
         width: 1024px;

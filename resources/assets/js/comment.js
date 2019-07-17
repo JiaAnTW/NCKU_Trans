@@ -49,7 +49,7 @@ class comment extends Component {
         is_home: true,
         showModal: false,
         mobile_display: "block",
-        fliter :"none",
+        fliter : {year:"none",in_maj:"none"},
         selectDepartment:"none",
         contentWidth: "800px",
         contentHeight: "500px",
@@ -156,10 +156,10 @@ class comment extends Component {
       .catch(e => console.log('錯誤:', e));
   }
 
-  countDepartment(name){
+  countDepartment(name,type){
      var counter=0;
      this.state.datas.forEach(function(item, index, array){
-      if(item["in_maj"]==name)
+      if(item[type]==name)
         counter++;
     });
     return counter;
@@ -169,20 +169,29 @@ class comment extends Component {
       if(type==="year"){
         var output=[];
         this.state.datas.forEach(element => {
-        if(element[type]==new_fliter&&(this.state.fliter==="none"||element["department"]===this.state.fliter||element["in_maj"]===this.state.fliter))
-          output.push(element);
+          if(element[type]==new_fliter&&(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj))
+            output.push(element);
+          else if(new_fliter==="none"){
+            if(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)
+              output.push(element);
+          }
         });
-        this.setState({show:output});
+        this.setState({show:output,fliter:{year:new_fliter,in_maj:this.state.fliter.in_maj}});
       }
       else{
-        this.setState({fliter:new_fliter,resetFliter: !this.state.resetFliter});
+        this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter},resetFliter: !this.state.resetFliter});
         if(new_fliter==="none"){
-          this.setState({show:this.state.datas,selectDepartment:"none"});    
+          var output=[];
+          this.state.datas.forEach(element => {
+            if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year)
+              output.push(element);
+          });          
+          this.setState({show:output,selectDepartment:"none"});    
         }
         else{
           var output=[];
           this.state.datas.forEach(element => {
-          if(element[type]===new_fliter)
+          if(element[type]===new_fliter&&(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year))
             output.push(element);
           });
           this.setState({show:output});
@@ -206,13 +215,13 @@ class comment extends Component {
       let singleOutput=[];
       var dep_number=0;
       for(var j=0;j<NCKU[department[i][1]].length;++j){
-        const number=this.countDepartment(NCKU[ department[i][1] ][j]);
+        const number=this.countDepartment(NCKU[ department[i][1] ][j],"in_maj");
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
-              <div style={{ display:(this.state.fliter===NCKU[department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
+            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
+              <div style={{ display:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
               {NCKU[department[i][1]][j]}
-              <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400" }}>
+              <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400",backgroundColor:"white",color:"rgb(229,68,109)" }}>
                 {number}
               </Badge>
             </Button>
@@ -281,9 +290,9 @@ class comment extends Component {
           <ul>
             <li className="board">
               <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
-              <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter==="none")?"全部心得":this.state.fliter}</h2>
-              <div style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white"}}>
-                <MobileFliter controllArray={this.findMobileFliterShow("none")} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="包含年份" value={fliter_2} style={{marginLeft:"12%",width:'76%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+              <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter.in_maj==="none")?"全部學系":this.state.fliter.in_maj}</h2>
+              <div style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white",textAlign:"center"}}>
+                包含年份: {(this.state.fliter.year==="none")?"全部年份":this.state.fliter.year}
               </div>
               </div>
             </li>
@@ -356,14 +365,18 @@ class comment extends Component {
         var output=[];
         var clock=new Date();
           for(var i=clock.getFullYear();i>2014;--i){
+            const number=this.countDepartment(i-1911,"year");
             if(i!=clock.getFullYear()||clock.getMonth()>7)
               output.push(
-                <Button variant="light" style={{ textAlign:"right",fontWeight:"100",color:"white",backgroundColor:"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,i-1911,"year")}>{i-1911}
+                <Button variant="light" style={{ textAlign:"right",fontWeight:"100",color:(this.state.fliter.year===i-1911)?"rgb(229,68,109)":"white",backgroundColor:(this.state.fliter.year===i-1911)?"white":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,i-1911,"year")}>{i-1911}
+                  <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400",backgroundColor:"white",color:"rgb(229,68,109)",backgroundColor:"white",color:"rgb(229,68,109)" }}>
+                    {number}
+                  </Badge>
                 </Button>
               );
         }
         return(
-          <Menu onClick={this.changeFliter.bind(this,"none","year")} title="全部年份" >
+          <Menu onClick={this.changeFliter.bind(this,"none","year")} title="全部年份" isSelect={this.state.fliter.year==="none"}>
           {output}
           </Menu>
         );
@@ -384,7 +397,7 @@ class comment extends Component {
               <img src={book} alt="year" style={{ margin:"0% 4%",height:"50%",lineHeight:"40px"}} />
               依學系篩選:
             </div>
-            <Button variant="light" style={{ fontWeight:"100",color:(this.state.selectDepartment==="none")?"rgb(229,68,109)":"white",backgroundColor:(this.state.selectDepartment==="none")?"white":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部心得
+            <Button variant="light" style={{ fontWeight:"100",color:(this.state.selectDepartment==="none")?"rgb(229,68,109)":"white",backgroundColor:(this.state.selectDepartment==="none")?"white":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,"none","department")}>全部學系
             </Button>
             {this.sponCommentMenu()}
           </div>
@@ -395,8 +408,8 @@ class comment extends Component {
       </div>
       {this.spawnStatistic()}
       <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
-        <MobileFliter controllArray={this.findMobileFliterShow(this.state.fliter)} show={this.state.fliter} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
-        <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+        <MobileFliter controllArray={this.findMobileFliterShow(this.state.fliter.in_maj)} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+        <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
       </div>
       <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
     </div>
@@ -410,7 +423,7 @@ class comment extends Component {
             <option value="none">全部學院</option>
           {spawnDepartment}
           </select>
-          <select style={{outline:"none",color:"rgb(229,68,109)",border:"none",width:"120px",backgroundColor:"white",marginLeft:"5%"}} onChange={(e)=>this.handleInitalMajorFliter(e.target.value)}>{spawnMajor(this.state.fliter)}</select>
+          <select style={{outline:"none",color:"rgb(229,68,109)",border:"none",width:"120px",backgroundColor:"white",marginLeft:"5%"}} onChange={(e)=>this.handleInitalMajorFliter(e.target.value)}>{spawnMajor(this.state.fliter.in_maj)}</select>
         </div>
         <button className="know" onClick={(e)=>this.setState({is_home:true})}>確認送出</button>
       </div>
