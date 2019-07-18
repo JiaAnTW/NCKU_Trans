@@ -80,15 +80,17 @@ class admin extends Component {
           return(
         <div className="post">
         <div className="index">
-        <h1 style={{width:"100%",textAlign:"center",color: "white", marginTop:"7rem"}}>管理員介面</h1>
-        <div className="form_container" style={{position:"absolute",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%"}}>
-            <p style={{width:"100%", marginLeft:"20%", marginTop:"5%"}}>
-            <input placeholder="email" id="year" onChange={(e)=>this.setState({email: e.target.value})}/>
+        <div className="form_container" style={{position:"absolute",marginTop:"4%",width:"400px",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%",borderTopLeftRadius:"5px",borderTopRightRadius:"5px",padding:"15rem 2rem",paddingTop:"4rem"}}>
+          <h1 style={{width:"100%",textAlign:"center",color: "black", marginBottom:"7rem",fontWeight:"500"}}>管理員介面</h1>
+            <p style={{width:"100%", marginLeft:"10%", marginTop:"5%"}}>
+              Email:<br/>
+            <input  id="year" onChange={(e)=>this.setState({email: e.target.value})} style={{width:"80%",borderBottom:"1px solid rgb(229,68,109)",backgroundColor:"transparent"}}/>
             </p>
-            <p style={{width:"100%", marginLeft:"20%"}}>
-            <input placeholder="password" id="year"  onChange={(e)=>this.setState({password: e.target.value})}/>
+            <p style={{width:"100%", marginLeft:"10%"}}>
+              Password:<br/>
+            <input  id="year"  onChange={(e)=>this.setState({password: e.target.value})} style={{width:"80%",borderBottom:"1px solid rgb(229,68,109)",backgroundColor:"transparent"}}/>
             </p>
-            <button onClick={this.handleLogin} style={{margin: "5% 10%",width:"80%",borderRadius:"0",border:"0px solid rgb(229,68,109)",color:"white",backgroundColor:"rgb(229,68,109)"}}>登入</button>
+            <button onClick={this.handleLogin} style={{margin: "5% 10%",width:"80%",borderRadius:"0",border:"0px solid rgb(229,68,109)",color:"white",backgroundColor:"rgb(229,68,109)",padding:"15px 0px"}}>登入</button>
             </div>
             </div>
         </div>

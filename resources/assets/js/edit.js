@@ -5,17 +5,19 @@ import QAIndex from './components/major_QAIndex'
 import MobileFliter from "./components/mobileFliter";
 import 'react-tagsinput/react-tagsinput.css'
 import './css/edit.css'
-import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
 
 class edit extends Component {
     constructor(props) {
     super(props)
     this.state = {
         now_handle: "QA",
+        fliter:{year:""},
         id: -1,
         new_id: "不變",
         id_array:[],
         datas: [],
+        show:[],
         is_fetch: false,
         rank_1: "",
         rank_2: "",
@@ -48,7 +50,25 @@ class edit extends Component {
   }
 
   changeFliter(new_fliter,type){
-    this.setState({now_handle:new_fliter,qa_id:-1,id:-1})
+    if(type=="null")
+      this.setState({now_handle:new_fliter,qa_id:-1,id:-1,show:(new_fliter==="QA")?this.state.qa_datas:this.state.datas})
+    if(type==="confirm"){
+      var output=[];
+      const condition=(new_fliter==="已審核")?"true":"false";
+      if(this.state.now_handle==="QA"){
+        this.state.qa_datas.forEach(Element=>{
+          if(new_fliter==="全部"||Element["confirm"]==condition)
+          output.push(Element);
+        })
+      }
+      else{
+        this.state.datas.forEach(Element=>{
+          if(new_fliter==="全部"||Element["confirm"]==condition)
+            output.push(Element);
+        })        
+      }
+      this.setState({show:output})
+    }
   }
 
   getData() {
@@ -81,7 +101,9 @@ class edit extends Component {
           this.setState({
               qa_datas: data,
               is_fetch:true,
-              qa_id_array: input});
+              qa_id_array: input,
+              show:data
+            });
             
         })
         .catch(e => console.log('錯誤:', e));
@@ -251,7 +273,14 @@ class edit extends Component {
       now:-1,
       name: "none",
       type: "null",
-      option: [["QA",-1],["心得",-1]],
+      option: [["",-1],["QA",-1],["心得",-1]],
+    }];
+    const fliter2=[{
+      id: 0,
+      now:-1,
+      name: "none",
+      type: "confirm",
+      option: [["",-1],["全部",-1],["已審核",-1],["未審核",-1]],
     }];
     const option=(this.state.now_handle==="心得")?this.state.datas.map(data=>{
       return(<option value={data["id"].toString()}>{data["id"]}</option>);
@@ -261,17 +290,57 @@ class edit extends Component {
 
     const switchIndex=()=>{
       if(this.state.now_handle==="心得"){
-        return(<CommentIndex datas={this.state.datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
+        return(<CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
       }
       else{
-        return(<QAIndex datas={this.state.qa_datas} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
+        return(<QAIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>);
       }
     }
+
+    const table=()=>{
+      if(this.state.now_handle==="心得"&&this.state.id!=-1){
+        return (<div>
+        <Table striped bordered hover>
+          <tbody>
+          <tr><td>id</td><td>{this.state.id}</td></tr>
+          <tr><td>排名上: </td><td>{this.state.rank_1}</td></tr>
+          <tr><td>排名下: </td><td>{this.state.rank_2}</td></tr>
+          <tr><td>申請年度:</td><td>{this.state.year}</td></tr>
+          <tr><td>轉出科系:</td><td>{this.state.out_maj}</td></tr>
+          <tr><td>轉入科系:</td><td>{this.state.in_maj}</td></tr>
+          </tbody>
+        </Table>
+        <div>{this.state.comment}</div>
+            <form>
+           是否確認:
+            是<input type="radio" name="comfirm" value="true" checked={this.state.confirm==="true"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
+            否<input type="radio" name="comfirm" value="false" checked={this.state.confirm==="false"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
+            </form>
+            <button onClick={this.handleClick}>送出</button>
+            <br/><br/>
+            <button onClick={this.deleteComment}>刪除該文章</button>
+        </div>);
+      }
+      else if(this.state.qa_id!=-1)
+        return(<div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
+            文章的新id:   
+            <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
+            <br/>
+            <textarea id="comment" value={this.state.qa_q} onChange={(e) => this.setState({ qa_q: e.target.value})}></textarea>
+            <br/>
+            <textarea id="comment" value={this.state.qa_a} onChange={(e) => this.setState({ qa_a: e.target.value})}></textarea>
+           <br/>
+            <TagsInput value={this.state.tags} onChange={this.handleChange}/>
+            <button onClick={this.handleClick}>送出</button>
+            <br/><br/>
+            <button onClick={this.deleteComment}>刪除該文章</button>
+            <br/>
+        </div>);
+    } 
 
     const form=()=>{
       if(this.state.now_handle==="心得"&&this.state.id!=-1){
         return (
-          <div className="post">
           <div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
@@ -305,39 +374,38 @@ class edit extends Component {
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
-        </div></div>);
+        </div>);
       }
       else if(this.state.qa_id!=-1)
-        return(<div className="post"><div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
+        return(<div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
             <textarea id="comment" value={this.state.qa_q} onChange={(e) => this.setState({ qa_q: e.target.value})}></textarea>
             <br/>
             <textarea id="comment" value={this.state.qa_a} onChange={(e) => this.setState({ qa_a: e.target.value})}></textarea>
-            <br/>
+           <br/>
             <TagsInput value={this.state.tags} onChange={this.handleChange}/>
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
             <br/>
-        </div></div>);
-    }
+        </div>);
+    } 
     return (
       <div className="edit">
         <div className="Menu" style={{height:"auto",position:"absolute",top:"50px",left:"0px",width: "100%",height:"100%"}}>
           <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1&&this.state.qa_id===-1)?"none":"block"}}>
             <br/>
-            {form()}
-            
-
+            {table()}
             </div>
         </div>
         <div className="index" style={{display:(this.state.id===-1&&this.state.qa_id===-1)?"block":"none", top:"100px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileMenu" style={{marginTop:"55px"}}>
-          <MobileFliter controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{marginLeft:"0%",width:'100%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+        <div className="MobileMenu" style={{marginTop:"55px",position:"relative"}}>
+          <MobileFliter show={"QA"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{position:"absolute",marginLeft:"0%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{position:"absolute",marginLeft:"40%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
         </div>
       </div>
     );

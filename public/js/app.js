@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n", ""]);
 
 // exports
 
@@ -52520,47 +52520,62 @@ function (_Component) {
           className: "post"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "index"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form_container",
+          style: {
+            position: "absolute",
+            marginTop: "4%",
+            width: "400px",
+            color: "rgb(229,68,109)",
+            boxShadow: "0 0px 12px rgba(0,0,0,.175)",
+            maxWidth: "90%",
+            borderTopLeftRadius: "5px",
+            borderTopRightRadius: "5px",
+            padding: "15rem 2rem",
+            paddingTop: "4rem"
+          }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           style: {
             width: "100%",
             textAlign: "center",
-            color: "white",
-            marginTop: "7rem"
+            color: "black",
+            marginBottom: "7rem",
+            fontWeight: "500"
           }
-        }, "\u7BA1\u7406\u54E1\u4ECB\u9762"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "form_container",
-          style: {
-            position: "absolute",
-            color: "rgb(229,68,109)",
-            boxShadow: "0 0px 12px rgba(0,0,0,.175)",
-            maxWidth: "90%"
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, "\u7BA1\u7406\u54E1\u4ECB\u9762"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           style: {
             width: "100%",
-            marginLeft: "20%",
+            marginLeft: "10%",
             marginTop: "5%"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          placeholder: "email",
+        }, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           id: "year",
           onChange: function onChange(e) {
             return _this3.setState({
               email: e.target.value
             });
+          },
+          style: {
+            width: "80%",
+            borderBottom: "1px solid rgb(229,68,109)",
+            backgroundColor: "transparent"
           }
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           style: {
             width: "100%",
-            marginLeft: "20%"
+            marginLeft: "10%"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          placeholder: "password",
+        }, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           id: "year",
           onChange: function onChange(e) {
             return _this3.setState({
               password: e.target.value
             });
+          },
+          style: {
+            width: "80%",
+            borderBottom: "1px solid rgb(229,68,109)",
+            backgroundColor: "transparent"
           }
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.handleLogin,
@@ -52570,7 +52585,8 @@ function (_Component) {
             borderRadius: "0",
             border: "0px solid rgb(229,68,109)",
             color: "white",
-            backgroundColor: "rgb(229,68,109)"
+            backgroundColor: "rgb(229,68,109)",
+            padding: "15px 0px"
           }
         }, "\u767B\u5165"))));
       };
@@ -53912,7 +53928,8 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, {
         style: {
-          maxHeight: "100%"
+          maxHeight: "100%",
+          backgroundColor: datas[number]["confirm"] == "false" ? "rgba(229,68,109,0.3)" : "white"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
         style: {
@@ -55499,10 +55516,14 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(edit).call(this, props));
     _this.state = {
       now_handle: "QA",
+      fliter: {
+        year: ""
+      },
       id: -1,
       new_id: "不變",
       id_array: [],
       datas: [],
+      show: [],
       is_fetch: false,
       rank_1: "",
       rank_2: "",
@@ -55538,11 +55559,31 @@ function (_Component) {
   _createClass(edit, [{
     key: "changeFliter",
     value: function changeFliter(new_fliter, type) {
-      this.setState({
+      if (type == "null") this.setState({
         now_handle: new_fliter,
         qa_id: -1,
-        id: -1
+        id: -1,
+        show: new_fliter === "QA" ? this.state.qa_datas : this.state.datas
       });
+
+      if (type === "confirm") {
+        var output = [];
+        var condition = new_fliter === "已審核" ? "true" : "false";
+
+        if (this.state.now_handle === "QA") {
+          this.state.qa_datas.forEach(function (Element) {
+            if (new_fliter === "全部" || Element["confirm"] == condition) output.push(Element);
+          });
+        } else {
+          this.state.datas.forEach(function (Element) {
+            if (new_fliter === "全部" || Element["confirm"] == condition) output.push(Element);
+          });
+        }
+
+        this.setState({
+          show: output
+        });
+      }
     }
   }, {
     key: "getData",
@@ -55582,7 +55623,8 @@ function (_Component) {
         _this2.setState({
           qa_datas: data,
           is_fetch: true,
-          qa_id_array: input
+          qa_id_array: input,
+          show: data
         });
       }).catch(function (e) {
         return console.log('錯誤:', e);
@@ -55771,7 +55813,14 @@ function (_Component) {
         now: -1,
         name: "none",
         type: "null",
-        option: [["QA", -1], ["心得", -1]]
+        option: [["", -1], ["QA", -1], ["心得", -1]]
+      }];
+      var fliter2 = [{
+        id: 0,
+        now: -1,
+        name: "none",
+        type: "confirm",
+        option: [["", -1], ["全部", -1], ["已審核", -1], ["未審核", -1]]
       }];
       var option = this.state.now_handle === "心得" ? this.state.datas.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -55786,14 +55835,14 @@ function (_Component) {
       var switchIndex = function switchIndex() {
         if (_this3.state.now_handle === "心得") {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            datas: _this3.state.datas,
+            datas: _this3.state.show,
             is_fetch: _this3.state.is_fetch,
             onClick: _this3.handleOpenModal,
             handleRWD: _this3.handleRWD
           });
         } else {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_major_QAIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            datas: _this3.state.qa_datas,
+            datas: _this3.state.show,
             is_fetch: _this3.state.is_fetch,
             onClick: _this3.handleOpenModal,
             handleRWD: _this3.handleRWD
@@ -55801,11 +55850,77 @@ function (_Component) {
         }
       };
 
+      var table = function table() {
+        if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
+            striped: true,
+            bordered: true,
+            hover: true
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _this3.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            type: "radio",
+            name: "comfirm",
+            value: "true",
+            checked: _this3.state.confirm === "true",
+            onChange: function onChange(e) {
+              _this3.setState({
+                confirm: e.target.value
+              });
+            }
+          }), "\u5426", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            type: "radio",
+            name: "comfirm",
+            value: "false",
+            checked: _this3.state.confirm === "false",
+            onChange: function onChange(e) {
+              _this3.setState({
+                confirm: e.target.value
+              });
+            }
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            onClick: _this3.handleClick
+          }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            onClick: _this3.deleteComment
+          }, "\u522A\u9664\u8A72\u6587\u7AE0"));
+        } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form_container",
+          style: {
+            position: "absolute",
+            maxWidth: "90%"
+          }
+        }, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          id: "new_id",
+          type: "text",
+          value: _this3.state.new_id,
+          onChange: _this3.changeNewId
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          id: "comment",
+          value: _this3.state.qa_q,
+          onChange: function onChange(e) {
+            return _this3.setState({
+              qa_q: e.target.value
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          id: "comment",
+          value: _this3.state.qa_a,
+          onChange: function onChange(e) {
+            return _this3.setState({
+              qa_a: e.target.value
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
+          value: _this3.state.tags,
+          onChange: _this3.handleChange
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this3.handleClick
+        }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this3.deleteComment
+        }, "\u522A\u9664\u8A72\u6587\u7AE0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      };
+
       var form = function form() {
         if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "post"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "form_container",
             style: {
               position: "absolute",
@@ -55902,10 +56017,8 @@ function (_Component) {
             onClick: _this3.handleClick
           }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: _this3.deleteComment
-          }, "\u522A\u9664\u8A72\u6587\u7AE0")));
+          }, "\u522A\u9664\u8A72\u6587\u7AE0"));
         } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "form_container",
           style: {
             position: "absolute",
@@ -55939,7 +56052,7 @@ function (_Component) {
           onClick: _this3.handleClick
         }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.deleteComment
-        }, "\u522A\u9664\u8A72\u6587\u7AE0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
+        }, "\u522A\u9664\u8A72\u6587\u7AE0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -55959,7 +56072,7 @@ function (_Component) {
           margin: "5% 5%",
           display: this.state.id === -1 && this.state.qa_id === -1 ? "none" : "block"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), form())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index",
         style: {
           display: this.state.id === -1 && this.state.qa_id === -1 ? "block" : "none",
@@ -55968,17 +56081,37 @@ function (_Component) {
       }, switchIndex()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "MobileMenu",
         style: {
-          marginTop: "55px"
+          marginTop: "55px",
+          position: "relative"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        show: "QA",
         controllArray: [0, -1],
         mobile: this.state.display,
         fliter: this.changeFliter,
         type: "\u7DE8\u8F2F\u985E\u5225",
         value: fliter,
         style: {
+          position: "absolute",
           marginLeft: "0%",
-          width: '100%',
+          width: '40%',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px",
+          height: "30px"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        show: "全部",
+        controllArray: [0, -1],
+        mobile: this.state.display,
+        fliter: this.changeFliter,
+        type: "\u662F\u5426\u5BE9\u6838",
+        value: fliter2,
+        style: {
+          position: "absolute",
+          marginLeft: "40%",
+          width: '40%',
           backgroundColor: "rgb(229,68,109)",
           color: "white",
           lineHeight: "31px",
