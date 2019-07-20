@@ -15,7 +15,7 @@ class major_QAIndex extends Component {
       wordsNumber: 35,
       fontSize:"2.5rem",
       IconX: "30vw",
-      IconY: "10vw",
+      IconY: "20vh",
       isMobile: false,
     };
     this.sponCard=this.sponCard.bind(this);
@@ -92,7 +92,7 @@ class major_QAIndex extends Component {
     return <div style={{ width: '100vw',maxWidth:"100%" }}>{output}</div >;
   }
     else
-      return <Icon style={{ position: 'absolute',marginLeft: this.state.IconX ,top: this.state.IconY }}/> ;
+      return <Icon style={{ marginTop: this.state.IconY }}/> ;
   }
 
   sponSingleCard(number,datas){

@@ -161,7 +161,7 @@ border: 0px solid;
     .index::-webkit-scrollbar
     {
       width: 1px;
-      background-color: #F5F5F5;
+      background-color: transparent;
       border: none;
     }
     
@@ -174,7 +174,7 @@ border: 0px solid;
     
     .index::-webkit-scrollbar-track
     {
-    background-color: #F5F5F5;
+    background-color: transparent;
     border: 0px solid;
     }
     

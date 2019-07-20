@@ -132,7 +132,7 @@ class post extends Component {
             <p><h1>心得</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是針對個別科系分享平均分數以及修課等內容</p></p>
             <p><h1>常見問答</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是解答轉系在行政、審查等流程和規則上的模糊點</p></p>
           </div>
-          <span style={{width:"70%"}}>感謝你願意為未來以轉系為目標的學弟妹們，留下一條更好走的路。</span>
+          <span style={{width:"70%",marginTop:"30px"}}>感謝你願意為未來以轉系為目標的學弟妹們，留下一條更好走的路。</span>
           <button onClick={(e)=>this.setState({start:true})}>開始填寫</button>
           </div>
       </div>

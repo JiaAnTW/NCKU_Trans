@@ -106,7 +106,7 @@ border: 0px solid;
     padding-bottom: 5vh;
     align-items: center;
     background-image: none;
-    background-color:rgb(229,68,109);
+    background-image: linear-gradient(to top, #f77062 0%, rgb(229,68,109) 100%);
 }
 
 .post .input-container,.post .index, .post .start-context,.post .type-box p{
