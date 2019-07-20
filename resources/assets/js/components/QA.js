@@ -32,7 +32,7 @@ class QA extends React.Component {
 
       return (
         <div className="QA_container">
-              <Card className="card-box" style={{ height: "auto",border:"none",overflowY: 'auto',maxHeight:"80vh",transform:"translate(0,0)"}}>
+              <Card className="card-box" style={{ height: "80vh",border:"none",overflowY: 'auto',maxHeight:"80vh",transform:"translate(0,0)"}}>
               <Card.Body className="QA_cardBody">  
               <div className="QA_card_container" style={{maxWidth: "100%",margin:containerMargin}}>
                 <div className="id_container">{"QA編號: "+show["id"]}</div>

@@ -5,7 +5,7 @@ import QAIndex from './components/major_QAIndex'
 import MobileFliter from "./components/mobileFliter";
 import 'react-tagsinput/react-tagsinput.css'
 import './css/edit.css'
-import {Table} from 'react-bootstrap';
+import {Table,Button} from 'react-bootstrap';
 
 class edit extends Component {
     constructor(props) {
@@ -33,6 +33,7 @@ class edit extends Component {
         qa_q:"",
         qa_a:"",
         confirm:"",
+        qa_confirm:"",
         tags:[],
         showContent: [],
         display: "block",
@@ -169,6 +170,7 @@ class edit extends Component {
           'id': (this.state.qa_new_id!="不變")?this.state.qa_new_id:this.state.qa_id,
           'question':this.state.qa_q,
           'answer':this.state.qa_a,
+          'confirm':this.state.qa_confirm,
           'tags':this.state.tags,
       };
       fetch(
@@ -299,8 +301,9 @@ class edit extends Component {
 
     const table=()=>{
       if(this.state.now_handle==="心得"&&this.state.id!=-1){
-        return (<div>
-        <Table striped bordered hover>
+        return (<div className="check-container">
+        <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() => this.setState({ id: -1 })}>← 返回選單</Button>
+        <Table striped bordered hover style={{width:"250px",marginTop:"20px"}}>
           <tbody>
           <tr><td>id</td><td>{this.state.id}</td></tr>
           <tr><td>排名上: </td><td>{this.state.rank_1}</td></tr>
@@ -310,7 +313,8 @@ class edit extends Component {
           <tr><td>轉入科系:</td><td>{this.state.in_maj}</td></tr>
           </tbody>
         </Table>
-        <div>{this.state.comment}</div>
+        <div style={{width:"70%"}}>{this.state.comment}</div>
+          <div className="confirm-container">
             <form>
            是否確認:
             是<input type="radio" name="comfirm" value="true" checked={this.state.confirm==="true"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
@@ -319,21 +323,30 @@ class edit extends Component {
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
+          </div>
         </div>);
       }
       else if(this.state.qa_id!=-1)
-        return(<div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
-            文章的新id:   
-            <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
-            <br/>
-            <textarea id="comment" value={this.state.qa_q} onChange={(e) => this.setState({ qa_q: e.target.value})}></textarea>
-            <br/>
-            <textarea id="comment" value={this.state.qa_a} onChange={(e) => this.setState({ qa_a: e.target.value})}></textarea>
-           <br/>
+        return(<div className="check-container" style={{}}>
+          <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() => this.setState({ qa_id: -1 })}>← 返回選單</Button>
+          <Table striped bordered hover style={{width:"70%",marginTop:"20px"}}>
+            <tbody>
+            <tr><td>id</td><td>{this.state.qa_id}</td></tr>
+            <tr><td>問題</td><td>{this.state.qa_q}</td></tr>
+            <tr><td>解答</td><td>{this.state.qa_a}</td></tr>
+            </tbody>
+          </Table>
+           <div className="confirm-container">
             <TagsInput value={this.state.tags} onChange={this.handleChange}/>
+            <form>
+           是否確認:
+            是<input type="radio" name="comfirm" value="true" checked={this.state.qa_confirm==="true"} onChange={(e) =>{ this.setState({ qa_confirm: e.target.value })}}/>
+            否<input type="radio" name="comfirm" value="false" checked={this.state.qa_confirm==="false"} onChange={(e) =>{ this.setState({ qa_confirm: e.target.value })}}/>
+            </form>
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
+            </div>
             <br/>
         </div>);
     } 
@@ -341,7 +354,7 @@ class edit extends Component {
     const form=()=>{
       if(this.state.now_handle==="心得"&&this.state.id!=-1){
         return (
-          <div className="form_container" style={{position:"absolute",maxWidth:"90%"}}>
+          <div className="form_container" style={{}}>
             文章的新id:   
             <input id="new_id" type="text" value={this.state.new_id} onChange={this.changeNewId}/>
             <br/>
@@ -366,6 +379,7 @@ class edit extends Component {
             心得:
             <textarea id="comment" value={this.state.comment} onChange={(e) => this.setState({ comment: e.target.value})}></textarea>
             <br/>
+            <div className="confirm-container">
             <form>
            是否確認:
             是<input type="radio" name="comfirm" value="true" checked={this.state.confirm==="true"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
@@ -374,6 +388,7 @@ class edit extends Component {
             <button onClick={this.handleClick}>送出</button>
             <br/><br/>
             <button onClick={this.deleteComment}>刪除該文章</button>
+            </div>
         </div>);
       }
       else if(this.state.qa_id!=-1)
@@ -385,10 +400,12 @@ class edit extends Component {
             <br/>
             <textarea id="comment" value={this.state.qa_a} onChange={(e) => this.setState({ qa_a: e.target.value})}></textarea>
            <br/>
-            <TagsInput value={this.state.tags} onChange={this.handleChange}/>
-            <button onClick={this.handleClick}>送出</button>
-            <br/><br/>
-            <button onClick={this.deleteComment}>刪除該文章</button>
+           <div>
+              <TagsInput value={this.state.tags} onChange={this.handleChange}/>
+              <button onClick={this.handleClick}>送出</button>
+              <br/><br/>
+              <button onClick={this.deleteComment}>刪除該文章</button>
+            </div>
             <br/>
         </div>);
     } 
@@ -403,9 +420,9 @@ class edit extends Component {
         <div className="index" style={{display:(this.state.id===-1&&this.state.qa_id===-1)?"block":"none", top:"100px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileMenu" style={{marginTop:"55px",position:"relative"}}>
-          <MobileFliter show={"QA"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{position:"absolute",marginLeft:"0%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
-          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{position:"absolute",marginLeft:"40%",width:'40%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)"}}>
+          <MobileFliter show={"QA"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{position:"absolute",marginLeft:"0%",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{position:"absolute",marginLeft:"170px",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
         </div>
       </div>
     );

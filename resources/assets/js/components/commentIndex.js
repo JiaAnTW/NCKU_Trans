@@ -31,7 +31,7 @@ class commentIndex extends Component {
 
   handleCardSize(is_mobile){
     if(is_mobile)
-      this.setState({fontSize:"2.5rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"13.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
+      this.setState({fontSize:"2.2rem",btnHeight:"11rem",cardWidth:"100vw",cardHeight:"13.5rem",cardPadding:"0rem",cardTextHeight:"2.06rem",wordsNumber: 20});
     else
       this.setState({fontSize:"2.7rem",btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   }

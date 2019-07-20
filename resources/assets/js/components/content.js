@@ -78,11 +78,11 @@ class content extends React.Component {
                   {tableType}
                 </Table>
               <Card.Text style={{position:"relative",top: "5px",textAlign:"justify"}}>
-                <span>
+                <div>
                 {this.props.data["comment"]}
-                </span>
+                </div>
                 <p style={{width:"100%",height:"70px"}}>
-                <Button variant="light" className="closeBtn2" style={{position:"absolute",left:"45%" }} onClick={this.handleCloseModal}>關閉</Button>
+                <Button variant="light" className="closeBtn2" style={{position:"absolute",left:"20%",width:"60%" }} onClick={this.handleCloseModal}>關閉</Button>
                 </p>
                 </Card.Text>
                 </div>

@@ -181,6 +181,8 @@ class comment extends Component {
       else{
         this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter},resetFliter: !this.state.resetFliter});
         if(new_fliter==="none"){
+          if(this.state.is_mobile=="none")
+            this.setState({fliter:{year:"none",in_maj:new_fliter}});
           var output=[];
           this.state.datas.forEach(element => {
             if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year)

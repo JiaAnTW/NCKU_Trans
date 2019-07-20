@@ -3142,7 +3142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  margin-left: 22vw;\r\n  width: 25vw;\r\n  height:5vw;\r\n  border-radius:5px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 5vw;\r\n  font-weight: 300;\r\n  font-size: 3vw;\r\n  color: white;\r\n}\r\n\r\n.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n  border: 1px solid rgba(0,0,0,0);\r\n  text-align: center;\r\n  padding: 3px;\r\n}\r\n\r\n .title{\r\n  margin-left: 21vw;\r\n  width: 30vw;\r\n  font-size: 6vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container span{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 12px;\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  border: 1px solid rgba(0,0,0,0);\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 120px;\r\n    height:25px;\r\n    margin-left: 42%;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 25px;\r\n    font-size: 14px;\r\n    color: white;\r\n  }\r\n.title{\r\n    margin-left: 41%;\r\n    width: 400px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container span{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n.content_container #rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n.content_container #leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 10px;\r\n    font-size: 15px;\r\n    font-weight: 100;\r\n    border: 1px solid #dee2e6;\r\n  }\r\n  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n    border: 1px solid #dee2e6;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  margin-left: 22vw;\r\n  width: 25vw;\r\n  height:5vw;\r\n  border-radius:5px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 5vw;\r\n  font-weight: 300;\r\n  font-size: 3vw;\r\n  color: white;\r\n}\r\n\r\n.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n  border: 1px solid rgba(0,0,0,0);\r\n  text-align: center;\r\n  padding: 3px;\r\n}\r\n\r\n .title{\r\n  margin-left: 21vw;\r\n  width: 30vw;\r\n  font-size: 6vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container .card-text div{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n  min-height: 30vh;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 12px;\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  border: 1px solid rgba(0,0,0,0);\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 120px;\r\n    height:25px;\r\n    margin-left: 42%;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 25px;\r\n    font-size: 14px;\r\n    color: white;\r\n  }\r\n.title{\r\n    margin-left: 41%;\r\n    width: 400px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container .card-text div{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n.content_container #rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n.content_container #leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 10px;\r\n    font-size: 15px;\r\n    font-weight: 100;\r\n    border: 1px solid #dee2e6;\r\n  }\r\n  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n    border: 1px solid #dee2e6;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n", ""]);
+exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n\r\n.edit .check-container{   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */\r\n    flex-direction: column;\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.confirm-container{\r\n    padding: 15px;\r\n    border: 2px solid rgb(229,68,109);\r\n    border-radius: 15px;\r\n    margin-top: 30px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -52962,6 +52962,12 @@ function (_Component) {
         });
 
         if (new_fliter === "none") {
+          if (this.state.is_mobile == "none") this.setState({
+            fliter: {
+              year: "none",
+              in_maj: new_fliter
+            }
+          });
           var output = [];
           this.state.datas.forEach(function (element) {
             if (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year) output.push(element);
@@ -53693,7 +53699,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         className: "card-box",
         style: {
-          height: "auto",
+          height: "80vh",
           border: "none",
           overflowY: 'auto',
           maxHeight: "80vh",
@@ -53825,7 +53831,7 @@ function (_Component) {
     key: "handleCardSize",
     value: function handleCardSize(is_mobile) {
       if (is_mobile) this.setState({
-        fontSize: "2.5rem",
+        fontSize: "2.2rem",
         btnHeight: "11rem",
         cardWidth: "100vw",
         cardHeight: "13.5rem",
@@ -54139,7 +54145,7 @@ function (_React$Component) {
           top: "5px",
           textAlign: "justify"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.data["comment"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.data["comment"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         style: {
           width: "100%",
           height: "70px"
@@ -54149,7 +54155,8 @@ function (_React$Component) {
         className: "closeBtn2",
         style: {
           position: "absolute",
-          left: "45%"
+          left: "20%",
+          width: "60%"
         },
         onClick: this.handleCloseModal
       }, "\u95DC\u9589")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -54907,7 +54914,7 @@ function (_Component) {
       }
 
       if (new_now === 0) {
-        if (id === 0) this.props.fliter("none", "none");else this.props.fliter(this.state.data[id]["name"][1], this.state.data[id]["name"][0]);
+        if (id === 0) this.props.fliter("none", type);else this.props.fliter(this.state.data[id]["name"][1], this.state.data[id]["name"][0]);
       } else {
         this.props.fliter(name, type);
       }
@@ -55539,6 +55546,7 @@ function (_Component) {
       qa_q: "",
       qa_a: "",
       confirm: "",
+      qa_confirm: "",
       tags: [],
       showContent: [],
       display: "block"
@@ -55702,6 +55710,7 @@ function (_Component) {
           'id': this.state.qa_new_id != "不變" ? this.state.qa_new_id : this.state.qa_id,
           'question': this.state.qa_q,
           'answer': this.state.qa_a,
+          'confirm': this.state.qa_confirm,
           'tags': this.state.tags
         };
         fetch(_url, {
@@ -55852,11 +55861,33 @@ function (_Component) {
 
       var table = function table() {
         if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "check-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+            variant: "danger",
+            style: {
+              alignSelf: "flex-start"
+            },
+            onClick: function onClick() {
+              return _this3.setState({
+                id: -1
+              });
+            }
+          }, "\u2190 \u8FD4\u56DE\u9078\u55AE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
             striped: true,
             bordered: true,
-            hover: true
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _this3.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            hover: true,
+            style: {
+              width: "250px",
+              marginTop: "20px"
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            style: {
+              width: "70%"
+            }
+          }, _this3.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "confirm-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             type: "radio",
             name: "comfirm",
             value: "true",
@@ -55880,52 +55911,65 @@ function (_Component) {
             onClick: _this3.handleClick
           }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: _this3.deleteComment
-          }, "\u522A\u9664\u8A72\u6587\u7AE0"));
+          }, "\u522A\u9664\u8A72\u6587\u7AE0")));
         } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "form_container",
+          className: "check-container",
+          style: {}
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+          variant: "danger",
           style: {
-            position: "absolute",
-            maxWidth: "90%"
-          }
-        }, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          id: "new_id",
-          type: "text",
-          value: _this3.state.new_id,
-          onChange: _this3.changeNewId
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-          id: "comment",
-          value: _this3.state.qa_q,
-          onChange: function onChange(e) {
+            alignSelf: "flex-start"
+          },
+          onClick: function onClick() {
             return _this3.setState({
-              qa_q: e.target.value
+              qa_id: -1
             });
           }
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-          id: "comment",
-          value: _this3.state.qa_a,
-          onChange: function onChange(e) {
-            return _this3.setState({
-              qa_a: e.target.value
-            });
+        }, "\u2190 \u8FD4\u56DE\u9078\u55AE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
+          striped: true,
+          bordered: true,
+          hover: true,
+          style: {
+            width: "70%",
+            marginTop: "20px"
           }
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u554F\u984C"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_q)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u89E3\u7B54"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_a)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "confirm-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
           value: _this3.state.tags,
           onChange: _this3.handleChange
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "radio",
+          name: "comfirm",
+          value: "true",
+          checked: _this3.state.qa_confirm === "true",
+          onChange: function onChange(e) {
+            _this3.setState({
+              qa_confirm: e.target.value
+            });
+          }
+        }), "\u5426", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "radio",
+          name: "comfirm",
+          value: "false",
+          checked: _this3.state.qa_confirm === "false",
+          onChange: function onChange(e) {
+            _this3.setState({
+              qa_confirm: e.target.value
+            });
+          }
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.handleClick
         }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.deleteComment
-        }, "\u522A\u9664\u8A72\u6587\u7AE0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        }, "\u522A\u9664\u8A72\u6587\u7AE0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       };
 
       var form = function form() {
         if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "form_container",
-            style: {
-              position: "absolute",
-              maxWidth: "90%"
-            }
+            style: {}
           }, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "new_id",
             type: "text",
@@ -55993,7 +56037,9 @@ function (_Component) {
                 comment: e.target.value
               });
             }
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "confirm-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             type: "radio",
             name: "comfirm",
             value: "true",
@@ -56017,7 +56063,7 @@ function (_Component) {
             onClick: _this3.handleClick
           }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: _this3.deleteComment
-          }, "\u522A\u9664\u8A72\u6587\u7AE0"));
+          }, "\u522A\u9664\u8A72\u6587\u7AE0")));
         } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "form_container",
           style: {
@@ -56045,14 +56091,14 @@ function (_Component) {
               qa_a: e.target.value
             });
           }
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
           value: _this3.state.tags,
           onChange: _this3.handleChange
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.handleClick
         }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.deleteComment
-        }, "\u522A\u9664\u8A72\u6587\u7AE0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        }, "\u522A\u9664\u8A72\u6587\u7AE0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56082,7 +56128,8 @@ function (_Component) {
         className: "MobileMenu",
         style: {
           marginTop: "55px",
-          position: "relative"
+          position: "relative",
+          backgroundColor: "rgb(229,68,109)"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
         show: "QA",
@@ -56094,7 +56141,7 @@ function (_Component) {
         style: {
           position: "absolute",
           marginLeft: "0%",
-          width: '40%',
+          width: '150px',
           backgroundColor: "rgb(229,68,109)",
           color: "white",
           lineHeight: "31px",
@@ -56110,8 +56157,8 @@ function (_Component) {
         value: fliter2,
         style: {
           position: "absolute",
-          marginLeft: "40%",
-          width: '40%',
+          marginLeft: "170px",
+          width: '150px',
           backgroundColor: "rgb(229,68,109)",
           color: "white",
           lineHeight: "31px",

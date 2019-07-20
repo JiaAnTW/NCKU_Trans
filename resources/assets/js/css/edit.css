@@ -2,3 +2,24 @@
     width: 100%;
     background-image: none;
 }
+
+.edit .check-container{
+    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    margin-top: 20px
+}
+
+.confirm-container{
+    padding: 15px;
+    border: 2px solid rgb(229,68,109);
+    border-radius: 15px;
+    margin-top: 30px;
+}

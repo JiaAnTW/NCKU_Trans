@@ -29,7 +29,7 @@ class mobileFliter extends Component {
 
     if(new_now===0){
       if(id===0)
-        this.props.fliter("none","none");
+        this.props.fliter("none",type);
       else
         this.props.fliter(this.state.data[id]["name"][1],this.state.data[id]["name"][0]);
     }
