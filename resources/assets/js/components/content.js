@@ -66,7 +66,7 @@ class content extends React.Component {
           <Modal 
              isOpen={this.props.showModal}
              contentLabel="Minimal Modal Example" style={customStyles} className="Modal"
-             overlayClassName="Overlay"
+             overlayClassName="Overlay" onRequestClose={this.handleCloseModal}
           >
             
             <Card className="card-box" style={{position:"absolute",top: "0px",height: cardHeight, overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
@@ -82,15 +82,13 @@ class content extends React.Component {
                 {this.props.data["comment"]}
                 </div>
                 <p style={{width:"100%",height:"70px"}}>
-                <Button variant="light" className="closeBtn2" style={{position:"absolute",left:"20%",width:"60%" }} onClick={this.handleCloseModal}>關閉</Button>
                 </p>
                 </Card.Text>
                 </div>
                 </Card.Body>  
             </Card>
-            <Button variant="light" className="closeBtn" onClick={this.handleCloseModal}>關閉</Button>
-            <button className="contentBtn" id="rightBtn" onClick={this.props.next.bind(this,"next")}><div className="Arrow" id="rightArrow"></div><div className="btnText" id="next">下一篇</div></button>
-            <button className="contentBtn" id="leftBtn" onClick={this.props.next.bind(this,"before")}><div className="Arrow" id="leftArrow"></div><div className="btnText" id="before">上一篇</div></button>
+            <button className="contentBtn" id="rightBtn" onClick={this.props.next.bind(this,"next")}><div className="Arrow" id="rightArrow"></div></button>
+            <button className="contentBtn" id="leftBtn" onClick={this.props.next.bind(this,"before")}><div className="Arrow" id="leftArrow"></div></button>
           </Modal>
         </div>
       );

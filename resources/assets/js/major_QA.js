@@ -4,6 +4,9 @@ import QAIndex from './components/major_QAIndex';
 import QA from './components/QA';
 import Menu from './components/menu';
 import MobileFliter from "./components/mobileFliter";
+import Search from "./img/search.png";
+import Can from "./img/can.png";
+import Icon from './components/icon';
 import './css/major_QA.css';
 class maj_QA extends Component {
     constructor(props) {
@@ -39,10 +42,10 @@ class maj_QA extends Component {
   }
 
   changeFliterByWord(e){
-    this.setState({fliterByWord: e.target.value});
-    //const changeState=()=>new Promise((resolve,reject)=>this.setState({fliterByWord: e.target.value},()=>resolve()));
-    //changeState()
-    //.then((value)=>{this.changeFliter("none")})
+    //this.setState({fliterByWord: e.target.value});
+    const changeState=()=>new Promise((resolve,reject)=>this.setState({fliterByWord: e.target.value},()=>resolve()));
+    changeState().then((value)=>{this.changeFliter("none")})
+    //this.changeFliter()
   }
 
   handleRWD(is_mobile){
@@ -134,6 +137,13 @@ class maj_QA extends Component {
         this.setState({openFliter: false})
       var show=[];
       var tag=[];
+      var rst_tag=this.state.total_tags;
+      if(type==="none"){
+        rst_tag.forEach(element => {
+          element[1]=false
+          }
+        );
+      }
       for(var i=0;i<this.state.total_tags.length;++i){
         if(this.state.total_tags[i][1]===true)
           tag.push(this.state.total_tags[i][0]);
@@ -141,15 +151,17 @@ class maj_QA extends Component {
       if(type!="none" && tag.length>0){  
         this.state.datas.forEach(element => {
           const array=element["tag"].split(",");
-          for(var i=0;i<array.length;++i){
-            for(var j=0;j<tag.length;++j){
-              if(array[i]===tag[j]){
-                if(this.state.fliterByWord==="" || element["question"].search(this.state.fliterByWord)!=-1){
-                  show.push(element);
-                  return;
-                }
+          var isFind=true;
+          for(var i=0;i<array.length&&isFind;++i){
+            for(var j=0;j<tag.length&& isFind;++j){
+              if(array.findIndex((Element)=>{ return Element===tag[j];})==-1){
+                isFind=false;
               }
             }
+          }
+          if(isFind&& (this.state.fliterByWord==="" || element["question"].search(this.state.fliterByWord)!=-1)){
+            show.push(element);
+            return;
           }
         });
         this.setState({show:show});
@@ -162,11 +174,6 @@ class maj_QA extends Component {
             }
         });
       }
-      var rst_tag=this.state.total_tags;
-      rst_tag.forEach(element => {
-        element[1]=false
-        }
-      );
       this.setState({show:show,total_tags: rst_tag});
       return;
       
@@ -264,27 +271,43 @@ class maj_QA extends Component {
     const Menu=()=>{
       var output=[];
       for(var i=0;i<this.state.total_tags.length;++i){
-        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"transparent":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{fontWeight:"300",outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"transparent":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
       }
       return output;
     }
 
-    return (
-      <div className="major_QA">
+    const landingPage=(
+      <div className="loading" style={{position:"absolute",width:"100vw",height:"100vh"}}>
+        <Icon style={{marginTop:"0"}}/>
+      </div>
+    );
+
+
+    const indexPage=(
+      <div>
         <div className="index">
             {show}
         </div>
-        <div className="MobileMenu">
+        <div className="MobileMenu"> 
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"transparent",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
           <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 
-            <input type="text" border="none" placeholder="搜尋問題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%"}}/>  
               {Menu()}
-            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"white",border:"none",color:"rgb(229,68,109)",textShadow:"none"}}>送出篩選</Button>
-            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"transparent",borderColor:"white",textShadow:"none"}}>全部心得</Button>
-            
+              <input type="text" border="none" placeholder="查詢標題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%",padding:"2% 7%",borderRadius:"10px"}}/>  
+            <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"white",border:"none",color:"rgb(229,68,109)",textShadow:"none"}}>
+              <img src={Search} alt="search" style={{marginRight:"7px",height:"17px"}}/>
+              送出篩選
+            </Button>
+            <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"transparent",borderColor:"white",textShadow:"none"}}>
+            <img src={Can} alt="search" style={{marginRight:"7px",height:"17px"}}/>
+            清除篩選</Button>
+          </div>        
+      </div>
+    );
 
-          </div>
+    return (
+      <div className="major_QA">
+        {(this.state.is_fetch)?indexPage:landingPage}
       </div>
     );
   }

@@ -18,7 +18,7 @@
     left: 0%;
     top:85px;
     height: auto;
-    max-height: 91.8vh;
+    max-height: 90vh;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -34,6 +34,8 @@
     background-color:rgb(229,68,109);
     display: block;
 }
+
+
 
 @media (min-width: 596px) { 
 
@@ -73,7 +75,7 @@
         top:55px;
         left:0px;
         width: 200px;
-        height: 91.8vh;
+        height: 92vh;
         display: block;
     }
 

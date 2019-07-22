@@ -7,6 +7,7 @@ import MobileFliter from "./components/mobileFliter";
 import Progress from "./components/Progress";
 import calender from "./img/calendar.png";
 import book from "./img/book.png";
+import Icon from './components/icon';
 
 import './css/comment.css';
 var NCKU=
@@ -181,11 +182,11 @@ class comment extends Component {
       else{
         this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter},resetFliter: !this.state.resetFliter});
         if(new_fliter==="none"){
-          if(this.state.is_mobile=="none")
+          if(this.state.mobile_display=="none")
             this.setState({fliter:{year:"none",in_maj:new_fliter}});
           var output=[];
           this.state.datas.forEach(element => {
-            if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year)
+            if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year||(this.state.mobile_display=="none"&&new_fliter==="none"))
               output.push(element);
           });          
           this.setState({show:output,selectDepartment:"none"});    
@@ -418,23 +419,15 @@ class comment extends Component {
     );
 
     const landingPage=(
-      <div className="App" style={{backgroundImage:(this.state.is_mobile!="none")?"linear-gradient(to right, #f77062 0%, #fe5196 100%)":"linear-gradient(to right, rgb(229,68,109) 0%, rgb(229,68,109) 100%)"}}>
-        <h1 className="webName">選擇想查詢的學院/學系</h1>
-        <div className="warning">
-          <select onChange={(e)=>this.changeFliter(e.target.value,"department")} style={{outline:"none",color:"rgb(229,68,109)",fontWeight:300,border:"none",width:"120px",marginLeft:"0%",backgroundColor:"white"}}>
-            <option value="none">全部學院</option>
-          {spawnDepartment}
-          </select>
-          <select style={{outline:"none",color:"rgb(229,68,109)",border:"none",width:"120px",backgroundColor:"white",marginLeft:"5%"}} onChange={(e)=>this.handleInitalMajorFliter(e.target.value)}>{spawnMajor(this.state.fliter.in_maj)}</select>
-        </div>
-        <button className="know" onClick={(e)=>this.setState({is_home:true})}>確認送出</button>
+      <div className="loading" style={{position:"absolute",width:"100vw",height:"100vh"}}>
+        <Icon style={{marginTop:"0"}}/>
       </div>
 
     );
   
     return (
       <div className="comment">
-        {(this.state.is_home)?indexPage:landingPage}
+        {(this.state.is_fetch)?indexPage:landingPage}
       </div>
     );
   }

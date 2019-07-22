@@ -5,6 +5,7 @@
         <!--setting-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="theme-color" content="#e5446d">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--CDN plugin-->
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,400,700" rel="stylesheet">

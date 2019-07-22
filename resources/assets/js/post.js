@@ -28,7 +28,7 @@ class post extends Component {
         comment: "",
         question:"",
         answer:"",
-        is_send: false,
+        is_send: 1,
         editObject: "comment",
         start: false,
     }
@@ -51,6 +51,7 @@ class post extends Component {
         'out_maj':this.state.out_maj,
         'comment':this.state.comment,
     };
+    this.setState({is_send:3})
     fetch(
       '/api/create/major', {method: 'POST',
         body: JSON.stringify(data),
@@ -61,7 +62,7 @@ class post extends Component {
     )
       .then(res => res.json())
       .catch(e => console.log('錯誤:', e))
-    this.setState({is_send:true})
+    this.setState({is_send:4})
   }
 
   handleSendQA(){
@@ -69,6 +70,7 @@ class post extends Component {
       'question':this.state.question,
       'answer':this.state.answer,
   };
+  this.setState({is_send:3})
   fetch(
     '/api/post/major_QA', {method: 'POST',
       body: JSON.stringify(data),
@@ -79,7 +81,7 @@ class post extends Component {
   )
     .then(res => res.json())
     .catch(e => console.log('錯誤:', e))
-  this.setState({is_send:true})
+  this.setState({is_send:4})
 }
 
     changeRank(e){
@@ -132,8 +134,8 @@ class post extends Component {
             <p><h1>心得</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是針對個別科系分享平均分數以及修課等內容</p></p>
             <p><h1>常見問答</h1><div style={{width:"50%",marginBottom:"15px",height:"1px",backgroundColor:"white"}}></div><p>主要是解答轉系在行政、審查等流程和規則上的模糊點</p></p>
           </div>
-          <span style={{width:"70%",marginTop:"30px"}}>感謝你願意為未來以轉系為目標的學弟妹們，留下一條更好走的路。</span>
-          <button onClick={(e)=>this.setState({start:true})}>開始填寫</button>
+          <span style={{width:"50%",marginTop:"30px"}}>感謝你願意為未來以轉系為目標的學弟妹們，留下一條更好走的路。</span>
+          <button onClick={(e)=>this.setState({is_send:2})}>開始填寫</button>
           </div>
       </div>
 
@@ -150,8 +152,7 @@ class post extends Component {
       </div>
 
 
-    const display=(this.state.is_send===true)?<h1 className="webName" style={{color:"white"}}>感謝你的填寫<br/>審查通過後就會看到你的心得囉!</h1>:
-    <div className="form_container" style={{color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",width:"100%"}}>
+    const display=<div className="form_container" style={{color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",width:"100%"}}>
     <div style={{padding:"7% 7%"}}>
     <p>
       排名上:  
@@ -189,19 +190,32 @@ class post extends Component {
     </div>
     ;
 
+    const postStage=()=>{
+      if(this.state.is_send==1){
+        return startContext;
+      }
+      else if(this.state.is_send==2){
+        return(<div className="input-container">
+        <div className="btn-container">
+          <button style={(this.state.editObject==="comment")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"comment"})}>心得</button>
+          <button style={(this.state.editObject==="QA")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"QA"})}>常見問答</button>
+        </div>
+        {(this.state.editObject==="comment")?display:QA_display}
+      </div>)
+      }
+      else if(this.state.is_send==3){
+        return <Icon style={{ marginTop: "30vh" }} isWhite={true}/>;
+      }
+      else{
+        return <h1 style={{color:"white",textAlign:"center",marginTop:"33vh",maxWidth:"70%",marginLeft:"0%"}}>感謝你的填寫<br/>審查通過後就會看到你的心得囉!</h1>;
+      }
+    }
+
     return (
       <div className="post">
         <div className="index">
-          {startContext}
-          <div className="input-container" style={{display:(this.state.start===false)?"none":"block"}}>
-            <div className="btn-container">
-              <button style={(this.state.editObject==="comment")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"comment"})}>心得</button>
-              <button style={(this.state.editObject==="QA")?{backgroundColor:"white",color:"rgb(229,68,109)"}:{backgroundColor:"rgba(255,255,255,0.4)",color:"#555"}} onClick={()=>this.setState({editObject:"QA"})}>常見問答</button>
-            </div>
-            {(this.state.editObject==="comment")?display:QA_display}
-          </div>
+          {postStage()}
         </div>
-
       </div>
     );
   }

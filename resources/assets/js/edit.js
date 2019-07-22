@@ -243,7 +243,7 @@ class edit extends Component {
         if(this.state.now_handle==="心得"){
           var real_i=i;
           this.setState({
-            id: i,
+            id: this.state.datas[real_i]["id"],
             new_id: "不變",
             rank_1:this.state.datas[real_i]["rank_1"],
             rank_2:this.state.datas[real_i]["rank_2"],
@@ -260,7 +260,7 @@ class edit extends Component {
           //this.state.qa_id_array.findIndex(function(value, index, arr){return value.toString()===i});
           var tags=this.state.qa_datas[real_i]["tag"].split(",");
           this.setState({
-            qa_id: i,
+            qa_id: this.state.qa_datas[real_i]["id"],
             new_id: "不變",
             qa_q:this.state.qa_datas[real_i]["question"],
             qa_a:this.state.qa_datas[real_i]["answer"],

@@ -49,7 +49,7 @@
   letter-spacing: 2.5px;
   line-height: 8vw;
   text-align:justify;
-  min-height: 30vh;
+  min-height: 27vh;
   margin-bottom: 20px;
 }
 
@@ -131,6 +131,7 @@ width: 5vw;
 border-left: 2px solid transparent;
 border-bottom: 2px solid transparent;
 display: inline-block;
+border-radius: 4px;
 }
 
 .btnText{
@@ -150,6 +151,7 @@ outline: none;
 left: 5px;
 transform: rotate(45deg);
 -webkit-transform: rotate(45deg);
+
 }
 
 #next{

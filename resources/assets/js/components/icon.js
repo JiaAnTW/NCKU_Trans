@@ -7,8 +7,10 @@ class icon extends Component {
         super(props)
       }
   render() {
+    const outsideColor=(this.props.isWhite)?"white":"#cc3d61";
+    const insideColor=(this.props.isWhite)?"rgba(255,255,255,0.6)":"#cc3d61";
     return (
-        <div className="lds-css-ng-scope" style={this.props.style}><div style={{width:"100%",height:"100%"}} className="lds-ripple"><div></div><div></div></div>
+        <div className="lds-css-ng-scope" style={this.props.style}><div style={{width:"100%",height:"100%"}} className="lds-ripple"><div style={{borderColor:outsideColor}}></div><div style={{borderColor:insideColor}}></div></div>
         </div>
     );
   }

@@ -47,8 +47,6 @@ class QA extends React.Component {
                  
             </Card>
             <Button variant="light" className="closeBtn" onClick={this.handleBackIndex.bind(this)}>返回</Button>
-            <button className="contentBtn" onClick={this.props.next.bind(this,"next")} id="rightBtn" ><div className="Arrow" id="rightArrow"></div><div className="btnText" id="next">下一篇</div></button>
-            <button className="contentBtn" onClick={this.props.next.bind(this,"before")} id="leftBtn" ><div className="Arrow" id="leftArrow"></div><div className="btnText" id="before">上一篇</div></button>
         </div>
       );
     }
