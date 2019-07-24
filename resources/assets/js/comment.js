@@ -7,6 +7,7 @@ import MobileFliter from "./components/mobileFliter";
 import Progress from "./components/Progress";
 import calender from "./img/calendar.png";
 import book from "./img/book.png";
+import flag from "./img/flag.png";
 import Icon from './components/icon';
 
 import './css/comment.css';
@@ -65,6 +66,7 @@ class comment extends Component {
           year:-1,
         },
         show:[],
+        staticWatch: 0,
         resetFliter: false,
         is_fetch:false,
         datas: [],
@@ -153,6 +155,7 @@ class comment extends Component {
             datas: data,
             is_fetch:true,
             show:data})
+        setTimeout(()=>{this.setState({staticWatch:1})},1500)
       })
       .catch(e => console.log('錯誤:', e));
   }
@@ -221,7 +224,7 @@ class comment extends Component {
         const number=this.countDepartment(NCKU[ department[i][1] ][j],"in_maj");
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
+            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"rgba(0,0,0,0.1)",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
               <div style={{ display:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
               {NCKU[department[i][1]][j]}
               <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400",backgroundColor:"white",color:"rgb(229,68,109)" }}>
@@ -290,27 +293,36 @@ class comment extends Component {
       });
       return(
         <div className="statistic">
-          <ul>
-            <li className="board">
+            <div className="board">
               <div style={{width: "190px",height:"auto",border:"1px solid rgb(229,68,109)"}}>
               <h2 style={{color:"rgb(229,68,109)",width:"100%",textAlign:"center"}}>{(this.state.fliter.in_maj==="none")?"全部學系":this.state.fliter.in_maj}</h2>
               <div style={{marginBottom:"0",marginLeft:"0",backgroundColor:"rgb(229,68,109)",lineHeight:"29px",fontSize:"14px",height:"30px",color:"white",textAlign:"center"}}>
                 包含年份: {(this.state.fliter.year==="none")?"全部年份":this.state.fliter.year}
               </div>
               </div>
-            </li>
-            <li>
-              <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":count/length}/>
-            </li>
-            <li>
-              <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
-            </li>
-            <li>
-              <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length===0)?"null":min}/>
-            </li>
-
-
-          </ul>
+            </div>
+            <div class="progress-container" style={{width: "100%"}}>
+              <div style={{width: "100%",height:"115px",position:"relative",overflowX:"hidden"}}>
+                <div class="bar-container" style={{width: "100%",height:"100%",position:"absolute",left:(this.state.staticWatch===1)?"0":"100%"}}>
+                  <div>
+                    <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":count/length}/>
+                  </div>
+                  <div>
+                    <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
+                  </div>
+                  <div>
+                    <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length===0)?"null":min}/>
+                  </div>
+                </div>
+                <button onClick={()=>{window.open('https://reurl.cc/ZKn0M', '_blank');}} className="standard" style={{width: "100%",color:"rgb(229,68,109)",fontSize:"24px",height:"100%",outline: "none",backgroundColor:"transparent",position:"absolute",left:(this.state.staticWatch===0)?"0":"-100%",border:"none"}}>
+                  <img src={flag} alt="flag" style={{height:"40%",margin:"5px"}}/>轉系申請標準按我
+                </button>
+              </div>
+              <div class="progress-btn" style={{height:"10px"}}>
+                <button id="circle" style={{backgroundColor:(this.state.staticWatch===0)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:0})}}></button>
+                <button id="circle" style={{backgroundColor:(this.state.staticWatch===1)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:1})}}></button>
+              </div>
+            </div>
         </div>
       );
     }

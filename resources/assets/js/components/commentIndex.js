@@ -93,7 +93,7 @@ class commentIndex extends Component {
     return(
       <Card style={{ width: this.state.cardWidth,height:this.state.cardHeight,maxWidth:"100%" }}>
       <Card.Body style={{maxHeight: "100%",backgroundColor:(datas[number]["confirm"]=="false")?"rgba(229,68,109,0.3)":"white"}}>
-      <Card.Title style={{ fontSize: this.state.fontSize }}>{"轉 "+datas[number]["in_maj"]}</Card.Title>
+      <Card.Title style={{ fontSize: this.state.fontSize }}><a style={{ fontSize: "2rem",marginRight:"1rem" }}>轉</a>{datas[number]["in_maj"]}</Card.Title>
       <Card.Subtitle className="mb-2 text-muted">{"由 "+datas[number]["out_maj"]+" 轉出"}</Card.Subtitle>
       <Card.Text  style={{ height: this.state.cardTextHeight }}>
         {comment}

@@ -3142,7 +3142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  margin-left: 22vw;\r\n  width: 25vw;\r\n  height:5vw;\r\n  border-radius:5px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 5vw;\r\n  font-weight: 300;\r\n  font-size: 3vw;\r\n  color: white;\r\n}\r\n\r\n.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n  border: 1px solid rgba(0,0,0,0);\r\n  text-align: center;\r\n  padding: 3px;\r\n}\r\n\r\n .title{\r\n  margin-left: 21vw;\r\n  width: 30vw;\r\n  font-size: 6vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container .card-text div{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n  min-height: 30vh;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 12px;\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  border: 1px solid rgba(0,0,0,0);\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 120px;\r\n    height:25px;\r\n    margin-left: 42%;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 25px;\r\n    font-size: 14px;\r\n    color: white;\r\n  }\r\n.title{\r\n    margin-left: 41%;\r\n    width: 400px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container .card-text div{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n.content_container #rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n.content_container #leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 10px;\r\n    font-size: 15px;\r\n    font-weight: 100;\r\n    border: 1px solid #dee2e6;\r\n  }\r\n  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n    border: 1px solid #dee2e6;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\r\n\r\n.Modal {\r\n  position: absolute;   \r\n}\r\n\r\n.Overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: rgba(0, 0, 0,0.5);\r\n}\r\n\r\n\r\n.id_container{\r\n  margin-left: 22vw;\r\n  width: 25vw;\r\n  height:5vw;\r\n  border-radius:5px;\r\n  background-color: rgb(229,68,109);\r\n  text-align: center;\r\n  line-height: 5vw;\r\n  font-weight: 300;\r\n  font-size: 3vw;\r\n  color: white;\r\n}\r\n\r\n.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n  border: 1px solid rgba(0,0,0,0);\r\n  text-align: center;\r\n  padding: 3px;\r\n}\r\n\r\n .title{\r\n  margin-left: 21vw;\r\n  width: 30vw;\r\n  font-size: 6vw;\r\n}\r\n\r\n.card_container h2{\r\n    font-size: 25px;\r\n}\r\n\r\n.card_container .card-text div{\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  letter-spacing: 2.5px;\r\n  line-height: 8vw;\r\n  text-align:justify;\r\n  min-height: 27vh;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n\r\n.card-box::-webkit-scrollbar\r\n{\r\n  width: 6px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n.card-box::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.closeBtn{\r\nposition: absolute;\r\nright:15px;\r\ntop:20px;\r\nwidth: 10vw;\r\nheight: 50px;\r\nfont-size: 3vw;\r\npadding: 0 0;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n.closeBtn2{\r\n\r\nwidth: 65px;\r\nheight: 50px;\r\nfont-size: 20px;\r\nbackground-color: rgba(0, 0, 0,0.001);\r\nborder: 0.5px solid gray;\r\n}\r\n\r\n\r\n.Modal th{\r\nfont-weight: 400;\r\n}\r\n\r\n.contentBtn{\r\nposition: absolute;\r\ntop:125px;\r\nwidth: 12vw;\r\nheight: 360px;\r\nbackground-color: rgba(0, 0, 0,0);\r\nborder: none;\r\noutline: none;\r\n}\r\n\r\n.contentBtn:hover{\r\n\r\nbackground-color: rgba(0, 0, 0,0);\r\n\r\n}\r\n\r\n.Arrow{\r\nposition: absolute;\r\ntop: 175px;\r\nborder-right: 4px solid gray;\r\nborder-top: 4px solid gray;\r\nheight: 5vw;\r\nwidth: 5vw;\r\nborder-left: 2px solid transparent;\r\nborder-bottom: 2px solid transparent;\r\ndisplay: inline-block;\r\nborder-radius: 4px;\r\n}\r\n\r\n.btnText{\r\nposition: absolute;\r\ntop: 197.5px;\r\nfont-size: 3vw;\r\n}\r\n\r\n\r\n\r\n#rightBtn{\r\nright: 0px;\r\noutline: none;\r\n}\r\n\r\n#rightArrow{\r\nleft: 5px;\r\ntransform: rotate(45deg);\r\n-webkit-transform: rotate(45deg);\r\n\r\n}\r\n\r\n#next{\r\nleft: 1px;\r\n}\r\n\r\n#leftBtn{\r\nleft: 0px;\r\noutline: none;\r\n}\r\n\r\n#leftArrow{\r\nright: 10px;\r\ntransform: rotate(-135deg);\r\n-webkit-transform: rotate(-135deg);\r\n}\r\n\r\n#before{\r\nright: 6px;\r\n}\r\n\r\n.type_table{\r\n  position:relative;\r\n  top: 12px;\r\n  font-size: 4vw;\r\n  font-weight: 100;\r\n  border: 1px solid rgba(0,0,0,0);\r\n}\r\n\r\n@media (min-width: 596px) {\r\n    .id_container{\r\n    width: 120px;\r\n    height:25px;\r\n    margin-left: 42%;\r\n    background-color: rgb(229,68,109);\r\n    text-align: center;\r\n    line-height: 25px;\r\n    font-size: 14px;\r\n    color: white;\r\n  }\r\n.title{\r\n    margin-left: 41%;\r\n    width: 400px;\r\n    font-size: 30px;\r\n  }\r\n\r\n  .closeBtn{\r\n    position: absolute;\r\n    right:15px;\r\n    top:20px;\r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n  .card_container .card-text div{\r\n    font-size: 20px;\r\n    font-weight: 100;\r\n    letter-spacing: 2.5px;\r\n    line-height: 35px;\r\n    text-align:justify;\r\n  }\r\n\r\n  .closeBtn2{\r\n  \r\n    width: 65px;\r\n    height: 50px;\r\n    font-size: 20px;\r\n    background-color: rgba(0, 0, 0,0.001);\r\n    border: 0.5px solid gray;\r\n  }\r\n\r\n\r\n  .Modal th{\r\n    font-weight: 400;\r\n  }\r\n\r\n  .contentBtn{\r\n    position: absolute;\r\n    top:125px;\r\n    width: 80px;\r\n    height: 360px;\r\n    background-color: rgba(0, 0, 0,0);\r\n    border: none;\r\n    outline: none;\r\n    }\r\n\r\n.contentBtn:hover{\r\n\r\n  background-color: rgba(0, 0, 0,0.1);\r\n\r\n}\r\n\r\n.Arrow{\r\n  position: absolute;\r\n  top: 175px;\r\n  border-right: 4px solid gray;\r\n  border-top: 4px solid gray;\r\n  height: 50px;\r\n  width: 50px;\r\n  border-left: 2px solid transparent;\r\n  border-bottom: 2px solid transparent;\r\n  display: inline-block;\r\n}\r\n\r\n.btnText{\r\n  position: absolute;\r\n  top: 187.5px;\r\n  font-size: 15px;\r\n}\r\n\r\n\r\n\r\n.content_container #rightBtn{\r\n  right: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #rightArrow{\r\n  left: 5px;\r\n  transform: rotate(45deg);\r\n  -webkit-transform: rotate(45deg);\r\n}\r\n\r\n#next{\r\n  left: 1px;\r\n}\r\n\r\n.content_container #leftBtn{\r\n  left: 10px;\r\n  outline: none;\r\n}\r\n\r\n.content_container #leftArrow{\r\n  right: 10px;\r\n  transform: rotate(-135deg);\r\n  -webkit-transform: rotate(-135deg);\r\n}\r\n\r\n  #before{\r\n    right: 6px;\r\n  }\r\n  \r\n  .type_table{\r\n    position:relative;\r\n    top: 10px;\r\n    font-size: 15px;\r\n    font-weight: 100;\r\n    border: 1px solid #dee2e6;\r\n  }\r\n  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {\r\n    border: 1px solid #dee2e6;\r\n    padding: 5px;\r\n  }\r\n}\r\n\r\n\r\n@media (min-width: 870px) {\r\n\r\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n.comment .Menu{\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n\r\n        \r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .comment .index{\r\n        max-height: 65vh;\r\n        overflow-y: auto;\r\n        overflow-x: hidden;\r\n    }\r\n\r\n    .index::-webkit-scrollbar\r\n    {\r\n      width: 1px;\r\n      background-color: transparent;\r\n      border: none;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-thumb\r\n    {\r\n      border-radius: 10px;\r\n      background-color: #555;\r\n      opacity: 0.5;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-track\r\n    {\r\n    background-color: transparent;\r\n    border: 0px solid;\r\n    }\r\n    \r\n    .card-box::-webkit-scrollbar-track-piece  {\r\n     /* 4 */ \r\n     border: none;\r\n    }\r\n\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: block;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.comment .progress-container,.comment .bar-container,.comment .progress-btn{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.comment .progress-container{\r\n    flex-direction: column;\r\n}\r\n\r\n.comment .bar-container{\r\n    justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n    -ms-justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n}\r\n\r\n.comment .bar-container, .comment .standard{\r\n    transition: left 1.0s ease-in-out;\r\n}\r\n\r\n.comment .progress-btn{\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;   \r\n}\r\n\r\n.comment .progress-btn button{\r\n    height: 10px;\r\n    width: 10px;\r\n    border-radius: 10px;\r\n    padding: 0;\r\n    margin: 0px 5px;\r\n    outline:none;\r\n    border: none;\r\n}\r\n\r\n\r\n.comment #top{\r\n    transform: rotate(-45deg);\r\n    -webkit-transform: rotate(-45deg);\r\n}\r\n\r\n.comment #bot{\r\n    transform: rotate(135deg);\r\n    -webkit-transform: rotate(135deg);\r\n}\r\n\r\n.comment .Menu{\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.loading{\r\n    position: absolute;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;\r\n    align-items: center;\r\n    -webkit-align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n\r\n        \r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .comment .index{\r\n        max-height: 65vh;\r\n        overflow-y: auto;\r\n        overflow-x: hidden;\r\n    }\r\n\r\n    .index::-webkit-scrollbar\r\n    {\r\n      width: 1px;\r\n      background-color: transparent;\r\n      border: none;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-thumb\r\n    {\r\n      border-radius: 10px;\r\n      background-color: #555;\r\n      opacity: 0.5;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-track\r\n    {\r\n    background-color: transparent;\r\n    border: 0px solid;\r\n    }\r\n    \r\n    .card-box::-webkit-scrollbar-track-piece  {\r\n     /* 4 */ \r\n     border: none;\r\n    }\r\n\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: flex;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3294,7 +3294,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:89px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: rgb(229,68,109);\r\n    padding:10px 15px;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n    max-height: 91.8vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:53.5px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:89px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 100vw;\r\n        max-width:100%;\r\n        left: 0%;\r\n        top:85px;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:53.5px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 200px;\r\n        height: 91.8vh;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n\r\n    }\r\n}", ""]);
+exports.push([module.i, "\r\n.major_QA .Menu{\r\n    position: fixed;\r\n    top:89px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: rgb(229,68,109);\r\n    padding:10px 15px;\r\n}\r\n\r\n\r\n.major_QA .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:85px;\r\n    height: auto;\r\n    max-height: 90vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n\r\n.major_QA .MobileMenu{\r\n    position:fixed;\r\n    top:53.5px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 596px) { \r\n\r\n    .major_QA .Menu{\r\n        position: fixed;\r\n        top:89px;\r\n        left:0px;\r\n        width: 100vw;\r\n        max-width: 100%;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 100vw;\r\n        max-width:100%;\r\n        left: 0%;\r\n        top:85px;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:53.5px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media (min-width: 859px) { \r\n\r\n    .major_QA .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 200px;\r\n        height: 92vh;\r\n        display: block;\r\n    }\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:115px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n        display: none;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n\r\n\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 22%;\r\n        top:70px;\r\n        height: auto;\r\n    }\r\n\r\n    .major_QA .MobileMenu{\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .major_QA .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:70px;\r\n\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3313,7 +3313,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".post .form_container{\r\n    width: 80%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px; \r\n    border-top-right-radius: 0px; \r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: #F5F5F5;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:30%;\r\n    color:black;\r\n    border-radius: 3px;\r\n    text-align: center;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:80%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:160px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top: 55px;\r\n    z-index: 0;\r\n    height: 100vh;\r\n    padding-bottom: 5vh;\r\n    align-items: center;\r\n    background-image: none;\r\n    background-image: linear-gradient(to top, #f77062 0%, rgb(229,68,109) 100%);\r\n}\r\n\r\n.post .input-container,.post .index, .post .start-context,.post .type-box p{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    flex-direction: column;\r\n}\r\n\r\n.post .input-container{\r\n    margin-top: 20px;\r\n    width: 90%;\r\n}\r\n\r\n.post, .post .type-box{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.post .type-box p{\r\n    align-items: center;\r\n    width: 70%;\r\n}\r\n\r\n.post .type-box{\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.post .start-context{\r\n    width: 100%;\r\n    height: 100%;\r\n    color: white;\r\n    font-family: 'Noto Sans TC';\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.post h1{\r\n    font-size: 30px;\r\n    font-weight: 300;\r\n}\r\n\r\n.post .start-context button{\r\n    color: #fe5196;\r\n    border-radius: 10px;\r\n    margin-top: 15px;\r\n}\r\n\r\n.post .btn-container button, .post .start-context button{\r\n    background-color: white;\r\n    border: none;\r\n    border-top-left-radius:  10px;\r\n    border-top-right-radius:  10px;\r\n    padding: 5px 15px;\r\n    font-size: 18px;\r\n    outline: none;\r\n    width: 50%;\r\n    font-weight: 700;\r\n\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        width: 36%;     \r\n    }\r\n    .post .index{\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n\r\n    .post .input-container{\r\n        width: 50%;\r\n    }\r\n    \r\n    .post .type-box p{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        \r\n    }\r\n    .post p{\r\n        margin-left: 0%;\r\n    }\r\n    .post .input-container{\r\n        width: 30%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".post .form_container{\r\n    width: 80%;\r\n    background-color: #F5F5F5;\r\n    border-radius: 5px;\r\n    border-top-left-radius: 0px; \r\n    border-top-right-radius: 0px; \r\n}\r\n\r\n#comment::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n#comment::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n#comment::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar, #in_maj::-webkit-scrollbar\r\n{\r\n  width: 3px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-thumb, #in_maj::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: #555;\r\n  opacity: 0.5;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track, #in_maj::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n#out_maj::-webkit-scrollbar-track-piece, #in_maj::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score{\r\n    /* 4 */ \r\n    width:30%;\r\n    color:black;\r\n    border-radius: 3px;\r\n    text-align: center;\r\n}\r\n\r\n#rank,#year,#id,#out_maj, #in_maj,#score,#comment{\r\n    border:0px solid grey;\r\n    background-color: #d9d9d9;\r\n}\r\n\r\n.post p{\r\n    width:80%;\r\n    margin-left: 0%;\r\n}\r\n\r\n#year:focus,#id:focus ,#out_maj:focus, #in_maj:focus,#score:focus {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n\r\n#comment{\r\n    /* 4 */ \r\n    height:160px;\r\n    width:100%;\r\n    color:black;\r\n}\r\n\r\n#comment:focus  {\r\n    /* 4 */ \r\n    border: 1px solid  rgb(229,68,109);\r\n    outline: none;\r\n}\r\n\r\n.post .index{\r\n    position:absolute;\r\n    width: 100vw;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top: 55px;\r\n    z-index: 0;\r\n    height: 100vh;\r\n    padding-bottom: 5vh;\r\n    align-items: center;\r\n    background-image: none;\r\n    background-image: linear-gradient(to top, #f77062 0%, rgb(229,68,109) 100%);\r\n}\r\n\r\n.post .input-container,.post .index, .post .start-context,.post .type-box p{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    flex-direction: column;\r\n}\r\n\r\n.post .input-container{\r\n    margin-top: 20px;\r\n    width: 90%;\r\n}\r\n\r\n.post, .post .type-box{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.post .type-box p{\r\n    align-items: center;\r\n    width: 70%;\r\n}\r\n\r\n.post .type-box{\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.post .start-context{\r\n    width: 100%;\r\n    height: 100%;\r\n    color: white;\r\n    font-family: 'Noto Sans TC';\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.post h1{\r\n    font-size: 30px;\r\n    font-weight: 300;\r\n}\r\n\r\n.post .start-context button{\r\n    color: #fe5196;\r\n    border-radius: 10px;\r\n    margin-top: 15px;\r\n}\r\n\r\n.post .btn-container button, .post .start-context button{\r\n    background-color: white;\r\n    border: none;\r\n    border-top-left-radius:  10px;\r\n    border-top-right-radius:  10px;\r\n    padding: 5px 15px;\r\n    font-size: 18px;\r\n    outline: none;\r\n    width: 50%;\r\n    font-weight: 700;\r\n\r\n}\r\n\r\n@media (min-width: 596px) { \r\n\r\n}\r\n\r\n@media (min-width: 768px) {\r\n    .post .form_container{\r\n        width: 36%;     \r\n    }\r\n    .post .index{\r\n        background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);\r\n    }\r\n\r\n    .post .input-container{\r\n        width: 50%;\r\n    }\r\n    \r\n    .post .type-box p{\r\n        align-items: center;\r\n        width: 50%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n    .post .index{\r\n        \r\n    }\r\n    .post p{\r\n        margin-left: 0%;\r\n    }\r\n    .post .input-container{\r\n        width: 30%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -52730,8 +52730,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_calendar_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_img_calendar_png__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _img_book_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/book.png */ "./resources/assets/js/img/book.png");
 /* harmony import */ var _img_book_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_img_book_png__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
-/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _img_flag_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/flag.png */ "./resources/assets/js/img/flag.png");
+/* harmony import */ var _img_flag_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_img_flag_png__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/icon */ "./resources/assets/js/components/icon.js");
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./css/comment.css */ "./resources/assets/js/css/comment.css");
+/* harmony import */ var _css_comment_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_css_comment_css__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -52751,6 +52754,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -52816,6 +52821,7 @@ function (_Component) {
         year: -1
       },
       show: [],
+      staticWatch: 0,
       resetFliter: false,
       is_fetch: false,
       datas: []
@@ -52920,6 +52926,12 @@ function (_Component) {
           is_fetch: true,
           show: data
         });
+
+        setTimeout(function () {
+          _this2.setState({
+            staticWatch: 1
+          });
+        }, 1500);
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
@@ -52962,7 +52974,7 @@ function (_Component) {
         });
 
         if (new_fliter === "none") {
-          if (this.state.is_mobile == "none") this.setState({
+          if (this.state.mobile_display == "none") this.setState({
             fliter: {
               year: "none",
               in_maj: new_fliter
@@ -52970,7 +52982,7 @@ function (_Component) {
           });
           var output = [];
           this.state.datas.forEach(function (element) {
-            if (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year) output.push(element);
+            if (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year || _this3.state.mobile_display == "none" && new_fliter === "none") output.push(element);
           });
           this.setState({
             show: output,
@@ -53021,7 +53033,7 @@ function (_Component) {
               textAlign: "right",
               position: "relative",
               color: "white",
-              backgroundColor: this.state.fliter.in_maj === NCKU[department[i][1]][j] ? "rgba(255,255,255,0.3)" : "transparent",
+              backgroundColor: this.state.fliter.in_maj === NCKU[department[i][1]][j] ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.1)",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
@@ -53093,6 +53105,8 @@ function (_Component) {
   }, {
     key: "spawnStatistic",
     value: function spawnStatistic() {
+      var _this4 = this;
+
       if (this.state.is_fetch == true) {
         var count = 0;
         var min = 100;
@@ -53110,7 +53124,7 @@ function (_Component) {
         });
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "statistic"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "board"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
@@ -53135,18 +53149,86 @@ function (_Component) {
             color: "white",
             textAlign: "center"
           }
-        }, "\u5305\u542B\u5E74\u4EFD: ", this.state.fliter.year === "none" ? "全部年份" : this.state.fliter.year))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, "\u5305\u542B\u5E74\u4EFD: ", this.state.fliter.year === "none" ? "全部年份" : this.state.fliter.year))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          class: "progress-container",
+          style: {
+            width: "100%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            width: "100%",
+            height: "115px",
+            position: "relative",
+            overflowX: "hidden"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          class: "bar-container",
+          style: {
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            left: this.state.staticWatch === 1 ? "0" : "100%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u5E73\u5747\u9304\u53D6\u5206\u6578",
           value: length === 0 ? "null" : count / length
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u7B2C\u4E00\u56DB\u5206\u4F4D\u6578",
           value: this.state.show.length < 4 ? "null" : array[Math.round(this.state.show.length / 4) - 1]
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
           title: "\u6700\u4F4E\u9304\u53D6\u5206\u6578",
           value: this.state.show.length === 0 ? "null" : min
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            window.open('https://reurl.cc/ZKn0M', '_blank');
+          },
+          className: "standard",
+          style: {
+            width: "100%",
+            color: "rgb(229,68,109)",
+            fontSize: "24px",
+            height: "100%",
+            outline: "none",
+            backgroundColor: "transparent",
+            position: "absolute",
+            left: this.state.staticWatch === 0 ? "0" : "-100%",
+            border: "none"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: _img_flag_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+          alt: "flag",
+          style: {
+            height: "40%",
+            margin: "5px"
+          }
+        }), "\u8F49\u7CFB\u7533\u8ACB\u6A19\u6E96\u6309\u6211")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          class: "progress-btn",
+          style: {
+            height: "10px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "circle",
+          style: {
+            backgroundColor: this.state.staticWatch === 0 ? "rgb(229,68,109)" : "rgba(229,68,109,0.3)"
+          },
+          onClick: function onClick() {
+            _this4.setState({
+              staticWatch: 0
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "circle",
+          style: {
+            backgroundColor: this.state.staticWatch === 1 ? "rgb(229,68,109)" : "rgba(229,68,109,0.3)"
+          },
+          onClick: function onClick() {
+            _this4.setState({
+              staticWatch: 1
+            });
+          }
         }))));
       }
     }
@@ -53177,7 +53259,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var spawnDepartment = department.map(function (option) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -53228,20 +53310,20 @@ function (_Component) {
         for (var i = clock.getFullYear(); i > 2014; --i) {
           var _ref2;
 
-          var number = _this4.countDepartment(i - 1911, "year");
+          var number = _this5.countDepartment(i - 1911, "year");
 
           if (i != clock.getFullYear() || clock.getMonth() > 7) output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
             style: {
               textAlign: "right",
               fontWeight: "100",
-              color: _this4.state.fliter.year === i - 1911 ? "rgb(229,68,109)" : "white",
-              backgroundColor: _this4.state.fliter.year === i - 1911 ? "white" : "transparent",
+              color: _this5.state.fliter.year === i - 1911 ? "rgb(229,68,109)" : "white",
+              backgroundColor: _this5.state.fliter.year === i - 1911 ? "white" : "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
             },
-            onClick: _this4.changeFliter.bind(_this4, i - 1911, "year")
+            onClick: _this5.changeFliter.bind(_this5, i - 1911, "year")
           }, i - 1911, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
             pill: true,
             variant: "light",
@@ -53256,9 +53338,9 @@ function (_Component) {
         }
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          onClick: _this4.changeFliter.bind(_this4, "none", "year"),
+          onClick: _this5.changeFliter.bind(_this5, "none", "year"),
           title: "\u5168\u90E8\u5E74\u4EFD",
-          isSelect: _this4.state.fliter.year === "none"
+          isSelect: _this5.state.fliter.year === "none"
         }, output);
       };
 
@@ -53384,52 +53466,20 @@ function (_Component) {
         next: this.handleShowContent
       })));
       var landingPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "App",
+        className: "loading",
         style: {
-          backgroundImage: this.state.is_mobile != "none" ? "linear-gradient(to right, #f77062 0%, #fe5196 100%)" : "linear-gradient(to right, rgb(229,68,109) 0%, rgb(229,68,109) 100%)"
+          position: "absolute",
+          width: "100vw",
+          height: "100vh"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "webName"
-      }, "\u9078\u64C7\u60F3\u67E5\u8A62\u7684\u5B78\u9662/\u5B78\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "warning"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        onChange: function onChange(e) {
-          return _this4.changeFliter(e.target.value, "department");
-        },
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_icon__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: {
-          outline: "none",
-          color: "rgb(229,68,109)",
-          fontWeight: 300,
-          border: "none",
-          width: "120px",
-          marginLeft: "0%",
-          backgroundColor: "white"
+          marginTop: "0"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "none"
-      }, "\u5168\u90E8\u5B78\u9662"), spawnDepartment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        style: {
-          outline: "none",
-          color: "rgb(229,68,109)",
-          border: "none",
-          width: "120px",
-          backgroundColor: "white",
-          marginLeft: "5%"
-        },
-        onChange: function onChange(e) {
-          return _this4.handleInitalMajorFliter(e.target.value);
-        }
-      }, spawnMajor(this.state.fliter.in_maj))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "know",
-        onClick: function onClick(e) {
-          return _this4.setState({
-            is_home: true
-          });
-        }
-      }, "\u78BA\u8A8D\u9001\u51FA"));
+      }));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment"
-      }, this.state.is_home ? indexPage : landingPage);
+      }, this.state.is_fetch ? indexPage : landingPage);
     }
   }]);
 
@@ -53721,27 +53771,7 @@ function (_React$Component) {
         variant: "light",
         className: "closeBtn",
         onClick: this.handleBackIndex.bind(this)
-      }, "\u8FD4\u56DE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "contentBtn",
-        onClick: this.props.next.bind(this, "next"),
-        id: "rightBtn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Arrow",
-        id: "rightArrow"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btnText",
-        id: "next"
-      }, "\u4E0B\u4E00\u7BC7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "contentBtn",
-        onClick: this.props.next.bind(this, "before"),
-        id: "leftBtn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Arrow",
-        id: "leftArrow"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btnText",
-        id: "before"
-      }, "\u4E0A\u4E00\u7BC7")));
+      }, "\u8FD4\u56DE"));
     }
   }]);
 
@@ -53940,7 +53970,12 @@ function (_Component) {
         style: {
           fontSize: this.state.fontSize
         }
-      }, "轉 " + datas[number]["in_maj"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Subtitle, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        style: {
+          fontSize: "2rem",
+          marginRight: "1rem"
+        }
+      }, "\u8F49"), datas[number]["in_maj"]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Subtitle, {
         className: "mb-2 text-muted"
       }, "由 " + datas[number]["out_maj"] + " 轉出"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Text, {
         style: {
@@ -54104,7 +54139,8 @@ function (_React$Component) {
         contentLabel: "Minimal Modal Example",
         style: customStyles,
         className: "Modal",
-        overlayClassName: "Overlay"
+        overlayClassName: "Overlay",
+        onRequestClose: this.handleCloseModal
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
         className: "card-box",
         style: {
@@ -54149,40 +54185,21 @@ function (_React$Component) {
           width: "100%",
           height: "70px"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "light",
-        className: "closeBtn2",
-        style: {
-          position: "absolute",
-          left: "20%",
-          width: "60%"
-        },
-        onClick: this.handleCloseModal
-      }, "\u95DC\u9589")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        variant: "light",
-        className: "closeBtn",
-        onClick: this.handleCloseModal
-      }, "\u95DC\u9589"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "contentBtn",
         id: "rightBtn",
         onClick: this.props.next.bind(this, "next")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Arrow",
         id: "rightArrow"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btnText",
-        id: "next"
-      }, "\u4E0B\u4E00\u7BC7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "contentBtn",
         id: "leftBtn",
         onClick: this.props.next.bind(this, "before")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Arrow",
         id: "leftArrow"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btnText",
-        id: "before"
-      }, "\u4E0A\u4E00\u7BC7"))));
+      }))));
     }
   }]);
 
@@ -54422,6 +54439,8 @@ function (_Component) {
   _createClass(icon, [{
     key: "render",
     value: function render() {
+      var outsideColor = this.props.isWhite ? "white" : "#cc3d61";
+      var insideColor = this.props.isWhite ? "rgba(255,255,255,0.6)" : "#cc3d61";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lds-css-ng-scope",
         style: this.props.style
@@ -54431,7 +54450,15 @@ function (_Component) {
           height: "100%"
         },
         className: "lds-ripple"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          borderColor: outsideColor
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          borderColor: insideColor
+        }
+      })));
     }
   }]);
 
@@ -55785,7 +55812,7 @@ function (_Component) {
       if (this.state.now_handle === "心得") {
         var real_i = i;
         this.setState({
-          id: i,
+          id: this.state.datas[real_i]["id"],
           new_id: "不變",
           rank_1: this.state.datas[real_i]["rank_1"],
           rank_2: this.state.datas[real_i]["rank_2"],
@@ -55801,7 +55828,7 @@ function (_Component) {
 
         var tags = this.state.qa_datas[real_i]["tag"].split(",");
         this.setState({
-          qa_id: i,
+          qa_id: this.state.qa_datas[real_i]["id"],
           new_id: "不變",
           qa_q: this.state.qa_datas[real_i]["question"],
           qa_a: this.state.qa_datas[real_i]["answer"],
@@ -56346,6 +56373,39 @@ module.exports = "/images/calendar.png?12099fa3acc5ea473dbf9a2accfc2d3e";
 
 /***/ }),
 
+/***/ "./resources/assets/js/img/can.png":
+/*!*****************************************!*\
+  !*** ./resources/assets/js/img/can.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/can.png?76ef2075be1c83422d738ba184cd5622";
+
+/***/ }),
+
+/***/ "./resources/assets/js/img/flag.png":
+/*!******************************************!*\
+  !*** ./resources/assets/js/img/flag.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/flag.png?2ec1fa71785c824abc8158053e9dba9d";
+
+/***/ }),
+
+/***/ "./resources/assets/js/img/search.png":
+/*!********************************************!*\
+  !*** ./resources/assets/js/img/search.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/search.png?61c7dad4309424ff8625ef283ec39fb3";
+
+/***/ }),
+
 /***/ "./resources/assets/js/layout.js":
 /*!***************************************!*\
   !*** ./resources/assets/js/layout.js ***!
@@ -56461,8 +56521,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_QA__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/QA */ "./resources/assets/js/components/QA.js");
 /* harmony import */ var _components_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/menu */ "./resources/assets/js/components/menu.js");
 /* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
-/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/major_QA.css */ "./resources/assets/js/css/major_QA.css");
-/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_major_QA_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _img_search_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/search.png */ "./resources/assets/js/img/search.png");
+/* harmony import */ var _img_search_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_img_search_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _img_can_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/can.png */ "./resources/assets/js/img/can.png");
+/* harmony import */ var _img_can_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_img_can_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/icon */ "./resources/assets/js/components/icon.js");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./css/major_QA.css */ "./resources/assets/js/css/major_QA.css");
+/* harmony import */ var _css_major_QA_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_css_major_QA_css__WEBPACK_IMPORTED_MODULE_9__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56480,6 +56545,9 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
 
 
 
@@ -56534,11 +56602,22 @@ function (_Component) {
   _createClass(maj_QA, [{
     key: "changeFliterByWord",
     value: function changeFliterByWord(e) {
-      this.setState({
-        fliterByWord: e.target.value
-      }); //const changeState=()=>new Promise((resolve,reject)=>this.setState({fliterByWord: e.target.value},()=>resolve()));
-      //changeState()
-      //.then((value)=>{this.changeFliter("none")})
+      var _this2 = this;
+
+      //this.setState({fliterByWord: e.target.value});
+      var changeState = function changeState() {
+        return new Promise(function (resolve, reject) {
+          return _this2.setState({
+            fliterByWord: e.target.value
+          }, function () {
+            return resolve();
+          });
+        });
+      };
+
+      changeState().then(function (value) {
+        _this2.changeFliter("none");
+      }); //this.changeFliter()
     }
   }, {
     key: "handleRWD",
@@ -56614,19 +56693,19 @@ function (_Component) {
   }, {
     key: "handleClick",
     value: function handleClick() {
-      var _this2 = this;
+      var _this3 = this;
 
       fetch('/api/get/major_QA').then(function (res) {
         return res.json();
       }).then(function (data) {
-        _this2.setState({
+        _this3.setState({
           datas: data,
           is_fetch: true,
           show: data,
-          showContent: data[Number(_this2.props.match.params.id)]
+          showContent: data[Number(_this3.props.match.params.id)]
         });
 
-        _this2.spawnMenu(data);
+        _this3.spawnMenu(data);
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
@@ -56643,13 +56722,20 @@ function (_Component) {
   }, {
     key: "changeFliter",
     value: function changeFliter(type) {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this.state.mobile_display === "none") this.setState({
         openFliter: false
       });
       var show = [];
       var tag = [];
+      var rst_tag = this.state.total_tags;
+
+      if (type === "none") {
+        rst_tag.forEach(function (element) {
+          element[1] = false;
+        });
+      }
 
       for (var i = 0; i < this.state.total_tags.length; ++i) {
         if (this.state.total_tags[i][1] === true) tag.push(this.state.total_tags[i][0]);
@@ -56658,16 +56744,21 @@ function (_Component) {
       if (type != "none" && tag.length > 0) {
         this.state.datas.forEach(function (element) {
           var array = element["tag"].split(",");
+          var isFind = true;
 
-          for (var i = 0; i < array.length; ++i) {
-            for (var j = 0; j < tag.length; ++j) {
-              if (array[i] === tag[j]) {
-                if (_this3.state.fliterByWord === "" || element["question"].search(_this3.state.fliterByWord) != -1) {
-                  show.push(element);
-                  return;
-                }
+          for (var i = 0; i < array.length && isFind; ++i) {
+            for (var j = 0; j < tag.length && isFind; ++j) {
+              if (array.findIndex(function (Element) {
+                return Element === tag[j];
+              }) == -1) {
+                isFind = false;
               }
             }
+          }
+
+          if (isFind && (_this4.state.fliterByWord === "" || element["question"].search(_this4.state.fliterByWord) != -1)) {
+            show.push(element);
+            return;
           }
         });
         this.setState({
@@ -56675,17 +56766,13 @@ function (_Component) {
         });
       } else {
         this.state.datas.forEach(function (element) {
-          if (_this3.state.fliterByWord === "" || element["question"].search(_this3.state.fliterByWord) != -1) {
+          if (_this4.state.fliterByWord === "" || element["question"].search(_this4.state.fliterByWord) != -1) {
             show.push(element);
             return;
           }
         });
       }
 
-      var rst_tag = this.state.total_tags;
-      rst_tag.forEach(function (element) {
-        element[1] = false;
-      });
       this.setState({
         show: show,
         total_tags: rst_tag
@@ -56781,7 +56868,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var menu_display = this.props.location.pathname === "/QA/~" ? this.state.mobile_display : menu_display;
       var fliter_2 = [{
@@ -56807,34 +56894,45 @@ function (_Component) {
       var Menu = function Menu() {
         var output = [];
 
-        for (var i = 0; i < _this4.state.total_tags.length; ++i) {
+        for (var i = 0; i < _this5.state.total_tags.length; ++i) {
           output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
-            onClick: _this4.changeSelectBtn.bind(_this4, i),
+            onClick: _this5.changeSelectBtn.bind(_this5, i),
             style: {
+              fontWeight: "300",
               outline: "none",
               margin: "5px 2px",
-              color: _this4.state.total_tags[i][1] == false ? "white" : "#F8BBD0",
-              backgroundColor: _this4.state.total_tags[i][1] == false ? "transparent" : "rgba(0,0,0,0.1)",
+              color: _this5.state.total_tags[i][1] == false ? "white" : "#F8BBD0",
+              backgroundColor: _this5.state.total_tags[i][1] == false ? "transparent" : "rgba(0,0,0,0.1)",
               borderColor: "rgba(243,243,243,0.5)",
               borderRadius: "0"
             }
-          }, _this4.state.total_tags[i][0]));
+          }, _this5.state.total_tags[i][0]));
         }
 
         return output;
       };
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "major_QA"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var landingPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "loading",
+        style: {
+          position: "absolute",
+          width: "100vw",
+          height: "100vh"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        style: {
+          marginTop: "0"
+        }
+      }));
+      var indexPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, show), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "MobileMenu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: function onClick() {
-          return _this4.setState({
-            openFliter: !_this4.state.openFliter
+          return _this5.setState({
+            openFliter: !_this5.state.openFliter
           });
         },
         style: {
@@ -56852,17 +56950,19 @@ function (_Component) {
           border: "none",
           display: this.state.openFliter === true && this.state.is_fetch ? "block" : "none"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, Menu(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         border: "none",
-        placeholder: "\u641C\u5C0B\u554F\u984C",
+        placeholder: "\u67E5\u8A62\u6A19\u984C",
         onChange: this.changeFliterByWord,
         style: {
           border: "none",
           width: "80%",
-          margin: "15px 10%"
+          margin: "15px 10%",
+          padding: "2% 7%",
+          borderRadius: "10px"
         }
-      }), Menu(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: this.changeFliter.bind(this, "tag"),
         style: {
           outline: "none",
@@ -56873,7 +56973,14 @@ function (_Component) {
           color: "rgb(229,68,109)",
           textShadow: "none"
         }
-      }, "\u9001\u51FA\u7BE9\u9078"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_search_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+        alt: "search",
+        style: {
+          marginRight: "7px",
+          height: "17px"
+        }
+      }), "\u9001\u51FA\u7BE9\u9078"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: this.changeFliter.bind(this, "none"),
         style: {
           outline: "none",
@@ -56883,7 +56990,17 @@ function (_Component) {
           borderColor: "white",
           textShadow: "none"
         }
-      }, "\u5168\u90E8\u5FC3\u5F97")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_can_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        alt: "search",
+        style: {
+          marginRight: "7px",
+          height: "17px"
+        }
+      }), "\u6E05\u9664\u7BE9\u9078")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "major_QA"
+      }, this.state.is_fetch ? indexPage : landingPage);
     }
   }]);
 
@@ -56954,7 +57071,7 @@ function (_Component) {
       comment: "",
       question: "",
       answer: "",
-      is_send: false,
+      is_send: 1,
       editObject: "comment",
       start: false
     };
@@ -56981,6 +57098,9 @@ function (_Component) {
         'out_maj': this.state.out_maj,
         'comment': this.state.comment
       };
+      this.setState({
+        is_send: 3
+      });
       fetch('/api/create/major', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -56993,7 +57113,7 @@ function (_Component) {
         return console.log('錯誤:', e);
       });
       this.setState({
-        is_send: true
+        is_send: 4
       });
     }
   }, {
@@ -57003,6 +57123,9 @@ function (_Component) {
         'question': this.state.question,
         'answer': this.state.answer
       };
+      this.setState({
+        is_send: 3
+      });
       fetch('/api/post/major_QA', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -57015,7 +57138,7 @@ function (_Component) {
         return console.log('錯誤:', e);
       });
       this.setState({
-        is_send: true
+        is_send: 4
       });
     }
   }, {
@@ -57118,13 +57241,13 @@ function (_Component) {
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u4E3B\u8981\u662F\u89E3\u7B54\u8F49\u7CFB\u5728\u884C\u653F\u3001\u5BE9\u67E5\u7B49\u6D41\u7A0B\u548C\u898F\u5247\u4E0A\u7684\u6A21\u7CCA\u9EDE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         style: {
-          width: "70%",
+          width: "50%",
           marginTop: "30px"
         }
       }, "\u611F\u8B1D\u4F60\u9858\u610F\u70BA\u672A\u4F86\u4EE5\u8F49\u7CFB\u70BA\u76EE\u6A19\u7684\u5B78\u5F1F\u59B9\u5011\uFF0C\u7559\u4E0B\u4E00\u689D\u66F4\u597D\u8D70\u7684\u8DEF\u3002"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2.setState({
-            start: true
+            is_send: 2
           });
         }
       }, "\u958B\u59CB\u586B\u5BEB")));
@@ -57175,12 +57298,7 @@ function (_Component) {
           backgroundColor: "rgb(229,68,109)"
         }
       }, "\u9001\u51FA")));
-      var display = this.state.is_send === true ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "webName",
-        style: {
-          color: "white"
-        }
-      }, "\u611F\u8B1D\u4F60\u7684\u586B\u5BEB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5BE9\u67E5\u901A\u904E\u5F8C\u5C31\u6703\u770B\u5230\u4F60\u7684\u5FC3\u5F97\u56C9!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var display = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form_container",
         style: {
           color: "rgb(229,68,109)",
@@ -57254,44 +57372,67 @@ function (_Component) {
           backgroundColor: "rgb(229,68,109)"
         }
       }, "\u9001\u51FA")));
+
+      var postStage = function postStage() {
+        if (_this2.state.is_send == 1) {
+          return startContext;
+        } else if (_this2.state.is_send == 2) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "input-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "btn-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            style: _this2.state.editObject === "comment" ? {
+              backgroundColor: "white",
+              color: "rgb(229,68,109)"
+            } : {
+              backgroundColor: "rgba(255,255,255,0.4)",
+              color: "#555"
+            },
+            onClick: function onClick() {
+              return _this2.setState({
+                editObject: "comment"
+              });
+            }
+          }, "\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            style: _this2.state.editObject === "QA" ? {
+              backgroundColor: "white",
+              color: "rgb(229,68,109)"
+            } : {
+              backgroundColor: "rgba(255,255,255,0.4)",
+              color: "#555"
+            },
+            onClick: function onClick() {
+              return _this2.setState({
+                editObject: "QA"
+              });
+            }
+          }, "\u5E38\u898B\u554F\u7B54")), _this2.state.editObject === "comment" ? display : QA_display);
+        } else if (_this2.state.is_send == 3) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            style: {
+              marginTop: "30vh"
+            },
+            isWhite: true
+          });
+        } else {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+            style: {
+              color: "white",
+              textAlign: "center",
+              marginTop: "33vh",
+              maxWidth: "70%",
+              marginLeft: "0%"
+            }
+          }, "\u611F\u8B1D\u4F60\u7684\u586B\u5BEB", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5BE9\u67E5\u901A\u904E\u5F8C\u5C31\u6703\u770B\u5230\u4F60\u7684\u5FC3\u5F97\u56C9!");
+        }
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
-      }, startContext, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input-container",
-        style: {
-          display: this.state.start === false ? "none" : "block"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "btn-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        style: this.state.editObject === "comment" ? {
-          backgroundColor: "white",
-          color: "rgb(229,68,109)"
-        } : {
-          backgroundColor: "rgba(255,255,255,0.4)",
-          color: "#555"
-        },
-        onClick: function onClick() {
-          return _this2.setState({
-            editObject: "comment"
-          });
-        }
-      }, "\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        style: this.state.editObject === "QA" ? {
-          backgroundColor: "white",
-          color: "rgb(229,68,109)"
-        } : {
-          backgroundColor: "rgba(255,255,255,0.4)",
-          color: "#555"
-        },
-        onClick: function onClick() {
-          return _this2.setState({
-            editObject: "QA"
-          });
-        }
-      }, "\u5E38\u898B\u554F\u7B54")), this.state.editObject === "comment" ? display : QA_display)));
+      }, postStage()));
     }
   }]);
 
