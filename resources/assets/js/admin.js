@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import TagsInput from 'react-tagsinput'
-import Edit from './edit';
 import 'react-tagsinput/react-tagsinput.css'
-import {Button,ButtonGroup,Dropdown} from 'react-bootstrap';
-import { hostname } from 'os';
+
 
 class admin extends Component {
     constructor(props) {
@@ -18,6 +15,14 @@ class admin extends Component {
     this.handleLogin=this.handleLogin.bind(this);
     this.handleGet=this.handleGet.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
+    this.changeLocation=this.changeLocation.bind(this);
+  }
+
+  changeLocation(type,id){
+    const location = {
+      pathname: '/admin/'+type+"/"+id,
+    }
+    this.props.history.push(location);  
   }
 
   handleLogin() {
@@ -34,7 +39,13 @@ class admin extends Component {
       .then(json =>{  
         if (json["success"]) {
         console.log("Login Successful!");
+        /*const location = {
+          pathname: '/admin/QA/-1',
+        }
+        this.props.history.push(location);*/  
         this.setState({is_login:true,token: json.data["remember_token"]})
+        this.props.setToken(json.data["remember_token"])
+        
       }})
       .catch(e => console.log('錯誤:', e));
   }
@@ -98,7 +109,7 @@ class admin extends Component {
     }
     return (
       <div className="admin">
-        {(this.state.is_login===false)?loginForm():<Edit token={this.state.token}/>}
+        {loginForm()}  
       </div>
     );
   }

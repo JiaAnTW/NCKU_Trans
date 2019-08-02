@@ -3218,7 +3218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Menu::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.comment .progress-container,.comment .bar-container,.comment .progress-btn{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.comment .progress-container{\r\n    flex-direction: column;\r\n}\r\n\r\n.comment .bar-container{\r\n    justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n    -ms-justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n}\r\n\r\n.comment .bar-container, .comment .standard{\r\n    transition: left 1.0s ease-in-out;\r\n}\r\n\r\n.comment .progress-btn{\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;   \r\n}\r\n\r\n.comment .progress-btn button{\r\n    height: 10px;\r\n    width: 10px;\r\n    border-radius: 10px;\r\n    padding: 0;\r\n    margin: 0px 5px;\r\n    outline:none;\r\n    border: none;\r\n}\r\n\r\n\r\n.comment #top{\r\n    transform: rotate(-45deg);\r\n    -webkit-transform: rotate(-45deg);\r\n}\r\n\r\n.comment #bot{\r\n    transform: rotate(135deg);\r\n    -webkit-transform: rotate(135deg);\r\n}\r\n\r\n.comment .Menu{\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.loading{\r\n    position: absolute;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;\r\n    align-items: center;\r\n    -webkit-align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n\r\n        \r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .comment .index{\r\n        max-height: 65vh;\r\n        overflow-y: auto;\r\n        overflow-x: hidden;\r\n    }\r\n\r\n    .index::-webkit-scrollbar\r\n    {\r\n      width: 1px;\r\n      background-color: transparent;\r\n      border: none;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-thumb\r\n    {\r\n      border-radius: 10px;\r\n      background-color: #555;\r\n      opacity: 0.5;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-track\r\n    {\r\n    background-color: transparent;\r\n    border: 0px solid;\r\n    }\r\n    \r\n    .card-box::-webkit-scrollbar-track-piece  {\r\n     /* 4 */ \r\n     border: none;\r\n    }\r\n\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: flex;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".Menu::-webkit-scrollbar,.comment #bar-link::-webkit-scrollbar\r\n{\r\n  width: 0px;\r\n  height: 0px;\r\n  background-color: transparent;\r\n  border: none;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-thumb\r\n{\r\n  border-radius: 10px;\r\n  background-color: rgba(0,0,0,0.1);\r\n  opacity: 0.5;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track\r\n{\r\nbackground-color: transparent;\r\nborder: 0px solid;\r\n}\r\n\r\n.Menu::-webkit-scrollbar-track-piece  {\r\n /* 4 */ \r\n border: none;\r\n}\r\n\r\n.comment .progress-container,.comment .bar-container,.comment .progress-btn{\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n}\r\n\r\n.comment .progress-container{\r\n    flex-direction: column;\r\n}\r\n\r\n.comment .bar-container{\r\n    justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n    -ms-justify-content: space-evenly;\r\n    -webkit-justify-content: space-evenly;\r\n}\r\n\r\n.comment .bar-container, .comment .standard{\r\n    transition: left 1.0s ease-in-out;\r\n}\r\n\r\n.comment .progress-btn{\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;   \r\n}\r\n\r\n.comment .progress-btn button{\r\n    height: 10px;\r\n    width: 10px;\r\n    border-radius: 10px;\r\n    padding: 0;\r\n    margin: 0px 5px;\r\n    outline:none;\r\n    border: none;\r\n}\r\n\r\n\r\n.comment #top{\r\n    transform: rotate(-45deg);\r\n    -webkit-transform: rotate(-45deg);\r\n}\r\n\r\n.comment #bot{\r\n    transform: rotate(135deg);\r\n    -webkit-transform: rotate(135deg);\r\n}\r\n\r\n.comment .Menu{\r\n    height: 91.8vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n.loading{\r\n    position: absolute;\r\n    width: 100vw;\r\n    height: 100vh;\r\n    display: flex;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */\r\n    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    justify-content: center;\r\n    -webkit-justify-content: center;\r\n    -ms-justify-content: center;\r\n    -webkit-justify-content: center;\r\n    align-items: center;\r\n    -webkit-align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n}\r\n\r\n.board{\r\n    display: none;\r\n}\r\n\r\n.index{\r\n    position:absolute;\r\n    width: 100%;\r\n    max-width:100%;\r\n    left: 0%;\r\n    top:235px;\r\n    height: auto;\r\n    z-index: 0;\r\n}\r\n\r\n.comment .MobileMenu{\r\n    position:fixed;\r\n    top:55px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n}\r\n.statistic{\r\n    position:absolute;\r\n    width: 96%;\r\n    max-width: 97%;\r\n    height: auto;\r\n    top:105px;\r\n    margin: 0 2%;\r\n}\r\n\r\n.statistic ul{\r\n    list-style-type: none;\r\n    width: 100%;\r\n    max-width: 100%;\r\n    float:left;\r\n    padding:0;\r\n\tmargin: 0;\r\n}\r\n.statistic li{\r\n    float:left;\r\n    width: 30vw;\r\n    padding: 0 2.5vw;\r\n}\r\n\r\n@media (min-width: 596px) { \r\n    \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:60px;\r\n        left:5px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 15%;\r\n        top:235px;\r\n        \r\n    }\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 85%;\r\n        max-width: 85%;\r\n        height: auto;\r\n        left: 10%;\r\n        top:105px;\r\n        \r\n    }\r\n    \r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        max-width: 100%;\r\n        float:left;\r\n        padding:0;\r\n        margin: 0;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 5%;\r\n        width: auto;\r\n    }\r\n}\r\n\r\n@media (min-width: 870px) { \r\n    .board{\r\n        display: block;\r\n    }\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);\r\n\r\n        \r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 70%;\r\n        left: 24%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .comment .index{\r\n        max-height: 65vh;\r\n        overflow-y: auto;\r\n        overflow-x: hidden;\r\n    }\r\n\r\n    .index::-webkit-scrollbar\r\n    {\r\n      width: 1px;\r\n      background-color: transparent;\r\n      border: none;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-thumb\r\n    {\r\n      border-radius: 10px;\r\n      background-color: #555;\r\n      opacity: 0.5;\r\n    }\r\n    \r\n    .index::-webkit-scrollbar-track\r\n    {\r\n    background-color: transparent;\r\n    border: 0px solid;\r\n    }\r\n    \r\n    .card-box::-webkit-scrollbar-track-piece  {\r\n     /* 4 */ \r\n     border: none;\r\n    }\r\n\r\n    .comment .MobileMenu{\r\n        position:fixed;\r\n        top:55px;\r\n        left:0px;\r\n        width:100vw;\r\n        max-width:100%;\r\n        height:37px;\r\n        background-color:rgb(229,68,109);\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 80%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n        display: flex;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 2%;\r\n    }\r\n }\r\n\r\n@media (min-width: 992px) { \r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        height: auto;\r\n    }\r\n\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 3%;\r\n    }\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n\r\n    .Menu{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 150px;\r\n    }\r\n\r\n\r\n    .index{\r\n        position:absolute;\r\n        width: 1024px;\r\n        height: auto;\r\n        width: 75%;\r\n        left: 20%;\r\n        top:220px;\r\n        \r\n    }\r\n    .statistic{\r\n        position:absolute;\r\n        width: 75%;\r\n        height: auto;\r\n        left: 20%;\r\n        top:80px;\r\n    }\r\n    .statistic ul{\r\n        list-style-type: none;\r\n        width: 100%;\r\n        float:left;\r\n    }\r\n    .statistic li{\r\n        float:left;\r\n        padding: 0 4%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n\r\n.edit .check-container{   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */\r\n    flex-direction: column;\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.confirm-container{\r\n    padding: 15px;\r\n    border: 2px solid rgb(229,68,109);\r\n    border-radius: 15px;\r\n    margin-top: 30px;\r\n}\r\n", ""]);
+exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n\r\n.edit .check-container{\r\n    flex-direction: column;\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.confirm-container{\r\n    padding: 15px;\r\n    border: 2px solid rgb(229,68,109);\r\n    border-radius: 15px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.edit .check-container, .edit .btn-container, .btn-container #edit{   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.edit .btn-container, .btn-container #edit{\r\n    justify-content: space-around;\r\n    -ms-justify-content: space-around;\r\n    -webkit-justify-content: space-around;\r\n}\r\n", ""]);
 
 // exports
 
@@ -6158,66 +6158,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	}
 
 	return to;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/os-browserify/browser.js":
-/*!***********************************************!*\
-  !*** ./node_modules/os-browserify/browser.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-exports.endianness = function () { return 'LE' };
-
-exports.hostname = function () {
-    if (typeof location !== 'undefined') {
-        return location.hostname
-    }
-    else return '';
-};
-
-exports.loadavg = function () { return [] };
-
-exports.uptime = function () { return 0 };
-
-exports.freemem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.totalmem = function () {
-    return Number.MAX_VALUE;
-};
-
-exports.cpus = function () { return [] };
-
-exports.type = function () { return 'Browser' };
-
-exports.release = function () {
-    if (typeof navigator !== 'undefined') {
-        return navigator.appVersion;
-    }
-    return '';
-};
-
-exports.networkInterfaces
-= exports.getNetworkInterfaces
-= function () { return {} };
-
-exports.arch = function () { return 'javascript' };
-
-exports.platform = function () { return 'browser' };
-
-exports.tmpdir = exports.tmpDir = function () {
-    return '/tmp';
-};
-
-exports.EOL = '\n';
-
-exports.homedir = function () {
-	return '/'
 };
 
 
@@ -52383,14 +52323,8 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput */ "./node_modules/react-tagsinput/react-tagsinput.js");
-/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./resources/assets/js/edit.js");
-/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
-/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! os */ "./node_modules/os-browserify/browser.js");
-/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52408,10 +52342,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
 
 
 
@@ -52437,10 +52367,19 @@ function (_Component) {
     _this.handleLogin = _this.handleLogin.bind(_assertThisInitialized(_this));
     _this.handleGet = _this.handleGet.bind(_assertThisInitialized(_this));
     _this.handleLogout = _this.handleLogout.bind(_assertThisInitialized(_this));
+    _this.changeLocation = _this.changeLocation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(admin, [{
+    key: "changeLocation",
+    value: function changeLocation(type, id) {
+      var location = {
+        pathname: '/admin/' + type + "/" + id
+      };
+      this.props.history.push(location);
+    }
+  }, {
     key: "handleLogin",
     value: function handleLogin() {
       var _this2 = this;
@@ -52460,11 +52399,17 @@ function (_Component) {
       }).then(function (json) {
         if (json["success"]) {
           console.log("Login Successful!");
+          /*const location = {
+            pathname: '/admin/QA/-1',
+          }
+          this.props.history.push(location);*/
 
           _this2.setState({
             is_login: true,
             token: json.data["remember_token"]
           });
+
+          _this2.props.setToken(json.data["remember_token"]);
         }
       }).catch(function (e) {
         return console.log('錯誤:', e);
@@ -52593,9 +52538,7 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "admin"
-      }, this.state.is_login === false ? loginForm() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        token: this.state.token
-      }));
+      }, loginForm());
     }
   }]);
 
@@ -52625,13 +52568,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout */ "./resources/assets/js/layout.js");
 /* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post */ "./resources/assets/js/post.js");
 /* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./admin */ "./resources/assets/js/admin.js");
-/* harmony import */ var _major_QA__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./major_QA */ "./resources/assets/js/major_QA.js");
-/* harmony import */ var _error__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./error */ "./resources/assets/js/error.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit */ "./resources/assets/js/edit.js");
+/* harmony import */ var _editComment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./editComment */ "./resources/assets/js/editComment.js");
+/* harmony import */ var _major_QA__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./major_QA */ "./resources/assets/js/major_QA.js");
+/* harmony import */ var _error__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./error */ "./resources/assets/js/error.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -52641,13 +52588,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -52668,14 +52617,30 @@ function (_Component) {
   _inherits(App, _Component);
 
   function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      token: ""
+    };
+    _this.setToken = _this.setToken.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(App, [{
+    key: "setToken",
+    value: function setToken(token) {
+      this.setState({
+        token: token
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/",
@@ -52687,17 +52652,35 @@ function (_Component) {
         path: "/post",
         component: _post__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-        path: "/admin",
-        component: _admin__WEBPACK_IMPORTED_MODULE_7__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/QA/:id",
-        component: _major_QA__WEBPACK_IMPORTED_MODULE_8__["default"]
+        component: _major_QA__WEBPACK_IMPORTED_MODULE_10__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home",
         component: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/admin/login",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_admin__WEBPACK_IMPORTED_MODULE_7__["default"], _extends({}, props, {
+            setToken: _this2.setToken
+          }));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/admin/comment",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_editComment__WEBPACK_IMPORTED_MODULE_9__["default"], _extends({}, props, {
+            token: _this2.state.token
+          }));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        path: "/admin/QA",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit__WEBPACK_IMPORTED_MODULE_8__["default"], _extends({}, props, {
+            token: _this2.state.token
+          }));
+        }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "",
-        component: _error__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _error__WEBPACK_IMPORTED_MODULE_11__["default"]
       })));
     }
   }]);
@@ -52811,6 +52794,11 @@ function (_Component) {
       contentWidth: "800px",
       contentHeight: "500px",
       showContentId: -1,
+      scrollData: {
+        isScroll: false,
+        inital: null,
+        moveX: 0
+      },
       showContent: {
         comment: "",
         department: "",
@@ -52838,10 +52826,178 @@ function (_Component) {
     _this.countDepartment = _this.countDepartment.bind(_assertThisInitialized(_this));
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
     _this.sponMobileMenu = _this.sponMobileMenu.bind(_assertThisInitialized(_this));
+    _this.handleMouseDown = _this.handleMouseDown.bind(_assertThisInitialized(_this));
+    _this.handleMouseUp = _this.handleMouseUp.bind(_assertThisInitialized(_this));
+    _this.handleMouseMove = _this.handleMouseMove.bind(_assertThisInitialized(_this));
+    _this.staticScrollTo = _this.staticScrollTo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(comment, [{
+    key: "handleMouseDown",
+    value: function handleMouseDown(e) {
+      var scrollInital = document.getElementById("bar-link").scrollLeft; //console.log("Down at "+scrollInital)
+
+      this.setState({
+        scrollData: {
+          isScroll: true,
+          mouseInital: e.changedTouches[0].pageX,
+          scrollInital: scrollInital,
+          moveX: 0
+        }
+      });
+    }
+  }, {
+    key: "handleMouseMove",
+    value: function handleMouseMove(e) {
+      if (this.state.scrollData.isScroll == true) {
+        var change = e.changedTouches[0].pageX - this.state.scrollData.mouseInital; //console.log("change is "+change)
+        //console.log("now is "+e.changedTouches[0].pageX)
+
+        document.getElementById("bar-link").scrollLeft = this.state.scrollData.scrollInital - change;
+        if (this.state.scrollData.moveX * change <= 0) this.setState({
+          scrollData: {
+            isScroll: true,
+            mouseInital: e.changedTouches[0].pageX,
+            scrollInital: this.state.scrollData.scrollInital,
+            moveX: change > 0 ? 1 : -1
+          }
+        });
+      }
+    }
+  }, {
+    key: "handleMouseUp",
+    value: function handleMouseUp(e) {
+      var _this2 = this;
+
+      if (this.state.scrollData.isScroll == true) {
+        //console.log("Up!")
+        var changeIsScroll = new Promise(function (resolve) {
+          _this2.setState({
+            scrollData: {
+              isScroll: false,
+              mouseInital: 0,
+              moveX: _this2.state.scrollData.moveX
+            },
+            staticWatch: _this2.state.scrollData.moveX > 0 ? 0 : 1
+          });
+
+          resolve();
+        });
+        var scrollTo = new Promise(function (resolve) {
+          if (_this2.state.scrollData.moveX == -1) _this2.staticScrollTo(1);else if (_this2.state.scrollData.moveX == 1) _this2.staticScrollTo(0);
+          resolve();
+        });
+        changeIsScroll.then(function (Resolve) {
+          scrollTo.then(function (resolve) {
+            _this2.setState({
+              scrollData: {
+                isScroll: false,
+                mouseInital: 0,
+                moveX: 0
+              }
+            });
+          });
+        });
+      }
+    }
+  }, {
+    key: "handleMouseOut",
+    value: function handleMouseOut(e) {
+      var _this3 = this;
+
+      if (this.state.scrollData.isScroll == true) {
+        //console.log("Out! With moveX: "+this.state.scrollData.moveX);
+        var changeIsScroll = new Promise(function (resolve) {
+          _this3.setState({
+            scrollData: {
+              isScroll: false,
+              mouseInital: 0,
+              moveX: _this3.state.scrollData.moveX,
+              staticWatch: _this3.state.scrollData.moveX > 0 ? 0 : 1
+            }
+          });
+
+          resolve();
+        });
+        var scrollTo = new Promise(function (resolve) {
+          if (_this3.state.scrollData.moveX == -1) {
+            _this3.staticScrollTo(1);
+          } else if (_this3.state.scrollData.moveX == 1) {
+            _this3.staticScrollTo(0);
+          }
+
+          resolve();
+        });
+        changeIsScroll.then(function (Resolve) {
+          scrollTo.then(function (resolve) {
+            _this3.setState({
+              scrollData: {
+                isScroll: false,
+                mouseInital: 0,
+                moveX: 0
+              }
+            });
+          });
+        });
+      }
+    }
+  }, {
+    key: "staticScrollTo",
+    value: function staticScrollTo(target) {
+      var _this4 = this;
+
+      var origin = document.getElementById("bar-link").offsetLeft;
+      var firstBanner = document.getElementsByClassName("standard")[0].offsetLeft;
+      var secondBanner = document.getElementsByClassName("bar-container")[0].offsetLeft;
+
+      if (target == 0) {
+        if (document.getElementById("bar-link").scrollLeft != 0) {
+          //console.log("scroll to left!")
+          if (document.getElementById("bar-link").scrollLeft >= 6) {
+            document.getElementById("bar-link").scrollLeft -= 6;
+            this.tm = setTimeout(function () {
+              _this4.staticScrollTo(0);
+            }, 1);
+          } else {
+            document.getElementById("bar-link").scrollLeft = 0;
+            clearTimeout(this.tm);
+            this.setState({
+              staticWatch: 0
+            });
+          }
+        } else {
+          clearTimeout(this.tm);
+          this.setState({
+            scrollData: {
+              isScroll: false,
+              mouseInital: 0,
+              moveX: 0,
+              staticWatch: 0
+            }
+          });
+        }
+      } else if (target == 1) {
+        if (document.getElementById("bar-link").scrollLeft < document.getElementById("bar-link").scrollWidth / 2) {
+          //console.log("scroll to right!")
+          if (document.getElementById("bar-link").scrollLeft < document.getElementById("bar-link").scrollWidth / 2 - 6) {
+            document.getElementById("bar-link").scrollLeft += 6;
+            this.tm = setTimeout(function () {
+              _this4.staticScrollTo(1);
+            }, 1);
+          } else {
+            document.getElementById("bar-link").scrollLeft = document.getElementById("bar-link").scrollWidth / 2;
+            clearTimeout(this.tm);
+            this.setState({
+              staticWatch: 1
+            });
+          }
+        } else {
+          clearTimeout(this.tm);
+        }
+      }
+    }
+  }, {
     key: "findMobileFliterShow",
     value: function findMobileFliterShow(fliter) {
       for (var i = 0; i < department.length; ++i) {
@@ -52916,22 +53072,33 @@ function (_Component) {
   }, {
     key: "handleClick",
     value: function handleClick() {
-      var _this2 = this;
+      var _this5 = this;
 
       fetch('/api/get/major').then(function (res) {
         return res.json();
       }).then(function (data) {
-        _this2.setState({
+        _this5.setState({
           datas: data,
           is_fetch: true,
           show: data
         });
 
         setTimeout(function () {
-          _this2.setState({
+          _this5.setState({
             staticWatch: 1
           });
+
+          _this5.staticScrollTo(1);
         }, 1500);
+        /*document.getElementById("bar-link").addEventListener('mousedown',this.handleMouseDown.bind(this));
+        document.getElementById("bar-link").addEventListener('mouseup',this.handleMouseUp.bind(this));
+        document.getElementById("bar-link").addEventListener('mouseout',this.handleMouseOut.bind(this));
+        window.addEventListener('mousemove',this.handleMouseMove.bind(this));*/
+
+        document.getElementById("bar-link").addEventListener('touchstart', _this5.handleMouseDown.bind(_this5));
+        document.getElementById("bar-link").addEventListener('touchend', _this5.handleMouseUp.bind(_this5));
+        document.getElementById("bar-link").addEventListener('touchcancel', _this5.handleMouseOut.bind(_this5));
+        window.addEventListener('touchmove', _this5.handleMouseMove.bind(_this5));
       }).catch(function (e) {
         return console.log('錯誤:', e);
       });
@@ -52948,13 +53115,13 @@ function (_Component) {
   }, {
     key: "changeFliter",
     value: function changeFliter(new_fliter, type) {
-      var _this3 = this;
+      var _this6 = this;
 
       if (type === "year") {
         var output = [];
         this.state.datas.forEach(function (element) {
-          if (element[type] == new_fliter && (_this3.state.fliter.in_maj === "none" || element["department"] === _this3.state.fliter.in_maj || element["in_maj"] === _this3.state.fliter.in_maj)) output.push(element);else if (new_fliter === "none") {
-            if (_this3.state.fliter.in_maj === "none" || element["department"] === _this3.state.fliter.in_maj || element["in_maj"] === _this3.state.fliter.in_maj) output.push(element);
+          if (element[type] == new_fliter && (_this6.state.fliter.in_maj === "none" || element["department"] === _this6.state.fliter.in_maj || element["in_maj"] === _this6.state.fliter.in_maj)) output.push(element);else if (new_fliter === "none") {
+            if (_this6.state.fliter.in_maj === "none" || element["department"] === _this6.state.fliter.in_maj || element["in_maj"] === _this6.state.fliter.in_maj) output.push(element);
           }
         });
         this.setState({
@@ -52982,7 +53149,7 @@ function (_Component) {
           });
           var output = [];
           this.state.datas.forEach(function (element) {
-            if (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year || _this3.state.mobile_display == "none" && new_fliter === "none") output.push(element);
+            if (_this6.state.fliter.year === "none" || element["year"] === _this6.state.fliter.year || _this6.state.mobile_display == "none" && new_fliter === "none") output.push(element);
           });
           this.setState({
             show: output,
@@ -52991,7 +53158,7 @@ function (_Component) {
         } else {
           var output = [];
           this.state.datas.forEach(function (element) {
-            if (element[type] === new_fliter && (_this3.state.fliter.year === "none" || element["year"] === _this3.state.fliter.year)) output.push(element);
+            if (element[type] === new_fliter && (_this6.state.fliter.year === "none" || element["year"] === _this6.state.fliter.year)) output.push(element);
           });
           this.setState({
             show: output
@@ -53001,7 +53168,7 @@ function (_Component) {
         if (type == "in_maj") {
           department.forEach(function (Element, Index) {
             NCKU[Element[1]].forEach(function (Item, index) {
-              if (Item === new_fliter) _this3.setState({
+              if (Item === new_fliter) _this6.setState({
                 selectDepartment: Element[0]
               });
             });
@@ -53105,7 +53272,7 @@ function (_Component) {
   }, {
     key: "spawnStatistic",
     value: function spawnStatistic() {
-      var _this4 = this;
+      var _this7 = this;
 
       if (this.state.is_fetch == true) {
         var count = 0;
@@ -53151,23 +53318,29 @@ function (_Component) {
           }
         }, "\u5305\u542B\u5E74\u4EFD: ", this.state.fliter.year === "none" ? "全部年份" : this.state.fliter.year))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           class: "progress-container",
+          draggable: "false",
+          unselectable: "on",
           style: {
             width: "100%"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "bar-link",
+          draggable: "false",
+          unselectable: "on",
           style: {
             width: "100%",
             height: "115px",
             position: "relative",
-            overflowX: "hidden"
+            overflowX: "scroll"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           class: "bar-container",
+          unselectable: "on",
           style: {
             width: "100%",
             height: "100%",
             position: "absolute",
-            left: this.state.staticWatch === 1 ? "0" : "100%"
+            left: "100%"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Progress__WEBPACK_IMPORTED_MODULE_6__["default"], {
           is_mobile: this.state.mobile_display,
@@ -53181,30 +53354,39 @@ function (_Component) {
           is_mobile: this.state.mobile_display,
           title: "\u6700\u4F4E\u9304\u53D6\u5206\u6578",
           value: this.state.show.length === 0 ? "null" : min
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "standard",
+          unselectable: "on",
+          style: {
+            left: "0",
+            width: "100%",
+            height: "100%",
+            position: "absolute"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          unselectable: "on",
           onClick: function onClick() {
             window.open('https://reurl.cc/ZKn0M', '_blank');
           },
-          className: "standard",
           style: {
-            width: "100%",
+            width: "70%",
             color: "rgb(229,68,109)",
             fontSize: "24px",
-            height: "100%",
+            height: "30%",
             outline: "none",
             backgroundColor: "transparent",
-            position: "absolute",
-            left: this.state.staticWatch === 0 ? "0" : "-100%",
+            margin: "5% 15%",
             border: "none"
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: _img_flag_png__WEBPACK_IMPORTED_MODULE_9___default.a,
           alt: "flag",
+          unselectable: "on",
           style: {
-            height: "40%",
+            height: "100%",
             margin: "5px"
           }
-        }), "\u8F49\u7CFB\u7533\u8ACB\u6A19\u6E96\u6309\u6211")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), "\u8F49\u7CFB\u7533\u8ACB\u6A19\u6E96\u6309\u6211"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           class: "progress-btn",
           style: {
             height: "10px"
@@ -53215,9 +53397,11 @@ function (_Component) {
             backgroundColor: this.state.staticWatch === 0 ? "rgb(229,68,109)" : "rgba(229,68,109,0.3)"
           },
           onClick: function onClick() {
-            _this4.setState({
+            _this7.setState({
               staticWatch: 0
             });
+
+            _this7.staticScrollTo(0);
           }
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           id: "circle",
@@ -53225,9 +53409,11 @@ function (_Component) {
             backgroundColor: this.state.staticWatch === 1 ? "rgb(229,68,109)" : "rgba(229,68,109,0.3)"
           },
           onClick: function onClick() {
-            _this4.setState({
+            _this7.setState({
               staticWatch: 1
             });
+
+            _this7.staticScrollTo(1);
           }
         }))));
       }
@@ -53245,6 +53431,20 @@ function (_Component) {
       });
     }
   }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.state.is_fetch) {
+        /*document.getElementById("bar-link").removeEventListener('mousedown',this.handleMouseDown.bind(this));
+        document.getElementById("bar-link").removeEventListener('mouseup',this.handleMouseUp.bind(this));
+        document.getElementById("bar-link").removeEventListener('mouseout',this.handleMouseOut.bind(this));
+        window.removeEventListener('mousemove',this.handleMouseMove.bind(this));*/
+        document.getElementById("bar-link").removeEventListener('touchstart', this.handleMouseDown.bind(this));
+        document.getElementById("bar-link").removeEventListener('touchend', this.handleMouseUp.bind(this));
+        document.getElementById("bar-link").removeEventListener('touchcancel', this.handleMouseOut.bind(this));
+        window.removeEventListener('touchmove', this.handleMouseMove.bind(this));
+      }
+    }
+  }, {
     key: "handleInitalMajorFliter",
     value: function handleInitalMajorFliter(value) {
       var i = 0;
@@ -53259,7 +53459,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this8 = this;
 
       var spawnDepartment = department.map(function (option) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -53310,20 +53510,20 @@ function (_Component) {
         for (var i = clock.getFullYear(); i > 2014; --i) {
           var _ref2;
 
-          var number = _this5.countDepartment(i - 1911, "year");
+          var number = _this8.countDepartment(i - 1911, "year");
 
           if (i != clock.getFullYear() || clock.getMonth() > 7) output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
             variant: "light",
             style: {
               textAlign: "right",
               fontWeight: "100",
-              color: _this5.state.fliter.year === i - 1911 ? "rgb(229,68,109)" : "white",
-              backgroundColor: _this5.state.fliter.year === i - 1911 ? "white" : "transparent",
+              color: _this8.state.fliter.year === i - 1911 ? "rgb(229,68,109)" : "white",
+              backgroundColor: _this8.state.fliter.year === i - 1911 ? "white" : "transparent",
               borderRadius: "0px",
               width: '100%',
               outline: "none"
             },
-            onClick: _this5.changeFliter.bind(_this5, i - 1911, "year")
+            onClick: _this8.changeFliter.bind(_this8, i - 1911, "year")
           }, i - 1911, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
             pill: true,
             variant: "light",
@@ -53338,9 +53538,9 @@ function (_Component) {
         }
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          onClick: _this5.changeFliter.bind(_this5, "none", "year"),
+          onClick: _this8.changeFliter.bind(_this8, "none", "year"),
           title: "\u5168\u90E8\u5E74\u4EFD",
-          isSelect: _this5.state.fliter.year === "none"
+          isSelect: _this8.state.fliter.year === "none"
         }, output);
       };
 
@@ -55505,6 +55705,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/edit.css */ "./resources/assets/js/css/edit.css");
 /* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_edit_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -55524,6 +55726,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55573,7 +55776,8 @@ function (_Component) {
       qa_confirm: "",
       tags: [],
       showContent: [],
-      display: "block"
+      display: "block",
+      showModal: false
     };
     _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
@@ -55591,12 +55795,14 @@ function (_Component) {
   _createClass(edit, [{
     key: "changeFliter",
     value: function changeFliter(new_fliter, type) {
-      if (type == "null") this.setState({
-        now_handle: new_fliter,
-        qa_id: -1,
-        id: -1,
-        show: new_fliter === "QA" ? this.state.qa_datas : this.state.datas
-      });
+      if (type == "null") {
+        this.setState({
+          now_handle: new_fliter,
+          qa_id: -1,
+          id: -1,
+          show: new_fliter === "QA" ? this.state.qa_datas : this.state.datas
+        }); //this.props.changeLocation((new_fliter==="QA"?"QA":"comment"),"-1")
+      }
 
       if (type === "confirm") {
         var output = [];
@@ -55751,13 +55957,20 @@ function (_Component) {
         }).catch(function (e) {
           return console.log('錯誤:', e);
         });
-      }
+      } //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+
     }
   }, {
     key: "deleteComment",
     value: function deleteComment() {
+      var _this3 = this;
+
       if (this.state.now_handle === "心得") {
         var url = '/api/post/major/' + this.state.id.toString();
+        var new_data = this.state.datas;
+        new_data.splice(new_data.findIndex(function (Element) {
+          return Element.id === _this3.state.id;
+        }), 1);
         fetch(url, {
           method: 'DELETE',
           headers: new Headers({
@@ -55765,13 +55978,23 @@ function (_Component) {
             'Authorization': "Bearer " + this.props.token
           })
         }).then(function (res) {
-          return res.json();
+          res.json();
+
+          _this3.setState({
+            id: -1,
+            datas: new_data,
+            showModal: false
+          });
         }).catch(function (e) {
           return console.log('錯誤:', e);
         });
       } else {
         var _url2 = '/api/post/major_QA/' + this.state.qa_id.toString();
 
+        var new_data = this.state.qa_datas;
+        new_data.splice(new_data.findIndex(function (Element) {
+          return Element.id === _this3.state.qa_id;
+        }), 1);
         fetch(_url2, {
           method: 'DELETE',
           headers: new Headers({
@@ -55779,11 +56002,18 @@ function (_Component) {
             'Authorization': "Bearer " + this.props.token
           })
         }).then(function (res) {
-          return res.json();
+          res.json();
+
+          _this3.setState({
+            qa_id: -1,
+            qa_datas: new_data,
+            showModal: false
+          });
         }).catch(function (e) {
           return console.log('錯誤:', e);
         });
-      }
+      } //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+
     }
   }, {
     key: "componentDidMount",
@@ -55834,13 +56064,53 @@ function (_Component) {
           qa_a: this.state.qa_datas[real_i]["answer"],
           tags: tags
         });
-      }
+      } //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),e)
+
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
+      var customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          padding: "7%",
+          backgroundColor: "white"
+        }
+      };
+      var alert = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        isOpen: this.state.showModal,
+        style: customStyles,
+        onRequestClose: function onRequestClose() {
+          _this4.setState({
+            showModal: false
+          });
+        },
+        className: "Modal",
+        overlayClassName: "Overlay"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u78BA\u5B9A\u8981\u522A\u9664\u55CE?\u522A\u9664\u5F8C\u7121\u6CD5\u9084\u539F\u6B50~"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-container",
+        id: "edit",
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          _this4.setState({
+            showModal: false
+          });
+        }
+      }, "\u53D6\u6D88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.deleteComment
+      }, "\u78BA\u5B9A")));
       var fliter = [{
         id: 0,
         now: -1,
@@ -55866,25 +56136,25 @@ function (_Component) {
       });
 
       var switchIndex = function switchIndex() {
-        if (_this3.state.now_handle === "心得") {
+        if (_this4.state.now_handle === "心得") {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            datas: _this3.state.show,
-            is_fetch: _this3.state.is_fetch,
-            onClick: _this3.handleOpenModal,
-            handleRWD: _this3.handleRWD
+            datas: _this4.state.show,
+            is_fetch: _this4.state.is_fetch,
+            onClick: _this4.handleOpenModal,
+            handleRWD: _this4.handleRWD
           });
         } else {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_major_QAIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            datas: _this3.state.show,
-            is_fetch: _this3.state.is_fetch,
-            onClick: _this3.handleOpenModal,
-            handleRWD: _this3.handleRWD
+            datas: _this4.state.show,
+            is_fetch: _this4.state.is_fetch,
+            onClick: _this4.handleOpenModal,
+            handleRWD: _this4.handleRWD
           });
         }
       };
 
       var table = function table() {
-        if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
+        if (_this4.state.now_handle === "心得" && _this4.state.id != -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "check-container"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -55893,7 +56163,7 @@ function (_Component) {
               alignSelf: "flex-start"
             },
             onClick: function onClick() {
-              return _this3.setState({
+              _this4.setState({
                 id: -1
               });
             }
@@ -55905,19 +56175,19 @@ function (_Component) {
               width: "250px",
               marginTop: "20px"
             }
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             style: {
               width: "70%"
             }
-          }, _this3.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, _this4.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "confirm-container"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             type: "radio",
             name: "comfirm",
             value: "true",
-            checked: _this3.state.confirm === "true",
+            checked: _this4.state.confirm === "true",
             onChange: function onChange(e) {
-              _this3.setState({
+              _this4.setState({
                 confirm: e.target.value
               });
             }
@@ -55925,18 +56195,18 @@ function (_Component) {
             type: "radio",
             name: "comfirm",
             value: "false",
-            checked: _this3.state.confirm === "false",
+            checked: _this4.state.confirm === "false",
             onChange: function onChange(e) {
-              _this3.setState({
+              _this4.setState({
                 confirm: e.target.value
               });
             }
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: _this3.handleClick
+            onClick: _this4.handleClick
           }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: _this3.deleteComment
+            onClick: _this4.deleteComment
           }, "\u522A\u9664\u8A72\u6587\u7AE0")));
-        } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        } else if (_this4.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-container",
           style: {}
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -55945,9 +56215,11 @@ function (_Component) {
             alignSelf: "flex-start"
           },
           onClick: function onClick() {
-            return _this3.setState({
+            _this4.setState({
               qa_id: -1
             });
+
+            _this4.props.changeLocation("QA", "-1");
           }
         }, "\u2190 \u8FD4\u56DE\u9078\u55AE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
           striped: true,
@@ -55957,18 +56229,18 @@ function (_Component) {
             width: "70%",
             marginTop: "20px"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u554F\u984C"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_q)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u89E3\u7B54"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this3.state.qa_a)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.qa_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u554F\u984C"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.qa_q)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u89E3\u7B54"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.qa_a)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "confirm-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
-          value: _this3.state.tags,
-          onChange: _this3.handleChange
+          value: _this4.state.tags,
+          onChange: _this4.handleChange
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "comfirm",
           value: "true",
-          checked: _this3.state.qa_confirm === "true",
+          checked: _this4.state.qa_confirm === "true",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               qa_confirm: e.target.value
             });
           }
@@ -55976,88 +56248,94 @@ function (_Component) {
           type: "radio",
           name: "comfirm",
           value: "false",
-          checked: _this3.state.qa_confirm === "false",
+          checked: _this4.state.qa_confirm === "false",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               qa_confirm: e.target.value
             });
           }
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.handleClick
-        }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.deleteComment
-        }, "\u522A\u9664\u8A72\u6587\u7AE0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "btn-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this4.handleClick
+        }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            _this4.setState({
+              showModal: true
+            });
+          }
+        }, "\u522A\u9664\u8A72\u6587\u7AE0"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       };
 
       var form = function form() {
-        if (_this3.state.now_handle === "心得" && _this3.state.id != -1) {
+        if (_this4.state.now_handle === "心得" && _this4.state.id != -1) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "form_container",
             style: {}
           }, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "new_id",
             type: "text",
-            value: _this3.state.new_id,
-            onChange: _this3.changeNewId
+            value: _this4.state.new_id,
+            onChange: _this4.changeNewId
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u6392\u540D\u4E0A:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "rank",
             type: "text",
-            value: _this3.state.rank_1,
+            value: _this4.state.rank_1,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 rank_1: e.target.value
               });
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u4E0B:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "rank",
             type: "text",
-            value: _this3.state.rank_2,
+            value: _this4.state.rank_2,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 rank_2: e.target.value
               });
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u7533\u8ACB\u5E74\u5EA6:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "year",
             type: "text",
-            value: _this3.state.year,
+            value: _this4.state.year,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 year: e.target.value
               });
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u5B78\u5E74\u5206\u6578:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "score",
             type: "text",
-            value: _this3.state.score,
+            value: _this4.state.score,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 score: e.target.value
               });
             }
           })), "\u8F49\u51FA\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "out_maj",
             type: "text",
-            value: _this3.state.out_maj,
+            value: _this4.state.out_maj,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 out_maj: e.target.value
               });
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u8F49\u5165\u79D1\u7CFB:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
             id: "in_maj",
             type: "text",
-            value: _this3.state.in_maj,
+            value: _this4.state.in_maj,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 in_maj: e.target.value
               });
             }
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\u5FC3\u5F97:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
             id: "comment",
-            value: _this3.state.comment,
+            value: _this4.state.comment,
             onChange: function onChange(e) {
-              return _this3.setState({
+              return _this4.setState({
                 comment: e.target.value
               });
             }
@@ -56067,9 +56345,9 @@ function (_Component) {
             type: "radio",
             name: "comfirm",
             value: "true",
-            checked: _this3.state.confirm === "true",
+            checked: _this4.state.confirm === "true",
             onChange: function onChange(e) {
-              _this3.setState({
+              _this4.setState({
                 confirm: e.target.value
               });
             }
@@ -56077,18 +56355,18 @@ function (_Component) {
             type: "radio",
             name: "comfirm",
             value: "false",
-            checked: _this3.state.confirm === "false",
+            checked: _this4.state.confirm === "false",
             onChange: function onChange(e) {
-              _this3.setState({
+              _this4.setState({
                 confirm: e.target.value
               });
             }
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: _this3.handleClick
+            onClick: _this4.handleClick
           }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: _this3.deleteComment
+            onClick: _this4.deleteComment
           }, "\u522A\u9664\u8A72\u6587\u7AE0")));
-        } else if (_this3.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        } else if (_this4.state.qa_id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "form_container",
           style: {
             position: "absolute",
@@ -56097,31 +56375,31 @@ function (_Component) {
         }, "\u6587\u7AE0\u7684\u65B0id:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           id: "new_id",
           type: "text",
-          value: _this3.state.new_id,
-          onChange: _this3.changeNewId
+          value: _this4.state.new_id,
+          onChange: _this4.changeNewId
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           id: "comment",
-          value: _this3.state.qa_q,
+          value: _this4.state.qa_q,
           onChange: function onChange(e) {
-            return _this3.setState({
+            return _this4.setState({
               qa_q: e.target.value
             });
           }
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           id: "comment",
-          value: _this3.state.qa_a,
+          value: _this4.state.qa_a,
           onChange: function onChange(e) {
-            return _this3.setState({
+            return _this4.setState({
               qa_a: e.target.value
             });
           }
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default.a, {
-          value: _this3.state.tags,
-          onChange: _this3.handleChange
+          value: _this4.state.tags,
+          onChange: _this4.handleChange
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.handleClick
+          onClick: _this4.handleClick
         }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this3.deleteComment
+          onClick: _this4.deleteComment
         }, "\u522A\u9664\u8A72\u6587\u7AE0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
       };
 
@@ -56142,7 +56420,7 @@ function (_Component) {
           margin: "5% 5%",
           display: this.state.id === -1 && this.state.qa_id === -1 ? "none" : "block"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table(), alert)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index",
         style: {
           display: this.state.id === -1 && this.state.qa_id === -1 ? "block" : "none",
@@ -56153,7 +56431,9 @@ function (_Component) {
         style: {
           marginTop: "55px",
           position: "relative",
-          backgroundColor: "rgb(229,68,109)"
+          backgroundColor: "rgb(229,68,109)",
+          minHeight: "30px",
+          maxHeight: "60px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
         show: "QA",
@@ -56197,6 +56477,450 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (edit);
+
+/***/ }),
+
+/***/ "./resources/assets/js/editComment.js":
+/*!********************************************!*\
+  !*** ./resources/assets/js/editComment.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput */ "./node_modules/react-tagsinput/react-tagsinput.js");
+/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_commentIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/commentIndex */ "./resources/assets/js/components/commentIndex.js");
+/* harmony import */ var _components_major_QAIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/major_QAIndex */ "./resources/assets/js/components/major_QAIndex.js");
+/* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/edit.css */ "./resources/assets/js/css/edit.css");
+/* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_edit_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_8__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+
+
+
+var editComment =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(editComment, _Component);
+
+  function editComment(props) {
+    var _this;
+
+    _classCallCheck(this, editComment);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(editComment).call(this, props));
+    _this.state = {
+      fliter: {
+        year: ""
+      },
+      id: -1,
+      new_id: "不變",
+      id_array: [],
+      datas: [],
+      show: [],
+      is_fetch: false,
+      rank_1: "",
+      rank_2: "",
+      year: 106,
+      score: 0,
+      out_maj: "",
+      in_maj: "",
+      comment: "",
+      confirm: "",
+      showContent: [],
+      display: "block",
+      showModal: false
+    };
+    _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.getData = _this.getData.bind(_assertThisInitialized(_this));
+    _this.changeNewId = _this.changeNewId.bind(_assertThisInitialized(_this));
+    _this.changeRank = _this.changeRank.bind(_assertThisInitialized(_this));
+    _this.changeId = _this.changeId.bind(_assertThisInitialized(_this));
+    _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
+    _this.handleOpenModal = _this.handleOpenModal.bind(_assertThisInitialized(_this));
+    _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(editComment, [{
+    key: "changeFliter",
+    value: function changeFliter(new_fliter, type) {
+      if (type == "null") {
+        this.setState({
+          id: -1,
+          show: this.state.datas
+        }); //this.props.changeLocation((new_fliter==="QA"?"QA":"comment"),"-1")
+      }
+
+      if (type === "confirm") {
+        var output = [];
+        var condition = new_fliter === "已審核" ? "true" : "false";
+        this.state.datas.forEach(function (Element) {
+          if (new_fliter === "全部" || Element["confirm"] == condition) output.push(Element);
+        });
+        this.setState({
+          show: output
+        });
+      }
+    }
+  }, {
+    key: "getData",
+    value: function getData() {
+      var _this2 = this;
+
+      fetch('/api/get/major/all', {
+        method: 'GET',
+        headers: new Headers({
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        var input = [];
+
+        for (var i = 0; i < data.length; ++i) {
+          input.push(data[i]["id"]);
+        }
+
+        _this2.setState({
+          datas: data,
+          id_array: input
+        });
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      });
+    }
+  }, {
+    key: "handleRWD",
+    value: function handleRWD(mobile) {
+      if (mobile) this.setState({
+        display: "none"
+      });else this.setState({
+        display: "block"
+      });
+    }
+  }, {
+    key: "handleOpenModal",
+    value: function handleOpenModal(id) {
+      var object = this.state.datas;
+      var i = 0;
+
+      while (object[i]["id"] != id) {
+        i++;
+      }
+
+      if (i < object.length) {
+        this.setState({
+          showContent: object[i]
+        });
+        this.changeId(i);
+      }
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      var url = '/api/post/major/' + this.state.id.toString();
+      var data = {
+        'id': this.state.new_id != "不變" ? this.state.new_id : this.state.id,
+        'rank_1': this.state.rank_1,
+        'rank_2': this.state.rank_2,
+        'year': this.state.year,
+        'score': this.state.score,
+        'in_maj': this.state.in_maj,
+        'out_maj': this.state.out_maj,
+        'comment': this.state.comment,
+        'confirm': this.state.confirm
+      };
+      fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        mode: 'cors',
+        credentials: 'include',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        console.log(data);
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+    }
+  }, {
+    key: "deleteComment",
+    value: function deleteComment() {
+      var _this3 = this;
+
+      var url = '/api/post/major/' + this.state.id.toString();
+      var new_data = this.state.datas;
+      new_data.splice(new_data.findIndex(function (Element) {
+        return Element.id === _this3.state.id;
+      }), 1);
+      fetch(url, {
+        method: 'DELETE',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        res.json();
+
+        _this3.setState({
+          id: -1,
+          datas: new_data,
+          showModal: false
+        });
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "changeNewId",
+    value: function changeNewId(e) {
+      if (e.target.value != "不變") this.setState({
+        new_id: e.target.value
+      });
+    }
+  }, {
+    key: "changeRank",
+    value: function changeRank(e) {
+      this.setState({
+        rank: e.target.value
+      });
+    }
+  }, {
+    key: "changeId",
+    value: function changeId(e) {
+      var i = e;
+      var real_i = i;
+      this.setState({
+        id: this.state.datas[real_i]["id"],
+        new_id: "不變",
+        rank_1: this.state.datas[real_i]["rank_1"],
+        rank_2: this.state.datas[real_i]["rank_2"],
+        year: this.state.datas[real_i]["year"],
+        score: this.state.datas[real_i]["score"],
+        in_maj: this.state.datas[real_i]["in_maj"],
+        out_maj: this.state.datas[real_i]["out_maj"],
+        comment: this.state.datas[real_i]["comment"],
+        confirm: this.state.datas[real_i]["confirm"]
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          padding: "7%",
+          backgroundColor: "white"
+        }
+      };
+      var alert = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        isOpen: this.state.showModal,
+        style: customStyles,
+        onRequestClose: function onRequestClose() {
+          _this4.setState({
+            showModal: false
+          });
+        },
+        className: "Modal",
+        overlayClassName: "Overlay"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u78BA\u5B9A\u8981\u522A\u9664\u55CE?\u522A\u9664\u5F8C\u7121\u6CD5\u9084\u539F\u6B50~"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-container",
+        id: "edit",
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          _this4.setState({
+            showModal: false
+          });
+        }
+      }, "\u53D6\u6D88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.deleteComment
+      }, "\u78BA\u5B9A")));
+      var fliter2 = [{
+        id: 0,
+        now: -1,
+        name: "none",
+        type: "confirm",
+        option: [["", -1], ["全部", -1], ["已審核", -1], ["未審核", -1]]
+      }];
+
+      var switchIndex = function switchIndex() {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          datas: _this4.state.show,
+          is_fetch: _this4.state.is_fetch,
+          onClick: _this4.handleOpenModal,
+          handleRWD: _this4.handleRWD
+        });
+      };
+
+      var table = function table() {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "check-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+          variant: "danger",
+          style: {
+            alignSelf: "flex-start"
+          },
+          onClick: function onClick() {
+            _this4.setState({
+              id: -1
+            });
+          }
+        }, "\u2190 \u8FD4\u56DE\u9078\u55AE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
+          striped: true,
+          bordered: true,
+          hover: true,
+          style: {
+            width: "250px",
+            marginTop: "20px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            width: "70%"
+          }
+        }, _this4.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "confirm-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "radio",
+          name: "comfirm",
+          value: "true",
+          checked: _this4.state.confirm === "true",
+          onChange: function onChange(e) {
+            _this4.setState({
+              confirm: e.target.value
+            });
+          }
+        }), "\u5426", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "radio",
+          name: "comfirm",
+          value: "false",
+          checked: _this4.state.confirm === "false",
+          onChange: function onChange(e) {
+            _this4.setState({
+              confirm: e.target.value
+            });
+          }
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this4.handleClick
+        }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this4.deleteComment
+        }, "\u522A\u9664\u8A72\u6587\u7AE0")));
+      };
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Menu",
+        style: _defineProperty({
+          height: "auto",
+          position: "absolute",
+          top: "50px",
+          left: "0px",
+          width: "100%"
+        }, "height", "100%")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          width: "90%",
+          margin: "5% 5%",
+          display: this.state.id === -1 ? "none" : "block"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table(), alert)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index",
+        style: {
+          display: this.state.id === -1 ? "block" : "none",
+          top: "100px"
+        }
+      }, switchIndex()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MobileMenu",
+        style: {
+          marginTop: "55px",
+          position: "relative",
+          backgroundColor: "rgb(229,68,109)",
+          minHeight: "30px",
+          maxHeight: "60px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        show: "全部",
+        controllArray: [0, -1],
+        mobile: this.state.display,
+        fliter: this.changeFliter,
+        type: "\u662F\u5426\u5BE9\u6838",
+        value: fliter2,
+        style: {
+          position: "absolute",
+          marginLeft: "170px",
+          width: '150px',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px",
+          height: "30px"
+        }
+      })));
+    }
+  }]);
+
+  return editComment;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (editComment);
 
 /***/ }),
 
@@ -56456,9 +57180,7 @@ function (_Component) {
   _createClass(layout, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "layout"
-      }, this.props.children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      var normalNav = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "layout-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logo",
@@ -56494,7 +57216,40 @@ function (_Component) {
         style: {
           textDecoration: "none"
         }
-      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      var adminNav = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        id: "layout-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "logo",
+        onClick: function onClick(e) {
+          return location.href = '/#/';
+        },
+        style: {
+          border: "none",
+          outline: "none"
+        }
+      }, "Logo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/post",
+        className: "navItem",
+        style: {
+          textDecoration: "none"
+        }
+      }, "\u7DE8\u8F2F\u5B78\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/QA/~",
+        className: "navItem",
+        style: {
+          textDecoration: "none"
+        }
+      }, "\u5BE9\u67E5QA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/comment",
+        className: "navItem",
+        style: {
+          textDecoration: "none"
+        }
+      }, "\u5BE9\u67E5\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "layout"
+      }, this.props.children, this.props.location.pathname.indexOf('admin') != -1 ? adminNav : normalNav);
     }
   }]);
 

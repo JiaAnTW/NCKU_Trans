@@ -4,17 +4,29 @@ import MobileMenu from './components/mobileMenu.js'
 class layout extends Component {
     constructor(props) {
     super(props);
+
     }
 
   render() {
+    const normalNav=(
+      <nav id="layout-nav">
+        <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
+        <a href="https://goo.gl/forms/6MkYePHd03P7Nv8w2" target="_blank" className="navItem" style={{textDecoration:"none"}}>聯絡我們</a><a href="/#/post" className="navItem" style={{textDecoration:"none"}}>分享心得</a><a href="/#/QA/~" className="navItem" style={{textDecoration:"none"}}>常見QA</a><a href="/#/comment" className="navItem" style={{textDecoration:"none"}}>瀏覽心得</a>
+        <MobileMenu/>
+      </nav>
+    );
+    const adminNav=(
+      <nav id="layout-nav">
+        <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
+        <a href="/#/post" className="navItem" style={{textDecoration:"none"}}>編輯學系</a><a href="/#/QA/~" className="navItem" style={{textDecoration:"none"}}>審查QA</a><a href="/#/comment" className="navItem" style={{textDecoration:"none"}}>審查心得</a>
+        <MobileMenu/>
+      </nav>
+    );
+
     return (
       <div className="layout">
         {this.props.children}
-        <nav id="layout-nav">
-          <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
-          <a href="https://goo.gl/forms/6MkYePHd03P7Nv8w2" target="_blank" className="navItem" style={{textDecoration:"none"}}>聯絡我們</a><a href="/#/post" className="navItem" style={{textDecoration:"none"}}>分享心得</a><a href="/#/QA/~" className="navItem" style={{textDecoration:"none"}}>常見QA</a><a href="/#/comment" className="navItem" style={{textDecoration:"none"}}>瀏覽心得</a>
-          <MobileMenu/>
-        </nav>
+        {(this.props.location.pathname.indexOf('admin')!=-1)?adminNav:normalNav}
       </div>
     );
   }

@@ -6,6 +6,7 @@ import MobileFliter from "./components/mobileFliter";
 import 'react-tagsinput/react-tagsinput.css'
 import './css/edit.css'
 import {Table,Button} from 'react-bootstrap';
+import Modal from 'react-modal';
 
 class edit extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class edit extends Component {
         tags:[],
         showContent: [],
         display: "block",
+        showModal: false
     }
     this.changeFliter=this.changeFliter.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -51,9 +53,11 @@ class edit extends Component {
   }
 
   changeFliter(new_fliter,type){
-    if(type=="null")
+    if(type=="null"){
       this.setState({now_handle:new_fliter,qa_id:-1,id:-1,show:(new_fliter==="QA")?this.state.qa_datas:this.state.datas})
-    if(type==="confirm"){
+      //this.props.changeLocation((new_fliter==="QA"?"QA":"comment"),"-1")
+    }
+      if(type==="confirm"){
       var output=[];
       const condition=(new_fliter==="已審核")?"true":"false";
       if(this.state.now_handle==="QA"){
@@ -70,6 +74,7 @@ class edit extends Component {
       }
       this.setState({show:output})
     }
+    
   }
 
   getData() {
@@ -188,24 +193,33 @@ class edit extends Component {
         })
         .catch(e => console.log('錯誤:', e))
     }
+    //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
   }
 
     deleteComment(){
       if(this.state.now_handle==="心得"){
-      const url='/api/post/major/'+this.state.id.toString();
-      fetch(
-        url, {method: 'DELETE',
-          headers: new Headers({
-            'Content-Type': 'application/json',
-            'Authorization':"Bearer "+this.props.token,
-          })
-        }
-      )
-      .then(res => res.json())
-      .catch(e => console.log('錯誤:', e))
+        const url='/api/post/major/'+this.state.id.toString();
+        var new_data=this.state.datas;
+        new_data.splice(new_data.findIndex((Element)=>{return Element.id===this.state.id}),1);
+        fetch(
+          url, {method: 'DELETE',
+            headers: new Headers({
+             'Content-Type': 'application/json',
+              'Authorization':"Bearer "+this.props.token,
+            })
+          }
+        )
+        .then(res =>{
+           res.json(); 
+           this.setState({id:-1, datas:new_data,showModal:false});
+        })
+        .catch(e => console.log('錯誤:', e))
+        
       }
       else{
         const url='/api/post/major_QA/'+this.state.qa_id.toString();
+        var new_data=this.state.qa_datas;
+        new_data.splice(new_data.findIndex((Element)=>{return Element.id===this.state.qa_id}),1);
         fetch(
           url, {method: 'DELETE',
             headers: new Headers({
@@ -214,9 +228,13 @@ class edit extends Component {
             })
           }
         )
-        .then(res => res.json())
+        .then(res =>{
+          res.json(); 
+          this.setState({qa_id:-1, qa_datas:new_data,showModal:false});
+       })
         .catch(e => console.log('錯誤:', e))
       }
+      //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
     }
 
     componentDidMount(){
@@ -267,9 +285,27 @@ class edit extends Component {
             tags:tags,
           });
         }
+        //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),e)
+          
     }
 
   render() {
+    const customStyles = {
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)',
+        padding: "7%",
+        backgroundColor:"white"
+      }
+    };
+    const alert=<Modal isOpen={this.state.showModal} style={customStyles} onRequestClose={()=>{this.setState({showModal:false})}} className="Modal" overlayClassName="Overlay">
+      <div>確定要刪除嗎?刪除後無法還原歐~</div>
+      <div className="btn-container" id="edit" style={{display:"flex",alignItems:"center",justifyContent:"space-around"}}><button onClick={()=>{this.setState({showModal:false})}}>取消</button><button onClick={this.deleteComment}>確定</button></div>
+      </Modal>;
     const fliter=[{
       id: 0,
       now:-1,
@@ -302,7 +338,7 @@ class edit extends Component {
     const table=()=>{
       if(this.state.now_handle==="心得"&&this.state.id!=-1){
         return (<div className="check-container">
-        <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() => this.setState({ id: -1 })}>← 返回選單</Button>
+        <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() =>{ this.setState({ id: -1 });}}>← 返回選單</Button>
         <Table striped bordered hover style={{width:"250px",marginTop:"20px"}}>
           <tbody>
           <tr><td>id</td><td>{this.state.id}</td></tr>
@@ -328,7 +364,7 @@ class edit extends Component {
       }
       else if(this.state.qa_id!=-1)
         return(<div className="check-container" style={{}}>
-          <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() => this.setState({ qa_id: -1 })}>← 返回選單</Button>
+          <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() => {this.setState({ qa_id: -1 });this.props.changeLocation("QA","-1") }}>← 返回選單</Button>
           <Table striped bordered hover style={{width:"70%",marginTop:"20px"}}>
             <tbody>
             <tr><td>id</td><td>{this.state.qa_id}</td></tr>
@@ -343,9 +379,10 @@ class edit extends Component {
             是<input type="radio" name="comfirm" value="true" checked={this.state.qa_confirm==="true"} onChange={(e) =>{ this.setState({ qa_confirm: e.target.value })}}/>
             否<input type="radio" name="comfirm" value="false" checked={this.state.qa_confirm==="false"} onChange={(e) =>{ this.setState({ qa_confirm: e.target.value })}}/>
             </form>
-            <button onClick={this.handleClick}>送出</button>
-            <br/><br/>
-            <button onClick={this.deleteComment}>刪除該文章</button>
+              <div className="btn-container">
+                <button onClick={this.handleClick}>送出</button>
+                <button onClick={()=>{this.setState({showModal:true})}}>刪除該文章</button>
+              </div>
             </div>
             <br/>
         </div>);
@@ -415,12 +452,13 @@ class edit extends Component {
           <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1&&this.state.qa_id===-1)?"none":"block"}}>
             <br/>
             {table()}
+            {alert}
             </div>
         </div>
         <div className="index" style={{display:(this.state.id===-1&&this.state.qa_id===-1)?"block":"none", top:"100px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)"}}>
+        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)",minHeight:"30px",maxHeight:"60px"}}>
           <MobileFliter show={"QA"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="編輯類別" value={fliter} style={{position:"absolute",marginLeft:"0%",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
           <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{position:"absolute",marginLeft:"170px",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
         </div>

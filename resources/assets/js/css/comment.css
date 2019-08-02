@@ -1,6 +1,7 @@
-.Menu::-webkit-scrollbar
+.Menu::-webkit-scrollbar,.comment #bar-link::-webkit-scrollbar
 {
   width: 0px;
+  height: 0px;
   background-color: transparent;
   border: none;
 }

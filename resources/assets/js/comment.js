@@ -56,6 +56,7 @@ class comment extends Component {
         contentWidth: "800px",
         contentHeight: "500px",
         showContentId: -1,
+        scrollData:{isScroll:false,inital:null,moveX:0},
         showContent:{
           comment:"",
           department:"",
@@ -83,6 +84,111 @@ class comment extends Component {
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
     this.sponMobileMenu=this.sponMobileMenu.bind(this);
+    this.handleMouseDown=this.handleMouseDown.bind(this);
+    this.handleMouseUp=this.handleMouseUp.bind(this);
+    this.handleMouseMove=this.handleMouseMove.bind(this);
+    this.staticScrollTo=this.staticScrollTo.bind(this);
+  }
+
+  handleMouseDown(e){
+    const scrollInital=document.getElementById("bar-link").scrollLeft;
+    //console.log("Down at "+scrollInital)
+    this.setState({scrollData:{isScroll:true,mouseInital:e.changedTouches[0].pageX,scrollInital:scrollInital,moveX:0}})
+  }
+
+  handleMouseMove(e){
+    if(this.state.scrollData.isScroll==true){
+      const change=e.changedTouches[0].pageX-this.state.scrollData.mouseInital;
+      //console.log("change is "+change)
+      //console.log("now is "+e.changedTouches[0].pageX)
+      document.getElementById("bar-link").scrollLeft=this.state.scrollData.scrollInital-change;
+      if(this.state.scrollData.moveX*change<=0)
+        this.setState({scrollData:{isScroll:true,mouseInital:e.changedTouches[0].pageX,scrollInital:this.state.scrollData.scrollInital,moveX:(change>0)?1:-1}})
+    }
+  }
+
+  handleMouseUp(e){
+    if(this.state.scrollData.isScroll==true){
+      //console.log("Up!")
+      const changeIsScroll=new Promise((resolve)=>{
+        this.setState({scrollData:{isScroll:false,mouseInital:0,moveX:this.state.scrollData.moveX},staticWatch:(this.state.scrollData.moveX>0)?0:1})
+        resolve();
+      })
+      const scrollTo=new Promise((resolve)=>{
+        if(this.state.scrollData.moveX==-1)
+          this.staticScrollTo(1)
+        else if(this.state.scrollData.moveX==1)
+          this.staticScrollTo(0)
+        resolve();
+      })
+      changeIsScroll.then((Resolve)=>{scrollTo.then((resolve)=>{
+        this.setState({scrollData:{isScroll:false,mouseInital:0,moveX:0}})
+      })})
+    }
+  }
+
+  handleMouseOut(e){
+    if(this.state.scrollData.isScroll==true){
+      //console.log("Out! With moveX: "+this.state.scrollData.moveX);
+      const changeIsScroll=new Promise((resolve)=>{
+        this.setState({scrollData:{isScroll:false,mouseInital:0,moveX:this.state.scrollData.moveX,staticWatch:(this.state.scrollData.moveX>0)?0:1}})
+        resolve();
+      })
+      const scrollTo=new Promise((resolve)=>{
+        if(this.state.scrollData.moveX==-1){
+          this.staticScrollTo(1)
+        }
+        else if(this.state.scrollData.moveX==1){
+          this.staticScrollTo(0)
+        }
+        resolve();
+      })
+      changeIsScroll.then((Resolve)=>{scrollTo.then((resolve)=>{
+        this.setState({scrollData:{isScroll:false,mouseInital:0,moveX:0}})
+      })})
+    }   
+  }
+
+  staticScrollTo(target){
+    const origin=document.getElementById("bar-link").offsetLeft;
+    const firstBanner=document.getElementsByClassName("standard")[0].offsetLeft;
+    const secondBanner=document.getElementsByClassName("bar-container")[0].offsetLeft;
+    if(target==0){
+      if(document.getElementById("bar-link").scrollLeft!=0){
+        //console.log("scroll to left!")
+        if(document.getElementById("bar-link").scrollLeft>=6){
+          document.getElementById("bar-link").scrollLeft-=6;
+          this.tm=setTimeout(()=>{this.staticScrollTo(0)},1)
+        }
+        else{
+          document.getElementById("bar-link").scrollLeft=0;
+          clearTimeout(this.tm);
+          this.setState({staticWatch:0})
+        }
+      }
+      else{
+        clearTimeout(this.tm);
+        this.setState({scrollData:{isScroll:false,mouseInital:0,moveX:0,staticWatch:0}})
+      }
+    }
+    else if(target==1){
+      if(document.getElementById("bar-link").scrollLeft<document.getElementById("bar-link").scrollWidth/2){
+        //console.log("scroll to right!")
+        if(document.getElementById("bar-link").scrollLeft<document.getElementById("bar-link").scrollWidth/2-6){
+          document.getElementById("bar-link").scrollLeft+=6;
+          this.tm=setTimeout(()=>{this.staticScrollTo(1)},1);
+        }
+        else{
+          document.getElementById("bar-link").scrollLeft=document.getElementById("bar-link").scrollWidth/2;
+          clearTimeout(this.tm);
+          this.setState({staticWatch:1})
+        }
+      }
+      else{
+        clearTimeout(this.tm);
+        
+      }
+    }
   }
 
   findMobileFliterShow(fliter){
@@ -155,7 +261,15 @@ class comment extends Component {
             datas: data,
             is_fetch:true,
             show:data})
-        setTimeout(()=>{this.setState({staticWatch:1})},1500)
+        setTimeout(()=>{this.setState({staticWatch:1});this.staticScrollTo(1)},1500)
+        /*document.getElementById("bar-link").addEventListener('mousedown',this.handleMouseDown.bind(this));
+        document.getElementById("bar-link").addEventListener('mouseup',this.handleMouseUp.bind(this));
+        document.getElementById("bar-link").addEventListener('mouseout',this.handleMouseOut.bind(this));
+        window.addEventListener('mousemove',this.handleMouseMove.bind(this));*/
+        document.getElementById("bar-link").addEventListener('touchstart',this.handleMouseDown.bind(this));
+        document.getElementById("bar-link").addEventListener('touchend',this.handleMouseUp.bind(this));
+        document.getElementById("bar-link").addEventListener('touchcancel',this.handleMouseOut.bind(this));
+        window.addEventListener('touchmove',this.handleMouseMove.bind(this));
       })
       .catch(e => console.log('錯誤:', e));
   }
@@ -301,9 +415,9 @@ class comment extends Component {
               </div>
               </div>
             </div>
-            <div class="progress-container" style={{width: "100%"}}>
-              <div style={{width: "100%",height:"115px",position:"relative",overflowX:"hidden"}}>
-                <div class="bar-container" style={{width: "100%",height:"100%",position:"absolute",left:(this.state.staticWatch===1)?"0":"100%"}}>
+            <div class="progress-container" draggable="false" unselectable="on" style={{width: "100%"}}>
+              <div id="bar-link" draggable="false" unselectable="on" style={{width: "100%",height:"115px",position:"relative",overflowX:"scroll"}}>
+                <div class="bar-container" unselectable="on" style={{width: "100%",height:"100%",position:"absolute",left:"100%"}}>
                   <div>
                     <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":count/length}/>
                   </div>
@@ -314,13 +428,15 @@ class comment extends Component {
                     <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length===0)?"null":min}/>
                   </div>
                 </div>
-                <button onClick={()=>{window.open('https://reurl.cc/ZKn0M', '_blank');}} className="standard" style={{width: "100%",color:"rgb(229,68,109)",fontSize:"24px",height:"100%",outline: "none",backgroundColor:"transparent",position:"absolute",left:(this.state.staticWatch===0)?"0":"-100%",border:"none"}}>
-                  <img src={flag} alt="flag" style={{height:"40%",margin:"5px"}}/>轉系申請標準按我
-                </button>
+                <div className="standard" unselectable="on" style={{left:"0",width: "100%",height:"100%",position:"absolute"}}>
+                  <button unselectable="on" onClick={()=>{window.open('https://reurl.cc/ZKn0M', '_blank');}} style={{width: "70%",color:"rgb(229,68,109)",fontSize:"24px",height:"30%",outline: "none",backgroundColor:"transparent",margin:"5% 15%",border:"none"}}>
+                    <img src={flag} alt="flag" unselectable="on" style={{height:"100%",margin:"5px"}}/>轉系申請標準按我
+                  </button>
+                </div>
               </div>
               <div class="progress-btn" style={{height:"10px"}}>
-                <button id="circle" style={{backgroundColor:(this.state.staticWatch===0)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:0})}}></button>
-                <button id="circle" style={{backgroundColor:(this.state.staticWatch===1)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:1})}}></button>
+                <button id="circle" style={{backgroundColor:(this.state.staticWatch===0)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:0});this.staticScrollTo(0);}}></button>
+                <button id="circle" style={{backgroundColor:(this.state.staticWatch===1)?"rgb(229,68,109)":"rgba(229,68,109,0.3)"}} onClick={()=>{this.setState({staticWatch:1});this.staticScrollTo(1);}}></button>
               </div>
             </div>
         </div>
@@ -337,6 +453,20 @@ class comment extends Component {
         output.push(element);
       });
     this.setState({show:output});
+    
+  }
+
+  componentWillUnmount() {
+    if(this.state.is_fetch){
+      /*document.getElementById("bar-link").removeEventListener('mousedown',this.handleMouseDown.bind(this));
+      document.getElementById("bar-link").removeEventListener('mouseup',this.handleMouseUp.bind(this));
+      document.getElementById("bar-link").removeEventListener('mouseout',this.handleMouseOut.bind(this));
+      window.removeEventListener('mousemove',this.handleMouseMove.bind(this));*/
+      document.getElementById("bar-link").removeEventListener('touchstart',this.handleMouseDown.bind(this));
+      document.getElementById("bar-link").removeEventListener('touchend',this.handleMouseUp.bind(this));
+      document.getElementById("bar-link").removeEventListener('touchcancel',this.handleMouseOut.bind(this));
+      window.removeEventListener('touchmove',this.handleMouseMove.bind(this));
+    }
   }
 
   handleInitalMajorFliter(value){
