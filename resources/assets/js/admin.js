@@ -45,7 +45,6 @@ class admin extends Component {
         this.props.history.push(location);*/  
         this.setState({is_login:true,token: json.data["remember_token"]})
         this.props.setToken(json.data["remember_token"])
-        
       }})
       .catch(e => console.log('錯誤:', e));
   }

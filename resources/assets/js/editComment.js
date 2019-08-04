@@ -1,18 +1,53 @@
 import React, { Component } from 'react';
-import TagsInput from 'react-tagsinput'
 import CommentIndex from './components/commentIndex'
-import QAIndex from './components/major_QAIndex'
 import MobileFliter from "./components/mobileFliter";
+import Toggle from 'react-toggle';
+import "./components/css/toggle.css";
 import 'react-tagsinput/react-tagsinput.css'
 import './css/edit.css'
-import {Table,Button} from 'react-bootstrap';
+import {Card,Badge} from 'react-bootstrap';
 import Modal from 'react-modal';
+
+var NCKU=
+{
+"LIB":["中文系","外文系","台文系"],
+"SCE":["數學系","物理系","化學系","地科系","光電系"],
+"ENG":["機械系","化工系","材料系","資源系","土木系","水利系","工科系","系統系","航太系","環工系","測量系","醫工系","能源學程"],
+"MAN":["工資系","交管系","企管系","統計系","會計系"],
+"MC":["醫學系","牙醫系","醫技系","護理系","職治系","物治系","藥學系"],
+"SOC":["政治系","經濟系","法律系","心理系"],
+"EECS":["電機系","資訊系"],
+"CPD":["建築系","都計系","工設系"],
+"BIO":["生科系","生技系"],
+"NON":["不分系"]
+};
+const department=[
+["文學院","LIB"],
+["理學院","SCE"],
+["工學院","ENG"],
+["管理學院","MAN"],
+["醫學院","MC"],
+["社會科學院","SOC"],
+["電資學院","EECS"],
+["規設院","CPD"],
+["生科院","BIO"],
+["其他","NON"]
+];
+const fliter_2= [{
+  id:0,
+  now:-1,
+  name: "申請年",
+  type: "year",
+  option:[["全部年度",-1],[107,-1],[106,-1],[105,-1],[104,-1]]
+}];
+
+
 
 class editComment extends Component {
     constructor(props) {
     super(props)
     this.state = {
-        fliter:{year:""},
+        fliter:{year:"none",confirm:"全部",in_maj:"none"},
         id: -1,
         new_id: "不變",
         id_array:[],
@@ -40,23 +75,67 @@ class editComment extends Component {
     this.deleteComment=this.deleteComment.bind(this)
     this.handleOpenModal=this.handleOpenModal.bind(this)
     this.handleRWD=this.handleRWD.bind(this)
+    this.sponMobileMenu=this.sponMobileMenu.bind(this)
+    this.changeConfirm=this.changeConfirm.bind(this)
+  }
+
+  changeConfirm(e){
+    if(e.target.checked){
+      this.setState({confirm:"true"})
+    }
+    else{
+      this.setState({confirm:"false"})
+    }
   }
 
   changeFliter(new_fliter,type){
-    if(type=="null"){
-      this.setState({id:-1,show:this.state.datas})
-      //this.props.changeLocation((new_fliter==="QA"?"QA":"comment"),"-1")
-    }
-      if(type==="confirm"){
+    if(type==="confirm"){
         var output=[];
         const condition=(new_fliter==="已審核")?"true":"false";
         this.state.datas.forEach(Element=>{
           if(new_fliter==="全部"||Element["confirm"]==condition)
-            output.push(Element);
-    })        
-      this.setState({show:output})
+            if(this.state.fliter.in_maj==="none"||Element["department"]===this.state.fliter.in_maj||Element["in_maj"]===this.state.fliter.in_maj)
+                if(this.state.fliter.year==="none"||Element["year"]===this.state.fliter.year)
+                    output.push(Element);
+        })        
+      this.setState({show:output,fliter:{year:this.state.fliter.year,in_maj:this.state.fliter.in_maj,confirm:new_fliter}})
     }
-    
+    else if(type==="year"){
+        var output=[];
+        this.state.datas.forEach(element => {
+          if(element[type]==new_fliter&&(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)&&(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm))
+            output.push(element);
+          else if(new_fliter==="none"){
+            if(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)
+                if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+                    output.push(element);
+          }
+        });
+        this.setState({show:output,fliter:{year:new_fliter,in_maj:this.state.fliter.in_maj,confirm:this.state.fliter.confirm}});
+      }
+    else{
+        this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter,confirm:this.state.fliter.confirm},resetFliter: !this.state.resetFliter});
+        if(new_fliter==="none"){
+          if(this.state.mobile_display=="none")
+            this.setState({fliter:{year:"none",in_maj:new_fliter,confirm:this.state.fliter.confirm}});
+          var output=[];
+          this.state.datas.forEach(element => {
+            if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year||(this.state.mobile_display=="none"&&new_fliter==="none"))
+                if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+                    output.push(element);
+          });          
+          this.setState({show:output,selectDepartment:"none"});    
+        }
+        else{
+          var output=[];
+          this.state.datas.forEach(element => {
+          if(element[type]===new_fliter&&(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year))
+            if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+                output.push(element);
+          });
+          this.setState({show:output});
+        }
+    }
   }
 
   getData() {
@@ -74,10 +153,16 @@ class editComment extends Component {
               input.push(data[i]["id"]);
         this.setState({
             datas: data,
-            id_array: input});
+            id_array: input,
+            show:data,
+            is_fetch:true
+        });
           
       })
-      .catch(e => console.log('錯誤:', e));
+      .catch(e => {
+          console.log('錯誤:', e)
+         location.href="/#/admin/login"
+    });
   }
 
 
@@ -151,6 +236,40 @@ class editComment extends Component {
       //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
     }
 
+    sponMobileMenu(){
+        var object=[];
+        object.push(
+          {
+            id:0,
+            name: "none",
+            type: "department",
+            now:-1,
+            option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社會科學院",6],["電資學院",7],["規設院",8],["生科院",9]]
+          }
+        );
+        for(var i=0;i<department.length;++i){
+          let singleObject=[];
+          singleObject.push(
+            ["全部學系",-1]
+          );
+          for(var j=0;j<NCKU[department[i][1]].length;++j){
+            singleObject.push(
+              [NCKU[ department[i][1] ][j],-1]
+            );
+          }
+          object.push(
+              {
+                id: i+1,
+                now:-1,
+                name: ["department",department[i][0]],
+                type: "in_maj",
+                option: singleObject,
+              }
+          );
+        }
+        return object;
+      }
+
     componentDidMount(){
         this.getData();
     }
@@ -191,13 +310,15 @@ class editComment extends Component {
         bottom                : 'auto',
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
-        padding: "7%",
+        padding: "3% 7%",
         backgroundColor:"white"
       }
     };
     const alert=<Modal isOpen={this.state.showModal} style={customStyles} onRequestClose={()=>{this.setState({showModal:false})}} className="Modal" overlayClassName="Overlay">
-      <div>確定要刪除嗎?刪除後無法還原歐~</div>
-      <div className="btn-container" id="edit" style={{display:"flex",alignItems:"center",justifyContent:"space-around"}}><button onClick={()=>{this.setState({showModal:false})}}>取消</button><button onClick={this.deleteComment}>確定</button></div>
+      <div style={{fontSize:"17px"}}>確定要刪除嗎?刪除後無法還原歐~</div>
+      <div className="btn-container" id="edit" style={{display:"flex",alignItems:"center",justifyContent:"space-around",marginTop:"30px"}}>
+        <button onClick={()=>{this.setState({showModal:false})}} style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",width:"40%",color:"white",border:"none",padding:"2%"}}>取消</button>
+        <button onClick={this.deleteComment} style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",width:"40%",color:"white",border:"none",padding:"2%"}}>確定</button></div>
       </Modal>;
     const fliter2=[{
       id: 0,
@@ -213,47 +334,55 @@ class editComment extends Component {
         );
     }
 
-    const table=()=>{
+    const table=(id)=>{
+      if(id!=-1)
         return (<div className="check-container">
-        <Button variant="danger" style={{alignSelf:"flex-start"}} onClick={() =>{ this.setState({ id: -1 });}}>← 返回選單</Button>
-        <Table striped bordered hover style={{width:"250px",marginTop:"20px"}}>
-          <tbody>
-          <tr><td>id</td><td>{this.state.id}</td></tr>
-          <tr><td>排名上: </td><td>{this.state.rank_1}</td></tr>
-          <tr><td>排名下: </td><td>{this.state.rank_2}</td></tr>
-          <tr><td>申請年度:</td><td>{this.state.year}</td></tr>
-          <tr><td>轉出科系:</td><td>{this.state.out_maj}</td></tr>
-          <tr><td>轉入科系:</td><td>{this.state.in_maj}</td></tr>
-          </tbody>
-        </Table>
-        <div style={{width:"70%"}}>{this.state.comment}</div>
+        <Card>
+        <button style={{width:"50px",height:"50px",alignSelf:"flex-start",padding:"6px 6px",fontWeight:"100",borderRadius:"50px",position:"absolute",top:"-20px",left:"-20px",backgroundColor:"rgb(229,68,109)",border:"none",color:"white"}} onClick={() =>{ this.setState({ id: -1 });}}>←</button>
+        <div style={{width:"100%",padding:"10% 15%"}}>
+          <table style={{width:"100%",minHeight:"150px"}}>
+            <tbody>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>id:</Badge></td><td>{this.state.id}</td></tr>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>排名上: </Badge></td><td>{this.state.rank_1}</td></tr>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>排名下: </Badge></td><td>{this.state.rank_2}</td></tr>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>申請年度:</Badge></td><td>{this.state.year}</td></tr>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>轉出科系:</Badge></td><td>{this.state.out_maj}</td></tr>
+              <tr><td><Badge variant="danger" style={{fontWeight:"100",backgroundColor:"rgb(229,68,109)",minWidth:"70px"}}>轉入科系:</Badge></td><td>{this.state.in_maj}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style={{width:"100%",fontWeight:"100",lineHeight:"30px",minHeight:"125px",fontSize:"17px",letterSpacing:"3px"}}>{this.state.comment}</div>
           <div className="confirm-container">
             <form>
-           是否確認:
-            是<input type="radio" name="comfirm" value="true" checked={this.state.confirm==="true"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
-            否<input type="radio" name="comfirm" value="false" checked={this.state.confirm==="false"} onChange={(e) =>{ this.setState({ confirm: e.target.value })}}/>
+              <div className="toggle-container">
+                <div style={{marginRight:"10px"}}>是否確認:</div>
+                <div><Toggle defaultChecked={this.state.confirm==="true"} onChange={this.changeConfirm}/> </div>
+              </div>  
             </form>
-            <button onClick={this.handleClick}>送出</button>
-            <br/><br/>
-            <button onClick={this.deleteComment}>刪除該文章</button>
+            <div className="btn-container">
+              <button onClick={()=>{this.setState({showModal:true})}} style={{width:"20%"}}>刪除</button>
+              <button onClick={this.handleClick} style={{width:"70%"}}>送出</button>
+            </div>
           </div>
+          </Card>
         </div>);
     } 
 
     return (
       <div className="edit">
         <div className="Menu" style={{height:"auto",position:"absolute",top:"50px",left:"0px",width: "100%",height:"100%"}}>
-          <div style={{width:"90%",margin:"5% 5%",display:(this.state.id===-1)?"none":"block"}}>
+          <div style={{width:"90%",margin:"70px 5%",display:(this.state.id===-1)?"none":"block"}}>
             <br/>
-            {table()}
+            {table(this.state.id)}
             {alert}
             </div>
         </div>
-        <div className="index" style={{display:(this.state.id===-1)?"block":"none", top:"100px"}}>
+        <div className="index" style={{display:(this.state.id===-1)?"block":"none", top:"125px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)",minHeight:"30px",maxHeight:"60px"}}>
-          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{position:"absolute",marginLeft:"170px",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",height:"30px"}}/>
+        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)",minHeight:"35px",maxHeight:"70px",maxWidth:"100vw"}}>
+          <MobileFliter  show={this.state.fliter.in_maj} controllArray={[0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]} mobile={this.state.display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{top:"0px",marginLeft:"20px",width:'340px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",marginLeft:"20px",lineHeight:"31px",fontSize:"12px",}}/>
         </div>
       </div>
     );

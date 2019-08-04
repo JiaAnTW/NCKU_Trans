@@ -106,7 +106,7 @@ class major_QAIndex extends Component {
     });
     return(
       <Card style={{ width: this.state.cardWidth,height:"auto",maxWidth:"100%" }}>
-      <Card.Body style={{width:"100vw",height:"auto",maxWidth:"100%"}}>
+      <Card.Body style={{width:"100vw",height:"auto",maxWidth:"100%",backgroundColor:(datas[number]["confirm"]=="false")?"rgba(229,68,109,0.3)":"white"}}>
       <Card.Title style={{fontSize: this.state.fontSize, height:"auto" }}><div style={{maxWidth: "95%",textAlign:"justify"}}>{datas[number]["question"]}</div></Card.Title>
       <button className="showBtn" onClick={this.handleOpenContent.bind(this,datas[number]["id"])} style={{ position:"absolute",top:"0",left:"0",width:"100%",height:"75%",backgroundColor: "rgba(0, 0, 0,0)",border: "none",outline:"none"}}></button>
       {tags}

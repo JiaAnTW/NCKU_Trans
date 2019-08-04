@@ -8,6 +8,7 @@ import Post from './post';
 import Admin from './admin';
 import Edit from './edit';
 import EditComment from './editComment';
+import EditQA from './editQA';
 import QA from './major_QA';
 import error from './error';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,8 +24,13 @@ class App extends Component{
     }
 
     setToken( token ){
-        this.setState({token:token});
-        
+        const set=new Promise((resolve)=>{
+            this.setState({token:token});
+            resolve();
+        })
+        set.then((resolve)=>{
+            location.href="/#/admin/comment"
+        })
     }
 
     render(){
@@ -39,7 +45,7 @@ class App extends Component{
                     <Route path="/home" component={Home}/>
                     <Route path="/admin/login" render={(props)=><Admin {...props} setToken={this.setToken}/>}/>
                     <Route path="/admin/comment" render={(props)=><EditComment {...props} token={this.state.token}/>}/>
-                    <Route path="/admin/QA" render={(props)=><Edit {...props} token={this.state.token}/>}/>
+                    <Route path="/admin/QA" render={(props)=><EditQA {...props} token={this.state.token}/>}/>
                 </Layout>
                 <Route path="" component={error}/>         
             </Switch>

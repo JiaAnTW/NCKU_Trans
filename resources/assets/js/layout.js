@@ -12,14 +12,14 @@ class layout extends Component {
       <nav id="layout-nav">
         <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
         <a href="https://goo.gl/forms/6MkYePHd03P7Nv8w2" target="_blank" className="navItem" style={{textDecoration:"none"}}>聯絡我們</a><a href="/#/post" className="navItem" style={{textDecoration:"none"}}>分享心得</a><a href="/#/QA/~" className="navItem" style={{textDecoration:"none"}}>常見QA</a><a href="/#/comment" className="navItem" style={{textDecoration:"none"}}>瀏覽心得</a>
-        <MobileMenu/>
+        <MobileMenu isAdmin={false}/>
       </nav>
     );
     const adminNav=(
       <nav id="layout-nav">
         <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
-        <a href="/#/post" className="navItem" style={{textDecoration:"none"}}>編輯學系</a><a href="/#/QA/~" className="navItem" style={{textDecoration:"none"}}>審查QA</a><a href="/#/comment" className="navItem" style={{textDecoration:"none"}}>審查心得</a>
-        <MobileMenu/>
+        <a href="/#/post" className="navItem" style={{textDecoration:"none"}}>編輯學系</a><a href="/#/admin/QA" className="navItem" style={{textDecoration:"none"}}>審查QA</a><a href="/#/admin/comment" className="navItem" style={{textDecoration:"none"}}>審查心得</a>
+        <MobileMenu isAdmin={true}/>
       </nav>
     );
 

@@ -3206,6 +3206,25 @@ exports.push([module.i, ".menu_mobile{\r\n    position: absolute;\r\n    top:0px
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/components/css/toggle.css":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/components/css/toggle.css ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".react-toggle {\r\n    touch-action: pan-x;\r\n  \r\n    display: inline-block;\r\n    position: relative;\r\n    cursor: pointer;\r\n    background-color: transparent;\r\n    border: 0;\r\n    padding: 0;\r\n  \r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n  \r\n    -webkit-tap-highlight-color: rgba(0,0,0,0);\r\n    -webkit-tap-highlight-color: transparent;\r\n  }\r\n  \r\n  .react-toggle-screenreader-only {\r\n    border: 0;\r\n    clip: rect(0 0 0 0);\r\n    height: 1px;\r\n    margin: -1px;\r\n    overflow: hidden;\r\n    padding: 0;\r\n    position: absolute;\r\n    width: 1px;\r\n  }\r\n  \r\n  .react-toggle--disabled {\r\n    cursor: not-allowed;\r\n    opacity: 0.5;\r\n    transition: opacity 0.25s;\r\n  }\r\n  \r\n  .react-toggle-track {\r\n    width: 50px;\r\n    height: 24px;\r\n    padding: 0;\r\n    border-radius: 30px;\r\n    background-color: #4D4D4D;\r\n    transition: all 0.2s ease;\r\n  }\r\n  \r\n  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {\r\n    background-color: #000000;\r\n  }\r\n  \r\n  .react-toggle--checked .react-toggle-track {\r\n    background-color: rgb(229,68,109);\r\n  }\r\n  \r\n  .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {\r\n    background-color: rgb(229,68,109);\r\n  }\r\n  \r\n  .react-toggle-track-check {\r\n    position: absolute;\r\n    width: 14px;\r\n    height: 10px;\r\n    top: 0px;\r\n    bottom: 0px;\r\n    margin-top: auto;\r\n    margin-bottom: auto;\r\n    line-height: 0;\r\n    left: 8px;\r\n    opacity: 0;\r\n    transition: opacity 0.25s ease;\r\n  }\r\n  \r\n  .react-toggle--checked .react-toggle-track-check {\r\n    opacity: 1;\r\n    transition: opacity 0.25s ease;\r\n  }\r\n  \r\n  .react-toggle-track-x {\r\n    position: absolute;\r\n    width: 10px;\r\n    height: 10px;\r\n    top: 0px;\r\n    bottom: 0px;\r\n    margin-top: auto;\r\n    margin-bottom: auto;\r\n    line-height: 0;\r\n    right: 10px;\r\n    opacity: 1;\r\n    transition: opacity 0.25s ease;\r\n  }\r\n  \r\n  .react-toggle--checked .react-toggle-track-x {\r\n    opacity: 0;\r\n  }\r\n  \r\n  .react-toggle-thumb {\r\n    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\r\n    position: absolute;\r\n    top: 1px;\r\n    left: 1px;\r\n    width: 22px;\r\n    height: 22px;\r\n    border: 1px solid #4D4D4D;\r\n    border-radius: 50%;\r\n    background-color: #FAFAFA;\r\n    box-sizing: border-box;\r\n    transition: all 0.25s ease;\r\n  }\r\n  \r\n  .react-toggle--checked .react-toggle-thumb {\r\n    left: 27px;\r\n    border-color: rgb(229,68,109);\r\n  }\r\n  ", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/css/comment.css":
 /*!*****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/assets/js/css/comment.css ***!
@@ -3237,7 +3256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n\r\n.edit .check-container{\r\n    flex-direction: column;\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.confirm-container{\r\n    padding: 15px;\r\n    border: 2px solid rgb(229,68,109);\r\n    border-radius: 15px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.edit .check-container, .edit .btn-container, .btn-container #edit{   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.edit .btn-container, .btn-container #edit{\r\n    justify-content: space-around;\r\n    -ms-justify-content: space-around;\r\n    -webkit-justify-content: space-around;\r\n}\r\n", ""]);
+exports.push([module.i, ".edit .Menu{\r\n    width: 100%;\r\n    background-image: none;\r\n}\r\n\r\n.edit .check-container{\r\n    flex-direction: column;\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px;\r\n    margin-bottom: 15px\r\n}\r\n\r\n.edit .check-container button{\r\n    background-color: rgb(229,68,109);\r\n    color: white;\r\n    border :none;\r\n    outline: none;\r\n    min-height: 25px;\r\n}\r\n\r\n.edit .check-container .card{\r\n    padding: 5px 30px;\r\n    width: 300px;\r\n    position: relative;\r\n    border: none;\r\n}\r\n\r\n.confirm-container{\r\n    margin-top: 30px;\r\n}\r\n\r\n.edit .check-container, .edit .btn-container, .btn-container #edit, .edit .MobileMenu ,.edit .toggle-container{   /* OLD - iOS 6-, Safari 3.1-6, BB7 */  /* TWEENER - IE 10 */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\r\n    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */\r\n    align-items: center;\r\n    -ms-align-items: center;\r\n    -webkit-align-items: center;\r\n    margin-top: 20px\r\n}\r\n\r\n.edit .btn-container, .btn-container #edit,.edit .MobileMenu{\r\n    justify-content: space-around;\r\n    -ms-justify-content: space-around;\r\n    -webkit-justify-content: space-around;\r\n}\r\n\r\n.edit .btn-container button{\r\n    padding: 7px 6px;\r\n    font-weight: 100;\r\n}\r\n\r\n.edit .MobileMenu{\r\n    flex-wrap: wrap;\r\n    -ms-flex-wrap: wrap;\r\n    -webkit-flex-wrap: wrap;\r\n}\r\n\r\n.edit .MobileMenu{\r\n    justify-content: flex-start;\r\n    -ms-justify-content: flex-start;\r\n    -webkit-justify-content: flex-start;\r\n}\r\n\r\n.edit .fliter{\r\n    position: fixed;\r\n    top:89px;\r\n    left:0px;\r\n    width: 100vw;\r\n    border: 1px solid #d9d9d9;\r\n    box-shadow: 0 0 4px #d9d9d9;\r\n    background-color: rgb(229,68,109);\r\n    padding:10px 15px;\r\n}\r\n\r\n.edit .MobileFliter{\r\n    position:fixed;\r\n    top:53.5px;\r\n    left:0px;\r\n    width:100vw;\r\n    max-width:100%;\r\n    height:37px;\r\n    background-color:rgb(229,68,109);\r\n    display: block;\r\n}\r\n\r\n.edit .toggle-container{\r\n    margin-top: 0;\r\n    justify-content: flex-end;\r\n    -ms-justify-content: flex-end;\r\n    -webkit-justify-content: flex-end;\r\n}\r\n\r\n@media (min-width: 859px) { \r\n    .edit .check-container .card{\r\n        width: 600px;\r\n    }\r\n\r\n\r\n    .edit .fliter{\r\n        position: absolute;\r\n        top:55px;\r\n        left:0px;\r\n        width: 200px;\r\n        height: 92vh;\r\n        padding-top: 10px;\r\n        background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);  \r\n    }\r\n\r\n    .edit .MobileFliter{\r\n        display: none;\r\n    }\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -46817,6 +46836,381 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
+/***/ "./node_modules/react-toggle/dist/component/check.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-toggle/dist/component/check.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  return _react2.default.createElement(
+    'svg',
+    { width: '14', height: '11', viewBox: '0 0 14 11' },
+    _react2.default.createElement(
+      'title',
+      null,
+      'switch-check'
+    ),
+    _react2.default.createElement('path', { d: 'M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0', fill: '#fff', fillRule: 'evenodd' })
+  );
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-toggle/dist/component/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-toggle/dist/component/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _check = __webpack_require__(/*! ./check */ "./node_modules/react-toggle/dist/component/check.js");
+
+var _check2 = _interopRequireDefault(_check);
+
+var _x = __webpack_require__(/*! ./x */ "./node_modules/react-toggle/dist/component/x.js");
+
+var _x2 = _interopRequireDefault(_x);
+
+var _util = __webpack_require__(/*! ./util */ "./node_modules/react-toggle/dist/component/util.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Toggle = function (_PureComponent) {
+  _inherits(Toggle, _PureComponent);
+
+  function Toggle(props) {
+    _classCallCheck(this, Toggle);
+
+    var _this = _possibleConstructorReturn(this, (Toggle.__proto__ || Object.getPrototypeOf(Toggle)).call(this, props));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.handleTouchStart = _this.handleTouchStart.bind(_this);
+    _this.handleTouchMove = _this.handleTouchMove.bind(_this);
+    _this.handleTouchEnd = _this.handleTouchEnd.bind(_this);
+    _this.handleFocus = _this.handleFocus.bind(_this);
+    _this.handleBlur = _this.handleBlur.bind(_this);
+    _this.previouslyChecked = !!(props.checked || props.defaultChecked);
+    _this.state = {
+      checked: !!(props.checked || props.defaultChecked),
+      hasFocus: false
+    };
+    return _this;
+  }
+
+  _createClass(Toggle, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if ('checked' in nextProps) {
+        this.setState({ checked: !!nextProps.checked });
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(event) {
+      var checkbox = this.input;
+      if (event.target !== checkbox && !this.moved) {
+        this.previouslyChecked = checkbox.checked;
+        event.preventDefault();
+        checkbox.focus();
+        checkbox.click();
+        return;
+      }
+
+      var checked = this.props.hasOwnProperty('checked') ? this.props.checked : checkbox.checked;
+
+      this.setState({ checked: checked });
+    }
+  }, {
+    key: 'handleTouchStart',
+    value: function handleTouchStart(event) {
+      this.startX = (0, _util.pointerCoord)(event).x;
+      this.activated = true;
+    }
+  }, {
+    key: 'handleTouchMove',
+    value: function handleTouchMove(event) {
+      if (!this.activated) return;
+      this.moved = true;
+
+      if (this.startX) {
+        var currentX = (0, _util.pointerCoord)(event).x;
+        if (this.state.checked && currentX + 15 < this.startX) {
+          this.setState({ checked: false });
+          this.startX = currentX;
+          this.activated = true;
+        } else if (currentX - 15 > this.startX) {
+          this.setState({ checked: true });
+          this.startX = currentX;
+          this.activated = currentX < this.startX + 5;
+        }
+      }
+    }
+  }, {
+    key: 'handleTouchEnd',
+    value: function handleTouchEnd(event) {
+      if (!this.moved) return;
+      var checkbox = this.input;
+      event.preventDefault();
+
+      if (this.startX) {
+        var endX = (0, _util.pointerCoord)(event).x;
+        if (this.previouslyChecked === true && this.startX + 4 > endX) {
+          if (this.previouslyChecked !== this.state.checked) {
+            this.setState({ checked: false });
+            this.previouslyChecked = this.state.checked;
+            checkbox.click();
+          }
+        } else if (this.startX - 4 < endX) {
+          if (this.previouslyChecked !== this.state.checked) {
+            this.setState({ checked: true });
+            this.previouslyChecked = this.state.checked;
+            checkbox.click();
+          }
+        }
+
+        this.activated = false;
+        this.startX = null;
+        this.moved = false;
+      }
+    }
+  }, {
+    key: 'handleFocus',
+    value: function handleFocus(event) {
+      var onFocus = this.props.onFocus;
+
+
+      if (onFocus) {
+        onFocus(event);
+      }
+
+      this.setState({ hasFocus: true });
+    }
+  }, {
+    key: 'handleBlur',
+    value: function handleBlur(event) {
+      var onBlur = this.props.onBlur;
+
+
+      if (onBlur) {
+        onBlur(event);
+      }
+
+      this.setState({ hasFocus: false });
+    }
+  }, {
+    key: 'getIcon',
+    value: function getIcon(type) {
+      var icons = this.props.icons;
+
+      if (!icons) {
+        return null;
+      }
+      return icons[type] === undefined ? Toggle.defaultProps.icons[type] : icons[type];
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          className = _props.className,
+          _icons = _props.icons,
+          inputProps = _objectWithoutProperties(_props, ['className', 'icons']);
+
+      var classes = (0, _classnames2.default)('react-toggle', {
+        'react-toggle--checked': this.state.checked,
+        'react-toggle--focus': this.state.hasFocus,
+        'react-toggle--disabled': this.props.disabled
+      }, className);
+
+      return _react2.default.createElement(
+        'div',
+        { className: classes,
+          onClick: this.handleClick,
+          onTouchStart: this.handleTouchStart,
+          onTouchMove: this.handleTouchMove,
+          onTouchEnd: this.handleTouchEnd },
+        _react2.default.createElement(
+          'div',
+          { className: 'react-toggle-track' },
+          _react2.default.createElement(
+            'div',
+            { className: 'react-toggle-track-check' },
+            this.getIcon('checked')
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'react-toggle-track-x' },
+            this.getIcon('unchecked')
+          )
+        ),
+        _react2.default.createElement('div', { className: 'react-toggle-thumb' }),
+        _react2.default.createElement('input', _extends({}, inputProps, {
+          ref: function ref(_ref) {
+            _this2.input = _ref;
+          },
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur,
+          className: 'react-toggle-screenreader-only',
+          type: 'checkbox' }))
+      );
+    }
+  }]);
+
+  return Toggle;
+}(_react.PureComponent);
+
+exports.default = Toggle;
+
+
+Toggle.displayName = 'Toggle';
+
+Toggle.defaultProps = {
+  icons: {
+    checked: _react2.default.createElement(_check2.default, null),
+    unchecked: _react2.default.createElement(_x2.default, null)
+  }
+};
+
+Toggle.propTypes = {
+  checked: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  defaultChecked: _propTypes2.default.bool,
+  onChange: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func,
+  onBlur: _propTypes2.default.func,
+  className: _propTypes2.default.string,
+  name: _propTypes2.default.string,
+  value: _propTypes2.default.string,
+  id: _propTypes2.default.string,
+  'aria-labelledby': _propTypes2.default.string,
+  'aria-label': _propTypes2.default.string,
+  icons: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.shape({
+    checked: _propTypes2.default.node,
+    unchecked: _propTypes2.default.node
+  })])
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-toggle/dist/component/util.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-toggle/dist/component/util.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pointerCoord = pointerCoord;
+// Copyright 2015-present Drifty Co.
+// http://drifty.com/
+// from: https://github.com/driftyco/ionic/blob/master/src/util/dom.ts
+
+function pointerCoord(event) {
+  // get coordinates for either a mouse click
+  // or a touch depending on the given event
+  if (event) {
+    var changedTouches = event.changedTouches;
+    if (changedTouches && changedTouches.length > 0) {
+      var touch = changedTouches[0];
+      return { x: touch.clientX, y: touch.clientY };
+    }
+    var pageX = event.pageX;
+    if (pageX !== undefined) {
+      return { x: pageX, y: event.pageY };
+    }
+  }
+  return { x: 0, y: 0 };
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-toggle/dist/component/x.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-toggle/dist/component/x.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  return _react2.default.createElement(
+    'svg',
+    { width: '10', height: '10', viewBox: '0 0 10 10' },
+    _react2.default.createElement(
+      'title',
+      null,
+      'switch-x'
+    ),
+    _react2.default.createElement('path', { d: 'M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12', fill: '#fff', fillRule: 'evenodd' })
+  );
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/Transition.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-transition-group/Transition.js ***!
@@ -52570,12 +52964,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./admin */ "./resources/assets/js/admin.js");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit */ "./resources/assets/js/edit.js");
 /* harmony import */ var _editComment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./editComment */ "./resources/assets/js/editComment.js");
-/* harmony import */ var _major_QA__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./major_QA */ "./resources/assets/js/major_QA.js");
-/* harmony import */ var _error__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./error */ "./resources/assets/js/error.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _editQA__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./editQA */ "./resources/assets/js/editQA.js");
+/* harmony import */ var _major_QA__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./major_QA */ "./resources/assets/js/major_QA.js");
+/* harmony import */ var _error__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./error */ "./resources/assets/js/error.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap-theme.min.css */ "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_theme_min_css__WEBPACK_IMPORTED_MODULE_14__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -52595,6 +52990,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -52632,14 +53028,23 @@ function (_Component) {
   _createClass(App, [{
     key: "setToken",
     value: function setToken(token) {
-      this.setState({
-        token: token
+      var _this2 = this;
+
+      var set = new Promise(function (resolve) {
+        _this2.setState({
+          token: token
+        });
+
+        resolve();
+      });
+      set.then(function (resolve) {
+        location.href = "/#/admin/comment";
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
@@ -52653,7 +53058,7 @@ function (_Component) {
         component: _post__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/QA/:id",
-        component: _major_QA__WEBPACK_IMPORTED_MODULE_10__["default"]
+        component: _major_QA__WEBPACK_IMPORTED_MODULE_11__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home",
         component: _home__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -52661,26 +53066,26 @@ function (_Component) {
         path: "/admin/login",
         render: function render(props) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_admin__WEBPACK_IMPORTED_MODULE_7__["default"], _extends({}, props, {
-            setToken: _this2.setToken
+            setToken: _this3.setToken
           }));
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/admin/comment",
         render: function render(props) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_editComment__WEBPACK_IMPORTED_MODULE_9__["default"], _extends({}, props, {
-            token: _this2.state.token
+            token: _this3.state.token
           }));
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/admin/QA",
         render: function render(props) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit__WEBPACK_IMPORTED_MODULE_8__["default"], _extends({}, props, {
-            token: _this2.state.token
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_editQA__WEBPACK_IMPORTED_MODULE_10__["default"], _extends({}, props, {
+            token: _this3.state.token
           }));
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "",
-        component: _error__WEBPACK_IMPORTED_MODULE_11__["default"]
+        component: _error__WEBPACK_IMPORTED_MODULE_12__["default"]
       })));
     }
   }]);
@@ -54591,6 +54996,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/css/toggle.css":
+/*!*******************************************************!*\
+  !*** ./resources/assets/js/components/css/toggle.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./toggle.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/assets/js/components/css/toggle.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/icon.js":
 /*!************************************************!*\
   !*** ./resources/assets/js/components/icon.js ***!
@@ -54859,7 +55294,8 @@ function (_Component) {
         style: {
           width: "100vw",
           height: "auto",
-          maxWidth: "100%"
+          maxWidth: "100%",
+          backgroundColor: datas[number]["confirm"] == "false" ? "rgba(229,68,109,0.3)" : "white"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {
         style: {
@@ -55393,7 +55829,8 @@ function (_Component) {
         borderTop: "0px solid rgba(243,243,243,0.5)",
         borderBottom: "0.5px solid rgba(243,243,243,0.5)",
         borderLeft: "0px solid rgba(243,243,243,0.5)",
-        borderRight: "0px solid rgba(243,243,243,0.5)"
+        borderRight: "0px solid rgba(243,243,243,0.5)",
+        fontWeight: "100"
       };
       var ListStyle = {
         textAlign: "center",
@@ -55405,7 +55842,8 @@ function (_Component) {
         borderTop: "0.5px solid rgba(243,243,243,0.5)",
         borderBottom: "0.5px solid rgba(243,243,243,0.5)",
         borderLeft: "0px solid rgba(243,243,243,0.5)",
-        borderRight: "0px solid rgba(243,243,243,0.5)"
+        borderRight: "0px solid rgba(243,243,243,0.5)",
+        fontWeight: "100"
       };
       var ListStyleLast = {
         textAlign: "center",
@@ -55417,8 +55855,101 @@ function (_Component) {
         borderTop: "0.5px solid rgba(243,243,243,0.5)",
         borderBottom: "0px solid rgba(243,243,243,0.5)",
         borderLeft: "0px solid rgba(243,243,243,0.5)",
-        borderRight: "0px solid rgba(243,243,243,0.5)"
+        borderRight: "0px solid rgba(243,243,243,0.5)",
+        fontWeight: "100"
       };
+
+      var Menu = function Menu(is_admin) {
+        if (!is_admin) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"], {
+            defaultActiveKey: "/#/",
+            style: {
+              border: "none",
+              boxShadow: "none"
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/comment",
+            className: "list",
+            style: ListStyleFirst
+          }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/QA/~",
+            className: "list",
+            style: ListStyle
+          }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/post",
+            className: "list",
+            style: ListStyle
+          }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "https://goo.gl/forms/6MkYePHd03P7Nv8w2",
+            target: "_blank",
+            className: "list",
+            style: ListStyleLast
+          }, "\u806F\u7D61\u6211\u5011"));
+        } else {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"], {
+            defaultActiveKey: "/#/",
+            style: {
+              border: "none",
+              boxShadow: "none"
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/admin/comment",
+            className: "list",
+            style: ListStyleFirst
+          }, "\u5BE9\u67E5\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/admin/QA",
+            className: "list",
+            style: ListStyle
+          }, "\u5BE9\u67E5QA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
+            action: true,
+            onClick: function onClick(e) {
+              return _this2.setState({
+                open: !open
+              });
+            },
+            href: "/#/post",
+            className: "list",
+            style: ListStyle
+          }, "\u5206\u4EAB\u5FC3\u5F97"));
+        }
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "menu_mobile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -55446,54 +55977,7 @@ function (_Component) {
           width: "100vw",
           maxWidth: "100%"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"], {
-        defaultActiveKey: "/#/",
-        style: {
-          border: "none",
-          boxShadow: "none"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
-        action: true,
-        onClick: function onClick(e) {
-          return _this2.setState({
-            open: !open
-          });
-        },
-        href: "/#/comment",
-        className: "list",
-        style: ListStyleFirst
-      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
-        action: true,
-        onClick: function onClick(e) {
-          return _this2.setState({
-            open: !open
-          });
-        },
-        href: "/#/QA/~",
-        className: "list",
-        style: ListStyle
-      }, "\u5E38\u898BQA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
-        action: true,
-        onClick: function onClick(e) {
-          return _this2.setState({
-            open: !open
-          });
-        },
-        href: "/#/post",
-        className: "list",
-        style: ListStyle
-      }, "\u5206\u4EAB\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ListGroup"].Item, {
-        action: true,
-        onClick: function onClick(e) {
-          return _this2.setState({
-            open: !open
-          });
-        },
-        href: "https://goo.gl/forms/6MkYePHd03P7Nv8w2",
-        target: "_blank",
-        className: "list",
-        style: ListStyleLast
-      }, "\u806F\u7D61\u6211\u5011")))));
+      }, Menu(this.props.isAdmin))));
     }
   }]);
 
@@ -56491,11 +56975,12 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-tagsinput */ "./node_modules/react-tagsinput/react-tagsinput.js");
-/* harmony import */ var react_tagsinput__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_commentIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/commentIndex */ "./resources/assets/js/components/commentIndex.js");
-/* harmony import */ var _components_major_QAIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/major_QAIndex */ "./resources/assets/js/components/major_QAIndex.js");
-/* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
+/* harmony import */ var _components_commentIndex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/commentIndex */ "./resources/assets/js/components/commentIndex.js");
+/* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
+/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toggle */ "./node_modules/react-toggle/dist/component/index.js");
+/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_toggle__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_css_toggle_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/css/toggle.css */ "./resources/assets/js/components/css/toggle.css");
+/* harmony import */ var _components_css_toggle_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_css_toggle_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
 /* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/edit.css */ "./resources/assets/js/css/edit.css");
@@ -56532,6 +57017,26 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var NCKU = {
+  "LIB": ["中文系", "外文系", "台文系"],
+  "SCE": ["數學系", "物理系", "化學系", "地科系", "光電系"],
+  "ENG": ["機械系", "化工系", "材料系", "資源系", "土木系", "水利系", "工科系", "系統系", "航太系", "環工系", "測量系", "醫工系", "能源學程"],
+  "MAN": ["工資系", "交管系", "企管系", "統計系", "會計系"],
+  "MC": ["醫學系", "牙醫系", "醫技系", "護理系", "職治系", "物治系", "藥學系"],
+  "SOC": ["政治系", "經濟系", "法律系", "心理系"],
+  "EECS": ["電機系", "資訊系"],
+  "CPD": ["建築系", "都計系", "工設系"],
+  "BIO": ["生科系", "生技系"],
+  "NON": ["不分系"]
+};
+var department = [["文學院", "LIB"], ["理學院", "SCE"], ["工學院", "ENG"], ["管理學院", "MAN"], ["醫學院", "MC"], ["社會科學院", "SOC"], ["電資學院", "EECS"], ["規設院", "CPD"], ["生科院", "BIO"], ["其他", "NON"]];
+var fliter_2 = [{
+  id: 0,
+  now: -1,
+  name: "申請年",
+  type: "year",
+  option: [["全部年度", -1], [107, -1], [106, -1], [105, -1], [104, -1]]
+}];
 
 var editComment =
 /*#__PURE__*/
@@ -56546,7 +57051,9 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(editComment).call(this, props));
     _this.state = {
       fliter: {
-        year: ""
+        year: "none",
+        confirm: "全部",
+        in_maj: "none"
       },
       id: -1,
       new_id: "不變",
@@ -56575,34 +57082,99 @@ function (_Component) {
     _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
     _this.handleOpenModal = _this.handleOpenModal.bind(_assertThisInitialized(_this));
     _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
+    _this.sponMobileMenu = _this.sponMobileMenu.bind(_assertThisInitialized(_this));
+    _this.changeConfirm = _this.changeConfirm.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(editComment, [{
+    key: "changeConfirm",
+    value: function changeConfirm(e) {
+      if (e.target.checked) {
+        this.setState({
+          confirm: "true"
+        });
+      } else {
+        this.setState({
+          confirm: "false"
+        });
+      }
+    }
+  }, {
     key: "changeFliter",
     value: function changeFliter(new_fliter, type) {
-      if (type == "null") {
-        this.setState({
-          id: -1,
-          show: this.state.datas
-        }); //this.props.changeLocation((new_fliter==="QA"?"QA":"comment"),"-1")
-      }
+      var _this2 = this;
 
       if (type === "confirm") {
         var output = [];
         var condition = new_fliter === "已審核" ? "true" : "false";
         this.state.datas.forEach(function (Element) {
-          if (new_fliter === "全部" || Element["confirm"] == condition) output.push(Element);
+          if (new_fliter === "全部" || Element["confirm"] == condition) if (_this2.state.fliter.in_maj === "none" || Element["department"] === _this2.state.fliter.in_maj || Element["in_maj"] === _this2.state.fliter.in_maj) if (_this2.state.fliter.year === "none" || Element["year"] === _this2.state.fliter.year) output.push(Element);
         });
         this.setState({
-          show: output
+          show: output,
+          fliter: {
+            year: this.state.fliter.year,
+            in_maj: this.state.fliter.in_maj,
+            confirm: new_fliter
+          }
         });
+      } else if (type === "year") {
+        var output = [];
+        this.state.datas.forEach(function (element) {
+          if (element[type] == new_fliter && (_this2.state.fliter.in_maj === "none" || element["department"] === _this2.state.fliter.in_maj || element["in_maj"] === _this2.state.fliter.in_maj) && (_this2.state.fliter.confirm == "全部" || element["confirm"] === _this2.state.fliter.confirm)) output.push(element);else if (new_fliter === "none") {
+            if (_this2.state.fliter.in_maj === "none" || element["department"] === _this2.state.fliter.in_maj || element["in_maj"] === _this2.state.fliter.in_maj) if (_this2.state.fliter.confirm == "全部" || element["confirm"] === _this2.state.fliter.confirm) output.push(element);
+          }
+        });
+        this.setState({
+          show: output,
+          fliter: {
+            year: new_fliter,
+            in_maj: this.state.fliter.in_maj,
+            confirm: this.state.fliter.confirm
+          }
+        });
+      } else {
+        this.setState({
+          fliter: {
+            year: this.state.fliter.year,
+            in_maj: new_fliter,
+            confirm: this.state.fliter.confirm
+          },
+          resetFliter: !this.state.resetFliter
+        });
+
+        if (new_fliter === "none") {
+          if (this.state.mobile_display == "none") this.setState({
+            fliter: {
+              year: "none",
+              in_maj: new_fliter,
+              confirm: this.state.fliter.confirm
+            }
+          });
+          var output = [];
+          this.state.datas.forEach(function (element) {
+            if (_this2.state.fliter.year === "none" || element["year"] === _this2.state.fliter.year || _this2.state.mobile_display == "none" && new_fliter === "none") if (_this2.state.fliter.confirm == "全部" || element["confirm"] === _this2.state.fliter.confirm) output.push(element);
+          });
+          this.setState({
+            show: output,
+            selectDepartment: "none"
+          });
+        } else {
+          var output = [];
+          this.state.datas.forEach(function (element) {
+            if (element[type] === new_fliter && (_this2.state.fliter.year === "none" || element["year"] === _this2.state.fliter.year)) if (_this2.state.fliter.confirm == "全部" || element["confirm"] === _this2.state.fliter.confirm) output.push(element);
+          });
+          this.setState({
+            show: output
+          });
+        }
       }
     }
   }, {
     key: "getData",
     value: function getData() {
-      var _this2 = this;
+      var _this3 = this;
 
       fetch('/api/get/major/all', {
         method: 'GET',
@@ -56618,12 +57190,15 @@ function (_Component) {
           input.push(data[i]["id"]);
         }
 
-        _this2.setState({
+        _this3.setState({
           datas: data,
-          id_array: input
+          id_array: input,
+          show: data,
+          is_fetch: true
         });
       }).catch(function (e) {
-        return console.log('錯誤:', e);
+        console.log('錯誤:', e);
+        location.href = "/#/admin/login";
       });
     }
   }, {
@@ -56687,12 +57262,12 @@ function (_Component) {
   }, {
     key: "deleteComment",
     value: function deleteComment() {
-      var _this3 = this;
+      var _this4 = this;
 
       var url = '/api/post/major/' + this.state.id.toString();
       var new_data = this.state.datas;
       new_data.splice(new_data.findIndex(function (Element) {
-        return Element.id === _this3.state.id;
+        return Element.id === _this4.state.id;
       }), 1);
       fetch(url, {
         method: 'DELETE',
@@ -56703,7 +57278,7 @@ function (_Component) {
       }).then(function (res) {
         res.json();
 
-        _this3.setState({
+        _this4.setState({
           id: -1,
           datas: new_data,
           showModal: false
@@ -56711,6 +57286,37 @@ function (_Component) {
       }).catch(function (e) {
         return console.log('錯誤:', e);
       }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+    }
+  }, {
+    key: "sponMobileMenu",
+    value: function sponMobileMenu() {
+      var object = [];
+      object.push({
+        id: 0,
+        name: "none",
+        type: "department",
+        now: -1,
+        option: [["全部學院", -1], ["文學院", 1], ["理學院", 2], ["工學院", 3], ["管理學院", 4], ["醫學院", 5], ["社會科學院", 6], ["電資學院", 7], ["規設院", 8], ["生科院", 9]]
+      });
+
+      for (var i = 0; i < department.length; ++i) {
+        var singleObject = [];
+        singleObject.push(["全部學系", -1]);
+
+        for (var j = 0; j < NCKU[department[i][1]].length; ++j) {
+          singleObject.push([NCKU[department[i][1]][j], -1]);
+        }
+
+        object.push({
+          id: i + 1,
+          now: -1,
+          name: ["department", department[i][0]],
+          type: "in_maj",
+          option: singleObject
+        });
+      }
+
+      return object;
     }
   }, {
     key: "componentDidMount",
@@ -56752,7 +57358,667 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this5 = this;
+
+      var customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          padding: "3% 7%",
+          backgroundColor: "white"
+        }
+      };
+      var alert = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        isOpen: this.state.showModal,
+        style: customStyles,
+        onRequestClose: function onRequestClose() {
+          _this5.setState({
+            showModal: false
+          });
+        },
+        className: "Modal",
+        overlayClassName: "Overlay"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          fontSize: "17px"
+        }
+      }, "\u78BA\u5B9A\u8981\u522A\u9664\u55CE?\u522A\u9664\u5F8C\u7121\u6CD5\u9084\u539F\u6B50~"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-container",
+        id: "edit",
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          marginTop: "30px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          _this5.setState({
+            showModal: false
+          });
+        },
+        style: {
+          fontWeight: "100",
+          backgroundColor: "rgb(229,68,109)",
+          width: "40%",
+          color: "white",
+          border: "none",
+          padding: "2%"
+        }
+      }, "\u53D6\u6D88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.deleteComment,
+        style: {
+          fontWeight: "100",
+          backgroundColor: "rgb(229,68,109)",
+          width: "40%",
+          color: "white",
+          border: "none",
+          padding: "2%"
+        }
+      }, "\u78BA\u5B9A")));
+      var fliter2 = [{
+        id: 0,
+        now: -1,
+        name: "none",
+        type: "confirm",
+        option: [["", -1], ["全部", -1], ["已審核", -1], ["未審核", -1]]
+      }];
+
+      var switchIndex = function switchIndex() {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          datas: _this5.state.show,
+          is_fetch: _this5.state.is_fetch,
+          onClick: _this5.handleOpenModal,
+          handleRWD: _this5.handleRWD
+        });
+      };
+
+      var table = function table(id) {
+        if (id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "check-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          style: {
+            width: "50px",
+            height: "50px",
+            alignSelf: "flex-start",
+            padding: "6px 6px",
+            fontWeight: "100",
+            borderRadius: "50px",
+            position: "absolute",
+            top: "-20px",
+            left: "-20px",
+            backgroundColor: "rgb(229,68,109)",
+            border: "none",
+            color: "white"
+          },
+          onClick: function onClick() {
+            _this5.setState({
+              id: -1
+            });
+          }
+        }, "\u2190"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            width: "100%",
+            padding: "10% 15%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+          style: {
+            width: "100%",
+            minHeight: "150px"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "id:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u6392\u540D\u4E0A: ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u6392\u540D\u4E0B: ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u7533\u8ACB\u5E74\u5EA6:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u8F49\u51FA\u79D1\u7CFB:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u8F49\u5165\u79D1\u7CFB:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this5.state.in_maj))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            width: "100%",
+            fontWeight: "100",
+            lineHeight: "30px",
+            minHeight: "125px",
+            fontSize: "17px",
+            letterSpacing: "3px"
+          }
+        }, _this5.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "confirm-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "toggle-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            marginRight: "10px"
+          }
+        }, "\u662F\u5426\u78BA\u8A8D:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_toggle__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          defaultChecked: _this5.state.confirm === "true",
+          onChange: _this5.changeConfirm
+        }), " "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "btn-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            _this5.setState({
+              showModal: true
+            });
+          },
+          style: {
+            width: "20%"
+          }
+        }, "\u522A\u9664"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this5.handleClick,
+          style: {
+            width: "70%"
+          }
+        }, "\u9001\u51FA")))));
+      };
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Menu",
+        style: _defineProperty({
+          height: "auto",
+          position: "absolute",
+          top: "50px",
+          left: "0px",
+          width: "100%"
+        }, "height", "100%")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          width: "90%",
+          margin: "70px 5%",
+          display: this.state.id === -1 ? "none" : "block"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table(this.state.id), alert)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index",
+        style: {
+          display: this.state.id === -1 ? "block" : "none",
+          top: "125px"
+        }
+      }, switchIndex()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MobileMenu",
+        style: {
+          marginTop: "55px",
+          position: "relative",
+          backgroundColor: "rgb(229,68,109)",
+          minHeight: "35px",
+          maxHeight: "70px",
+          maxWidth: "100vw"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        show: this.state.fliter.in_maj,
+        controllArray: [0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        mobile: this.state.display,
+        fliter: this.changeFliter,
+        type: "\u4F9D\u5B78\u9662/\u7CFB",
+        value: this.sponMobileMenu(),
+        style: {
+          top: "0px",
+          marginLeft: "20px",
+          width: '340px',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          lineHeight: "31px",
+          fontSize: "12px",
+          outline: "none"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        show: "全部",
+        controllArray: [0, -1],
+        mobile: this.state.display,
+        fliter: this.changeFliter,
+        type: "\u662F\u5426\u5BE9\u6838",
+        value: fliter2,
+        style: {
+          width: '150px',
+          backgroundColor: "rgb(229,68,109)",
+          color: "white",
+          marginLeft: "20px",
+          lineHeight: "31px",
+          fontSize: "12px"
+        }
+      })));
+    }
+  }]);
+
+  return editComment;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (editComment);
+
+/***/ }),
+
+/***/ "./resources/assets/js/editQA.js":
+/*!***************************************!*\
+  !*** ./resources/assets/js/editQA.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_major_QAIndex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/major_QAIndex */ "./resources/assets/js/components/major_QAIndex.js");
+/* harmony import */ var _components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/mobileFliter */ "./resources/assets/js/components/mobileFliter.js");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tagsinput/react-tagsinput.css */ "./node_modules/react-tagsinput/react-tagsinput.css");
+/* harmony import */ var react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_tagsinput_react_tagsinput_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css/edit.css */ "./resources/assets/js/css/edit.css");
+/* harmony import */ var _css_edit_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_css_edit_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
+/* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _img_search_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/search.png */ "./resources/assets/js/img/search.png");
+/* harmony import */ var _img_search_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_img_search_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _img_can_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/can.png */ "./resources/assets/js/img/can.png");
+/* harmony import */ var _img_can_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_img_can_png__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-toggle */ "./node_modules/react-toggle/dist/component/index.js");
+/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_toggle__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_css_toggle_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/css/toggle.css */ "./resources/assets/js/components/css/toggle.css");
+/* harmony import */ var _components_css_toggle_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_css_toggle_css__WEBPACK_IMPORTED_MODULE_10__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var editQA =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(editQA, _Component);
+
+  function editQA(props) {
+    var _this;
+
+    _classCallCheck(this, editQA);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(editQA).call(this, props));
+    _this.state = {
+      confirmFliter: "全部",
+      fliterByWord: '',
+      new_id: "不變",
+      id_array: [],
+      datas: [],
+      show: [],
+      is_fetch: false,
+      qa_datas: [],
+      qa_new_id: "不變",
+      qa_id_array: [],
+      qa_id: -1,
+      qa_q: "",
+      qa_a: "",
+      qa_confirm: "",
+      tags: [],
+      showContent: [],
+      total_tags: [],
+      display: "block",
+      showModal: false,
+      openFliter: false
+    };
+    _this.changeFliter = _this.changeFliter.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.getData = _this.getData.bind(_assertThisInitialized(_this));
+    _this.changeNewId = _this.changeNewId.bind(_assertThisInitialized(_this));
+    _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleOpenModal = _this.handleOpenModal.bind(_assertThisInitialized(_this));
+    _this.handleRWD = _this.handleRWD.bind(_assertThisInitialized(_this));
+    _this.spawnTags = _this.spawnTags.bind(_assertThisInitialized(_this));
+    _this.changeSelectBtn = _this.changeSelectBtn.bind(_assertThisInitialized(_this));
+    _this.changeFliterByWord = _this.changeFliterByWord.bind(_assertThisInitialized(_this));
+    _this.changeConfirm = _this.changeConfirm.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(editQA, [{
+    key: "changeConfirm",
+    value: function changeConfirm(e) {
+      if (e.target.checked) {
+        this.setState({
+          qa_confirm: "true"
+        });
+      } else {
+        this.setState({
+          qa_confirm: "false"
+        });
+      }
+    }
+  }, {
+    key: "changeFliterByWord",
+    value: function changeFliterByWord(e) {
+      var _this2 = this;
+
+      //this.setState({fliterByWord: e.target.value});
+      var changeState = function changeState() {
+        return new Promise(function (resolve, reject) {
+          return _this2.setState({
+            fliterByWord: e.target.value
+          }, function () {
+            return resolve();
+          });
+        });
+      };
+
+      changeState().then(function (value) {
+        _this2.changeFliter("none");
+      }); //this.changeFliter()
+    }
+  }, {
+    key: "changeSelectBtn",
+    value: function changeSelectBtn(index) {
+      var new_tags = this.state.total_tags;
+      new_tags[index][1] = !new_tags[index][1];
+      this.setState({
+        total_tags: new_tags
+      });
+    }
+  }, {
+    key: "spawnTags",
+    value: function spawnTags(datas) {
+      var total_tags = [];
+      datas.forEach(function (element) {
+        if (element["tag"] != "") {
+          element["tag"].split(",").forEach(function (tag) {
+            for (var i = 0; i < total_tags.length; ++i) {
+              if (total_tags[i][0] === tag) return;
+            }
+
+            total_tags.push([tag, false]);
+          });
+        }
+      });
+      this.setState({
+        total_tags: total_tags
+      });
+    }
+  }, {
+    key: "changeFliter",
+    value: function changeFliter(new_fliter, type) {
+      var _this3 = this;
+
+      if (this.state.display === "none") this.setState({
+        openFliter: false
+      });
+      var show = [];
+      var tag = [];
+      var rst_tag = this.state.total_tags;
+
+      if (type === "none") {
+        rst_tag.forEach(function (element) {
+          element[1] = false;
+        });
+      }
+
+      for (var i = 0; i < this.state.total_tags.length; ++i) {
+        if (this.state.total_tags[i][1] === true) tag.push(this.state.total_tags[i][0]);
+      }
+
+      if (type === "confirm") {
+        if (new_fliter === "全部") var condition = "全部";else var condition = new_fliter === "已審核" ? "true" : "false";
+        this.setState({
+          confirmFliter: condition
+        });
+      } else var condition = this.state.confirmFliter;
+
+      if (type != "none" && tag.length > 0) {
+        this.state.qa_datas.forEach(function (element) {
+          var array = element["tag"].split(",");
+          var isFind = true;
+
+          for (var i = 0; i < array.length && isFind; ++i) {
+            for (var j = 0; j < tag.length && isFind; ++j) {
+              if (array.findIndex(function (Element) {
+                return Element === tag[j];
+              }) == -1) {
+                isFind = false;
+              }
+            }
+          }
+
+          if (isFind && (_this3.state.fliterByWord === "" || element["question"].search(_this3.state.fliterByWord) != -1)) {
+            if (condition === "全部" || element["confirm"] == condition) {
+              show.push(element);
+              return;
+            }
+          }
+        });
+        this.setState({
+          show: show
+        });
+      } else {
+        this.state.qa_datas.forEach(function (element) {
+          if (_this3.state.fliterByWord === '' || element["question"].search(_this3.state.fliterByWord) != -1) {
+            if (condition === "全部" || element["confirm"] == condition) {
+              show.push(element);
+              return;
+            }
+          }
+        });
+      }
+
+      this.setState({
+        show: show,
+        total_tags: rst_tag
+      });
+    }
+  }, {
+    key: "getData",
+    value: function getData() {
       var _this4 = this;
+
+      fetch('/api/get/major_QA/all', {
+        method: 'GET',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        var input = [];
+
+        for (var i = 0; i < data.length; ++i) {
+          input.push(data[i]["id"]);
+        }
+
+        _this4.setState({
+          qa_datas: data,
+          is_fetch: true,
+          qa_id_array: input,
+          show: data
+        });
+
+        _this4.spawnTags(data);
+      }).catch(function (e) {
+        console.log('錯誤:', e);
+        location.href = "/#/admin/login";
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(tags) {
+      this.setState({
+        tags: tags
+      });
+    }
+  }, {
+    key: "handleRWD",
+    value: function handleRWD(mobile) {
+      if (mobile) this.setState({
+        display: "none",
+        openFliter: false
+      });else this.setState({
+        display: "block",
+        openFliter: true
+      });
+    }
+  }, {
+    key: "handleOpenModal",
+    value: function handleOpenModal(id) {
+      var object = this.state.qa_datas;
+      var i = 0;
+
+      while (object[i]["id"] != id) {
+        i++;
+      }
+
+      if (i < object.length) {
+        this.setState({
+          showContent: object[i]
+        });
+        this.changeId(i);
+      }
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      var url = '/api/post/major_QA/' + this.state.qa_id.toString();
+      var data = {
+        'id': this.state.qa_new_id != "不變" ? this.state.qa_new_id : this.state.qa_id,
+        'question': this.state.qa_q,
+        'answer': this.state.qa_a,
+        'confirm': this.state.qa_confirm,
+        'tags': this.state.tags
+      };
+      fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        console.log(data);
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+    }
+  }, {
+    key: "deleteComment",
+    value: function deleteComment() {
+      var _this5 = this;
+
+      var url = '/api/post/major_QA/' + this.state.qa_id.toString();
+      var new_data = this.state.qa_datas;
+      new_data.splice(new_data.findIndex(function (Element) {
+        return Element.id === _this5.state.qa_id;
+      }), 1);
+      fetch(url, {
+        method: 'DELETE',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': "Bearer " + this.props.token
+        })
+      }).then(function (res) {
+        res.json();
+
+        _this5.setState({
+          qa_id: -1,
+          qa_datas: new_data,
+          showModal: false
+        });
+      }).catch(function (e) {
+        return console.log('錯誤:', e);
+      }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "changeNewId",
+    value: function changeNewId(e) {
+      if (e.target.value != "不變") this.setState({
+        new_id: e.target.value
+      });
+    }
+  }, {
+    key: "changeId",
+    value: function changeId(e) {
+      var i = e;
+      var real_i = e; //this.state.qa_id_array.findIndex(function(value, index, arr){return value.toString()===i});
+
+      var tags = this.state.qa_datas[real_i]["tag"].split(",");
+      this.setState({
+        qa_id: this.state.qa_datas[real_i]["id"],
+        new_id: "不變",
+        qa_q: this.state.qa_datas[real_i]["question"],
+        qa_a: this.state.qa_datas[real_i]["answer"],
+        tags: tags
+      }); //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),e)
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this6 = this;
 
       var customStyles = {
         content: {
@@ -56766,33 +58032,61 @@ function (_Component) {
           backgroundColor: "white"
         }
       };
-      var alert = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_8___default.a, {
+      var alert = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
         isOpen: this.state.showModal,
         style: customStyles,
         onRequestClose: function onRequestClose() {
-          _this4.setState({
+          _this6.setState({
             showModal: false
           });
         },
         className: "Modal",
         overlayClassName: "Overlay"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\u78BA\u5B9A\u8981\u522A\u9664\u55CE?\u522A\u9664\u5F8C\u7121\u6CD5\u9084\u539F\u6B50~"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          fontSize: "17px"
+        }
+      }, "\u78BA\u5B9A\u8981\u522A\u9664\u55CE?\u522A\u9664\u5F8C\u7121\u6CD5\u9084\u539F\u6B50~"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-container",
         id: "edit",
         style: {
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-around"
+          justifyContent: "space-around",
+          marginTop: "30px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          _this4.setState({
+          _this6.setState({
             showModal: false
           });
+        },
+        style: {
+          fontWeight: "100",
+          backgroundColor: "rgb(229,68,109)",
+          width: "40%",
+          color: "white",
+          border: "none",
+          padding: "2%"
         }
       }, "\u53D6\u6D88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.deleteComment
+        onClick: this.deleteComment,
+        style: {
+          fontWeight: "100",
+          backgroundColor: "rgb(229,68,109)",
+          width: "40%",
+          color: "white",
+          border: "none",
+          padding: "2%"
+        }
       }, "\u78BA\u5B9A")));
+      var fliter = [{
+        id: 0,
+        now: -1,
+        name: "none",
+        type: "null",
+        option: [["", -1], ["QA", -1], ["心得", -1]]
+      }];
       var fliter2 = [{
         id: 0,
         now: -1,
@@ -56802,66 +58096,131 @@ function (_Component) {
       }];
 
       var switchIndex = function switchIndex() {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_commentIndex__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          datas: _this4.state.show,
-          is_fetch: _this4.state.is_fetch,
-          onClick: _this4.handleOpenModal,
-          handleRWD: _this4.handleRWD
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_major_QAIndex__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          datas: _this6.state.show,
+          is_fetch: _this6.state.is_fetch,
+          onClick: _this6.handleOpenModal,
+          handleRWD: _this6.handleRWD
         });
       };
 
-      var table = function table() {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var table = function table(id) {
+        if (id != -1) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Button"], {
-          variant: "danger",
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           style: {
-            alignSelf: "flex-start"
+            width: "50px",
+            height: "50px",
+            alignSelf: "flex-start",
+            padding: "6px 6px",
+            fontWeight: "100",
+            borderRadius: "50px",
+            position: "absolute",
+            top: "-20px",
+            left: "-20px",
+            backgroundColor: "rgb(229,68,109)",
+            border: "none",
+            color: "white"
           },
           onClick: function onClick() {
-            _this4.setState({
-              id: -1
+            _this6.setState({
+              qa_id: -1
             });
           }
-        }, "\u2190 \u8FD4\u56DE\u9078\u55AE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Table"], {
-          striped: true,
-          bordered: true,
-          hover: true,
+        }, "\u2190"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: {
-            width: "250px",
-            marginTop: "20px"
+            width: "100%",
+            padding: "10% 15%"
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0A: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u6392\u540D\u4E0B: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.rank_2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u7533\u8ACB\u5E74\u5EA6:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u51FA\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.out_maj)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "\u8F49\u5165\u79D1\u7CFB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this4.state.in_maj)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+          style: {
+            width: "100%"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          style: {
+            display: "flex"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "id:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          style: {
+            paddingBottom: "10px"
+          }
+        }, _this6.state.qa_id)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          style: {
+            display: "flex"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Badge"], {
+          variant: "danger",
+          style: {
+            fontWeight: "100",
+            backgroundColor: "rgb(229,68,109)",
+            minWidth: "70px"
+          }
+        }, "\u554F\u984C")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, _this6.state.qa_q))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            width: "100%",
+            fontWeight: "100",
+            lineHeight: "30px",
+            minHeight: "125px",
+            fontSize: "17px",
+            letterSpacing: "3px"
+          }
+        }, _this6.state.qa_a), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "confirm-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "toggle-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: {
+            marginRight: "10px"
+          }
+        }, "\u662F\u5426\u78BA\u8A8D:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_toggle__WEBPACK_IMPORTED_MODULE_9___default.a, {
+          defaultChecked: _this6.state.qa_confirm === "true",
+          onChange: _this6.changeConfirm
+        }), " "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "btn-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            _this6.setState({
+              showModal: true
+            });
+          },
+          style: {
+            width: "20%"
+          }
+        }, "\u522A\u9664"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this6.handleClick,
           style: {
             width: "70%"
           }
-        }, _this4.state.comment), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "confirm-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, "\u662F\u5426\u78BA\u8A8D: \u662F", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "radio",
-          name: "comfirm",
-          value: "true",
-          checked: _this4.state.confirm === "true",
-          onChange: function onChange(e) {
-            _this4.setState({
-              confirm: e.target.value
-            });
-          }
-        }), "\u5426", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "radio",
-          name: "comfirm",
-          value: "false",
-          checked: _this4.state.confirm === "false",
-          onChange: function onChange(e) {
-            _this4.setState({
-              confirm: e.target.value
-            });
-          }
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this4.handleClick
-        }, "\u9001\u51FA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this4.deleteComment
-        }, "\u522A\u9664\u8A72\u6587\u7AE0")));
+        }, "\u9001\u51FA")))));
+      };
+
+      var Menu = function Menu() {
+        var output = [];
+
+        for (var i = 0; i < _this6.state.total_tags.length; ++i) {
+          output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+            variant: "light",
+            onClick: _this6.changeSelectBtn.bind(_this6, i),
+            style: {
+              fontWeight: "300",
+              outline: "none",
+              margin: "5px 2px",
+              color: _this6.state.total_tags[i][1] == false ? "white" : "#F8BBD0",
+              backgroundColor: _this6.state.total_tags[i][1] == false ? "transparent" : "rgba(0,0,0,0.1)",
+              borderColor: "rgba(243,243,243,0.5)",
+              borderRadius: "0"
+            }
+          }, _this6.state.total_tags[i][0]));
+        }
+
+        return output;
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56879,24 +58238,41 @@ function (_Component) {
         style: {
           width: "90%",
           margin: "5% 5%",
-          display: this.state.id === -1 ? "none" : "block"
+          display: this.state.qa_id === -1 ? "none" : "block"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table(), alert)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), table(this.state.qa_id), alert)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index",
         style: {
-          display: this.state.id === -1 ? "block" : "none",
+          display: this.state.qa_id === -1 ? "block" : "none",
           top: "100px"
         }
       }, switchIndex()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "MobileMenu",
+        className: "MobileFliter",
         style: {
-          marginTop: "55px",
-          position: "relative",
-          backgroundColor: "rgb(229,68,109)",
-          minHeight: "30px",
-          maxHeight: "60px"
+          display: this.state.qa_id != -1 ? "none" : "block"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+        onClick: function onClick() {
+          return _this6.setState({
+            openFliter: !_this6.state.openFliter
+          });
+        },
+        style: {
+          outline: "none",
+          width: "60%",
+          margin: "0px 20%",
+          backgroundColor: "transparent",
+          border: "none",
+          boxShadow: "none"
+        }
+      }, this.state.openFliter === true ? "X 關閉" : "+添加篩選")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fliter",
+        style: {
+          boxShadow: "none",
+          border: "none",
+          display: this.state.openFliter === true && this.state.is_fetch ? "block" : "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileFliter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         show: "全部",
         controllArray: [0, -1],
         mobile: this.state.display,
@@ -56904,8 +58280,7 @@ function (_Component) {
         type: "\u662F\u5426\u5BE9\u6838",
         value: fliter2,
         style: {
-          position: "absolute",
-          marginLeft: "170px",
+          marginLeft: "25px",
           width: '150px',
           backgroundColor: "rgb(229,68,109)",
           color: "white",
@@ -56913,14 +58288,61 @@ function (_Component) {
           fontSize: "12px",
           height: "30px"
         }
-      })));
+      }), Menu(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        border: "none",
+        placeholder: "\u67E5\u8A62\u6A19\u984C",
+        onChange: this.changeFliterByWord,
+        style: {
+          border: "none",
+          width: "80%",
+          margin: "15px 10%",
+          padding: "2% 7%",
+          borderRadius: "10px"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+        onClick: this.changeFliter.bind(this, "tag", "tag"),
+        style: {
+          outline: "none",
+          width: "86%",
+          margin: "5px 7%",
+          backgroundColor: "white",
+          border: "none",
+          color: "rgb(229,68,109)",
+          textShadow: "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_search_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        alt: "search",
+        style: {
+          marginRight: "7px",
+          height: "17px"
+        }
+      }), "\u9001\u51FA\u7BE9\u9078"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+        onClick: this.changeFliter.bind(this, "tag", "none"),
+        style: {
+          outline: "none",
+          width: "86%",
+          margin: "5px 7%",
+          backgroundColor: "transparent",
+          borderColor: "white",
+          textShadow: "none"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _img_can_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+        alt: "search",
+        style: {
+          marginRight: "7px",
+          height: "17px"
+        }
+      }), "\u6E05\u9664\u7BE9\u9078")));
     }
   }]);
 
-  return editComment;
+  return editQA;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (editComment);
+/* harmony default export */ __webpack_exports__["default"] = (editQA);
 
 /***/ }),
 
@@ -57216,7 +58638,9 @@ function (_Component) {
         style: {
           textDecoration: "none"
         }
-      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, "\u700F\u89BD\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        isAdmin: false
+      }));
       var adminNav = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "layout-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -57235,18 +58659,20 @@ function (_Component) {
           textDecoration: "none"
         }
       }, "\u7DE8\u8F2F\u5B78\u7CFB"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/QA/~",
+        href: "/#/admin/QA",
         className: "navItem",
         style: {
           textDecoration: "none"
         }
       }, "\u5BE9\u67E5QA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/#/comment",
+        href: "/#/admin/comment",
         className: "navItem",
         style: {
           textDecoration: "none"
         }
-      }, "\u5BE9\u67E5\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, "\u5BE9\u67E5\u5FC3\u5F97"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_mobileMenu_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        isAdmin: true
+      }));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "layout"
       }, this.props.children, this.props.location.pathname.indexOf('admin') != -1 ? adminNav : normalNav);
@@ -57683,7 +59109,10 @@ function (_Component) {
       var indexPage = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index"
       }, show), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "MobileMenu"
+        className: "MobileMenu",
+        style: {
+          display: this.props.location.pathname === "/QA/~" ? "block" : "none"
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         onClick: function onClick() {
           return _this5.setState({
