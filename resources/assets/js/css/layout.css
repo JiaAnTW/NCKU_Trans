@@ -67,6 +67,7 @@ body{
     outline: none;
     text-decoration:none;
     display: none;
+    font-weight: 300;
 }
 
 .navItem:hover{

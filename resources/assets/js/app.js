@@ -6,7 +6,7 @@ import Comment from './comment';
 import Layout from './layout';
 import Post from './post';
 import Admin from './admin';
-import Edit from './edit';
+import EditMajor from './editMajor';
 import EditComment from './editComment';
 import EditQA from './editQA';
 import QA from './major_QA';
@@ -46,6 +46,7 @@ class App extends Component{
                     <Route path="/admin/login" render={(props)=><Admin {...props} setToken={this.setToken}/>}/>
                     <Route path="/admin/comment" render={(props)=><EditComment {...props} token={this.state.token}/>}/>
                     <Route path="/admin/QA" render={(props)=><EditQA {...props} token={this.state.token}/>}/>
+                    <Route path="/admin/major" render={(props)=><EditMajor {...props} token={this.state.token}/>}/>
                 </Layout>
                 <Route path="" component={error}/>         
             </Switch>

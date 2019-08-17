@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button,Badge,Dropdown,ButtonToolbar} from 'react-bootstrap';
+import {Button,Badge,Spinner} from 'react-bootstrap';
 import CommentIndex from './components/commentIndex';
 import Content from './components/content';
 import Menu from './components/menu';
@@ -70,6 +70,8 @@ class comment extends Component {
         staticWatch: 0,
         resetFliter: false,
         is_fetch:false,
+        is_fetch_statis:false,
+        passRate:"null",
         datas: [],
     };
     this.findMobileFliterShow=this.findMobileFliterShow.bind(this)
@@ -88,6 +90,41 @@ class comment extends Component {
     this.handleMouseUp=this.handleMouseUp.bind(this);
     this.handleMouseMove=this.handleMouseMove.bind(this);
     this.staticScrollTo=this.staticScrollTo.bind(this);
+    this.getStatisticData=this.getStatisticData.bind(this)
+  }
+
+
+  getStatisticData(major,year){
+    const getData=new Promise(resolve=>{
+      this.setState({passRate:"null",is_fetch_statis:false})
+      const data={
+        major: major,
+        year: year
+      }
+      let formData = Object.keys(data).map(function (keyName) {
+        return encodeURIComponent(keyName) + '=' + encodeURIComponent(data[keyName])
+        }).join('&');
+      fetch(
+        'https://script.google.com/macros/s/AKfycbx7m5jeetEwjtZ8vbicrH8VfQ7tBp_hGyTWX7d73a5NQANmTvU/exec',
+        {
+          method: 'POST',
+          body:formData,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          },
+        }
+      )
+      .then(res => res.json())
+      .then(data => {
+          //const infor=JSON.parse(data);
+          console.log(data.passRate)
+          this.setState({passRate:data.passRate})
+          resolve();
+          //return infor.passRate;
+        }
+      ) 
+    })
+    return getData;   
   }
 
   handleMouseDown(e){
@@ -272,6 +309,9 @@ class comment extends Component {
         window.addEventListener('touchmove',this.handleMouseMove.bind(this));
       })
       .catch(e => console.log('錯誤:', e));
+      this.getStatisticData(this.state.fliter.in_maj,this.state.fliter.year).then(data=>{
+        this.setState({is_fetch_statis:true})
+      });
   }
 
   countDepartment(name,type){
@@ -295,6 +335,9 @@ class comment extends Component {
           }
         });
         this.setState({show:output,fliter:{year:new_fliter,in_maj:this.state.fliter.in_maj}});
+        this.getStatisticData(this.state.fliter.in_maj,new_fliter).then(data=>{
+          this.setState({is_fetch_statis:true})
+        });    
       }
       else{
         this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter},resetFliter: !this.state.resetFliter});
@@ -323,9 +366,12 @@ class comment extends Component {
               this.setState({selectDepartment:Element[0]})
             })
           })
+          this.getStatisticData(new_fliter,this.state.fliter.year).then(data=>{
+            this.setState({is_fetch_statis:true})
+          });  
         }
         else if(type==="department")
-          this.setState({selectDepartment:new_fliter})
+          this.setState({selectDepartment:new_fliter})  
     }
   }
 
@@ -390,8 +436,8 @@ class comment extends Component {
     return object;
   }
 
-  spawnStatistic(){
-    if(this.state.is_fetch==true){
+  spawnStatistic(is_fetch,is_fetch_statis){
+    if(is_fetch==true){
       var count=0;
       var min=100;
       var array=[];
@@ -422,10 +468,10 @@ class comment extends Component {
                     <Progress is_mobile={this.state.mobile_display} title="平均錄取分數" value={(length===0)?"null":count/length}/>
                   </div>
                   <div>
-                    <Progress is_mobile={this.state.mobile_display} title="第一四分位數" value={(this.state.show.length<4)?"null":array[Math.round(this.state.show.length/4)-1]}/>
-                  </div>
-                  <div>
                     <Progress is_mobile={this.state.mobile_display} title="最低錄取分數" value={(this.state.show.length===0)?"null":min}/>
+                  </div>
+                  <div style={{minWidth:"107.5px"}}>
+                    {(this.state.is_fetch_statis===false)?<div><Spinner animation="border" variant="danger" style={{width:"50px",height:"50px",marginTop:"20px",marginLeft:"30px"}}/><div style={{textAlign:"center",marginTop:"5px"}}>讀取中</div></div>:<Progress is_mobile={this.state.mobile_display} title="通過率(官方數據)" value={(this.state.passRate*100).toFixed(1)}/>}
                   </div>
                 </div>
                 <div className="standard" unselectable="on" style={{left:"0",width: "100%",height:"100%",position:"absolute"}}>
@@ -551,7 +597,7 @@ class comment extends Component {
       <div className="index">
         <CommentIndex datas={this.state.show} is_fetch={this.state.is_fetch} onClick={this.handleOpenModal} handleRWD={this.handleRWD}/>
       </div>
-      {this.spawnStatistic()}
+      {this.spawnStatistic(this.state.is_fetch,this.state.is_fetch_statis)}
       <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
         <MobileFliter controllArray={this.findMobileFliterShow(this.state.fliter.in_maj)} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
         <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>

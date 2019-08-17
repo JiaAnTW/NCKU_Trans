@@ -288,7 +288,7 @@ class maj_QA extends Component {
         <div className="index">
             {show}
         </div>
-        <div className="MobileMenu" style={{display:(this.props.location.pathname==="/QA/~")?"block":"none"}}> 
+        <div className="MobileMenu" style={{display:(this.props.location.pathname==="/QA/~"&&this.state.mobile_display==="none")?"block":"none"}}> 
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"transparent",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
           <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 

@@ -113,7 +113,7 @@ class post extends Component {
       var output=[];
       var clock=new Date();
         for(var i=clock.getFullYear();i>2014;--i){
-        if(i!=clock.getFullYear()||clock.getMonth()>7)
+        if(i!=clock.getFullYear()||clock.getMonth()+1>7)
           output.push(
             <option value={i-1911}>{i-1911}</option>
           );

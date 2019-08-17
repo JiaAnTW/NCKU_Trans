@@ -18,7 +18,7 @@ class layout extends Component {
     const adminNav=(
       <nav id="layout-nav">
         <button className="logo" onClick={(e)=>location.href='/#/'} style={{border: "none",outline: "none"}}>Logo</button>
-        <a href="/#/post" className="navItem" style={{textDecoration:"none"}}>編輯學系</a><a href="/#/admin/QA" className="navItem" style={{textDecoration:"none"}}>審查QA</a><a href="/#/admin/comment" className="navItem" style={{textDecoration:"none"}}>審查心得</a>
+        <a href="/#/admin/major" className="navItem" style={{textDecoration:"none"}}>編輯學系</a><a href="/#/admin/QA" className="navItem" style={{textDecoration:"none"}}>審查QA</a><a href="/#/admin/comment" className="navItem" style={{textDecoration:"none"}}>審查心得</a>
         <MobileMenu isAdmin={true}/>
       </nav>
     );

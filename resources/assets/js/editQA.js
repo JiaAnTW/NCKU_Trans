@@ -267,6 +267,7 @@ class editQA extends Component {
             new_id: "不變",
             qa_q:this.state.qa_datas[real_i]["question"],
             qa_a:this.state.qa_datas[real_i]["answer"],
+            qa_confirm: this.state.qa_datas[real_i]["confirm"],
             tags:tags,
           });
         //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),e)
@@ -361,7 +362,7 @@ class editQA extends Component {
         <div className="index" style={{display:(this.state.qa_id===-1)?"block":"none", top:"100px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileFliter" style={{display:(this.state.qa_id!=-1)?"none":"block"}}> 
+        <div className="MobileFliter" style={{display:(this.state.qa_id!=-1||this.state.display==="block")?"none":"block"}}> 
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"transparent",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
         <div className="fliter" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}>
