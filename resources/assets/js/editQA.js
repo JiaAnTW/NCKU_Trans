@@ -222,8 +222,14 @@ class editQA extends Component {
         .then(res => res.json())
         .then(data => {
           console.log(data)
+          this.setState({qa_id:-1,is_fetch:false})
+          this.getData();
         })
-        .catch(e => console.log('錯誤:', e))
+        .catch(e => {
+          this.setState({qa_id:-1,is_fetch:false})
+          this.getData();
+          console.log('錯誤:', e)
+      })
     //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
   }
 

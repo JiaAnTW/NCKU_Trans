@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/editMajor.css'
-import {Collapse} from 'react-bootstrap';
+import {Collapse,Spinner} from 'react-bootstrap';
+import Can from "./img/can.png";
 
 class editMajor extends Component {
     constructor(props) {
@@ -13,11 +14,13 @@ class editMajor extends Component {
         editDepartment:-1,
         startEditCol:false,
         startEditDep:false,
-        is_fetch:false
+        is_fetch:false,
+        is_fetch_2:false
     }
     this.handleClick = this.handleClick.bind(this)
-    this.getData=this.getData.bind(this)
-    this.deleteComment=this.deleteComment.bind(this)
+    this.getData=this.getData.bind(this);
+    this.getDepartment=this.getDepartment.bind(this)
+    this.deleteData=this.deleteData.bind(this)
     this.changeNowHandle=this.changeNowHandle.bind(this)
     this.changeColName=this.changeColName.bind(this)
     this.changeDepName=this.changeDepName.bind(this)
@@ -34,36 +37,60 @@ class editMajor extends Component {
       )
         .then(res => res.json())
         .then(data => {
+          var newData=data;
+          newData.push(
+            {
+              id:-1,
+              name:"",
+              english:""
+            }
+          )
           this.setState({
-              college:data
+              college:newData,
+              is_fetch: true
             });
-          getDepartment();
+          this.getDepartment();
+          if(this.state.editCollege!=-1){
+            const event={target:{value:this.state.college[this.state.editCollege].name}}
+            this.changeNowHandle(event);
+          }
         })
         .catch(e => {
           console.log('錯誤:', e)
          location.href="/#/admin/login"
     });
+  }
 
-    const getDepartment=()=>{
-        fetch(
-            '/api/get/department', {method: 'GET',
-            headers: new Headers({
-              'Content-Type': 'application/json',
-              'Authorization':"Bearer "+this.props.token,
-              })
-            }
-          )
-            .then(res => res.json())
-            .then(data => {
-              this.setState({
-                    department:data,
-                    is_fetch:true
-                });
-            })
-            .catch(e => {
+  
+  getDepartment(){
+    fetch(
+        '/api/get/department', {method: 'GET',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization':"Bearer "+this.props.token,
+          })
+        }
+      )
+        .then(res => res.json())
+        .then(data => {
+          var newData=data;
+          newData.push({
+            id:-1,
+            name:"",
+            college:""
+          })
+          this.setState({
+                department:newData,
+                is_fetch_2:true
+            });
+          if(this.state.editCollege!=-1){
+            const event={target:{value:this.state.college[this.state.editCollege].name}}
+            this.changeNowHandle(event);
+          }
+        })
+        .catch(e => {
 
-        });
-    }
+    });
   }
 
   changeNowHandle(e){
@@ -71,6 +98,13 @@ class editMajor extends Component {
     this.state.department.forEach(Element=>{
         if(Element.college===e.target.value)
             output.push(Element)
+    })
+    
+
+    output.push({
+      id:-1,
+      name:"",
+      college:""
     })
     this.setState({watchDepartment:output})
   }
@@ -82,13 +116,14 @@ class editMajor extends Component {
   }
 
   changeDepName(e,type){
-    var department=this.state.department;
+    var department=this.state.watchDepartment;
     department[this.state.editDepartment][type]=e.target.value;
-    this.setState({department:department})
+    this.setState({watchDepartment:department})
   }
 
-  handleClick() {
-      /*const url='/api/post/major_QA/'+this.state.qa_id.toString();
+  handleCreateData(type){
+    if(type=="college"){
+      const url='/api/post/college';
       const data={
           'id': (this.state.qa_new_id!="不變")?this.state.qa_new_id:this.state.qa_id,
           'question':this.state.qa_q,
@@ -96,8 +131,23 @@ class editMajor extends Component {
           'confirm':this.state.qa_confirm,
           'tags':this.state.tags,
       };
+    }   
+  }
+
+  handleClick(type) {
+    if(type=="college"){
+      this.setState({is_fetch:false})
+      var focus=this.state.editCollege;
+      var url='/api/post/college';
+      if(focus!=this.state.college.length-1)
+        url=url+"/"+this.state.college[focus].id.toString();
+      var data={
+          'id': this.state.college[focus].id,
+          'name':this.state.college[focus].name,
+          'english':this.state.college[focus].english,
+      };
       fetch(
-        url, {method: 'PUT',
+        url, {method: (focus==this.state.college.length-1)?'POST':'PUT',
           body: JSON.stringify(data),
           headers: new Headers({
             'Content-Type': 'application/json',
@@ -107,30 +157,94 @@ class editMajor extends Component {
       )
         .then(res => res.json())
         .then(data => {
+          this.getData();
           console.log(data)
         })
-        .catch(e => console.log('錯誤:', e))*/
+        .catch(e =>{
+          this.getData();
+          console.log('錯誤:', e)
+        })
+    }
+    else{
+      this.setState({is_fetch_2:false})
+      var focus=this.state.editDepartment;
+      var url='/api/post/department';
+      if(focus!=this.state.watchDepartment.length-1)
+        url=url+"/"+this.state.watchDepartment[focus].id.toString();
+      var data={
+          'id': this.state.watchDepartment[focus].id,
+          'name':this.state.watchDepartment[focus].name,
+          'college':this.state.college[this.state.editCollege].name,
+      };
+      fetch(
+        url, {method: (focus==this.state.watchDepartment.length-1)?'POST':'PUT',
+          body: JSON.stringify(data),
+          headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization':"Bearer "+this.props.token,
+            })
+          }
+      )
+        .then(res => res.json())
+        .then(data => {
+          this.getDepartment();
+          console.log(data)
+        })
+        .catch(e => {
+          this.getDepartment();
+          console.log('錯誤:', e)
+        })
+    }
     //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
   }
 
-    deleteComment(){
-        /*const url='/api/post/major_QA/'+this.state.qa_id.toString();
-        var new_data=this.state.qa_datas;
-        new_data.splice(new_data.findIndex((Element)=>{return Element.id===this.state.qa_id}),1);
+    deleteData(type){
+      if(type=="college"){
+        this.setState({is_fetch:false})
+        var focus=this.state.editCollege;
+        var url='/api/post/college';
+        url=url+"/"+this.state.college[focus].id.toString();
         fetch(
           url, {method: 'DELETE',
             headers: new Headers({
               'Content-Type': 'application/json',
               'Authorization':"Bearer "+this.props.token,
-            })
-          }
+              })
+            }
         )
-        .then(res =>{
-          res.json(); 
-          this.setState({qa_id:-1, qa_datas:new_data,showModal:false});
-       })
-        .catch(e => console.log('錯誤:', e))*/
-      //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
+          .then(res => res.json())
+          .then(data => {
+            this.getData();
+            console.log(data)
+          })
+          .catch(e =>{
+            this.getData();
+            console.log('錯誤:', e)
+          })
+      }
+      else{
+        this.setState({is_fetch_2:false})
+        var focus=this.state.editDepartment;
+        var url='/api/post/department';
+        url=url+"/"+this.state.watchDepartment[focus].id.toString();
+        fetch(
+          url, {method: 'DELETE',
+            headers: new Headers({
+              'Content-Type': 'application/json',
+              'Authorization':"Bearer "+this.props.token,
+              })
+            }
+        )
+          .then(res => res.json())
+          .then(data => {
+            this.getDepartment();
+            console.log(data)
+          })
+          .catch(e => {
+            this.getDepartment();
+            console.log('錯誤:', e)
+          })
+      }
     }
 
 
@@ -138,22 +252,29 @@ class editMajor extends Component {
         this.getData();
     }
 
+    componentWillMount(){
+      if(this.props.token==="")
+        location.href="/#/admin/login"
+    }
+
   render() {
-    const spawnCollege=(data)=>{
+    const spawnCollege=(data,is_fetch)=>{
+      if(is_fetch){
         var spawnbtn=data.map((Element,Index)=>{
+          if(Index!=data.length-1)
             return <div className="option-container" style={{backgroundColor:(this.state.editCollege==Index)?"#f77062":"rgb(229,68,109)"}}>
-                <button value={Element.name} onClick={(e)=>{this.changeNowHandle(e);this.setState({startEditCol:(this.state.editCollege===Index)?!this.state.startEditCol:false,editCollege:Index})}}>{Element.name}</button>
-                <button value={Element.name} className="edit-btn" onClick={(e)=>{this.changeNowHandle(e);this.setState({startEditCol:(this.state.editCollege===Index)?!this.state.startEditCol:true,editCollege:Index})}}></button>
+                <button value={Element.name} onClick={(e)=>{this.changeNowHandle(e);this.setState({editDepartment:-1,startEditDep:false,startEditCol:(this.state.editCollege===Index)?!this.state.startEditCol:false,editCollege:Index})}}>{Element.name}</button>
+                <button value={Element.name} className="edit-btn" onClick={(e)=>{this.changeNowHandle(e);this.setState({editDepartment:-1,startEditDep:false,startEditCol:(this.state.editCollege===Index)?!this.state.startEditCol:true,editCollege:Index})}}></button>
                 </div>
         })
 
         spawnbtn.push(
             <div className="option-container">
-                <button onClick={this.changeNowHandle}>+ 新增學院</button>
+                <button value={""} style={{backgroundColor:(this.state.editCollege==this.state.college.length-1)?"#f77062":"rgb(229,68,109)"}} onClick={(e)=>{this.changeNowHandle(e);this.setState({watchDepartment:[],editDepartment:-1,startEditDep:false,startEditCol:!this.state.startEditCol,editCollege:data.length-1})}}>+ 新增學院</button>
             </div>
         )
         return(
-            <div>
+            <div className="box-container">
                 <div className="select-box">
                     點擊學院，系所選單會自動跳出<br/>
                     點選編輯符號可開始編輯
@@ -168,17 +289,27 @@ class editMajor extends Component {
                         <p className="input-box">英文簡寫<input type="text" onChange={(e)=>{this.changeColName(e,"english")}}  value={(this.state.startEditCol)?this.state.college[this.state.editCollege].english:""} /></p>
                     </div>
                     <div className="send-box">
-                        <button>X</button>
-                        <button style={{width:"80%"}}>送出</button>
+                        <button onClick={(e)=>{this.deleteData("college")}}>
+                          <img src={Can} alt="search" style={{height:"17px"}}/>
+                        </button>
+                        <button style={{width:"80%"}} onClick={(e)=>{this.handleClick("college")}}>送出</button>
                     </div>
                  </div>
                  </Collapse>
             </div>
         )
+      }
+      else{
+        return( <div style={{height:"150px"}}>
+          <Spinner animation="border" variant="danger" style={{width:"50px",height:"50px",margin:"50px 150px"}}/>
+        </div>)
+      }
     }
 
-    const spawnDepartment=(data)=>{
+    const spawnDepartment=(data,is_fetch)=>{
+      if(is_fetch && data.length>1){
         var spawnbtn=data.map((Element,Index)=>{
+          if(Index!=data.length-1)
             return <div className="option-container" style={{backgroundColor:(this.state.editDepartment==Index)?"#f77062":"rgb(229,68,109)"}}>
                 <button value={Element.name} onClick={(e)=>{this.setState({startEditDep:(this.state.editDepartment===Index)?!this.state.startEditDep:true,editDepartment:Index})}}>{Element.name}</button>
                 <button value={Element.name} className="edit-btn" onClick={(e)=>{this.setState({startEditDep:(this.state.editDepartment===Index)?!this.state.startEditDep:true,editDepartment:Index})}}></button>
@@ -187,13 +318,12 @@ class editMajor extends Component {
 
         spawnbtn.push(
             <div className="option-container">
-                <button onClick={this.changeNowHandle}>+ 新增學院</button>
+                <button value={""} style={{backgroundColor:(this.state.editDepartment==this.state.watchDepartment.length-1)?"#f77062":"rgb(229,68,109)"}} onClick={(e)=>{this.setState({startEditDep:(this.state.editDepartment===this.state.watchDepartment.length-1)?!this.state.startEditDep:true,editDepartment:this.state.watchDepartment.length-1})}}>+ 新增系所</button>
             </div>
         )
         return(
             <div>
                 <div className="select-box">
-                    點擊學院，系所選單會自動跳出<br/>
                     點選編輯符號可開始編輯
                 <div className="btn-container">
                     {spawnbtn}
@@ -202,17 +332,25 @@ class editMajor extends Component {
                 <Collapse in={this.state.startEditDep}>
                 <div className="edit-box">
                     <div>
-                        <p className="input-box">系所名稱<input type="text" onChange={(e)=>{this.changeDepName(e,"name")}} value={(this.state.startEditDep)?this.state.department[this.state.editDepartment].name:""}/></p>
-                        <p className="input-box">所屬學院<input type="text" onChange={(e)=>{this.changeDepName(e,"college")}} value={(this.state.startEditDep)?this.state.department[this.state.editDepartment].college:""}/></p>
+                        <p className="input-box">所屬學院: {(this.state.startEditDep)?this.state.college[this.state.editCollege].name:""}</p>
+                        <p className="input-box">系所名稱<input type="text" onChange={(e)=>{this.changeDepName(e,"name")}} value={(this.state.startEditDep)?this.state.watchDepartment[this.state.editDepartment].name:""}/></p> 
                     </div>
                     <div className="send-box">
-                        <button>X</button>
-                        <button style={{width:"80%"}}>送出</button>
+                        <button onClick={(e)=>{this.deleteData("department")}}>
+                          <img src={Can} alt="search" style={{marginRight:"7px",height:"17px"}}/>
+                        </button>
+                        <button style={{width:"80%"}} onClick={(e)=>{this.handleClick("department")}}>送出</button>
                     </div>
                  </div>
                  </Collapse>
             </div>
         )
+      }
+      else if(data.length>1){
+        return( <div style={{height:"150px"}}>
+          <Spinner animation="border" variant="danger" style={{width:"50px",height:"50px",margin:"50px 150px"}}/>
+        </div>)        
+      }
     }
 
 
@@ -222,13 +360,13 @@ class editMajor extends Component {
             <div className="header">
                 學院區
             </div>
-            {spawnCollege(this.state.college)}
+            {spawnCollege(this.state.college,this.state.is_fetch)}
           </div>
           <div className="box">
             <div className="header">
-                系所區
+                {"編輯學院: "}{(this.state.editCollege!=-1&&this.state.editCollege!=this.state.college.length-1)?this.state.college[this.state.editCollege].name:"無"}
             </div>
-            {spawnDepartment(this.state.watchDepartment)}
+            {spawnDepartment(this.state.watchDepartment,this.state.is_fetch_2)}
           </div>
       </div>
     );

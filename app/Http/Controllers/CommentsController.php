@@ -38,7 +38,7 @@ class CommentsController extends Controller
         $comment = $data["comment"];
         $confirm = "false";
         DB::insert("INSERT INTO major VALUES('$id','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
-        
+        return "success";
     }
 
     //儲存資料
@@ -70,12 +70,15 @@ class CommentsController extends Controller
         $comment = $data["comment"];
         $confirm =  $data["confirm"];
         DB::table('major')->where('id',$id)->update(array('id'=>$new_id,'rank_1'=>$rank_1,'rank_2'=>$rank_2,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment,'confirm'=>$confirm))or die('MySQL query error');
+        return "success update!";
     }
 
     //刪除一筆資料
     public function destroy($id)
     {
+        
         DB::table('major')->where('id',$id)->delete();
+        return "success delete!";
     }
 
     private function defineDepartment($in_maj){
@@ -115,7 +118,7 @@ class CommentsController extends Controller
         if($this->FindDepartment($in_maj,$BIO))
             return "生科院";
         //Log::debug($in_maj+" 不是生科院");
-            return "不分系";
+            return "其他";
     }
     private function FindDepartment($in_maj,$array){
         return (array_search($in_maj, $array)!=false)?true:false;

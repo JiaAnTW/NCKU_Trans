@@ -76,7 +76,7 @@ class UserController extends Controller
             
             $user->save();
             
-            $response = ['success'=>true, 'data'=>['name'=>$user->name,'id'=>$user->id,'email'=>$request->email,'auth_token'=>$token]];        
+            $response = ['success'=>true, 'data'=>['name'=>$user->name,'id'=>$user->id,'email'=>$request->email,'remember_token'=>$token]];        
         }
         else
             $response = ['success'=>false, 'data'=>'Couldnt register user'];

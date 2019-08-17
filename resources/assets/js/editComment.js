@@ -210,9 +210,15 @@ class editComment extends Component {
       )
         .then(res => res.json())
         .then(data => {
+          this.setState({id:-1,is_fetch:false})
+          this.getData();
           console.log(data)
         })
-        .catch(e => console.log('錯誤:', e))
+        .catch(e => {
+          this.setState({id:-1,is_fetch:false})
+          this.getData();
+          console.log('錯誤:', e)
+        })
     //this.props.changeLocation((this.state.now_handle==="心得"?"comment":"QA"),"-1")
   }
 
