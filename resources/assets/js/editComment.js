@@ -7,6 +7,7 @@ import 'react-tagsinput/react-tagsinput.css'
 import './css/edit.css'
 import {Card,Badge} from 'react-bootstrap';
 import Modal from 'react-modal';
+import { getCollege, getDepartment } from "./components/http";
 
 var NCKU=
 {
@@ -21,7 +22,7 @@ var NCKU=
 "BIO":["生科系","生技系"],
 "NON":["不分系"]
 };
-const department=[
+var department=[
 ["文學院","LIB"],
 ["理學院","SCE"],
 ["工學院","ENG"],
@@ -33,7 +34,7 @@ const department=[
 ["生科院","BIO"],
 ["其他","NON"]
 ];
-const fliter_2= [{
+var fliter_2= [{
   id:0,
   now:-1,
   name: "申請年",
@@ -66,6 +67,7 @@ class editComment extends Component {
         display: "block",
         showModal: false
     }
+    this.getClassData=this.getClassData.bind(this);
     this.changeFliter=this.changeFliter.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.getData=this.getData.bind(this)
@@ -77,7 +79,81 @@ class editComment extends Component {
     this.handleRWD=this.handleRWD.bind(this)
     this.sponMobileMenu=this.sponMobileMenu.bind(this)
     this.changeConfirm=this.changeConfirm.bind(this)
+    this.findMobileFliterShow=this.findMobileFliterShow.bind(this);
   }
+
+  findMobileFliterShow(fliter){
+    /*for(var i=0; i<this.state.department.length;++i){
+      var controllArray=[0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+      if(this.state.department[i][0]===fliter){
+        controllArray[0]=i+1;
+        controllArray[i+1]=0;
+        return controllArray;
+      }
+      else{
+        for(var j=0;j<this.state.NCKU[this.state.department[i][1]].length;++j)
+          if(this.state.NCKU[this.state.department[i][1]][j]===fliter){
+            controllArray[0]=i+1;
+            controllArray[i+1]=j+1;
+            return controllArray;
+          }
+      }
+    }*/
+    var output=[0];
+    if(fliter==="in_maj"){
+      department.forEach(Element=>[
+        output.push(-1)
+      ])
+    }
+    else{
+      var clock=new Date();
+      for(var i=clock.getFullYear();i>clock.getFullYear()-5;--i){
+        if(i!=clock.getFullYear()||clock.getMonth()+1>7){
+          output.push(-1);
+        }
+      }
+    }
+    return output;
+}
+
+  getClassData(){
+    const getPromise=new Promise(resolve=>{
+      getCollege.then(data=>{
+        department=data.map(Element=>{
+          return [Element.name,Element.english];
+        })
+        getDepartment.then(dataTwo=>{
+          var output={};
+            data.forEach(Element=>{
+              output[Element.english]=[];
+              dataTwo.forEach(element=>{
+                if(element.college===Element.name)
+                  return output[Element.english].push(element.name);
+              })
+            })
+            NCKU=output;
+            fliter_2= [{
+              id:0,
+              now:-1,
+              name: "申請年",
+              type: "year",
+              option:[["全部年度",-1]]
+            }];
+              var output=[];
+              var clock=new Date();
+                for(var i=clock.getFullYear();i>1911+103;--i){
+                  if(i!=clock.getFullYear()||clock.getMonth()+1>7){
+                    fliter_2[0].option.push([(i-1911).toString(),-1])
+                  }
+              }
+            resolve();
+          }
+        )
+      })
+    })
+    return getPromise;
+  }
+
 
   changeConfirm(e){
     if(e.target.checked){
@@ -95,33 +171,35 @@ class editComment extends Component {
         this.state.datas.forEach(Element=>{
           if(new_fliter==="全部"||Element["confirm"]==condition)
             if(this.state.fliter.in_maj==="none"||Element["department"]===this.state.fliter.in_maj||Element["in_maj"]===this.state.fliter.in_maj)
-                if(this.state.fliter.year==="none"||Element["year"]===this.state.fliter.year)
+                if(this.state.fliter.year==="none"||Element["year"]==this.state.fliter.year)
                     output.push(Element);
         })        
       this.setState({show:output,fliter:{year:this.state.fliter.year,in_maj:this.state.fliter.in_maj,confirm:new_fliter}})
     }
     else if(type==="year"){
         var output=[];
+        const condition=(this.state.fliter.confirm==="已審核")?"true":"false";
         this.state.datas.forEach(element => {
-          if(element[type]==new_fliter&&(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)&&(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm))
+          if(element[type]==new_fliter&&(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)&&(this.state.fliter.confirm=="全部"||element["confirm"]===condition))
             output.push(element);
           else if(new_fliter==="none"){
             if(this.state.fliter.in_maj==="none"||element["department"]===this.state.fliter.in_maj||element["in_maj"]===this.state.fliter.in_maj)
-                if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+                if(this.state.fliter.confirm=="全部"||element["confirm"]===condition)
                     output.push(element);
           }
         });
         this.setState({show:output,fliter:{year:new_fliter,in_maj:this.state.fliter.in_maj,confirm:this.state.fliter.confirm}});
       }
     else{
+      const condition=(this.state.fliter.confirm==="已審核")?"true":"false";
         this.setState({fliter:{year:this.state.fliter.year,in_maj:new_fliter,confirm:this.state.fliter.confirm},resetFliter: !this.state.resetFliter});
         if(new_fliter==="none"){
           if(this.state.mobile_display=="none")
             this.setState({fliter:{year:"none",in_maj:new_fliter,confirm:this.state.fliter.confirm}});
           var output=[];
           this.state.datas.forEach(element => {
-            if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year||(this.state.mobile_display=="none"&&new_fliter==="none"))
-                if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+            if(this.state.fliter.year==="none"||element["year"]==this.state.fliter.year||(this.state.mobile_display=="none"&&new_fliter==="none"))
+                if(this.state.fliter.confirm=="全部"||element["confirm"]===condition)
                     output.push(element);
           });          
           this.setState({show:output,selectDepartment:"none"});    
@@ -129,8 +207,8 @@ class editComment extends Component {
         else{
           var output=[];
           this.state.datas.forEach(element => {
-          if(element[type]===new_fliter&&(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year))
-            if(this.state.fliter.confirm=="全部"||element["confirm"]===this.state.fliter.confirm)
+          if(element[type]===new_fliter&&(this.state.fliter.year==="none"||element["year"]==this.state.fliter.year))
+            if(this.state.fliter.confirm=="全部"||element["confirm"]===condition)
                 output.push(element);
           });
           this.setState({show:output});
@@ -243,6 +321,10 @@ class editComment extends Component {
     }
 
     sponMobileMenu(){
+        var option=[["全部學院",-1]];
+        department.forEach((Element,Index)=>{
+          option.push([Element[0],Index+1])
+        })
         var object=[];
         object.push(
           {
@@ -250,7 +332,7 @@ class editComment extends Component {
             name: "none",
             type: "department",
             now:-1,
-            option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社會科學院",6],["電資學院",7],["規設院",8],["生科院",9]]
+            option:option
           }
         );
         for(var i=0;i<department.length;++i){
@@ -277,7 +359,9 @@ class editComment extends Component {
       }
 
     componentDidMount(){
+      this.getClassData().then(data=>{
         this.getData();
+      })
     }
 
     changeNewId(e){
@@ -374,6 +458,18 @@ class editComment extends Component {
         </div>);
     } 
 
+
+    const Menu=()=>{
+      if(this.state.is_fetch)
+      return(
+        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)",minHeight:"35px",maxHeight:"70px",maxWidth:"100vw"}}>
+          <MobileFliter  show={this.state.fliter.in_maj} controllArray={this.findMobileFliterShow("in_maj")} mobile={this.state.display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{top:"0px",marginLeft:"20px",width:'340px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+          <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter.in_maj} mobile={this.state.display} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{top:"0px",marginLeft:"20px",width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",marginLeft:"20px",lineHeight:"31px",fontSize:"12px",}}/>   
+        </div>
+      )
+    }
+
     return (
       <div className="edit">
         <div className="Menu" style={{height:"auto",position:"absolute",top:"50px",left:"0px",width: "100%",height:"100%"}}>
@@ -386,10 +482,7 @@ class editComment extends Component {
         <div className="index" style={{display:(this.state.id===-1)?"block":"none", top:"125px"}}>
           {switchIndex()}
         </div>
-        <div className="MobileMenu" style={{marginTop:"55px",position:"relative",backgroundColor:"rgb(229,68,109)",minHeight:"35px",maxHeight:"70px",maxWidth:"100vw"}}>
-          <MobileFliter  show={this.state.fliter.in_maj} controllArray={[0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]} mobile={this.state.display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{top:"0px",marginLeft:"20px",width:'340px',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
-          <MobileFliter show={"全部"} controllArray={[0,-1]} mobile={this.state.display} fliter={this.changeFliter} type="是否審核" value={fliter2} style={{width:'150px',backgroundColor:"rgb(229,68,109)",color:"white",marginLeft:"20px",lineHeight:"31px",fontSize:"12px",}}/>
-        </div>
+        {Menu()}
       </div>
     );
   }

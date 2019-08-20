@@ -9,39 +9,15 @@ import calender from "./img/calendar.png";
 import book from "./img/book.png";
 import flag from "./img/flag.png";
 import Icon from './components/icon';
+import { getCollege, getDepartment, getStandard } from "./components/http";
 
 import './css/comment.css';
-var NCKU=
-{
-"LIB":["中文系","外文系","台文系"],
-"SCE":["數學系","物理系","化學系","地科系","光電系"],
-"ENG":["機械系","化工系","材料系","資源系","土木系","水利系","工科系","系統系","航太系","環工系","測量系","醫工系","能源學程"],
-"MAN":["工資系","交管系","企管系","統計系","會計系"],
-"MC":["醫學系","牙醫系","醫技系","護理系","職治系","物治系","藥學系"],
-"SOC":["政治系","經濟系","法律系","心理系"],
-"EECS":["電機系","資訊系"],
-"CPD":["建築系","都計系","工設系"],
-"BIO":["生科系","生技系"],
-"NON":["不分系"]
-};
-const department=[
-["文學院","LIB"],
-["理學院","SCE"],
-["工學院","ENG"],
-["管理學院","MAN"],
-["醫學院","MC"],
-["社會科學院","SOC"],
-["電資學院","EECS"],
-["規設院","CPD"],
-["生科院","BIO"],
-["其他","NON"]
-];
-const fliter_2= [{
+var fliter_2= [{
   id:0,
   now:-1,
   name: "申請年",
   type: "year",
-  option:[["全部年度",-1],[107,-1],[106,-1],[105,-1],[104,-1]]
+  option:[["全部年度",-1]]
 }];
 
 class comment extends Component {
@@ -50,6 +26,9 @@ class comment extends Component {
     this.state = {
         is_home: true,
         showModal: false,
+        url:"",
+        NCKU:[],
+        department:[],
         mobile_display: "block",
         fliter : {year:"none",in_maj:"none"},
         selectDepartment:"none",
@@ -82,6 +61,7 @@ class comment extends Component {
     this.spawnStatistic-this.spawnStatistic.bind.bind(this)
     this.handleClick = this.handleClick.bind(this);
     this.handleRWD =this.handleRWD.bind(this);
+    this.getData=this.getData.bind(this)
     this.sponCommentMenu= this.sponCommentMenu.bind(this);
     this.countDepartment = this.countDepartment.bind(this);
     this.changeFliter=this.changeFliter.bind(this);
@@ -91,6 +71,33 @@ class comment extends Component {
     this.handleMouseMove=this.handleMouseMove.bind(this);
     this.staticScrollTo=this.staticScrollTo.bind(this);
     this.getStatisticData=this.getStatisticData.bind(this)
+  }
+
+  getData(){
+    const getPromise=new Promise(resolve=>{
+      getCollege.then(data=>{
+        var test5;
+        test5=data.map(Element=>{
+          return [Element.name,Element.english];
+        })
+        getDepartment.then(dataTwo=>{
+          var output={};
+            data.forEach(Element=>{
+              output[Element.english]=[];
+              dataTwo.forEach(element=>{
+                if(element.college===Element.name)
+                  return output[Element.english].push(element.name);
+              })
+            })
+            getStandard.then(dataThree=>{
+              this.setState({url:dataThree[0].link,NCKU:output,department:test5})
+              resolve();
+            })
+          }
+        )
+      })
+    })
+    return getPromise;
   }
 
 
@@ -229,23 +236,37 @@ class comment extends Component {
   }
 
   findMobileFliterShow(fliter){
-      for(var i=0; i<department.length;++i){
+      /*for(var i=0; i<this.state.department.length;++i){
         var controllArray=[0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
-        if(department[i][0]===fliter){
+        if(this.state.department[i][0]===fliter){
           controllArray[0]=i+1;
           controllArray[i+1]=0;
           return controllArray;
         }
         else{
-          for(var j=0;j<NCKU[department[i][1]].length;++j)
-            if(NCKU[department[i][1]][j]===fliter){
+          for(var j=0;j<this.state.NCKU[this.state.department[i][1]].length;++j)
+            if(this.state.NCKU[this.state.department[i][1]][j]===fliter){
               controllArray[0]=i+1;
               controllArray[i+1]=j+1;
               return controllArray;
             }
         }
+      }*/
+      var output=[0];
+      if(fliter==="in_maj"){
+        this.state.department.forEach(Element=>[
+          output.push(-1)
+        ])
       }
-      return [0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+      else{
+        var clock=new Date();
+        for(var i=clock.getFullYear();i>clock.getFullYear()-5;--i){
+          if(i!=clock.getFullYear()||clock.getMonth()+1>7){
+            output.push(-1);
+          }
+        }
+      }
+      return output;
   }
 
   handleRWD(is_mobile){
@@ -349,7 +370,10 @@ class comment extends Component {
             if(this.state.fliter.year==="none"||element["year"]===this.state.fliter.year||(this.state.mobile_display=="none"&&new_fliter==="none"))
               output.push(element);
           });          
-          this.setState({show:output,selectDepartment:"none"});    
+          this.setState({show:output,selectDepartment:"none"}); 
+          this.getStatisticData("none",this.state.fliter.year).then(data=>{
+            this.setState({is_fetch_statis:true})
+          });    
         }
         else{
           var output=[];
@@ -360,8 +384,8 @@ class comment extends Component {
           this.setState({show:output});
         }
         if(type=="in_maj"){
-          department.forEach((Element,Index)=>{
-            NCKU[Element[1]].forEach((Item,index)=>{
+          this.state.department.forEach((Element,Index)=>{
+            this.state.NCKU[Element[1]].forEach((Item,index)=>{
               if(Item===new_fliter)
               this.setState({selectDepartment:Element[0]})
             })
@@ -370,23 +394,27 @@ class comment extends Component {
             this.setState({is_fetch_statis:true})
           });  
         }
-        else if(type==="department")
-          this.setState({selectDepartment:new_fliter})  
+        else if(type==="department"){
+          this.setState({selectDepartment:new_fliter})
+          this.getStatisticData(new_fliter,this.state.fliter.year).then(data=>{
+            this.setState({is_fetch_statis:true})
+          });    
+        }
     }
   }
 
   sponCommentMenu(){
     var output=[];
-    for(var i=0;i<department.length;++i){
+    for(var i=0;i<this.state.department.length;++i){
       let singleOutput=[];
       var dep_number=0;
-      for(var j=0;j<NCKU[department[i][1]].length;++j){
-        const number=this.countDepartment(NCKU[ department[i][1] ][j],"in_maj");
+      for(var j=0;j<this.state.NCKU[this.state.department[i][1]].length;++j){
+        const number=this.countDepartment(this.state.NCKU[this.state.department[i][1] ][j],"in_maj");
         dep_number+=number;
         singleOutput.push(
-            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"rgba(255,255,255,0.3)":"rgba(0,0,0,0.1)",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,NCKU[department[i][1]][j],"in_maj")} >
-              <div style={{ display:(this.state.fliter.in_maj===NCKU[department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
-              {NCKU[department[i][1]][j]}
+            <Button variant="light" style={{fontSize:"12px",fontWeight:"300",textAlign:"right",position:"relative",color:"white",backgroundColor:(this.state.fliter.in_maj===this.state.NCKU[this.state.department[i][1]][j])?"rgba(255,255,255,0.3)":"rgba(0,0,0,0.1)",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,this.state.NCKU[this.state.department[i][1]][j],"in_maj")} >
+              <div style={{ display:(this.state.fliter.in_maj===this.state.NCKU[this.state.department[i][1]][j])?"block":"none",position:"absolute",height:"100%",backgroundColor:"white",width: '5%',height: '100%',top:"0",left:"0" }}></div>
+              {this.state.NCKU[this.state.department[i][1]][j]}
               <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400",backgroundColor:"white",color:"rgb(229,68,109)" }}>
                 {number}
               </Badge>
@@ -394,7 +422,7 @@ class comment extends Component {
         );
       }
       output.push(
-          <Menu id={department[i][1]} title={department[i][0]} number={dep_number} onClick={this.changeFliter} isSelect={this.state.selectDepartment===department[i][0]} >
+          <Menu id={this.state.department[i][1]} title={this.state.department[i][0]} number={dep_number} onClick={this.changeFliter} isSelect={this.state.selectDepartment===this.state.department[i][0]} >
           {singleOutput}
           </Menu>
       );
@@ -403,6 +431,10 @@ class comment extends Component {
   }
 
   sponMobileMenu(){
+    var option=[["全部學院",-1]]
+    this.state.department.forEach((Element,Index)=>{
+      option.push([Element[0],Index+1]);
+    })
     var object=[];
     object.push(
       {
@@ -410,24 +442,24 @@ class comment extends Component {
         name: "none",
         type: "department",
         now:-1,
-        option:[["全部學院",-1],["文學院",1],["理學院",2],["工學院",3],["管理學院",4],["醫學院",5],["社會科學院",6],["電資學院",7],["規設院",8],["生科院",9]]
+        option:option
       }
     );
-    for(var i=0;i<department.length;++i){
+    for(var i=0;i<this.state.department.length;++i){
       let singleObject=[];
       singleObject.push(
         ["全部學系",-1]
       );
-      for(var j=0;j<NCKU[department[i][1]].length;++j){
+      for(var j=0;j<this.state.NCKU[this.state.department[i][1]].length;++j){
         singleObject.push(
-          [NCKU[ department[i][1] ][j],-1]
+          [this.state.NCKU[ this.state.department[i][1] ][j],-1]
         );
       }
       object.push(
           {
             id: i+1,
             now:-1,
-            name: ["department",department[i][0]],
+            name: ["department",this.state.department[i][0]],
             type: "in_maj",
             option: singleObject,
           }
@@ -475,7 +507,7 @@ class comment extends Component {
                   </div>
                 </div>
                 <div className="standard" unselectable="on" style={{left:"0",width: "100%",height:"100%",position:"absolute"}}>
-                  <button unselectable="on" onClick={()=>{window.open('https://reurl.cc/ZKn0M', '_blank');}} style={{width: "70%",color:"rgb(229,68,109)",fontSize:"24px",height:"30%",outline: "none",backgroundColor:"transparent",margin:"5% 15%",border:"none"}}>
+                  <button unselectable="on" onClick={()=>{window.open(this.state.url, '_blank');}} style={{width: "70%",color:"rgb(229,68,109)",fontSize:"24px",height:"30%",outline: "none",backgroundColor:"transparent",margin:"5% 15%",border:"none"}}>
                     <img src={flag} alt="flag" unselectable="on" style={{height:"100%",margin:"5px"}}/>轉系申請標準按我
                   </button>
                 </div>
@@ -492,7 +524,9 @@ class comment extends Component {
   }
 
   componentDidMount(){
-    this.handleClick();
+    this.getData().then(data=>{
+      this.handleClick();
+    })
     var output=[];
     this.state.datas.forEach(element => {
       if(element["department"]==="文學院")
@@ -517,47 +551,29 @@ class comment extends Component {
 
   handleInitalMajorFliter(value){
     var i=0;
-    while(i<department.length&&department[i][0]!=value){
+    while(i<this.state.department.length&&this.state.department[i][0]!=value){
       i++;
     }
-    const type=(i===department.length)?"in_maj":"department";
+    const type=(i===this.state.department.length)?"in_maj":"department";
     this.changeFliter(value,type);
   }
 
 
   render() {
-    const spawnDepartment=department.map(option=>{
-      return<option value={option[0]}>{option[0]}</option>
-    });
-    const spawnMajor=(fliter)=>{
-      if(fliter==="none")
-          return <option value="none">請選擇學院</option>
-      var i=0;
-        while(i<department.length&&department[i][0]!=fliter){
-          i++;
-        }
-        if(i==department.length){
-          for(i=0;i<department.length;++i){
-            var j=0
-            while(j<NCKU[department[i][1]].length && NCKU[department[i][1]][j]!=fliter){
-              j++;
-            }
-            if(j<NCKU[department[i][1]].length)
-              break;
-          }
-        }
-        var output=[];
-        output.push(<option value={department[i][0]}>全部科系</option>);
-        for(var j=0;j<NCKU[department[i][1]].length;++j)
-        output.push(<option value={NCKU[department[i][1]][j]}>{NCKU[department[i][1]][j]}</option>);
-        return output;
-    }
     const spawnYear=()=>{
+      fliter_2= [{
+        id:0,
+        now:-1,
+        name: "申請年",
+        type: "year",
+        option:[["全部年度",-1]]
+      }];
         var output=[];
         var clock=new Date();
-          for(var i=clock.getFullYear();i>2014;--i){
+          for(var i=clock.getFullYear();i>clock.getFullYear()-5;--i){
             const number=this.countDepartment(i-1911,"year");
-            if(i!=clock.getFullYear()||clock.getMonth()>7)
+            if(i!=clock.getFullYear()||clock.getMonth()+1>7){
+              fliter_2[0].option.push([(i-1911).toString(),-1])
               output.push(
                 <Button variant="light" style={{ textAlign:"right",fontWeight:"100",color:(this.state.fliter.year===i-1911)?"rgb(229,68,109)":"white",backgroundColor:(this.state.fliter.year===i-1911)?"white":"transparent",borderRadius:"0px",width: '100%',outline:"none" }} onClick={this.changeFliter.bind(this,i-1911,"year")}>{i-1911}
                   <Badge pill variant="light" style={{ position:"relative", marginLeft:"10px",fontWeight:"400",backgroundColor:"white",color:"rgb(229,68,109)",backgroundColor:"white",color:"rgb(229,68,109)" }}>
@@ -565,6 +581,7 @@ class comment extends Component {
                   </Badge>
                 </Button>
               );
+            }
         }
         return(
           <Menu onClick={this.changeFliter.bind(this,"none","year")} title="全部年份" isSelect={this.state.fliter.year==="none"}>
@@ -599,8 +616,8 @@ class comment extends Component {
       </div>
       {this.spawnStatistic(this.state.is_fetch,this.state.is_fetch_statis)}
       <div className="MobileMenu" style={{display: (this.state.mobile_display==="none")?"block":"none"}}>
-        <MobileFliter controllArray={this.findMobileFliterShow(this.state.fliter.in_maj)} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
-        <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} reset={this.state.resetFliter} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
+        <MobileFliter controllArray={this.findMobileFliterShow("in_maj")} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} fliter={this.changeFliter} type="依學院/系" value={this.sponMobileMenu()} style={{position:"absolute",top:"0px",left:"6%",width:'59%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px",outline:"none"}}/>
+        <MobileFliter controllArray={this.findMobileFliterShow("none")} show={this.state.fliter.in_maj} mobile={this.state.mobile_display} fliter={this.changeFliter} type="申請年" value={fliter_2} style={{position:"absolute",top:"0px",left:"65%",width:'34%',backgroundColor:"rgb(229,68,109)",color:"white",lineHeight:"31px",fontSize:"12px"}}/>
       </div>
       <div ><Content mobile={this.state.mobile_display} height={this.state.contentHeight} data={this.state.showContent} showModal={this.state.showModal} close={this.handleCloseModal} open={this.handleOpenModal} next={this.handleShowContent}/></div>
     </div>

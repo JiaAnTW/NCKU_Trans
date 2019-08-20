@@ -18,29 +18,42 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('get/major', 'CommentsController@show');
-
 Route::post('create/major','CommentsController@create');
 
-Route::get('get/major_QA', 'maj_QAController@index');
+Route::get('get/major_QA', 'maj_QAController@show');
+Route::post('post/major_QA','maj_QAController@create');
 
 Route::get('get/check', 'HomeController@check');
 
-Route::put('post/major_QA/{id}', 'maj_QAController@update');
+Route::get('get/department','DepartmentCollege@indexDepartment');
+Route::get('get/college','DepartmentCollege@indexCollege');
 
-Route::delete('post/major_QA/{id}','maj_QAController@destroy');
+Route::get('get/standard', 'StandardController@index');
+Route::post('post/standard','StandardController@create');
+Route::put('post/standard/{id}','StandardController@update');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::group(['middleware' => ['jwt.auth','api-header']], function () {
-    
+
     // all routes to protected resources are registered here  
     Route::get('get/major/all', 'CommentsController@index');
-
     Route::put('post/major/{id}','CommentsController@update');
-
     Route::delete('post/major/{id}','CommentsController@destroy');
+
+    Route::get('get/major_QA/all', 'maj_QAController@index');
+    Route::put('post/major_QA/{id}', 'maj_QAController@update');
+    Route::delete('post/major_QA/{id}','maj_QAController@destroy');
+
+    Route::post('post/department','DepartmentCollege@createDepartment');
+    Route::post('post/college','DepartmentCollege@createCollege');
+    Route::put('post/college/{id}','DepartmentCollege@updateCollege');
+    Route::put('post/department/{id}','DepartmentCollege@updateDepartment');
+    Route::delete('post/college/{id}','DepartmentCollege@destroyCollege');
+    Route::delete('post/department/{id}','DepartmentCollege@destroyDepartment');
+
 
     Route::get('get/users/list', function(){
         $users = App\User::all();

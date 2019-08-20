@@ -31,7 +31,7 @@ class editQA extends Component {
         tags:[],
         showContent: [],
         total_tags: [],
-        display: "block",
+        display: "none",
         showModal: false,
         openFliter: false
     }
@@ -188,6 +188,7 @@ class editQA extends Component {
       this.setState({display:"none",openFliter: false})
     else
       this.setState({display:"block",openFliter: true})
+      
     }
 
   handleOpenModal (id) {

@@ -88,7 +88,7 @@ class admin extends Component {
   render() {
       const loginForm=()=>{
           return(
-        <div className="post">
+        <div className="admin post">
         <div className="index">
         <div className="form_container" style={{position:"absolute",marginTop:"4%",width:"400px",color:"rgb(229,68,109)",boxShadow:"0 0px 12px rgba(0,0,0,.175)",maxWidth:"90%",borderTopLeftRadius:"5px",borderTopRightRadius:"5px",padding:"15rem 2rem",paddingTop:"4rem"}}>
           <h1 style={{width:"100%",textAlign:"center",color: "black", marginBottom:"7rem",fontWeight:"500"}}>管理員介面</h1>

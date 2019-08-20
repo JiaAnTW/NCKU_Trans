@@ -49,9 +49,9 @@ class major_QAIndex extends Component {
   changeRowCard(){
     if(window.innerWidth>860){
       this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
+      this.setState({isMobile:false})
       if(this.state.isMobile=true){
         this.props.handleRWD(false);
-        this.setState({isMobile:false})
       }
       //this.handleCardSize(false);
     }
@@ -73,9 +73,9 @@ class major_QAIndex extends Component {
     else{
       this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
       //this.handleCardSize(true);
+      this.setState({isMobile:true})
       if(this.state.isMobile=false){
         this.props.handleRWD(true);
-        this.setState({isMobile:true})
       }
     }
   }

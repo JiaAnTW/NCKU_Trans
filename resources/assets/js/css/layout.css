@@ -76,6 +76,31 @@ body{
     outline: none;
 }
 
+.layout #search-top{
+    position: absolute;
+    top:15px;
+    left: 20%;
+    height: 30px;
+    background-image: url('../img/search_white.png');
+    background-size: 15px;
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    background-color: transparent;
+    outline: none;
+    display: block;
+    padding:5px 35px;
+}
+
+.layout #search-top:focus{
+    background-image:none;
+    padding:5px 5px;
+}
+
+.layout #search-top::placeholder {
+    color: rgba(255,255,255,0.7);
+    margin-left: 15px;
+}
 
 
 @media (min-width: 576px) { 
@@ -105,6 +130,9 @@ body{
         outline: none;
     }
 
+    .layout #search-top{
+        display: none;
+    }
  }
 
 @media (min-width: 992px) { 

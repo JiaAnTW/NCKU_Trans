@@ -5,6 +5,7 @@ import QA from './components/QA';
 import Menu from './components/menu';
 import MobileFliter from "./components/mobileFliter";
 import Search from "./img/search.png";
+import Funnel from "./img/funnel.png";
 import Can from "./img/can.png";
 import Icon from './components/icon';
 import './css/major_QA.css';
@@ -253,6 +254,11 @@ class maj_QA extends Component {
     this.setState({total_tags:new_tags})
   }
 
+  componentDidUpdate(prevProps, prevState){
+    if(this.props.fliter!=prevProps.fliter){
+      this.changeFliterByWord({target:{value:this.props.fliter}});
+    }
+  }
 
   render() {
     const menu_display=(this.props.location.pathname==="/QA/~")?this.state.mobile_display:menu_display;
@@ -271,7 +277,7 @@ class maj_QA extends Component {
     const Menu=()=>{
       var output=[];
       for(var i=0;i<this.state.total_tags.length;++i){
-        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{fontWeight:"300",outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"#F8BBD0",backgroundColor:(this.state.total_tags[i][1]==false)?"transparent":"rgba(0,0,0,0.1)",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
+        output.push(<Button variant="light" onClick={this.changeSelectBtn.bind(this,i)} style={{fontWeight:"300",outline:"none",margin:"5px 2px",color:(this.state.total_tags[i][1]==false)?"white":"rgb(229,68,109)",backgroundColor:(this.state.total_tags[i][1]==false)?"transparent":"white",borderColor:"rgba(243,243,243,0.5)",borderRadius:"0"}}>{this.state.total_tags[i][0]}</Button>);
       }
       return output;
     }
@@ -291,12 +297,15 @@ class maj_QA extends Component {
         <div className="MobileMenu" style={{display:(this.props.location.pathname==="/QA/~"&&this.state.mobile_display==="none")?"block":"none"}}> 
           <Button onClick={()=>this.setState({openFliter:!this.state.openFliter})} style={{outline:"none",width:"60%",margin:"0px 20%",backgroundColor:"transparent",border:"none",boxShadow:"none"}}>{(this.state.openFliter===true)?"X 關閉":"+添加篩選"}</Button>
         </div>
-          <div className="Menu" style={{boxShadow:"none",border:"none",display:(this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 
+          <div className="Menu" style={{boxShadow:"none",border:"none",display:((this.props.location.pathname==="/QA/~"||this.state.mobile_display==="block")&&this.state.openFliter===true && (this.state.is_fetch))?"block":"none"}}> 
+            <div className="search-box" style={{position:"relative",marginBottom:"20px"}}>
+              <input type="text" border="none" placeholder="查詢標題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%",padding:"5px 20px",borderRadius:"10px"}}/>    
+              <img src={Search} alt="search" style={{position:"absolute",top:"35%",right:"15%",height:"17px"}}/>
+            </div>  
               {Menu()}
-              <input type="text" border="none" placeholder="查詢標題" onChange={this.changeFliterByWord} style={{border:"none",width:"80%",margin:"15px 10%",padding:"2% 7%",borderRadius:"10px"}}/>  
             <Button onClick={this.changeFliter.bind(this,"tag")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"white",border:"none",color:"rgb(229,68,109)",textShadow:"none"}}>
-              <img src={Search} alt="search" style={{marginRight:"7px",height:"17px"}}/>
-              送出篩選
+              <img src={Funnel} alt="search" style={{marginRight:"7px",height:"17px"}}/>
+              加入篩選
             </Button>
             <Button onClick={this.changeFliter.bind(this,"none")} style={{outline:"none",width:"86%",margin:"5px 7%",backgroundColor:"transparent",borderColor:"white",textShadow:"none"}}>
             <img src={Can} alt="search" style={{marginRight:"7px",height:"17px"}}/>

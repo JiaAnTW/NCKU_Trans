@@ -68,7 +68,8 @@ class mobileMenu extends Component {
           <ListGroup defaultActiveKey="/#/" style={{border: "none",boxShadow:"none"}}>
             <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/admin/comment" className="list" style={ListStyleFirst}>審查心得</ListGroup.Item>
             <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/admin/QA" className="list" style={ListStyle}>審查QA</ListGroup.Item>
-            <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/post" className="list" style={ListStyle}>分享心得</ListGroup.Item>
+            <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/admin/major" className="list" style={ListStyle}>編輯學系</ListGroup.Item>
+            <ListGroup.Item action onClick={(e)=>this.setState({ open: !open })} href="/#/admin/standard" className="list" style={ListStyle}>編輯轉系標準連結</ListGroup.Item>
           </ListGroup>
         );
       }

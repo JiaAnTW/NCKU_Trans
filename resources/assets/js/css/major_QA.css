@@ -35,6 +35,10 @@
     display: block;
 }
 
+.major_QA .Menu input,.major_QA .search-box{
+    display: none;
+}
+
 
 
 @media (min-width: 596px) { 
@@ -97,6 +101,10 @@
         height:37px;
         background-color:rgb(229,68,109);
         display: none;
+    }
+
+    .major_QA .Menu input,.major_QA .search-box{
+        display: block;
     }
  }
 
