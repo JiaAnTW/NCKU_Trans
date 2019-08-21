@@ -29,8 +29,6 @@ Route::get('get/department','DepartmentCollege@indexDepartment');
 Route::get('get/college','DepartmentCollege@indexCollege');
 
 Route::get('get/standard', 'StandardController@index');
-Route::post('post/standard','StandardController@create');
-Route::put('post/standard/{id}','StandardController@update');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -46,6 +44,9 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     Route::get('get/major_QA/all', 'maj_QAController@index');
     Route::put('post/major_QA/{id}', 'maj_QAController@update');
     Route::delete('post/major_QA/{id}','maj_QAController@destroy');
+
+    Route::post('post/standard','StandardController@create');
+    Route::put('post/standard/{id}','StandardController@update');
 
     Route::post('post/department','DepartmentCollege@createDepartment');
     Route::post('post/college','DepartmentCollege@createCollege');
