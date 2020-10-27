@@ -17,7 +17,7 @@
         "cross-env": "^5.1",
         "jquery": "^3.5",
         "laravel-mix": "^4.0.14",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.19",
         "react": "^16.8.3",
         "react-dom": "^16.8.3",
         "resolve-url-loader": "^2.3.2",
