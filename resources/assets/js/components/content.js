@@ -9,13 +9,7 @@ import TitleBar from './TitleBar'
 
 function content (props) {
   
-    const handleOpenModal = () => {
-      props.open();
-    }
-    
-    const handleCloseModal = () => {
-      props.close();
-    }
+
     const [showModal,setShowModal] = useState(false); 
     
 
@@ -33,7 +27,7 @@ function content (props) {
           <Modal 
              isOpen={props.showModal}
              contentLabel="Minimal Modal Example" style={contentStyle(props)} className="Modal"
-             overlayClassName="Overlay" onRequestClose={handleCloseModal}
+             overlayClassName="Overlay" onRequestClose={props.close}
           >
             
             <Card className="card-box" style={{position:"absolute",top: "0px",height: cardHeight, overflowX: 'inline',overflowY: 'auto', left: "0px",backgroundColor: "#F5F5F5",border:"none",transform:"translate(0,0)"}}>
@@ -54,8 +48,8 @@ function content (props) {
                 </div>
                 </Card.Body>  
             </Card>
-            <button className="contentBtn" id="rightBtn" onClick={props.next("next")}><div className="Arrow" id="rightArrow"></div></button>
-            <button className="contentBtn" id="leftBtn" onClick={props.next("before")}><div className="Arrow" id="leftArrow"></div></button>
+            <button className="contentBtn" id="rightBtn" onClick={props.next.bind(this,"next")}><div className="Arrow" id="rightArrow"></div></button>
+            <button className="contentBtn" id="leftBtn" onClick={props.next.bind(this,"before")}><div className="Arrow" id="leftArrow"></div></button>
           </Modal>
         </div>
       );
