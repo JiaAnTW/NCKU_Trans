@@ -26,7 +26,7 @@ function content (props) {
         <div className="content_container">
           <Modal 
              isOpen={props.showModal}
-             contentLabel="Minimal Modal Example" style={contentStyle(props)} className="Modal"
+             contentLabel="Minimal Modal Example" style={contentStyle(props.mobile)} className="Modal"
              overlayClassName="Overlay" onRequestClose={props.close}
           >
             
