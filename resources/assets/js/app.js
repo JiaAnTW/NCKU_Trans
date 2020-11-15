@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter,Route,Switch} from 'react-router-dom';
 import Home from './home';
+import CommentNew from './page/Comment';
 import Comment from './comment';
 import Layout from './layout';
 import Post from './post';
@@ -46,6 +47,7 @@ class App extends Component{
                 <Route exact path="/" component={Home}/>
                 <Layout onChange={(fliter)=>{this.setState({fliter:fliter})}}>
                     <Route path="/comment" component={Comment}/>
+                    <Route path="/commentnew" render={(props)=><CommentNew {...props}/>}/>
                     <Route path="/post" component={Post}/>
                     <Route path="/QA/:id" render={(props)=><QA {...props} fliter={this.state.fliter}/>}/>
                     <Route path="/home" component={Home}/>
