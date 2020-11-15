@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter,Route,Switch} from 'react-router-dom';
 import Home from './home';
-import CommentNew from './page/Comment';
+import CommentNew from './page/Comment/index';
 import Comment from './comment';
 import Layout from './layout';
 import Post from './post';

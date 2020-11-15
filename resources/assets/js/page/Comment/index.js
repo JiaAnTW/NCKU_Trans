@@ -1,19 +1,20 @@
 import React from 'react';
+
 import { 
     LoadingContainer,
     GeneralContainer,
     MenuContainer,
-    MultCards
-} from '../css/generalStyle';
+    MultCards,
+} from '../../css/generalStyle';
+
 import { 
     CommentSection,
     StatisticContainer,
-    CommentIndex
 } from './style';
 
-import Icon from '../components/icon';
+import Icon from '../../components/icon';
 
-import { useMajor } from '../utils/index';
+import { useMajor } from '../../utils/index';
 
 function Comment() {
     const majorData = useMajor();
