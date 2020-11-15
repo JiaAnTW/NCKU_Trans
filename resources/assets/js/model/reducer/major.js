@@ -1,17 +1,17 @@
 import { INIT_MAJOR } from '../action/major';
 
 const initState = {
-    majorArr: [],
+    data: [],
   };
 
-const major = (state = initState, action) => {
+const majorReducer = (state = initState, action) => {
     switch (action.type) {
       case INIT_MAJOR: {
-        return { ...state, majorArr: action.payload.data };
+        return { ...state, data: action.payload.data };
       }
       default:
         return state;
     }
 };
 
-export default major;
+export default majorReducer;

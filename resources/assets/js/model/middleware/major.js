@@ -1,7 +1,6 @@
 import { INIT_MAJOR } from '../action/major';
 
 export const fetchMajor = () => {
-    console.log("call fetch!")
     return (dispatch) => {
         fetch('/api/get/major')
             .then(res => res.json())
