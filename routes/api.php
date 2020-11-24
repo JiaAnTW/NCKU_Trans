@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('get/major', 'CommentsController@show');
-Route::post('create/major','CommentsController@create');
+Route::middleware('commentNotify')->post('create/major','CommentsController@create');
 
 Route::get('get/major_QA', 'maj_QAController@show');
 Route::post('post/major_QA','maj_QAController@create');
