@@ -5,7 +5,7 @@ import Icon from './icon';
 
 function major_QAIndex(props){
     
-    const [row,setRow] = useState(10);
+    const [row,setRow] = useState(1);
     const [cardWidth,setCardWidth] =useState("100vw");
     const [cardHeight,setCardHeight] = useState("auto");
     const [cardPadding,setCardPadding] = useState("0rem");
@@ -96,9 +96,9 @@ function major_QAIndex(props){
     changeRowCard();
     window.addEventListener('resize', changeRowCard());
 
-    return () => {
-      window.removeEventListener('resize', changeRowCard());
-    }
+    // return () => {
+    //   window.removeEventListener('resize', changeRowCard());
+    // }
   } ,[]);
 
 

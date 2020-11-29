@@ -54049,7 +54049,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function major_QAIndex(props) {
   var _this = this;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(10),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
       _useState2 = _slicedToArray(_useState, 2),
       row = _useState2[0],
       setRow = _useState2[1];
@@ -54171,10 +54171,9 @@ function major_QAIndex(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     changeRowCard();
-    window.addEventListener('resize', changeRowCard());
-    return function () {
-      window.removeEventListener('resize', changeRowCard());
-    };
+    window.addEventListener('resize', changeRowCard()); // return () => {
+    //   window.removeEventListener('resize', changeRowCard());
+    // }
   }, []);
 
   var sponCard = function sponCard() {
