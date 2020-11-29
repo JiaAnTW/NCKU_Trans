@@ -53888,6 +53888,73 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/hook/ChangeRowCard.js":
+/*!**************************************************************!*\
+  !*** ./resources/assets/js/components/hook/ChangeRowCard.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function useChangeRowCard(props, setFontSize, setIconX, setIconY, setIsMobile) {
+  if (window.innerWidth > 860) {
+    setFontSize("2.5rem");
+    setIconX("30vw");
+    setIconY("10vw");
+    setIsMobile(false); // const [fontSize , setFontSize] = useState("2.5rem");
+    // const [IconX, setIconX] = useState("30vw");
+    // const [IconY, setIconY] = useState("10vw");
+    // const [isMobile, setIsMobile] = useState(false);
+    //this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
+    //this.setState({isMobile:false})
+
+    if (true) {
+      setIsMobile(true);
+      props.handleRWD(false);
+    } //this.handleCardSize(false);
+
+  } //else if(window.innerWidth>=1140){
+  //this.setState({row:4});
+  //this.props.handleRWD(false);
+  //this.handleCardSize(false);
+  //}
+  //else if(window.innerWidth>=870){
+  //this.setState({row:3});
+  /// this.props.handleRWD(false);
+  //this.handleCardSize(false);
+  //}
+  //else if(window.innerWidth>=596){
+  //this.setState({row:2});
+  //this.props.handleRWD(true);
+  //this.handleCardSize(false);
+  //}
+  else {
+      //this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
+      //this.handleCardSize(true);
+      //this.setState({isMobile:true})
+      setFontSize("2rem");
+      setIconX("25vw");
+      setIconY("50vw");
+      setIsMobile(true); // const [fontSize , setFontSize] = useState("2rem");
+      // const [IconX, setIconX] = useState("25vw");
+      // const [IconY, setIconY] = useState("50vw");
+      // const [isMobile, setIsMobile] = useState(true);
+
+      if (setIsMobile(false)) {
+        props.handleRWD(true);
+      }
+    }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useChangeRowCard);
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/http.js":
 /*!************************************************!*\
   !*** ./resources/assets/js/components/http.js ***!
@@ -54033,6 +54100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/major_QAIndex.css */ "./resources/assets/js/components/css/major_QAIndex.css");
 /* harmony import */ var _css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_major_QAIndex_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./resources/assets/js/components/icon.js");
+/* harmony import */ var _hook_ChangeRowCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hook/ChangeRowCard */ "./resources/assets/js/components/hook/ChangeRowCard.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -54040,6 +54108,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -54171,10 +54240,10 @@ function major_QAIndex(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    changeRowCard();
-    window.addEventListener('resize', changeRowCard());
+    Object(_hook_ChangeRowCard__WEBPACK_IMPORTED_MODULE_4__["default"])(props, setFontSize, setIconX, setIconY, setIsMobile);
+    window.addEventListener('resize', Object(_hook_ChangeRowCard__WEBPACK_IMPORTED_MODULE_4__["default"])(props, setFontSize, setIconX, setIconY, setIsMobile));
     return function () {
-      window.removeEventListener('resize', changeRowCard());
+      window.removeEventListener('resize', Object(_hook_ChangeRowCard__WEBPACK_IMPORTED_MODULE_4__["default"])(props, setFontSize, setIconX, setIconY, setIsMobile));
     };
   }, []);
 

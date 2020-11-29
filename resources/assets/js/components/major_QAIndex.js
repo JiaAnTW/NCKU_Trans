@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import {Card,CardDeck,Container,Row,Badge} from 'react-bootstrap';
 import './css/major_QAIndex.css';
 import Icon from './icon';
-
+import useChangeRowCard from './hook/ChangeRowCard';
 function major_QAIndex(props){
     
     const [row,setRow] = useState(1);
@@ -36,70 +36,13 @@ function major_QAIndex(props){
       //this.setState({btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   //}
 
-  
-  
-  
-
-  const changeRowCard = () => {
-    if(window.innerWidth>860){
-      
-      setFontSize("2.5rem");
-      setIconX("30vw");
-      setIconY("10vw");
-      setIsMobile(false);
-      // const [fontSize , setFontSize] = useState("2.5rem");
-      // const [IconX, setIconX] = useState("30vw");
-      // const [IconY, setIconY] = useState("10vw");
-      // const [isMobile, setIsMobile] = useState(false);
-
-      //this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
-      //this.setState({isMobile:false})
-      if(true){
-        setIsMobile(true)
-        props.handleRWD(false);
-      }
-      //this.handleCardSize(false);
-    }
-    //else if(window.innerWidth>=1140){
-      //this.setState({row:4});
-      //this.props.handleRWD(false);
-      //this.handleCardSize(false);
-    //}
-    //else if(window.innerWidth>=870){
-      //this.setState({row:3});
-     /// this.props.handleRWD(false);
-      //this.handleCardSize(false);
-    //}
-    //else if(window.innerWidth>=596){
-      //this.setState({row:2});
-      //this.props.handleRWD(true);
-      //this.handleCardSize(false);
-    //}
-    else{
-      //this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
-      //this.handleCardSize(true);
-      //this.setState({isMobile:true})
-      setFontSize("2rem");
-      setIconX("25vw");
-      setIconY("50vw");
-      setIsMobile(true);
-      // const [fontSize , setFontSize] = useState("2rem");
-      // const [IconX, setIconX] = useState("25vw");
-      // const [IconY, setIconY] = useState("50vw");
-      // const [isMobile, setIsMobile] = useState(true);
-
-      if(setIsMobile(false)){
-        props.handleRWD(true);
-      }
-    }
-  }
 
   useEffect(()=> {
-    changeRowCard();
-    window.addEventListener('resize', changeRowCard());
+    useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile);
+    window.addEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
 
     return () => {
-      window.removeEventListener('resize', changeRowCard());
+      window.removeEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
     };
   } ,[]);
 
