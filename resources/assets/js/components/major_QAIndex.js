@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react';
 import {Card,CardDeck,Container,Row,Badge} from 'react-bootstrap';
 import './css/major_QAIndex.css';
 import Icon from './icon';
-import useChangeRowCard from './hook/ChangeRowCard';
+import useWindowWidth from './hook/useWindowWidth';
+
 function major_QAIndex(props){
     
     const [row,setRow] = useState(1);
@@ -36,15 +37,35 @@ function major_QAIndex(props){
       //this.setState({btnHeight:"15rem",cardWidth:"20rem",cardHeight:"20rem",cardPadding:"3rem",cardTextHeight:"6.06rem",wordsNumber: 35});
   //}
 
+  
+  const changeRowCard =(props,windowWidth) =>{
+  if(windowWidth>860){
+    
+    setFontSize("2.5rem");
+    setIconX("30vw");
+    setIconY("10vw");
+    setIsMobile(false);
 
-  useEffect(()=> {
-    useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile);
-    window.addEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
+    if(true){
+      setIsMobile(true);
+      props.handleRWD(false);
+    }
+  }
+  
+  else{
+    
+    setFontSize("2rem");
+    setIconX("25vw");
+    setIconY("50vw");
+    setIsMobile(true);
 
-    return () => {
-      window.removeEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
-    };
-  } ,[]);
+    if(setIsMobile(false)){
+      props.handleRWD(true);
+    }
+  }
+  };
+  const windowWidth = useWindowWidth(changeRowCard,props);
+  
 
 
   const sponCard = () => {
