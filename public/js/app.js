@@ -54132,7 +54132,8 @@ function major_QAIndex(props) {
       //this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
       //this.setState({isMobile:false})
 
-      if (setIsMobile(true)) {
+      if (true) {
+        setIsMobile(true);
         props.handleRWD(false);
       } //this.handleCardSize(false);
 
@@ -54171,9 +54172,10 @@ function major_QAIndex(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     changeRowCard();
-    window.addEventListener('resize', changeRowCard()); // return () => {
-    //   window.removeEventListener('resize', changeRowCard());
-    // }
+    window.addEventListener('resize', changeRowCard());
+    return function () {
+      window.removeEventListener('resize', changeRowCard());
+    };
   }, []);
 
   var sponCard = function sponCard() {

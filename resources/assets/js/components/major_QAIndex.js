@@ -42,6 +42,7 @@ function major_QAIndex(props){
 
   const changeRowCard = () => {
     if(window.innerWidth>860){
+      
       setFontSize("2.5rem");
       setIconX("30vw");
       setIconY("10vw");
@@ -53,7 +54,8 @@ function major_QAIndex(props){
 
       //this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
       //this.setState({isMobile:false})
-      if(setIsMobile(true)){
+      if(true){
+        setIsMobile(true)
         props.handleRWD(false);
       }
       //this.handleCardSize(false);
@@ -96,9 +98,9 @@ function major_QAIndex(props){
     changeRowCard();
     window.addEventListener('resize', changeRowCard());
 
-    // return () => {
-    //   window.removeEventListener('resize', changeRowCard());
-    // }
+    return () => {
+      window.removeEventListener('resize', changeRowCard());
+    };
   } ,[]);
 
 
