@@ -53909,20 +53909,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var useWindowWidth = function useWindowWidth(handleFunction, props) {
+var useWindowWidth = function useWindowWidth() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(window.innerWidth),
       _useState2 = _slicedToArray(_useState, 2),
       windowWidth = _useState2[0],
       setWindowWidth = _useState2[1];
 
-  var handleWindowWidth = function handleWindowWidth() {
+  var handleWindowWidth = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
     setWindowWidth(window.innerWidth);
-  };
-
+  }, [setWindowWidth]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    window.addEventListener('resize', handleFunction(props, windowWidth));
+    window.addEventListener('resize', handleWindowWidth);
     return function () {
-      window.removeEventListener('resize', handleFunction(props, windowWidth));
+      window.removeEventListener('resize', handleWindowWidth);
     };
   }, []);
   return windowWidth;
@@ -54095,6 +54094,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function major_QAIndex(props) {
   var _this = this;
 
+  var windowWidth = Object(_hook_useWindowWidth__WEBPACK_IMPORTED_MODULE_4__["default"])();
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
       _useState2 = _slicedToArray(_useState, 2),
       row = _useState2[0],
@@ -54166,48 +54167,28 @@ function major_QAIndex(props) {
   //}
 
 
-  var changeRowCard = function changeRowCard(props, windowWidth) {
+  var changeRowCard = function changeRowCard() {
     if (windowWidth > 860) {
       setFontSize("2.5rem");
       setIconX("30vw");
       setIconY("10vw");
-      setIsMobile(false); // const [fontSize , setFontSize] = useState("2.5rem");
-      // const [IconX, setIconX] = useState("30vw");
-      // const [IconY, setIconY] = useState("10vw");
-      // const [isMobile, setIsMobile] = useState(false);
-      //this.setState({fontSize:"2.5rem",IconX:"30vw",IconY:"10vw"});
-      //this.setState({isMobile:false})
+      setIsMobile(false);
 
       if (true) {
         setIsMobile(true);
         props.handleRWD(false);
       }
     } else {
-      //this.setState({fontSize:"2rem",IconX:"25vw",IconY:"50vw"});
-      //this.handleCardSize(true);
-      //this.setState({isMobile:true})
       setFontSize("2rem");
       setIconX("25vw");
       setIconY("50vw");
-      setIsMobile(true); // const [fontSize , setFontSize] = useState("2rem");
-      // const [IconX, setIconX] = useState("25vw");
-      // const [IconY, setIconY] = useState("50vw");
-      // const [isMobile, setIsMobile] = useState(true);
+      setIsMobile(true);
 
       if (setIsMobile(false)) {
         props.handleRWD(true);
       }
     }
   };
-
-  var windowWidth = Object(_hook_useWindowWidth__WEBPACK_IMPORTED_MODULE_4__["default"])(changeRowCard, props); //console.log(windowWidth);
-  // useEffect(()=> {
-  //   useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile);
-  //   window.addEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
-  //   return () => {
-  //     window.removeEventListener('resize', useChangeRowCard(props,setFontSize,setIconX,setIconY,setIsMobile));
-  //   };
-  // } ,[]);
 
   var sponCard = function sponCard() {
     if (props.is_fetch) {

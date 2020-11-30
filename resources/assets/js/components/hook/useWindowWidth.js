@@ -1,16 +1,16 @@
-import {useState ,useEffect} from 'react';
+import {useState ,useEffect, useCallback} from 'react';
 
-const useWindowWidth = (handleFunction,props) =>{
+const useWindowWidth = () =>{
     const [windowWidth,setWindowWidth] = useState(window.innerWidth);
 
-    const handleWindowWidth=()=>{
+    const handleWindowWidth= useCallback(()=>{
         setWindowWidth(window.innerWidth);
-    }
+    },[setWindowWidth]);
 
     useEffect(()=>{
-        window.addEventListener('resize',handleFunction(props,windowWidth));
+        window.addEventListener('resize',handleWindowWidth);
         return(()=>{
-            window.removeEventListener('resize',handleFunction(props,windowWidth));
+            window.removeEventListener('resize',handleWindowWidth);
         })
     },[]);
 

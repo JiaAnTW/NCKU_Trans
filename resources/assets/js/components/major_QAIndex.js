@@ -5,6 +5,8 @@ import Icon from './icon';
 import useWindowWidth from './hook/useWindowWidth';
 
 function major_QAIndex(props){
+
+    const windowWidth = useWindowWidth();
     
     const [row,setRow] = useState(1);
     const [cardWidth,setCardWidth] =useState("100vw");
@@ -38,9 +40,9 @@ function major_QAIndex(props){
   //}
 
   
-  const changeRowCard =(props,windowWidth) =>{
+  const changeRowCard =() =>{
   if(windowWidth>860){
-    
+
     setFontSize("2.5rem");
     setIconX("30vw");
     setIconY("10vw");
@@ -64,7 +66,7 @@ function major_QAIndex(props){
     }
   }
   };
-  const windowWidth = useWindowWidth(changeRowCard,props);
+  
   
 
 
