@@ -1,0 +1,5 @@
+const INIT_DEPARTMENT = 'INIT_DEPARTMENT';
+
+export {
+    INIT_DEPARTMENT,
+};

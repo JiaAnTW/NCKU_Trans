@@ -14,14 +14,15 @@ import {
 
 import Icon from '../../components/icon';
 
-import { useMajor } from '../../utils/index';
+import { useMajor, useDepartment, useCollege } from '../../utils/index';
 
 function Comment() {
     const majorData = useMajor();
-
+    const departmentData = useDepartment();
+    const collegeData = useCollege();
 
     //---------------資料尚未取得---------------
-    if(majorData.length === 0) {
+    if(majorData.length === 0 || departmentData.length === 0 || collegeData.length === 0) {
         return(
             <LoadingContainer>
                 <Icon style={{marginTop:"0"}}/>
