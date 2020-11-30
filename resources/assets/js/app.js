@@ -12,6 +12,7 @@ import EditComment from './editComment';
 import EditQA from './editQA';
 import EditStandard from './editStandard';
 import QA from './major_QA';
+import QANew from './page/QA/index';
 import error from './error';
 import TestPage from './TestPage';
 import { Provider } from "react-redux";
@@ -50,6 +51,7 @@ class App extends Component{
                     <Route path="/commentnew" render={(props)=><CommentNew {...props}/>}/>
                     <Route path="/post" component={Post}/>
                     <Route path="/QA/:id" render={(props)=><QA {...props} fliter={this.state.fliter}/>}/>
+                    <Route path="/QAnew/:id" render={(props)=><QANew {...props} fliter={this.state.fliter}/>}/>
                     <Route path="/home" component={Home}/>
                     <Route path="/test" component={TestPage}/>
                     <Route path="/admin/login" render={(props)=><Admin {...props} setToken={this.setToken}/>}/>
