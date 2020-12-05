@@ -7,6 +7,6 @@ import collegeReducer from './college.js';
 export default combineReducers({
     major: majorReducer,
     QA: QAReducer,
-    department: departmentReducer,
+    in_maj: departmentReducer,
     college: collegeReducer,
 });
