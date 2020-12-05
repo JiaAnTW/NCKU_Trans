@@ -1,41 +1,39 @@
-html::-webkit-scrollbar
-{
-  width: 6px;
-  background-color: #F5F5F5;
-  border: none;
+html::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+    border: none;
 }
 
-html::-webkit-scrollbar-thumb
-{
-  border-radius: 10px;
-  background-color: #555;
-  opacity: 0.5;
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #555;
+    opacity: 0.5;
 }
 
-html::-webkit-scrollbar-track
-{
-background-color: #F5F5F5;
-border: 0px solid;
+html::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+    border: 0px solid;
 }
 
-html::-webkit-scrollbar-track-piece  {
- /* 4 */ 
- border: none;
+html::-webkit-scrollbar-track-piece {
+    /* 4 */
+    border: none;
 }
 
-.btn-primary{
+.btn-primary {
     background-image: none;
 }
 
-.btn:focus,.btn.focus{
+.btn:focus,
+.btn.focus {
     box-shadow: none;
 }
 
-body{
+body {
     max-width: 100%;
     font-family: 'Noto Sans TC';
 }
-#layout-nav{
+#layout-nav {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -45,40 +43,39 @@ body{
     height: 55px;
     font-size: 20px;
     background-image: none;
-    background-color: rgb(229,68,109);
-    
-    
+    background-color: rgb(229, 68, 109);
 }
 
-.logo{
+.logo {
     margin-left: 1%;
     margin-top: 0.2%;
     width: auto;
-    height:80%;
-    background-color: rgba(0,0,0,0);
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
 }
 
-
-.navItem,.navItem:visited,.navItem:active{
+.navItem,
+.navItem:visited,
+.navItem:active {
     float: right;
-    margin:  12.5px 50px;
+    margin: 12.5px 50px;
     color: rgb(248, 224, 227);
     outline: none;
-    text-decoration:none;
+    text-decoration: none;
     display: none;
     font-weight: 300;
 }
 
-.navItem:hover{
-    color: #FEABCF;
-    text-decoration:none;
+.navItem:hover {
+    color: #feabcf;
+    text-decoration: none;
     outline: none;
 }
 
-.layout #search-top{
+.layout #search-top {
     position: absolute;
-    top:15px;
+    top: 15px;
     left: 20%;
     height: 30px;
     background-image: url('../img/search_white.png');
@@ -89,70 +86,73 @@ body{
     background-color: transparent;
     outline: none;
     display: block;
-    padding:5px 35px;
+    padding: 5px 35px;
 }
 
-.layout #search-top:focus{
-    background-image:none;
-    padding:5px 5px;
+.layout #search-top:focus {
+    background-image: none;
+    padding: 5px 5px;
 }
 
 .layout #search-top::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     margin-left: 15px;
 }
 
-
-@media (min-width: 576px) { 
-    #layout-nav{
+@media (min-width: 576px) {
+    #layout-nav {
         height: 55px;
         font-size: 20px;
-        
     }
-    .navItem,.navItem:visited,.navItem:active{
+    .navItem,
+    .navItem:visited,
+    .navItem:active {
         float: right;
-        margin:  12.5px 50px;
+        margin: 12.5px 50px;
         color: rgb(248, 224, 227);
         outline: none;
-        
     }
-
 }
 
-@media (min-width: 870px) { 
-    #layout-nav{
+@media (min-width: 870px) {
+    #layout-nav {
         height: 55px;
         font-size: 20px;
         background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
     }
-    .navItem,.navItem:visited,.navItem:active{
+    .navItem,
+    .navItem:visited,
+    .navItem:active {
         display: block;
         outline: none;
     }
 
-    .layout #search-top{
+    .layout #search-top {
         display: none;
     }
- }
+}
 
-@media (min-width: 992px) { 
-    #layout-nav{
+@media (min-width: 992px) {
+    #layout-nav {
         height: 55px;
         font-size: 20px;
     }
-    .navItem,.navItem:visited,.navItem:active{
+    .navItem,
+    .navItem:visited,
+    .navItem:active {
         outline: none;
         display: block;
     }
-
 }
 
 @media (min-width: 1200px) {
-    #layout-nav{
+    #layout-nav {
         height: 55px;
         font-size: 20px;
     }
-    .navItem,.navItem:visited,.navItem:active{
+    .navItem,
+    .navItem:visited,
+    .navItem:active {
         outline: none;
         display: block;
     }

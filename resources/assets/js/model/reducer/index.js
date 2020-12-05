@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import majorReducer from "./major.js";
+import { combineReducers } from 'redux';
+import majorReducer from './major.js';
 import QAReducer from './qa.js';
 import departmentReducer from './department.js';
 import collegeReducer from './college.js';

@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchDepartment } from '../../model/middleware/department';
 
 function useDepartment() {
     const dispatch = useDispatch();
-    const departmentData = useSelector(state => state.in_maj);
+    const departmentData = useSelector((state) => state.in_maj);
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchDepartment());
-    },[]);
+    }, []);
 
     return departmentData;
 }

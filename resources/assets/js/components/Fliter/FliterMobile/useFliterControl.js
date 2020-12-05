@@ -18,15 +18,13 @@ var fliter= [
     },
 ];
 */
-  
 
-function useFliterControl(initValue){
+function useFliterControl(initValue) {
     const [selectItem, setSelectItem] = useState({});
 
-    useEffect(()=>{
-        if(selectItem)
-            setData(selectItem);
-    },[selectItem]);
+    useEffect(() => {
+        if (selectItem) setData(selectItem);
+    }, [selectItem]);
 
     return { data, setData };
 }

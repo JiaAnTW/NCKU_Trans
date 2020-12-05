@@ -1,6 +1,5 @@
-
-@media (min-width: 596px) { 
-    .commentIndex{
+@media (min-width: 596px) {
+    .commentIndex {
         width: 1024px;
         width: 100%;
         height: 100%;
@@ -12,17 +11,17 @@
     }
 }
 
-@media (min-width: 768px) { 
-    .commentIndex{
+@media (min-width: 768px) {
+    .commentIndex {
         width: 1024px;
         width: 100%;
         height: 100%;
         margin: 0 10px;
     }
- }
+}
 
-@media (min-width: 992px) { 
-    .commentIndex{
+@media (min-width: 992px) {
+    .commentIndex {
         width: 1024px;
         width: 100%;
         height: 100%;
@@ -30,10 +29,9 @@
 }
 
 @media (min-width: 1200px) {
-    .commentIndex{
+    .commentIndex {
         width: 1024px;
         width: 100%;
         height: 100%;
-        
     }
 }

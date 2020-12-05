@@ -20,5 +20,4 @@ const CommentIndex = styled.div`
     height: 100%;
 `;
 
-
 export { CommentSection, StatisticContainer, CommentIndex };

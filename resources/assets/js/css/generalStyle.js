@@ -27,7 +27,6 @@ const MenuContainer = styled.div`
     height: 100%;
 `;
 
-
 const MultCards = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +35,5 @@ const MultCards = styled.div`
     width: 100%;
     height: 100%;
 `;
-
 
 export { LoadingContainer, GeneralContainer, MenuContainer, MultCards };

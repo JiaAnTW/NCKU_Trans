@@ -1,96 +1,96 @@
-.Menu::-webkit-scrollbar,.comment #bar-link::-webkit-scrollbar
-{
-  width: 0px;
-  height: 0px;
-  background-color: transparent;
-  border: none;
+.Menu::-webkit-scrollbar,
+.comment #bar-link::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    border: none;
 }
 
-.Menu::-webkit-scrollbar-thumb
-{
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0.1);
-  opacity: 0.5;
+.Menu::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0.5;
 }
 
-.Menu::-webkit-scrollbar-track
-{
-background-color: transparent;
-border: 0px solid;
+.Menu::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 0px solid;
 }
 
-.Menu::-webkit-scrollbar-track-piece  {
- /* 4 */ 
- border: none;
+.Menu::-webkit-scrollbar-track-piece {
+    /* 4 */
+    border: none;
 }
 
-.comment .progress-container,.comment .bar-container,.comment .progress-btn{
+.comment .progress-container,
+.comment .bar-container,
+.comment .progress-btn {
     display: flex;
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
 }
 
-.comment .progress-container{
+.comment .progress-container {
     flex-direction: column;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
 }
 
-.comment .bar-container{
+.comment .bar-container {
     justify-content: space-evenly;
     -webkit-justify-content: space-evenly;
     -ms-justify-content: space-evenly;
     -webkit-justify-content: space-evenly;
 }
 
-.comment .bar-container, .comment .standard{
-    -webkit-transition: left 1.0s ease-in-out;
-    -moz-transition: left 1.0s ease-in-out;
-    -o-transition: left 1.0s ease-in-out;
-    transition: left 1.0s ease-in-out;
+.comment .bar-container,
+.comment .standard {
+    -webkit-transition: left 1s ease-in-out;
+    -moz-transition: left 1s ease-in-out;
+    -o-transition: left 1s ease-in-out;
+    transition: left 1s ease-in-out;
 }
 
-.comment .progress-btn{
+.comment .progress-btn {
     justify-content: center;
     -webkit-justify-content: center;
     -ms-justify-content: center;
-    -webkit-justify-content: center;   
+    -webkit-justify-content: center;
 }
 
-.comment .progress-btn button{
+.comment .progress-btn button {
     height: 10px;
     width: 10px;
     border-radius: 10px;
     padding: 0;
     margin: 0px 5px;
-    outline:none;
+    outline: none;
     border: none;
 }
 
-
-.comment #top{
+.comment #top {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
-.comment #bot{
+.comment #bot {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
-.comment .Menu{
+.comment .Menu {
     height: 91.8vh;
     overflow-y: auto;
 }
 
-.loading{
+.loading {
     position: absolute;
     width: 100vw;
     height: 100vh;
     display: flex;
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     justify-content: center;
     -webkit-justify-content: center;
@@ -102,257 +102,241 @@ border: 0px solid;
     -webkit-align-items: center;
 }
 
-.board{
+.board {
     display: none;
 }
 
-.index{
-    position:absolute;
+.index {
+    position: absolute;
     width: 100%;
-    max-width:100%;
+    max-width: 100%;
     left: 0%;
-    top:235px;
+    top: 235px;
     height: auto;
     z-index: 0;
 }
 
-.comment .MobileMenu{
-    position:fixed;
-    top:55px;
-    left:0px;
-    width:100vw;
-    max-width:100%;
-    height:37px;
-    background-color:rgb(229,68,109);
+.comment .MobileMenu {
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    width: 100vw;
+    max-width: 100%;
+    height: 37px;
+    background-color: rgb(229, 68, 109);
 }
-.statistic{
-    position:absolute;
+.statistic {
+    position: absolute;
     width: 96%;
     max-width: 97%;
     height: auto;
-    top:105px;
+    top: 105px;
     margin: 0 2%;
 }
 
-.statistic ul{
+.statistic ul {
     list-style-type: none;
     width: 100%;
     max-width: 100%;
-    float:left;
-    padding:0;
-	margin: 0;
+    float: left;
+    padding: 0;
+    margin: 0;
 }
-.statistic li{
-    float:left;
+.statistic li {
+    float: left;
     width: 30vw;
     padding: 0 2.5vw;
 }
 
-@media (min-width: 596px) { 
-    
-
-    .Menu{
+@media (min-width: 596px) {
+    .Menu {
         position: absolute;
-        top:60px;
-        left:5px;
+        top: 60px;
+        left: 5px;
         width: 150px;
     }
 
-
-    .index{
-        position:absolute;
+    .index {
+        position: absolute;
         width: 70%;
         left: 15%;
-        top:235px;
-        
+        top: 235px;
     }
-    .comment .MobileMenu{
-        position:fixed;
-        top:55px;
-        left:0px;
-        width:100vw;
-        max-width:100%;
-        height:37px;
-        background-color:rgb(229,68,109);
+    .comment .MobileMenu {
+        position: fixed;
+        top: 55px;
+        left: 0px;
+        width: 100vw;
+        max-width: 100%;
+        height: 37px;
+        background-color: rgb(229, 68, 109);
     }
 
-    .statistic{
-        position:absolute;
+    .statistic {
+        position: absolute;
         width: 85%;
         max-width: 85%;
         height: auto;
         left: 10%;
-        top:105px;
-        
+        top: 105px;
     }
-    
-    .statistic ul{
+
+    .statistic ul {
         list-style-type: none;
         width: 100%;
         max-width: 100%;
-        float:left;
-        padding:0;
+        float: left;
+        padding: 0;
         margin: 0;
     }
-    .statistic li{
-        float:left;
+    .statistic li {
+        float: left;
         padding: 0 5%;
         width: auto;
     }
 }
 
-@media (min-width: 870px) { 
-    .board{
+@media (min-width: 870px) {
+    .board {
         display: block;
     }
 
-    .Menu{
+    .Menu {
         position: absolute;
-        top:55px;
-        left:0px;
+        top: 55px;
+        left: 0px;
         width: 150px;
         background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);
-
-        
     }
 
-
-    .index{
-        position:absolute;
+    .index {
+        position: absolute;
         width: 70%;
         left: 24%;
-        top:220px;
+        top: 220px;
         height: auto;
     }
 
-    .comment .index{
+    .comment .index {
         max-height: 65vh;
         overflow-y: auto;
         overflow-x: hidden;
     }
 
-    .index::-webkit-scrollbar
-    {
-      width: 1px;
-      background-color: transparent;
-      border: none;
-    }
-    
-    .index::-webkit-scrollbar-thumb
-    {
-      border-radius: 10px;
-      background-color: #555;
-      opacity: 0.5;
-    }
-    
-    .index::-webkit-scrollbar-track
-    {
-    background-color: transparent;
-    border: 0px solid;
-    }
-    
-    .card-box::-webkit-scrollbar-track-piece  {
-     /* 4 */ 
-     border: none;
+    .index::-webkit-scrollbar {
+        width: 1px;
+        background-color: transparent;
+        border: none;
     }
 
-    .comment .MobileMenu{
-        position:fixed;
-        top:55px;
-        left:0px;
-        width:100vw;
-        max-width:100%;
-        height:37px;
-        background-color:rgb(229,68,109);
+    .index::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #555;
+        opacity: 0.5;
     }
 
-    .statistic{
-        position:absolute;
+    .index::-webkit-scrollbar-track {
+        background-color: transparent;
+        border: 0px solid;
+    }
+
+    .card-box::-webkit-scrollbar-track-piece {
+        /* 4 */
+        border: none;
+    }
+
+    .comment .MobileMenu {
+        position: fixed;
+        top: 55px;
+        left: 0px;
+        width: 100vw;
+        max-width: 100%;
+        height: 37px;
+        background-color: rgb(229, 68, 109);
+    }
+
+    .statistic {
+        position: absolute;
         width: 80%;
         height: auto;
         left: 20%;
-        top:80px;
+        top: 80px;
         display: flex;
     }
-    .statistic ul{
+    .statistic ul {
         list-style-type: none;
-        float:left;
+        float: left;
     }
-    .statistic li{
-        float:left;
+    .statistic li {
+        float: left;
         padding: 0 2%;
     }
- }
+}
 
-@media (min-width: 992px) { 
-
-    .Menu{
+@media (min-width: 992px) {
+    .Menu {
         position: absolute;
-        top:55px;
-        left:0px;
+        top: 55px;
+        left: 0px;
         width: 150px;
     }
 
-
-    .index{
-        position:absolute;
+    .index {
+        position: absolute;
         width: 75%;
         left: 20%;
-        top:220px;
+        top: 220px;
         height: auto;
     }
 
-    .statistic{
-        position:absolute;
+    .statistic {
+        position: absolute;
         width: 75%;
         height: auto;
         left: 20%;
-        top:80px;
+        top: 80px;
     }
-    .statistic ul{
+    .statistic ul {
         list-style-type: none;
         width: 100%;
-        float:left;
+        float: left;
     }
-    .statistic li{
-        float:left;
+    .statistic li {
+        float: left;
         padding: 0 3%;
     }
 }
 
 @media (min-width: 1200px) {
-
-    .Menu{
+    .Menu {
         position: absolute;
-        top:55px;
-        left:0px;
+        top: 55px;
+        left: 0px;
         width: 150px;
     }
 
-
-    .index{
-        position:absolute;
+    .index {
+        position: absolute;
         width: 1024px;
         height: auto;
         width: 75%;
         left: 20%;
-        top:220px;
-        
+        top: 220px;
     }
-    .statistic{
-        position:absolute;
+    .statistic {
+        position: absolute;
         width: 75%;
         height: auto;
         left: 20%;
-        top:80px;
+        top: 80px;
     }
-    .statistic ul{
+    .statistic ul {
         list-style-type: none;
         width: 100%;
-        float:left;
+        float: left;
     }
-    .statistic li{
-        float:left;
+    .statistic li {
+        float: left;
         padding: 0 4%;
     }
 }

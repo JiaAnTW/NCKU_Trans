@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function TitleBarItem(props){
-    return <th>{props.type + " : " + props.value}</th>
+function TitleBarItem(props) {
+    return <th>{props.type + ' : ' + props.value}</th>;
 }
 
 export default TitleBarItem;

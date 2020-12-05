@@ -4,11 +4,11 @@ const initState = [];
 
 const collegeReducer = (state = initState, action) => {
     switch (action.type) {
-      case INIT_COLLEGE: {
-        return action.payload.data;
-      }
-      default:
-        return state;
+        case INIT_COLLEGE: {
+            return action.payload.data;
+        }
+        default:
+            return state;
     }
 };
 

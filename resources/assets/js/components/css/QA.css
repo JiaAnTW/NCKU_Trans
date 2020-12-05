@@ -1,220 +1,207 @@
-
-  .QA_container .QA_cardBody{
+.QA_container .QA_cardBody {
     width: 95vw;
-  }
-
-.QA_card_container{
-  padding: 0px 0px;
 }
-  .QA_card_container .id_container{
+
+.QA_card_container {
+    padding: 0px 0px;
+}
+.QA_card_container .id_container {
     width: 15vw;
-    height:5vw;
-    background-color: rgb(229,68,109);
+    height: 5vw;
+    background-color: rgb(229, 68, 109);
     text-align: center;
     margin-left: 0;
     line-height: 5vw;
     font-size: 2.5vw;
     color: white;
-  }
+}
 
-  #fb-comments span{
+#fb-comments span {
     width: 70%;
-  }
+}
 
-  #fb-comments iframe, #fb-comments span, .fb_iframe_widget_fluid_desktop iframe{
+#fb-comments iframe,
+#fb-comments span,
+.fb_iframe_widget_fluid_desktop iframe {
     width: 100%;
     min-width: 70%;
     max-width: 80%;
-  }
-  
-  .QA_card_container .title2{
+}
+
+.QA_card_container .title2 {
     max-width: 100%;
     font-size: 6vw;
-  }
-  
-  .card_container h2{
-      font-size: 25px;
-  }
-  
-  .QA_card_container span{
+}
+
+.card_container h2 {
+    font-size: 25px;
+}
+
+.QA_card_container span {
     position: relative;
     top: 50px;
     font-size: 4vw;
     font-weight: 100;
     letter-spacing: 2.5px;
     line-height: 8vw;
-    text-align:justify;
-  }
-  
-  
-  .QA_container  .Arrow{
-  position: absolute;
-  top: 175px;
-  border-right: 4px solid gray;
-  border-top: 4px solid gray;
-  height: 5vw;
-  width: 5vw;
-  border-left: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  display: inline-block;
-  }
-  
-  .QA_container .btnText{
-  position: absolute;
-  top: 197.5px;
-  font-size: 3vw;
-  }
-  
-  
-  
-  .QA_container #rightBtn{
-  right: 0px;
-  outline: none;
-  }
-  
-  .QA_container #rightArrow{
-  left: 5px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  }
-  
-  .QA_container #next{
-  left: 1px;
-  }
-  
-  .QA_container #leftBtn{
-  left: 0px;
-  outline: none;
-  }
-  
-  .QA_container #leftArrow{
-  right: 10px;
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  }
-  
-  .QA_container #before{
-  right: 6px;
-  }
-  
-  .QA_container .type_table{
-    position:relative;
-    top: 15px;
-    font-size: 5vw;
-    font-weight: 100;
-  }
-  
-  @media (min-width: 596px) {
-    .QA_container .QA_cardBody{
-      width: 95%;
-    }
+    text-align: justify;
+}
 
-
-     .QA_card_container .id_container{
-      width: 120px;
-      height:25px;
-      background-color: rgb(229,68,109);
-      text-align: center;
-      line-height: 25px;
-      font-size: 15px;
-      color: white;
-    }
-  
-    .QA_card_container .title2{
-      max-width: 100%;
-      font-size: 36px;
-    }
-  
-    .QA_container.closeBtn{
-      position: absolute;
-      right:15px;
-      top:20px;
-      width: 65px;
-      height: 50px;
-      font-size: 20px;
-      background-color: rgba(0, 0, 0,0.001);
-      border: 0.5px solid gray;
-    }
-  
-    .QA_card_container span{
-      position: relative;
-      top: 50px;
-      font-size: 20px;
-      font-weight: 100;
-      letter-spacing: 2.5px;
-      line-height: 35px;
-      text-align:justify;
-    }
-  
-    .QA_container.closeBtn2{
-    
-      width: 65px;
-      height: 50px;
-      font-size: 20px;
-      background-color: rgba(0, 0, 0,0.001);
-      border: 0.5px solid gray;
-    }
-  
-  
-    .QA_container .Arrow{
+.QA_container .Arrow {
     position: absolute;
     top: 175px;
     border-right: 4px solid gray;
     border-top: 4px solid gray;
-    height: 50px;
-    width: 50px;
+    height: 5vw;
+    width: 5vw;
     border-left: 2px solid transparent;
     border-bottom: 2px solid transparent;
     display: inline-block;
-  }
-  
-  .QA_container .btnText{
+}
+
+.QA_container .btnText {
     position: absolute;
-    top: 187.5px;
-    font-size: 15px;
-  }
-  
-  
-  
-    .QA_container #rightBtn{
-      right: 10px;
-      outline: none;
-    }
-  
-    .QA_container #rightArrow{
-      left: 5px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-    }
-  
-  .QA_container #next{
-    left: 1px;
-  }
-  
-    .QA_container #leftBtn{
-    left: 10px;
+    top: 197.5px;
+    font-size: 3vw;
+}
+
+.QA_container #rightBtn {
+    right: 0px;
     outline: none;
-    }
-  
-    .QA_container #leftArrow{
+}
+
+.QA_container #rightArrow {
+    left: 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.QA_container #next {
+    left: 1px;
+}
+
+.QA_container #leftBtn {
+    left: 0px;
+    outline: none;
+}
+
+.QA_container #leftArrow {
     right: 10px;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+}
+
+.QA_container #before {
+    right: 6px;
+}
+
+.QA_container .type_table {
+    position: relative;
+    top: 15px;
+    font-size: 5vw;
+    font-weight: 100;
+}
+
+@media (min-width: 596px) {
+    .QA_container .QA_cardBody {
+        width: 95%;
     }
-  
-    .QA_container  #before{
-      right: 6px;
+
+    .QA_card_container .id_container {
+        width: 120px;
+        height: 25px;
+        background-color: rgb(229, 68, 109);
+        text-align: center;
+        line-height: 25px;
+        font-size: 15px;
+        color: white;
     }
-    .QA_card_container{
-      padding: 0 40px;
+
+    .QA_card_container .title2 {
+        max-width: 100%;
+        font-size: 36px;
     }
-  }
-  
-  
-  @media (min-width: 870px) {
-  
-  }
-  
-  
-  
-  
+
+    .QA_container.closeBtn {
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        width: 65px;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.001);
+        border: 0.5px solid gray;
+    }
+
+    .QA_card_container span {
+        position: relative;
+        top: 50px;
+        font-size: 20px;
+        font-weight: 100;
+        letter-spacing: 2.5px;
+        line-height: 35px;
+        text-align: justify;
+    }
+
+    .QA_container.closeBtn2 {
+        width: 65px;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.001);
+        border: 0.5px solid gray;
+    }
+
+    .QA_container .Arrow {
+        position: absolute;
+        top: 175px;
+        border-right: 4px solid gray;
+        border-top: 4px solid gray;
+        height: 50px;
+        width: 50px;
+        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        display: inline-block;
+    }
+
+    .QA_container .btnText {
+        position: absolute;
+        top: 187.5px;
+        font-size: 15px;
+    }
+
+    .QA_container #rightBtn {
+        right: 10px;
+        outline: none;
+    }
+
+    .QA_container #rightArrow {
+        left: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .QA_container #next {
+        left: 1px;
+    }
+
+    .QA_container #leftBtn {
+        left: 10px;
+        outline: none;
+    }
+
+    .QA_container #leftArrow {
+        right: 10px;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .QA_container #before {
+        right: 6px;
+    }
+    .QA_card_container {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 870px) {
+}
