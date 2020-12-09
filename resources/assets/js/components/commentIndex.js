@@ -85,14 +85,7 @@ function CommentIndex(props) {
     }
   };
 
-    componentDidMount() {
-        this.changeRowCard();
-        window.addEventListener('resize', this.changeRowCard);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.changeRowCard);
-    }
+  
 
   const sponCard=()=>{
     if(props.is_fetch){
@@ -135,34 +128,7 @@ function CommentIndex(props) {
         return <Row style={{ paddingBottom:cardPadding }}>{output}</Row>
   };
 
-    sponManyCard(numberRow, datas) {
-        var output = [];
-        for (
-            var i = 0;
-            numberRow * this.state.row + i < datas.length && i < this.state.row;
-            ++i
-        )
-            output.push(
-                this.sponSingleCard(
-                    datas.length - numberRow * this.state.row - i - 1,
-                    datas
-                )
-            );
-        if (this.state.row > 1)
-            return (
-                <Row style={{ paddingBottom: this.state.cardPadding }}>
-                    <CardDeck style={{ height: this.state.cardHeight }}>
-                        {output}
-                    </CardDeck>
-                </Row>
-            );
-        else
-            return (
-                <Row style={{ paddingBottom: this.state.cardPadding }}>
-                    {output}
-                </Row>
-            );
-    }
+    
 
   
   
