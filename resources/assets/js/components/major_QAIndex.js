@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardDeck, Container, Row, Badge } from 'react-bootstrap';
 import './css/major_QAIndex.css';
 import Icon from './icon';
-import useWindowWidth from '../utils/useWindowWidth';
+import {useWindowWidth} from '../utils/index';
 
 function major_QAIndex(props) {
     const windowWidth = useWindowWidth();
