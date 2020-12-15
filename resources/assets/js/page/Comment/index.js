@@ -10,7 +10,8 @@ import {
 import { CommentSection, StatisticContainer } from './style';
 
 import Icon from '../../components/icon';
-
+import CommentCardsIndex from './CommentCardsIndex';
+import Content from '../../components/Content/index';
 import { useMajor, useDepartment, useCollege } from '../../utils/index';
 
 function Comment() {
@@ -36,7 +37,10 @@ function Comment() {
             <MenuContainer>這裡要放Menu</MenuContainer>
             <CommentSection>
                 <StatisticContainer>這裡放統計元件</StatisticContainer>
-                <MultCards>這裡要放卡片</MultCards>
+                <MultCards>
+                    <CommentCardsIndex itemArr={majorData} />
+                </MultCards>
+                <Content />
             </CommentSection>
         </GeneralContainer>
     );
