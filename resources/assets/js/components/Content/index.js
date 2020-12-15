@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Table } from 'react-bootstrap';
 import Modal from 'react-modal';
 import '../css/content.css';
-import contentStyle from './contentStyle';
+import { contentStyle, cardStyle, cardTextStyle, pStyle } from './contentStyle';
 import TitleBar from '../TitleBar';
 
 import {
@@ -32,20 +32,7 @@ function Content(props) {
                     setIsModalOpen(false);
                 }}
             >
-                <Card
-                    className="card-box"
-                    style={{
-                        position: 'absolute',
-                        top: '0px',
-                        height: cardHeight,
-                        overflowX: 'inline',
-                        overflowY: 'auto',
-                        left: '0px',
-                        backgroundColor: '#F5F5F5',
-                        border: 'none',
-                        transform: 'translate(0,0)',
-                    }}
-                >
+                <Card className="card-box" style={cardStyle(cardHeight)}>
                     <Card.Body
                         className="cardBody"
                         style={{ width: cardBodyWidth }}
@@ -69,17 +56,9 @@ function Content(props) {
                             >
                                 <TitleBar items={tags} mobile={'none'} />
                             </Table>
-                            <Card.Text
-                                style={{
-                                    position: 'relative',
-                                    top: '5px',
-                                    textAlign: 'justify',
-                                }}
-                            >
-                                <div>{content}</div>
-                                <p
-                                    style={{ width: '100%', height: '70px' }}
-                                ></p>
+                            <Card.Text style={cardTextStyle}>
+                                <p>{content}</p>
+                                <p style={pStyle}></p>
                             </Card.Text>
                         </div>
                     </Card.Body>

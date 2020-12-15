@@ -1,4 +1,4 @@
-function contentStyle(mobile) {
+export function contentStyle(mobile) {
     return {
         content: {
             top: mobile === 'none' ? '45%' : '50%',
@@ -14,4 +14,22 @@ function contentStyle(mobile) {
     };
 }
 
-export default contentStyle;
+export const cardStyle = (cardHeight) => ({
+    position: 'absolute',
+    top: '0px',
+    height: cardHeight,
+    overflowX: 'inline',
+    overflowY: 'auto',
+    left: '0px',
+    backgroundColor: '#F5F5F5',
+    border: 'none',
+    transform: 'translate(0,0)',
+});
+
+export const cardTextStyle = {
+    position: 'relative',
+    top: '5px',
+    textAlign: 'justify',
+};
+
+export const pStyle = { width: '100%', height: '70px' };
