@@ -3,7 +3,10 @@ import styled from 'styled-components';
 const CommentSection = styled.div`
     display: grid;
     grid-template-rows: 150px auto;
-    padding: 25px 45px;
+    padding: 25px 25px;
+    @media (max-width: 870px) {
+        padding: 0;
+    }
 `;
 
 const StatisticContainer = styled.div`

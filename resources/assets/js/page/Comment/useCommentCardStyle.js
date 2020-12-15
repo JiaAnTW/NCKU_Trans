@@ -7,7 +7,7 @@ const useCommentCardStyle = () => {
     const [cardWidth, setCardWidth] = useState('20rem');
     const [cardHeight, setCardHeight] = useState('20rem');
     const [cardTextHeight, setCardTextHeight] = useState('6.06rem');
-    const [btnHeight, setBtnHeight] = useState('15rem');
+    const [cardMargin, setCardMargin] = useState('7px');
 
     const windowWidth = useWindowWidth();
 
@@ -18,18 +18,18 @@ const useCommentCardStyle = () => {
             setCardWidth('20rem');
             setCardHeight('20rem');
             setCardTextHeight('6.06rem');
-            setBtnHeight('15rem');
+            setCardMargin('7px');
         } else {
             setFontSize('2.2rem');
             setWordsNumber(20);
-            setCardWidth('100vw');
+            setCardWidth('100%');
             setCardHeight('13.5rem');
             setCardTextHeight('2.06rem');
-            setBtnHeight('11rem');
+            setCardMargin('0px');
         }
     }, [windowWidth]);
 
-    return { fontSize, wordsNumber, cardWidth, cardHeight, cardTextHeight };
+    return { fontSize, wordsNumber, cardWidth, cardHeight, cardTextHeight, cardMargin };
 };
 
 export default useCommentCardStyle;

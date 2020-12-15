@@ -10,7 +10,7 @@ const CommentCard = ({ itemData }) => {
         cardWidth,
         cardHeight,
         cardTextHeight,
-        btnHeight,
+        cardMargin,
     } = useCommentCardStyle();
     const [, setIsModalOpen] = useModalOpen();
     const [, setModalContext] = useModalContext();
@@ -41,6 +41,7 @@ const CommentCard = ({ itemData }) => {
     return (
         <Card
             style={{
+                margin: cardMargin,
                 width: cardWidth,
                 height: cardHeight,
                 maxWidth: '100%',

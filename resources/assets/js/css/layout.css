@@ -46,6 +46,10 @@ body {
     background-color: rgb(229, 68, 109);
 }
 
+.layout{
+    display: flex;
+}
+
 .logo {
     margin-left: 1%;
     margin-top: 0.2%;
