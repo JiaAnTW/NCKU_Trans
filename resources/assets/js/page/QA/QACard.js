@@ -27,12 +27,12 @@ const QACard = ({ itemData }) => {
         );
     });
 
-    const handleOpenContent = useCallback(() => {
+    const handleOpenContent = useCallback((context) => {
         setModalContext({
-            id: itemData['id'],
-            title: itemData['question'],
-            content: itemData['answer'],
-            tags: itemData['tag'].split(','),
+            id: context['id'],
+            title: context['question'],
+            content: context['answer'],
+            tags: [],
         });
         setIsModalOpen(true);
     }, [itemData, setIsModalOpen]);
