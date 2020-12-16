@@ -25,6 +25,7 @@ const GeneralContainer = styled.div`
 const MenuContainer = styled.div`
     width: 100%;
     height: 100%;
+    background-image: linear-gradient(to bottom, #eb6052 0%, #fe5196 100%);
 `;
 
 const MultCards = styled.div`

@@ -9,6 +9,8 @@ import {
 
 import { CommentSection, StatisticContainer } from './style';
 
+import DepartmentFliterViewModel from './DepartmentFliterViewModel';
+
 import Icon from '../../components/icon';
 import CommentCardsIndex from './CommentCardsIndex';
 import Content from '../../components/Content/index';
@@ -34,7 +36,9 @@ function Comment() {
     //---------------一般狀況---------------
     return (
         <GeneralContainer>
-            <MenuContainer>這裡要放Menu</MenuContainer>
+            <MenuContainer>
+                <DepartmentFliterViewModel />
+            </MenuContainer>
             <CommentSection>
                 <StatisticContainer>這裡放統計元件</StatisticContainer>
                 <MultCards>
