@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Badge } from 'react-bootstrap';
 
-function MenuItem({ name, num, selected }) {
+function MenuItem({ name, num, selected ,onClick }) {
     return (
         <Button
             variant="light"
@@ -18,11 +18,7 @@ function MenuItem({ name, num, selected }) {
                 width: '100%',
                 outline: 'none',
             }}
-            /*onClick={this.changeFliter.bind(
-                this,
-                this.state.NCKU[this.state.department[i][1]][j],
-                'in_maj'
-            )}*/
+            onClick={onClick}
         >
             <div
                 style={{

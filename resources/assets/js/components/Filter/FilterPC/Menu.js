@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Collapse, Button } from 'react-bootstrap';
-import MenuItem from './MenuItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
 
@@ -9,9 +8,9 @@ function Menu(props) {
     const buttonColor = props.isSelect ? 'rgb(229,68,109)' : 'white';
     const buttonBackground = props.isSelect ? 'white' : 'transparent';
 
-    const onClickHandle = (value) => {
+    const onClickHandle = () => {
         setOpen(!open);
-        //props.onClick(value, 'department');
+        props.onClick();
     };
 
     return (
@@ -31,7 +30,7 @@ function Menu(props) {
                     padding: '0px 0px',
                 }}
                 variant="light"
-                onClick={onClickHandle.bind(this, props.title)}
+                onClick={onClickHandle}
                 value={props.title}
             >
                 {props.title}

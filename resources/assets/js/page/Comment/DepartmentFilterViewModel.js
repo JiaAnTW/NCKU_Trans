@@ -3,39 +3,27 @@ import Menu from '../../components/Filter/FilterPC/Menu';
 import MenuItem from '../../components/Filter/FilterPC/MenuItem';
 import Filter from '../../components/Filter/FilterPC/Filter';
 import book from '../../img/book.png';
-import { useDepartment, useCollege, useMajor } from '../../utils/index';
+import useClassifyDepartment from './useClassifyDepartment';
+import useSetMajorFilter from '../../utils/redux/useSetMajorFilter';
+import {useMajor} from '../../utils/index'
 
 function DepartmentFilterViewModel() {
-    /*const majorData = useMajor();
-    const 
-    return <Menu>{menuitemArr}</Menu>*/
-    // const menuItemArr = majorData.map((item)=>(
-    //     <MenuItem name={item.name} num={item.num} selected={item.selected}/>
-    // ));
-    const departmentData = useDepartment();
-    const collegeData = useCollege();
-
-    //classify department
-    let classifyDepartmentArr = collegeData.map((item) => ({
-        name: item.name,
-        id: item.id,
-        department: [],
-    }));
-    departmentData.forEach((element) => {
-        classifyDepartmentArr.forEach((item) => {
-            if (element.college === item.name)
-                item['department'].push(element.name);
-        });
-    });
+    
+    let classifyDepartmentArr = useClassifyDepartment();
+    
+    const majorData = useMajor();
+    const majorFilter = useSetMajorFilter();
+    
 
     //make them array
-    var menuArr = [];
-    classifyDepartmentArr.forEach((item) => {
-        let output = item.department.map((element) => (
-            <MenuItem name={element} num={0} selected={false} />
-        ));
-        menuArr.push(
-            <Menu title={item.name} id={item.id} isSelected={false}>
+    var menuArr = classifyDepartmentArr.map((item) => {
+        let output = item.department.map((element) => {
+                return (
+                    <MenuItem name={element.name} num={element.num} selected={false} onClick={()=>majorFilter(element.name,'in_major')} />
+                );
+            });
+        return(
+            <Menu title={item.name} id={item.id} isSelected={false} onClick={()=>majorFilter(item.name,'department')} > 
                 {output}
             </Menu>
         );
