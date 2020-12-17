@@ -1,11 +1,11 @@
 import React from 'react';
-import Menu from '../../components/Fliter/FliterPC/Menu';
-import MenuItem from '../../components/Fliter/FliterPC/MenuItem';
-import Fliter from '../../components/Fliter/FliterPC/Fliter';
+import Menu from '../../components/Filter/FilterPC/Menu';
+import MenuItem from '../../components/Filter/FilterPC/MenuItem';
+import Filter from '../../components/Filter/FilterPC/Filter';
 import book from '../../img/book.png';
-import { useDepartment, useCollege } from '../../utils/index';
+import { useDepartment, useCollege, useMajor } from '../../utils/index';
 
-function DepartmentFliterViewModel() {
+function DepartmentFilterViewModel() {
     /*const majorData = useMajor();
     const 
     return <Menu>{menuitemArr}</Menu>*/
@@ -43,11 +43,11 @@ function DepartmentFliterViewModel() {
 
     return (
         <div className="Menu">
-            <Fliter picture={book} title={'依學系篩選:'}>
+            <Filter picture={book} title={'依學系篩選:'}>
                 {menuArr}
-            </Fliter>
+            </Filter>
         </div>
     );
 }
 
-export default DepartmentFliterViewModel;
+export default DepartmentFilterViewModel;

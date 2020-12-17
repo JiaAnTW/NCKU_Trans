@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 //picture title buttonTitle
-function Fliter(props) {
+function Filter(props) {
     return (
         <div
             style={{
@@ -37,4 +37,4 @@ function Fliter(props) {
     );
 }
 
-export default Fliter;
+export default Filter;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 /* 資料結構
-var fliter= [
+var filter= [
     {
         id:0,  ===> adjList的index
         now:-1, 目前選取的item，預設為-1並顯示
@@ -19,7 +19,7 @@ var fliter= [
 ];
 */
 
-function useFliterControl(initValue) {
+function useFilterControl(initValue) {
     const [selectItem, setSelectItem] = useState({});
 
     useEffect(() => {
@@ -29,4 +29,4 @@ function useFliterControl(initValue) {
     return { data, setData };
 }
 
-export default useFliterControl;
+export default useFilterControl;

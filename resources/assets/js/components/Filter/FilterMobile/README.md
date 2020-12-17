@@ -1,7 +1,7 @@
-# FliterMobile資料結構
-FliterMobile是用以下的資料結構去控制如何顯示。
+# FilterMobile資料結構
+FilterMobile是用以下的資料結構去控制如何顯示。
 ```js
-var fliter = [
+var filter = [
     {
         id:0,
         now:-1,

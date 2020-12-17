@@ -17,7 +17,7 @@ const majorReducer = (state = initState, action) => {
         case SET_FILTER: {
             let filter = state.filter;
             filter[action.payload.type] = action.payload.value;
-            return { ...state, fliter };
+            return { ...state, filter };
         }
         case CLEAN_FILTER: {
             return {
