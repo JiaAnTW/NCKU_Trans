@@ -10,7 +10,7 @@ import {
 import { CommentSection, StatisticContainer } from './style';
 
 import Icon from '../../components/icon';
-import CommentCardsIndex from './CommentCardsIndex';
+import CommentCardsIndex from './presenters/CommentCardsIndex';
 import Content from '../../components/Content/index';
 import { useMajor, useDepartment, useCollege } from '../../utils/index';
 

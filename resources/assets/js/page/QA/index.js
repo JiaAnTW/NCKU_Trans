@@ -8,12 +8,12 @@ import {
 } from '../../css/generalStyle';
 
 import Icon from '../../components/icon';
-import QACardsIndex from './QACardsIndex';
+import QACardsIndex from './presenters/QACardsIndex';
 import Content from '../../components/Content/index';
 import { useQA } from '../../utils/index';
 
 function MajorQA() {
-    const QAData = useQA();
+    const QAData = useQA({ isNeedFetch: true });
 
     //---------------資料尚未取得---------------
     if (QAData.length === 0) {

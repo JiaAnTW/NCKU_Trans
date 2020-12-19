@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { Card } from 'react-bootstrap';
 import useCommentCardStyle from './useCommentCardStyle';
-import { useModalOpen, useModalContext } from '../../utils/index';
+import { useModalOpen, useModalContext } from '../../../../utils/index';
 
-const CommentCard = ({ itemData }) => {
+const CommentCard = ({ itemData, index }) => {
     const {
         fontSize,
         wordsNumber,
@@ -34,9 +34,10 @@ const CommentCard = ({ itemData }) => {
                 { type: '學年分數', value: itemData['score'] },
                 { type: '轉出科系', value: itemData['out_maj'] },
             ],
+            index,
         });
         setIsModalOpen(true);
-    }, [itemData, setIsModalOpen]);
+    }, [itemData, setIsModalOpen, index]);
 
     return (
         <Card
