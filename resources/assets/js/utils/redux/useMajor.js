@@ -3,12 +3,18 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchMajor } from '../../model/middleware/major';
 
+const fliterSelector = (state) => ({
+    in_maj: state.major.filter.in_maj,
+    year: state.major.filter.year,
+    department: state.major.filter.department,
+});
+
 function useMajor() {
     const [displayData, setDisplayData] = useState([]);
 
     const dispatch = useDispatch();
     const majorData = useSelector((state) => state.major.data);
-    const majorFilter = useSelector((state) => state.major.filter);
+    const { in_maj, year, department } = useSelector(fliterSelector);
 
     useEffect(() => {
         dispatch(fetchMajor());
@@ -17,16 +23,13 @@ function useMajor() {
     useEffect(() => {
         const data = majorData.filter((item) => {
             return (
-                (item['in_maj'] === majorFilter['in_maj'] ||
-                    majorFilter['in_maj'] === 'none') &&
-                (item['year'] === Number(majorFilter['year']) ||
-                    majorFilter['year'] === 'none') &&
-                (item['department'] === majorFilter['department'] ||
-                    majorFilter['department'] === 'none')
+                (item['in_maj'] === in_maj || in_maj === 'none') &&
+                (item['year'] === Number(year) || year === 'none') &&
+                (item['department'] === department || department === 'none')
             );
         });
         setDisplayData(data);
-    }, [majorData, majorFilter]);
+    }, [majorData, in_maj, year, department]);
 
     return displayData;
 }
