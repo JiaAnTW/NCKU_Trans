@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useWindowWidth } from '../../utils/index';
+import { useWindowWidth } from '../../../../utils/index';
 
 const useCommentCardStyle = () => {
     const [fontSize, setFontSize] = useState('2.7rem');
@@ -29,7 +29,14 @@ const useCommentCardStyle = () => {
         }
     }, [windowWidth]);
 
-    return { fontSize, wordsNumber, cardWidth, cardHeight, cardTextHeight, cardMargin };
+    return {
+        fontSize,
+        wordsNumber,
+        cardWidth,
+        cardHeight,
+        cardTextHeight,
+        cardMargin,
+    };
 };
 
 export default useCommentCardStyle;

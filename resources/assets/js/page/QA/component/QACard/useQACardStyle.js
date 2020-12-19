@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useWindowWidth from '../../utils/useWindowWidth';
+import useWindowWidth from '../../../../utils/useWindowWidth';
 
 const useQACardStyle = () => {
     const [fontSize, setFontSize] = useState('2.5rem');

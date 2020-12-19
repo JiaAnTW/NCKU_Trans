@@ -8,6 +8,7 @@ import useCleanMajorFilter from './redux/useCleanMajorFilter';
 
 import useModalOpen from './redux/components/modal/useModalOpen';
 import useModalContext from './redux/components/modal/useModalContext';
+import useSetModalFlow from './redux/components/modal/useSetModalFlow';
 
 export {
     useMajor,
@@ -19,4 +20,5 @@ export {
     useWindowWidth,
     useSetMajorFilter,
     useCleanMajorFilter,
+    useSetModalFlow,
 };

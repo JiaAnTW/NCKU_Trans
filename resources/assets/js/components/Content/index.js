@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Card, Table } from 'react-bootstrap';
 import Modal from 'react-modal';
 import '../css/content.css';
@@ -14,6 +15,8 @@ import {
 function Content(props) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
     const [{ id, title, tags, content }] = useModalContext();
+    const onBefore = useSelector((state) => state.modal.onBefore);
+    const onNext = useSelector((state) => state.modal.onNext);
     const windowWidth = useWindowWidth();
 
     const cardHeight = windowWidth < 800 ? '75vh' : '500px';
@@ -63,10 +66,10 @@ function Content(props) {
                         </div>
                     </Card.Body>
                 </Card>
-                <button className="contentBtn" id="rightBtn" onClick={() => {}}>
+                <button className="contentBtn" id="rightBtn" onClick={onNext}>
                     <div className="Arrow" id="rightArrow"></div>
                 </button>
-                <button className="contentBtn" id="leftBtn" onClick={() => {}}>
+                <button className="contentBtn" id="leftBtn" onClick={onBefore}>
                     <div className="Arrow" id="leftArrow"></div>
                 </button>
             </Modal>
