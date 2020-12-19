@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "test": "jest",
-        "format": "prettier --config ./.prettierrc --write \"./resources/assets/**/*.{ts,tsx,js,jsx,css}\"",
+        "format": "prettier --config ./.prettierrc --write \"./resources/assets/**/*.{ts,tsx,js,jsx,css,test}\"",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -13,6 +13,7 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
+        "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
         "axios": "^0.17",
         "babel-preset-react": "^6.23.0",
