@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, SET_MODAL_CONTEXT } from '../action/modal';
+import { OPEN_MODAL, CLOSE_MODAL, SET_MODAL_CONTEXT, SET_MODAL_BEFORE, SET_MODAL_NEXT } from '../action/modal';
 
 const initState = {
     isOpen: false,
@@ -8,6 +8,8 @@ const initState = {
         tags: [],
         content: '',
     },
+    onBefore: undefined,
+    onNext: undefined,
 };
 
 const modalReducer = (state = initState, action) => {
@@ -21,6 +23,14 @@ const modalReducer = (state = initState, action) => {
         case SET_MODAL_CONTEXT: {
             const { id, title, tags, content } = action.payload.content;
             return { ...state, context: { id, title, tags, content } };
+        }
+        case SET_MODAL_BEFORE: {
+            const onBefore = action.payload.onBefore;
+            return { ...state, onBefore};
+        }
+        case SET_MODAL_NEXT: {
+            const onNext = action.payload.onNext;
+            return { ...state, onNext};
         }
         default:
             return state;
