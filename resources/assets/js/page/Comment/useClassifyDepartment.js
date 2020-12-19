@@ -1,32 +1,38 @@
 import React from 'react';
-import { useDepartment, useCollege ,useMajor} from '../../utils/index';
+import { useSelector,} from 'react-redux';
+import { useDepartment, useCollege ,} from '../../utils/index';
 
 function  useClassifyDepartment() {
     const departmentData = useDepartment();
     const collegeData = useCollege();
-    const majorData = useMajor();
+    const majorData = useSelector((state) => state.major.data);
     
 
-    const countDepartment = (filter) => {
-        let count = 0;
+    const countDepartment = () => {
+        let count = {}; 
+        departmentData.forEach((item)=>{
+            count[item.name] = 0;
+        });
+
         majorData.forEach((item)=>{  
-            if(filter===item.in_maj)
-                count++;
+            count[item.in_maj]++;
         });
         return count;
     };
-
+    
     //classify department
     let classifyDepartmentArr = collegeData.map((item) => ({
         name: item.name,
         id: item.id,
         department: [],
     }));
+
+    let countArr = countDepartment();
+
     departmentData.forEach((element) => {
         classifyDepartmentArr.forEach((item) => {
             if (element.college === item.name){
-                let count = countDepartment(element.name);
-                item['department'].push({'name':element.name,'num':count});
+                item['department'].push({'name':element.name,'num':countArr[element.name]});
             }
         });
     });

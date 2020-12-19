@@ -1,30 +1,54 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Menu from '../../components/Filter/FilterPC/Menu';
 import MenuItem from '../../components/Filter/FilterPC/MenuItem';
 import Filter from '../../components/Filter/FilterPC/Filter';
 import book from '../../img/book.png';
 import useClassifyDepartment from './useClassifyDepartment';
-import useSetMajorFilter from '../../utils/redux/useSetMajorFilter';
-import {useMajor} from '../../utils/index'
+import {useCleanMajorFilter,useSetMajorFilter} from '../../utils/index'
 
 function DepartmentFilterViewModel() {
+    const allDepartment = '全部學系';
+    const [selectFilter,setSelectFilter] = useState(allDepartment);
+
+    const classifyDepartmentArr = useClassifyDepartment();
+    const setFilter = useSetMajorFilter();
+    const cleanFilter = useCleanMajorFilter();
     
-    let classifyDepartmentArr = useClassifyDepartment();
-    
-    const majorData = useMajor();
-    const majorFilter = useSetMajorFilter();
-    
+    const allDepartmentMenu = <Menu 
+                                title ={allDepartment} 
+                                selected = {selectFilter=== allDepartment}
+                                onClick={()=>{
+                                    setSelectFilter(allDepartment);
+                                    cleanFilter();
+                                }} 
+                            />;
 
     //make them array
     var menuArr = classifyDepartmentArr.map((item) => {
         let output = item.department.map((element) => {
                 return (
-                    <MenuItem name={element.name} num={element.num} selected={false} onClick={()=>majorFilter(element.name,'in_major')} />
+                    <MenuItem 
+                        name={element.name} 
+                        num={element.num} 
+                        selected={selectFilter===element.name} 
+                        onClick={()=>{
+                            setSelectFilter(element.name);
+                            cleanFilter();
+                            setFilter(element.name,'in_maj');
+                        }} />
                 );
             });
         return(
-            <Menu title={item.name} id={item.id} isSelected={false} onClick={()=>majorFilter(item.name,'department')} > 
-                {output}
+            <Menu 
+                title={item.name} 
+                id={item.id} 
+                selected={selectFilter===item.name} 
+                onClick={()=>{
+                    setSelectFilter(item.name);
+                    cleanFilter();
+                    setFilter(item.name,'department');
+                }} > 
+                    {output}
             </Menu>
         );
     });
@@ -32,6 +56,7 @@ function DepartmentFilterViewModel() {
     return (
         <div className="Menu">
             <Filter picture={book} title={'依學系篩選:'}>
+                {allDepartmentMenu}
                 {menuArr}
             </Filter>
         </div>

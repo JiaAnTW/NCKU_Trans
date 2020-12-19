@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap-theme.min.css';
 
 function Menu(props) {
     const [open, setOpen] = useState(false);
-    const buttonColor = props.isSelect ? 'rgb(229,68,109)' : 'white';
-    const buttonBackground = props.isSelect ? 'white' : 'transparent';
+    const buttonColor = props.selected ? 'rgb(229,68,109)' : 'white';
+    const buttonBackground = props.selected ? 'white' : 'transparent';
 
-    const onClickHandle = () => {
+    const handleClick = () => {
         setOpen(!open);
         props.onClick();
     };
@@ -19,18 +19,18 @@ function Menu(props) {
                 type="button"
                 style={{
                     fontWeight: '300',
-                    textAlign: 'right',
+                    textAlign: props.children ? 'right' :'center',
                     color: buttonColor,
                     backgroundColor: buttonBackground,
                     borderRadius: '0px',
-                    width: '70%',
+                    width: props.children ? '70%' : '100%',
                     paddingLeft: '0%',
                     outline: 'none',
                     height: '34px',
                     padding: '0px 0px',
                 }}
                 variant="light"
-                onClick={onClickHandle}
+                onClick={handleClick}
                 value={props.title}
             >
                 {props.title}
@@ -40,6 +40,7 @@ function Menu(props) {
                 aria-controls={props.id}
                 aria-expanded={open}
                 style={{
+                    display: props.children ? '' : 'none',
                     color: buttonColor,
                     backgroundColor: buttonBackground,
                     position: 'relative',
