@@ -23,7 +23,7 @@ function Filter(props) {
             >
                 <img
                     src={props.picture}
-                    alt="year"
+                    alt="icon"
                     style={{
                         margin: '0% 4%',
                         height: '50%',
