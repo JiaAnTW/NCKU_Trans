@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Badge, Card } from 'react-bootstrap';
 import useQACardStyle from './useQACardStyle';
 import { useModalOpen, useModalContext } from '../../../../utils/index';
+import transIntoModalData from '../../utils/transIntoModalData';
 
 const QACard = ({ itemData, index }) => {
     const { fontSize } = useQACardStyle();
@@ -28,13 +29,7 @@ const QACard = ({ itemData, index }) => {
     });
 
     const handleOpenContent = useCallback(() => {
-        setModalContext({
-            id: itemData['id'],
-            title: itemData['question'],
-            content: itemData['answer'],
-            tags: [],
-            index,
-        });
+        setModalContext(transIntoModalData(itemData, index));
         setIsModalOpen(true);
     }, [itemData, setIsModalOpen, setModalContext]);
 

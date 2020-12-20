@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Card } from 'react-bootstrap';
 import useCommentCardStyle from './useCommentCardStyle';
 import { useModalOpen, useModalContext } from '../../../../utils/index';
+import transIntoModalData from '../../utils/transIntoModalData';
 
 const CommentCard = ({ itemData, index }) => {
     const {
@@ -21,21 +22,7 @@ const CommentCard = ({ itemData, index }) => {
             : itemData['comment'].substr(0, wordsNumber - 1) + '  (...)';
 
     const handleOpenContent = useCallback(() => {
-        setModalContext({
-            id: itemData['id'],
-            title: '轉:' + itemData['in_maj'],
-            content: itemData['comment'],
-            tags: [
-                { type: '申請年度', value: itemData['year'] },
-                {
-                    type: '排名',
-                    value: itemData['rank_1'] + ' / ' + itemData['rank_2'],
-                },
-                { type: '學年分數', value: itemData['score'] },
-                { type: '轉出科系', value: itemData['out_maj'] },
-            ],
-            index,
-        });
+        setModalContext(transIntoModalData(itemData, index));
         setIsModalOpen(true);
     }, [itemData, setIsModalOpen, index]);
 

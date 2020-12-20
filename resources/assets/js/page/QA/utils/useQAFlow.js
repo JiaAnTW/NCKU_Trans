@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useModalContext, useSetModalFlow } from '../../../utils/index';
+import transIntoModalData from './transIntoModalData';
 
 function useQAFlow({ QAData }) {
     const [{ index }, setModalContent] = useModalContext();
@@ -8,31 +9,22 @@ function useQAFlow({ QAData }) {
     useEffect(() => {
         if (index !== 0)
             setModalOnBefore(() =>
-                setModalContent({
-                    id: QAData[index - 1]['id'],
-                    title: QAData[index - 1]['question'],
-                    content: QAData[index - 1]['answer'],
-                    tags: [],
-                    index: index - 1,
-                })
+                setModalContent(transIntoModalData(QAData[index - 1], index - 1))
             );
         else {
             setModalOnBefore(undefined);
         }
+    }, [index, QAData, setModalContent, setModalOnBefore]);
+
+    useEffect(() => {
         if (index + 1 !== QAData.length) {
             setModalOnNext(() =>
-                setModalContent({
-                    id: QAData[index + 1]['id'],
-                    title: QAData[index + 1]['question'],
-                    content: QAData[index + 1]['answer'],
-                    tags: [],
-                    index: index + 1,
-                })
+                setModalContent(transIntoModalData(QAData[index + 1], index + 1))
             );
         } else {
             setModalOnNext(undefined);
         }
-    }, [index, QAData, setModalOnBefore, setModalOnNext]);
+    }, [index, QAData, setModalContent, setModalOnNext]);
 }
 
 export default useQAFlow;

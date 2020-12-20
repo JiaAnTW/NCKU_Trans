@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import CommentCard from '../component/CommentCard/index';
 import useCommentFlow from '../utils/useCommentFlow';
 import { useMajor } from '../../../utils/index';
