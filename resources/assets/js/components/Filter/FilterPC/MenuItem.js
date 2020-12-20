@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Badge } from 'react-bootstrap';
 
-function MenuItem({ name, num, selected ,onClick }) {
+function MenuItem({ name, num, selected, onClick }) {
     return (
         <Button
             variant="light"

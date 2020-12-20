@@ -19,7 +19,7 @@ function Menu(props) {
                 type="button"
                 style={{
                     fontWeight: '300',
-                    textAlign: props.children ? 'right' :'center',
+                    textAlign: props.children ? 'right' : 'center',
                     color: buttonColor,
                     backgroundColor: buttonBackground,
                     borderRadius: '0px',

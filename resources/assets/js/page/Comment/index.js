@@ -9,7 +9,7 @@ import {
 
 import { CommentSection, StatisticContainer } from './style';
 
-import DepartmentFilterViewModel from './DepartmentFilterViewModel';
+import DepartmentFilterPresenter from './presenters/DepartmentFilterPresenter';
 
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
@@ -37,7 +37,7 @@ function Comment() {
     return (
         <GeneralContainer>
             <MenuContainer>
-                <DepartmentFilterViewModel />
+                <DepartmentFilterPresenter />
             </MenuContainer>
             <CommentSection>
                 <StatisticContainer>這裡放統計元件</StatisticContainer>
