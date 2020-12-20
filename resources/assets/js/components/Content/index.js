@@ -66,12 +66,24 @@ function Content(props) {
                         </div>
                     </Card.Body>
                 </Card>
-                <button className="contentBtn" id="rightBtn" onClick={onNext}>
-                    <div className="Arrow" id="rightArrow"></div>
-                </button>
-                <button className="contentBtn" id="leftBtn" onClick={onBefore}>
-                    <div className="Arrow" id="leftArrow"></div>
-                </button>
+                {onNext && (
+                    <button
+                        className="contentBtn"
+                        id="rightBtn"
+                        onClick={onNext}
+                    >
+                        <div className="Arrow" id="rightArrow"></div>
+                    </button>
+                )}
+                {onBefore && (
+                    <button
+                        className="contentBtn"
+                        id="leftBtn"
+                        onClick={onBefore}
+                    >
+                        <div className="Arrow" id="leftArrow"></div>
+                    </button>
+                )}
             </Modal>
         </div>
     );

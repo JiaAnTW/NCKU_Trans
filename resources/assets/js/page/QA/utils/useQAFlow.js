@@ -16,6 +16,9 @@ function useQAFlow({ QAData }) {
                     index: index - 1,
                 })
             );
+        else {
+            setModalOnBefore(undefined);
+        }
         if (index + 1 !== QAData.length) {
             setModalOnNext(() =>
                 setModalContent({
@@ -26,6 +29,8 @@ function useQAFlow({ QAData }) {
                     index: index + 1,
                 })
             );
+        } else {
+            setModalOnNext(undefined);
         }
     }, [index, QAData, setModalOnBefore, setModalOnNext]);
 }

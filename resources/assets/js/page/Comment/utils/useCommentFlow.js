@@ -36,6 +36,9 @@ function useCommentFlow({ majorData }) {
                     index: index - 1,
                 })
             );
+        else {
+            setModalOnBefore(undefined);
+        }
         if (index + 1 !== majorData.length) {
             setModalOnNext(() =>
                 setModalContent({
@@ -66,6 +69,8 @@ function useCommentFlow({ majorData }) {
                     index: index + 1,
                 })
             );
+        } else {
+            setModalOnNext(undefined);
         }
     }, [index, majorData, setModalOnBefore, setModalOnNext]);
 }
