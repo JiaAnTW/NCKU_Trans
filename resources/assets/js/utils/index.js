@@ -1,3 +1,4 @@
+import useRequest from './redux/useRequest';
 import useMajor from './redux/useMajor';
 import useQA from './redux/useQA';
 import useDepartment from './redux/useDepartment';
@@ -11,6 +12,7 @@ import useModalContext from './redux/components/modal/useModalContext';
 import useSetModalFlow from './redux/components/modal/useSetModalFlow';
 
 export {
+    useRequest,
     useMajor,
     useQA,
     useDepartment,

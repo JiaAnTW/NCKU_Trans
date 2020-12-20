@@ -10,13 +10,13 @@ import {
 import Icon from '../../components/icon';
 import QACardsIndex from './presenters/QACardsIndex';
 import Content from '../../components/Content/index';
-import { useQA } from '../../utils/index';
+import useInitData from './utils/useInitData';
 
 function MajorQA() {
-    const QAData = useQA({ isNeedFetch: true });
+    const isFinishRequest = useInitData();
 
     //---------------資料尚未取得---------------
-    if (QAData.length === 0) {
+    if (!isFinishRequest) {
         return (
             <LoadingContainer>
                 <Icon style={{ marginTop: '0' }} />
@@ -28,7 +28,7 @@ function MajorQA() {
         <GeneralContainer>
             <MenuContainer>這裡要放Menu</MenuContainer>
             <MultCards>
-                <QACardsIndex itemArr={QAData} />
+                <QACardsIndex />
             </MultCards>
             <Content />
         </GeneralContainer>

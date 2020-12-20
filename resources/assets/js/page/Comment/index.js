@@ -15,19 +15,13 @@ import YearFilterPresenter from './presenters/YearFilterPresenter';
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
 import Content from '../../components/Content/index';
-import { useMajor, useDepartment, useCollege } from '../../utils/index';
+import useInitData from './utils/useInitData';
 
 function Comment() {
-    const majorData = useMajor();
-    const departmentData = useDepartment();
-    const collegeData = useCollege();
+    const isFinishRequest = useInitData();
 
     //---------------資料尚未取得---------------
-    if (
-        majorData.length === 0 ||
-        departmentData.length === 0 ||
-        collegeData.length === 0
-    ) {
+    if (!isFinishRequest) {
         return (
             <LoadingContainer>
                 <Icon style={{ marginTop: '0' }} />
@@ -44,7 +38,7 @@ function Comment() {
             <CommentSection>
                 <StatisticContainer>這裡放統計元件</StatisticContainer>
                 <MultCards>
-                    <CommentCardsIndex itemArr={majorData} />
+                    <CommentCardsIndex />
                 </MultCards>
                 <Content />
             </CommentSection>

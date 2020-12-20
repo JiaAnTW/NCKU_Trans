@@ -1,16 +1,7 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { fetchCollege } from '../../model/middleware/college';
+import { useSelector } from 'react-redux';
 
 function useCollege() {
-    const dispatch = useDispatch();
     const collegeData = useSelector((state) => state.college);
-
-    useEffect(() => {
-        dispatch(fetchCollege());
-    }, []);
-
     return collegeData;
 }
 

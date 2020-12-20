@@ -4,6 +4,7 @@ import QAReducer from './qa.js';
 import departmentReducer from './department.js';
 import collegeReducer from './college.js';
 import modalReducer from './modal.js';
+import requestReducer from './request.js';
 
 export default combineReducers({
     major: majorReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
     in_maj: departmentReducer,
     college: collegeReducer,
     modal: modalReducer,
+    request: requestReducer,
 });

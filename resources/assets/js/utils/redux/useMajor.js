@@ -12,13 +12,8 @@ const fliterSelector = (state) => ({
 function useMajor() {
     const [displayData, setDisplayData] = useState([]);
 
-    const dispatch = useDispatch();
     const majorData = useSelector((state) => state.major.data);
     const { in_maj, year, department } = useSelector(fliterSelector);
-
-    useEffect(() => {
-        dispatch(fetchMajor());
-    }, []);
 
     useEffect(() => {
         const data = majorData.filter((item) => {

@@ -1,0 +1,2 @@
+export const ADD_REQUEST = 'ADD_REQUEST';
+export const FINISH_REQUEST = 'FINISH_REQUEST';
