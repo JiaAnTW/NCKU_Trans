@@ -10,6 +10,7 @@ import {
 import { CommentSection, StatisticContainer } from './style';
 
 import DepartmentFilterPresenter from './presenters/DepartmentFilterPresenter';
+import YearFilterPresenter from './presenters/YearFilterPresenter';
 
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
@@ -37,6 +38,7 @@ function Comment() {
     return (
         <GeneralContainer>
             <MenuContainer>
+                <YearFilterPresenter />
                 <DepartmentFilterPresenter />
             </MenuContainer>
             <CommentSection>

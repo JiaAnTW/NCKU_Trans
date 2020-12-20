@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-//picture title buttonTitle
+//picture title
 function Filter(props) {
     return (
         <div

@@ -58,7 +58,14 @@ function DepartmentFilterPresenter() {
     });
 
     return (
-        <div className="Menu">
+        <div
+            className="Menu"
+            style={{
+                position: 'relative',
+                marginTop: '30px',
+                width: '100%',
+            }}
+        >
             <Filter picture={book} title={'依學系篩選:'}>
                 {allDepartmentMenu}
                 {menuArr}
