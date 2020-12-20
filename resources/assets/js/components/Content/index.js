@@ -45,6 +45,9 @@ function Content(props) {
                             style={{
                                 maxWidth: '100%',
                                 margin: containerMargin,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
                             }}
                         >
                             <h1 className="title">{title}</h1>

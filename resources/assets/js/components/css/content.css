@@ -12,7 +12,6 @@
 }
 
 .id_container {
-    margin-left: 22vw;
     width: 25vw;
     height: 5vw;
     border-radius: 5px;
@@ -36,9 +35,10 @@
 }
 
 .title {
-    margin-left: 21vw;
-    width: 30vw;
-    font-size: 6vw;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 30px;
 }
 
 .card_container h2 {
@@ -176,17 +176,11 @@
     .id_container {
         width: 120px;
         height: 25px;
-        margin-left: 42%;
         background-color: rgb(229, 68, 109);
         text-align: center;
         line-height: 25px;
         font-size: 14px;
         color: white;
-    }
-    .title {
-        margin-left: 41%;
-        width: 400px;
-        font-size: 30px;
     }
 
     .closeBtn {
