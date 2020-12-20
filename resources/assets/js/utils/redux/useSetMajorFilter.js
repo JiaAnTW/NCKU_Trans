@@ -3,16 +3,16 @@ import { useDispatch } from 'react-redux';
 
 import { SET_FILTER } from '../../model/action/major';
 
-function useSetMajorFliter() {
+function useSetMajorFilter() {
     const dispatch = useDispatch();
-    // 設定fliter的函式
+    // 設定filter的函式
     return useCallback(
-        (new_fliter, type) => {
+        (new_filter, type) => {
             dispatch({
                 type: SET_FILTER,
                 payload: {
                     type,
-                    value: new_fliter,
+                    value: new_filter,
                 },
             });
         },
@@ -20,4 +20,4 @@ function useSetMajorFliter() {
     );
 }
 
-export default useSetMajorFliter;
+export default useSetMajorFilter;
