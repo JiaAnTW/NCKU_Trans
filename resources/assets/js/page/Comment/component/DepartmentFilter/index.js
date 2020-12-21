@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import useClassifyDepartment from '../../utils/useClassifyDepartment';
 import Menu from '../../../../components/Filter/FilterPC/Menu';
 import MenuItem from '../../../../components/Filter/FilterPC/MenuItem';
@@ -8,35 +9,34 @@ import {
 } from '../../../../utils/index';
 
 function DepartmentFilter() {
-    const [selectFilter, setSelectFilter] = useState('全部學系');
+    const [department, in_maj] = useSelector((state) => [
+        state.major.filter.department,
+        state.major.filter.in_maj,
+    ]);
     const classifyDepartmentArr = useClassifyDepartment();
     const setFilter = useSetMajorFilter();
-    const cleanFilter = useCleanMajorFilter();
 
-    return classifyDepartmentArr.map((college) => {
+    return classifyDepartmentArr.map((collegItem) => {
         return (
             <Menu
-                title={college.name}
-                id={college.id}
-                key={college.id}
-                selected={selectFilter === college.name}
+                title={collegItem.name}
+                id={collegItem.id}
+                key={collegItem.id}
+                selected={department === collegItem.name}
                 onClick={() => {
-                    setSelectFilter(college.name);
-                    cleanFilter();
-                    setFilter(college.name, 'department');
+                    setFilter('none', 'in_maj');
+                    setFilter(collegItem.name, 'department');
                 }}
             >
-                {college.department.map((department) => {
+                {collegItem.department.map((departmentItem) => {
                     return (
                         <MenuItem
-                            name={department.name}
-                            num={department.num}
-                            key={department.name}
-                            selected={selectFilter === department.name}
+                            name={departmentItem.name}
+                            num={departmentItem.num}
+                            key={departmentItem.name}
+                            selected={in_maj === departmentItem.name}
                             onClick={() => {
-                                setSelectFilter(department.name);
-                                cleanFilter();
-                                setFilter(department.name, 'in_maj');
+                                setFilter(departmentItem.name, 'in_maj');
                             }}
                         />
                     );
