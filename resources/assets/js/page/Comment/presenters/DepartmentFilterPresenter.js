@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Menu from '../../../components/Filter/FilterPC/Menu';
 import Filter from '../../../components/Filter/FilterPC/Filter';
 import DepartmentFilter from '../component/DepartmentFilter/index';
 import book from '../../../img/book.png';
 import { useCleanMajorFilter } from '../../../utils/index';
 
-const allDepartment = '全部學系';
-
 function DepartmentFilterPresenter() {
-    const [selectFilter, setSelectFilter] = useState(allDepartment);
+    const department = useSelector((state) => state.major.filter.department);
     const cleanFilter = useCleanMajorFilter();
 
     return (
@@ -22,12 +21,9 @@ function DepartmentFilterPresenter() {
         >
             <Filter picture={book} title={'依學系篩選:'}>
                 <Menu
-                    title={allDepartment}
-                    selected={selectFilter === allDepartment}
-                    onClick={() => {
-                        setSelectFilter(allDepartment);
-                        cleanFilter();
-                    }}
+                    title="全部學系"
+                    selected={department === 'none'}
+                    onClick={cleanFilter}
                 />
                 <DepartmentFilter />
             </Filter>
