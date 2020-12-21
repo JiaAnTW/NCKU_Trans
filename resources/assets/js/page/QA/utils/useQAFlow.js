@@ -9,7 +9,9 @@ function useQAFlow({ QAData }) {
     useEffect(() => {
         if (index !== 0)
             setModalOnBefore(() =>
-                setModalContent(transIntoModalData(QAData[index - 1], index - 1))
+                setModalContent(
+                    transIntoModalData(QAData[index - 1], index - 1)
+                )
             );
         else {
             setModalOnBefore(undefined);
@@ -19,7 +21,9 @@ function useQAFlow({ QAData }) {
     useEffect(() => {
         if (index + 1 !== QAData.length) {
             setModalOnNext(() =>
-                setModalContent(transIntoModalData(QAData[index + 1], index + 1))
+                setModalContent(
+                    transIntoModalData(QAData[index + 1], index + 1)
+                )
             );
         } else {
             setModalOnNext(undefined);
