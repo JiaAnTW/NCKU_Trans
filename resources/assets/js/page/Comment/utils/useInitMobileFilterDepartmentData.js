@@ -1,6 +1,6 @@
 import { useDepartment, useCollege } from '../../../utils/index';
 
-function useInitMobileFilterDataStructure() {
+function useInitMobileFilterDepartmentData() {
     const departmentData = useDepartment();
     const collegeData = useCollege();
     let classifyDepartmentData = {};
@@ -38,4 +38,4 @@ function useInitMobileFilterDataStructure() {
     return mobileFilterDataStructure;
 }
 
-export default useInitMobileFilterDataStructure;
+export default useInitMobileFilterDepartmentData;

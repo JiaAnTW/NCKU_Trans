@@ -15,6 +15,7 @@ import YearFilterPresenter from './presenters/YearFilterPresenter';
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
 import MobileDepartmentFilterPresenter from './presenters/MobileDepartmentFilterPresenter';
+import MobileYearFilterPresenter from './presenters/MobileYearFilterPresenter';
 import Content from '../../components/Content/index';
 import useInitData from './utils/useInitData';
 
@@ -38,12 +39,13 @@ function Comment() {
                 {/* <YearFilterPresenter />
                 <DepartmentFilterPresenter /> */}
                 <div
-                        className="MobileMenu"
-                        style={{
-                            display:'block'
-                        }}
-                    >
-                    <MobileDepartmentFilterPresenter/>
+                    className="MobileMenu"
+                    style={{
+                        display: 'block',
+                    }}
+                >
+                    {/* <MobileDepartmentFilterPresenter /> */}
+                    <MobileYearFilterPresenter />
                 </div>
             </MenuContainer>
             <CommentSection>
