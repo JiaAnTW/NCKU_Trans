@@ -22,6 +22,16 @@ const GeneralContainer = styled.div`
     height: 100vh;
 `;
 
+const GrayFlexContainer = styled.div`
+    padding-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+`;
+
 const MenuContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -35,6 +45,14 @@ const MultCards = styled.div`
     align-items: flex-start;
     width: 100%;
     height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
 `;
 
-export { LoadingContainer, GeneralContainer, MenuContainer, MultCards };
+export {
+    LoadingContainer,
+    GeneralContainer,
+    MenuContainer,
+    MultCards,
+    GrayFlexContainer,
+};
