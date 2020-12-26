@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { ButtonToolbar } from 'react-bootstrap';
 import DropdownItem from './DropdownItem';
 
-function MobileDepartmentFilterPresenter(props) {
+function MobileFilter(props) {
     const [filterData, setFilterData] = useState(props.value);
-    const [dropDownItemArr, setDropDownItemArr] = useState([]);
     const [nowCollegeId, setNowCollegeId] = useState(0);
 
     const handleClick = (name, value, next) => {
@@ -29,26 +28,21 @@ function MobileDepartmentFilterPresenter(props) {
         setFilterData(newFilterData);
     };
 
-    useEffect(() => {
-        setDropDownItemArr(
-            filterData.map((item) => (
-                <DropdownItem
-                    mobile={props.mobile}
-                    hide={nowCollegeId !== item['id'] && item['id'] !== 0}
-                    id={item['id']}
-                    value={item}
-                    onClick={handleClick}
-                />
-            ))
-        );
-    }, [filterData, nowCollegeId]);
-
     return (
         <ButtonToolbar style={props.style}>
             {props.type + ': '}
-            {dropDownItemArr}
+            {filterData &&
+                filterData.map((item) => (
+                    <DropdownItem
+                        mobile={props.mobile}
+                        hide={nowCollegeId !== item['id'] && item['id'] !== 0}
+                        id={item['id']}
+                        value={item}
+                        onClick={handleClick}
+                    />
+                ))}
         </ButtonToolbar>
     );
 }
 
-export default MobileDepartmentFilterPresenter;
+export default MobileFilter;

@@ -44,7 +44,7 @@ function Comment() {
                         display: 'block',
                     }}
                 >
-                    {/* <MobileDepartmentFilterPresenter /> */}
+                    <MobileDepartmentFilterPresenter />
                     <MobileYearFilterPresenter />
                 </div>
             </MenuContainer>
