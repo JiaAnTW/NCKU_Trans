@@ -1,0 +1,5 @@
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const SET_MODAL_CONTEXT = 'SET_MODAL_CONTEXT';
+export const SET_MODAL_ON_BEFORE = 'SET_MODAL_ON_BEFORE';
+export const SET_MODAL_ON_NEXT = 'SET_MODAL_ON_NEXT';

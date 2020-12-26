@@ -1,15 +1,20 @@
-.editStandard{
+.editStandard {
     position: absolute;
-    top:50px;
+    top: 50px;
     width: 100vw;
     height: 92vh;
-    background-image: linear-gradient(to top, #f77062 0%, rgb(229,68,109) 100%);
+    background-image: linear-gradient(
+        to top,
+        #f77062 0%,
+        rgb(229, 68, 109) 100%
+    );
     flex-direction: column;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
 }
 
-.editStandard,.input-box{
+.editStandard,
+.input-box {
     align-items: center;
     -ms-align-items: center;
     -webkit-align-items: center;
@@ -18,20 +23,20 @@
     -webkit-justify-content: center;
 }
 
-.editStandard,.input-box{
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
+.editStandard,
+.input-box {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
 }
 
-.input-box{
-    width: 350px
+.input-box {
+    width: 350px;
 }
 
 @media (min-width: 870px) {
-    .editStandard{
+    .editStandard {
         background-image: linear-gradient(to right, #f77062 0%, #fe5196 100%);
     }
-
 }
