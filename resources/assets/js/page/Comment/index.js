@@ -15,6 +15,7 @@ import YearFilterPresenter from './presenters/YearFilterPresenter';
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
 import Content from '../../components/Content/index';
+import Statistic from './component/Statistic/index';
 import useInitData from './utils/useInitData';
 
 function Comment() {
@@ -36,7 +37,9 @@ function Comment() {
                 <DepartmentFilterPresenter />
             </MenuContainer>
             <CommentSection>
-                <StatisticContainer>這裡放統計元件</StatisticContainer>
+                <StatisticContainer>
+                    <Statistic />
+                </StatisticContainer>
                 <MultCards>
                     <CommentCardsIndex />
                 </MultCards>

@@ -16,7 +16,7 @@ function Statistic() {
     const average = useAverage();
     const min = useMin();
     const passRate = useFetchGAS(in_maj === 'none' ? department : in_maj, year);
-    
+
     const windowWidth = useWindowWidth();
 
     return (
