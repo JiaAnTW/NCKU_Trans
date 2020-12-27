@@ -15,7 +15,7 @@
         "@babel/preset-react": "^7.0.0",
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
-        "axios": "^0.17",
+        "axios": "^0.21",
         "babel-preset-react": "^6.23.0",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
