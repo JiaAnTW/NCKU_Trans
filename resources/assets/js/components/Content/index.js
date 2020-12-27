@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Card, Table } from 'react-bootstrap';
+import Toggle from 'react-toggle';
 import Modal from 'react-modal';
 import '../css/content.css';
 import { contentStyle, cardStyle, cardTextStyle, pStyle } from './contentStyle';
@@ -14,7 +15,7 @@ import {
 
 function Content(props) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
-    const [{ id, title, tags, content }] = useModalContext();
+    const [{ id, title, tags, content, confirm }] = useModalContext();
     const onBefore = useSelector((state) => state.modal.onBefore);
     const onNext = useSelector((state) => state.modal.onNext);
     const windowWidth = useWindowWidth();
@@ -66,6 +67,15 @@ function Content(props) {
                                 <p>{content}</p>
                                 <p style={pStyle}></p>
                             </Card.Text>
+                            {props.isAdmin && (
+                                <>
+                                    是否已審查
+                                    <Toggle
+                                        defaultChecked={confirm === 'true'}
+                                        onChange={() => {}}
+                                    />
+                                </>
+                            )}
                         </div>
                     </Card.Body>
                 </Card>

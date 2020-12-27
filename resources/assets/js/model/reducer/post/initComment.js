@@ -1,0 +1,65 @@
+export default {
+    id: -1,
+    rank_1: {
+        value: '',
+        type: 'input',
+        elementAttrs: {
+            type: 'number',
+            min: 1,
+            max: 200,
+        },
+        keyName: 'rank_1',
+        type: 'number',
+        wording: '排名上',
+        min: 1,
+        max: 200,
+    },
+    rank_2: {
+        value: '',
+        type: 'input',
+        elementAttrs: {
+            type: 'number',
+            min: 1,
+            max: 200,
+        },
+        keyName: 'rank_2',
+        wording: '排名下',
+    },
+    year: {
+        value: 107,
+        type: 'select',
+        keyName: 'year',
+        wording: '申請年度',
+    },
+    score: {
+        value: '',
+        keyName: 'score',
+        type: 'input',
+        elementAttrs: {
+            type: 'number',
+            min: 1,
+            max: 200,
+        },
+        wording: '學年分數',
+        min: 1,
+        max: 200,
+    },
+    out_maj: {
+        value: '中文系',
+        keyName: 'out_maj',
+        type: 'select',
+        wording: '轉出科系',
+    },
+    in_maj: {
+        value: '中文系',
+        keyName: 'in_maj',
+        type: 'select',
+        wording: '轉入科系',
+    },
+    comment: {
+        value: '',
+        keyName: 'comment',
+        type: 'textarea',
+        wording: '心得',
+    },
+};
