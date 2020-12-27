@@ -21,6 +21,7 @@
         "cross-env": "^5.1",
         "jest": "^26.6.3",
         "jquery": "^3.5",
+        "js-cookie": "^2.2.1",
         "laravel-mix": "^4.0.14",
         "lodash": "^4.17.19",
         "prettier": "^2.2.1",

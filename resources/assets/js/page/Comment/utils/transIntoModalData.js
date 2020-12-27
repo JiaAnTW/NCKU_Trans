@@ -23,6 +23,7 @@ function transIntoModalData(majorDataItem, index) {
             },
         ],
         index: index,
+        confirm: majorDataItem['confirm'],
     };
 }
 

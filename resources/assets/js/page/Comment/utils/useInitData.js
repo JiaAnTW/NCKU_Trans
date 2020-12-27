@@ -1,19 +1,23 @@
 import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchMajor } from '../../../model/middleware/major';
+import { fetchMajor, fetchMajorAdmin } from '../../../model/middleware/major';
 import { fetchDepartment } from '../../../model/middleware/department';
 import { fetchCollege } from '../../../model/middleware/college';
 import { useRequest } from '../../../utils/index';
 
-function useInitData() {
+function useInitData(isAdmin) {
     const dispatch = useDispatch();
     const isFinishRequest = useRequest();
 
     useLayoutEffect(() => {
-        dispatch(fetchMajor());
+        if (isAdmin) {
+            dispatch(fetchMajorAdmin());
+        } else {
+            dispatch(fetchMajor());
+        }
         dispatch(fetchDepartment());
         dispatch(fetchCollege());
-    }, []);
+    }, [isAdmin]);
 
     return isFinishRequest;
 }

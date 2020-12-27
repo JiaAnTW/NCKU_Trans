@@ -18,8 +18,8 @@ import Content from '../../components/Content/index';
 import Statistic from './component/Statistic/index';
 import useInitData from './utils/useInitData';
 
-function Comment() {
-    const isFinishRequest = useInitData();
+function Comment({ isAdmin }) {
+    const isFinishRequest = useInitData(isAdmin);
 
     //---------------資料尚未取得---------------
     if (!isFinishRequest) {
@@ -43,7 +43,7 @@ function Comment() {
                 <MultCards>
                     <CommentCardsIndex />
                 </MultCards>
-                <Content />
+                <Content isAdmin={isAdmin} />
             </CommentSection>
         </GeneralContainer>
     );

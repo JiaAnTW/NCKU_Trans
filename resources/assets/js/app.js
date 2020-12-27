@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import Home from './home';
 import CommentNew from './page/Comment/index';
 import Comment from './comment';
 import Layout from './layout';
 import Post from './post';
+import PostNew from './page/Post/index';
 import Admin from './admin';
 import EditMajor from './editMajor';
 import EditComment from './editComment';
@@ -31,6 +33,7 @@ class App extends Component {
     }
 
     setToken(token) {
+        Cookies.set('adminToken', token, { expires: 7 });
         const set = new Promise((resolve) => {
             this.setState({ token: token });
             resolve();
@@ -51,25 +54,34 @@ class App extends Component {
                                 this.setState({ fliter: fliter });
                             }}
                         >
-                            <Route path="/comment" component={Comment} />
                             <Route
-                                path="/commentnew"
+                                path="/comment"
                                 render={(props) => <CommentNew {...props} />}
                             />
-                            <Route path="/post" component={Post} />
+                            <Route path="/post" component={PostNew} />
                             <Route
                                 path="/QA/:id"
-                                render={(props) => (
-                                    <QA {...props} fliter={this.state.fliter} />
-                                )}
-                            />
-                            <Route
-                                path="/QAnew/:id"
                                 render={(props) => (
                                     <QANew
                                         {...props}
                                         fliter={this.state.fliter}
                                     />
+                                )}
+                            />
+                            <Route
+                                path="/admin/comment"
+                                render={(props) => (
+                                    <CommentNew {...props} isAdmin={true} />
+                                )}
+                            />
+                            <Route path="/old/comment" component={Comment} />
+
+                            <Route path="/old/post" component={Post} />
+
+                            <Route
+                                path="/old/QA/:id"
+                                render={(props) => (
+                                    <QA {...props} fliter={this.state.fliter} />
                                 )}
                             />
                             <Route path="/home" component={Home} />
@@ -84,7 +96,7 @@ class App extends Component {
                                 )}
                             />
                             <Route
-                                path="/admin/comment"
+                                path="/old/admin/comment"
                                 render={(props) => (
                                     <EditComment
                                         {...props}

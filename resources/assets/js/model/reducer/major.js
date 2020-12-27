@@ -12,7 +12,7 @@ const initState = {
 const majorReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_MAJOR: {
-            return { ...state, data: action.payload.data };
+            return { ...state, data: action.payload.data.reverse() };
         }
         case SET_FILTER: {
             let filter = state.filter;

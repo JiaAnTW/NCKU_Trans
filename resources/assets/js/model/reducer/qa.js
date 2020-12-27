@@ -7,7 +7,7 @@ const initState = {
 const QAReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_QA: {
-            return { ...state, data: action.payload.data };
+            return { ...state, data: action.payload.data.reverse() };
         }
         default:
             return state;

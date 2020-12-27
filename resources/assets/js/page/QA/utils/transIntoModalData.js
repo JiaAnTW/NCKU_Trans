@@ -5,6 +5,7 @@ function transIntoModalData(QADataItem, index) {
         content: QADataItem['answer'],
         tags: [],
         index: index,
+        confirm: QADataItem['confirm'],
     };
 }
 
