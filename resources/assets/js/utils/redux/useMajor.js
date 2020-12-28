@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { fetchMajor } from '../../model/middleware/major';
+import { useSelector } from 'react-redux';
 
 const fliterSelector = (state) => ({
     in_maj: state.major.filter.in_maj,
