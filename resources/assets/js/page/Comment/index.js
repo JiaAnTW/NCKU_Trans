@@ -14,9 +14,13 @@ import YearFilterPresenter from './presenters/YearFilterPresenter';
 
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
+import MobileDepartmentFilterPresenter from './presenters/MobileDepartmentFilterPresenter';
+import MobileYearFilterPresenter from './presenters/MobileYearFilterPresenter';
 import Content from '../../components/Content/index';
 import Statistic from './component/Statistic/index';
 import useInitData from './utils/useInitData';
+
+import '../../css/comment.css';
 
 function Comment() {
     const isFinishRequest = useInitData();
@@ -33,8 +37,17 @@ function Comment() {
     return (
         <GeneralContainer>
             <MenuContainer>
-                <YearFilterPresenter />
-                <DepartmentFilterPresenter />
+                {/* <YearFilterPresenter />
+                <DepartmentFilterPresenter /> */}
+                <div
+                    className="MobileMenu"
+                    style={{
+                        display: 'block',
+                    }}
+                >
+                    <MobileDepartmentFilterPresenter />
+                    <MobileYearFilterPresenter />
+                </div>
             </MenuContainer>
             <CommentSection>
                 <StatisticContainer>
