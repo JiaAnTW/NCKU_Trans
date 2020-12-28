@@ -9,8 +9,7 @@ import {
 
 import { CommentSection, StatisticContainer } from './style';
 
-import DepartmentFilterPresenter from './presenters/DepartmentFilterPresenter';
-import YearFilterPresenter from './presenters/YearFilterPresenter';
+import Fliter from './presenters/Filter/index';
 
 import Icon from '../../components/icon';
 import CommentCardsIndex from './presenters/CommentCardsIndex';
@@ -22,7 +21,7 @@ import useInitData from './utils/useInitData';
 
 import '../../css/comment.css';
 
-function Comment({isAdmin}) {
+function Comment({ isAdmin }) {
     const isFinishRequest = useInitData();
 
     //---------------資料尚未取得---------------
@@ -37,17 +36,7 @@ function Comment({isAdmin}) {
     return (
         <GeneralContainer>
             <MenuContainer>
-                {/* <YearFilterPresenter />
-                <DepartmentFilterPresenter /> */}
-                <div
-                    className="MobileMenu"
-                    style={{
-                        display: 'block',
-                    }}
-                >
-                    <MobileDepartmentFilterPresenter />
-                    <MobileYearFilterPresenter />
-                </div>
+                <Fliter />
             </MenuContainer>
             <CommentSection>
                 <StatisticContainer>
