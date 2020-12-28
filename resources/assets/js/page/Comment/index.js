@@ -22,7 +22,7 @@ import useInitData from './utils/useInitData';
 
 import '../../css/comment.css';
 
-function Comment() {
+function Comment({isAdmin}) {
     const isFinishRequest = useInitData();
 
     //---------------資料尚未取得---------------

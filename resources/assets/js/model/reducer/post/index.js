@@ -47,14 +47,6 @@ const postReducer = (state = initState, action) => {
             stateNext.form[stateNext.type][keyName].value = value;
             return stateNext;
         }
-        case SET_POST_ON_NEXT: {
-            const onBefore = action.payload.onBefore;
-            return { ...state, onBefore };
-        }
-        case SET_POST_ON_BEFORE: {
-            const onNext = action.payload.onNext;
-            return { ...state, onNext };
-        }
         default:
             return state;
     }
