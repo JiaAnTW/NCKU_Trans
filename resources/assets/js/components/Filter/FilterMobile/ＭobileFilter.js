@@ -5,7 +5,7 @@ import DropdownItem from './DropdownItem';
 
 function MobileFilter(props) {
     const [filterData, setFilterData] = useState(props.value);
-    const [nowCollegeId, setNowCollegeId] = useState(0);
+    const [nowChosenId, setNowChosenId] = useState(0);
 
     const handleClick = (name, value, next) => {
         let newNow;
@@ -21,9 +21,9 @@ function MobileFilter(props) {
 
         if (next !== -1) {
             newFilterData[next]['now'] = newNow;
-            setNowCollegeId(next);
+            setNowChosenId(next);
         } else {
-            setNowCollegeId(value['id']);
+            setNowChosenId(value['id']);
         }
         setFilterData(newFilterData);
     };
@@ -35,7 +35,7 @@ function MobileFilter(props) {
                 filterData.map((item) => (
                     <DropdownItem
                         mobile={props.mobile}
-                        hide={nowCollegeId !== item['id'] && item['id'] !== 0}
+                        hide={nowChosenId !== item['id'] && item['id'] !== 0}
                         id={item['id']}
                         value={item}
                         onClick={handleClick}
