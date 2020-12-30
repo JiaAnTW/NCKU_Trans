@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import Home from './home';
-import CommentNew from './page/Comment/index';
-import Comment from './comment';
+import Comment from './page/Comment/index';
 import Layout from './layout';
 import Post from './post';
 import PostNew from './page/Post/index';
@@ -71,11 +70,9 @@ class App extends Component {
                             <Route
                                 path="/admin/comment"
                                 render={(props) => (
-                                    <CommentNew {...props} isAdmin={true} />
+                                    <Comment {...props} isAdmin={true} />
                                 )}
                             />
-                            <Route path="/old/comment" component={Comment} />
-
                             <Route path="/old/post" component={Post} />
 
                             <Route
