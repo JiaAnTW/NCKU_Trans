@@ -14,11 +14,9 @@ function MobileDepartmentFilterPresenter() {
             setFilter('none', 'in_maj');
             if (value['id'] === 0) {
                 setFilter('none', value['type']);
-            } else
-                setFilter(
-                    value[value['id']]['name'][1],
-                    value[value['id']]['name'][0]
-                );
+            } else {
+                setFilter(value['name'][1], value['name'][0]);
+            }
         } else {
             setFilter('none', 'in_maj');
             setFilter(name, value['type']);
