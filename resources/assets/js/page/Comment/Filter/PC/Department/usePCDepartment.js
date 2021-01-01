@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useDepartment, useCollege } from '../../../utils/index';
+import { useDepartment, useCollege } from '../../../../../utils/index';
 
 function useClassifyDepartment() {
     const departmentData = useDepartment();

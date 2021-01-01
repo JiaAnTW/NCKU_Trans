@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useWindowWidth } from '../../../../utils/index';
-import MobileDepartmentFilterPresenter from '../MobileDepartmentFilterPresenter';
-import MobileYearFilterPresenter from '../MobileYearFilterPresenter';
-import DepartmentFilterPresenter from '../DepartmentFilterPresenter';
-import YearFilterPresenter from '../YearFilterPresenter';
+import { useWindowWidth } from '../../../utils/index';
+import MobileDepartmentFilterPresenter from './Mobile/Department';
+import MobileYearFilterPresenter from './Mobile/Year';
+import DepartmentFilterPresenter from './PC/Department';
+import YearFilterPresenter from './PC/Year';
 
 function Filter() {
     const windowWidth = useWindowWidth();

@@ -1,4 +1,4 @@
-import { useDepartment, useCollege } from '../../../utils/index';
+import { useDepartment, useCollege } from '../../../../../utils/index';
 
 function useInitMobileFilterDepartmentData() {
     const departmentData = useDepartment();

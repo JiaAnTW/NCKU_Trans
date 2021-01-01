@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useSetMajorFilter } from '../../../utils/index';
-import useInitMobileFilterYearData from '../utils/useInitMobileFilterYearData';
+import { useSetMajorFilter } from '../../../../../utils/index';
+import useInitMobileFilterYearData from './useMobileYear';
 
-import MobileFilter from '../../../components/Filter/FilterMobile/MobileFilter';
+import MobileFilter from '../../../../../components/Filter/FilterMobile/MobileFilter';
 
 function MobileYearFilterPresenter() {
     const type = '申請年';

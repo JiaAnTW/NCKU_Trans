@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Menu from '../../../components/Filter/FilterPC/Menu';
-import Filter from '../../../components/Filter/FilterPC/Filter';
-import DepartmentFilter from '../component/DepartmentFilter/index';
-import book from '../../../img/book.png';
-import { useCleanMajorFilter } from '../../../utils/index';
+import Menu from '../../../../../components/Filter/FilterPC/Menu';
+import Filter from '../../../../../components/Filter/FilterPC/Filter';
+import DepartmentFilter from './DepartmentFilter/index';
+import book from '../../../../../img/book.png';
+import { useCleanMajorFilter } from '../../../../../utils/index';
 
 function DepartmentFilterPresenter() {
     const department = useSelector((state) => state.major.filter.department);

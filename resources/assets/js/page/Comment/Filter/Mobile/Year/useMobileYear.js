@@ -1,4 +1,4 @@
-import useClassifyYear from '../utils/useClassifyYear';
+import useClassifyYear from '../../PC/Year/usePCYear';
 
 function useInitMobileFilterYearData() {
     const yearData = useClassifyYear();

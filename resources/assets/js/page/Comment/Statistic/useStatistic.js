@@ -1,4 +1,4 @@
-import { useMajor } from '../../../../utils/index';
+import { useMajor } from '../../../utils/index';
 
 export function useAverage() {
     const majorData = useMajor();

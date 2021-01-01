@@ -1,8 +1,8 @@
 import React from 'react';
-import useInitMobileFilterDepartmentData from '../utils/useInitMobileFilterDepartmentData';
-import { useSetMajorFilter } from '../../../utils/index';
+import useInitMobileFilterDepartmentData from './useMobileDepartment';
+import { useSetMajorFilter } from '../../../../../utils/index';
 
-import MobileFilter from '../../../components/Filter/FilterMobile/MobileFilter';
+import MobileFilter from '../../../../../components/Filter/FilterMobile/MobileFilter';
 
 function MobileDepartmentFilterPresenter() {
     const type = '依學院/系';

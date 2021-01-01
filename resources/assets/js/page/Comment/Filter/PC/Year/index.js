@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import calendar from '../../../img/calendar.png';
+import calendar from '../../../../../img/calendar.png';
 
-import Menu from '../../../components/Filter/FilterPC/Menu';
-import MenuItem from '../../../components/Filter/FilterPC/MenuItem';
-import Filter from '../../../components/Filter/FilterPC/Filter';
+import Menu from '../../../../../components/Filter/FilterPC/Menu';
+import MenuItem from '../../../../../components/Filter/FilterPC/MenuItem';
+import Filter from '../../../../../components/Filter/FilterPC/Filter';
 
-import useClassifyYear from '../utils/useClassifyYear';
-import { useSetMajorFilter } from '../../../utils/index';
+import useClassifyYear from './usePCYear';
+import { useSetMajorFilter } from '../../../../../utils/index';
 
 function YearFilterPresenter() {
     const [selectFilter, setSelectFilter] = useState('none');

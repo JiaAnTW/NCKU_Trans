@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import useClassifyDepartment from '../../utils/useClassifyDepartment';
-import Menu from '../../../../components/Filter/FilterPC/Menu';
-import MenuItem from '../../../../components/Filter/FilterPC/MenuItem';
+import useClassifyDepartment from '../usePCDepartment';
+import Menu from '../../../../../../components/Filter/FilterPC/Menu';
+import MenuItem from '../../../../../../components/Filter/FilterPC/MenuItem';
 import {
     useCleanMajorFilter,
     useSetMajorFilter,
-} from '../../../../utils/index';
+} from '../../../../../../utils/index';
 
 function DepartmentFilter() {
     const [department, in_maj] = useSelector((state) => [

@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchMajor, fetchMajorAdmin } from '../../../model/middleware/major';
-import { fetchDepartment } from '../../../model/middleware/department';
-import { fetchCollege } from '../../../model/middleware/college';
-import { useRequest } from '../../../utils/index';
+import { fetchMajor, fetchMajorAdmin } from '../../model/middleware/major';
+import { fetchDepartment } from '../../model/middleware/department';
+import { fetchCollege } from '../../model/middleware/college';
+import { useRequest } from '../../utils/index';
 
 function useInitData(isAdmin) {
     const dispatch = useDispatch();

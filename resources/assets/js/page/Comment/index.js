@@ -9,15 +9,13 @@ import {
 
 import { CommentSection, StatisticContainer } from './style';
 
-import Fliter from './presenters/Filter/index';
+import Fliter from './Filter/index';
 
 import Icon from '../../components/icon';
-import CommentCardsIndex from './presenters/CommentCardsIndex';
-import MobileDepartmentFilterPresenter from './presenters/MobileDepartmentFilterPresenter';
-import MobileYearFilterPresenter from './presenters/MobileYearFilterPresenter';
+import CommentCardsIndex from './CommentIndex/CommentCardsIndex';
 import Content from '../../components/Content/index';
-import Statistic from './component/Statistic/index';
-import useInitData from './utils/useInitData';
+import Statistic from './Statistic/index';
+import useInitData from './useInitData';
 
 import '../../css/comment.css';
 

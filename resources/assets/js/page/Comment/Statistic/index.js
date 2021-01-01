@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import useFetchGAS from './useFetchGAS';
 import { useAverage, useMin } from './useStatistic';
-import Progress from '../../../../components/Progress';
-import { useWindowWidth } from '../../../../utils/index';
+import Progress from '../../../components/Progress';
+import { useWindowWidth } from '../../../utils/index';
 import { Spinner } from 'react-bootstrap';
 
 const statisticStyle = { display: 'flex', justifyContent: 'space-evenly' };

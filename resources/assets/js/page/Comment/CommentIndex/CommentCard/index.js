@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Card } from 'react-bootstrap';
 import useCommentCardStyle from './useCommentCardStyle';
 import { useModalOpen, useModalContext } from '../../../../utils/index';
-import transIntoModalData from '../../utils/transIntoModalData';
+import transIntoModalData from '../transIntoModalData';
 
 const CommentCard = ({ itemData, index }) => {
     const {

@@ -9,7 +9,7 @@ import Post from './post';
 import PostNew from './page/Post/index';
 import Admin from './admin';
 import EditMajor from './editMajor';
-import EditComment from './editComment';
+//import EditComment from './editComment';
 import EditQA from './editQA';
 import EditStandard from './editStandard';
 import QA from './major_QA';
@@ -55,7 +55,7 @@ class App extends Component {
                         >
                             <Route
                                 path="/comment"
-                                render={(props) => <CommentNew {...props} />}
+                                render={(props) => <Comment {...props} />}
                             />
                             <Route path="/post" component={PostNew} />
                             <Route
@@ -89,15 +89,6 @@ class App extends Component {
                                     <Admin
                                         {...props}
                                         setToken={this.setToken}
-                                    />
-                                )}
-                            />
-                            <Route
-                                path="/old/admin/comment"
-                                render={(props) => (
-                                    <EditComment
-                                        {...props}
-                                        token={this.state.token}
                                     />
                                 )}
                             />
