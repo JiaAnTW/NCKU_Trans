@@ -1,9 +1,11 @@
 import useRequest from './redux/useRequest';
 import useMajor from './redux/useMajor';
+import useMapDepToMaj from './redux/useMapDepToMaj';
 import useQA from './redux/useQA';
 import useDepartment from './redux/useDepartment';
 import useCollege from './redux/useCollege';
-import useWindowWidth from './/useWindowWidth';
+import useWindowWidth from './useWindowWidth';
+import useMedia from './useMedia';
 import useSetMajorFilter from './redux/useSetMajorFilter';
 import useCleanMajorFilter from './redux/useCleanMajorFilter';
 
@@ -20,7 +22,9 @@ export {
     useModalOpen,
     useModalContext,
     useWindowWidth,
+    useMedia,
     useSetMajorFilter,
     useCleanMajorFilter,
     useSetModalFlow,
+    useMapDepToMaj,
 };

@@ -17,6 +17,11 @@ const majorReducer = (state = initState, action) => {
         case SET_FILTER: {
             let filter = state.filter;
             filter[action.payload.type] = action.payload.value;
+            if (
+                action.payload.type === 'department' &&
+                filter['in_maj'] !== 'none'
+            )
+                filter['in_maj'] = 'none';
             return { ...state, filter };
         }
         case CLEAN_FILTER: {

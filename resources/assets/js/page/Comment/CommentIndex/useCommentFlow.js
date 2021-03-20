@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useModalContext, useSetModalFlow } from '../../../utils/index';
-import transIntoModalData from './transIntoModalData';
+import transIntoModalData from '@/utils/redux/components/modal/transIntoModalData';
 
 function useCommentFlow({ majorData }) {
     const [{ index }, setModalContent] = useModalContext();

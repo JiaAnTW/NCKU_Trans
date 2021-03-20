@@ -10,7 +10,9 @@ const initState = {
     isOpen: false,
     context: {
         id: -1,
+        type: '',
         title: '',
+        subtitle: '',
         tags: [],
         content: '',
     },
@@ -29,7 +31,9 @@ const modalReducer = (state = initState, action) => {
         case SET_MODAL_CONTEXT: {
             const {
                 id,
+                type,
                 title,
+                subtitle,
                 tags,
                 content,
                 index,
@@ -37,7 +41,16 @@ const modalReducer = (state = initState, action) => {
             } = action.payload.content;
             return {
                 ...state,
-                context: { id, title, tags, content, index, confirm },
+                context: {
+                    id,
+                    type,
+                    title,
+                    subtitle,
+                    tags,
+                    content,
+                    index,
+                    confirm,
+                },
             };
         }
         case SET_MODAL_ON_BEFORE: {

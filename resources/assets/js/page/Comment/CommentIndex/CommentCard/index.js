@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Card } from 'react-bootstrap';
 import useCommentCardStyle from './useCommentCardStyle';
 import { useModalOpen, useModalContext } from '../../../../utils/index';
-import transIntoModalData from '../transIntoModalData';
+import transIntoModalData from '@/utils/redux/components/modal/transIntoModalData';
 
 const CommentCard = ({ itemData, index }) => {
     const {

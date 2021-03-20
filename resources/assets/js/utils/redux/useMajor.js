@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-const fliterSelector = (state) => ({
-    in_maj: state.major.filter.in_maj,
-    year: state.major.filter.year,
-    department: state.major.filter.department,
-});
+function fliterSelector(state) {
+    return {
+        in_maj: state.major.filter.in_maj,
+        year: state.major.filter.year,
+        department: state.major.filter.department,
+    };
+}
 
 function useMajor() {
     const [displayData, setDisplayData] = useState([]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentCard from './CommentCard/index';
 import useCommentFlow from './useCommentFlow';
-import { useMajor } from '../../../utils/index';
+import { useMajor } from '@/utils/index';
 
 function CommentCardsIndex() {
     const majorData = useMajor();

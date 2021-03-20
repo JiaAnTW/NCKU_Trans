@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { useWindowWidth } from '../../../utils/index';
-import MobileDepartmentFilterPresenter from './Mobile/Department';
-import MobileYearFilterPresenter from './Mobile/Year';
-import DepartmentFilterPresenter from './PC/Department';
-import YearFilterPresenter from './PC/Year';
+import MobileDepartmentFilter from './Mobile/Department';
+import MobileYearFilter from './Mobile/Year';
+import PCDepartmentFilter from './PC/Department';
+import PCYearFilter from './PC/Year';
 
 function Filter() {
     const windowWidth = useWindowWidth();
@@ -16,14 +16,14 @@ function Filter() {
                     display: 'block',
                 }}
             >
-                <MobileDepartmentFilterPresenter />
-                <MobileYearFilterPresenter />
+                <MobileDepartmentFilter />
+                <MobileYearFilter />
             </div>
         );
     return (
         <>
-            <YearFilterPresenter />
-            <DepartmentFilterPresenter />
+            <PCYearFilter />
+            <PCDepartmentFilter />
         </>
     );
 }
