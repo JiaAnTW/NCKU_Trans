@@ -17,7 +17,7 @@ import QANew from './page/QA/index';
 import error from './old/error';
 import TestPage from './old/TestPage';
 
-import NavLayout from './NavLayout';
+import NavLayout from '@/components/NavLayout';
 import Major from './page/Major';
 import GlobalStyle from './theme/global';
 
@@ -125,6 +125,7 @@ class App extends Component {
                         <Switch>
                             <NavLayout>
                                 <Route path="/major" component={Major} />
+                                <Route path="/post" component={PostNew} />
                             </NavLayout>
                         </Switch>
                     </ThemeProvider>

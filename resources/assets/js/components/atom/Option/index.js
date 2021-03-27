@@ -1,15 +1,6 @@
+import MenuItem from '@material-ui/core/MenuItem';
 import styled from 'styled-components';
 
-const Option = styled.option`
-    border: 0px solid grey;
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: none;
-    width: 30%;
-    color: rgba(0, 0, 0, 0.4);
-    border-radius: 0px;
-    text-align: center;
-    height: 30px;
-    padding: 5px 5px;
+export default styled(MenuItem)`
+    font-size: 1.4rem;
 `;
-
-export default Option;

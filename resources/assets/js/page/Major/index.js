@@ -6,7 +6,7 @@ import { CardsContainer, LoadingContainer } from '@/theme/global';
 
 import Icon from '@/components/icon';
 import CardList from './CardList';
-import Reader from '@/components/Reader';
+import ReaderModal from '@/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
 
@@ -29,7 +29,7 @@ function Major({ isAdmin }) {
             <CardsContainer>
                 <CardList />
             </CardsContainer>
-            <Reader isAdmin={isAdmin} />
+            <ReaderModal isAdmin={isAdmin} />
         </Main>
     );
 }

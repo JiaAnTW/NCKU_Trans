@@ -16,6 +16,7 @@ export const Main = styled.main`
 
     ::-webkit-scrollbar {
         width: 1px;
+        height: 1px;
         background-color: transparent;
         border: none;
     }

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -13,28 +14,43 @@ import { DrawerContent, useStyle, ListItemText } from './style';
 
 import { useMedia } from '@/utils/index';
 
-const drawerWidth = 200;
+const drawerWidth = 110;
 
 const arr = [
     {
-        text: '轉輔雙主心得',
+        text: '轉輔雙主',
         icon: (
             <ImportContactsIcon style={{ width: '1.9rem', height: '1.9rem' }} />
         ),
+        url: '/major',
     },
     {
-        text: '其他學業心得',
+        text: '其他學業',
         icon: <SchoolIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/study',
     },
     {
-        text: '我要分享心得',
+        text: '我要分享',
         icon: <PostAddIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/post',
     },
 ];
 
 export default function SideBar({ open, onClose, onOpen }) {
     const classes = useStyle();
     const device = useMedia();
+
+    const location = useLocation();
+
+    const history = useHistory();
+
+    const handleClick = useCallback(
+        (url) => {
+            history.push(url);
+            if (device !== 'PC') onClose();
+        },
+        [history, device, onClose]
+    );
 
     const toggleDrawer = () => (event) => {
         if (
@@ -71,8 +87,15 @@ export default function SideBar({ open, onClose, onOpen }) {
                             button
                             key={item.text}
                             className={classes.listItem}
+                            onClick={() => handleClick(item.url)}
                         >
-                            <ListItemIcon className={classes.listItemIcon}>
+                            <ListItemIcon
+                                className={
+                                    location.pathname === item.url
+                                        ? classes.listItemIconSelected
+                                        : classes.listItemIcon
+                                }
+                            >
                                 {item.icon}
                             </ListItemIcon>
                             <ListItemText>{item.text}</ListItemText>

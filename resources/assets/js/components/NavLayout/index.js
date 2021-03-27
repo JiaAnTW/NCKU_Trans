@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import { Button } from '@/theme/global';
 import SideBar from '@/components/SideBar';
+import Title from './Title';
 import { H1, Header, Container, MenuIconStyle } from './style';
 
 function NavLayout({ children }) {
@@ -21,9 +21,7 @@ function NavLayout({ children }) {
                         onClick={() => setOpen(!open)}
                     />
                 </nav>
-                <Header>
-                    <H1>轉系/輔系/雙主修</H1>
-                </Header>
+                <Title />
                 {children}
             </Container>
         </div>

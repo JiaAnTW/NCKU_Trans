@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import {
     SET_MODAL_ON_BEFORE,
     SET_MODAL_ON_NEXT,
+    SET_MODAL_ON_CONFIRM,
 } from '../../../../model/action/modal';
 
 function useSetModalFlow() {
@@ -23,7 +24,14 @@ function useSetModalFlow() {
         [dispatch]
     );
 
-    return [setModalOnBefore, setModalOnNext];
+    const setModalOnConfirm = useCallback(
+        (onConfirm) => {
+            dispatch({ type: SET_MODAL_ON_CONFIRM, payload: { onConfirm } });
+        },
+        [dispatch]
+    );
+
+    return [setModalOnBefore, setModalOnNext, setModalOnConfirm];
 }
 
 export default useSetModalFlow;

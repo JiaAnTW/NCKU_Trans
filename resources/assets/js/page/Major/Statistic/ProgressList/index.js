@@ -11,7 +11,10 @@ function ProgressList() {
     );
     const average = useAverage();
     const min = useMin();
-    const passRate = useFetchGAS(in_maj === 'none' ? department : in_maj, year);
+    const { passRate, request } = useFetchGAS(
+        in_maj === 'none' ? department : in_maj,
+        year
+    );
 
     return (
         <ProgressListLayout>
@@ -20,7 +23,7 @@ function ProgressList() {
             <Progress
                 name="通過率(官方數據)"
                 value={passRate * 100}
-                isLoading={passRate === undefined}
+                isLoading={passRate === undefined || request > 0}
             />
         </ProgressListLayout>
     );

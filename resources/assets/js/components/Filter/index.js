@@ -74,7 +74,7 @@ function Filter({ type, options, onChange }) {
                         shrink={false}
                         className={classes.labelText}
                     >
-                        請選擇{type}
+                        {`全部${type}`}
                     </InputLabel>
                 )}
                 <Select

@@ -1,12 +1,17 @@
 import React from 'react';
-import { InputElement } from './style';
+import TextField, { useStyles } from './style';
 
 function Input(props) {
+    const classes = useStyles();
+
     return (
-        <InputElement
+        <TextField
             value={props.value}
-            {...props.elementAttrs}
+            inputProps={{ ...props.elementAttrs, className: classes.input }}
             onChange={props.onChange}
+            label={props.wording}
+            InputLabelProps={{ className: classes.labelText, shrink: true }}
+            InputProps={{ className: classes.root }}
         />
     );
 }

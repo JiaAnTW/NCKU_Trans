@@ -1,13 +1,26 @@
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import { color } from '@/theme/global';
 
-export const InputElement = styled.input`
-    border: 0px solid grey;
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: none;
-    width: 30%;
-    color: rgba(0, 0, 0, 0.4);
-    border-radius: 0px;
-    text-align: center;
-    height: 30px;
-    padding: 5px 5px;
+export default styled(TextField)`
+    width: 100%;
+    height: 60px;
 `;
+
+export const useStyles = makeStyles((theme) => ({
+    labelText: {
+        '&.Mui-focused': {
+            color: color.darkYellow,
+        },
+        '&.MuiInputLabel-shrink': {
+            fontSize: '1.6rem',
+        },
+    },
+    root: {
+        height: '40px',
+    },
+    input: {
+        fontSize: '1.7rem',
+    },
+}));

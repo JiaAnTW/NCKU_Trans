@@ -1,13 +1,29 @@
 import React from 'react';
-import { GrayFlexContainer } from '../../css/generalStyle';
+import { LoadingContainer } from '@/theme/global';
+import Icon from '@/components/icon';
+import StepArea from '@/components/Form/StepArea';
+import PreviewModal from '@/components/Modal/PreviewModal';
 
+import useInitOptions from './useInitOptions';
 import PostForm from './PostForm/index';
 
+import { PostLayout } from './style';
+
 function Post() {
+    const isFinishRequest = useInitOptions();
+    if (!isFinishRequest)
+        return (
+            <LoadingContainer>
+                <Icon style={{ marginTop: '0' }} />
+            </LoadingContainer>
+        );
+
     return (
-        <GrayFlexContainer>
+        <PostLayout>
+            <StepArea />
             <PostForm />
-        </GrayFlexContainer>
+            <PreviewModal />
+        </PostLayout>
     );
 }
 

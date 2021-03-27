@@ -4,6 +4,7 @@ import {
     SET_MODAL_CONTEXT,
     SET_MODAL_ON_BEFORE,
     SET_MODAL_ON_NEXT,
+    SET_MODAL_ON_CONFIRM,
 } from '../action/modal';
 
 const initState = {
@@ -18,6 +19,7 @@ const initState = {
     },
     onBefore: undefined,
     onNext: undefined,
+    onConfirm: undefined,
 };
 
 const modalReducer = (state = initState, action) => {
@@ -60,6 +62,10 @@ const modalReducer = (state = initState, action) => {
         case SET_MODAL_ON_NEXT: {
             const onNext = action.payload.onNext;
             return { ...state, onNext };
+        }
+        case SET_MODAL_ON_CONFIRM: {
+            const onConfirm = action.payload.onConfirm;
+            return { ...state, onConfirm };
         }
         default:
             return state;

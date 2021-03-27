@@ -1,15 +1,22 @@
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
 
-const SelectElement = styled.select`
-    border: 0px solid grey;
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: none;
-    width: 30%;
-    color: rgba(0, 0, 0, 0.4);
-    border-radius: 0px;
-    text-align: center;
-    height: 30px;
-    padding: 5px 5px;
+export default styled(FormControl)`
+    width: 100%;
+    height: 60px;
 `;
 
-export default SelectElement;
+export const useStyles = makeStyles((theme) => ({
+    selectDisplay: {
+        fontSize: '1.4rem',
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        outline: 'none',
+    },
+    root: {
+        height: '40px',
+    },
+}));

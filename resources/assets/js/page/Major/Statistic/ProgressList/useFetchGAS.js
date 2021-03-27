@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useReducer } from 'react';
 
 const getStatisticData = (major, year) =>
     new Promise((resolve) => {
@@ -32,8 +32,21 @@ const getStatisticData = (major, year) =>
             });
     });
 
+function reducer(state, action) {
+    switch (action.type) {
+        case 'ADD':
+            return state + 1;
+        case 'SUB':
+            return state - 1;
+        default:
+            return state;
+    }
+}
+
 function useFetchGAS(major, year) {
     const [passRate, setPassRate] = useState(undefined);
+    const [request, requestDispatch] = useReducer(reducer, 0);
+
     const mounted = useRef(false);
 
     useEffect(() => {
@@ -46,13 +59,17 @@ function useFetchGAS(major, year) {
 
     useEffect(() => {
         if (mounted.current) {
+            requestDispatch({ type: 'ADD' });
             getStatisticData(major, year).then((data) => {
-                if (mounted.current) setPassRate(data);
+                if (mounted.current) {
+                    requestDispatch({ type: 'SUB' });
+                    setPassRate(data);
+                }
             });
         }
     }, [major, year, mounted]);
 
-    return passRate;
+    return { passRate, request };
 }
 
 export default useFetchGAS;

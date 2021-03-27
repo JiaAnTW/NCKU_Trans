@@ -1,14 +1,12 @@
 import React from 'react';
-import StepArea from './StepArea/index';
-import ControlArea from './ControlArea/index';
-import { FormContainer } from './style';
+import { FormContainer, Title, Subtitle } from './style';
 
-function Form({ children, onNext, onBefore }) {
+function Form({ children, title, subtitle }) {
     return (
         <FormContainer>
-            <StepArea />
+            {title && <Title>{title}</Title>}
+            {subtitle && <Subtitle>{subtitle}</Subtitle>}
             <div>{children}</div>
-            <ControlArea onNext={onNext} onBefore={onBefore} />
         </FormContainer>
     );
 }

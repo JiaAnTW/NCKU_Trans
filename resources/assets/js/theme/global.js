@@ -15,10 +15,19 @@ export const color = {
 export const Button = styled.button`
     outline: none;
     border: none;
-    background-color: ${color.yellow};
+    background-color: ${(props) => (props.light ? color.white : color.yellow)};
     color: ${color.darkBlack};
     border-radius: 5px;
     height: 40px;
+
+    :hover {
+        background-color: ${(props) =>
+            props.light ? color.lightGray : color.darkYellow};
+    }
+
+    :focus {
+        outline: none;
+    }
 `;
 
 export const CardsContainer = styled.section`
@@ -60,6 +69,24 @@ const GlobalStyle = createGlobalStyle`
   #root{
     background-color: ${color.white};
   }
+
+    textarea::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+        background-color: transparent;
+        border: none;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: ${color.yellow};
+        opacity: 0.5;
+    }
+
+    textarea::-webkit-scrollbar-track {
+        background-color: transparent;
+        border: 0px solid;
+    }
 `;
 
 export default GlobalStyle;

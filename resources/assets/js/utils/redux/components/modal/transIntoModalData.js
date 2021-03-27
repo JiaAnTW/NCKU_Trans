@@ -1,7 +1,7 @@
 function transIntoModalData(majorDataItem, index) {
     return {
         id: majorDataItem['id'],
-        type: '轉',
+        type: 'major',
         title: '' + majorDataItem['in_maj'],
         subtitle: `原主修: ${majorDataItem['out_maj']}`,
         content: majorDataItem['comment'],

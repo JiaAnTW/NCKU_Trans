@@ -1,15 +1,26 @@
-import styled from 'styled-components';
+import React from 'react';
+import TextField, { useStyles } from './style';
 
-const TextArea = styled.textarea`
-    border: 0px solid grey;
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: none;
-    width: 30%;
-    color: rgba(0, 0, 0, 0.4);
-    border-radius: 0px;
-    text-align: center;
-    height: 30px;
-    padding: 5px 5px;
-`;
+function TextArea(props) {
+    const classes = useStyles();
+
+    return (
+        <TextField
+            value={props.value}
+            variant="outlined"
+            inputProps={props.elementAttrs}
+            onChange={props.onChange}
+            label={props.wording}
+            {...props.elementAttrs}
+            InputLabelProps={{ className: classes.labelText, shrink: true }}
+            InputProps={{ className: classes.Input }}
+            inputProps={{
+                className: classes.input,
+                style: { height: '250px', overflow: 'auto' },
+            }}
+            multiline
+        />
+    );
+}
 
 export default TextArea;
