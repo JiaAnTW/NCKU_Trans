@@ -5,9 +5,11 @@ export const PreviewLayout = styled.div`
     position: relative;
     padding: 5px;
     background-color: ${color.white};
-    @media (max-width: 400px) {
-        /*width: 350px;*/
-    }
+`;
+
+export const PreviewTitle = styled.h4`
+    text-align: center;
+    font-size: 1.5rem;
 `;
 
 export const ModalStyle = {

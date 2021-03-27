@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import Divider from '@material-ui/core/Divider';
-import { ModalStyle, PreviewLayout } from './style';
+import { ModalStyle, PreviewLayout, PreviewTitle } from './style';
 import Reader from '@/components/Reader';
 import ControlArea from '@/components/Form/ControlArea';
 import { useModalOpen } from '@/utils';
@@ -21,7 +21,9 @@ function PreviewModal(props) {
             onRequestClose={() => {}}
         >
             <PreviewLayout>
-                <h4>我是預覽文字</h4>
+                <PreviewTitle>
+                    請確認填寫的內容，送出之後就無法修改歐!
+                </PreviewTitle>
                 <Divider />
                 <Reader />
                 <ControlArea

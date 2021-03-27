@@ -3,6 +3,7 @@ import {
     SET_POST_FORM,
     SET_POST_ON_NEXT,
     SET_POST_ON_BEFORE,
+    RESET_POST_FORM,
 } from '../../action/post';
 import initState from './initState';
 
@@ -59,6 +60,9 @@ const postReducer = (state = initState, action) => {
                 ...state,
                 step: state.step - 1,
             };
+        }
+        case RESET_POST_FORM: {
+            return initState;
         }
         default:
             return state;

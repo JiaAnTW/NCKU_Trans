@@ -1,4 +1,5 @@
-import { RESET_POST_FORM } from '../action/post';
+import { SET_POST_ON_NEXT } from '../action/post';
+import { CLOSE_MODAL } from '../action/modal';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 
 export const postMajorData = (formData) => {
@@ -14,19 +15,19 @@ export const postMajorData = (formData) => {
             }),
         })
             .then(() => {
+                for (let i = 0; i < 2; ++i)
+                    dispatch({
+                        type: SET_POST_ON_NEXT,
+                    });
+
                 dispatch({
-                    type: RESET_POST_FORM,
-                    payload: { status: 'success' },
+                    type: CLOSE_MODAL,
                 });
+
                 dispatch({
                     type: FINISH_REQUEST,
                 });
             })
-            .catch((e) =>
-                dispatch({
-                    type: RESET_POST_FORM,
-                    payload: { status: 'failed' },
-                })
-            );
+            .catch();
     };
 };

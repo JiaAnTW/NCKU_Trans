@@ -37,6 +37,7 @@ class CommentsController extends Controller
         $department= $this->defineDepartment($data["in_maj"]);
         $comment = $data["comment"];
         $confirm = "false";
+        //DB::table('major')->insert()
         DB::insert("INSERT INTO major VALUES('$id','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
         return "success";
     }
@@ -98,7 +99,7 @@ class CommentsController extends Controller
         if($this->FindDepartment($in_maj,$MAN))
             return "管理學院";
         //Log::debug($in_maj+" 不是管理學院");
-        $MC=["","醫學系","醫技系","護理系","職治系","物治系","藥學系"];
+        $MC=["","醫學系","醫技系","護理系","職治系","物治系","藥學系", "牙醫系"];
         if($this->FindDepartment($in_maj,$MC))
             return "醫學院";
         //Log::debug($in_maj+" 不是醫學院");
