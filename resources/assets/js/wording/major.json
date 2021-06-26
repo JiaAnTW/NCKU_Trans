@@ -2,10 +2,5 @@
     "isPass": {
         "true": "通過",
         "false": "未通過"
-    },
-    "type": {
-        "major": "轉",
-        "sub": "輔",
-        "double": "雙"
     }
 }

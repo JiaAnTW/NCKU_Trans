@@ -10,7 +10,7 @@ export const ReaderLayout = styled.div`
     color: ${color.black};
     display: grid;
     grid-template-columns: 50px auto 50px;
-
+    grid-template-rows: 100%;
     @media (max-width: 400px) {
         width: 350px;
     }
@@ -18,19 +18,15 @@ export const ReaderLayout = styled.div`
 
 export const ReaderContent = styled.div`
     width: 100%;
-    overflow-y: auto;
-    display: grid;
-    grid-template-rows: 60px 70px auto;
-    @media (max-width: 400px) {
-        grid-template-rows: 60px 140px auto;
-    }
+    display: flex;
+    flex-direction: column;
     padding: 20px 5px;
-    grid-gap: 10px;
 `;
 
 export const ReaderText = styled.div`
     line-height: 2.4rem;
     letter-spacing: 1.5px;
+    overflow-y: auto;
 
     ::-webkit-scrollbar {
         width: 1px;

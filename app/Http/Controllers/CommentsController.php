@@ -26,10 +26,11 @@ class CommentsController extends Controller
     //新增一筆資料
     public function create(Request $request)
     {
-        $data=$request->only(["rank_1","rank_2","year","score","out_maj","in_maj","comment"]);
+        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment"]);
         $id=1+DB::table('major')->where('id', DB::raw("(select max(`id`) from major)"))->value('id');
         $rank_1=$data["rank_1"];
         $rank_2=$data["rank_2"];
+        $category = $data["category"];
         $year=(int) $data["year"];
         $score = $data["score"];
         $out_maj = $data["out_maj"];
@@ -38,7 +39,7 @@ class CommentsController extends Controller
         $comment = $data["comment"];
         $confirm = "false";
         //DB::table('major')->insert()
-        DB::insert("INSERT INTO major VALUES('$id','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
+        DB::insert("INSERT INTO major VALUES('$id','$category','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
         return "success";
     }
 
@@ -72,6 +73,16 @@ class CommentsController extends Controller
         $confirm =  $data["confirm"];
         DB::table('major')->where('id',$id)->update(array('id'=>$new_id,'rank_1'=>$rank_1,'rank_2'=>$rank_2,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment,'confirm'=>$confirm))or die('MySQL query error');
         return "success update!";
+    }
+
+     //更新一筆資料的確認
+    public function confirm(Request $request)
+    {
+        $data=$request->only(["id","confirm"]);
+        $id=$data["id"];
+        $confirm =  $data["confirm"];
+        DB::table('major')->where('id',$id)->update(array('confirm'=>$confirm))or die('MySQL query error');
+        return "success update confirm!";
     }
 
     //刪除一筆資料

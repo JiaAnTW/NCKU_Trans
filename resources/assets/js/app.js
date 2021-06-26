@@ -1,30 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import Home from './old/home';
-import Comment from './page/Comment/index';
-import Layout from './layout';
-import Post from './old/post';
-import PostNew from './page/Post/index';
-import Admin from './old/admin';
-import EditMajor from './old/editMajor';
-//import EditComment from './editComment';
-import EditQA from './old/editQA';
-import EditStandard from './old/editStandard';
-import QA from './old/major_QA';
-import QANew from './page/QA/index';
-import error from './old/error';
-import TestPage from './old/TestPage';
 
 import NavLayout from '@/components/NavLayout';
 import Major from './page/Major';
+import Post from './page/Post/index';
+import Login from './page/Login';
 import GlobalStyle from './theme/global';
 
 import { Provider } from 'react-redux';
 import { store } from './model/store.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap-theme.min.css';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { materialTheme } from './theme/global';
@@ -46,7 +33,7 @@ class App extends Component {
             resolve();
         });
         set.then((resolve) => {
-            location.href = '/#/admin/comment';
+            location.href = '/#/admin/major';
         });
     }
 
@@ -125,7 +112,17 @@ class App extends Component {
                         <Switch>
                             <NavLayout>
                                 <Route path="/major" component={Major} />
-                                <Route path="/post" component={PostNew} />
+                                <Route path="/post" component={Post} />
+                                <Route
+                                    path="/admin/major"
+                                    render={(props) => <Major isAdmin={true} />}
+                                />
+                                <Route
+                                    path="/admin/login"
+                                    render={(props) => (
+                                        <Login setToken={this.setToken} />
+                                    )}
+                                />
                             </NavLayout>
                         </Switch>
                     </ThemeProvider>

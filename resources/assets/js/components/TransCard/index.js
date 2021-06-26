@@ -43,9 +43,13 @@ function TransCard({ itemData, index }) {
     }, [windowWidth, wordsNumber]);
 
     return (
-        <Card>
+        <Card dark={itemData['confirm'] === 'false'}>
             <CardContent>
-                <TypeIcon>轉</TypeIcon>
+                {itemData['category'] && (
+                    <TypeIcon theme={itemData['category']}>
+                        {itemData['category'][0]}
+                    </TypeIcon>
+                )}
                 <ContentInfo>
                     <CardTitle>{itemData['in_maj']}</CardTitle>
                     <CardSubTitle>
@@ -55,9 +59,13 @@ function TransCard({ itemData, index }) {
                         {contentMiddleware(itemData['comment'], wordsNumber)}
                     </CardText>
                 </ContentInfo>
-                <YearSpan>{itemData['year']}</YearSpan>
+                <YearSpan theme={itemData['category']}>
+                    {itemData['year']}
+                </YearSpan>
                 <TagSpanList>
-                    <TagSpan>{itemData['department']}</TagSpan>
+                    <TagSpan theme={itemData['category']}>
+                        {itemData['department']}
+                    </TagSpan>
                 </TagSpanList>
                 <ShowBtn onClick={handleOpenContent}></ShowBtn>
             </CardContent>

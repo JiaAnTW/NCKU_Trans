@@ -23,6 +23,7 @@
         "jquery": "^3.5",
         "js-cookie": "^2.2.1",
         "laravel-mix": "^4.0.14",
+        "laravel-mix-bundle-analyzer": "^1.0.5",
         "lodash": "^4.17.19",
         "prettier": "^2.2.1",
         "react": "^16.9.0",
@@ -30,7 +31,8 @@
         "react-test-renderer": "^16.9.0",
         "resolve-url-loader": "^2.3.2",
         "sass": "^1.17.2",
-        "sass-loader": "^7.1.0"
+        "sass-loader": "^7.1.0",
+        "webpack-bundle-analyzer": "^4.4.0"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",

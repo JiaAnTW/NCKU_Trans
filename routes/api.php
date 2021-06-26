@@ -41,6 +41,7 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     // all routes to protected resources are registered here  
     Route::get('get/major/all', 'CommentsController@index');
     Route::put('post/major/{id}','CommentsController@update');
+    Route::patch('patch/major/{id}','CommentsController@confirm');
     Route::delete('post/major/{id}','CommentsController@destroy');
 
     Route::get('get/major_QA/all', 'maj_QAController@index');

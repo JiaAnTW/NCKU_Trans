@@ -4,7 +4,7 @@ import { ModalStyle } from './style';
 import Reader from '../../Reader';
 import { useModalOpen } from '@/utils';
 
-function ReaderModal(props) {
+function ReaderModal({ isAdmin }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
 
     return (
@@ -18,7 +18,7 @@ function ReaderModal(props) {
                 setIsModalOpen(false);
             }}
         >
-            <Reader />
+            <Reader isAdmin={isAdmin} />
         </Modal>
     );
 }

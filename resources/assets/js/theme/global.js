@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const color = {
     yellow: 'rgba(254, 218, 106, 1)',
+    lightYellow: 'rgba(255,238,173,1)',
     darkYellow: '#e1af13',
     white: 'white',
     darkWhite: '#F8F8F8',
@@ -10,6 +11,21 @@ export const color = {
     darkGray: 'rgba(163,158,158,1)',
     lightBlack: 'rgba(57, 63, 77, 1)',
     darkBlack: 'rgba(29, 30, 34, 1)',
+};
+
+export const colorMap = {
+    轉系: {
+        color: color.darkYellow,
+        backgroundColor: 'rgba(254, 218, 106, 0.4)',
+    },
+    輔系: {
+        color: color.black,
+        backgroundColor: 'rgba(29, 30, 34, 0.2)',
+    },
+    雙主修: {
+        color: color.white,
+        backgroundColor: '#393F4D',
+    },
 };
 
 export const Button = styled.button`
@@ -59,6 +75,10 @@ export const LoadingContainer = styled.section`
 
 //---------以下為全局設定---------
 const GlobalStyle = createGlobalStyle`
+    html{
+        font-size: 10px;
+    }
+
   body {
     margin: 0;
     font-family: 'Noto Sans TC', 'Microsoft JhengHei';
@@ -68,6 +88,15 @@ const GlobalStyle = createGlobalStyle`
 
   #root{
     background-color: ${color.white};
+  }
+  
+  .Overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
   }
 
     textarea::-webkit-scrollbar {

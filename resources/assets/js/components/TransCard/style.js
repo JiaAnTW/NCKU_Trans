@@ -1,14 +1,15 @@
 import styled from 'styled-components';
-import { color } from '@/theme/global';
+import { color, colorMap } from '@/theme/global';
 
 export const Card = styled.div`
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.125);
     padding: 5px;
-    background-color: ${color.white};
+    background-color: ${(props) =>
+        props.dark ? color.lightYellow : color.white};
     color: ${color.black};
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
     @media (max-width: 576px) {
         width: 100%;
         margin: 0;
@@ -51,8 +52,8 @@ export const TypeIcon = styled.div`
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    background-color: rgba(254, 218, 106, 0.4);
-    color: ${color.darkYellow};
+    background-color: ${({ theme }) => colorMap[theme].backgroundColor};
+    color: ${({ theme }) => colorMap[theme].color};
     grid-area: icon;
     width: 42px;
     height: 42px;
@@ -71,7 +72,10 @@ export const TagSpanList = styled.div`
 `;
 
 export const TagSpan = styled.span`
-    color: ${color.darkYellow};
+    color: ${({ theme }) =>
+        colorMap[theme].color === color.white
+            ? colorMap[theme].backgroundColor
+            : colorMap[theme].color};
     margin-right: 10px;
     font-size: 1.2rem;
 `;

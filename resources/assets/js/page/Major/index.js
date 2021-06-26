@@ -11,7 +11,7 @@ import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
 
 function Major({ isAdmin }) {
-    const isFinishRequest = useInitData();
+    const isFinishRequest = useInitData(isAdmin);
 
     //---------------資料尚未取得---------------
     if (!isFinishRequest) {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { isEqual, isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { useMapDepToMaj, useCollege } from '@/utils/index';
 
 const date = new Date();
@@ -9,16 +9,20 @@ const category = {
     name: '類別',
     options: [
         {
-            name: '轉系',
-            value: 'trans',
+            name: '全部類別',
+            value: 'none',
         },
         {
-            name: '輔修',
-            value: 'sub',
+            name: '轉系',
+            value: '轉系',
+        },
+        {
+            name: '輔系',
+            value: '輔系',
         },
         {
             name: '雙主修',
-            value: 'double',
+            value: '雙主修',
         },
     ],
 };

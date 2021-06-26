@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { map } from 'lodash';
+import map from 'lodash/map';
 import { useSelector } from 'react-redux';
 
 import ControlArea from '@/components/Form/ControlArea';

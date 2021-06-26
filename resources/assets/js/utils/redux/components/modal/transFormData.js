@@ -1,4 +1,5 @@
-import { map, omit } from 'lodash';
+import map from 'lodash/map';
+import omit from 'lodash/omit';
 import majorWording from '@/wording/major.json';
 
 // 透過settingKeyName這個物件去設定dataObj當中有哪些屬性要特別設定

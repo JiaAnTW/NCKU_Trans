@@ -6,6 +6,7 @@ const initState = {
         year: 'none',
         in_maj: 'none',
         department: 'none',
+        category: 'none',
     },
 };
 
@@ -31,6 +32,7 @@ const majorReducer = (state = initState, action) => {
                     year: state.filter.year,
                     in_maj: 'none',
                     department: 'none',
+                    category: state.filter.category,
                 },
             };
         }

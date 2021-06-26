@@ -44,3 +44,28 @@ export const fetchMajorAdmin = () => {
             });
     };
 };
+
+export const updateMajor = (id, confirm) => {
+    const body = { id, confirm };
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/patch/major/${id.toString()}`, {
+            method: 'PATCH',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(body),
+        })
+            .then((data) => {
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+
+                dispatch(fetchMajorAdmin());
+            })
+            .catch((e) => {
+                location.href = '/#/admin/login';
+            });
+    };
+};

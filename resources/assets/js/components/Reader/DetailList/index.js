@@ -6,6 +6,7 @@ import DetailItem from './DetailItem';
 const DetailListLayout = styled.div`
     display: flex;
     flex-wrap: wrap;
+    margin: 20px 0px;
 `;
 
 function DetailList({ value }) {

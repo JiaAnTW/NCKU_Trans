@@ -7,14 +7,14 @@ export default {
         wording: '申請年度',
     },
     category: {
-        value: 'major',
+        value: '轉系',
         type: 'select',
         keyName: 'category',
         wording: '申請類別',
         options: [
-            { value: 'major', text: '轉系' },
-            { value: 'sub', text: '輔系' },
-            { value: 'double', text: '雙主修' },
+            { value: '轉系', text: '轉系' },
+            { value: '輔系', text: '輔系' },
+            { value: '雙主修', text: '雙主修' },
         ],
     },
     out_maj: {
