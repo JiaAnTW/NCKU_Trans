@@ -5,6 +5,8 @@ import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 export const postMajorData = (formData) => {
     const params = formData;
 
+    params.comment = params.comment.replace(/\n|\r\n/g, '<br>');
+
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
         fetch('/api/create/major', {

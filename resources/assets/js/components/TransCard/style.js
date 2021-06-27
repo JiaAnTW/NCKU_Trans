@@ -28,6 +28,7 @@ export const CardSubTitle = styled.div`
 export const CardText = styled.p`
     font-size: 1.3rem;
     text-align: justify;
+    line-break: anywhere;
 `;
 
 export const CardContent = styled.div`

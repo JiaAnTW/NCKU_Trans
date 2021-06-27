@@ -27,6 +27,9 @@ export const ReaderText = styled.div`
     line-height: 2.4rem;
     letter-spacing: 1.5px;
     overflow-y: auto;
+    line-break: anywhere;
+    text-align: justify;
+    white-space: pre-line;
 
     ::-webkit-scrollbar {
         width: 1px;
