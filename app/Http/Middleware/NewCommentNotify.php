@@ -14,35 +14,78 @@ class NewCommentNotify
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function handle($request, Closure $next)
     {    
+        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment"]);
+        $rank_1=$data["rank_1"];
+        $rank_2=$data["rank_2"];
+        $category = $data["category"];
+        $year=$data["year"];
+        $score = $data["score"];
+        $out_maj = $data["out_maj"];
+        $in_maj = $data["in_maj"];
+        $comment = $data["comment"];
+
+        $webhookurl = \config('discord_webhook');;
         try{
-            // post api to line notify
-            $access_token = array();
-            //"qNi3t4g5tZ0I9P3tfXztrFMe6TeN8llvPRpIj50pM44"
-            $access_token[]=\config('line_notify.line_notify_token');
-            $message="成大轉系平台有一件心得待審核";
-            $TargetCount = count($access_token);
-               $Push_Content['message'] = $message;
-              // $Push_Content['imageThumbnail'] = "https://i.imgur.com/ZxuJGHG.png";
-              // $Push_Content['imageFullsize'] = "https://i.imgur.com/ZxuJGHG.png";
-              // $Push_Content['stickerPackageId'] = "3";
-              // $Push_Content['stickerId'] = "180";
-              for ($i=0;$i<$TargetCount;$i++) {
-               $ch = curl_init("https://notify-api.line.me/api/notify");
-               curl_setopt($ch, CURLOPT_POST, true);
-               curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-               curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-               curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-               curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-               curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($Push_Content));
-               curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/x-www-form-urlencoded',
-                'Authorization: Bearer '.$access_token[$i]
-               ));
-               $response_json_str = curl_exec($ch);
-               curl_close($ch);
-            }
+            $timestamp = date("c", strtotime("now"));
+            $json_data = json_encode([
+                "content" => "<@&857153250213756928> 有一則新的心得需要你審查歐!",      
+                "username" => "心得審查通知",
+                "tts" => false,
+                "embeds" => [
+                    [
+                        // Embed Title
+                        "title" => "{$category} - $in_maj",
+                        "type" => "rich",
+                        "description" => "{$comment}",
+                        "url" => "",
+                        "timestamp" => $timestamp,
+                        "color" => hexdec( "3366ff" ),
+                        "fields" => [
+                            [
+                                "name" => "申請年",
+                                "value" => $year,
+                                "inline" => false
+                            ],
+                            [
+                                "name" => "平均分數",
+                                "value" => $score,
+                                "inline" => false
+                            ],
+                            [
+                                "name" => "排名上/下",
+                                "value" => "{$rank_1}/{$rank_2}",
+                                "inline" => false
+                            ],
+                            [
+                                "name" => "原主修",
+                                "value" => $out_maj,
+                                "inline" => false
+                            ]
+                        ]
+                    ]
+                ]
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+
+
+            $ch = curl_init( $webhookurl );
+            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+            curl_setopt( $ch, CURLOPT_POST, 1);
+            curl_setopt( $ch, CURLOPT_POSTFIELDS, $json_data);
+            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt( $ch, CURLOPT_HEADER, 0);
+            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+            $response = curl_exec( $ch );
+            $curl_err = curl_error($ch);
+            error_log("Response: ".$response);
+            error_log("Error: ".$curl_err);
+            // If you need to debug, or find out why you can't send message uncomment line below, and execute script.
+            curl_close( $ch );
             
         }catch(Exception $e){
             echo 'Caught exception: ',  $e->getMessage(),'<br>';  
