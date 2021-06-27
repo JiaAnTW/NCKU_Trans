@@ -27,7 +27,8 @@ class NewCommentNotify
         $in_maj = $data["in_maj"];
         $comment = $data["comment"];
 
-        $webhookurl = \config('discord_webhook');;
+        $webhookurl = env('DISCORD_WEBHOOK');
+        error_log($webhookurl);
         try{
             $timestamp = date("c", strtotime("now"));
             $json_data = json_encode([

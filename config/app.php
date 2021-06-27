@@ -230,6 +230,5 @@ return [
         'JWTFactory' => Tymon\JWTAuthFacades\JWTFactory::class
 
     ],
-    'discord_webhook' => env('DISCORD_WEBHOOK', ''),
-
+    'discord_webhook' => env('DISCORD_WEBHOOK'),
 ];
