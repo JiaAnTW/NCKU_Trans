@@ -37,6 +37,9 @@ class CommentsController extends Controller
         $in_maj = $data["in_maj"];
         $department= $this->defineDepartment($data["in_maj"]);
         $comment = $data["comment"];
+        if($comment==""||$comment==null){
+            $comment="這篇心得沒有留下內文歐";
+        }
         $confirm = "false";
         //DB::table('major')->insert()
         DB::insert("INSERT INTO major VALUES('$id','$category','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
