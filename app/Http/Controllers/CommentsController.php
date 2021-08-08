@@ -28,8 +28,8 @@ class CommentsController extends Controller
     {
         $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment","isPass"]);
         $id=1+DB::table('major')->where('id', DB::raw("(select max(`id`) from major)"))->value('id');
-        $rank_1=$data["rank_1"];
-        $rank_2=$data["rank_2"];
+        $rank_1=$data["rank_1"] == '' ? '?' : $data["rank_1"];
+        $rank_2=$data["rank_2"] == '' ? '?' : $data["rank_2"];
         $category = $data["category"];
         $year=(int) $data["year"];
         $score = $data["score"];
@@ -67,8 +67,8 @@ class CommentsController extends Controller
         $data=$request->only(["category","id","rank_1","rank_2","year","score","out_maj","in_maj","comment","confirm","isPass"]);
         $new_id=$data["id"];
         $category = $data["category"];
-        $rank_1=$data["rank_1"];
-        $rank_2=$data["rank_2"];
+        $rank_1=$data["rank_1"] == '' ? '?' : $data["rank_1"];
+        $rank_2=$data["rank_2"] == '' ? '?' : $data["rank_2"];
         $year=(int) $data["year"];
         $score = $data["score"];
         $out_maj = $data["out_maj"];
