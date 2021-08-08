@@ -7,6 +7,7 @@ const initState = {
         in_maj: 'none',
         department: 'none',
         category: 'none',
+        isPass: '',
     },
 };
 
@@ -33,6 +34,7 @@ const majorReducer = (state = initState, action) => {
                     in_maj: 'none',
                     department: 'none',
                     category: state.filter.category,
+                    isPass: 'true',
                 },
             };
         }

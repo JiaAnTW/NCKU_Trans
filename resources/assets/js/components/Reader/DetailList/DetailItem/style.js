@@ -6,7 +6,10 @@ export const DetailItemLayout = styled.div`
     height: 50px;
     padding: 5px;
     background-color: ${color.white};
-    color: ${color.black};
+    color: ${(props) =>
+        props.type === '申請結果' && props.value === 'false'
+            ? color.red
+            : color.black};
 `;
 
 export const TypeText = styled.div`

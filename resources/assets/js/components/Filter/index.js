@@ -68,13 +68,13 @@ function Filter({ type, options, onChange }) {
                 className={classes.formControl}
                 classes={{ root: classes.root }}
             >
-                {age === '' && (
+                {age === '' && Array.isArray(options) && options.length > 0 && (
                     <InputLabel
                         disableAnimation
                         shrink={false}
                         className={classes.labelText}
                     >
-                        {`全部${type}`}
+                        {options[0].name}
                     </InputLabel>
                 )}
                 <Select

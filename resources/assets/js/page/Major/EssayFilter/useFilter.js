@@ -27,6 +27,21 @@ const category = {
     ],
 };
 
+const isPass = {
+    type: 'isPass',
+    name: '是否通過',
+    options: [
+        {
+            name: '通過',
+            value: 'true',
+        },
+        {
+            name: '未通過',
+            value: 'false',
+        },
+    ],
+};
+
 const getYearArr = () => {
     let arr = [{ name: '全部年份', value: 'none' }];
     const currentYear = date.getFullYear();

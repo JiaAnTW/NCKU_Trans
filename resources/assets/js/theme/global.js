@@ -11,6 +11,7 @@ export const color = {
     darkGray: 'rgba(163,158,158,1)',
     lightBlack: 'rgba(57, 63, 77, 1)',
     darkBlack: 'rgba(29, 30, 34, 1)',
+    red: 'rgba(245,88,123,1)',
 };
 
 export const colorMap = {

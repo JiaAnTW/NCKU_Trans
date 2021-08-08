@@ -26,7 +26,7 @@ class CommentsController extends Controller
     //新增一筆資料
     public function create(Request $request)
     {
-        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment"]);
+        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment","isPass"]);
         $id=1+DB::table('major')->where('id', DB::raw("(select max(`id`) from major)"))->value('id');
         $rank_1=$data["rank_1"];
         $rank_2=$data["rank_2"];
@@ -41,8 +41,9 @@ class CommentsController extends Controller
             $comment="這篇心得沒有留下內文歐";
         }
         $confirm = "false";
+        $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
         //DB::table('major')->insert()
-        DB::insert("INSERT INTO major VALUES('$id','$category','$rank_1','$rank_2', '$year','$score', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
+        DB::insert("INSERT INTO major VALUES('$id','$category','$rank_1','$rank_2', '$year','$score', '$isPass', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
         return "success";
     }
 
@@ -63,8 +64,9 @@ class CommentsController extends Controller
     //更新一筆資料
     public function update(Request $request, $id)
     {
-        $data=$request->only(["id","rank_1","rank_2","year","score","out_maj","in_maj","comment","confirm"]);
+        $data=$request->only(["category","id","rank_1","rank_2","year","score","out_maj","in_maj","comment","confirm","isPass"]);
         $new_id=$data["id"];
+        $category = $data["category"];
         $rank_1=$data["rank_1"];
         $rank_2=$data["rank_2"];
         $year=(int) $data["year"];
@@ -74,7 +76,8 @@ class CommentsController extends Controller
         $department= $this->defineDepartment($data["in_maj"]);
         $comment = $data["comment"];
         $confirm =  $data["confirm"];
-        DB::table('major')->where('id',$id)->update(array('id'=>$new_id,'rank_1'=>$rank_1,'rank_2'=>$rank_2,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment,'confirm'=>$confirm))or die('MySQL query error');
+        $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
+        DB::table('major')->where('id',$id)->update(array('id'=>$new_id, 'category' => $category, 'rank_1'=>$rank_1,'rank_2'=>$rank_2,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment,'confirm'=>$confirm, 'isPass'=>$isPass))or die('MySQL query error');
         return "success update!";
     }
 
