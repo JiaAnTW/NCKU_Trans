@@ -13,6 +13,7 @@ export const Card = styled.div`
     @media (max-width: 576px) {
         width: 100%;
         margin: 0;
+        border-radius: 0;
     }
 `;
 
