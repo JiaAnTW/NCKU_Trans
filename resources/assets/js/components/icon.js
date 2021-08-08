@@ -6,10 +6,10 @@ class icon extends Component {
         super(props);
     }
     render() {
-        const outsideColor = this.props.isWhite ? 'white' : '#cc3d61';
+        const outsideColor = this.props.isWhite ? 'white' : '#e1af13';
         const insideColor = this.props.isWhite
             ? 'rgba(255,255,255,0.6)'
-            : '#cc3d61';
+            : '#e1af13';
         return (
             <div className="lds-css-ng-scope" style={this.props.style}>
                 <div
