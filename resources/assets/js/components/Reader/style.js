@@ -11,7 +11,7 @@ export const ReaderLayout = styled.div`
     display: grid;
     grid-template-columns: 50px auto 50px;
     grid-template-rows: 100%;
-    @media (max-width: 400px) {
+    @media (max-width: 576px) {
         width: 350px;
     }
 `;
