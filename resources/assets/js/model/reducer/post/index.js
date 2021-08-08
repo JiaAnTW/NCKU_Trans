@@ -1,5 +1,6 @@
 import {
-    INIT_POST_OPTION,
+    INIT_POST_OPTION_DEPARTMENT,
+    INIT_POST_OPTION_COLLEGE,
     SET_POST_FORM,
     SET_POST_ON_NEXT,
     SET_POST_ON_BEFORE,
@@ -9,35 +10,36 @@ import initState from './initState';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
-        case INIT_POST_OPTION: {
+        case INIT_POST_OPTION_DEPARTMENT: {
             const stateNext = state;
 
-            // 初始化年度
-            const yearOption = [];
-            const clock = new Date();
-            let latestYear = clock.getFullYear() - 1911;
-            if (clock.getMonth() < 7) latestYear--;
-            for (let i = 0; i < 5; ++i) {
-                const yearItem = latestYear - i;
-                yearOption.push({ value: yearItem, text: yearItem });
-            }
-
-            const year = {
-                ...state.form.comment.year,
-                options: yearOption,
-                value: latestYear,
-            };
-            stateNext.form.comment.year = year;
-
             // 初始化學系
-            const options = action.payload.departmentArr.map((department) => ({
-                value: department.name,
-                text: department.name,
-            }));
+            const options = state.form.comment.out_maj.options.concat(
+                action.payload.departmentArr.map((department) => ({
+                    value: department.name,
+                    text: department.name,
+                }))
+            );
             const out_maj = { ...state.form.comment.out_maj, options };
             const in_maj = { ...state.form.comment.in_maj, options };
 
             stateNext.form.comment.in_maj = in_maj;
+            stateNext.form.comment.out_maj = out_maj;
+
+            return stateNext;
+        }
+        case INIT_POST_OPTION_COLLEGE: {
+            const stateNext = state;
+
+            // 初始化學系
+            const options = state.form.comment.out_maj.options.concat(
+                action.payload.collegeArr.map((college) => ({
+                    value: college.name,
+                    text: college.name,
+                }))
+            );
+            const out_maj = { ...state.form.comment.out_maj, options };
+
             stateNext.form.comment.out_maj = out_maj;
 
             return stateNext;

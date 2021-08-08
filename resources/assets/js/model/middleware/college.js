@@ -1,4 +1,5 @@
 import { INIT_COLLEGE } from '../action/college';
+import { INIT_POST_OPTION_COLLEGE } from '../action/post';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 
 export const fetchCollege = () => {
@@ -10,6 +11,10 @@ export const fetchCollege = () => {
                 dispatch({
                     type: INIT_COLLEGE,
                     payload: { data },
+                });
+                dispatch({
+                    type: INIT_POST_OPTION_COLLEGE,
+                    payload: { collegeArr: data },
                 });
                 dispatch({
                     type: FINISH_REQUEST,

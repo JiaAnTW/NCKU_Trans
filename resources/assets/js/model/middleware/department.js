@@ -1,5 +1,5 @@
 import { INIT_DEPARTMENT } from '../action/department';
-import { INIT_POST_OPTION } from '../action/post';
+import { INIT_POST_OPTION_DEPARTMENT } from '../action/post';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 
 export const fetchDepartment = () => {
@@ -13,7 +13,7 @@ export const fetchDepartment = () => {
                     payload: { data },
                 });
                 dispatch({
-                    type: INIT_POST_OPTION,
+                    type: INIT_POST_OPTION_DEPARTMENT,
                     payload: { departmentArr: data },
                 });
                 dispatch({
