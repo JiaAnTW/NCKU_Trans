@@ -9,7 +9,7 @@ export default styled(FormControl)`
 
 export const useStyles = makeStyles((theme) => ({
     selectDisplay: {
-        fontSize: '1.4rem',
+        fontSize: '1.8rem',
         height: '100%',
         width: '100%',
         display: 'flex',

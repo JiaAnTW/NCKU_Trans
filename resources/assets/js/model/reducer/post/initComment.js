@@ -16,6 +16,7 @@ export default (function () {
             keyName: 'year',
             wording: '申請年度',
             options: yearOption,
+            remark: '例: 110年7月申請，就填寫110年。',
         },
         category: {
             value: '轉系',
@@ -34,6 +35,7 @@ export default (function () {
             type: 'select',
             wording: '原主修科系',
             options: [],
+            remark: '如不想透漏，可以只填學院或其他。',
         },
         in_maj: {
             value: '中文系',
@@ -64,6 +66,7 @@ export default (function () {
             },
             keyName: 'rank_2',
             wording: '排名下',
+            remark: '如還不知道，可以留空白。',
         },
         score: {
             value: '',

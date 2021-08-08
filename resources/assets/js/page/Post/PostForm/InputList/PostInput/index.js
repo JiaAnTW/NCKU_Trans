@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { SET_POST_FORM } from '@/model/action/post';
 
-import { InputLayout } from './style';
+import { InputLayout, RemarkSpan } from './style';
 import Input from '@/components/atom/Input';
 import Select from '@/components/atom/Select';
 import TextArea from '@/components/atom/TextArea';
@@ -38,6 +38,7 @@ function PostInput(props) {
     return (
         <InputLayout width={props.width}>
             <Element {...props} value={props.value} onChange={handleChange} />
+            {props.remark && <RemarkSpan>{`*${props.remark}`}</RemarkSpan>}
         </InputLayout>
     );
 }

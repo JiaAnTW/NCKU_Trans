@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { color } from '@/theme/global';
 
 export const InputArrLayout = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     width: 100%;
     padding: 25px;
     /*display: flex;
