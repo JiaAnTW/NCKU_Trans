@@ -8,6 +8,8 @@
         <meta name="theme-color" content="#e5446d">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="一個讓成大學生匿名分享各式學業心得的平台。">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+        <link rel="icon" href="{{ asset('favicon.ico') }}">
         <!--CDN plugin-->
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
