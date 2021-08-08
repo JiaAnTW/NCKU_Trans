@@ -53,6 +53,7 @@ function usePostControl(editType, timeout) {
             out_maj: formData.out_maj.value,
             in_maj: formData.in_maj.value,
             comment: formData.comment.value,
+            isPass: formData.isPass.value,
         };
         if (editType === 'comment') dispatch(postMajorData(params));
     }, [editType, formData]);
