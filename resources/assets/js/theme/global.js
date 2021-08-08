@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Noto Sans TC', 'Microsoft JhengHei';
-    color: ${color.white};
+    color: ${color.darkBlack};
     font-size: 15px;
   }
 
