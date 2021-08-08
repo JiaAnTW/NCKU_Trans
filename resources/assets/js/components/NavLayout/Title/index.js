@@ -14,7 +14,7 @@ const mapPathnameToTitle = (pathname) => {
         case 'post':
             return '分享心得';
         default:
-            return '';
+            return '轉系/輔系/雙主修心得';
     }
 };
 

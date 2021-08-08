@@ -17,7 +17,7 @@ import {
 
 const typeList = [
     { type: 'comment', name: '轉/輔/雙主修', icon: ImportContactsIcon },
-    { type: 'qa', name: '其他學業分享', icon: SchoolIcon },
+    //{ type: 'qa', name: '其他學業分享', icon: SchoolIcon },
 ];
 
 const TypeSelect = forwardRef((props, ref) => {

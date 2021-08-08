@@ -22,13 +22,13 @@ const arr = [
         icon: (
             <ImportContactsIcon style={{ width: '1.9rem', height: '1.9rem' }} />
         ),
-        url: '/major',
+        url: '/',
     },
-    {
+    /*{
         text: '其他學業',
         icon: <SchoolIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
         url: '/study',
-    },
+    },*/
     {
         text: '我要分享',
         icon: <PostAddIcon style={{ width: '1.9rem', height: '1.9rem' }} />,

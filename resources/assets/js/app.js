@@ -111,7 +111,7 @@ class App extends Component {
                         <GlobalStyle />
                         <Switch>
                             <NavLayout>
-                                <Route path="/major" component={Major} />
+                                <Route exact path="/" component={Major} />
                                 <Route path="/post" component={Post} />
                                 <Route
                                     path="/admin/major"
