@@ -7,6 +7,7 @@ import ChangeBtn from './ChangeBtn';
 import TitleBar from './TitleBar';
 import DetailList from './DetailList';
 import Confirm from './Confirm';
+import Delete from './Delete';
 import { useModalContext } from '@/utils';
 
 function Reader({ isAdmin }) {
@@ -24,6 +25,7 @@ function Reader({ isAdmin }) {
                 {isAdmin && <Confirm id={id} confirm={confirm} />}
                 <DetailList value={tags} />
                 <ReaderText>{content.replace(/<br>/g, '\n')}</ReaderText>
+                {isAdmin && <Delete id={id} />}
             </ReaderContent>
             <ChangeBtn direction="right" onClick={onNext} />
         </ReaderLayout>

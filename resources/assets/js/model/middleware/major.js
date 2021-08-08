@@ -69,3 +69,28 @@ export const updateMajor = (id, confirm) => {
             });
     };
 };
+
+export const deleteMajor = (id) => {
+    const body = { id };
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/post/major/${id.toString()}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(body),
+        })
+            .then((data) => {
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+
+                dispatch(fetchMajorAdmin());
+            })
+            .catch((e) => {
+                location.href = '/#/admin/login';
+            });
+    };
+};
