@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-Hant-TW" charset="utf-8">
     <head>
-        <title>NCKU Study・成大學業分享</title>
+        <title>NCKU STUDY・成大學業分享</title>
         <!--setting-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
