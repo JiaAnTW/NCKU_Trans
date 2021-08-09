@@ -8,6 +8,7 @@
         <meta name="theme-color" content="rgba(254, 218, 106, 1)">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="一個讓成大學生匿名分享各式學業心得的平台。">
+        <meta property="og:image" content="https://i.imgur.com/6AMSOvt.jpg" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         <!--CDN plugin-->
