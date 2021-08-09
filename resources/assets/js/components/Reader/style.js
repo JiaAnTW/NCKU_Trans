@@ -12,7 +12,9 @@ export const ReaderLayout = styled.div`
     grid-template-columns: 50px auto 50px;
     grid-template-rows: 100%;
     @media (max-width: 576px) {
-        width: 350px;
+        width: 360px;
+        height: 500px;
+        height: 75vh;
     }
 `;
 
@@ -24,12 +26,13 @@ export const ReaderContent = styled.div`
 `;
 
 export const ReaderText = styled.div`
-    line-height: 2.4rem;
-    letter-spacing: 1.5px;
+    line-height: 2.8rem;
+    letter-spacing: 2.5px;
     overflow-y: auto;
     line-break: anywhere;
     text-align: justify;
     white-space: pre-line;
+    font-size: 17px;
 
     ::-webkit-scrollbar {
         width: 1px;
