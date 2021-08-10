@@ -13,7 +13,7 @@ export const DetailItemLayout = styled.div`
 `;
 
 export const TypeText = styled.div`
-    font-size: 0.8rem;
+    font-size: 1.4rem;
 `;
 
 export const ValueText = styled.div`

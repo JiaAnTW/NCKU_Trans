@@ -30,6 +30,10 @@ export const CardText = styled.p`
     font-size: 1.3rem;
     text-align: justify;
     line-break: anywhere;
+
+    @media (max-width: 576px) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const CardContent = styled.div`

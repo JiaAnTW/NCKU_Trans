@@ -57,6 +57,10 @@ export const CardsContainer = styled.section`
     height: 100%;
     max-height: 100%;
     border-radius: 10px;
+
+    @media (max-width: 576px) {
+        display: block;
+    }
 `;
 
 export const WhiteContainer = styled.div`
