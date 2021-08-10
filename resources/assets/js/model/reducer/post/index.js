@@ -14,17 +14,32 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
 
             // 初始化學系
-            const options = state.form.comment.out_maj.options.concat(
+            const out_options = state.form.comment.out_maj.options.concat(
                 action.payload.departmentArr.map((department) => ({
                     value: department.name,
                     text: department.name,
                 }))
             );
-            const out_maj = { ...state.form.comment.out_maj, options };
-            const in_maj = { ...state.form.comment.in_maj, options };
 
-            stateNext.form.comment.in_maj = in_maj;
+            // in沒有college，要獨立寫
+            const in_options = state.form.comment.in_maj.options.concat(
+                action.payload.departmentArr.map((department) => ({
+                    value: department.name,
+                    text: department.name,
+                }))
+            );
+
+            const out_maj = {
+                ...state.form.comment.out_maj,
+                options: out_options,
+            };
+            const in_maj = {
+                ...state.form.comment.in_maj,
+                options: in_options,
+            };
+
             stateNext.form.comment.out_maj = out_maj;
+            stateNext.form.comment.in_maj = in_maj;
 
             return stateNext;
         }

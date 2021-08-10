@@ -7,7 +7,8 @@ export const DetailItemLayout = styled.div`
     padding: 5px;
     background-color: ${color.white};
     color: ${(props) =>
-        props.type === '申請結果' && props.value === 'false'
+        props.type === '申請結果' &&
+        (props.value === 'false' || props.value === '未通過')
             ? color.red
             : color.black};
 `;

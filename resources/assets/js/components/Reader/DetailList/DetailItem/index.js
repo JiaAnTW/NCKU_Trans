@@ -3,7 +3,7 @@ import { DetailItemLayout, TypeText, ValueText } from './style';
 
 function valueMiddleware(type, value) {
     if (type !== '申請結果') return value;
-    if (value === 'false') {
+    if (value === 'false' || value === '未通過') {
         return '未通過';
     }
     return '通過';

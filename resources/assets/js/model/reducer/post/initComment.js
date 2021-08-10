@@ -86,8 +86,8 @@ export default (function () {
             keyName: 'isPass',
             wording: '申請結果',
             options: [
-                { value: true, text: '通過' },
-                { value: false, text: '未通過' },
+                { value: 'true', text: '通過' },
+                { value: 'false', text: '未通過' },
             ],
         },
         comment: {
