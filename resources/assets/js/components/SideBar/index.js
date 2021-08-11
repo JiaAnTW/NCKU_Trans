@@ -2,11 +2,11 @@ import React, { useEffect, useCallback } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-//import ListItemText from '@material-ui/core/ListItemText';
+
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import SchoolIcon from '@material-ui/icons/School';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 
@@ -34,6 +34,11 @@ const arr = [
         icon: <PostAddIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
         url: '/post',
     },
+    {
+        text: '聯絡我們',
+        icon: <HowToVoteIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: 'https://forms.gle/qqrnLmhQoLyZ1BULA',
+    },
 ];
 
 export default function SideBar({ open, onClose, onOpen }) {
@@ -46,6 +51,12 @@ export default function SideBar({ open, onClose, onOpen }) {
 
     const handleClick = useCallback(
         (url) => {
+            // 問卷
+            if (url[0] !== '/') {
+                window.open(url, '_blank').focus();
+                return;
+            }
+
             history.push(url);
             if (device !== 'PC') onClose();
         },
