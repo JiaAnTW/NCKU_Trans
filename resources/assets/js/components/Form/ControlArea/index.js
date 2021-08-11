@@ -1,17 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { ControlAreaContainer, ControlButton } from './style';
 
 function ControlArea({ onNext, onBefore, nextText, beforeText }) {
+    const step = useSelector((state) => state.post.step);
+
     return (
         <ControlAreaContainer>
-            <ControlButton
-                light
-                style={{ marginRight: '20px' }}
-                onClick={onBefore}
-            >
-                {beforeText ? beforeText : '返回'}
-            </ControlButton>
+            {step >= 2 && (
+                <ControlButton
+                    light
+                    style={{ marginRight: '20px' }}
+                    onClick={onBefore}
+                >
+                    {beforeText ? beforeText : '返回'}
+                </ControlButton>
+            )}
             <ControlButton onClick={onNext}>
                 {nextText ? nextText : '下一步'}
             </ControlButton>
