@@ -24,7 +24,7 @@ function Reader({ isAdmin }) {
                 <TitleBar type={type} title={title} subtitle={subtitle} />
                 {isAdmin && <Confirm id={id} confirm={confirm} />}
                 <DetailList value={tags} />
-                <ReaderText>{content.replace(/<br>/g, '\n')}</ReaderText>
+                <ReaderText>{content}</ReaderText>
                 {isAdmin && <Delete id={id} />}
             </ReaderContent>
             <ChangeBtn direction="right" onClick={onNext} />

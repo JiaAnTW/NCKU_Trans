@@ -14,7 +14,12 @@ const initState = {
 const majorReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_MAJOR: {
-            return { ...state, data: action.payload.data.reverse() };
+            const nextData = action.payload.data.reverse().map((item) => {
+                item.comment = item.comment.replace(/<br>/g, '\n');
+                console.log(item.comment);
+                return item;
+            });
+            return { ...state, data: nextData };
         }
         case SET_FILTER: {
             let filter = state.filter;
