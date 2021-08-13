@@ -100,7 +100,7 @@ class CommentsController extends Controller
     }
 
     private function defineDepartment($in_maj){
-        $LIB=["","中文系","外文系","台文系"];
+        $LIB=["","中文系","外文系","台文系", "歷史系"];
         if($this->FindDepartment($in_maj,$LIB))
             return "文學院";
         //Log::debug($in_maj+" 不是文學院");
