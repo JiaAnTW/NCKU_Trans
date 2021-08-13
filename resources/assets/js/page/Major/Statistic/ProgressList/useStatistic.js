@@ -2,24 +2,19 @@ import { useMajor } from '@/utils/index';
 
 export function useAverage() {
     const majorData = useMajor();
-    if (majorData.length === 0) return null;
-    let size = majorData.length;
-    return (
-        majorData.reduce((init, current) => {
-            if (current.isPass && current.isPass === 'false') {
-                size--;
-                return init;
-            }
-            return init + current.score;
-        }, 0) / size
-    );
+    const passData = majorData.filter((data) => data.isPass !== 'false');
+
+    if (passData.length === 0) return null;
+    let size = passData.length;
+    return passData.reduce((init, current) => init + current.score, 0) / size;
 }
 
 export function useMin() {
     const majorData = useMajor();
-    if (majorData.length === 0) return null;
-    return majorData.reduce((init, current) => {
-        if (current.isPass && current.isPass === 'false') return init;
+    const passData = majorData.filter((data) => data.isPass !== 'false');
+
+    if (passData.length === 0) return null;
+    return passData.reduce((init, current) => {
         return current.score < init ? current.score : init;
     }, 100);
 }
