@@ -17,7 +17,7 @@ class NewCommentNotify
 
     public function handle($request, Closure $next)
     {    
-        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment"]);
+        $data=$request->only(["category","rank_1","rank_2","year","score","out_maj","in_maj","comment", "isPass"]);
         $rank_1=$data["rank_1"];
         $rank_2=$data["rank_2"];
         $category = $data["category"];
@@ -26,6 +26,7 @@ class NewCommentNotify
         $out_maj = $data["out_maj"];
         $in_maj = $data["in_maj"];
         $comment = $data["comment"];
+        $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
 
         $webhookurl = env('DISCORD_WEBHOOK');
         error_log($webhookurl);
@@ -43,7 +44,7 @@ class NewCommentNotify
                         "description" => "{$comment}",
                         "url" => "",
                         "timestamp" => $timestamp,
-                        "color" => hexdec( "3366ff" ),
+                        "color" => hexdec( $isPass == 'true' ? "3366ff" : "d25565" ),
                         "fields" => [
                             [
                                 "name" => "申請年",
@@ -63,6 +64,11 @@ class NewCommentNotify
                             [
                                 "name" => "原主修",
                                 "value" => $out_maj,
+                                "inline" => false
+                            ],
+                            [
+                                "name" => "申請結果",
+                                "value" =>  $isPass == 'true' ? "通過" : "未通過",
                                 "inline" => false
                             ]
                         ]
