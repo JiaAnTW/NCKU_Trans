@@ -42,9 +42,21 @@ class CommentsController extends Controller
         }
         $confirm = "false";
         $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
-        //DB::table('major')->insert()
-        DB::insert("INSERT INTO major VALUES('$id','$category','$rank_1','$rank_2', '$year','$score', '$isPass', '$out_maj','$in_maj','$department','$comment','$confirm')") or die('MySQL query error');
-        return "success";
+        Comments::insert(array(
+            'id'=>$id,
+            'category' => $category,
+            'rank_1'=>$rank_1,
+            'rank_2'=>$rank_2,
+            'year'=>$year,
+            'score'=>$score,
+            'out_maj'=>$out_maj,
+            'in_maj'=>$in_maj,
+            'department'=>$department,
+            'comment'=>$comment,
+            'confirm'=>$confirm,
+            'isPass'=>$isPass
+        )) or die('MySQL query error');
+        return array('status' => "success");
     }
 
     //儲存資料
@@ -78,7 +90,7 @@ class CommentsController extends Controller
         $confirm =  $data["confirm"];
         $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
         DB::table('major')->where('id',$id)->update(array('id'=>$new_id, 'category' => $category, 'rank_1'=>$rank_1,'rank_2'=>$rank_2,'year'=>$year,'score'=>$score,'out_maj'=>$out_maj,'in_maj'=>$in_maj,'department'=>$department,'comment'=>$comment,'confirm'=>$confirm, 'isPass'=>$isPass))or die('MySQL query error');
-        return "success update!";
+        return array('status' => "success");
     }
 
      //更新一筆資料的確認
@@ -88,7 +100,7 @@ class CommentsController extends Controller
         $id=$data["id"];
         $confirm =  $data["confirm"];
         DB::table('major')->where('id',$id)->update(array('confirm'=>$confirm))or die('MySQL query error');
-        return "success update confirm!";
+        return array('status' => "success");
     }
 
     //刪除一筆資料
@@ -96,7 +108,7 @@ class CommentsController extends Controller
     {
         
         DB::table('major')->where('id',$id)->delete();
-        return "success delete!";
+        return array('status' => "success");
     }
 
     private function defineDepartment($in_maj){
