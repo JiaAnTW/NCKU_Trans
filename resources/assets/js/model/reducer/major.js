@@ -16,7 +16,6 @@ const majorReducer = (state = initState, action) => {
         case INIT_MAJOR: {
             const nextData = action.payload.data.reverse().map((item) => {
                 item.comment = item.comment.replace(/<br>/g, '\n');
-                console.log(item.comment);
                 return item;
             });
             return { ...state, data: nextData };
