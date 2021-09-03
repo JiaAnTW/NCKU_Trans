@@ -1,4 +1,4 @@
-export function fetchLoginInfo({ email, password }, cb) {
+export function fetchLoginInfo({ email, password }, successCb, failCb) {
     const user = { email, password };
     fetch('/api/post/user/login', {
         method: 'POST',
@@ -10,8 +10,16 @@ export function fetchLoginInfo({ email, password }, cb) {
         .then((res) => res.json())
         .then((json) => {
             if (json['success']) {
-                cb(json.data['remember_token']);
+                successCb(json.data['remember_token']);
+            } else {
+                setTimeout(() => {
+                    failCb(false);
+                }, 500);
             }
         })
-        .catch((e) => {});
+        .catch((e) => {
+            setTimeout(() => {
+                failCb(false);
+            }, 500);
+        });
 }
