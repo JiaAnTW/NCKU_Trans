@@ -27,7 +27,6 @@ function usePostControl(editType, timeout) {
     const location = useLocation();
 
     const onBefore = useCallback(() => {
-        console.log(location.pathname.substr(0, 6));
         if (location.pathname.substr(0, 6) === '/admin') {
             history.push(`/admin/${editType}`);
             return;

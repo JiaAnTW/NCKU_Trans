@@ -1,9 +1,11 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+
 import { OVERWRITE_POST } from '@/model/action/post';
 import { useModalContext } from '@/utils';
 import { useModalOpen } from '@/utils';
+import { BtnDark } from './style';
 
 export default function EditBtn() {
     const [{ rawData }] = useModalContext();
@@ -17,5 +19,5 @@ export default function EditBtn() {
         history.push('/admin/post');
     }, [rawData, history, setIsModalOpen]);
 
-    return <button onClick={handleEdit}>編輯</button>;
+    return <BtnDark onClick={handleEdit}>編輯</BtnDark>;
 }

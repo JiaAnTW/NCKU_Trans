@@ -4,7 +4,8 @@ import { color } from '@/theme/global';
 export const ReaderLayout = styled.div`
     position: relative;
     width: 450px;
-    height: 500px;
+    height: ${(props) => (props.isAdmin ? '80vh' : '500px')};
+
     padding: 5px;
     background-color: ${color.white};
     color: ${color.black};
