@@ -1,6 +1,6 @@
 import React from 'react';
 import TransCard from '@/components/TransCard';
-import useCommentFlow from '@/page/Comment/CommentIndex/useCommentFlow';
+import useCommentFlow from './useCommentFlow';
 import { useMajor } from '@/utils/index';
 
 function CardsList() {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Main } from './style';
-import useInitData from '@/page/Comment/useInitData';
+import useInitData from './useInitData';
 import { CardsContainer, LoadingContainer } from '@/theme/global';
 
 import Icon from '@/components/icon';
