@@ -4,3 +4,4 @@ export const SET_POST_FORM = 'SET_POST_FORM';
 export const RESET_POST_FORM = 'RESET_POST_FORM';
 export const SET_POST_ON_NEXT = 'SET_POST_ON_NEXT';
 export const SET_POST_ON_BEFORE = 'SET_POST_ON_BEFORE';
+export const OVERWRITE_POST = 'OVERWRITE_POST';

@@ -123,6 +123,10 @@ class App extends Component {
                                         <Login setToken={this.setToken} />
                                     )}
                                 />
+                                <Route
+                                    path="/admin/post"
+                                    render={(props) => <Post isAdmin={true} />}
+                                />
                             </NavLayout>
                         </Switch>
                     </ThemeProvider>

@@ -18,14 +18,17 @@ function useSubmit(type, formData) {
         const params = {};
         for (let key in formData) {
             const item = formData[key];
-            if (typeof item === 'string') continue;
+            if (typeof item !== 'object') {
+                params[key] = item;
+                continue;
+            }
             if (item.keyName === 'year') {
                 params[item.keyName] = item.value.toString();
                 continue;
             }
-
             params[item.keyName] = item.value;
         }
+        console.log(params);
         dispatch(postMajorData(params));
     }, [formData]);
 

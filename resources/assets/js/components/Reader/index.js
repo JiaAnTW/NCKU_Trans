@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Toggle from 'react-toggle';
-import 'react-toggle/style.css'; // for ES6 modules
 import { ReaderLayout, ReaderContent, ReaderText } from './style';
 import ChangeBtn from './ChangeBtn';
 import TitleBar from './TitleBar';
 import DetailList from './DetailList';
 import Confirm from './Confirm';
 import Delete from './Delete';
+import EditBtn from './EditBtn';
 import { useModalContext } from '@/utils';
 
 function Reader({ isAdmin }) {
@@ -26,6 +25,7 @@ function Reader({ isAdmin }) {
                 <DetailList value={tags} />
                 <ReaderText>{content}</ReaderText>
                 {isAdmin && <Delete id={id} />}
+                <EditBtn />
             </ReaderContent>
             <ChangeBtn direction="right" onClick={onNext} />
         </ReaderLayout>

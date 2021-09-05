@@ -5,6 +5,7 @@ import {
     SET_POST_ON_NEXT,
     SET_POST_ON_BEFORE,
     RESET_POST_FORM,
+    OVERWRITE_POST,
 } from '../../action/post';
 import initState from './initState';
 
@@ -38,6 +39,7 @@ const postReducer = (state = initState, action) => {
                 options: in_options,
             };
 
+            stateNext.form.comment.id = -1;
             stateNext.form.comment.out_maj = out_maj;
             stateNext.form.comment.in_maj = in_maj;
 
@@ -80,6 +82,26 @@ const postReducer = (state = initState, action) => {
         }
         case RESET_POST_FORM: {
             return initState;
+        }
+        case OVERWRITE_POST: {
+            const dataNext = action.payload;
+            const stateNext = state;
+            const commentForm = stateNext.form.comment;
+
+            for (let props in dataNext) {
+                if (!commentForm[props]) {
+                    commentForm[props] = dataNext[props];
+                } else if (commentForm[props].value !== undefined) {
+                    commentForm[props].value = dataNext[props];
+                } else {
+                    commentForm[props] = dataNext[props];
+                }
+            }
+
+            stateNext.form.comment = commentForm;
+            stateNext.step = 2;
+
+            return stateNext;
         }
         default:
             return state;
