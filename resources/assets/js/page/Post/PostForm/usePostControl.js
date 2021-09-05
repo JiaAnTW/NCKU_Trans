@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router';
 
 import { postMajorData } from '@/model/middleware/post';
 import { useModalOpen, useModalContext } from '@/utils/index';
@@ -10,7 +11,9 @@ import useSubmit from './useSubmit';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
-    const formData = useSelector((state) => state.post.form[editType]);
+    const formData = useSelector(
+        (state) => state.post.form[editType === 'major' ? 'comment' : editType]
+    );
     useSubmit(editType, formData);
 
     // ---------------------
@@ -20,10 +23,18 @@ function usePostControl(editType, timeout) {
         setTimeout(() => dispatch({ type: SET_POST_ON_NEXT }), timeout);
     }, [dispatch]);
 
+    const history = useHistory();
+    const location = useLocation();
+
     const onBefore = useCallback(() => {
+        console.log(location.pathname.substr(0, 6));
+        if (location.pathname.substr(0, 6) === '/admin') {
+            history.push(`/admin/${editType}`);
+            return;
+        }
         dispatch({ type: SET_POST_ON_BEFORE });
         setTimeout(() => dispatch({ type: SET_POST_ON_BEFORE }), timeout);
-    }, [dispatch]);
+    }, [location, history, dispatch]);
 
     // ---------------------
     // -------預覽-------
