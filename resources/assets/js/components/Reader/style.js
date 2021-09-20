@@ -30,7 +30,7 @@ export const ReaderText = styled.div`
     line-height: 2.8rem;
     letter-spacing: 2.5px;
     overflow-y: auto;
-    line-break: anywhere;
+    line-break: auto;
     text-align: justify;
     white-space: pre-line;
     font-size: 17px;

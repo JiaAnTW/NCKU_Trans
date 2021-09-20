@@ -11,7 +11,6 @@ import GlobalStyle from './theme/global';
 
 import { Provider } from 'react-redux';
 import { store } from './model/store.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { materialTheme } from './theme/global';

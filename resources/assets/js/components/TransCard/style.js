@@ -19,6 +19,9 @@ export const Card = styled.div`
 
 export const CardTitle = styled.h4`
     font-size: 1.8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
 `;
 
 export const CardSubTitle = styled.div`

@@ -89,6 +89,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans TC', 'Microsoft JhengHei';
     color: ${color.darkBlack};
     font-size: 15px;
+    line-height: 1.42857143;
   }
 
   #root{
