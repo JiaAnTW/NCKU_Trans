@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
+import { colSelector } from '@/model/selector/college';
 
 function useCollege() {
-    const collegeData = useSelector((state) => state.college);
+    const collegeData = useSelector(colSelector);
     return collegeData;
 }
 

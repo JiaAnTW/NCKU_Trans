@@ -7,6 +7,7 @@ import NavLayout from '@/components/NavLayout';
 import Major from './page/Major';
 import Post from './page/Post/index';
 import Login from './page/Login';
+import Department from './page/Department';
 import GlobalStyle from './theme/global';
 
 import { Provider } from 'react-redux';
@@ -125,6 +126,10 @@ class App extends Component {
                                 <Route
                                     path="/admin/post"
                                     render={(props) => <Post isAdmin={true} />}
+                                />
+                                <Route
+                                    path="/admin/department"
+                                    render={(props) => <Department isAdmin={true} />}
                                 />
                             </NavLayout>
                         </Switch>

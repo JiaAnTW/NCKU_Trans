@@ -33,7 +33,7 @@ class DepartmentCollege extends Controller
         $college= $data['college'];
         $trans_pass=null;
         DB::insert("INSERT INTO department VALUES('$id','$name', '$college')") or die('MySQL query error');
-        return "succuss";
+        return array('status' => "success");
         
     }
 
@@ -44,7 +44,7 @@ class DepartmentCollege extends Controller
         $name= $data['name'];
         $english= $data['english'];
         DB::insert("INSERT INTO college VALUES('$id','$name', '$english')") or die('MySQL query error');
-        return "succuss";
+        return array('status' => "success");
     }
 
     //儲存資料
@@ -72,9 +72,8 @@ class DepartmentCollege extends Controller
         $id=(int)$data["id"];
         $new_id=(int)$data["id"];
         $name= $data['name'];
-        $english= $data['english'];
-        DB::table('college')->where('id',$id)->update(array('id'=>$new_id,'name' => $name,'english'=>$english))or die('MySQL query error');
-        return "succuss";
+        DB::table('college')->where('id',$id)->update(array('id'=>$new_id,'name' => $name))or die('MySQL query error');
+        return array('status' => "success");
     }
 
     public function updateDepartment(Request $request, $id)
@@ -85,7 +84,7 @@ class DepartmentCollege extends Controller
         $name= $data['name'];
         $college= $data['college'];
         DB::table('department')->where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college))or die('MySQL query error');
-        return "succuss";
+        return array('status' => "success");
     }
 
 
@@ -93,12 +92,12 @@ class DepartmentCollege extends Controller
     public function destroyCollege($id)
     {
         DB::table('college')->where('id',$id)->delete();
-        return "succuss";
+        return array('status' => "success");
     }
     public function destroyDepartment($id)
     {
         DB::table('department')->where('id',$id)->delete();
-        return "succuss";
+        return array('status' => "success");
     }
 }
 

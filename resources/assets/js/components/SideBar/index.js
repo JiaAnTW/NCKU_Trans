@@ -92,12 +92,13 @@ export default function SideBar({ open, onClose, onOpen }) {
             }}
         >
             <DrawerContent>
-                <List>
+                <List component="nav">
                     {arr.map((item, index) => (
                         <ListItem
                             button
                             key={item.text}
                             className={classes.listItem}
+                            component="a"
                             onClick={() => handleClick(item.url)}
                         >
                             <ListItemIcon
