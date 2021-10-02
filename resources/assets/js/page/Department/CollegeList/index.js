@@ -6,13 +6,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { useCollege } from '@/utils/index';
 
 import colSelectedContext from '../context';
+import { ListYellow } from './style';
 
 function CollegeList() {
     const collegeData = useCollege();
     const { colSelected, setColSelected } = useContext(colSelectedContext);
 
     return (
-        <List component="nav" aria-label="secondary mailbox folder">
+        <ListYellow component="nav" aria-label="secondary mailbox folder">
             {collegeData.map((item) => (
                 <ListItem
                     button
@@ -32,7 +33,7 @@ function CollegeList() {
             >
                 <ListItemText primary="+ 新增" />
             </ListItem>
-        </List>
+        </ListYellow>
     );
 }
 

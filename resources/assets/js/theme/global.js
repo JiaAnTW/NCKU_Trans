@@ -38,6 +38,7 @@ export const Button = styled.button`
     height: 40px;
 
     :hover {
+        cursor: pointer;
         background-color: ${(props) =>
             props.light ? color.lightGray : color.darkYellow};
     }

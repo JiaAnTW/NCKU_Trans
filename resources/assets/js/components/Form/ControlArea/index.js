@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { ControlAreaContainer, ControlButton } from './style';
 
-function ControlArea({ onNext, onBefore, nextText, beforeText }) {
+function ControlArea({ onNext, onBefore, nextText, beforeText, enableCancel }) {
     const step = useSelector((state) => state.post.step);
 
     return (
         <ControlAreaContainer>
-            {step >= 2 && (
+            {(step >= 2 || enableCancel) && (
                 <ControlButton
                     light
                     style={{ marginRight: '20px' }}

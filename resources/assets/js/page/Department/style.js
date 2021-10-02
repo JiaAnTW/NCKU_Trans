@@ -6,6 +6,10 @@ export const DepartmentLayout = styled.main`
     height: 100%;
     display: flex;
     justify-content: center;
+    & * {
+        font-size: 14px;
+        font-family: 'Noto Sans TC', 'Microsoft JhengHei';
+    }
 `;
 
 export const EditWindow = styled.div`

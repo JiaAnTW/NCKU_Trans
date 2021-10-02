@@ -6,16 +6,23 @@ import { updateCollege } from '@/model/middleware/college';
 import EditList from '@/components/EditList';
 
 import colSelectedContext from '../../context';
+import { H4, EditCollegeLayout } from './style';
 
-export default function EditCollege({ college: { id, name } }) {
+export default function EditCollege() {
     const dispatch = useDispatch();
     // As we control display college with state which passed by props, stateNext should be sync here
     const { colSelected, setColSelected } = useContext(colSelectedContext);
 
     return (
-        <div>
+        <EditCollegeLayout>
+            <H4>目前選擇學院</H4>
             <EditList
-                displayName={name}
+                displayName={colSelected.name}
+                highlighted={
+                    colSelected.nameNext
+                        ? colSelected.nameNext !== colSelected.name
+                        : false
+                }
                 inputArr={[
                     {
                         id: '0',
@@ -28,7 +35,7 @@ export default function EditCollege({ college: { id, name } }) {
                                 type: EDIT_COLLEGE,
                                 payload: {
                                     value: {
-                                        id: id,
+                                        id: colSelected.id,
                                         name: e.target.value,
                                     },
                                 },
@@ -49,6 +56,6 @@ export default function EditCollege({ college: { id, name } }) {
                     });
                 }}
             />
-        </div>
+        </EditCollegeLayout>
     );
 }
