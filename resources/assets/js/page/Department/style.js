@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { color, Button } from '@/theme/global';
 
 export const DepartmentLayout = styled.main`
     width: 100%;

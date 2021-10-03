@@ -31,20 +31,43 @@ class DepartmentCollege extends Controller
         $id=1+DB::table('department')->where('id', DB::raw("(select max(`id`) from department)"))->value('id');
         $name= $data['name'];
         $college= $data['college'];
-        $trans_pass=null;
-        DB::insert("INSERT INTO department VALUES('$id','$name', '$college')") or die('MySQL query error');
-        return array('status' => "success");
+
+        DB::table('department')->insert(array(
+            'id' => $id,
+            'name' => $name,
+            'college' => $college,
+        ))or die('MySQL query error');
+
+        //DB::insert("INSERT INTO college VALUES('$id','$name')") or die('MySQL query error');
+        return array(
+            'status' => "success",
+            'dataInfo' => array(
+                'id' => $id,
+                'name' => $name,
+                'college' => $college,
+            )
+        );
         
     }
 
     public function createCollege(Request $request)
     {
-        $data=$request->only(["name","english"]);
+        $data=$request->only(["name"]);
         $id=1+DB::table('college')->where('id', DB::raw("(select max(`id`) from college)"))->value('id');
         $name= $data['name'];
-        $english= $data['english'];
-        DB::insert("INSERT INTO college VALUES('$id','$name', '$english')") or die('MySQL query error');
-        return array('status' => "success");
+        DB::table('college')->insert(array(
+            'id' => $id,
+            'name' => $name
+        ))or die('MySQL query error');
+
+        //DB::insert("INSERT INTO college VALUES('$id','$name')") or die('MySQL query error');
+        return array(
+            'status' => "success",
+            'dataInfo' => array(
+                'id' => $id,
+                'name' => $name
+            )
+        );
     }
 
     //儲存資料

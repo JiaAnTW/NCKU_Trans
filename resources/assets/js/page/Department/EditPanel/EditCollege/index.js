@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { EDIT_COLLEGE } from '@/model/action/college';
-import { updateCollege } from '@/model/middleware/college';
+import { updateCollege, deleteCollege } from '@/model/middleware/college';
 import EditList from '@/components/EditList';
 
 import colSelectedContext from '../../context';
@@ -54,6 +54,10 @@ export default function EditCollege() {
                         id: colSelected.id,
                         name: colSelected.nameNext,
                     });
+                }}
+                onDelete={() => {
+                    dispatch(deleteCollege(colSelected.id));
+                    setColSelected(undefined);
                 }}
             />
         </EditCollegeLayout>

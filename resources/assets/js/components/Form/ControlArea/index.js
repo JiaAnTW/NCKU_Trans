@@ -10,7 +10,7 @@ function ControlArea({ onNext, onBefore, nextText, beforeText, enableCancel }) {
         <ControlAreaContainer>
             {(step >= 2 || enableCancel) && (
                 <ControlButton
-                    light
+                    theme="light"
                     style={{ marginRight: '20px' }}
                     onClick={onBefore}
                 >

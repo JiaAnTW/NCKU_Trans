@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { updateDepartment } from '@/model/middleware/department';
+import {
+    updateDepartment,
+    deleteDepartment,
+} from '@/model/middleware/department';
 import EditList from '@/components/EditList';
 
 import useEditDep from './useEditDep';
 import colSelectedContext from '../../context';
+import AddDepartment from './AddDepartment';
 import { DepartmentListLayout, Hr } from './style';
 
 export default function DepartmentList({ value }) {
@@ -15,10 +19,9 @@ export default function DepartmentList({ value }) {
 
     return (
         <DepartmentListLayout>
-            {departmentArr.map(({ id, name, nameNext, onChange }, index) => {
+            {departmentArr.map(({ id, name, nameNext, onChange }) => {
                 return (
                     <React.Fragment key={id}>
-                        {index !== 0 && <Hr />}
                         <EditList
                             displayName={name}
                             highlighted={nameNext ? nameNext !== name : false}
@@ -40,10 +43,13 @@ export default function DepartmentList({ value }) {
                                     )
                                 );
                             }}
+                            onDelete={() => dispatch(deleteDepartment(id))}
                         />
+                        <Hr />
                     </React.Fragment>
                 );
             })}
+            <AddDepartment />
         </DepartmentListLayout>
     );
 }

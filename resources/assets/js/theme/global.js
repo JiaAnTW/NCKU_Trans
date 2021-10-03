@@ -32,7 +32,10 @@ export const colorMap = {
 export const Button = styled.button`
     outline: none;
     border: none;
-    background-color: ${(props) => (props.light ? color.white : color.yellow)};
+    background-color: ${(props) =>
+        props.theme && props[props.theme]
+            ? props[props.theme].backgroundColor.default
+            : props['dark'].backgroundColor.default};
     color: ${color.darkBlack};
     border-radius: 5px;
     height: 40px;
@@ -40,13 +43,36 @@ export const Button = styled.button`
     :hover {
         cursor: pointer;
         background-color: ${(props) =>
-            props.light ? color.lightGray : color.darkYellow};
+            props.theme && props[props.theme]
+                ? props[props.theme].backgroundColor.hover
+                : props['dark'].backgroundColor.hover};
     }
 
     :focus {
         outline: none;
     }
 `;
+
+Button.defaultProps = {
+    dark: {
+        backgroundColor: {
+            default: color.yellow,
+            hover: color.darkYellow,
+        },
+    },
+    light: {
+        backgroundColor: {
+            default: color.white,
+            hover: color.lightGray,
+        },
+    },
+    alert: {
+        backgroundColor: {
+            default: color.red,
+            hover: color.lightGray,
+        },
+    },
+};
 
 export const CardsContainer = styled.section`
     display: flex;

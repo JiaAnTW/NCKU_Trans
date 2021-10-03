@@ -5,12 +5,14 @@ import Collapse from '@material-ui/core/Collapse';
 import CreateIcon from '@material-ui/icons/Create';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Input from '@/components/atom/Input';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 import {
     CollapseLayout,
     ConfirmLayout,
     ConfirmButton,
     ListItemTextDynamic,
+    DeleteButton,
 } from './style';
 
 export default function EditList({
@@ -18,6 +20,7 @@ export default function EditList({
     displayName,
     inputArr,
     onSubmit = () => {},
+    onDelete,
 }) {
     const [open, setOpen] = useState(false);
 
@@ -47,6 +50,11 @@ export default function EditList({
                         )
                     )}
                     <ConfirmLayout>
+                        {onDelete && (
+                            <DeleteButton onClick={onDelete}>
+                                <DeleteForeverIcon />
+                            </DeleteButton>
+                        )}
                         <ConfirmButton onClick={onSubmit}>
                             送出修改
                         </ConfirmButton>

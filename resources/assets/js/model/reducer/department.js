@@ -1,7 +1,9 @@
 import {
     INIT_DEPARTMENT,
     EDIT_DEPARTMENT,
+    CREATE_DEPARTMENT,
     REMOVE_EDIT_DEPARTMENT,
+    DELETE_DEPARTMENT,
 } from '../action/department';
 
 const initState = [];
@@ -18,13 +20,25 @@ const departmentReducer = (state = initState, action) => {
             stateNext[targetIndex].nameNext = name;
             return stateNext;
         }
-        case REMOVE_EDIT_DEPARTMENT:
+        case CREATE_DEPARTMENT: {
+            const { id, name, college } = action.payload.value;
+            return [...state, { id, name, college }];
+        }
+        case REMOVE_EDIT_DEPARTMENT: {
             const { id } = action.payload.value;
             const targetIndex = state.findIndex((element) => element.id === id);
             const stateNext = [...state];
             stateNext[targetIndex].name = stateNext[targetIndex].nameNext;
             stateNext[targetIndex].nameNext = undefined;
             return stateNext;
+        }
+        case DELETE_DEPARTMENT: {
+            const { id } = action.payload.value;
+            const targetIndex = state.findIndex((element) => element.id === id);
+            const stateNext = [...state];
+            stateNext.splice(targetIndex, 1);
+            return stateNext;
+        }
         default:
             return state;
     }
