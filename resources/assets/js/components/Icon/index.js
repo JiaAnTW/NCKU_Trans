@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/icon.css';
+import './icon.css';
 
 class icon extends Component {
     constructor(props) {

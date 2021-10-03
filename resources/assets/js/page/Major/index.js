@@ -4,7 +4,7 @@ import { Main } from './style';
 import useInitData from './useInitData';
 import { CardsContainer, LoadingContainer } from '@/theme/global';
 
-import Icon from '@/components/icon';
+import Icon from '@/components/Icon/index.js';
 import CardList from './CardList';
 import ReaderModal from '@/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';

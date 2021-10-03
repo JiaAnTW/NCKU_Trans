@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { LoadingContainer } from '@/theme/global';
-import Icon from '@/components/icon';
+import Icon from '@/components/Icon/index.js';
 
 import ColSelectedContext from './context';
 import { DepartmentLayout, EditWindow } from './style';

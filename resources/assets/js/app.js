@@ -1,6 +1,6 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 import NavLayout from '@/components/NavLayout';
@@ -37,72 +37,6 @@ class App extends Component {
         });
     }
 
-    oldRouter() {
-        return (
-            <>
-                {' '}
-                <Route exact path="/" component={Home} />
-                <Layout
-                    onChange={(fliter) => {
-                        this.setState({ fliter: fliter });
-                    }}
-                >
-                    <Route
-                        path="/comment"
-                        render={(props) => <Comment {...props} />}
-                    />
-                    <Route path="/post" component={PostNew} />
-                    <Route
-                        path="/QA/:id"
-                        render={(props) => (
-                            <QANew {...props} fliter={this.state.fliter} />
-                        )}
-                    />
-                    <Route
-                        path="/admin/comment"
-                        render={(props) => (
-                            <Comment {...props} isAdmin={true} />
-                        )}
-                    />
-                    <Route path="/old/post" component={Post} />
-
-                    <Route
-                        path="/old/QA/:id"
-                        render={(props) => (
-                            <QA {...props} fliter={this.state.fliter} />
-                        )}
-                    />
-                    <Route path="/home" component={Home} />
-                    <Route path="/test" component={TestPage} />
-                    <Route
-                        path="/admin/login"
-                        render={(props) => (
-                            <Admin {...props} setToken={this.setToken} />
-                        )}
-                    />
-                    <Route
-                        path="/admin/QA"
-                        render={(props) => (
-                            <EditQA {...props} token={this.state.token} />
-                        )}
-                    />
-                    <Route
-                        path="/admin/major"
-                        render={(props) => (
-                            <EditMajor {...props} token={this.state.token} />
-                        )}
-                    />
-                    <Route
-                        path="/admin/standard"
-                        render={(props) => (
-                            <EditStandard {...props} token={this.state.token} />
-                        )}
-                    />
-                </Layout>
-            </>
-        );
-    }
-
     render() {
         return (
             <HashRouter>
@@ -129,7 +63,9 @@ class App extends Component {
                                 />
                                 <Route
                                     path="/admin/department"
-                                    render={(props) => <Department isAdmin={true} />}
+                                    render={(props) => (
+                                        <Department isAdmin={true} />
+                                    )}
                                 />
                             </NavLayout>
                         </Switch>
