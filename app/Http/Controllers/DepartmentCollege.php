@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\College;
+use App\Comments;
 use App\Department;
 use Illuminate\Support\Facades\DB;
 
@@ -70,24 +71,6 @@ class DepartmentCollege extends Controller
         );
     }
 
-    //儲存資料
-    public function store(Request $request)
-    {
-        //
-    }
-
-    //顯示一筆資料
-    public function show($id)
-    {
-        //
-    }
-
-    //編輯一筆資料
-    public function edit($id)
-    {
-        //
-    }
-
     //更新一筆資料
     public function updateCollege(Request $request, $id)
     {
@@ -95,7 +78,11 @@ class DepartmentCollege extends Controller
         $id=(int)$data["id"];
         $new_id=(int)$data["id"];
         $name= $data['name'];
+        $name_old = College::select('name') -> where('id', $id) -> value('name'); 
         College::where('id',$id)->update(array('id'=>$new_id,'name' => $name))or die('MySQL query error');
+        Department::where('college', $name_old) -> update(array('college'=> $name));
+        Comments::where('out_maj', $name_old) -> update(array('out_maj'=> $name));
+        Comments::where('department', $name_old) -> update(array('department'=> $name));
         return array('status' => "success");
     }
 
@@ -106,7 +93,10 @@ class DepartmentCollege extends Controller
         $new_id=(int)$data["id"];
         $name= $data['name'];
         $college= $data['college'];
-        Department::where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college))or die('MySQL query error');
+        $name_old = Department::select('name') -> where('id', $id) -> value('name'); 
+        Department::where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college)) or die('MySQL query error');
+        Comments::where('in_maj', $name_old) -> update(array('in_maj'=> $name, 'college'=>$college));
+        Comments::where('out_maj', $name_old) -> update(array('out_maj'=> $name));
         return array('status' => "success");
     }
 
