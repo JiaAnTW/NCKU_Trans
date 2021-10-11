@@ -28,11 +28,11 @@ class DepartmentCollege extends Controller
     public function createDepartment(Request $request)
     {
         $data=$request->only(["name","college"]);
-        $id=1+DB::table('department')->where('id', DB::raw("(select max(`id`) from department)"))->value('id');
+        $id=1+Department::where('id', DB::raw("(select max(`id`) from department)"))->value('id');
         $name= $data['name'];
         $college= $data['college'];
 
-        DB::table('department')->insert(array(
+        Department::insert(array(
             'id' => $id,
             'name' => $name,
             'college' => $college,
@@ -53,9 +53,9 @@ class DepartmentCollege extends Controller
     public function createCollege(Request $request)
     {
         $data=$request->only(["name"]);
-        $id=1+DB::table('college')->where('id', DB::raw("(select max(`id`) from college)"))->value('id');
+        $id=1+College::where('id', DB::raw("(select max(`id`) from college)"))->value('id');
         $name= $data['name'];
-        DB::table('college')->insert(array(
+        College::insert(array(
             'id' => $id,
             'name' => $name
         ))or die('MySQL query error');
@@ -95,7 +95,7 @@ class DepartmentCollege extends Controller
         $id=(int)$data["id"];
         $new_id=(int)$data["id"];
         $name= $data['name'];
-        DB::table('college')->where('id',$id)->update(array('id'=>$new_id,'name' => $name))or die('MySQL query error');
+        College::where('id',$id)->update(array('id'=>$new_id,'name' => $name))or die('MySQL query error');
         return array('status' => "success");
     }
 
@@ -106,7 +106,7 @@ class DepartmentCollege extends Controller
         $new_id=(int)$data["id"];
         $name= $data['name'];
         $college= $data['college'];
-        DB::table('department')->where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college))or die('MySQL query error');
+        Department::where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college))or die('MySQL query error');
         return array('status' => "success");
     }
 
@@ -114,12 +114,12 @@ class DepartmentCollege extends Controller
     //刪除一筆資料
     public function destroyCollege($id)
     {
-        DB::table('college')->where('id',$id)->delete();
+        College::where('id',$id)->delete();
         return array('status' => "success");
     }
     public function destroyDepartment($id)
     {
-        DB::table('department')->where('id',$id)->delete();
+        Department::where('id',$id)->delete();
         return array('status' => "success");
     }
 }
