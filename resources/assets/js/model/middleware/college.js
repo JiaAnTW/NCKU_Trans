@@ -6,6 +6,8 @@ import {
     REMOVE_EDIT_COLLEGE,
     DELETE_COLLEGE,
 } from '../action/college';
+
+import { EDIT_DEPARTMENT_COLLEGE } from '../action/department';
 import { INIT_POST_OPTION_COLLEGE } from '../action/post';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 
@@ -58,7 +60,7 @@ export const createCollege = ({ name }, callback) => {
     };
 };
 
-export const updateCollege = (id, name) => {
+export const updateCollege = (id, name, nameOld) => {
     const body = { id, name };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
@@ -75,6 +77,12 @@ export const updateCollege = (id, name) => {
                 dispatch({
                     type: REMOVE_EDIT_COLLEGE,
                     payload: { value: { id } },
+                });
+                dispatch({
+                    type: EDIT_DEPARTMENT_COLLEGE,
+                    payload: {
+                        value: { collegeNext: name, collegeOld: nameOld },
+                    },
                 });
                 dispatch({
                     type: FINISH_REQUEST,

@@ -50,7 +50,11 @@ export default function EditCollege() {
                 onSubmit={() => {
                     if (!colSelected.nameNext) return;
                     dispatch(
-                        updateCollege(colSelected.id, colSelected.nameNext)
+                        updateCollege(
+                            colSelected.id,
+                            colSelected.nameNext,
+                            colSelected.name
+                        )
                     );
                     setColSelected({
                         id: colSelected.id,

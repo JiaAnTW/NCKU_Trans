@@ -1,6 +1,7 @@
 import {
     INIT_DEPARTMENT,
     EDIT_DEPARTMENT,
+    EDIT_DEPARTMENT_COLLEGE,
     CREATE_DEPARTMENT,
     REMOVE_EDIT_DEPARTMENT,
     DELETE_DEPARTMENT,
@@ -18,6 +19,15 @@ const departmentReducer = (state = initState, action) => {
             const targetIndex = state.findIndex((element) => element.id === id);
             const stateNext = [...state];
             stateNext[targetIndex].nameNext = name;
+            return stateNext;
+        }
+        case EDIT_DEPARTMENT_COLLEGE: {
+            const { collegeNext, collegeOld } = action.payload.value;
+            const stateNext = state.map((item) => {
+                if (item.college === collegeOld)
+                    return { ...item, college: collegeNext };
+                return item;
+            });
             return stateNext;
         }
         case CREATE_DEPARTMENT: {
