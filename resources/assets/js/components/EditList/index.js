@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import CreateIcon from '@material-ui/icons/Create';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Input from '@/components/atom/Input';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
+import DeleteListItem from './DeleteListItem';
 import {
     CollapseLayout,
     ConfirmLayout,
     ConfirmButton,
     ListItemTextDynamic,
-    DeleteButton,
 } from './style';
 
 export default function EditList({
@@ -51,9 +49,10 @@ export default function EditList({
                     )}
                     <ConfirmLayout>
                         {onDelete && (
-                            <DeleteButton onClick={onDelete}>
-                                <DeleteForeverIcon />
-                            </DeleteButton>
+                            <DeleteListItem
+                                targetName={displayName}
+                                onDelete={onDelete}
+                            />
                         )}
                         <ConfirmButton onClick={onSubmit}>
                             送出修改
