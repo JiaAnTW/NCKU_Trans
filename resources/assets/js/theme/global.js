@@ -84,6 +84,7 @@ export const CardsContainer = styled.section`
     height: 100%;
     max-height: 100%;
     border-radius: 10px;
+    overflow-y: auto;
 
     @media (max-width: 576px) {
         display: block;
@@ -132,20 +133,20 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-    textarea::-webkit-scrollbar {
+    textarea::-webkit-scrollbar, section::-webkit-scrollbar {
         width: 1px;
         height: 1px;
         background-color: transparent;
         border: none;
     }
 
-    textarea::-webkit-scrollbar-thumb {
+    textarea::-webkit-scrollbar-thumb, section::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: ${color.yellow};
         opacity: 0.5;
     }
 
-    textarea::-webkit-scrollbar-track {
+    textarea::-webkit-scrollbar-track, section::-webkit-scrollbar-track {
         background-color: transparent;
         border: 0px solid;
     }

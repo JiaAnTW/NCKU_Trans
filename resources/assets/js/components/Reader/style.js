@@ -12,7 +12,7 @@ export const ReaderLayout = styled.div`
     display: grid;
     grid-template-columns: 50px auto 50px;
     grid-template-rows: 100%;
-    @media (max-width: 576px) {
+    @media (max-width: 992px) {
         width: 360px;
         height: 500px;
         height: 75vh;
