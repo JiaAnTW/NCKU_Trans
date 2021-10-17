@@ -3,9 +3,8 @@ import { color } from '@/theme/global';
 
 export const ReaderLayout = styled.div`
     position: relative;
-    width: 450px;
-    height: ${(props) => (props.isAdmin ? '80vh' : '500px')};
-
+    width: 650px;
+    height: ${(props) => (props.isAdmin ? '80vh' : '800px')};
     padding: 5px;
     background-color: ${color.white};
     color: ${color.black};
@@ -16,6 +15,7 @@ export const ReaderLayout = styled.div`
         width: 360px;
         height: 500px;
         height: 75vh;
+        min-width: 80vw;
     }
 `;
 

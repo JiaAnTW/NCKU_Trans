@@ -81,7 +81,7 @@ export const CardsContainer = styled.section`
     align-items: flex-start;
     background-color: ${color.white};
     width: 100%;
-    height: 100%;
+    height: fit-content;
     max-height: 100%;
     border-radius: 10px;
     overflow-y: auto;
