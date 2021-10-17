@@ -15,6 +15,7 @@ import { store } from './model/store.js';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { materialTheme } from './theme/global';
+import RouteAdmin from './RouteAuth.js';
 
 class App extends Component {
     constructor(props) {
@@ -48,24 +49,25 @@ class App extends Component {
                                 <Route exact path="/" component={Major} />
                                 <Route path="/post" component={Post} />
                                 <Route
-                                    path="/admin/major"
-                                    render={(props) => <Major isAdmin={true} />}
-                                />
-                                <Route
                                     path="/admin/login"
                                     render={(props) => (
                                         <Login setToken={this.setToken} />
                                     )}
                                 />
-                                <Route
-                                    path="/admin/post"
-                                    render={(props) => <Post isAdmin={true} />}
+                                <RouteAdmin
+                                    path="/admin/major"
+                                    component={Major}
+                                    token={this.token}
                                 />
-                                <Route
+                                <RouteAdmin
+                                    path="/admin/post"
+                                    component={Post}
+                                    token={this.token}
+                                />
+                                <RouteAdmin
                                     path="/admin/department"
-                                    render={(props) => (
-                                        <Department isAdmin={true} />
-                                    )}
+                                    component={Department}
+                                    token={this.token}
                                 />
                             </NavLayout>
                         </Switch>
