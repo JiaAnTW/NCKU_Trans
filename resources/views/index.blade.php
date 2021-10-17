@@ -25,7 +25,7 @@
         </script>
     </head>
     <body>
-        <div id="root">成大轉系，成大輔修，成大雙主修，成大轉系成功率，成大轉系容易嗎，成大轉系心得，成大轉系平台，NCKUTRANS，成大轉系分享</div>
+        <div id="root"><div style="display: none">成大轉系，成大輔修，成大雙主修，成大轉系成功率，成大轉系容易嗎，成大轉系心得，成大轉系平台，NCKUTRANS，成大轉系分享</div></div>
         <script src="{{ mix('js/manifest.js') }}"></script>
         <script src="{{ mix('js/vendor.js') }}"></script>
         <script src="{{ mix('js/app.js') }}"></script>
