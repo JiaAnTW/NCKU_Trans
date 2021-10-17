@@ -9,6 +9,8 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import SchoolIcon from '@material-ui/icons/School';
 import PostAddIcon from '@material-ui/icons/PostAdd';
+import SettingsIcon from '@material-ui/icons/Settings';
+import HomeIcon from '@material-ui/icons/Home';
 
 import { DrawerContent, useStyle, ListItemText } from './style';
 
@@ -16,7 +18,7 @@ import { useMedia } from '@/utils/index';
 
 const drawerWidth = 110;
 
-const arr = [
+const routers = [
     {
         text: '轉輔雙主',
         icon: (
@@ -41,6 +43,31 @@ const arr = [
     },
 ];
 
+const adminRouters = [
+    {
+        text: '回到首頁',
+        icon: <HomeIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/',
+    },
+    {
+        text: '審查轉輔雙心得',
+        icon: (
+            <ImportContactsIcon style={{ width: '1.9rem', height: '1.9rem' }} />
+        ),
+        url: '/admin/major',
+    },
+    /*{
+        text: '其他學業',
+        icon: <SchoolIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/study',
+    },*/
+    {
+        text: '學院系設定',
+        icon: <SettingsIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/admin/department',
+    },
+];
+
 export default function SideBar({ open, onClose, onOpen }) {
     const classes = useStyle();
     const device = useMedia();
@@ -48,6 +75,9 @@ export default function SideBar({ open, onClose, onOpen }) {
     const location = useLocation();
 
     const history = useHistory();
+    const arr = location.pathname.startsWith('/admin/')
+        ? adminRouters
+        : routers;
 
     const handleClick = useCallback(
         (url) => {
