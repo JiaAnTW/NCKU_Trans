@@ -1,4 +1,4 @@
-export function fetchLoginInfo({ email, password }, successCb, failCb) {
+export function fetchLoginInfo({ email, password }, { successCb, failCb }) {
     const user = { email, password };
     fetch('/api/post/user/login', {
         method: 'POST',
