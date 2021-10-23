@@ -11,3 +11,8 @@ export const msgSelector = createSelector(
     announcementSelector,
     (state) => state.msg
 );
+
+export const msgNextSelector = createSelector(
+    announcementSelector,
+    (state) => state.msgNext
+);

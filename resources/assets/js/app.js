@@ -8,6 +8,8 @@ import Major from './page/Major';
 import Post from './page/Post/index';
 import Login from './page/Login';
 import Department from './page/Department';
+import Announcement from './page/Announcement';
+
 import GlobalStyle from './theme/global';
 
 import { Provider } from 'react-redux';
@@ -53,6 +55,11 @@ function App() {
                             <RouteAdmin
                                 path="/admin/department"
                                 component={Department}
+                                token={token}
+                            />
+                            <RouteAdmin
+                                path="/admin/announcement"
+                                component={Announcement}
                                 token={token}
                             />
                         </NavLayout>

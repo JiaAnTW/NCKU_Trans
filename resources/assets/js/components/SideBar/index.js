@@ -66,6 +66,11 @@ const adminRouters = [
         icon: <SettingsIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
         url: '/admin/department',
     },
+    {
+        text: '公告設定',
+        icon: <SettingsIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        url: '/admin/announcement',
+    },
 ];
 
 export default function SideBar({ open, onClose, onOpen }) {
