@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useSelector } from 'react-redux';
 import { colSelector } from '@/model/selector/college';
-import { useMapDepToMaj } from '@/utils/index';
+import { depUnderColSelector } from '@/model/selector/department';
 
 const date = new Date();
 
@@ -100,7 +100,7 @@ function useFilter() {
         }
     }, [department]);
 
-    const { collegeSelected, majData } = useMapDepToMaj();
+    const { collegeSelected, majData } = useSelector(depUnderColSelector);
     useEffect(() => {
         if (collegeSelected === 'none') {
             setIn_maj({

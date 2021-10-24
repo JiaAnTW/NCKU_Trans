@@ -1,5 +1,4 @@
 import useRequest from './redux/useRequest';
-import useMapDepToMaj from './redux/useMapDepToMaj';
 import useWindowWidth from './useWindowWidth';
 import useMedia from './useMedia';
 import useSetMajorFilter from './redux/useSetMajorFilter';
@@ -18,5 +17,4 @@ export {
     useSetMajorFilter,
     useCleanMajorFilter,
     useSetModalFlow,
-    useMapDepToMaj,
 };

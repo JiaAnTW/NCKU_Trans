@@ -7,14 +7,14 @@ export const majorDataSelector = createSelector(
     (state) => state.data
 );
 
-export const fliterSelector = createSelector(majorSelector, (state) => {
+export const filterSelector = createSelector(majorSelector, (state) => {
     const { in_maj, year, department, category } = state.filter;
     return { in_maj, year, department, category };
 });
 
 export const majorDisplaySelector = createSelector(
     majorDataSelector,
-    fliterSelector,
+    filterSelector,
     (majorData, { in_maj, year, department, category }) =>
         majorData.filter((item) => {
             return (
