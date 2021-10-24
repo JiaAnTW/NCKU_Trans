@@ -11,6 +11,7 @@ import SchoolIcon from '@material-ui/icons/School';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HomeIcon from '@material-ui/icons/Home';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 import { DrawerContent, useStyle, ListItemText } from './style';
 
@@ -68,7 +69,9 @@ const adminRouters = [
     },
     {
         text: '公告設定',
-        icon: <SettingsIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        icon: (
+            <ErrorOutlineIcon style={{ width: '1.9rem', height: '1.9rem' }} />
+        ),
         url: '/admin/announcement',
     },
 ];

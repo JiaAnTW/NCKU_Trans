@@ -7,6 +7,11 @@ export const isShowSelector = createSelector(
     (state) => state.isShow
 );
 
+export const isShowedSelector = createSelector(
+    announcementSelector,
+    (state) => state.isShowed
+);
+
 export const msgSelector = createSelector(
     announcementSelector,
     (state) => state.msg

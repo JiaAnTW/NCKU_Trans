@@ -12,6 +12,7 @@ export const YellowSnackbar = styled(Snackbar)`
 
     & .MuiSnackbarContent-message {
         overflow-wrap: anywhere;
+        text-align: justify;
         font-size: 15px;
         max-width: calc(100% - 80px);
     }

@@ -2,78 +2,76 @@ import React from 'react';
 import Toggle from 'react-toggle';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { LoadingContainer } from '@/theme/global';
-import Icon from '@/components/Icon/index.js';
-import {
-    isShowSelector,
-    msgSelector,
-    msgNextSelector,
-} from '@/model/selector/announcement';
+import { isShowSelector, msgNextSelector } from '@/model/selector/announcement';
 import { EDIT_ANNOOUNCE_MSG } from '@/model/action/announcement';
 import { updateAnnouncement } from '@/model/middleware/announcement';
+import usesetAnnIsShowed from '@/utils/redux/usesetAnnIsShowed';
+import { useRequest } from '@/utils/index';
 
-import useInitAdminAnn from './useInitAdminAnn';
+import { AnnounceLayout, ToggleLayout, TextArea, SubmitButton } from './style';
+
+const icons = {
+    checked: <div>開啟</div>,
+    unchecked: <div>關閉</div>,
+};
 
 export default function Announcement() {
     const dispatch = useDispatch();
-    const isFinishRequest = useInitAdminAnn();
+    const isFinishRequest = useRequest();
     const isShow = useSelector(isShowSelector);
-    const msg = useSelector(msgSelector);
     const msgNext = useSelector(msgNextSelector);
-
-    if (!isFinishRequest) {
-        return (
-            <LoadingContainer>
-                <Icon style={{ marginTop: '0' }} />
-            </LoadingContainer>
-        );
-    }
+    const setAnnIsShowed = usesetAnnIsShowed();
 
     return (
-        <div>
+        <AnnounceLayout>
+            <ToggleLayout>
+                彈出式公告
+                <Toggle
+                    checked={isShow}
+                    onChange={(e) => {
+                        dispatch(
+                            updateAnnouncement({
+                                id: 1,
+                                msg: msgNext,
+                                isShow: !isShow ? 'true' : 'false',
+                            })
+                        );
+                    }}
+                    icons={icons}
+                />
+            </ToggleLayout>
+            <TextArea
+                value={msgNext}
+                disabled={!isShow || !isFinishRequest}
+                onChange={(e) => {
+                    dispatch({
+                        type: EDIT_ANNOOUNCE_MSG,
+                        payload: { value: e.target.value },
+                    });
+                }}
+            />
             <div>
-                <div>
-                    是否顯示公告
-                    <Toggle
-                        defaultChecked={isShow}
-                        onChange={(e) => {
-                            dispatch(
-                                updateAnnouncement({
-                                    id: 1,
-                                    msg: msgNext,
-                                    isShow: !isShow,
-                                })
-                            );
-                        }}
-                    />
-                    <p>{msg === '' ? '目前沒有內容' : msg}</p>
-                </div>
-                <div>
-                    編輯公告內容
-                    <textarea
-                        value={msgNext}
-                        onChange={(e) => {
-                            dispatch({
-                                type: EDIT_ANNOOUNCE_MSG,
-                                payload: { value: e.target.value },
-                            });
-                        }}
-                    />
-                    <button
-                        onClick={() => {
-                            dispatch(
-                                updateAnnouncement({
-                                    id: 1,
-                                    msg: msgNext,
-                                    isShow: isShow ? 'true' : 'false',
-                                })
-                            );
-                        }}
-                    >
-                        送出
-                    </button>
-                </div>
+                <SubmitButton
+                    onClick={() => {
+                        dispatch(
+                            updateAnnouncement({
+                                id: 1,
+                                msg: msgNext,
+                                isShow: isShow ? 'true' : 'false',
+                            })
+                        );
+                    }}
+                >
+                    修改
+                </SubmitButton>
+                <SubmitButton
+                    onClick={() => {
+                        setAnnIsShowed(true);
+                    }}
+                >
+                    預覽畫面
+                </SubmitButton>
             </div>
-        </div>
+        </AnnounceLayout>
     );
 }

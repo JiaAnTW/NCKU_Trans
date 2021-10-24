@@ -1,36 +1,36 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { isShowSelector, msgSelector } from '@/model/selector/announcement';
-import useSetAnnIsShow from '@/utils/redux/useSetAnnIsShow';
+import { isShowedSelector, msgSelector } from '@/model/selector/announcement';
+import usesetAnnIsShowed from '@/utils/redux/usesetAnnIsShowed';
 
 import useInitNotification from './useInitNotification';
 import { YellowSnackbar, BtnClose } from './style';
 
 export default function Notification() {
     const [uuid, setUUID] = useState(Date.now());
-    const isShow = useSelector(isShowSelector);
+    const isShowed = useSelector(isShowedSelector);
     const msg = useSelector(msgSelector);
 
     useInitNotification();
-    const setAnnIsShow = useSetAnnIsShow();
+    const setAnnIsShowed = usesetAnnIsShowed();
 
     const handleClose = useCallback(
         (event, reason) => {
             if (reason === 'clickaway') {
                 return;
             }
-            setAnnIsShow(false);
+            setAnnIsShowed(false);
         },
-        [setAnnIsShow]
+        [setAnnIsShowed]
     );
 
     return (
         <>
-            {isShow && (
+            {isShowed && (
                 <YellowSnackbar
                     anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-                    open={isShow}
+                    open={isShowed}
                     onClose={handleClose}
                     message={msg}
                     key={uuid}

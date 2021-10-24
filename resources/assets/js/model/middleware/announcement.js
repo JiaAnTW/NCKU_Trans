@@ -11,7 +11,7 @@ export const fetchAnnouncement = (callback) => {
                     type: INIT_ANNOOUNCE,
                     payload: { data },
                 });
-                callback(data);
+                if (callback) callback(data);
             })
             .catch((e) => console.log('錯誤:', e));
     };
