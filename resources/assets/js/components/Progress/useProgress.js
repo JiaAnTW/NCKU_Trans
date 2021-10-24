@@ -19,7 +19,11 @@ function useProgress(value) {
             } else if (rate < value) {
                 if (tmTwo.current) clearTimeout(tmTwo.current);
                 tm.current = setTimeout(() => {
-                    setRate(rate + 1);
+                    if (rate + 1 > value) {
+                        setRate(value);
+                    } else {
+                        setRate(rate + 1);
+                    }
                 }, 20);
             }
         }
