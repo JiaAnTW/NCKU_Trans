@@ -1,7 +1,8 @@
-import { useMajor } from '@/utils/index';
+import { useSelector } from 'react-redux';
+import { majorDisplaySelector } from '@/model/selector/major';
 
 export function useAverage() {
-    const majorData = useMajor();
+    const majorData = useSelector(majorDisplaySelector);
     const passData = majorData.filter((data) => data.isPass !== 'false');
 
     if (passData.length === 0) return null;
@@ -10,7 +11,7 @@ export function useAverage() {
 }
 
 export function useMin() {
-    const majorData = useMajor();
+    const majorData = useSelector(majorDisplaySelector);
     const passData = majorData.filter((data) => data.isPass !== 'false');
 
     if (passData.length === 0) return null;
