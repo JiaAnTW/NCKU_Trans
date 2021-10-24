@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import isEmpty from 'lodash/isEmpty';
-import { useMapDepToMaj, useCollege } from '@/utils/index';
+import { useSelector } from 'react-redux';
+import { colSelector } from '@/model/selector/college';
+import { useMapDepToMaj } from '@/utils/index';
 
 const date = new Date();
 
@@ -72,7 +74,7 @@ function useFilter() {
     }, [year]);
 
     // department------------------------------
-    const collegeData = useCollege();
+    const collegeData = useSelector(colSelector);
 
     useEffect(() => {
         if (isEmpty(department)) {

@@ -1,8 +1,5 @@
 import useRequest from './redux/useRequest';
 import useMapDepToMaj from './redux/useMapDepToMaj';
-import useQA from './redux/useQA';
-import useDepartment from './redux/useDepartment';
-import useCollege from './redux/useCollege';
 import useWindowWidth from './useWindowWidth';
 import useMedia from './useMedia';
 import useSetMajorFilter from './redux/useSetMajorFilter';
@@ -14,9 +11,6 @@ import useSetModalFlow from './redux/components/modal/useSetModalFlow';
 
 export {
     useRequest,
-    useQA,
-    useDepartment,
-    useCollege,
     useModalOpen,
     useModalContext,
     useWindowWidth,

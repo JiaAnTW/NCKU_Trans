@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import List from '@material-ui/core/List';
+import { useSelector } from 'react-redux';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { useCollege } from '@/utils/index';
+import { colSelector } from '@/model/selector/college';
 
 import colSelectedContext from '../context';
 import { ListYellow } from './style';
 
 function CollegeList() {
-    const collegeData = useCollege();
+    const collegeData = useSelector(colSelector);
     const { colSelected, setColSelected } = useContext(colSelectedContext);
 
     return (
