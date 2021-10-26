@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import isEmpty from 'lodash/isEmpty';
-import { useMapDepToMaj, useCollege } from '@/utils/index';
+import { useSelector } from 'react-redux';
+import { colSelector } from '@/model/selector/college';
+import { depUnderColSelector } from '@/model/selector/department';
 
 const date = new Date();
 
@@ -23,6 +25,21 @@ const category = {
         {
             name: '雙主修',
             value: '雙主修',
+        },
+    ],
+};
+
+const isPass = {
+    type: 'isPass',
+    name: '是否通過',
+    options: [
+        {
+            name: '通過',
+            value: 'true',
+        },
+        {
+            name: '未通過',
+            value: 'false',
         },
     ],
 };
@@ -57,7 +74,7 @@ function useFilter() {
     }, [year]);
 
     // department------------------------------
-    const collegeData = useCollege();
+    const collegeData = useSelector(colSelector);
 
     useEffect(() => {
         if (isEmpty(department)) {
@@ -83,7 +100,7 @@ function useFilter() {
         }
     }, [department]);
 
-    const { collegeSelected, majData } = useMapDepToMaj();
+    const { collegeSelected, majData } = useSelector(depUnderColSelector);
     useEffect(() => {
         if (collegeSelected === 'none') {
             setIn_maj({

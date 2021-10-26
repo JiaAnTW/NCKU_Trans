@@ -6,6 +6,7 @@ import collegeReducer from './college.js';
 import modalReducer from './modal.js';
 import requestReducer from './request.js';
 import postReducer from './post/index.js';
+import announceReducer from './announcement.js';
 
 export default combineReducers({
     major: majorReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
     modal: modalReducer,
     request: requestReducer,
     post: postReducer,
+    announcement: announceReducer,
 });

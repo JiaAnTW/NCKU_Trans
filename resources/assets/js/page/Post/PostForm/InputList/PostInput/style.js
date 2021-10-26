@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { color } from '@/theme/global';
 
 export const InputLayout = styled.div`
     /*width: ${(props) => (props.width ? props.width * 50 : '50')}%;
@@ -11,7 +12,7 @@ export const InputLayout = styled.div`
         padding-right: 70px;
     }*/
 
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 
     @media (max-width: 870px) {
         /*padding-left: 20px;
@@ -21,4 +22,8 @@ export const InputLayout = styled.div`
             padding-right: 20px;
         }*/
     }
+`;
+
+export const RemarkSpan = styled.span`
+    color: ${color.red};
 `;

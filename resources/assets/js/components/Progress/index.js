@@ -9,8 +9,9 @@ import { ProgressLayout, ProgressValueText, TypeText } from './style';
 
 function Progress({ value, name, isLoading }) {
     const percent = useProgress(
-        value === null || isLoading ? 100 : Math.round(value)
+        value === null || isLoading ? 100 : Math.round(value * 100) / 100
     );
+
     return (
         <ProgressLayout>
             {isLoading && <CircularProgress />}

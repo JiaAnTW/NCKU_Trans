@@ -16,7 +16,7 @@ function transIntoModalData(majorDataItem, index) {
             },
             {
                 type: '申請結果',
-                value: '通過',
+                value: majorDataItem['isPass'],
             },
             {
                 type: '排名(上/下)',
@@ -26,6 +26,7 @@ function transIntoModalData(majorDataItem, index) {
         ],
         index: index,
         confirm: majorDataItem['confirm'],
+        rawData: majorDataItem,
     };
 }
 

@@ -16,6 +16,7 @@ const initState = {
         subtitle: '',
         tags: [],
         content: '',
+        rawData: undefined,
     },
     onBefore: undefined,
     onNext: undefined,
@@ -40,6 +41,7 @@ const modalReducer = (state = initState, action) => {
                 content,
                 index,
                 confirm,
+                rawData,
             } = action.payload.content;
             return {
                 ...state,
@@ -52,6 +54,7 @@ const modalReducer = (state = initState, action) => {
                     content,
                     index,
                     confirm,
+                    rawData,
                 },
             };
         }

@@ -5,5 +5,6 @@ export const EssayContainer = styled.section`
     flex-wrap: wrap;
     @media (max-width: 576px) {
         padding: 0 5px;
+        justify-content: center;
     }
 `;

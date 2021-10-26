@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoadingContainer } from '@/theme/global';
-import Icon from '@/components/icon';
+import Icon from '@/components/Icon/index.js';
 import StepArea from '@/components/Form/StepArea';
 import PreviewModal from '@/components/Modal/PreviewModal';
 

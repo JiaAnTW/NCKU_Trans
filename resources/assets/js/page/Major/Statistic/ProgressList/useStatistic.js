@@ -1,19 +1,21 @@
-import { useMajor } from '@/utils/index';
+import { useSelector } from 'react-redux';
+import { majorDisplaySelector } from '@/model/selector/major';
 
 export function useAverage() {
-    const majorData = useMajor();
-    if (majorData.length === 0) return null;
-    return (
-        majorData.reduce((init, current) => init + current.score, 0) /
-        majorData.length
-    );
+    const majorData = useSelector(majorDisplaySelector);
+    const passData = majorData.filter((data) => data.isPass !== 'false');
+
+    if (passData.length === 0) return null;
+    let size = passData.length;
+    return passData.reduce((init, current) => init + current.score, 0) / size;
 }
 
 export function useMin() {
-    const majorData = useMajor();
-    if (majorData.length === 0) return null;
-    return majorData.reduce(
-        (init, current) => (current.score < init ? current.score : init),
-        100
-    );
+    const majorData = useSelector(majorDisplaySelector);
+    const passData = majorData.filter((data) => data.isPass !== 'false');
+
+    if (passData.length === 0) return null;
+    return passData.reduce((init, current) => {
+        return current.score < init ? current.score : init;
+    }, 100);
 }

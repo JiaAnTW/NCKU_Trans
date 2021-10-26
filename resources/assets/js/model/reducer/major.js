@@ -7,13 +7,18 @@ const initState = {
         in_maj: 'none',
         department: 'none',
         category: 'none',
+        isPass: '',
     },
 };
 
 const majorReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_MAJOR: {
-            return { ...state, data: action.payload.data.reverse() };
+            const nextData = action.payload.data.reverse().map((item) => {
+                item.comment = item.comment.replace(/<br>/g, '\n');
+                return item;
+            });
+            return { ...state, data: nextData };
         }
         case SET_FILTER: {
             let filter = state.filter;
@@ -33,6 +38,7 @@ const majorReducer = (state = initState, action) => {
                     in_maj: 'none',
                     department: 'none',
                     category: state.filter.category,
+                    isPass: 'true',
                 },
             };
         }

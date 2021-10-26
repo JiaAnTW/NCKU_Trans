@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
             color: color.darkYellow,
         },
         '&.MuiInputLabel-shrink': {
-            fontSize: '1.6rem',
+            fontSize: '2.2rem',
         },
     },
     root: {

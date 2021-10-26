@@ -1,12 +1,13 @@
 import React, { useMemo, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
-import { FilterContainer, YellowFormControl } from './style';
+import { FilterContainer, ListItem } from './style';
 import { color } from '@/theme/global';
+
+const fontSize = '1.5rem';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,12 +17,18 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiFormLabel-root .Mui-focused': {
             color: color.yellow,
         },
+        '& .MuiSelect-root': {
+            fontSize: fontSize,
+            paddingTop: '14.5px',
+            paddingBottom: '6.5px',
+        },
     },
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
     },
     labelText: {
+        fontSize: fontSize,
         '&.Mui-focused': {
             color: color.darkYellow,
         },
@@ -49,9 +56,9 @@ function Filter({ type, options, onChange }) {
     const optionArr = useMemo(() => {
         if (!Array.isArray(options)) return [];
         return options.map(({ name, value }) => (
-            <MenuItem value={value} key={value}>
+            <ListItem value={value} key={value}>
                 {name}
-            </MenuItem>
+            </ListItem>
         ));
     }, [options]);
 
@@ -68,13 +75,13 @@ function Filter({ type, options, onChange }) {
                 className={classes.formControl}
                 classes={{ root: classes.root }}
             >
-                {age === '' && (
+                {age === '' && Array.isArray(options) && options.length > 0 && (
                     <InputLabel
                         disableAnimation
                         shrink={false}
                         className={classes.labelText}
                     >
-                        {`全部${type}`}
+                        {options[0].name}
                     </InputLabel>
                 )}
                 <Select
@@ -83,6 +90,7 @@ function Filter({ type, options, onChange }) {
                     open={open}
                     onClose={handleClose}
                     onOpen={handleOpen}
+                    classes={classes.selectText}
                     value={age}
                     onChange={handleChange}
                     disabled={optionArr.length === 0}
