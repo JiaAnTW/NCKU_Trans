@@ -33,7 +33,7 @@ const ThankYou = forwardRef((props, ref) => {
             <Subtitle>若一直沒看到你的心得，請聯絡我們</Subtitle>
             <BackButton
                 onClick={() => {
-                    history.push(type === 'comment' ? '/major' : '/study');
+                    history.push(type === 'comment' ? '/' : '/');
                 }}
             >
                 回到心得總覽頁面

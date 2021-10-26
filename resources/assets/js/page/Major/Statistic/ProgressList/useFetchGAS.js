@@ -29,6 +29,9 @@ const getStatisticData = (major, year) =>
             .then((data) => {
                 resolve(data.passRate);
                 //return infor.passRate;
+            })
+            .catch((err) => {
+                resolve(undefined);
             });
     });
 
@@ -43,7 +46,7 @@ function reducer(state, action) {
     }
 }
 
-function useFetchGAS(major, year) {
+function useFetchGAS(major, year, category) {
     const [passRate, setPassRate] = useState(undefined);
     const [request, requestDispatch] = useReducer(reducer, 0);
 
@@ -58,7 +61,8 @@ function useFetchGAS(major, year) {
     }, [mounted]);
 
     useEffect(() => {
-        if (mounted.current) {
+        if (category !== '轉系') setPassRate(undefined);
+        if (mounted.current && category === '轉系') {
             requestDispatch({ type: 'ADD' });
             getStatisticData(major, year).then((data) => {
                 if (mounted.current) {
@@ -67,7 +71,7 @@ function useFetchGAS(major, year) {
                 }
             });
         }
-    }, [major, year, mounted]);
+    }, [major, year, category, mounted]);
 
     return { passRate, request };
 }

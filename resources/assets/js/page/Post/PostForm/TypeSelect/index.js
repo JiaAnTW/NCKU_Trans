@@ -17,12 +17,12 @@ import {
 
 const typeList = [
     { type: 'comment', name: '轉/輔/雙主修', icon: ImportContactsIcon },
-    { type: 'qa', name: '其他學業分享', icon: SchoolIcon },
+    //{ type: 'qa', name: '其他學業分享', icon: SchoolIcon },
 ];
 
 const TypeSelect = forwardRef((props, ref) => {
     const type = useSelector((state) => state.post.type);
-    const { onBefore, onNext } = usePostControl('comment', 700);
+    const { onBefore, onNext } = usePostControl('major', 700);
 
     return (
         <TypeSelectLayout ref={ref}>

@@ -6,10 +6,6 @@ const ButtonDiv = styled.div`
     justify-content: center;
     align-items: center;
     visibility: ${(props) => (props.onClick ? '' : 'hidden')};
-
-    :hover {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
 `;
 
 const Triangle = styled.div`

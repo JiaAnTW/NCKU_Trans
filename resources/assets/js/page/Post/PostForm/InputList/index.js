@@ -13,7 +13,7 @@ import { StepLayout, Title } from '../style';
 const PostForm = forwardRef((props, ref) => {
     const type = useSelector((state) => state.post.type);
     const formInputArr = useSelector((state) => ({ ...state.post.form[type] }));
-    const { onPreview, onBefore } = usePostControl('comment', 700);
+    const { onPreview, onBefore } = usePostControl('major', 700);
 
     return (
         <StepLayout ref={ref}>

@@ -1,9 +1,11 @@
 /node_modules
 /public/hot
 /public/js
+/public/js/app.js
 /public/storage
 /storage/*.key
 /vendor
+/public/mix-manifest.json
 /.idea
 /.vagrant
 Homestead.json
@@ -13,3 +15,4 @@ yarn-error.log
 .env
 
 /resources/assets/js/calcLoc
+ngrok.exe

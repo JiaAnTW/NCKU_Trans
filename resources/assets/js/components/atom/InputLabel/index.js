@@ -4,7 +4,7 @@ import { color } from '@/theme/global';
 
 export default style(InputLabel)`
     &.MuiInputLabel-shrink {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
     }
 
     &.Mui-focused {
