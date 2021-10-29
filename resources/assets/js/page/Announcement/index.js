@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isShowSelector, msgNextSelector } from '@/model/selector/announcement';
 import { EDIT_ANNOOUNCE_MSG } from '@/model/action/announcement';
 import { updateAnnouncement } from '@/model/middleware/announcement';
-import usesetAnnIsShowed from '@/utils/redux/usesetAnnIsShowed';
+import useSetAnnIsShowed from '@/utils/redux/useSetAnnIsShowed';
 import { useRequest } from '@/utils/index';
 
 import { AnnounceLayout, ToggleLayout, TextArea, SubmitButton } from './style';
@@ -20,7 +20,7 @@ export default function Announcement() {
     const isFinishRequest = useRequest();
     const isShow = useSelector(isShowSelector);
     const msgNext = useSelector(msgNextSelector);
-    const setAnnIsShowed = usesetAnnIsShowed();
+    const setAnnIsShowed = useSetAnnIsShowed();
 
     return (
         <AnnounceLayout>

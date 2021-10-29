@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { SET_ANNOOUNCE_ISSHOWED } from '@/model/action/announcement';
 
-export default function usesetAnnIsShowed() {
+export default function useSetAnnIsShowed() {
     const dispatch = useDispatch();
 
     const setAnnIsShowed = useCallback(
