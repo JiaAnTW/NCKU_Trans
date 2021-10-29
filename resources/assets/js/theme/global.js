@@ -84,7 +84,6 @@ export const CardsContainer = styled.section`
     height: fit-content;
     max-height: 100%;
     border-radius: 10px;
-    overflow-y: auto;
 
     @media (max-width: 576px) {
         display: block;
