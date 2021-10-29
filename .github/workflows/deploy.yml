@@ -15,10 +15,11 @@ jobs:
         uses: peterkimzz/aws-ssm-send-command@master
         id: ssm
         with:
-					aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
-					aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
-					aws-region: us-east-1
-					instance-ids: ${{ secrets.INSTANCE_ID  }}
-					comment: Deploy the master branch
-					working-directory: /home/ubuntu/<YOUR PROJECT DIRECTORY>
-					command: /bin/sh ./deploy.sh
+          aws-region: us-east-1
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          instance-ids: ${{ secrets.INSTANCE_ID }}
+
+          working-directory: /home/ubuntu/NCKU_TRANS
+          comment: Deploy the master branch
+          command: /bin/sh ./deploy.sh
