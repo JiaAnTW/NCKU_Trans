@@ -19,7 +19,7 @@ if (!mix.inProduction()) {
 mix.react('resources/assets/js/app.js', 'public/js').sass(
     'resources/assets/sass/app.scss',
     'public/css'
-);
+).version();
 
 mix.extract();
 
