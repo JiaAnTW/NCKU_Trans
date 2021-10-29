@@ -1,0 +1,3 @@
+curl -H "Content-Type: application/json" -d '{"username": "自動化部屬通知", "content": "開始在伺服器端的打包作業"}' https://discord.com/api/webhooks/871290288793075732/0YDHEw9jE7mwYeVmhO2HcPx4racNicad2sZRz64QbTZ8hlrtoCbDbaH0SsGIK_JqXNw_
+ls
+curl -H "Content-Type: application/json" -d '{"username": "自動化部屬通知", "content": "打包成功"}' https://discord.com/api/webhooks/871290288793075732/0YDHEw9jE7mwYeVmhO2HcPx4racNicad2sZRz64QbTZ8hlrtoCbDbaH0SsGIK_JqXNw_
