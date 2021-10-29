@@ -22,6 +22,7 @@ export const TopicLayout = styled.div`
 `;
 
 export const H2 = styled.h2`
+    font-size: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
 `;

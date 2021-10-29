@@ -22,7 +22,7 @@ const typeList = [
 
 const TypeSelect = forwardRef((props, ref) => {
     const type = useSelector((state) => state.post.type);
-    const { onBefore, onNext } = usePostControl('comment', 700);
+    const { onBefore, onNext } = usePostControl('major', 700);
 
     return (
         <TypeSelectLayout ref={ref}>

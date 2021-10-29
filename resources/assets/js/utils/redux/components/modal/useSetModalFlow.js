@@ -5,7 +5,7 @@ import {
     SET_MODAL_ON_BEFORE,
     SET_MODAL_ON_NEXT,
     SET_MODAL_ON_CONFIRM,
-} from '../../../../model/action/modal';
+} from '@/model/action/modal';
 
 function useSetModalFlow() {
     const dispatch = useDispatch();

@@ -102,5 +102,6 @@ export default (function () {
                 },
             },
         },
+        confirm: 'false',
     };
 })();

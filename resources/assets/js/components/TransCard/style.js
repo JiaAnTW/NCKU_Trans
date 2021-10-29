@@ -10,15 +10,22 @@ export const Card = styled.div`
     color: ${color.black};
     margin: 5px;
     border-radius: 15px;
+    height: 180px;
+    width: 220px;
+
     @media (max-width: 576px) {
         width: 100%;
         margin: 0;
         border-radius: 0;
+        height: 145px;
     }
 `;
 
 export const CardTitle = styled.h4`
     font-size: 1.8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
 `;
 
 export const CardSubTitle = styled.div`

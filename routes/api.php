@@ -30,7 +30,7 @@ Route::get('get/check', 'HomeController@check');
 Route::get('get/department','DepartmentCollege@indexDepartment');
 Route::get('get/college','DepartmentCollege@indexCollege');
 
-Route::get('get/standard', 'StandardController@index');
+Route::get('get/announcement', 'AnnouncementController@index');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -57,6 +57,8 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     Route::put('post/department/{id}','DepartmentCollege@updateDepartment');
     Route::delete('post/college/{id}','DepartmentCollege@destroyCollege');
     Route::delete('post/department/{id}','DepartmentCollege@destroyDepartment');
+
+    Route::put('post/announcement/{id}', 'AnnouncementController@update');
 
 
     Route::get('get/users/list', function(){
