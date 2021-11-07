@@ -1,0 +1,8 @@
+{
+  "./resources/assets/**/*+(ts|tsx|js|jsx|test)": [
+    "eslint"
+  ],
+  "./resources/assets/**/*.+(ts|tsx|js|jsx|css|test|json)": [
+    "prettier --write"
+  ]
+}
