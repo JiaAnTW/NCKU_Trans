@@ -7,11 +7,8 @@ import { useModalOpen, useSetModalFlow } from '@/utils/index';
 
 function useSubmit(type, formData) {
     const dispatch = useDispatch();
-    const [
-        setModalOnBefore,
-        setModalOnNext,
-        setModalOnConfirm,
-    ] = useSetModalFlow();
+    const [setModalOnBefore, setModalOnNext, setModalOnConfirm] =
+        useSetModalFlow();
     const [isModalOpen] = useModalOpen();
     const history = useHistory();
 

@@ -19,13 +19,8 @@ import {
 import useLogin from './useLogin';
 
 function Login({ setToken }) {
-    const {
-        token,
-        loading,
-        accountRef,
-        passwordRef,
-        handleSubmit,
-    } = useLogin();
+    const { token, loading, accountRef, passwordRef, handleSubmit } =
+        useLogin();
 
     useEffect(() => {
         if (token) setToken(token);

@@ -9,9 +9,8 @@ import AdvanceAdmin from './AdvanceAdmin';
 import { useModalContext } from '@/utils';
 
 function Reader({ isAdmin }) {
-    const [
-        { id, type, title, subtitle, tags, content, confirm },
-    ] = useModalContext();
+    const [{ id, type, title, subtitle, tags, content, confirm }] =
+        useModalContext();
     const onBefore = useSelector((state) => state.modal.onBefore);
     const onNext = useSelector((state) => state.modal.onNext);
 
