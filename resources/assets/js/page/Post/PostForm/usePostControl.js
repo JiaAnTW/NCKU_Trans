@@ -2,11 +2,11 @@ import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 
-import { postMajorData } from '@/model/middleware/post';
-import { useModalOpen, useModalContext } from '@/utils/index';
-import transFormData from '@/utils/redux/components/modal/transFormData';
+import { postMajorData } from '~/model/middleware/post';
+import { useModalOpen, useModalContext } from '~/utils/index';
+import transFormData from '~/utils/redux/components/modal/transFormData';
 
-import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '@/model/action/post';
+import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 
 function usePostControl(editType, timeout) {

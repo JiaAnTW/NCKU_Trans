@@ -13,9 +13,9 @@ import {
     TagSpanList,
 } from './style';
 
-import { useModalOpen, useModalContext } from '@/utils/index';
-import { useWindowWidth } from '@/utils/index';
-import transIntoModalData from '@/utils/redux/components/modal/transIntoModalData';
+import { useModalOpen, useModalContext } from '~/utils/index';
+import { useWindowWidth } from '~/utils/index';
+import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 
 const contentMiddleware = (content, maxNumber) =>
     content.length < maxNumber

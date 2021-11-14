@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import List from '@material-ui/core/List';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 export const ListYellow = styled(List)`
     background-color: ${color.yellow};

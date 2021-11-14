@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-import NavLayout from '@/components/NavLayout';
+import NavLayout from '~/components/NavLayout';
 import Major from './page/Major';
 import Post from './page/Post/index';
 import Login from './page/Login';

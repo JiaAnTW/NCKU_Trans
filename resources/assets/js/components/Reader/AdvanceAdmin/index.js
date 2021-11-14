@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useModalOpen } from '@/utils';
+import { useModalOpen } from '~/utils';
 
-import { deleteMajor } from '@/model/middleware/major';
+import { deleteMajor } from '~/model/middleware/major';
 import EditBtn from './EditBtn.js';
 import { AdvanceAdminLayout, Text, BtnDark, BtnLight } from './style';
 

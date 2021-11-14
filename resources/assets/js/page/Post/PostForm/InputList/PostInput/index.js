@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { SET_POST_FORM } from '@/model/action/post';
+import { SET_POST_FORM } from '~/model/action/post';
 
 import { InputLayout, RemarkSpan } from './style';
-import Input from '@/components/atom/Input';
-import Select from '@/components/atom/Select';
-import TextArea from '@/components/atom/TextArea';
+import Input from '~/components/atom/Input';
+import Select from '~/components/atom/Select';
+import TextArea from '~/components/atom/TextArea';
 
 const mapTypeToElement = (type) => {
     switch (type) {

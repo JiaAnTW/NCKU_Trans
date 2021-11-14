@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { ModalStyle } from './style';
 import Reader from '../../Reader';
-import { useModalOpen } from '@/utils';
+import { useModalOpen } from '~/utils';
 
 function ReaderModal({ isAdmin }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();

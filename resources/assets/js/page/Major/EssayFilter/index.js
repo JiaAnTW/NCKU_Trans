@@ -2,11 +2,11 @@ import React from 'react';
 
 import map from 'lodash/map';
 
-import Filter from '@/components/Filter';
+import Filter from '~/components/Filter';
 
 import useFilter from './useFilter';
 import { EssayContainer } from './style';
-import { useSetMajorFilter } from '@/utils/index';
+import { useSetMajorFilter } from '~/utils/index';
 
 function EssayFilter() {
     const filterObjArr = useFilter();

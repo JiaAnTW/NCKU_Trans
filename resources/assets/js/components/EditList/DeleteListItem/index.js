@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
-import { useModalOpen } from '@/utils';
-import ConfirmModal from '@/components/Modal/ConfirmModal';
+import { useModalOpen } from '~/utils';
+import ConfirmModal from '~/components/Modal/ConfirmModal';
 
 import { DeleteButton, ConfirmLayout, TargetSpan } from './style';
 

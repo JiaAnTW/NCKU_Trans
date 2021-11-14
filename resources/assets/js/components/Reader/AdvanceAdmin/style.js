@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 
 export const AdvanceAdminLayout = styled.div`
     margin-top: 50px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 import IconButton from '@material-ui/core/IconButton';
 
 export const DeleteButton = styled(IconButton)`

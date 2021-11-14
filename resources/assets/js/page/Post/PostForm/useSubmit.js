@@ -2,8 +2,8 @@ import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 
-import { postMajorData } from '@/model/middleware/post';
-import { useModalOpen, useSetModalFlow } from '@/utils/index';
+import { postMajorData } from '~/model/middleware/post';
+import { useModalOpen, useSetModalFlow } from '~/utils/index';
 
 function useSubmit(type, formData) {
     const dispatch = useDispatch();

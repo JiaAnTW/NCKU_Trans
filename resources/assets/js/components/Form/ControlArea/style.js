@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '@/theme/global';
+import { Button } from '~/theme/global';
 
 export const ControlAreaContainer = styled.div`
     height: 75px;

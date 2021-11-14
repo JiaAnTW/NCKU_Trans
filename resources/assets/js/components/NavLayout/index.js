@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import SideBar from '@/components/SideBar';
+import SideBar from '~/components/SideBar';
 import Notification from './Notification';
 import Title from './Title';
 import { H1, Header, Container, MenuIconStyle } from './style';

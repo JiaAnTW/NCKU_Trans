@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Snackbar from '@material-ui/core/Snackbar';
 import WarningIcon from '@material-ui/icons/Warning';
 
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 
 export const YellowSnackbar = styled(Snackbar)`
     & .MuiSnackbarContent-root {

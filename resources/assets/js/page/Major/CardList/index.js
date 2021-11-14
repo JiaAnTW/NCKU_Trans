@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import TransCard from '@/components/TransCard';
+import TransCard from '~/components/TransCard';
 import useCommentFlow from './useCommentFlow';
-import { majorDisplaySelector } from '@/model/selector/major';
+import { majorDisplaySelector } from '~/model/selector/major';
 
 function CardsList() {
     const majorData = useSelector(majorDisplaySelector);

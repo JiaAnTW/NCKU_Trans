@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import TypeIcon from '@/components/atom/TypeIcon';
-import { color } from '@/theme/global';
+import TypeIcon from '~/components/atom/TypeIcon';
+import { color } from '~/theme/global';
 
 export const TitleBarLayout = styled.div`
     display: flex;

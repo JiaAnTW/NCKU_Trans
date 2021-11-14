@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { majorDisplaySelector } from '@/model/selector/major';
+import { majorDisplaySelector } from '~/model/selector/major';
 
 export function useAverage() {
     const majorData = useSelector(majorDisplaySelector);

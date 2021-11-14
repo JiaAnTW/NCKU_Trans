@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 

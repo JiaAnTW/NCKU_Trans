@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { EDIT_COLLEGE } from '@/model/action/college';
-import { updateCollege, deleteCollege } from '@/model/middleware/college';
+import { EDIT_COLLEGE } from '~/model/action/college';
+import { updateCollege, deleteCollege } from '~/model/middleware/college';
 
 export default function useEditCollege(colSelected, setColSelected) {
     const dispatch = useDispatch();

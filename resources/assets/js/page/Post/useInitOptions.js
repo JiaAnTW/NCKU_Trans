@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDepartment } from '../../model/middleware/department';
 import { fetchCollege } from '../../model/middleware/college';
 import { useRequest } from '../../utils/index';
-import { depSelector } from '@/model/selector/department';
-import { colSelector } from '@/model/selector/college';
+import { depSelector } from '~/model/selector/department';
+import { colSelector } from '~/model/selector/college';
 
 function useInitOptions() {
     const dispatch = useDispatch();
