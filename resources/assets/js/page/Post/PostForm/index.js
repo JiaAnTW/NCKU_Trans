@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Form from '@/components/Form/index';
+import Form from '~/components/Form/index';
 
 import TypeSelect from './TypeSelect';
 import InputList from './InputList';

@@ -1,6 +1,6 @@
 import React from 'react';
-import InputLabel from '@/components/atom/InputLabel';
-import Option from '@/components/atom/Option/index';
+import InputLabel from '~/components/atom/InputLabel';
+import Option from '~/components/atom/Option/index';
 import SelectElement from '@material-ui/core/Select';
 import FormControl, { useStyles } from './style';
 

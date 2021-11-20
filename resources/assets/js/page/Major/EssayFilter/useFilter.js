@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useSelector } from 'react-redux';
-import { colSelector } from '@/model/selector/college';
-import { depUnderColSelector } from '@/model/selector/department';
+import { colSelector } from '~/model/selector/college';
+import { depUnderColSelector } from '~/model/selector/department';
 
 const date = new Date();
 

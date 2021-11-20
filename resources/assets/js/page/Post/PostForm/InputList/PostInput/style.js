@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 export const InputLayout = styled.div`
     /*width: ${(props) => (props.width ? props.width * 50 : '50')}%;

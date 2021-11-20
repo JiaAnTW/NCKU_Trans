@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, colorMap } from '@/theme/global';
+import { color, colorMap } from '~/theme/global';
 
 export const Card = styled.div`
     position: relative;

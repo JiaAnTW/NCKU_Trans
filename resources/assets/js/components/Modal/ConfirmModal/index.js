@@ -2,8 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import Divider from '@material-ui/core/Divider';
 import { ModalStyle, PreviewLayout, PreviewTitle } from './style';
-import ControlArea from '@/components/Form/ControlArea';
-import { useModalOpen } from '@/utils';
+import ControlArea from '~/components/Form/ControlArea';
+import { useModalOpen } from '~/utils';
 
 function ConfirmModal({ title, children, onConfirm }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ListItemText from '@material-ui/core/ListItemText';
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 import IconButton from '@material-ui/core/IconButton';
 
 export const CollapseLayout = styled.div`

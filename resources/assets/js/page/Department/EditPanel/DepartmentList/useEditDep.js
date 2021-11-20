@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { EDIT_DEPARTMENT } from '@/model/action/department';
+import { EDIT_DEPARTMENT } from '~/model/action/department';
 
 export default function useEditDep(departmentArr) {
     const dispatch = useDispatch();

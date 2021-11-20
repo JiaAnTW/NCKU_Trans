@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { useSelector } from 'react-redux';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import SchoolIcon from '@material-ui/icons/School';
-import ControlArea from '@/components/Form/ControlArea';
+import ControlArea from '~/components/Form/ControlArea';
 
 import usePostControl from '../usePostControl';
 

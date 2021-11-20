@@ -6,7 +6,7 @@ import TitleBar from './TitleBar';
 import DetailList from './DetailList';
 import Confirm from './Confirm';
 import AdvanceAdmin from './AdvanceAdmin';
-import { useModalContext } from '@/utils';
+import { useModalContext } from '~/utils';
 
 function Reader({ isAdmin }) {
     const [{ id, type, title, subtitle, tags, content, confirm }] =

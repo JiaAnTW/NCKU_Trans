@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import EditList from '@/components/EditList';
+import EditList from '~/components/EditList';
 
 import colSelectedContext from '../../context';
 import { H4, EditCollegeLayout } from './style';

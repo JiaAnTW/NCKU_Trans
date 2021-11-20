@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Avatar from '@material-ui/core/Avatar';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 export const TypeSelectLayout = styled.div`
     width: 100%;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 
 export const ThankYouLayout = styled.div`
     width: 100%;

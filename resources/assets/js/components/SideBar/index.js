@@ -15,7 +15,7 @@ import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 import { DrawerContent, useStyle, ListItemText } from './style';
 
-import { useMedia } from '@/utils/index';
+import { useMedia } from '~/utils/index';
 
 const drawerWidth = 110;
 

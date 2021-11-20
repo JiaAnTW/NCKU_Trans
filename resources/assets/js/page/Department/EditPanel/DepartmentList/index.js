@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import {
     updateDepartment,
     deleteDepartment,
-} from '@/model/middleware/department';
-import EditList from '@/components/EditList';
+} from '~/model/middleware/department';
+import EditList from '~/components/EditList';
 
 import useEditDep from './useEditDep';
 import colSelectedContext from '../../context';

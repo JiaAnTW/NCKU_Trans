@@ -5,7 +5,7 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import { FilterContainer, ListItem } from './style';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 const fontSize = '1.5rem';
 

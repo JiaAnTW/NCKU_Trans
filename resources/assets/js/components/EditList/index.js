@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Collapse from '@material-ui/core/Collapse';
 import CreateIcon from '@material-ui/icons/Create';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import Input from '@/components/atom/Input';
+import Input from '~/components/atom/Input';
 
 import DeleteListItem from './DeleteListItem';
 import {

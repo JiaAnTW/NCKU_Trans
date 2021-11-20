@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useModalOpen } from '@/utils';
+import { useModalOpen } from '~/utils';
 
-import { updateMajor } from '@/model/middleware/major';
+import { updateMajor } from '~/model/middleware/major';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css'; // for ES6 modules
 import { ConfirmLayout, ConfirmText } from './style';

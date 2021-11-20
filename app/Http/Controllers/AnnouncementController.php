@@ -15,6 +15,10 @@ class AnnouncementController extends Controller
     {
         $this -> confirmTableExists();
         $data = Announcement::all();
+        if(count($data) == 0) {
+            $this -> initData();
+            $data = Announcement::all();
+        }
         return $data;
         //
     }
