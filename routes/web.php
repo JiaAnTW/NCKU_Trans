@@ -13,7 +13,7 @@ use \App\Http\Controllers\CommentsController;
 |
 */
 
-Route::get('/', function (Request $request) {
+Route::get('/{any}', function (Request $request) {
     $schoolName = trans('comment.schoolName');
     $websiteTitleShort = trans('comment.websiteTitleShort'); 
     $title = trans('comment.websiteTitle', [
@@ -43,12 +43,7 @@ Route::get('/', function (Request $request) {
     }
 
     return view('index', compact('title', 'description'));
-});
+})->where('any', '^(?!api).*$');
 
-Route::get('/index', function () {
-    return view('index');
-});
 
 Auth::routes();
-
-Route::get('/admin','HomeController@index')->name('home');

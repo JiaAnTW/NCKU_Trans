@@ -13,9 +13,9 @@ import {
     TagSpanList,
 } from './style';
 
-import { useModalOpen, useModalContext } from '~/utils/index';
 import { useWindowWidth } from '~/utils/index';
-import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
+
+import useOpenContent from './useOpenContent';
 
 const contentMiddleware = (content, maxNumber) =>
     content.length < maxNumber
@@ -24,15 +24,8 @@ const contentMiddleware = (content, maxNumber) =>
 
 function TransCard({ itemData, index }) {
     const [wordsNumber, setWordsNumber] = useState(27);
-    const [, setIsModalOpen] = useModalOpen();
-    const [, setModalContext] = useModalContext();
-
     const windowWidth = useWindowWidth();
-
-    const handleOpenContent = useCallback(() => {
-        setModalContext(transIntoModalData(itemData, index));
-        setIsModalOpen(true);
-    }, [itemData, setIsModalOpen, index]);
+    const handleOpenContent = useOpenContent(itemData, index);
 
     useEffect(() => {
         if (windowWidth >= 870 && wordsNumber === 15) {
