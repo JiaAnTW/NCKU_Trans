@@ -19,6 +19,7 @@ class CreateMajorTable extends BaseMigration
             'out_maj' => function (Blueprint $table) { $table->text('out_maj'); },
             'in_maj' => function (Blueprint $table) { $table->text('in_maj'); },
             'department' => function (Blueprint $table) { $table->text('department'); },
+            'comment' => function (Blueprint $table) { $table->text('comment'); },
             'confirm' => function (Blueprint $table) { $table->string('confirm', 7); }
         ]);
     }
