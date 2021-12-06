@@ -21,7 +21,7 @@ const majorReducer = (state = initState, action) => {
             return { ...state, data: nextData };
         }
         case SET_FILTER: {
-            let filter = state.filter;
+            let filter = { ...state.filter };
             filter[action.payload.type] = action.payload.value;
             if (
                 action.payload.type === 'department' &&
@@ -33,13 +33,7 @@ const majorReducer = (state = initState, action) => {
         case CLEAN_FILTER: {
             return {
                 ...state,
-                filter: {
-                    year: 'none',
-                    in_maj: 'none',
-                    department: 'none',
-                    category: 'none',
-                    isPass: '',
-                },
+                filter: initState.filter,
             };
         }
         default:
