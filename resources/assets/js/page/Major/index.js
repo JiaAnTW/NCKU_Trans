@@ -10,7 +10,11 @@ import ReaderModal from '~/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
 
+import { useCleanMajorFilter } from '../../utils/';
+
 function Major({ isAdmin }) {
+    useCleanMajorFilter(); //this part after rendered would not render again (once render)
+
     const isFinishRequest = useInitData(isAdmin);
 
     //---------------資料尚未取得---------------
