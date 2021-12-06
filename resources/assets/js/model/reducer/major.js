@@ -34,11 +34,11 @@ const majorReducer = (state = initState, action) => {
             return {
                 ...state,
                 filter: {
-                    year: state.filter.year,
+                    year: 'none',
                     in_maj: 'none',
                     department: 'none',
-                    category: state.filter.category,
-                    isPass: 'true',
+                    category: 'none',
+                    isPass: '',
                 },
             };
         }
