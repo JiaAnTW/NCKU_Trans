@@ -4,6 +4,7 @@ import { fetchMajor, fetchMajorAdmin } from '../../model/middleware/major';
 import { fetchDepartment } from '../../model/middleware/department';
 import { fetchCollege } from '../../model/middleware/college';
 import { useRequest } from '../../utils/index';
+import { CLEAN_FILTER } from '../../model/action/major';
 
 function useInitData(isAdmin) {
     const dispatch = useDispatch();
@@ -17,6 +18,10 @@ function useInitData(isAdmin) {
         }
         dispatch(fetchDepartment());
         dispatch(fetchCollege());
+
+        return () => {
+            dispatch({ type: CLEAN_FILTER });
+        };
     }, [isAdmin]);
 
     return isFinishRequest;
