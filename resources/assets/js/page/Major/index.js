@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main } from './style';
+import { Main, ScrollableContainer } from './style';
 import useInitData from './useInitData';
 import { CardsContainer, LoadingContainer } from '~/theme/global';
 
@@ -25,10 +25,12 @@ function Major({ isAdmin }) {
     return (
         <Main>
             <EssayFilter />
-            <Statistic />
-            <CardsContainer>
-                <CardList />
-            </CardsContainer>
+            <ScrollableContainer>
+                <Statistic />
+                <CardsContainer>
+                    <CardList />
+                </CardsContainer>
+            </ScrollableContainer>
             <ReaderModal isAdmin={isAdmin} />
         </Main>
     );
