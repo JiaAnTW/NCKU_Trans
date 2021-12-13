@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ScrollBarStyle } from '../../theme/global';
 
 export const Main = styled.main`
     display: grid;
@@ -22,23 +23,6 @@ export const ScrollableContainer = styled.section`
 
     @media (max-width: 576px) {
         overflow-y: auto;
-
-        ::-webkit-scrollbar {
-            width: 1px;
-            height: 1px;
-            background-color: transparent;
-            border: none;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            background-color: #555;
-            opacity: 0.5;
-        }
-
-        ::-webkit-scrollbar-track {
-            background-color: transparent;
-            border: 0px solid;
-        }
+        ${ScrollBarStyle}
     }
 `;
