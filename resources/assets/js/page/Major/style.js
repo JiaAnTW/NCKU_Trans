@@ -7,7 +7,7 @@ export const Main = styled.main`
     overflow-y: hidden;
 
     @media (min-width: 576px) {
-        grid-template-rows: 100px 160px auto;
+        grid-template-rows: 50px 160px auto;
     }
 
     @media (max-width: 576px) {
