@@ -1,34 +1,28 @@
 import styled from 'styled-components';
+import { ScrollBarStyle } from '../../theme/global';
 
 export const Main = styled.main`
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 50px 160px auto;
-    overflow-y: auto;
+    overflow-y: hidden;
 
-    @media (max-width: 576px) {
-        grid-template-rows: 100px 160px auto;
+    @media (min-width: 576px) {
+        grid-template-rows: 50px 160px auto;
     }
 
     @media (max-width: 576px) {
+        grid-template-rows: 100px auto;
         margin: 0px -10px;
     }
+`;
 
-    ::-webkit-scrollbar {
-        width: 1px;
-        height: 1px;
-        background-color: transparent;
-        border: none;
+export const ScrollableContainer = styled.section`
+    @media (min-width: 576px) {
+        display: contents;
     }
 
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #555;
-        opacity: 0.5;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-        border: 0px solid;
+    @media (max-width: 576px) {
+        overflow-y: auto;
+        ${ScrollBarStyle}
     }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 export const color = {
@@ -28,6 +28,26 @@ export const colorMap = {
         backgroundColor: '#393F4D',
     },
 };
+
+export const ScrollBarStyle = css`
+    ::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+        background-color: transparent;
+        border: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #555;
+        opacity: 0.5;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+        border: 0px solid;
+    }
+`;
 
 export const Button = styled.button`
     outline: none;
@@ -88,6 +108,11 @@ export const CardsContainer = styled.section`
     @media (max-width: 576px) {
         display: block;
     }
+
+    @media (min-width: 576px) {
+        overflow-y: auto;
+        ${ScrollBarStyle}
+    }
 `;
 
 export const WhiteContainer = styled.div`
@@ -117,6 +142,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${color.darkBlack};
     font-size: 15px;
     line-height: 1.42857143;
+    overflow-y: hidden;
   }
 
   #root{
