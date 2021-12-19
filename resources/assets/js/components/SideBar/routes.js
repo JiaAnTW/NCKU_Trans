@@ -12,15 +12,15 @@ const iconStyle = { width: '1.9rem', height: '1.9rem' };
 
 export const routers = [
     {
-        text: '轉輔雙主',
-        icon: <ImportContactsIcon style={iconStyle} />,
+        text: '學業心得',
+        icon: <SchoolIcon style={iconStyle} />,
         url: '/',
     },
-    /*{
-        text: '其他學業',
-        icon: <SchoolIcon style={iconStyle} />,
-        url: '/study',
-    },*/
+    {
+        text: '轉輔雙主',
+        icon: <ImportContactsIcon style={iconStyle} />,
+        url: '/major',
+    },
     {
         text: '我要分享',
         icon: <PostAddIcon style={iconStyle} />,
@@ -35,15 +35,15 @@ export const routers = [
 
 export const adminRouters = [
     {
-        text: '審查轉輔雙心得',
+        text: '審查學業',
+        icon: <SchoolIcon style={iconStyle} />,
+        url: '/admin/',
+    },
+    {
+        text: '審查轉輔轉',
         icon: <ImportContactsIcon style={iconStyle} />,
         url: '/admin/major',
     },
-    /*{
-        text: '其他學業',
-        icon: <SchoolIcon style={iconStyle} />,
-        url: '/admin/study',
-    },*/
     {
         text: '學院系設定',
         icon: <SettingsIcon style={iconStyle} />,

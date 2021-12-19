@@ -9,6 +9,7 @@ import Post from './page/Post/index';
 import Login from './page/Login';
 import Department from './page/Department';
 import Announcement from './page/Announcement';
+import Study from './page/Study';
 
 import GlobalStyle from './theme/global';
 
@@ -34,13 +35,20 @@ function App() {
                     <GlobalStyle />
                     <Switch>
                         <NavLayout>
-                            <Route exact path="/" component={Major} />
+                            <Route exact path="/" component={Study} />
+                            <Route path="/major" component={Major} />
                             <Route path="/post" component={Post} />
                             <Route
                                 path="/admin/login"
                                 render={(props) => (
                                     <Login setToken={updateToken} />
                                 )}
+                            />
+                            <RouteAdmin
+                                exact
+                                path="/admin"
+                                component={Study}
+                                token={token}
                             />
                             <RouteAdmin
                                 path="/admin/major"
