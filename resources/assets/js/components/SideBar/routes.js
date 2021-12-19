@@ -35,11 +35,6 @@ export const routers = [
 
 export const adminRouters = [
     {
-        text: '回到首頁',
-        icon: <HomeIcon style={iconStyle} />,
-        url: '/',
-    },
-    {
         text: '審查轉輔雙心得',
         icon: <ImportContactsIcon style={iconStyle} />,
         url: '/admin/major',
@@ -58,5 +53,10 @@ export const adminRouters = [
         text: '公告設定',
         icon: <ErrorOutlineIcon style={iconStyle} />,
         url: '/admin/announcement',
+    },
+    {
+        text: '回到首頁',
+        icon: <HomeIcon style={iconStyle} />,
+        url: '/',
     },
 ];
