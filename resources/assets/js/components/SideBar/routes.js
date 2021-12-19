@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import SchoolIcon from '@material-ui/icons/School';
@@ -6,27 +8,27 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import HomeIcon from '@material-ui/icons/Home';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
+const iconStyle = { width: '1.9rem', height: '1.9rem' };
+
 export const routers = [
     {
         text: '轉輔雙主',
-        icon: (
-            <ImportContactsIcon style={{ width: '1.9rem', height: '1.9rem' }} />
-        ),
+        icon: <ImportContactsIcon style={iconStyle} />,
         url: '/',
     },
     /*{
         text: '其他學業',
-        icon: <SchoolIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        icon: <SchoolIcon style={iconStyle} />,
         url: '/study',
     },*/
     {
         text: '我要分享',
-        icon: <PostAddIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
-      url: '/post',
+        icon: <PostAddIcon style={iconStyle} />,
+        url: '/post',
     },
     {
         text: '聯絡我們',
-        icon: <HowToVoteIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        icon: <HowToVoteIcon style={iconStyle} />,
         url: 'https://forms.gle/qqrnLmhQoLyZ1BULA',
     },
 ];
@@ -34,31 +36,27 @@ export const routers = [
 export const adminRouters = [
     {
         text: '回到首頁',
-        icon: <HomeIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        icon: <HomeIcon style={iconStyle} />,
         url: '/',
     },
     {
         text: '審查轉輔雙心得',
-        icon: (
-            <ImportContactsIcon style={{ width: '1.9rem', height: '1.9rem' }} />
-        ),
+        icon: <ImportContactsIcon style={iconStyle} />,
         url: '/admin/major',
     },
     /*{
         text: '其他學業',
-        icon: <SchoolIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
-        url: '/study',
+        icon: <SchoolIcon style={iconStyle} />,
+        url: '/admin/study',
     },*/
     {
         text: '學院系設定',
-        icon: <SettingsIcon style={{ width: '1.9rem', height: '1.9rem' }} />,
+        icon: <SettingsIcon style={iconStyle} />,
         url: '/admin/department',
     },
     {
         text: '公告設定',
-        icon: (
-            <ErrorOutlineIcon style={{ width: '1.9rem', height: '1.9rem' }} />
-        ),
+        icon: <ErrorOutlineIcon style={iconStyle} />,
         url: '/admin/announcement',
     },
 ];
