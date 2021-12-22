@@ -13,7 +13,7 @@ return [
     |
     */
     'websiteTitleShort' => 'NCKU STUDY',
-    'websiteTitle' => ':domain | :schoolName學業分享',
+    'websiteTitle' => ':websiteTitleShort ・ :schoolName學業分享',
     'schoolName' => '成功大學',
     'schoolNameShort' => '成大',
     'essayTitle' =>  ':schoolName :year年:in_maj:category 申請心得 | :websiteTitle',

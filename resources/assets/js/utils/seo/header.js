@@ -1,5 +1,3 @@
-import wording from '~/wording/major';
-
 export function changeHeaderInfo(title, description) {
     document.title = title;
 
