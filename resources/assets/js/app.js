@@ -45,8 +45,7 @@ function App() {
                                 )}
                             />
                             <RouteAdmin
-                                exact
-                                path="/admin"
+                                path="/admin/study"
                                 component={Study}
                                 token={token}
                             />
