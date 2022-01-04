@@ -26,7 +26,7 @@ Route::get('/{any}', function (Request $request) {
     $data = CommentsController::showById($request);
     if($data){
         $title = trans('comment.essayTitle', array(
-            'websiteTitle' => $websiteTitleShort,
+            'websiteTitleShort' => $websiteTitleShort,
             'schoolName' => $schoolName,
             'year' => $data['year'],
             'in_maj' => $data['in_maj'],
