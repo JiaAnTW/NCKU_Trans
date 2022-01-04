@@ -18,7 +18,7 @@ export default function useOpenContent(itemData, index) {
             year: itemData['year'],
             in_maj: itemData['in_maj'],
             category: itemData['category'],
-            websiteTitle: wording['websiteTitleShort'],
+            websiteTitleShort: wording['websiteTitleShort'],
         };
         setModalContext(transIntoModalData(itemData, index));
         changeHeaderInfo(
