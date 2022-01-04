@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { useModalContext, useSetModalFlow } from '../../../utils/index';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 import { changeHeaderInfo } from '~/utils/seo/header';
@@ -8,25 +10,30 @@ import wording from '~/wording/general';
 function useCommentFlow({ majorData }) {
     const [{ index }, setModalContent] = useModalContext();
     const [setModalOnBefore, setModalOnNext] = useSetModalFlow();
+    const history = useHistory();
+
+    const handleHeaderChange = (itemData) => {
+        changeHeaderInfo(
+            trans(wording['header']['title'], {
+                schoolName: wording['schoolName'],
+                year: itemData['year'],
+                in_maj: itemData['in_maj'],
+                category: itemData['category'],
+                websiteTitleShort: wording['websiteTitleShort'],
+            }),
+            itemData['comment']
+        );
+    };
 
     useEffect(() => {
-        if (index !== 0)
+        if (index !== 0) {
             setModalOnBefore(() => {
-                setModalContent(
-                    transIntoModalData(majorData[index - 1], index - 1)
-                );
-                changeHeaderInfo(
-                    trans(wording['header']['title'], {
-                        schoolName: wording['schoolName'],
-                        year: majorData[index - 1]['year'],
-                        in_maj: majorData[index - 1]['in_maj'],
-                        category: majorData[index - 1]['category'],
-                        websiteTitleShort: wording['websiteTitleShort'],
-                    }),
-                    majorData[index - 1]['comment']
-                );
+                let itemData = majorData[index - 1];
+                setModalContent(transIntoModalData(itemData, index - 1));
+                handleHeaderChange(itemData);
+                history.push(`?id=${itemData['id']}`);
             });
-        else {
+        } else {
             setModalOnBefore(undefined);
         }
     }, [index, majorData, setModalContent, setModalOnBefore]);
@@ -34,19 +41,10 @@ function useCommentFlow({ majorData }) {
     useEffect(() => {
         if (index + 1 !== majorData.length) {
             setModalOnNext(() => {
-                setModalContent(
-                    transIntoModalData(majorData[index + 1], index + 1)
-                );
-                changeHeaderInfo(
-                    trans(wording['header']['title'], {
-                        schoolName: wording['schoolName'],
-                        year: majorData[index + 1]['year'],
-                        in_maj: majorData[index + 1]['in_maj'],
-                        category: majorData[index + 1]['category'],
-                        websiteTitleShort: wording['websiteTitleShort'],
-                    }),
-                    majorData[index + 1]['comment']
-                );
+                let itemData = majorData[index + 1];
+                setModalContent(transIntoModalData(itemData, index + 1));
+                handleHeaderChange(itemData);
+                history.push(`?id=${itemData['id']}`);
             });
         } else {
             setModalOnNext(undefined);
