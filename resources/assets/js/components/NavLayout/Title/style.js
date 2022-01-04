@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const H1 = styled.h1`
-    position: static;
-    font-size: 20px;
-    margin: 0;
-    color: #000000;
+    margin-bottom: 2px;
+    font-size: 1.7rem;
+    font-weight: 500;
 
     @media (max-width: 576px) {
         padding-left: 25px;
@@ -12,10 +11,6 @@ export const H1 = styled.h1`
 `;
 
 export const Header = styled.header`
-    position: static;
     display: inline-flex;
-    vertical-align: sub;
-    flex-direction: row;
-    align-items: center;
-    height: 57px;
+    vertical-align: middle;
 `;

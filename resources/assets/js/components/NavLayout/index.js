@@ -1,27 +1,12 @@
-import React, { useCallback, useState } from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
+import React, { useState } from 'react';
 
 import SideBar from '~/components/SideBar';
 import Notification from './Notification';
-import Title from './Title';
-import { H1, Header, Container, MenuIconStyle } from './style';
-import useMedia from '~/utils/useMedia';
+import { Container } from './style';
+import Banner from './Banner';
 
 function NavLayout({ children }) {
     const [open, setOpen] = useState(true);
-    const device = useMedia();
-    const Header = useCallback(() => {
-        if (device === 'PC') return <Title />;
-        return (
-            <nav>
-                <MenuIcon
-                    style={MenuIconStyle}
-                    onClick={() => setOpen(!open)}
-                />
-                <Title />
-            </nav>
-        );
-    }, [device, open, setOpen]);
 
     return (
         <div style={{ display: 'flex' }}>
@@ -32,7 +17,7 @@ function NavLayout({ children }) {
             />
             <Notification />
             <Container>
-                <Header />
+                <Banner open={open} setOpen={setOpen} />
                 {children}
             </Container>
         </div>
