@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const H1 = styled.h1`
-    margin-bottom: 2px;
+    margin: 0;
     font-size: 1.7rem;
     font-weight: 500;
 
@@ -11,6 +11,5 @@ export const H1 = styled.h1`
 `;
 
 export const Header = styled.header`
-    display: inline-flex;
-    vertical-align: middle;
+    display: flex;
 `;
