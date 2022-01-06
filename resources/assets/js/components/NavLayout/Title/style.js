@@ -11,6 +11,5 @@ export const H1 = styled.h1`
 `;
 
 export const Header = styled.header`
-    display: grid;
-    height: 50px;
+    display: flex;
 `;
