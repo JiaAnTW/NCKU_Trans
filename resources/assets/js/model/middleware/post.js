@@ -21,7 +21,7 @@ export const postMajorData = (formData) => {
 
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(url, {
+        fetch('http://localhost:8000' + url, {
             method: formData.id === -1 ? 'POST' : 'PUT',
             body: JSON.stringify(params),
             headers: new Headers(headerSettings),

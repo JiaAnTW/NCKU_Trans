@@ -1,6 +1,6 @@
 export function fetchLoginInfo({ email, password }, { successCb, failCb }) {
     const user = { email, password };
-    fetch('/api/post/user/login', {
+    fetch('http://localhost:8000' + '/api/post/user/login', {
         method: 'POST',
         body: JSON.stringify(user),
         headers: new Headers({

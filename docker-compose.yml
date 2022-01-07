@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  db:
+    container_name: 'mysql'
+    image: 'mysql:5.7.36'
+    restart: 'on-failure:3'
+    env_file:
+      - .env
+  php-apache:
+    container_name: 'php-apache'
+    build: .
+    restart: 'on-failure:3'
+    volumes:
+      - .env:/NCKU_Trans/.env
+      - ./php-apache.init.sh:/NCKU_Trans/php-apache.init.sh
+    command: ["sh", "-c", "tr -d '\r' < php-apache.init.sh | sh"]
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - '8000:8000'
+  phpmyadmin:
+    container_name: 'phpmyadmin'
+    image: 'phpmyadmin/phpmyadmin:latest'
+    restart: 'on-failure:3'
+    environment:
+      PMA_HOST: db
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - '80:80'
