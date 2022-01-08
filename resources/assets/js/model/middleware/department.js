@@ -12,7 +12,7 @@ import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 export const fetchDepartment = () => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch('/api/get/department')
+        fetch('http://localhost:8000' + '/api/get/department')
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -35,7 +35,7 @@ export const createDepartment = ({ name, college }, callback) => {
     const body = { name, college };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/department`, {
+        fetch('http://localhost:8000' + `/api/post/department`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export const updateDepartment = (id, name, college) => {
     const body = { id, name, college };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/department/${id}`, {
+        fetch('http://localhost:8000' + `/api/post/department/${id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export const deleteDepartment = (id) => {
     const body = { id };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/department/${id}`, {
+        fetch('http://localhost:8000' + `/api/post/department/${id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

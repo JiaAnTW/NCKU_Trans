@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 
 export const fetchAnnouncement = (callback) => {
     return (dispatch) => {
-        fetch('/api/get/announcement')
+        fetch('http://localhost:8000' + '/api/get/announcement')
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -21,14 +21,17 @@ export const updateAnnouncement = ({ id, msg, isShow }) => {
     const body = { id, msg, isShow };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/announcement/${id.toString()}`, {
-            method: 'PUT',
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + Cookies.get('adminToken'),
-            }),
-            body: JSON.stringify(body),
-        })
+        fetch(
+            'http://localhost:8000' + `/api/post/announcement/${id.toString()}`,
+            {
+                method: 'PUT',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + Cookies.get('adminToken'),
+                }),
+                body: JSON.stringify(body),
+            }
+        )
             .then((data) => {
                 dispatch({
                     type: FINISH_REQUEST,

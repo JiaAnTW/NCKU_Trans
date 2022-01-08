@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 export const fetchMajor = () => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch('/api/get/major')
+        fetch('http://localhost:8000' + '/api/get/major')
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -23,7 +23,7 @@ export const fetchMajor = () => {
 export const fetchMajorAdmin = () => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch('/api/get/major/all', {
+        fetch('http://localhost:8000' + '/api/get/major/all', {
             method: 'GET',
             headers: new Headers({
                 Authorization: 'Bearer ' + Cookies.get('adminToken'),
@@ -49,7 +49,7 @@ export const updateMajor = (id, confirm) => {
     const body = { id, confirm };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/patch/major/${id.toString()}`, {
+        fetch('http://localhost:8000' + `/api/patch/major/${id.toString()}`, {
             method: 'PATCH',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export const deleteMajor = (id) => {
     const body = { id };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/major/${id.toString()}`, {
+        fetch('http://localhost:8000' + `/api/post/major/${id.toString()}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

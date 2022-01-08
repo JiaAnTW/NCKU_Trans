@@ -14,7 +14,7 @@ import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 export const fetchCollege = () => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch('/api/get/college')
+        fetch('http://localhost:8000' + '/api/get/college')
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -37,7 +37,7 @@ export const createCollege = ({ name }, callback) => {
     const body = { name };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/college`, {
+        fetch('http://localhost:8000' + `/api/post/college`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export const updateCollege = (id, name, nameOld) => {
     const body = { id, name };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/college/${id}`, {
+        fetch('http://localhost:8000' + `/api/post/college/${id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ export const deleteCollege = (id) => {
     const body = { id };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/post/college/${id}`, {
+        fetch('http://localhost:8000' + `/api/post/college/${id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
