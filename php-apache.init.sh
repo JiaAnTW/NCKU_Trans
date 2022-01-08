@@ -8,7 +8,7 @@ if [ -d "/NCKU_Trans/app" ]
 fi
 
 mkdir tmp
-git clone -b docker https://github.com/vacantron/NCKU_Trans.git /NCKU_Trans/tmp
+git clone -b feat/docker https://github.com/JiaAnTW/NCKU_Trans.git /NCKU_Trans/tmp
 cp -af /NCKU_Trans/tmp/. /NCKU_Trans/
 rm .env.example
 rm -rf /NCKU_Trans/tmp
