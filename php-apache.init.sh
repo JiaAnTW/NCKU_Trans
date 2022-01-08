@@ -24,7 +24,6 @@ sed -i "22s/.*/        \\\App\\\Http\\\Middleware\\\Cors::class,\n    \];/" ./ap
 
 composer dump-autoload
 php artisan config:clear
-php artisan config:cache
 php artisan migrate
 php artisan db:seed
 php artisan key:generate
