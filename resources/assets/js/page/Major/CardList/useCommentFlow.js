@@ -1,30 +1,51 @@
 import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { useModalContext, useSetModalFlow } from '../../../utils/index';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
+import { changeHeaderInfo } from '~/utils/seo/header';
+import trans from '~/utils/transition';
+import wording from '~/wording/general';
 
 function useCommentFlow({ majorData }) {
     const [{ index }, setModalContent] = useModalContext();
     const [setModalOnBefore, setModalOnNext] = useSetModalFlow();
+    const history = useHistory();
+
+    const handleHeaderChange = (itemData) => {
+        changeHeaderInfo(
+            trans(wording['header']['title'], {
+                schoolName: wording['schoolName'],
+                year: itemData['year'],
+                in_maj: itemData['in_maj'],
+                category: itemData['category'],
+                websiteTitleShort: wording['websiteTitleShort'],
+            }),
+            itemData['comment']
+        );
+    };
 
     useEffect(() => {
-        if (index !== 0)
-            setModalOnBefore(() =>
-                setModalContent(
-                    transIntoModalData(majorData[index - 1], index - 1)
-                )
-            );
-        else {
+        if (index !== 0) {
+            setModalOnBefore(() => {
+                let itemData = majorData[index - 1];
+                setModalContent(transIntoModalData(itemData, index - 1));
+                handleHeaderChange(itemData);
+                history.push(`?id=${itemData['id']}`);
+            });
+        } else {
             setModalOnBefore(undefined);
         }
     }, [index, majorData, setModalContent, setModalOnBefore]);
 
     useEffect(() => {
         if (index + 1 !== majorData.length) {
-            setModalOnNext(() =>
-                setModalContent(
-                    transIntoModalData(majorData[index + 1], index + 1)
-                )
-            );
+            setModalOnNext(() => {
+                let itemData = majorData[index + 1];
+                setModalContent(transIntoModalData(itemData, index + 1));
+                handleHeaderChange(itemData);
+                history.push(`?id=${itemData['id']}`);
+            });
         } else {
             setModalOnNext(undefined);
         }

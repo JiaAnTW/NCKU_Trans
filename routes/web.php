@@ -20,13 +20,13 @@ Route::get('/{any}', function (Request $request) {
         'websiteTitleShort' => $websiteTitleShort,
         'schoolName' => $schoolName,
     ]);
-    $description = $title = trans('comment.description');
+    $description = trans('comment.description');
 
     // For single essay url
     $data = CommentsController::showById($request);
     if($data){
         $title = trans('comment.essayTitle', array(
-            'websiteTitle' => $websiteTitleShort,
+            'websiteTitleShort' => $websiteTitleShort,
             'schoolName' => $schoolName,
             'year' => $data['year'],
             'in_maj' => $data['in_maj'],
