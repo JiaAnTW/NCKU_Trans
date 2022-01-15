@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Avatar from '@material-ui/core/Avatar';
 import { color } from '~/theme/global';
 
 export const TypeSelectLayout = styled.div`
@@ -22,23 +21,18 @@ export const AvatarList = styled.div`
     justify-content: center;
     align-items: center;
 `;
-
-export const AvatarYellow = styled(Avatar)`
-    height: 70px;
-    width: 70px;
-    background-color: ${color.yellow};
-    margin: 5px;
-    & svg {
-        font-size: 30px;
-    }
-`;
-
 export const AvatarLayout = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
     opacity: ${(props) => (props.selected ? 1 : 0.5)};
+    display: ${(props) => (props.index ? 'block' : 'none')};
     margin: 10px;
 `;
 
-export const AvatarText = styled.span``;
+export const AvatarText = styled.div`
+    width: 316px;
+    height: 42px;
+    text-align: center;
+`;
