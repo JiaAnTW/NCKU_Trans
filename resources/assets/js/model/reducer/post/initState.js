@@ -8,6 +8,7 @@ export default {
         comment: initComment,
     },
     type: 'comment',
+    mode: 0,
     start: false,
     onNext: undefined,
     onBefore: undefined,

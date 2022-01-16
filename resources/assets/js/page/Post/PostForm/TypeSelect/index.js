@@ -14,20 +14,18 @@ import {
 } from './style';
 
 const TypeSelect = forwardRef((props, ref) => {
-    const type = useSelector((state) => state.post.type);
-    const [index, setIndex] = useState(0);
+    const { type, mode } = useSelector((state) => state.post);
     const { onBefore, onNext } = usePostControl('major', 700);
-
     return (
         <TypeSelectLayout ref={ref}>
             <Title>你想要分享哪類的心得呢?</Title>
             <AvatarList>
-                {typeList.map((item) => {
+                {typeList.map((item, index) => {
                     const Icon = item.icon;
                     return (
                         <AvatarLayout
                             selected={type === item.type}
-                            index={index === item.index}
+                            selectedMode={mode === index}
                             key={item.name}
                         >
                             <Icon />
@@ -36,7 +34,7 @@ const TypeSelect = forwardRef((props, ref) => {
                     );
                 })}
             </AvatarList>
-            <TypeController setIndex={setIndex} selectedIndex={index} />
+            <TypeController />
             <ControlArea onNext={onNext} onBefore={onBefore} />
         </TypeSelectLayout>
     );

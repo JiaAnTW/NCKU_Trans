@@ -14,7 +14,7 @@ const stepPageArr = [TypeSelect, InputList, ThankYou];
 
 function PostForm() {
     const step = useSelector((state) => state.post.step);
-
+    const mode = useSelector((state) => state.post.mode);
     return (
         <FormLayout>
             <Form>

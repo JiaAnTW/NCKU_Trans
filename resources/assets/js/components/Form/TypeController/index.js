@@ -1,27 +1,33 @@
 import React from 'react';
 import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { SET_MODE } from '../../../model/action/post';
 import { typeList } from '../typeList';
 import { TypeButtonList, SwitchButton, BoxList, SmallYellowBox } from './style';
-function TypeController({ setIndex, selectedIndex }) {
-    const setIndexState = useCallback((index) => setIndex(index));
+function TypeController() {
+    const mode = useSelector((state) => state.post.mode);
+    const dispatch = useDispatch();
+
     return (
         <>
             <BoxList>
-                {typeList.map((item) => {
+                {typeList.map((item, index) => {
                     return (
                         <SmallYellowBox
-                            selected={item.index === selectedIndex}
+                            selected={index === mode}
                             key={item.name}
                         />
                     );
                 })}
             </BoxList>
             <TypeButtonList>
-                {typeList.map((item) => {
+                {typeList.map((item, index) => {
                     return (
                         <SwitchButton
-                            onClick={() => setIndexState(item.index)}
-                            selected={item.index === selectedIndex}
+                            onClick={() =>
+                                dispatch({ type: SET_MODE, payload: index })
+                            }
+                            selected={index === mode}
                             key={item.name}
                         >
                             {item.buttonText}

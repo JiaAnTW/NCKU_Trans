@@ -6,6 +6,7 @@ import {
     SET_POST_ON_BEFORE,
     RESET_POST_FORM,
     OVERWRITE_POST,
+    SET_MODE,
 } from '../../action/post';
 import initState from './initState';
 
@@ -101,6 +102,11 @@ const postReducer = (state = initState, action) => {
             stateNext.form.comment = commentForm;
             stateNext.step = 2;
 
+            return stateNext;
+        }
+        case SET_MODE: {
+            const stateNext = state;
+            stateNext.mode = action.payload;
             return stateNext;
         }
         default:
