@@ -1,7 +1,6 @@
 import React from 'react';
-import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_MODE } from '../../../model/action/post';
+import { SET_MODE } from '~/model/action/post';
 import { typeList } from '../typeList';
 import { TypeButtonList, SwitchButton, BoxList, SmallYellowBox } from './style';
 function TypeController() {
