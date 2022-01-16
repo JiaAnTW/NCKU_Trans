@@ -2,7 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_MODE } from '~/model/action/post';
 import { typeList } from '../typeList';
-import { TypeButtonList, SwitchButton, BoxList, SmallYellowBox } from './style';
+import {
+    TypeButtonList,
+    SwitchButton,
+    BoxList,
+    SmallYellowBox,
+    Text,
+} from './style';
 function TypeController() {
     const mode = useSelector((state) => state.post.mode);
     const dispatch = useDispatch();
@@ -29,7 +35,7 @@ function TypeController() {
                             selected={index === mode}
                             key={item.name}
                         >
-                            {item.buttonText}
+                            <Text>{item.buttonText}</Text>
                         </SwitchButton>
                     );
                 })}

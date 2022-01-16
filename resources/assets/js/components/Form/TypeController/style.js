@@ -15,6 +15,11 @@ export const SmallYellowBox = styled.div`
     opacity: ${(props) => (props.selected ? 1 : 0.5)};
     margin: 10px;
 `;
+export const Text = styled.div`
+    position: relative;
+    top: -2px;
+`;
+
 export const SwitchButton = styled(Button)`
     background-color: ${(props) =>
         props.selected ? color.white : color.yellow};

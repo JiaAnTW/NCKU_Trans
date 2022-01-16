@@ -32,7 +32,8 @@ export const AvatarLayout = styled.div`
 `;
 
 export const AvatarText = styled.div`
-    width: 316px;
+    width: 230px;
     height: 42px;
+    margin: 10px;
     text-align: center;
 `;
