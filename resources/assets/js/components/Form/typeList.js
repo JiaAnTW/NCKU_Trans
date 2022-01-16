@@ -1,7 +1,7 @@
 import { StyledSchoolIcon, StyledImportContactsIcon } from './style';
 export const typeList = [
     {
-        type: 'comment',
+        type: 'study',
         name: '交換學生、學程、跨校選課......任何學業相關的心得都能在這裡分享',
         buttonText: '一般學業心得',
         icon: StyledSchoolIcon,

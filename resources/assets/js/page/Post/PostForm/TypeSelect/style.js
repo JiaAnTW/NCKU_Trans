@@ -27,7 +27,7 @@ export const AvatarLayout = styled.div`
     justify-content: center;
     text-align: center;
     opacity: ${(props) => (props.selected ? 1 : 0.5)};
-    display: ${(props) => (props.selectedMode ? 'block' : 'none')};
+    display: ${(props) => (props.selected ? 'block' : 'none')};
     margin: 10px;
 `;
 

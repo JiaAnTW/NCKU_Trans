@@ -6,7 +6,7 @@ import {
     SET_POST_ON_BEFORE,
     RESET_POST_FORM,
     OVERWRITE_POST,
-    SET_MODE,
+    SET_TYPE,
 } from '../../action/post';
 import initState from './initState';
 
@@ -104,9 +104,9 @@ const postReducer = (state = initState, action) => {
 
             return stateNext;
         }
-        case SET_MODE: {
+        case SET_TYPE: {
             const stateNext = state;
-            stateNext.mode = action.payload;
+            stateNext.type = action.payload;
             return stateNext;
         }
         default:

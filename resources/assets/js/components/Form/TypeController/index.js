@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_MODE } from '~/model/action/post';
+import { SET_TYPE } from '~/model/action/post';
 import { typeList } from '../typeList';
 import {
     TypeButtonList,
@@ -10,29 +10,28 @@ import {
     Text,
 } from './style';
 function TypeController() {
-    const mode = useSelector((state) => state.post.mode);
+    const type = useSelector((state) => state.post.type);
     const dispatch = useDispatch();
-
     return (
         <>
             <BoxList>
-                {typeList.map((item, index) => {
+                {typeList.map((item) => {
                     return (
                         <SmallYellowBox
-                            selected={index === mode}
+                            selected={type === item.type}
                             key={item.name}
                         />
                     );
                 })}
             </BoxList>
             <TypeButtonList>
-                {typeList.map((item, index) => {
+                {typeList.map((item) => {
                     return (
                         <SwitchButton
                             onClick={() =>
-                                dispatch({ type: SET_MODE, payload: index })
+                                dispatch({ type: SET_TYPE, payload: item.type })
                             }
-                            selected={index === mode}
+                            selected={type === item.type}
                             key={item.name}
                         >
                             <Text>{item.buttonText}</Text>
