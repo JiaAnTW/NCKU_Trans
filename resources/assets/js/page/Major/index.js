@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main } from './style';
+import { Main, ScrollableContainer } from './style';
 import useInitData from './useInitData';
 import { CardsContainer, LoadingContainer } from '~/theme/global';
 
@@ -9,28 +9,24 @@ import CardList from './CardList';
 import ReaderModal from '~/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
+import LoadingFrame from '~/components/LoagingFrame';
 
 function Major({ isAdmin }) {
     const isFinishRequest = useInitData(isAdmin);
 
-    //---------------資料尚未取得---------------
-    if (!isFinishRequest) {
-        return (
-            <LoadingContainer>
-                <Icon style={{ marginTop: '0' }} />
-            </LoadingContainer>
-        );
-    }
-    //---------------一般狀況---------------
     return (
-        <Main>
-            <EssayFilter />
-            <Statistic />
-            <CardsContainer>
-                <CardList />
-            </CardsContainer>
-            <ReaderModal isAdmin={isAdmin} />
-        </Main>
+        <LoadingFrame isFinishRequest={isFinishRequest}>
+            <Main>
+                <EssayFilter />
+                <ScrollableContainer>
+                    <Statistic />
+                    <CardsContainer>
+                        <CardList />
+                    </CardsContainer>
+                </ScrollableContainer>
+                <ReaderModal isAdmin={isAdmin} />
+            </Main>
+        </LoadingFrame>
     );
 }
 

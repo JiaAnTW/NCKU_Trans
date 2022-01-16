@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
 
 import SideBar from '~/components/SideBar';
 import Notification from './Notification';
-import Title from './Title';
-import { H1, Header, Container, MenuIconStyle } from './style';
+import { Container } from './style';
+import Banner from './Banner';
 
 function NavLayout({ children }) {
     const [open, setOpen] = useState(true);
+
     return (
         <div style={{ display: 'flex' }}>
             <SideBar
@@ -17,13 +17,7 @@ function NavLayout({ children }) {
             />
             <Notification />
             <Container>
-                <nav>
-                    <MenuIcon
-                        style={MenuIconStyle}
-                        onClick={() => setOpen(!open)}
-                    />
-                </nav>
-                <Title />
+                <Banner open={open} setOpen={setOpen} />
                 {children}
             </Container>
         </div>

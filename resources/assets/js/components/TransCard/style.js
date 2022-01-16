@@ -12,6 +12,7 @@ export const Card = styled.div`
     border-radius: 15px;
     height: 180px;
     width: 220px;
+    box-sizing: border-box;
 
     @media (max-width: 576px) {
         width: 100%;
@@ -37,6 +38,8 @@ export const CardText = styled.p`
     font-size: 1.3rem;
     text-align: justify;
     line-break: anywhere;
+    margin-top: 0;
+    margin-bottom: 1rem;
 
     @media (max-width: 576px) {
         font-size: 1.5rem;
@@ -45,6 +48,7 @@ export const CardText = styled.p`
 
 export const CardContent = styled.div`
     display: grid;
+    box-sizing: border-box;
     grid-template-columns: 57px auto;
     grid-template-rows: auto 30px;
     grid-template-areas:
