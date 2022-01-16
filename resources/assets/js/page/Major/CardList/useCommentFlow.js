@@ -1,29 +1,42 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { useModalContext, useSetModalFlow } from '../../../utils/index';
+import { majorIndexByIdSelector } from '~/model/selector/major';
+import { useModalOpen, useModalContext, useSetModalFlow } from '~/utils/index';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
 import wording from '~/wording/general';
 
+const handleHeaderChange = (itemData) => {
+    changeHeaderInfo(
+        trans(wording['header']['title'], {
+            schoolName: wording['schoolName'],
+            year: itemData['year'],
+            in_maj: itemData['in_maj'],
+            category: itemData['category'],
+            websiteTitleShort: wording['websiteTitleShort'],
+        }),
+        itemData['comment']
+    );
+};
+
 function useCommentFlow({ majorData }) {
+    const [, setIsModalOpen] = useModalOpen();
     const [{ index }, setModalContent] = useModalContext();
     const [setModalOnBefore, setModalOnNext] = useSetModalFlow();
     const history = useHistory();
+    const indexById = useSelector(majorIndexByIdSelector);
 
-    const handleHeaderChange = (itemData) => {
-        changeHeaderInfo(
-            trans(wording['header']['title'], {
-                schoolName: wording['schoolName'],
-                year: itemData['year'],
-                in_maj: itemData['in_maj'],
-                category: itemData['category'],
-                websiteTitleShort: wording['websiteTitleShort'],
-            }),
-            itemData['comment']
-        );
-    };
+    // Open Reader if id is sets by url when user enter the website.
+    useEffect(() => {
+        if (!index && indexById && indexById > 0) {
+            let itemData = majorData[indexById];
+            setModalContent(transIntoModalData(itemData, indexById));
+            setIsModalOpen(true);
+        }
+    }, [indexById, index, majorData, setIsModalOpen, setModalContent]);
 
     useEffect(() => {
         if (index !== 0) {
