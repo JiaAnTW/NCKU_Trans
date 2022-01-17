@@ -7,7 +7,7 @@ export const BadgeStyle = styled.span`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px 10px;
+    padding: 0 10px;
     height: 26px;
     border: none;
 
