@@ -5,7 +5,9 @@ function Badge(props) {
     return (
         <BadgeStyle>
             {props.value}
-            <CloseIcon onClick={props.onClose} />
+            {props.onClose !== undefined && (
+                <CloseIcon onClick={props.onClose} />
+            )}
         </BadgeStyle>
     );
 }
