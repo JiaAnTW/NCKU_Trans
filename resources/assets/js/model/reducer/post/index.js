@@ -7,6 +7,8 @@ import {
     RESET_POST_FORM,
     OVERWRITE_POST,
     SET_TYPE,
+    ADD_STATIS_DATA,
+    DELETE_STATIS_DATA,
 } from '../../action/post';
 import initState from './initState';
 
@@ -58,14 +60,23 @@ const postReducer = (state = initState, action) => {
             );
             const out_maj = { ...state.form.comment.out_maj, options };
 
-            stateNext.form.comment.out_maj = out_maj;
+            stateNext.form.study.p0.out_maj =
+                stateNext.form.study.out_maj =
+                stateNext.form.comment.out_maj =
+                    out_maj;
 
             return stateNext;
         }
         case SET_POST_FORM: {
             const stateNext = state;
             const { keyName, value } = action.payload;
-            stateNext.form[stateNext.type][keyName].value = value;
+            const keyForm = { ...stateNext.form[stateNext.type][keyName] };
+            keyForm.value = value;
+            stateNext.form[stateNext.type][keyName] = keyForm;
+            stateNext.type === 'study' && keyName !== 'comment'
+                ? (stateNext.form[stateNext.type]['p1'][keyForm.index] =
+                      keyForm)
+                : '';
             return stateNext;
         }
         case SET_POST_ON_NEXT: {
@@ -107,6 +118,21 @@ const postReducer = (state = initState, action) => {
         case SET_TYPE: {
             const stateNext = state;
             stateNext.type = action.payload;
+            return stateNext;
+        }
+        case ADD_STATIS_DATA: {
+            const stateNext = state;
+            const { page, keyName, value, index } = action.payload;
+            stateNext.form[stateNext.type][page][index] = stateNext.form[
+                stateNext.type
+            ][keyName] = value;
+            return stateNext;
+        }
+        case DELETE_STATIS_DATA: {
+            const stateNext = state;
+            const { page, keyName, index } = action.payload;
+            delete stateNext.form[stateNext.type][page][index];
+            delete stateNext.form[stateNext.type][keyName];
             return stateNext;
         }
         default:

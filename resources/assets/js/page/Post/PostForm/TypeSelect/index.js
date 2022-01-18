@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 import { useSelector } from 'react-redux';
 import { typeList } from '~/components/Form/typeList';
 import ControlArea from '~/components/Form/ControlArea';
@@ -22,7 +22,6 @@ const TypeSelect = forwardRef((props, ref) => {
             <AvatarList>
                 {typeList.map((item) => {
                     const Icon = item.icon;
-                    console.log(item.type);
                     return (
                         <AvatarLayout
                             selected={type === item.type}

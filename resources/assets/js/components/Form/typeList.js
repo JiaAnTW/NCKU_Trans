@@ -1,4 +1,12 @@
 import { StyledSchoolIcon, StyledImportContactsIcon } from './style';
+import TypeSelect from '~/page/Post/PostForm/TypeSelect';
+import StudyInputList from '~/page/Post/PostForm/StudyInputList';
+import CommentInputList from '~/page/Post/PostForm/CommentInputList';
+import ThankYou from '~/page/Post/PostForm/ThankYou';
+export const typePage = {
+    study: [TypeSelect, StudyInputList, ThankYou],
+    comment: [TypeSelect, CommentInputList, ThankYou],
+};
 export const typeList = [
     {
         type: 'study',

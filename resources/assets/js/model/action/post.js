@@ -6,3 +6,5 @@ export const SET_POST_ON_NEXT = 'SET_POST_ON_NEXT';
 export const SET_POST_ON_BEFORE = 'SET_POST_ON_BEFORE';
 export const OVERWRITE_POST = 'OVERWRITE_POST';
 export const SET_TYPE = 'SET_TYPE';
+export const ADD_STATIS_DATA = 'ADD_STATIS_DATA';
+export const DELETE_STATIS_DATA = 'DELETE_STATIS_DATA';
