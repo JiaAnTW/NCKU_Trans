@@ -34,12 +34,10 @@ function statisForm({
                     return <SelectorInput {...Selector} page={'p' + index} />;
                 })}
             </SelectorLayout>
-            <div>
+            <InputArrLayout>
                 {calCulateLength(formInputArr) === 0
                     ? '*目前還沒有選擇任何統計資料'
                     : ''}
-            </div>
-            <InputArrLayout>
                 {map(formInputArr, (formInputItem) => {
                     return (
                         typeof formInputItem === 'object' && (
@@ -51,6 +49,8 @@ function statisForm({
                         )
                     );
                 })}
+                {/* other write here */}
+                <div></div>
                 <PostInput {...comment} />
             </InputArrLayout>
             <ControlArea
