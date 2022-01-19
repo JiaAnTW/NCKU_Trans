@@ -4,11 +4,8 @@ import Modal from 'react-modal';
 import { ModalStyle } from './style';
 import Reader from '../../Reader';
 import { useModalOpen } from '~/utils';
-import { changeHeaderInfo } from '~/utils/seo/header';
-import trans from '~/utils/transition';
-import wording from '~/wording/general';
 
-function ReaderModal({ isAdmin }) {
+function ReaderModal({ isAdmin, onClose }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
 
     return (
@@ -20,13 +17,7 @@ function ReaderModal({ isAdmin }) {
             overlayClassName="Overlay"
             onRequestClose={() => {
                 setIsModalOpen(false);
-                changeHeaderInfo(
-                    trans(wording['websiteTitle'], {
-                        websiteTitleShort: wording['websiteTitleShort'],
-                        schoolName: wording['schoolName'],
-                    }),
-                    wording['description']
-                );
+                if (onClose) onClose();
             }}
         >
             <Reader isAdmin={isAdmin} />
