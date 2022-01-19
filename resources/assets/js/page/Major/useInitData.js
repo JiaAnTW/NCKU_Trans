@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchMajor, fetchMajorAdmin } from '../../model/middleware/major';
 import { fetchDepartment } from '../../model/middleware/department';
@@ -10,7 +10,7 @@ function useInitData(isAdmin) {
     const dispatch = useDispatch();
     const isFinishRequest = useRequest();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (isAdmin) {
             dispatch(fetchMajorAdmin());
         } else {
