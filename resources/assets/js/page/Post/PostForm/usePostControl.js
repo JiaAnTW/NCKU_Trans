@@ -11,9 +11,8 @@ import useSubmit from './useSubmit';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
-    const formData = useSelector(
-        (state) => state.post.form[editType === 'major' ? 'comment' : editType]
-    );
+    const type = useSelector((state) => state.post.type);
+    const formData = useSelector((state) => state.post.form['comment']);
     useSubmit(editType, formData);
 
     // ---------------------

@@ -81,6 +81,7 @@ export const Selectors = [
         selected: false,
         special_wording: '+ ',
         wording: '其他類別',
+        remark: '其他項目則會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整',
         index: 6,
     },
 ];

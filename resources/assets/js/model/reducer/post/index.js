@@ -9,6 +9,7 @@ import {
     SET_TYPE,
     ADD_STATIS_DATA,
     DELETE_STATIS_DATA,
+    SET_REMARK,
 } from '../../action/post';
 import initState from './initState';
 
@@ -134,6 +135,12 @@ const postReducer = (state = initState, action) => {
             const { page, keyName, index } = action.payload;
             delete stateNext.form[stateNext.type][page][index];
             delete stateNext.form[stateNext.type][keyName];
+            return stateNext;
+        }
+        case SET_REMARK: {
+            const stateNext = state;
+            const { keyName, value } = action.payload;
+            stateNext.form[stateNext.type][keyName]['remark'] = value;
             return stateNext;
         }
         default:

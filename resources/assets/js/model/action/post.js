@@ -8,3 +8,4 @@ export const OVERWRITE_POST = 'OVERWRITE_POST';
 export const SET_TYPE = 'SET_TYPE';
 export const ADD_STATIS_DATA = 'ADD_STATIS_DATA';
 export const DELETE_STATIS_DATA = 'DELETE_STATIS_DATA';
+export const SET_REMARK = 'SET_REMARK';

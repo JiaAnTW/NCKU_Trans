@@ -1,6 +1,10 @@
 import React from 'react';
 import { SelectorButton } from './style';
-import { ADD_STATIS_DATA, DELETE_STATIS_DATA } from '~/model/action/post';
+import {
+    ADD_STATIS_DATA,
+    DELETE_STATIS_DATA,
+    SET_REMARK,
+} from '~/model/action/post';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
 function SelectorInput(props) {
@@ -25,17 +29,41 @@ function SelectorInput(props) {
     const deleteStaticData = useCallback(() => {
         const nextState = { ...props };
         nextState.selected = false;
+        selected.value
+            ? addRemark()
+            : dispatch({
+                  type: DELETE_STATIS_DATA,
+                  payload: {
+                      index: props.index,
+                      page: nextState.page,
+                      keyName: nextState.keyName,
+                  },
+              });
+    }, [props.keyName, props.page, selected]);
+    const removeRemark = useCallback(() => {
         dispatch({
-            type: DELETE_STATIS_DATA,
+            type: SET_REMARK,
             payload: {
-                index: props.index,
-                page: nextState.page,
-                keyName: nextState.keyName,
+                keyName: props.keyName,
+                value: '',
             },
         });
-    }, [props.keyName, props.page]);
+    }, [props]);
+
+    const addRemark = useCallback(() => {
+        dispatch({
+            type: SET_REMARK,
+            payload: {
+                keyName: props.keyName,
+                value: '請先清除輸入的資料，確認後再移除此項目',
+            },
+        });
+    }, [props]);
     return (
-        <SelectorButton onClick={selected ? deleteStaticData : addStaticData}>
+        <SelectorButton
+            selected={selected}
+            onClick={selected ? deleteStaticData : addStaticData}
+        >
             {(props.special_wording ? props.special_wording : '') +
                 props.wording}
         </SelectorButton>
