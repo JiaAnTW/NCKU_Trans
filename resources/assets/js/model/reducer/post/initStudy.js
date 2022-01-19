@@ -1,6 +1,13 @@
 export default (function () {
     return {
-        out_maj: {},
+        maj: {
+            value: '中文系',
+            keyName: 'maj',
+            type: 'select',
+            wording: '原主修科系',
+            options: [],
+            remark: '如不想透漏，可以只填學院或其他。',
+        },
         comment: {
             value: '',
             keyName: 'comment',
@@ -14,7 +21,7 @@ export default (function () {
             },
         },
         p0: {
-            out_maj: {},
+            maj: {},
         },
         p1: {},
     };

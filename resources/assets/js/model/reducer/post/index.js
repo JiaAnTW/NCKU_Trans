@@ -59,12 +59,11 @@ const postReducer = (state = initState, action) => {
                 }))
             );
             const out_maj = { ...state.form.comment.out_maj, options };
+            const maj = { ...state.form.study.maj, options };
 
-            stateNext.form.study.p0.out_maj =
-                stateNext.form.study.out_maj =
-                stateNext.form.comment.out_maj =
-                    out_maj;
+            stateNext.form.study.p0.maj = stateNext.form.study.maj = maj;
 
+            stateNext.form.comment.out_maj = out_maj;
             return stateNext;
         }
         case SET_POST_FORM: {
@@ -74,8 +73,10 @@ const postReducer = (state = initState, action) => {
             keyForm.value = value;
             stateNext.form[stateNext.type][keyName] = keyForm;
             stateNext.type === 'study' && keyName !== 'comment'
-                ? (stateNext.form[stateNext.type]['p1'][keyForm.index] =
-                      keyForm)
+                ? keyName === 'maj'
+                    ? (stateNext.form[stateNext.type]['p0'][keyName] = keyForm)
+                    : (stateNext.form[stateNext.type]['p1'][keyForm.index] =
+                          keyForm)
                 : '';
             return stateNext;
         }
