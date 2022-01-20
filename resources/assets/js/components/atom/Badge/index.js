@@ -1,13 +1,11 @@
 import React from 'react';
 import { BadgeStyle, CloseIcon } from './style';
 
-function Badge(props) {
+function Badge({ value, onClose }) {
     return (
         <BadgeStyle>
-            {props.value}
-            {props.onClose !== undefined && (
-                <CloseIcon onClick={props.onClose} />
-            )}
+            {value}
+            {onClose !== undefined && <CloseIcon onClick={onClose} />}
         </BadgeStyle>
     );
 }

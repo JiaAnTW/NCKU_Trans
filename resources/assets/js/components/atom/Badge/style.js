@@ -4,26 +4,21 @@ import { color } from '~/theme/global';
 
 export const BadgeStyle = styled.span`
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding: 0 10px;
-    height: 26px;
-    border: none;
+    padding: 3px 12px;
+    height: 27px;
 
     background: ${color.backgroundYellow};
     color: ${color.darkYellow};
     font-size: 14px;
-    border-radius: 30px;
+    user-select: none;
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    border-radius: 30px;
     margin: 5px;
 `;
 
 export const CloseIcon = styled(ClearIcon)`
-    margin-left: 10px;
+    margin-left: 8px;
     font-size: 14px;
     cursor: pointer;
 `;
