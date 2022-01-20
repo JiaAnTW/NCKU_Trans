@@ -15,17 +15,24 @@ function SelectorInput(props) {
     );
     const addStaticData = useCallback(() => {
         const nextState = { ...props };
-        nextState.selected = true;
+        let index = nextState.index;
+        if (nextState.keyName !== 'other') {
+            nextState.selected = true;
+        } else {
+            index = index + Object.keys(selected).length - 5;
+            nextState.wording += '-' + index;
+            nextState.index = index;
+        }
         dispatch({
             type: ADD_STATIS_DATA,
             payload: {
-                index: props.index,
+                index: index,
                 page: nextState.page,
                 keyName: nextState.keyName,
                 value: nextState,
             },
         });
-    }, [props.keyName, props.page]);
+    }, [props]);
     const deleteStaticData = useCallback(() => {
         const nextState = { ...props };
         nextState.selected = false;
@@ -61,8 +68,12 @@ function SelectorInput(props) {
     }, [props]);
     return (
         <SelectorButton
-            selected={selected}
-            onClick={selected ? deleteStaticData : addStaticData}
+            selected={props.keyName !== 'other' && selected}
+            onClick={
+                props.keyName !== 'other' && selected
+                    ? deleteStaticData
+                    : addStaticData
+            }
         >
             {(props.special_wording ? props.special_wording : '') +
                 props.wording}

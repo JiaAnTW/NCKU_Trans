@@ -9,20 +9,22 @@ import AdvanceAdmin from './AdvanceAdmin';
 import { useModalContext } from '~/utils';
 
 function Reader({ isAdmin }) {
-    const [{ id, type, title, subtitle, tags, content, confirm }] =
-        useModalContext();
+    const [props] = useModalContext();
     const onBefore = useSelector((state) => state.modal.onBefore);
     const onNext = useSelector((state) => state.modal.onNext);
-
     return (
         <ReaderLayout isAdmin={isAdmin}>
             <ChangeBtn direction="left" onClick={onBefore} />
             <ReaderContent>
-                <TitleBar type={type} title={title} subtitle={subtitle} />
-                {isAdmin && <Confirm id={id} confirm={confirm} />}
-                <DetailList value={tags} />
-                <ReaderText>{content}</ReaderText>
-                {isAdmin && <AdvanceAdmin id={id} />}
+                <TitleBar
+                    type={props.type}
+                    title={props.title}
+                    subtitle={props.subtitle}
+                />
+                {isAdmin && <Confirm id={props.id} confirm={props.confirm} />}
+                <DetailList value={props.tags} />
+                <ReaderText>{props.content}</ReaderText>
+                {isAdmin && <AdvanceAdmin id={props.id} />}
             </ReaderContent>
             <ChangeBtn direction="right" onClick={onNext} />
         </ReaderLayout>

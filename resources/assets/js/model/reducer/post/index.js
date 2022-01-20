@@ -69,8 +69,13 @@ const postReducer = (state = initState, action) => {
         }
         case SET_POST_FORM: {
             const stateNext = state;
-            const { keyName, value } = action.payload;
+            const { keyName, value, key, index } = action.payload;
             const keyForm = { ...stateNext.form[stateNext.type][keyName] };
+            if (keyName === 'other') {
+                stateNext.form[stateNext.type][keyName][index][key].value =
+                    value;
+                return stateNext;
+            }
             keyForm.value = value;
             stateNext.form[stateNext.type][keyName] = keyForm;
             stateNext.type === 'study' && keyName !== 'comment'
@@ -125,9 +130,12 @@ const postReducer = (state = initState, action) => {
         case ADD_STATIS_DATA: {
             const stateNext = state;
             const { page, keyName, value, index } = action.payload;
-            stateNext.form[stateNext.type][page][index] = stateNext.form[
-                stateNext.type
-            ][keyName] = value;
+            if (keyName !== 'other') {
+                stateNext.form[stateNext.type][page][index] = value;
+                stateNext.form[stateNext.type][keyName] = value;
+            } else {
+                stateNext.form[stateNext.type][keyName][index] = { ...value };
+            }
             return stateNext;
         }
         case DELETE_STATIS_DATA: {

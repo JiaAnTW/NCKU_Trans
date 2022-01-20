@@ -1,5 +1,6 @@
 export default (function () {
     return {
+        id: -1,
         maj: {
             value: '中文系',
             keyName: 'maj',
@@ -24,5 +25,6 @@ export default (function () {
             maj: {},
         },
         p1: {},
+        other: {},
     };
 })();

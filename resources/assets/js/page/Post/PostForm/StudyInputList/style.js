@@ -31,6 +31,11 @@ const slideRight = keyframes`
     }
 `;
 export const SubForm = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
     animation: ${(props) =>
             props.animateType === -1
                 ? props.isCurrent
@@ -45,6 +50,6 @@ export const SubForm = styled.div`
     display: ${(props) => (props.isCurrent ? 'block' : 'none')};
 `;
 export const SelectorLayout = styled.div`
-    width: 500px;
+    width: 90%;
     margin: auto;
 `;

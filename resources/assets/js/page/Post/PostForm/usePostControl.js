@@ -1,18 +1,17 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
 import transFormData from '~/utils/redux/components/modal/transFormData';
-
+import { dataPicker } from './dataPicker';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
     const type = useSelector((state) => state.post.type);
-    const formData = useSelector((state) => state.post.form['comment']);
+    const formData = useSelector((state) => state.post.form[type]);
     useSubmit(editType, formData);
 
     // ---------------------
@@ -40,14 +39,7 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
-        setModalContext(
-            transFormData(formData, {
-                title: 'in_maj',
-                subtitle: 'out_maj',
-                type: 'category',
-                content: 'comment',
-            })
-        );
+        setModalContext(transFormData(formData, dataPicker[type]));
         setIsModalOpen(true);
     }, [formData]);
 

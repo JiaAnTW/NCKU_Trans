@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import map from 'lodash/map';
 import { useSelector } from 'react-redux';
 import ControlArea from '~/components/Form/ControlArea';
-import PostInput from '../PostInput/index';
+import PostInput from '../Input/PostInput/index';
 import usePostControl from '../usePostControl';
 import { InputArrLayout } from './style';
 import { StepLayout, Title } from '../style';
