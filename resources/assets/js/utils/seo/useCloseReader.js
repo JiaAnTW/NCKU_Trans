@@ -18,7 +18,7 @@ export default function useCloseReader() {
             wording['description']
         );
         history.replace({ pathname });
-    }, [history]);
+    }, [history, pathname]);
 
     return { handleCloseReader };
 }
