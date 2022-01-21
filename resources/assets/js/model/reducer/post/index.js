@@ -6,7 +6,7 @@ import {
     SET_POST_ON_BEFORE,
     RESET_POST_FORM,
     OVERWRITE_POST,
-    SET_TYPE,
+    SET_POST_TYPE,
     ADD_STATIS_DATA,
     DELETE_STATIS_DATA,
     SET_REMARK,
@@ -122,7 +122,7 @@ const postReducer = (state = initState, action) => {
 
             return stateNext;
         }
-        case SET_TYPE: {
+        case SET_POST_TYPE: {
             const stateNext = state;
             stateNext.type = action.payload;
             return stateNext;

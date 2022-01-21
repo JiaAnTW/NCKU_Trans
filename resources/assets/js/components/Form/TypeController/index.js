@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_TYPE } from '~/model/action/post';
+import { SET_POST_TYPE } from '~/model/action/post';
 import { typeList } from '../typeList';
 import {
     TypeButtonList,
@@ -30,7 +30,10 @@ function TypeController() {
                     return (
                         <SwitchButton
                             onClick={() =>
-                                dispatch({ type: SET_TYPE, payload: item.type })
+                                dispatch({
+                                    type: SET_POST_TYPE,
+                                    payload: item.type,
+                                })
                             }
                             selected={type === item.type}
                             key={item.name}
