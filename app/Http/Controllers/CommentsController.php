@@ -12,7 +12,7 @@ class CommentsController extends Controller
     //顯示所有資料
     public function show()
     {
-        $data=Comments::where('confirm',"true")->get();
+        $data=Comments::where('confirm',"true")->orderBy('id', 'desc')->get();
         return $data;
         //
     }
@@ -34,7 +34,7 @@ class CommentsController extends Controller
 
     public function index()
     {
-        $data=Comments::all();
+        $data=Comments::orderBy('id', 'desc')->get();
         return $data;
         //
     }
