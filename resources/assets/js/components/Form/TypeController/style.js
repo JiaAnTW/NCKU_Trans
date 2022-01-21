@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { color, Button } from '~/theme/global';
+
 export const TypeButtonList = styled.div`
     display: flex;
     margin: auto;

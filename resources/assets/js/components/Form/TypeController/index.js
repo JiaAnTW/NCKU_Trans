@@ -9,6 +9,7 @@ import {
     SmallYellowBox,
     Text,
 } from './style';
+
 function TypeController() {
     const type = useSelector((state) => state.post.type);
     const dispatch = useDispatch();

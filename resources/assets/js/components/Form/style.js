@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import SchoolIcon from '@material-ui/icons/School';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { color } from '~/theme/global';
+
 export const FormContainer = styled.div`
     width: 550px;
     background-color: white;
@@ -13,7 +14,6 @@ export const FormContainer = styled.div`
         width: 100%;
     }
 `;
-
 export const Title = styled.h4`
     display: flex;
     justify-content: center;
