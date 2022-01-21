@@ -10,7 +10,9 @@ import useSubmit from './useSubmit';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
-    const type = useSelector((state) => state.post.type);
+    const type = useSelector(
+        (state) => (state.post.type ? 'comment' : 'comment') // fake data should adjust after new reader done
+    );
     const formData = useSelector((state) => state.post.form[type]);
     useSubmit(editType, formData);
 
