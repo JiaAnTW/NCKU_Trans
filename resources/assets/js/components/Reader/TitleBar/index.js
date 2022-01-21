@@ -11,7 +11,7 @@ import {
 function TitleBar({ type, title, subtitle }) {
     return (
         <TitleBarLayout>
-            {type && <TypeIconLarge theme={type}>{type[0]}</TypeIconLarge>}
+            <TypeIconLarge theme={type}>{type[0]}</TypeIconLarge>
             <TitleLayout>
                 <Title>{title}</Title>
                 <Subtitle>{subtitle}</Subtitle>
