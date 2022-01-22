@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
-import wording from '~/wording/general';
+import wording from '~/wording/general.json';
 
 export default function useCloseReader() {
     const history = useHistory();
