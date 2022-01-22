@@ -17,6 +17,21 @@ class CommentsController extends Controller
         //
     }
 
+    static public function showById(Request $request)
+    {
+        try{
+            $id = $request->input('id');
+            if(!$id) {
+                return null;
+            }
+
+            $data = Comments::where('id', $id)-> firstOrFail();
+            return $data;
+        } catch(Exception $e){
+            return null;
+        }
+    }
+
     public function index()
     {
         $data=Comments::all();

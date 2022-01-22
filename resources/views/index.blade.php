@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="zh-Hant-TW" charset="utf-8">
     <head>
-        <title>NCKU STUDY・成大學業分享</title>
+        <title>{{ $title }}</title>
         <!--setting-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="theme-color" content="rgba(254, 218, 106, 1)">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="NCKU STUDY | 一個讓成大學生匿名分享轉系、輔修、雙主修...等各式學業心得的平台。希望以更透明的資訊幫助成大學生規劃自己學業的方向。(原NCKUTRANS)">
+        <meta name="description" content="{{ $description }}">
         <meta property="og:image" content="https://i.imgur.com/GJawE7A.jpg" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <link rel="icon" href="{{ asset('favicon.ico') }}">
@@ -25,8 +25,6 @@
     </head>
     <body>
         <div id="root"><div style="display: none">成大轉系，成大輔修，成大雙主修，成大轉系成功率，成大轉系容易嗎，成大轉系心得，成大轉系平台，NCKUTRANS，成大轉系分享</div></div>
-        <script src="{{ mix('js/manifest.js') }}"></script>
-        <script src="{{ mix('js/vendor.js') }}"></script>
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="http://localhost:8080/bundle.js"></script>
     </body>
 </html>
