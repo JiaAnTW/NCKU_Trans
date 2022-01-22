@@ -12,7 +12,7 @@ import LoadingFrame from '~/components/LoagingFrame';
 import useCloseReader from '~/utils/seo/useCloseReader';
 
 function Major({ isAdmin }) {
-    const isFinishRequest = useInitData(isAdmin);
+    const isFinishRequest = useInitData({ isAdmin, num: 30 });
     const { handleCloseReader } = useCloseReader();
 
     return (
