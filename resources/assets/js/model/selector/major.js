@@ -25,3 +25,12 @@ export const majorDisplaySelector = createSelector(
             );
         })
 );
+
+export const majorIndexByIdSelector = createSelector(
+    majorDisplaySelector,
+    (majorData) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlId = urlParams.get('id');
+        return majorData.findIndex(({ id }) => id === Number(urlId));
+    }
+);

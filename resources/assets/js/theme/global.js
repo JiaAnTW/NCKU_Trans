@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const color = {
     yellow: 'rgba(254, 218, 106, 1)',
+    backgroundYellow: 'rgba(254, 218, 106, 0.4)',
     lightYellow: 'rgba(255,238,173,1)',
     darkYellow: '#e1af13',
     white: 'white',
@@ -17,7 +18,7 @@ export const color = {
 export const colorMap = {
     轉系: {
         color: color.darkYellow,
-        backgroundColor: 'rgba(254, 218, 106, 0.4)',
+        backgroundColor: color.backgroundYellow,
     },
     輔系: {
         color: color.black,
