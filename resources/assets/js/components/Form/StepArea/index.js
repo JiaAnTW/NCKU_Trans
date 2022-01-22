@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import { typePage } from '../typeList.js';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -29,14 +29,23 @@ const stepArr = [
     { number: 1, description: '填寫基本資訊和心得內文' },
     { number: 2, description: '等待送出成功' },
 ];
-
+const activeStep = (step, totalStep) => {
+    switch (step) {
+        case 0:
+            return 0;
+        case totalStep - 1:
+            return step;
+        default:
+            return 1;
+    }
+};
 function StepArea() {
-    const activeStep = useSelector((state) => state.post.step);
-
+    const step = useSelector((state) => state.post.step);
+    const type = useSelector((state) => state.post.type);
     return (
         <Stepper
             alternativeLabel
-            activeStep={Math.floor(activeStep / 2)}
+            activeStep={activeStep(Math.floor(step / 2), typePage[type].length)}
             connector={<QontoConnector />}
         >
             {stepArr.map((label) => (

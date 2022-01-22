@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { color } from '~/theme/global';
+
 export const TextGroup = styled.div`
     margin-left: 30px;
 `;

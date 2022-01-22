@@ -1,12 +1,12 @@
 import { StyledSchoolIcon, StyledImportContactsIcon } from './style';
 import TypeSelect from '~/page/Post/PostForm/TypeSelect';
-import StudyInputList from '~/page/Post/PostForm/StudyInputList';
-import CommentInputList from '~/page/Post/PostForm/CommentInputList';
+import InputList from '~/page/Post/PostForm/InputList';
 import ThankYou from '~/page/Post/PostForm/ThankYou';
 
+// this typePage is decide that what will be shown when Sharing Post
 export const typePage = {
-    study: [TypeSelect, StudyInputList, ThankYou],
-    comment: [TypeSelect, CommentInputList, ThankYou],
+    study: [TypeSelect, InputList, InputList, ThankYou],
+    comment: [TypeSelect, InputList, ThankYou],
 };
 export const typeList = [
     {
