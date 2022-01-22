@@ -1,10 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
+
 import { ModalStyle } from './style';
 import Reader from '../../Reader';
 import { useModalOpen } from '~/utils';
 
-function ReaderModal({ isAdmin }) {
+function ReaderModal({ isAdmin, onClose }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
 
     return (
@@ -16,6 +17,7 @@ function ReaderModal({ isAdmin }) {
             overlayClassName="Overlay"
             onRequestClose={() => {
                 setIsModalOpen(false);
+                if (onClose) onClose();
             }}
         >
             <Reader isAdmin={isAdmin} />

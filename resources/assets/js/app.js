@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 import NavLayout from '~/components/NavLayout';
@@ -29,7 +29,7 @@ function App() {
     }, []);
 
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Provider store={store}>
                 <ThemeProvider theme={materialTheme}>
                     <GlobalStyle />
@@ -73,7 +73,7 @@ function App() {
                     </Switch>
                 </ThemeProvider>
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 

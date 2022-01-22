@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { H1, Header } from './style';
 import titleWording from './title.json';
@@ -23,9 +23,13 @@ const mapPathnameToTitle = (pathname) => {
 
 function Title() {
     const location = useLocation();
+    const { id } = useParams();
+
+    const TitleElement = id ? H2 : H1;
+
     return (
         <Header>
-            <H1>{mapPathnameToTitle(location.pathname)}</H1>
+            <TitleElement>{mapPathnameToTitle(location.pathname)}</TitleElement>
         </Header>
     );
 }
