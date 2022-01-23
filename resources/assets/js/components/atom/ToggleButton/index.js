@@ -6,7 +6,7 @@ import { ToggleBtn } from './style';
 function ToggleButton(props) {
     const {
         index,
-        clickHandle,
+        handleClick,
         specialWord,
         wording,
         parent,
@@ -19,11 +19,11 @@ function ToggleButton(props) {
             ? state.post.form[type][parent].value[index]
             : state.post.form[type][subStep][index]
     );
-    const handleClick = useCallback(() => {
-        clickHandle(index, props);
-    }, [clickHandle, index]);
+    const OnClickHandle = useCallback(() => {
+        handleClick(index, props);
+    }, [handleClick, index]);
     return (
-        <ToggleBtn selected={!isPreventDefault && key} onClick={handleClick}>
+        <ToggleBtn selected={!isPreventDefault && key} onClick={OnClickHandle}>
             {`${specialWord ? specialWord : ''}${wording}`}
         </ToggleBtn>
     );

@@ -7,7 +7,7 @@ import map from 'lodash/map';
 
 function ToggleButtonGroup({ value }) {
     const dispatch = useDispatch();
-    const clickHandle = useCallback(
+    const handleClick = useCallback(
         (index, value) => {
             dispatch({
                 type: TOGGLE_STATIS_DATA,
@@ -25,7 +25,7 @@ function ToggleButtonGroup({ value }) {
                 return (
                     <PostInput
                         key={button.keyName}
-                        clickHandle={clickHandle}
+                        handleClick={handleClick}
                         {...button}
                     />
                 );

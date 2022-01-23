@@ -1,6 +1,7 @@
 import map from 'lodash/map';
 import omit from 'lodash/omit';
 import majorWording from '~/wording/major.json';
+
 // 透過settingKeyName這個物件去設定dataObj當中有哪些屬性要特別設定
 
 /*
@@ -17,13 +18,14 @@ function transFormData(dataObj, settingKeyName) {
     const specialSetting = {};
 
     for (let key in settingKeyName) {
-        if (key === 'ignore') continue; //ignore some value
         const dataObjKey = settingKeyName[key];
         specialSetting[key] = dataObj[dataObjKey].value;
         omitArray.push(dataObjKey);
     }
-    const tagObj = omit(dataObj, omitArray.concat(settingKeyName.ignore));
-    let tags = map(tagObj, (item) => {
+
+    const tagObj = omit(dataObj, omitArray);
+
+    const tags = map(tagObj, (item) => {
         return {
             type: item.wording,
             value: majorWording[item.keyName]
@@ -31,15 +33,7 @@ function transFormData(dataObj, settingKeyName) {
                 : item.value,
         };
     });
-    map(dataObj.other, (item) => {
-        tags = [
-            ...tags,
-            {
-                type: item.keyValue.value,
-                value: item.value.value,
-            },
-        ];
-    });
+
     return {
         id: -1,
         tags: tags,
@@ -48,4 +42,5 @@ function transFormData(dataObj, settingKeyName) {
         ...specialSetting,
     };
 }
+
 export default transFormData;
