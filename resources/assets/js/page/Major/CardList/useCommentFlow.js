@@ -7,7 +7,7 @@ import { useModalOpen, useModalContext, useSetModalFlow } from '~/utils/index';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
-import wording from '~/wording/general';
+import wording from '~/wording/general.json';
 
 const handleHeaderChange = (itemData) => {
     changeHeaderInfo(
