@@ -5,8 +5,8 @@ import { color } from '~/theme/global';
 export const BadgeStyle = styled.span`
     display: flex;
     align-items: center;
-    padding: 3px 12px;
-    height: 27px;
+    padding: 3px 10px;
+    height: 20px;
 
     background: ${color.backgroundYellow};
     color: ${color.darkYellow};
@@ -14,7 +14,6 @@ export const BadgeStyle = styled.span`
     user-select: none;
 
     border-radius: 30px;
-    margin: 5px;
 `;
 
 export const CloseIcon = styled(ClearIcon)`
