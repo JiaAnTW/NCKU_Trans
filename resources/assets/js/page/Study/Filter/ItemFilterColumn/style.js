@@ -19,7 +19,7 @@ export const Title = styled.div`
     color: ${color.darkYellow};
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 `;
 
 export const CategoriesIcon = styled(CategoryIcon)`

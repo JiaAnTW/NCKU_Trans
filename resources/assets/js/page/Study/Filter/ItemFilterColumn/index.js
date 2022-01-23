@@ -1,4 +1,4 @@
-import { Checkbox } from '@material-ui/core';
+import Checkbox from '@material-ui/core/Checkbox';
 import React from 'react';
 import map from 'lodash/map';
 import FormGroup from '@material-ui/core/FormGroup';

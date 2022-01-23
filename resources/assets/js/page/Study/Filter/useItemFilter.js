@@ -45,9 +45,6 @@ const getYearArr = () => {
     const currentYear = date.getFullYear();
     let arr = [];
     for (let i = currentYear; i > currentYear - 5; i--) {
-        if (i === currentYear && date.getMonth() < 7) {
-            continue;
-        }
         arr.push({ name: (i - 1911).toString() + '年', value: i - 1911 });
     }
     return arr.slice(0, 4);

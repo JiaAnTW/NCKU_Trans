@@ -30,6 +30,7 @@ export const useStyles = makeStyles((theme) => ({
     paper: {
         boxShadow: '0 0 4px rgba(0, 0.25, 0.25, 0.25)',
         borderRadius: 5,
+        marginTop: 10,
     },
     formControl: {
         margin: theme.spacing(1),
