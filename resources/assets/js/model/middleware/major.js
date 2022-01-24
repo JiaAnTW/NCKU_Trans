@@ -22,15 +22,15 @@ export const initMajor = ({ num = 0 }) => {
 
 export const fetchMajor = ({ from = 0, num = 0 }) => {
     return (dispatch) => {
-        fetch(`/api/get/major?from=${from}&num=${num}`)
-            .then((res) => res.json())
-            .then((data) => {
-                dispatch({
-                    type: ADD_MAJOR,
-                    payload: { data },
-                });
-            })
-            .catch((e) => console.log('錯誤:', e));
+        // fetch(`/api/get/major?from=${from}&num=${num}`)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         dispatch({
+        //             type: ADD_MAJOR,
+        //             payload: { data },
+        //         });
+        //     })
+        //     .catch((e) => console.log('錯誤:', e));
     };
 };
 
