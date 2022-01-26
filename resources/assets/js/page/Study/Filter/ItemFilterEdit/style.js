@@ -4,7 +4,7 @@ import AddIcon from '@material-ui/icons/Add';
 import styled from 'styled-components';
 import { color } from '~/theme/global';
 
-export const EditTagContainer = styled.div`
+export const ManageButtonContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,11 +23,11 @@ export const EditTagContainer = styled.div`
     }
 `;
 
-export const EditTagIcon = styled(EditIcon)`
+export const StartManageIcon = styled(EditIcon)`
     margin-right: 14px;
 `;
 
-export const StopEditIcon = styled(CloseIcon)`
+export const StopManageIcon = styled(CloseIcon)`
     margin-right: 14px;
 `;
 
@@ -53,6 +53,7 @@ export const FilterEditDisabledContainer = styled.div`
     position: absolute;
     width: 115px;
     height: 189px;
+    padding-left: 5px;
 
     background: rgba(255, 255, 255, 0.8);
     z-index: 999;

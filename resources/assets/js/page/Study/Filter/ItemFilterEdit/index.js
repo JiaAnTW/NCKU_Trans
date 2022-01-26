@@ -6,16 +6,13 @@ import ItemFilterEditColumn from './ItemFilterEditColumn';
 import useItemFilter from '../useItemFilter';
 import {
     ItemFilterEditContainer,
-    FilterEditColumnContainer,
-    AddItemButton,
-    AddItemIcon,
     FilterEditDisabledContainer,
     FilterDisabledText,
 } from './style';
 
 const generateChildren = (arr, index) => {
     return arr.type === 'year' ? (
-        <>
+        <div>
             <FilterEditDisabledContainer>
                 <FilterDisabledText>
                     學年自動產生
@@ -27,15 +24,9 @@ const generateChildren = (arr, index) => {
                 key={arr.type ? arr.type : index}
                 optionsArr={arr}
             />
-        </>
+        </div>
     ) : (
-        <>
-            <ItemFilterEditColumn optionsArr={arr} isEdit={true} />
-            <AddItemButton key={arr.type ? `${arr.type}-btn` : `${index}-btn`}>
-                <AddItemIcon />
-                新增項目
-            </AddItemButton>
-        </>
+        <ItemFilterEditColumn optionsArr={arr} />
     );
 };
 
@@ -44,14 +35,9 @@ const ItemFilterEdit = forwardRef(() => {
 
     return (
         <ItemFilterEditContainer>
-            {map(filterObjArr, (arr, index) => (
-                <FilterEditColumnContainer
-                    key={arr.type ? arr.type : index}
-                    type={arr.type ? arr.type : index}
-                >
-                    {generateChildren(arr, index)}
-                </FilterEditColumnContainer>
-            ))}
+            {map(filterObjArr, (arr, index) => {
+                return generateChildren(arr, index);
+            })}
         </ItemFilterEditContainer>
     );
 });

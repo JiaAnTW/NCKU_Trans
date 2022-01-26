@@ -4,14 +4,15 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import ItemFilterEdit from './ItemFilterEdit';
-import EditTagButton from './ItemFilterEdit/editTagButton';
+import ItemFilterManagement from './ItemFilterEdit/manage';
 import ItemFilter from './ItemFilter';
 import { FilterContainer, useStyles } from './style';
 
 function Filter({ isAdmin }) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-    const [isEditing, setIsEditing] = useState(false);
+    const [isManaging, setIsManaging] = useState(false);
+    const [isEditingTag, setIsEditingTag] = useState(false);
 
     const handleClose = () => {
         setOpen(false);
@@ -21,8 +22,12 @@ function Filter({ isAdmin }) {
         setOpen(true);
     };
 
-    const toggleEdit = (isEditing) => {
-        setIsEditing(isEditing);
+    const toggleManage = (isManaging) => {
+        setIsManaging(isManaging);
+    };
+
+    const toggleEditTag = (isEditing) => {
+        setIsEditingTag(isEditing);
     };
 
     return (
@@ -57,12 +62,22 @@ function Filter({ isAdmin }) {
                     }}
                 >
                     {isAdmin && (
-                        <EditTagButton
-                            toggleEdit={(isEditing) => toggleEdit(isEditing)}
-                            isEditing={isEditing}
+                        <ItemFilterManagement
+                            toggleManage={(isManaging) =>
+                                toggleManage(isManaging)
+                            }
+                            toggleEditTag={(isEditing) =>
+                                toggleEditTag(isEditing)
+                            }
+                            isManaging={isManaging}
+                            isEditingTag={isEditingTag}
                         />
                     )}
-                    {isEditing ? <ItemFilterEdit /> : <ItemFilter />}
+                    {isAdmin && isManaging ? (
+                        <ItemFilterEdit />
+                    ) : (
+                        <ItemFilter />
+                    )}
                 </Select>
             </FormControl>
         </FilterContainer>
