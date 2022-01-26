@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { Main, ScrollableContainer } from './style';
-import useInitData from './useInitData';
+import { Main } from './style';
 
+import { CardsContainer } from '~/theme/global';
 import CardList from './CardList';
 import ReaderModal from '~/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
 import LoadingFrame from '~/components/LoagingFrame';
 import useCloseReader from '~/utils/seo/useCloseReader';
+
+import useInitData from './useInitData';
 
 function Major({ isAdmin }) {
     const isFinishRequest = useInitData({ isAdmin, num: 30 });
@@ -18,10 +20,10 @@ function Major({ isAdmin }) {
         <LoadingFrame isFinishRequest={isFinishRequest}>
             <Main>
                 <EssayFilter />
-                <ScrollableContainer>
-                    <Statistic />
+                <Statistic />
+                <CardsContainer>
                     <CardList isAdmin={isAdmin} />
-                </ScrollableContainer>
+                </CardsContainer>
                 <ReaderModal isAdmin={isAdmin} onClose={handleCloseReader} />
             </Main>
         </LoadingFrame>
