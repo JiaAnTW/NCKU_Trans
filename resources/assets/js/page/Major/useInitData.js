@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchMajor, fetchMajorAdmin } from '../../model/middleware/major';
+import { initMajor, fetchMajorAdmin } from '../../model/middleware/major';
 import { fetchDepartment } from '../../model/middleware/department';
 import { fetchCollege } from '../../model/middleware/college';
 import { useRequest } from '../../utils/index';
 import { CLEAN_FILTER } from '../../model/action/major';
 
-function useInitData(isAdmin) {
+function useInitData({ isAdmin, num }) {
     const dispatch = useDispatch();
     const isFinishRequest = useRequest();
 
@@ -14,7 +14,7 @@ function useInitData(isAdmin) {
         if (isAdmin) {
             dispatch(fetchMajorAdmin());
         } else {
-            dispatch(fetchMajor());
+            dispatch(initMajor({ num }));
         }
         dispatch(fetchDepartment());
         dispatch(fetchCollege());

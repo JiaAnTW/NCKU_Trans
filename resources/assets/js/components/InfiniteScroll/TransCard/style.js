@@ -1,18 +1,12 @@
 import styled from 'styled-components';
+import Badge from '~/components/atom/Badge';
 import { color, colorMap } from '~/theme/global';
 
 export const Card = styled.div`
-    position: relative;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 5px;
-    background-color: ${(props) =>
-        props.dark ? color.lightYellow : color.white};
-    color: ${color.black};
-    margin: 5px;
-    border-radius: 15px;
-    height: 180px;
-    width: 220px;
-    box-sizing: border-box;
+    border-left: 0;
+    background-color: ${({ isConfirmed }) =>
+        isConfirmed ? color.white : color.lightYellow};
 
     @media (max-width: 576px) {
         width: 100%;
@@ -22,11 +16,18 @@ export const Card = styled.div`
     }
 `;
 
+export const BadgeList = styled.div`
+    display: inline-flex;
+`;
+
+export const StatisticBadge = styled(Badge)`
+    margin-right: 5px;
+`;
+
 export const CardTitle = styled.h4`
-    font-size: 1.8rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    line-height: 1.1;
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 6px;
 `;
 
 export const CardSubTitle = styled.div`
@@ -35,7 +36,7 @@ export const CardSubTitle = styled.div`
 `;
 
 export const CardText = styled.p`
-    font-size: 1.3rem;
+    font-size: 14px;
     text-align: justify;
     line-break: anywhere;
     margin-top: 0;
@@ -47,21 +48,9 @@ export const CardText = styled.p`
 `;
 
 export const CardContent = styled.div`
-    display: grid;
-    box-sizing: border-box;
-    grid-template-columns: 57px auto;
-    grid-template-rows: auto 30px;
-    grid-template-areas:
-        'icon main'
-        'tags tags';
-    width: 210px;
-    height: 160px;
-    padding: 5px 10px;
-    padding-bottom: 0;
-    @media (max-width: 576px) {
-        width: 100%;
-        height: 125px;
-    }
+    width: 100%;
+    height: 88px;
+    margin-top: 20px;
 `;
 
 export const TypeIcon = styled.div`
@@ -84,17 +73,15 @@ export const ContentInfo = styled.div`
 `;
 
 export const TagSpanList = styled.div`
+    margin-top: 10px;
     display: flex;
     align-items: center;
 `;
 
 export const TagSpan = styled.span`
-    color: ${({ theme }) =>
-        colorMap[theme].color === color.white
-            ? colorMap[theme].backgroundColor
-            : colorMap[theme].color};
-    margin-right: 10px;
-    font-size: 1.2rem;
+    color: ${color.yellow};
+    margin-right: 15px;
+    font-size: 14px;
 `;
 
 export const YearSpan = styled(TagSpan)`
