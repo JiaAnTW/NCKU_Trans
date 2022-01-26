@@ -3,13 +3,15 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
-import Badge from '~/components/atom/Badge';
+import ItemFilterEdit from './ItemFilterEdit';
+import EditTagButton from './ItemFilterEdit/editTagButton';
 import ItemFilter from './ItemFilter';
 import { FilterContainer, useStyles } from './style';
 
-function Filter() {
+function Filter({ isAdmin }) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
 
     const handleClose = () => {
         setOpen(false);
@@ -17,6 +19,10 @@ function Filter() {
 
     const handleOpen = () => {
         setOpen(true);
+    };
+
+    const toggleEdit = (isEditing) => {
+        setIsEditing(isEditing);
     };
 
     return (
@@ -50,7 +56,13 @@ function Filter() {
                         },
                     }}
                 >
-                    <ItemFilter />
+                    {isAdmin && (
+                        <EditTagButton
+                            toggleEdit={(isEditing) => toggleEdit(isEditing)}
+                            isEditing={isEditing}
+                        />
+                    )}
+                    {isEditing ? <ItemFilterEdit /> : <ItemFilter />}
                 </Select>
             </FormControl>
         </FilterContainer>

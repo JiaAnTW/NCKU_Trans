@@ -1,10 +1,10 @@
 import React from 'react';
 import Filter from './Filter';
 
-export default function Study() {
+export default function Study({ isAdmin }) {
     return (
         <div>
-            <Filter />
+            <Filter isAdmin={isAdmin} />
         </div>
     );
 }
