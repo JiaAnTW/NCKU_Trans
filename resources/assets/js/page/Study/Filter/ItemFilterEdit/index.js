@@ -17,7 +17,7 @@ const ItemFilterEdit = forwardRef(() => {
         <ItemFilterEditContainer>
             {map(filterObjArr, (arr, index) => {
                 return arr.type === 'year' ? (
-                    <div>
+                    <div key={arr.type ? arr.type : index}>
                         <FilterEditDisabledContainer>
                             <FilterDisabledText>
                                 學年自動產生
@@ -31,7 +31,10 @@ const ItemFilterEdit = forwardRef(() => {
                         />
                     </div>
                 ) : (
-                    <ItemFilterEditColumn optionsArr={arr} />
+                    <ItemFilterEditColumn
+                        key={arr.type ? arr.type : index}
+                        optionsArr={arr}
+                    />
                 );
             })}
         </ItemFilterEditContainer>

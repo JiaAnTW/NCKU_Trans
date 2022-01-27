@@ -10,9 +10,6 @@ import { FilterContainer, useStyles } from './style';
 
 function Filter({ isAdmin }) {
     const classes = useStyles();
-    const [open, setOpen] = useState(false);
-    const [isManaging, setIsManaging] = useState(false);
-    const [isEditingTag, setIsEditingTag] = useState(false);
 
     const handleClose = () => {
         setOpen(false);
@@ -24,10 +21,6 @@ function Filter({ isAdmin }) {
 
     const toggleManage = (isManaging) => {
         setIsManaging(isManaging);
-    };
-
-    const toggleEditTag = (isEditing) => {
-        setIsEditingTag(isEditing);
     };
 
     return (
@@ -70,7 +63,6 @@ function Filter({ isAdmin }) {
                                 toggleEditTag(isEditing)
                             }
                             isManaging={isManaging}
-                            isEditingTag={isEditingTag}
                         />
                     )}
                     {isAdmin && isManaging ? (

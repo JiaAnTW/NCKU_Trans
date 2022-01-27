@@ -38,17 +38,6 @@ export const ItemFilterEditContainer = styled.div`
     height: 189px;
 `;
 
-export const FilterEditColumnContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
-    min-height: 100%;
-    width: 115px;
-    padding: ${(props) => (props.type === 'year' ? '0px 5px' : '5px')};
-`;
-
 export const FilterEditDisabledContainer = styled.div`
     position: absolute;
     width: 115px;
