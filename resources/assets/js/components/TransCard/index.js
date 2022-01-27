@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import {
     Card,
     CardContent,
@@ -22,18 +22,29 @@ const contentMiddleware = (content, maxNumber) =>
         ? content
         : content.substr(0, maxNumber - 1) + '  (...)';
 
+function reducer(state, action) {
+    switch (action.type) {
+        case 'PC':
+            return 27;
+        case 'mobile':
+            return 15;
+        default:
+            return state;
+    }
+}
+
 function TransCard({ itemData, index }) {
-    const [wordsNumber, setWordsNumber] = useState(27);
+    const [wordsNumber, dispatch] = useReducer(reducer, 27);
     const windowWidth = useWindowWidth();
     const handleOpenContent = useOpenContent(itemData, index);
 
     useEffect(() => {
-        if (windowWidth >= 870 && wordsNumber === 15) {
-            setWordsNumber(27);
-        } else if (windowWidth < 870 && wordsNumber === 27) {
-            setWordsNumber(15);
+        if (windowWidth >= 870) {
+            dispatch({ type: 'PC' });
+        } else if (windowWidth < 870) {
+            dispatch({ type: 'mobile' });
         }
-    }, [windowWidth, wordsNumber]);
+    }, [windowWidth]);
 
     return (
         <Card dark={itemData['confirm'] === 'false'}>
