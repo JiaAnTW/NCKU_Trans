@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { color } from '~/theme/global';
 
 export const ItemFilterColContainer = styled.div`
-    width: 115px;
+    width: 105px;
     padding: 5px;
 
     &:not(:last-of-type) {

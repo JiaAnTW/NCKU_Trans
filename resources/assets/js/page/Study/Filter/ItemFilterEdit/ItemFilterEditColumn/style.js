@@ -9,7 +9,7 @@ export const FilterEditColumnContainer = styled.div`
     justify-content: space-between;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     min-height: 100%;
-    width: 115px;
+    width: 105px;
     padding: 5px;
 `;
 

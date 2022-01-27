@@ -1,28 +1,143 @@
-import { FormGroup } from '@material-ui/core';
+import { FormGroup, TextField } from '@material-ui/core';
+import SelectElement from '@material-ui/core/Select';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CANCEL_EDIT_TAG } from '~/model/action/study';
 
-import { EditTagContainer, ToolsContainer, ToolButton } from './style';
+import { STOP_EDIT_TAG, UPDATE_TAG } from '~/model/action/study';
+import InputLabel from '~/components/atom/InputLabel';
+import Option from '~/components/atom/Option/index';
+import {
+    deleteItemFilterOption,
+    createItemFilterOption,
+    updateItemFilterOption,
+} from '~/model/middleware/study';
 import { adminActionSelector } from '~/model/selector/study';
+import {
+    EditTagContainer,
+    ToolsContainer,
+    ToolButton,
+    useStyles,
+    MenuPropsStyle,
+    FormControlGroup,
+    InputFieldWithPrefix,
+    BetweenSymbol,
+} from './style';
+
+const getDataNameLabel = (type) => {
+    switch (type) {
+        case 'category':
+            return '類別名稱';
+        case 'statInfo':
+            return '數據名稱';
+        default:
+            return '名稱';
+    }
+};
+
+const statTypes = [
+    {
+        text: '整數',
+        value: 'integer',
+    },
+    {
+        text: '小數',
+        value: 'decimal',
+    },
+];
 
 function EditTag() {
-    const filterManageState = useSelector(adminActionSelector);
+    const { action, tag } = useSelector(adminActionSelector);
     const dispatch = useDispatch();
+    const classes = useStyles();
+
+    const deleteTag = () => {
+        dispatch(deleteItemFilterOption(tag));
+    };
 
     const cancelEditTag = () => {
-        dispatch({ type: CANCEL_EDIT_TAG });
+        dispatch({ type: STOP_EDIT_TAG });
+    };
+
+    const updateTag = () => {
+        if (action === 'create') {
+            dispatch(createItemFilterOption(tag));
+        } else if (action === 'update') {
+            dispatch(updateItemFilterOption(tag));
+        }
+    };
+
+    const onChangeTag = (tag) => {
+        dispatch({ type: UPDATE_TAG, payload: { tag } });
     };
 
     return (
         <EditTagContainer>
-            <FormGroup>{JSON.stringify(filterManageState.tag)}</FormGroup>
+            <form className={classes.root}>
+                <TextField
+                    fullWidth
+                    value={tag.value}
+                    label={getDataNameLabel(tag.type)}
+                    onChange={(e) => onChangeTag({ value: e.target.value })}
+                />
+                {tag.type === 'statInfo' && (
+                    <FormGroup row>
+                        <FormControlGroup className={classes.formControl}>
+                            <InputLabel>數據類別</InputLabel>
+                            <SelectElement
+                                value={tag.dataType}
+                                onChange={(e) =>
+                                    onChangeTag({ dataType: e.target.value })
+                                }
+                                MenuProps={{ style: MenuPropsStyle }}
+                                className={classes.select}
+                            >
+                                {statTypes.map((item) => (
+                                    <Option {...item} key={item.value}>
+                                        {item.text}
+                                    </Option>
+                                ))}
+                            </SelectElement>
+                        </FormControlGroup>
+                        <FormControlGroup className={classes.formControl}>
+                            <InputLabel>資料範圍</InputLabel>
+                            <InputFieldWithPrefix>
+                                min
+                                <TextField
+                                    value={tag.min}
+                                    className={classes.numberInput}
+                                    InputLabelProps={{ shrink: false }}
+                                    onChange={(e) =>
+                                        onChangeTag({ min: e.target.value })
+                                    }
+                                />
+                            </InputFieldWithPrefix>
+                            <BetweenSymbol> ~ </BetweenSymbol>
+                            <InputFieldWithPrefix>
+                                max
+                                <TextField
+                                    value={tag.max}
+                                    className={classes.numberInput}
+                                    onChange={(e) =>
+                                        onChangeTag({ max: e.target.value })
+                                    }
+                                />
+                            </InputFieldWithPrefix>
+                        </FormControlGroup>
+                    </FormGroup>
+                )}
+            </form>
             <ToolsContainer>
-                <ToolButton action="delete">刪除</ToolButton>
+                {action !== 'create' && (
+                    <ToolButton action="delete" onClick={deleteTag}>
+                        刪除
+                    </ToolButton>
+                )}
                 <ToolButton action="cancel" onClick={cancelEditTag}>
                     返回
                 </ToolButton>
-                <ToolButton action="send">送出</ToolButton>
+                <ToolButton action="send" onClick={updateTag}>
+                    送出
+                </ToolButton>
             </ToolsContainer>
         </EditTagContainer>
     );

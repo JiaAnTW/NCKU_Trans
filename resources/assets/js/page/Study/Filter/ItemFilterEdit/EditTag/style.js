@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { color } from '~/theme/global';
 import Button from '~/components/atom/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const EditTagContainer = styled.div`
     display: flex;
@@ -9,6 +10,68 @@ export const EditTagContainer = styled.div`
     align-items: flex-start;
     padding: 10px 15px 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+`;
+
+export const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        '& *': {
+            fontSize: '14px !important',
+        },
+        '& label': {
+            color: color.darkYellow,
+        },
+        '& .MuiInputLabel-shrink': {
+            transform: 'translate(0, 1.5px)',
+        },
+        '& label + .MuiInput-formControl': {
+            marginTop: 26,
+        },
+        '& .MuiTextField-root.Mui-focused': {
+            color: color.darkYellow,
+        },
+    },
+    formControl: {
+        width: 'fit-content !important',
+    },
+    select: {
+        width: 90,
+        marginRight: 30,
+    },
+    numberInput: {
+        width: 50,
+        marginLeft: 3,
+        '& input': {
+            textAlign: 'right',
+        },
+    },
+}));
+
+export const MenuPropsStyle = {
+    top: 20,
+};
+
+export const FormControlGroup = styled.div`
+    margin-top: 15px;
+    height: 48px;
+
+    &:not(:last-of-type) {
+        margin-right: 15px;
+    }
+
+    &:last-of-type {
+        flex-grow: 1;
+    }
+`;
+
+export const InputFieldWithPrefix = styled.div`
+    display: inline-flex;
+    align-items: flex-end;
+`;
+
+export const BetweenSymbol = styled.span`
+    content: '~';
+    margin: 10px;
 `;
 
 export const ToolsContainer = styled.div`
@@ -33,7 +96,7 @@ export const ToolButton = styled(Button)`
     color: #393f4d;
     background-color: ${(props) =>
         props.action === 'delete'
-            ? 'rgb(229,68,109)'
+            ? '#F5587B'
             : props.action === 'cancel'
             ? 'white'
             : color.yellow};

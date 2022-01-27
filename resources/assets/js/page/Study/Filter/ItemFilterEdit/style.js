@@ -14,6 +14,7 @@ export const ManageButtonContainer = styled.div`
     padding: 9.5px 0;
     font-size: 14px;
     line-height: 16px;
+    width: 342px;
 
     cursor: pointer;
     user-select: none;
@@ -36,12 +37,13 @@ export const ItemFilterEditContainer = styled.div`
     flex-direction: row;
     padding: 10px 0;
     height: 189px;
+    width: 342px;
 `;
 
 export const FilterEditDisabledContainer = styled.div`
     position: absolute;
-    width: 115px;
-    height: 189px;
+    width: 105px;
+    height: 200px;
     padding-left: 5px;
 
     background: rgba(255, 255, 255, 0.8);

@@ -20,6 +20,7 @@ function ItemFilterEditColumn({ optionsArr }) {
         dispatch({
             type: START_EDIT_TAG,
             payload: {
+                action: 'update',
                 tag: { type, value, dataType, max, min },
             },
         });
@@ -29,6 +30,7 @@ function ItemFilterEditColumn({ optionsArr }) {
         dispatch({
             type: START_EDIT_TAG,
             payload: {
+                action: 'create',
                 tag: { type },
             },
         });
