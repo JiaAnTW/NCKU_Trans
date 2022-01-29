@@ -18,7 +18,7 @@ export const Container = styled.div`
     grid-template-columns: auto;
     grid-template-rows: 50px auto;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 40px);
     padding: 20px 30px;
     background-color: ${color.white};
     overflow-y: auto;

@@ -8,6 +8,7 @@ import { useParentSize } from '~/utils';
 import useCommentFlow from './useCommentFlow';
 import useCardSize from './useCardSize';
 import useCard from './useCard';
+import { CardListContainer } from './style';
 
 function CardsList() {
     const majorData = useSelector(majorDisplaySelector);
@@ -24,7 +25,7 @@ function CardsList() {
     const Card = useCard(majorData, columnCount);
 
     return (
-        <div ref={containerRef}>
+        <CardListContainer ref={containerRef}>
             <Grid
                 columnCount={columnCount}
                 columnWidth={cardWidth}
@@ -35,7 +36,7 @@ function CardsList() {
             >
                 {Card}
             </Grid>
-        </div>
+        </CardListContainer>
     );
 }
 export default CardsList;
