@@ -9,7 +9,7 @@ export const Container = styled.form`
 `;
 
 export const InputField = styled.input`
-    width: 550px;
+    width: 100%;
     height: 45px;
     padding: 10px 15px;
     box-sizing: border-box;
@@ -21,22 +21,17 @@ export const InputField = styled.input`
     }
 
     @media (max-width: 576px) {
-        width: 183px;
         height: 35px;
     }
 `;
 export const Button = styled.button`
+    display: ${({ hidden }) => (hidden ? 'none' : 'inline-flex')};
     position: absolute;
-    left: 515px;
-    display: inline-flex;
+    right: 12px;
     cursor: pointer;
     padding: 0;
     border: 0;
     background-color: ${color.white};
-
-    @media (max-width: 576px) {
-        left: 150px;
-    }
 `;
 
 export const SearchIconYellow = styled(SearchIcon)`
