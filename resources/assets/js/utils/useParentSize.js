@@ -4,7 +4,7 @@ export default function useParentSize(ref) {
     const [parentWidth, setParentWidth] = useState(0);
     const [parentHeight, setParentHeight] = useState(0);
 
-    const handleWindowReSize = useCallback(() => {
+    const handleWindowResize = useCallback(() => {
         if (!ref.current) return;
 
         const parentNode = ref.current.parentNode;
@@ -17,14 +17,14 @@ export default function useParentSize(ref) {
 
     useEffect(() => {
         // Init when first time render
-        handleWindowReSize();
+        handleWindowResize();
 
-        // Note: won't when first time render
-        window.addEventListener('resize', handleWindowReSize);
+        // Note: won't execute when first time render
+        window.addEventListener('resize', handleWindowResize);
         return () => {
-            window.removeEventListener('resize', handleWindowReSize);
+            window.removeEventListener('resize', handleWindowResize);
         };
-    }, [handleWindowReSize]);
+    }, [handleWindowResize]);
 
     return { parentWidth, parentHeight };
 }
