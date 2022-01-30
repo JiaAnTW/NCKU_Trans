@@ -4,8 +4,7 @@ import postReducer from '~/model/reducer/post';
 import { SET_POST_FORM } from '~/model/action/post';
 import { initComment } from './initComment';
 
-const formSelector = (state, type) => state.form[type];
-//const formSelector = (state, type) => state.form[type][2];
+const formSelector = (state, type) => state.form[type].pageMap[2];
 
 test('[Comment] Should return the initial state', () => {
     expect(postReducer(undefined, {}).form.comment).toEqual(initComment);
@@ -13,6 +12,7 @@ test('[Comment] Should return the initial state', () => {
 
 test('[Comment] Should change value without changing schema', () => {
     const initState = cloneDeep(postReducer(undefined, {}));
+    const testState = cloneDeep(initState);
     let nextState = postReducer(initState, {
         type: SET_POST_FORM,
         payload: { keyName: 'score', value: 87 },
@@ -29,5 +29,5 @@ test('[Comment] Should change value without changing schema', () => {
         payload: { keyName: 'score', value: '' },
     });
     commentForm = formSelector(nextState, 'comment');
-    expect(commentForm).toEqual(initComment);
+    expect(commentForm).toEqual(testState);
 });
