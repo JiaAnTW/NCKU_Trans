@@ -6,7 +6,7 @@ export const color = {
     backgroundYellow: 'rgba(254, 218, 106, 0.4)',
     lightYellow: 'rgba(255,238,173,1)',
     darkYellow: '#e1af13',
-    white: 'white',
+    white: '#FFFFFF',
     darkWhite: '#F8F8F8',
     lightGray: 'rgba(212, 212, 220, 1)',
     darkGray: 'rgba(163,158,158,1)',
