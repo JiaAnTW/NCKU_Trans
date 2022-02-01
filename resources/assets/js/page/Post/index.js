@@ -8,8 +8,9 @@ import PostForm from './PostForm/index';
 import { PostLayout } from './style';
 import LoadingFrame from '~/components/LoagingFrame';
 
-function Post() {
+function Post({ location }) {
     const isFinishRequest = useInitOptions();
+    // const data = location.state
 
     return (
         <LoadingFrame isFinishRequest={isFinishRequest}>

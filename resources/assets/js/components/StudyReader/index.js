@@ -38,7 +38,7 @@ function StudyReader({ isAdmin }) {
                 />
                 <div style={{ height: 50 }}>Statistic</div>
                 <StudyReaderContext>{content}</StudyReaderContext>
-                {isAdmin && <AdminAdvance />}
+                {isAdmin && <AdminAdvance id={id} />}
             </StudyReaderContent>
             {onNext && <ChangeBtn direction="right" onClick={onNext} />}
         </StudyReaderLayout>
