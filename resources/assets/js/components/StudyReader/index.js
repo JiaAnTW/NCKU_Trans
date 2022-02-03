@@ -13,6 +13,16 @@ import Confirm from './Confirm';
 import ChangeBtn from './ChangeBtn';
 import Title from './Title';
 import AdminAdvance from './AdminAdvance';
+import StatisticBlock from './StatisticBlock';
+
+const data = [
+    {
+        TOFEL: 95,
+    },
+    {
+        GPA: 4.2,
+    },
+];
 
 function StudyReader({ isAdmin }) {
     const [{ id, type, title, subtitle, tags, content, confirm }] =
@@ -36,7 +46,7 @@ function StudyReader({ isAdmin }) {
                     title="普渡大學交換紀錄"
                     postTime="109（發文時間：111/01/01）"
                 />
-                <div style={{ height: 50 }}>Statistic</div>
+                <StatisticBlock data={data} />
                 <StudyReaderContext>{content}</StudyReaderContext>
                 {isAdmin && <AdminAdvance id={id} />}
             </StudyReaderContent>

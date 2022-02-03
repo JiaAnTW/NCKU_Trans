@@ -37,7 +37,7 @@ export const StatisticBadge = styled(Badge)`
 `;
 export const StudyReaderContext = styled.div`
     height: 100%;
-    margin: 15px 0px;
+    margin: 5px 0px;
     text-align: justify;
 
     line-height: 2.8rem;
