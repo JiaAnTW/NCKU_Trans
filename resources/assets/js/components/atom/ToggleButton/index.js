@@ -1,29 +1,23 @@
-import React from 'react';
-import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useCallback } from 'react';
 import { ToggleBtn } from './style';
 
 function ToggleButton(props) {
     const {
-        index,
-        handleClick,
         specialWord,
         wording,
-        parent,
         isPreventDefault,
+        onClick,
+        spawn,
+        spawnParent,
     } = props;
-    const type = useSelector((state) => state.post.type);
-    const subStep = useSelector((state) => state.post.form[type].step);
-    const key = useSelector((state) =>
-        parent
-            ? state.post.form[type][parent].value[index]
-            : state.post.form[type][subStep][index]
-    );
-    const OnClickHandle = useCallback(() => {
-        handleClick(index, props);
-    }, [handleClick, index]);
+    const handleClick = useCallback((parent, spawn) => {
+        onClick(parent, spawn);
+    });
     return (
-        <ToggleBtn selected={!isPreventDefault && key} onClick={OnClickHandle}>
+        <ToggleBtn
+            selected={!isPreventDefault}
+            onClick={() => handleClick(spawnParent, spawn)}
+        >
             {`${specialWord ? specialWord : ''}${wording}`}
         </ToggleBtn>
     );

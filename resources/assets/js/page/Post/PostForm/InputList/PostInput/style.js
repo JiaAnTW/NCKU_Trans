@@ -12,7 +12,7 @@ export const InputLayout = styled.div`
         padding-right: 70px;
     }*/
 
-    margin-bottom: ${(props) => (props.inGroup ? '' : '40px')};
+    margin-bottom: 40px;
 
     @media (max-width: 870px) {
         /*padding-left: 20px;

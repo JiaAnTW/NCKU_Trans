@@ -1,12 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { Title } from './style';
 
 function Label(props) {
-    const type = useSelector((state) => state.post.type);
-    const label = useSelector((state) => ({
-        ...state.post.form[type][props.keyName],
-    }));
-    return <span>{label.value}</span>;
+    return <Title>{props.value}</Title>;
 }
 
 export default Label;
