@@ -14,11 +14,12 @@ export const Header = styled.header`
 `;
 
 export const Container = styled.div`
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 50px auto;
     width: 100%;
-    height: calc(100vh - 40px);
+    height: 100vh;
     padding: 20px 30px;
     background-color: ${color.white};
     overflow-y: auto;
