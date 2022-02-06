@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Main, ScrollableContainer } from './style';
 import useInitData from './useInitData';
-import { CardsContainer, LoadingContainer } from '~/theme/global';
 
 import CardList from './CardList';
 import ReaderModal from '~/components/Modal/ReaderModal';
@@ -12,7 +11,7 @@ import LoadingFrame from '~/components/LoagingFrame';
 import useCloseReader from '~/utils/seo/useCloseReader';
 
 function Major({ isAdmin }) {
-    const isFinishRequest = useInitData(isAdmin);
+    const isFinishRequest = useInitData({ isAdmin, num: 30 });
     const { handleCloseReader } = useCloseReader();
 
     return (
@@ -21,9 +20,7 @@ function Major({ isAdmin }) {
                 <EssayFilter />
                 <ScrollableContainer>
                     <Statistic />
-                    <CardsContainer>
-                        <CardList />
-                    </CardsContainer>
+                    <CardList isAdmin={isAdmin} />
                 </ScrollableContainer>
                 <ReaderModal isAdmin={isAdmin} onClose={handleCloseReader} />
             </Main>
