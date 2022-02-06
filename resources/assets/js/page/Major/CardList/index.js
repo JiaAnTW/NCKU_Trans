@@ -22,7 +22,7 @@ function CardsList() {
         parentWidth <= cardWidth ? 1 : Math.floor(parentWidth / cardWidth);
     const rowCount = Math.ceil(majorData.length / columnCount);
 
-    const Card = useCard(majorData, columnCount);
+    const Card = useCard(columnCount);
 
     return (
         <CardListContainer ref={containerRef}>
@@ -33,6 +33,7 @@ function CardsList() {
                 rowCount={rowCount}
                 rowHeight={cardHeight}
                 width={parentWidth}
+                itemData={majorData}
             >
                 {Card}
             </Grid>

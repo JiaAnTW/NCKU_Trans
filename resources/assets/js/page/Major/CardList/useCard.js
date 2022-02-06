@@ -1,21 +1,21 @@
 import React, { useCallback } from 'react';
 import TransCard from '~/components/TransCard';
 
-export default function useCard(majorData, columnCount) {
+export default function useCard(columnCount) {
     const Card = useCallback(
-        ({ columnIndex, rowIndex, style }) => {
+        ({ data, columnIndex, rowIndex, style }) => {
             const index = columnIndex + columnCount * rowIndex;
             // Must return a JSX element, or react window will crash
-            if (index >= majorData.length) return <></>;
+            if (!data || index >= data.length) return <></>;
 
-            const itemData = majorData[index];
+            const itemData = data[index];
             return (
                 <div style={style}>
                     <TransCard itemData={itemData} index={index} />
                 </div>
             );
         },
-        [majorData, columnCount]
+        [columnCount]
     );
 
     return Card;
