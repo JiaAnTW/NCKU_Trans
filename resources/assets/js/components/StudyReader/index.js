@@ -8,7 +8,6 @@ import {
     StudyReaderContext,
     StudyReaderLayout,
 } from './style';
-import './style.css';
 import Confirm from './Confirm';
 import ChangeBtn from './ChangeBtn';
 import Title from './Title';

@@ -1,3 +1,4 @@
+import Toggle from 'react-toggle';
 import styled from 'styled-components';
 
 export const ConfirmBar = styled.div`
@@ -9,6 +10,15 @@ export const ConfirmBar = styled.div`
 
     grid-column-start: 1;
     grid-column-end: 4;
+`;
+export const StyledToggle = styled(Toggle)`
+    &.react-toggle--checked .react-toggle-track {
+        background-color: #4d4d4d;
+    }
+    &.react-toggle--checked:hover:not(.react-toggle--disabled)
+        .react-toggle-track {
+        background-color: #000000;
+    }
 `;
 export const ConfirmText = styled.span`
     margin-left: 5px;
