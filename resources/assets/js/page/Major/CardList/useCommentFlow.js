@@ -31,7 +31,7 @@ function useCommentFlow({ majorData }) {
 
     // Open Reader if id is sets by url when user enter the website.
     useEffect(() => {
-        if (!index && indexById && indexById > 0) {
+        if (!index && indexById >= 0) {
             let itemData = majorData[indexById];
             setModalContent(transIntoModalData(itemData, indexById));
             setIsModalOpen(true);
