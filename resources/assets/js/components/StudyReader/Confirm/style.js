@@ -12,4 +12,5 @@ export const ConfirmBar = styled.div`
 `;
 export const ConfirmText = styled.span`
     margin-left: 5px;
+    color: #ffffff;
 `;

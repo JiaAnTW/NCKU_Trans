@@ -6,5 +6,5 @@ export const StyledTitle = styled.h4`
 `;
 export const PostYearSpan = styled.span`
     font-size: 16px;
-    color: #c8c8c8;
+    color: #8c8c8c;
 `;
