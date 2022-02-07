@@ -9,6 +9,7 @@ export const FilterContainer = styled.section`
     padding: 0 5px;
     width: fit-content;
     height: 50px;
+    margin-bottom: 10px;
 `;
 
 const fontSize = '1.5rem';
