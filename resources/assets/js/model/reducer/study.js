@@ -45,7 +45,6 @@ const studyReducer = (state = initState, action) => {
             };
         }
         case UPDATE_TAG: {
-            console.log('UPDATE_TAG', action.payload.tag);
             return {
                 ...state,
                 admin: {
