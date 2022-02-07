@@ -36,7 +36,7 @@ function reducer(state, action) {
  * @param {Object} param
  * @param {Array} param.data
  */
-function TransCard({ data, index, style }) {
+function StudyCard({ data, index, style }) {
     const itemData = data[index];
     const [wordsNumber, dispatch] = useReducer(reducer, 36);
     const windowWidth = useWindowWidth();
@@ -84,4 +84,4 @@ function TransCard({ data, index, style }) {
     );
 }
 
-export default TransCard;
+export default StudyCard;

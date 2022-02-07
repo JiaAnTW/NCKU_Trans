@@ -14,6 +14,7 @@ export const Header = styled.header`
 `;
 
 export const Container = styled.div`
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 50px auto;

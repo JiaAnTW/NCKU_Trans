@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { color, colorMap } from '~/theme/global';
 
+export const CARD_WIDTH_PC = 220;
+export const CARD_HEIGHT_PC = 180;
+export const CARD_HEIGHT_MOBILE = 145;
+
 export const Card = styled.div`
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -8,17 +12,16 @@ export const Card = styled.div`
     background-color: ${(props) =>
         props.dark ? color.lightYellow : color.white};
     color: ${color.black};
-    margin: 5px;
     border-radius: 15px;
-    height: 180px;
-    width: 220px;
+    height: ${CARD_HEIGHT_PC}px;
+    width: ${CARD_WIDTH_PC}px;
     box-sizing: border-box;
 
     @media (max-width: 576px) {
         width: 100%;
         margin: 0;
         border-radius: 0;
-        height: 145px;
+        height: ${CARD_HEIGHT_MOBILE}px;
     }
 `;
 

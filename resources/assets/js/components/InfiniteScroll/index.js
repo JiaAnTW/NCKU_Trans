@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import { ListContainer } from './style';
-import TransCard from './TransCard';
 
-function InfiniteScroll({ data, setOverscanStopIndex }) {
+function InfiniteScroll({ data, setOverscanStopIndex, ListItemComponent }) {
     const onItemsRendered = useCallback(
         ({ overscanStopIndex }) => {
             setOverscanStopIndex(overscanStopIndex);
@@ -19,7 +18,7 @@ function InfiniteScroll({ data, setOverscanStopIndex }) {
             onItemsRendered={onItemsRendered}
             itemData={data}
         >
-            {TransCard}
+            {ListItemComponent}
         </ListContainer>
     );
 }
