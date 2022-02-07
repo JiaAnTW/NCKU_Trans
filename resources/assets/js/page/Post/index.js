@@ -7,10 +7,13 @@ import PostForm from './PostForm/index';
 
 import { PostLayout } from './style';
 import LoadingFrame from '~/components/LoagingFrame';
+import { useHistory } from 'react-router';
 
 function Post() {
     const isFinishRequest = useInitOptions();
-
+    /*     const history = useHistory()
+    useCustomHook(history.location.state)
+ */
     return (
         <LoadingFrame isFinishRequest={isFinishRequest}>
             <PostLayout>
