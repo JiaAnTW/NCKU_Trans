@@ -10,6 +10,8 @@ import { FilterContainer, useStyles } from './style';
 
 function Filter({ isAdmin }) {
     const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const [isManaging, setIsManaging] = useState(false);
 
     const handleClose = () => {
         setOpen(false);
