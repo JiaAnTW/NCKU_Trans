@@ -23,12 +23,10 @@ export const useStyles = makeStyles((theme) => ({
         },
         '& .MuiInputLabel-shrink': {
             transform: 'translate(0, 1.5px)',
+            color: color.darkYellow,
         },
         '& label + .MuiInput-formControl': {
             marginTop: 26,
-        },
-        '& .MuiTextField-root.Mui-focused': {
-            color: color.darkYellow,
         },
     },
     formControl: {
@@ -67,6 +65,17 @@ export const FormControlGroup = styled.div`
 export const InputFieldWithPrefix = styled.div`
     display: inline-flex;
     align-items: flex-end;
+
+    /* Hide arrow of number input field */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
 `;
 
 export const BetweenSymbol = styled.span`

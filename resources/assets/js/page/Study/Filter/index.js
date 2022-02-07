@@ -59,9 +59,6 @@ function Filter({ isAdmin }) {
                             toggleManage={(isManaging) =>
                                 toggleManage(isManaging)
                             }
-                            toggleEditTag={(isEditing) =>
-                                toggleEditTag(isEditing)
-                            }
                             isManaging={isManaging}
                         />
                     )}

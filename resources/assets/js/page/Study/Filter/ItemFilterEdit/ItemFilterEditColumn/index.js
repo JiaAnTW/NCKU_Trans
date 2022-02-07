@@ -31,7 +31,13 @@ function ItemFilterEditColumn({ optionsArr }) {
             type: START_EDIT_TAG,
             payload: {
                 action: 'create',
-                tag: { type },
+                tag: {
+                    type,
+                    value: '',
+                    dataType: 'integer',
+                    min: 0,
+                    max: 0,
+                },
             },
         });
     };

@@ -1,4 +1,5 @@
-import { FormGroup, TextField } from '@material-ui/core';
+import FormGroup from '@material-ui/core/FormGroup';
+import TextField from '@material-ui/core/TextField';
 import SelectElement from '@material-ui/core/Select';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -70,6 +71,22 @@ function EditTag() {
         dispatch({ type: UPDATE_TAG, payload: { tag } });
     };
 
+    // todo: integer / decimal type check
+    const getTextFieldWithPrefix = (type) => {
+        return (
+            <InputFieldWithPrefix>
+                {type}
+                <TextField
+                    value={tag[type]}
+                    className={classes.numberInput}
+                    inputProps={{ type: 'number' }}
+                    InputLabelProps={{ shrink: false }}
+                    onChange={(e) => onChangeTag({ [type]: e.target.value })}
+                />
+            </InputFieldWithPrefix>
+        );
+    };
+
     return (
         <EditTagContainer>
             <form className={classes.root}>
@@ -100,28 +117,9 @@ function EditTag() {
                         </FormControlGroup>
                         <FormControlGroup className={classes.formControl}>
                             <InputLabel>資料範圍</InputLabel>
-                            <InputFieldWithPrefix>
-                                min
-                                <TextField
-                                    value={tag.min}
-                                    className={classes.numberInput}
-                                    InputLabelProps={{ shrink: false }}
-                                    onChange={(e) =>
-                                        onChangeTag({ min: e.target.value })
-                                    }
-                                />
-                            </InputFieldWithPrefix>
+                            {getTextFieldWithPrefix('max')}
                             <BetweenSymbol> ~ </BetweenSymbol>
-                            <InputFieldWithPrefix>
-                                max
-                                <TextField
-                                    value={tag.max}
-                                    className={classes.numberInput}
-                                    onChange={(e) =>
-                                        onChangeTag({ max: e.target.value })
-                                    }
-                                />
-                            </InputFieldWithPrefix>
+                            {getTextFieldWithPrefix('min')}
                         </FormControlGroup>
                     </FormGroup>
                 )}
