@@ -1,5 +1,43 @@
 import { START_EDIT_TAG, STOP_EDIT_TAG, UPDATE_TAG } from '../action/study';
 
+const fakeCategory = [
+    {
+        name: '校內學程',
+        value: '校內學程',
+    },
+    {
+        name: '海外交換',
+        value: '海外交換',
+    },
+    {
+        name: '跨校修課',
+        value: '跨校修課',
+    },
+];
+const fakeStatInfo = [
+    {
+        name: 'TOFEL',
+        value: 'TOFEL',
+        dataType: 'integer',
+        min: 0,
+        max: 120,
+    },
+    {
+        name: 'IELTS',
+        value: 'IELTS',
+        dataType: 'decimal',
+        min: 0,
+        max: 9,
+    },
+    {
+        name: 'JLPT',
+        value: 'JLPT',
+        dataType: 'integer',
+        min: 0,
+        max: 100,
+    },
+];
+
 const initState = {
     data: [],
     admin: {
@@ -12,6 +50,10 @@ const initState = {
             max: undefined,
             min: undefined,
         },
+    },
+    filter: {
+        category: fakeCategory,
+        statInfo: fakeStatInfo,
     },
 };
 
