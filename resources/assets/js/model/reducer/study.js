@@ -72,6 +72,7 @@ const initState = {
         category: fakeCategory,
         statInfo: fakeStatInfo,
     },
+};
 
 const studyReducer = (state = initState, action) => {
     switch (action.type) {
