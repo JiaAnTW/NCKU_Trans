@@ -7,6 +7,9 @@ import Select from '~/components/atom/Select';
 import TextArea from '~/components/atom/TextArea';
 import Label from '~/components/atom/Label';
 import ToggleButton from '~/components/atom/ToggleButton';
+import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
+import ToggleSpawnInput from '~/components/Form/ToggleSpawnInput';
+import PairInput from '~/components/atom/PairInput';
 
 const mapTypeToElement = (type) => {
     switch (type) {
@@ -20,6 +23,12 @@ const mapTypeToElement = (type) => {
             return Label;
         case 'toggle_button':
             return ToggleButton;
+        case 'toggle_button_group':
+            return ToggleButtonGroup;
+        case 'toggle_spawn_input':
+            return ToggleSpawnInput;
+        case 'pair_input':
+            return PairInput;
         default:
             return Input;
     }
@@ -33,13 +42,13 @@ function PostInput(props) {
                 payload: {
                     keyName: props.keyName,
                     value: e.target.value,
-                    index: props.index,
+                    elementIndex: props.elementIndex,
+                    layer: props.layer ? props.layer : 'base',
                 },
             });
         },
-        [dispatch, props.keyName, props.value, props.index]
+        [dispatch, props.keyName, props.layer, props.elementIndex]
     );
-
     const Element = mapTypeToElement(props.type);
     return (
         <InputLayout width={props.width}>

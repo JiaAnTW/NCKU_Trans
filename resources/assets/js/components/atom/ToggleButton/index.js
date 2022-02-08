@@ -1,24 +1,14 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { ToggleBtn } from './style';
 
 function ToggleButton(props) {
-    const {
-        specialWord,
-        wording,
-        isPreventDefault,
-        onClick,
-        spawn,
-        spawnParent,
-    } = props;
-    const handleClick = useCallback((parent, spawn) => {
-        onClick(parent, spawn);
-    });
+    const { title, handleClick, value } = props;
     return (
         <ToggleBtn
-            selected={!isPreventDefault}
-            onClick={() => handleClick(spawnParent, spawn)}
+            selected={value !== undefined && value}
+            onClick={handleClick}
         >
-            {`${specialWord ? specialWord : ''}${wording}`}
+            {title}
         </ToggleBtn>
     );
 }
