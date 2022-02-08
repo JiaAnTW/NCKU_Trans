@@ -68,11 +68,11 @@ const postReducer = (state = initState, action) => {
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const thisPage = stateNext.form[type].pageMap[step / 2];
             const { keyName, value, layer, elementIndex } = action.payload;
-            if (stateNext.type === 'comment')
+            if (stateNext.type === 'comment') {
                 stateNext.form[stateNext.type][keyName].value = value;
-            else {
+            } else {
+                const thisPage = stateNext.form[type].pageMap[step / 2];
                 switch (layer) {
                     case 'base': {
                         const objId = thisPage.dictionary[keyName];
