@@ -5,6 +5,10 @@ export const createItemFilterOption = (option) => {
         dispatch({ type: STOP_EDIT_TAG });
         // TODO: fetch api to create option from backend
         console.log('TODO: fetch api to create option from backend');
+        option =
+            option.type === 'category'
+                ? { type: option.type, value: option.value }
+                : option;
         console.log(option);
     };
 };
