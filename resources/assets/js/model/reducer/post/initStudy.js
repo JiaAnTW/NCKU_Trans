@@ -7,6 +7,7 @@ function mapToCustomizeRemark(type) {
 export default (function () {
     return {
         id: -1,
+        confirm: false,
         pageMap: {
             1: {
                 dictionary: { title: 0, maj: 1 },
@@ -77,6 +78,7 @@ export default (function () {
                                         1: '在這個項目你想分享的數據 (e.g: 87.5)',
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
+                                    confirm: false,
                                 },
                             },
                         },
