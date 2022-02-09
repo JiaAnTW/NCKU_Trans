@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 function mapToCustomizeRemark(type) {
     switch (type) {
         default:
@@ -6,6 +8,16 @@ function mapToCustomizeRemark(type) {
 }
 function mapToCustomizeFunction(type) {
     switch (type) {
+        case 'other':
+            return (state, instance) => {
+                const stateNext = state;
+                const { type, step } = stateNext;
+                const preSpawn = cloneDeep(instance);
+                preSpawn.wording += instance.counter;
+                stateNext.form[type].pageMap[step / 2][2].children[
+                    instance.counter++
+                ] = preSpawn;
+            };
         default:
             return (state, index, value) => {
                 const stateNext = state;
@@ -77,7 +89,9 @@ export default (function () {
                             7: {
                                 id: 7, // stat - id
                                 title: '+ 其他類別',
-                                instantiate: {
+                                customHandleClick:
+                                    mapToCustomizeFunction('other'),
+                                instance: {
                                     counter: 1,
                                     value: { title: '', value: '' },
                                     keyName: 'other',
@@ -89,8 +103,6 @@ export default (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
-                                    customHandleChange:
-                                        mapToCustomizeFunction(),
                                 },
                             },
                         },
@@ -184,6 +196,10 @@ export default (function () {
                     type: 'toggle_spawn_input',
                 },
                 2: {
+                    children: {},
+                    type: 'group_input',
+                }, //only for other statistic
+                3: {
                     value: '',
                     keyName: 'comment',
                     type: 'textarea',

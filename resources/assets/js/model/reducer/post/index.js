@@ -10,7 +10,6 @@ import {
     TOGGLE_STATIS_DATA,
 } from '../../action/post';
 import initState from './initState';
-import cloneDeep from 'lodash/cloneDeep';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -132,8 +131,7 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
             const step = stateNext.step / 2;
             const thisPage = stateNext.form[stateNext.type].pageMap[step];
-            const { id, index } = action.payload;
-
+            const { id } = action.payload;
             const thisButton = thisPage[1][0].value[id];
 
             const relationInput = thisPage[1][id];
@@ -148,11 +146,9 @@ const postReducer = (state = initState, action) => {
                     ? relationInput.anyValue
                     : 'Invalid';
             }
-            if (thisButton.value === undefined) {
-                const preSpawn = cloneDeep(thisButton.instantiate);
-                preSpawn.wording += thisButton.instantiate.counter;
-                thisPage[1][`${index + thisButton.instantiate.counter++ - 1}`] =
-                    preSpawn;
+            if (thisButton.customHandleClick) {
+                thisButton.customHandleClick(stateNext, thisButton.instance);
+                return stateNext;
             }
             return stateNext;
         }

@@ -7,22 +7,21 @@ import { TOGGLE_STATIS_DATA } from '~/model/action/post';
 function ToggleButtonGroup(props) {
     const dispatch = useDispatch();
     const handleClick = useCallback(
-        (data, index) => {
+        (data) => {
             dispatch({
                 type: TOGGLE_STATIS_DATA,
                 payload: {
                     ...data,
-                    index: index,
                 },
             });
         },
         [dispatch]
     );
-    return map(props.value, (button, index) => {
+    return map(props.value, (button) => {
         return (
             <ToggleButton
                 key={button.title}
-                handleClick={() => handleClick(button, parseInt(index))}
+                handleClick={() => handleClick(button)}
                 {...button}
             />
         );
