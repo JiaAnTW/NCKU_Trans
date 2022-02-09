@@ -7,7 +7,6 @@ import usePostControl from '../usePostControl';
 import { InputArrLayout } from './style';
 import { StepLayout } from '../style';
 import { typePage } from '~/components/Form/typeList.js';
-import omit from 'lodash/omit';
 
 const PostForm = forwardRef((props, ref) => {
     const step = useSelector((state) => state.post.step);
@@ -15,11 +14,7 @@ const PostForm = forwardRef((props, ref) => {
 
     const formInputArr = useSelector((state) =>
         type === 'study'
-            ? {
-                  ...omit(state.post.form[type].pageMap[step / 2], [
-                      'dictionary',
-                  ]),
-              }
+            ? { ...state.post.form[type].pageMap[step / 2] }
             : { ...state.post.form[type] }
     );
     const { onNext, onPreview, onBefore } = usePostControl('major', 700);

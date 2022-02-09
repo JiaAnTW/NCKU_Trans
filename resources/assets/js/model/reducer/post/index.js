@@ -77,12 +77,11 @@ const postReducer = (state = initState, action) => {
                     customHandleChange(stateNext, elementIndex, value);
                     return stateNext;
                 }
-                const objId = thisPage.dictionary[keyName];
                 const nextValue = {
-                    ...thisPage[objId],
+                    ...thisPage[elementIndex],
                 };
                 nextValue.value = value;
-                thisPage[objId] = nextValue;
+                thisPage[elementIndex] = nextValue;
             }
             return stateNext;
         }

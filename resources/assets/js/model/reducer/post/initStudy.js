@@ -40,7 +40,6 @@ export default (function () {
         confirm: false,
         pageMap: {
             1: {
-                dictionary: { title: 0, maj: 1 },
                 // page - step
                 0: {
                     value: '留下更多資訊給學弟妹吧!',
@@ -57,7 +56,6 @@ export default (function () {
                 },
             },
             2: {
-                dictionary: { title: 0, comment: 3 },
                 // page - step
                 0: { value: '選擇你要分享的統計資料', type: 'label' },
                 1: {
