@@ -134,6 +134,10 @@ const postReducer = (state = initState, action) => {
             const thisButton = thisPage[1][0].value[id];
 
             const relationInput = thisPage[1][id];
+            if (thisButton.customHandleClick) {
+                thisButton.customHandleClick(stateNext, thisButton.instance);
+                return stateNext;
+            }
             if (thisButton.value !== undefined && !relationInput.value) {
                 //is must not other
                 thisButton.value = !thisButton.value;
@@ -144,10 +148,6 @@ const postReducer = (state = initState, action) => {
                 relationInput.remark = relationInput.anyValue
                     ? relationInput.anyValue
                     : 'Invalid';
-            }
-            if (thisButton.customHandleClick) {
-                thisButton.customHandleClick(stateNext, thisButton.instance);
-                return stateNext;
             }
             return stateNext;
         }
