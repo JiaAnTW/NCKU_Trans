@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Input from '~/page/Post/PostForm/InputList/PostInput';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
@@ -12,16 +12,11 @@ function ToggleSpawnInput(props) {
     });
     return (
         <>
-            <Input
-                {...controlButtonArr}
-                elementIndex={props.elementIndex}
-                layer={'form_toggle_button'}
-            />
+            <Input {...controlButtonArr} elementIndex={props.elementIndex} />
             {map(controlButtonArr.value, (button, index) => {
                 return button.value === true ? (
                     <Input
                         elementIndex={index}
-                        layer={'form_toggle_input'}
                         key={button.id}
                         {...props[button.id]}
                     />
@@ -35,7 +30,6 @@ function ToggleSpawnInput(props) {
                         elementIndex={
                             index + Object.keys(controlButtonArr.value).length
                         }
-                        layer={'form_toggle_input'}
                         key={index + Object.keys(controlButtonArr).length}
                         {...other}
                     />

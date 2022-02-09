@@ -68,33 +68,22 @@ const postReducer = (state = initState, action) => {
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const { keyName, value, layer, elementIndex } = action.payload;
+            const { keyName, value, customHandleChange, elementIndex } =
+                action.payload;
             if (stateNext.type === 'comment') {
                 stateNext.form[stateNext.type][keyName].value = value;
             } else {
                 const thisPage = stateNext.form[type].pageMap[step / 2];
-                switch (layer) {
-                    case 'base': {
-                        const objId = thisPage.dictionary[keyName];
-                        const nextValue = {
-                            ...thisPage[objId],
-                        };
-                        nextValue.value = value;
-                        thisPage[objId] = nextValue;
-                        break;
-                    }
-                    case 'form_toggle_input': {
-                        const nextValue = {
-                            ...thisPage[1][elementIndex],
-                        };
-                        nextValue.value = value;
-                        thisPage[1][elementIndex] = nextValue;
-                        console.log(thisPage[1]);
-                        break;
-                    }
-                    default:
-                        break;
+                if (customHandleChange) {
+                    customHandleChange(stateNext, elementIndex, value);
+                    return stateNext;
                 }
+                const objId = thisPage.dictionary[keyName];
+                const nextValue = {
+                    ...thisPage[objId],
+                };
+                nextValue.value = value;
+                thisPage[objId] = nextValue;
             }
             return stateNext;
         }
@@ -143,38 +132,27 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
             const step = stateNext.step / 2;
             const thisPage = stateNext.form[stateNext.type].pageMap[step];
-            const { layer, id, index } = action.payload;
+            const { id, index } = action.payload;
 
             const thisButton = thisPage[1][0].value[id];
 
-            switch (layer) {
-                case 'form_toggle_button':
-                    const relationInput = thisPage[1][id];
-                    if (
-                        thisButton.value !== undefined &&
-                        !relationInput.value
-                    ) {
-                        //is must not other
-                        thisButton.value = !thisButton.value;
-                        delete relationInput.remark; // drop remark label
-                    } else if (
-                        thisButton.value !== undefined &&
-                        relationInput.value
-                    ) {
-                        //set remark
-                        relationInput.remark = relationInput.anyValue
-                            ? relationInput.anyValue
-                            : 'Invalid';
-                    } else {
-                        const preSpawn = cloneDeep(thisButton.instantiate);
-                        preSpawn.wording += thisButton.instantiate.counter;
-                        thisPage[1][
-                            `${index + thisButton.instantiate.counter++ - 1}`
-                        ] = preSpawn;
-                    }
-                    break;
-                default:
-                    break;
+            const relationInput = thisPage[1][id];
+            if (thisButton.value !== undefined && !relationInput.value) {
+                //is must not other
+                thisButton.value = !thisButton.value;
+                delete relationInput.remark; // drop remark label
+            }
+            if (thisButton.value !== undefined && relationInput.value) {
+                //set remark
+                relationInput.remark = relationInput.anyValue
+                    ? relationInput.anyValue
+                    : 'Invalid';
+            }
+            if (thisButton.value === undefined) {
+                const preSpawn = cloneDeep(thisButton.instantiate);
+                preSpawn.wording += thisButton.instantiate.counter;
+                thisPage[1][`${index + thisButton.instantiate.counter++ - 1}`] =
+                    preSpawn;
             }
             return stateNext;
         }

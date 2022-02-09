@@ -42,12 +42,12 @@ function PostInput(props) {
                 payload: {
                     keyName: props.keyName,
                     value: e.target.value,
+                    customHandleChange: props.customHandleChange,
                     elementIndex: props.elementIndex,
-                    layer: props.layer ? props.layer : 'base',
                 },
             });
         },
-        [dispatch, props.keyName, props.layer, props.elementIndex]
+        [dispatch, props.keyName, props.elementIndex, props.customHandleChange]
     );
     const Element = mapTypeToElement(props.type);
     return (

@@ -13,11 +13,10 @@ function ToggleButtonGroup(props) {
                 payload: {
                     ...data,
                     index: index,
-                    layer: props.layer ? props.layer : 'base',
                 },
             });
         },
-        [dispatch, props.layer]
+        [dispatch]
     );
     return map(props.value, (button, index) => {
         return (

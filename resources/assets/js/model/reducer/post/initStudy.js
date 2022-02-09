@@ -4,6 +4,16 @@ function mapToCustomizeRemark(type) {
             return '請先清除輸入的資料，確認後再移除此項目';
     }
 }
+function mapToCustomizeFunction(type) {
+    switch (type) {
+        default:
+            return (state, index, value) => {
+                const stateNext = state;
+                const { type, step } = stateNext;
+                stateNext.form[type].pageMap[step / 2][1][index].value = value;
+            };
+    }
+}
 export default (function () {
     return {
         id: -1,
@@ -79,12 +89,13 @@ export default (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
+                                    customHandleChange:
+                                        mapToCustomizeFunction(),
                                 },
                             },
                         },
                         width: '100%',
                         type: 'toggle_button_group',
-                        keyName: 'toggleButtonToInputsPanel',
                     },
                     1: {
                         // stat - id
@@ -98,6 +109,7 @@ export default (function () {
                         type: 'number',
                         wording: '學年平均',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     2: {
                         // stat - id
@@ -111,6 +123,7 @@ export default (function () {
                         type: 'number',
                         wording: '上學期平均',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     3: {
                         // stat - id
@@ -124,6 +137,7 @@ export default (function () {
                         type: 'number',
                         wording: '下學期平均',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     4: {
                         // stat - id
@@ -137,6 +151,7 @@ export default (function () {
                         type: 'number',
                         wording: 'TOELF',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     5: {
                         // stat - id
@@ -150,6 +165,7 @@ export default (function () {
                         type: 'number',
                         wording: 'GPA',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     6: {
                         // stat - id
@@ -163,6 +179,7 @@ export default (function () {
                         type: 'number',
                         wording: 'IELTS',
                         anyValue: mapToCustomizeRemark(),
+                        customHandleChange: mapToCustomizeFunction(),
                     },
                     type: 'toggle_spawn_input',
                 },
