@@ -197,6 +197,7 @@ export default (function () {
                 },
                 2: {
                     children: {},
+                    keyName: 'other',
                     type: 'group_input',
                 }, //only for other statistic
                 3: {
