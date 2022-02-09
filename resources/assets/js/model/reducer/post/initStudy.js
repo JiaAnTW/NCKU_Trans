@@ -8,7 +8,7 @@ function mapToCustomizeRemark(type) {
 }
 function mapToCustomizeFunction(type) {
     switch (type) {
-        case 'other':
+        case 'spawn_other':
             return (state, instance) => {
                 const stateNext = state;
                 const { type, step } = stateNext;
@@ -17,6 +17,14 @@ function mapToCustomizeFunction(type) {
                 stateNext.form[type].pageMap[step / 2][2].children[
                     instance.counter++
                 ] = preSpawn;
+            };
+        case 'onChange_other':
+            return (state, index, value) => {
+                const stateNext = state;
+                const { type, step } = stateNext;
+                stateNext.form[type].pageMap[step / 2][2].children[
+                    index
+                ].value = value;
             };
         default:
             return (state, index, value) => {
@@ -49,7 +57,7 @@ export default (function () {
                 },
             },
             2: {
-                dictionary: { title: 0, comment: 2 },
+                dictionary: { title: 0, comment: 3 },
                 // page - step
                 0: { value: '選擇你要分享的統計資料', type: 'label' },
                 1: {
@@ -90,7 +98,7 @@ export default (function () {
                                 id: 7, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
-                                    mapToCustomizeFunction('other'),
+                                    mapToCustomizeFunction('spawn_other'),
                                 instance: {
                                     counter: 1,
                                     value: { title: '', value: '' },
@@ -103,6 +111,10 @@ export default (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
+                                    customHandleChange:
+                                        mapToCustomizeFunction(
+                                            'onChange_other'
+                                        ),
                                 },
                             },
                         },
