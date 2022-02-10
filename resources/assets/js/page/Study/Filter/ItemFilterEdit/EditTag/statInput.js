@@ -7,7 +7,7 @@ import InputLabel from '~/components/atom/InputLabel';
 import Option from '~/components/atom/Option/index';
 import { adminActionSelector } from '~/model/selector/study';
 import useFilterTagContext from '~/utils/redux/components/useFilterTagContext';
-import InputWithPrefix from './inputWithPrefix';
+import InputWithPrefix from '~/components/atom/InputWithPrefix';
 import {
     useStyles,
     MenuPropsStyle,
@@ -31,7 +31,6 @@ function StatInput() {
     const classes = useStyles();
     const { onChangeTag } = useFilterTagContext();
 
-    // todo: integer / decimal type check
     const getTextFieldWithPrefix = (type) => {
         return (
             <InputWithPrefix
