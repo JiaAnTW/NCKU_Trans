@@ -1,5 +1,6 @@
 import useRequest from './redux/useRequest';
 import useWindowWidth from './useWindowWidth';
+import useParentSize from './useParentSize';
 import useMedia from './useMedia';
 import useSetMajorFilter from './redux/useSetMajorFilter';
 
@@ -12,6 +13,7 @@ export {
     useModalOpen,
     useModalContext,
     useWindowWidth,
+    useParentSize,
     useMedia,
     useSetMajorFilter,
     useSetModalFlow,

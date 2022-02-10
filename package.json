@@ -77,6 +77,9 @@
     "jest": {
         "transform": {
             "\\.js$": "<rootDir>/node_modules/babel-jest"
+        },
+        "moduleNameMapper": {
+            "^~(.*)$": "<rootDir>/resources/assets/js$1"
         }
     }
 }
