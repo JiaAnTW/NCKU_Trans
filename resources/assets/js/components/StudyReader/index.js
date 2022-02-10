@@ -12,12 +12,16 @@ import Title from './Title';
 import AdminAdvance from './AdminAdvance';
 import StatisticBlock from './StatisticBlock';
 import CategoryBlock from './CategoryBlock';
+import {
+    modalOnBeforeSelector,
+    modalOnNextSelector,
+} from '~/model/selector/modal';
 
 function StudyReader({ isAdmin }) {
     const [{ id, title, postTime, statistic, category, content, confirm }] =
         useModalContext();
-    const onBefore = useSelector((state) => state.modal.onBefore);
-    const onNext = useSelector((state) => state.modal.onNext);
+    const onBefore = useSelector(modalOnBeforeSelector);
+    const onNext = useSelector(modalOnNextSelector);
     return (
         <StudyReaderLayout isAdmin={isAdmin}>
             {isAdmin && <Confirm id={id} isConfirmed={confirm === 'true'} />}

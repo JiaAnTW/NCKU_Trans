@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { modalIsOpenSelector } from '~/model/selector/modal';
 
 import { OPEN_MODAL, CLOSE_MODAL } from '../../../../model/action/modal';
 
 function useModalOpen() {
     const dispatch = useDispatch();
-    const isModalOpen = useSelector((state) => state.modal.isOpen);
+    const isModalOpen = useSelector(modalIsOpenSelector);
 
     const setIsModalOpen = useCallback(
         (open) => {
