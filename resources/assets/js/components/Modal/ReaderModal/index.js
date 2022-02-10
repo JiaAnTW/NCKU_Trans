@@ -4,9 +4,12 @@ import Modal from 'react-modal';
 import { ModalStyle } from './style';
 import Reader from '../../Reader';
 import { useModalOpen } from '~/utils';
+import { useHistory } from 'react-router';
+import StudyReader from '~/components/StudyReader';
 
 function ReaderModal({ isAdmin, onClose }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
+    const history = useHistory();
 
     return (
         <Modal
@@ -20,7 +23,11 @@ function ReaderModal({ isAdmin, onClose }) {
                 if (onClose) onClose();
             }}
         >
-            <Reader isAdmin={isAdmin} />
+            {/^\/major/i.test(history.location.pathname) ? (
+                <Reader isAdmin={isAdmin} />
+            ) : (
+                <StudyReader isAdmin={isAdmin} />
+            )}
         </Modal>
     );
 }

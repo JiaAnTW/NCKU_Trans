@@ -32,30 +32,10 @@ const modalReducer = (state = initState, action) => {
             return { ...state, isOpen: false };
         }
         case SET_MODAL_CONTEXT: {
-            const {
-                id,
-                type,
-                title,
-                subtitle,
-                tags,
-                content,
-                index,
-                confirm,
-                rawData,
-            } = action.payload.content;
+            const content = action.payload.content;
             return {
                 ...state,
-                context: {
-                    id,
-                    type,
-                    title,
-                    subtitle,
-                    tags,
-                    content,
-                    index,
-                    confirm,
-                    rawData,
-                },
+                context: content,
             };
         }
         case SET_MODAL_ON_BEFORE: {

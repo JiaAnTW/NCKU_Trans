@@ -1,6 +1,28 @@
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
 
+export const initStudy = ({ num = 0 }) => {
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch('http://localhost:8000' + `/api/get/study?from=0&num=${num}`)
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: INIT_STUDY,
+                    payload: { data },
+                });
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+            })
+            .catch((e) => console.log('錯誤:', e));
+    };
+};
+
+export const fetchStudy = ({ from = 0, num = 0 }) => {
+    return (dispatch) => {};
+};
+
 export const fetchStudyAdmin = () => {
     return (dispatch) => {
         // dispatch({ type: ADD_REQUEST });

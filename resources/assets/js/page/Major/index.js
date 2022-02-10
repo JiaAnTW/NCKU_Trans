@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CardsContainer } from '~/theme/global';
 import ReaderModal from '~/components/Modal/ReaderModal';
-import LoadingFrame from '~/components/LoagingFrame';
+import LoadingFrame from '~/components/LoadingFrame';
 import useCloseReader from '~/utils/seo/useCloseReader';
 import { useMedia } from '~/utils';
 
