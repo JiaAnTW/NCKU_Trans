@@ -1,6 +1,6 @@
 import FormGroup from '@material-ui/core/FormGroup';
 import SelectElement from '@material-ui/core/Select';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import InputLabel from '~/components/atom/InputLabel';
@@ -43,6 +43,9 @@ function StatInput() {
         );
     };
 
+    const maxTextField = useMemo(() => getTextFieldWithPrefix('max'), [tag]);
+    const minTextField = useMemo(() => getTextFieldWithPrefix('min'), [tag]);
+
     return (
         <FormGroup row>
             <FormControlGroup className={classes.formControl}>
@@ -63,9 +66,9 @@ function StatInput() {
 
             <FormControlGroup className={classes.formControl}>
                 <InputLabel>資料範圍</InputLabel>
-                {getTextFieldWithPrefix('max')}
+                {maxTextField}
                 <BetweenSymbol> ~ </BetweenSymbol>
-                {getTextFieldWithPrefix('min')}
+                {minTextField}
             </FormControlGroup>
         </FormGroup>
     );

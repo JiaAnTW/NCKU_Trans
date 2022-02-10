@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import toInteger from 'lodash/toInteger';
 
 import { STOP_EDIT_TAG, UPDATE_TAG } from '~/model/action/study';
 import {
@@ -34,11 +35,16 @@ function useFilterTagContext() {
         [dispatch]
     );
 
+    // tag contains changed part only
     const onChangeTag = useCallback(
         (tag) => {
+            if (filterTagContext.dataType === 'integer') {
+                if (tag.max) tag.max = toInteger(tag.max).toString();
+                if (tag.min) tag.min = toInteger(tag.min).toString();
+            }
             dispatch({ type: UPDATE_TAG, payload: { tag } });
         },
-        [dispatch]
+        [dispatch, filterTagContext.dataType]
     );
 
     return {
