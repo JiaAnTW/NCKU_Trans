@@ -61,6 +61,8 @@ class StudyController extends Controller
             $study->categories()->save($category);
         }
         $study->save();
+
+        return array('status' => "success");
     }
 
 
