@@ -1,19 +1,19 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
 import transFormData from '~/utils/redux/components/modal/transFormData';
-
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
+import { postDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
-    const formData = useSelector(
-        (state) => state.post.form[editType === 'major' ? 'comment' : editType]
-    );
+    const type = useSelector((state) => state.post.type);
+    const formData = useSelector((state) => ({
+        ...state.post.form[type].pageMap,
+    }));
     useSubmit(editType, formData);
 
     // ---------------------
@@ -55,16 +55,8 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const params = {
-            rank_1: formData.rank_1.value,
-            rank_2: formData.rank_2.value,
-            year: formData.year.value.toString(),
-            score: formData.score.value,
-            out_maj: formData.out_maj.value,
-            in_maj: formData.in_maj.value,
-            comment: formData.comment.value,
-            isPass: formData.isPass.value,
-        };
+        const params = transFormData(formData, postDataList[type], true);
+        params.year = params.year.toString();
         if (editType === 'comment') dispatch(postMajorData(params));
     }, [editType, formData]);
 
