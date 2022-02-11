@@ -8,9 +8,7 @@ import TextArea from '~/components/atom/TextArea';
 import Label from '~/components/atom/Label';
 import ToggleButton from '~/components/atom/ToggleButton';
 import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
-import ToggleSpawnInput from '~/components/Form/ToggleSpawnInput';
 import PairInput from '~/components/atom/PairInput';
-import GroupInput from '~/components/Form/GroupInput';
 
 const mapTypeToElement = (type) => {
     switch (type) {
@@ -26,10 +24,6 @@ const mapTypeToElement = (type) => {
             return ToggleButton;
         case 'toggle_button_group':
             return ToggleButtonGroup;
-        case 'toggle_spawn_input':
-            return ToggleSpawnInput;
-        case 'group_input':
-            return GroupInput;
         case 'pair_input':
             return PairInput;
         default:
@@ -45,12 +39,12 @@ function PostInput(props) {
                 payload: {
                     keyName: props.keyName,
                     value: e.target.value,
-                    customHandleChange: props.customHandleChange,
+                    elementArea: props.elementArea,
                     elementIndex: props.elementIndex,
                 },
             });
         },
-        [dispatch, props.keyName, props.elementIndex, props.customHandleChange]
+        [dispatch, props.keyName, props.elementArea, props.elementIndex]
     );
     const Element = mapTypeToElement(props.type);
     return (

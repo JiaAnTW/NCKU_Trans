@@ -32,15 +32,27 @@ const PostForm = forwardRef((props, ref) => {
         <StepLayout ref={ref}>
             <InputArrLayout>
                 {map(formInputArr, (formInputItem, index) => {
-                    return (
-                        typeof formInputItem === 'object' && (
-                            <PostInput
-                                elementIndex={index}
-                                key={formInputItem.keyName}
-                                {...formInputItem}
-                            />
-                        )
-                    );
+                    const elementArea = index;
+                    return type === 'comment'
+                        ? typeof formInputItem === 'object' && (
+                              <PostInput
+                                  elementIndex={index}
+                                  key={formInputItem.keyName}
+                                  {...formInputItem}
+                              />
+                          )
+                        : map(formInputItem, (block, index) => {
+                              return (
+                                  typeof block === 'object' && (
+                                      <PostInput
+                                          elementArea={elementArea}
+                                          elementIndex={index}
+                                          key={block.keyName}
+                                          {...block}
+                                      />
+                                  )
+                              );
+                          });
                 })}
             </InputArrLayout>
             <ControlArea

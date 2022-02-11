@@ -1,11 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-function mapToCustomizeRemark(type) {
-    switch (type) {
-        default:
-            return '請先清除輸入的資料，確認後再移除此項目';
-    }
-}
 function mapToCustomizeFunction(type) {
     switch (type) {
         case 'spawn_other':
@@ -14,24 +8,17 @@ function mapToCustomizeFunction(type) {
                 const { type, step } = stateNext;
                 const preSpawn = cloneDeep(instance);
                 preSpawn.wording += instance.counter;
-                stateNext.form[type].pageMap[step / 2][2].children[
-                    instance.counter++
-                ] = preSpawn;
+                stateNext.form[type].pageMap[step / 2][2][instance.counter++] =
+                    preSpawn;
             };
         case 'onChange_other':
             return (state, index, value) => {
                 const stateNext = state;
                 const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][2].children[
-                    index
-                ].value = value;
+                stateNext.form[type].pageMap[step / 2][2][index].value = value;
             };
         default:
-            return (state, index, value) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][1][index].value = value;
-            };
+            return undefined;
     }
 }
 export default (function () {
@@ -40,24 +27,28 @@ export default (function () {
         confirm: false,
         pageMap: {
             1: {
-                // page - step
                 0: {
-                    value: '留下更多資訊給學弟妹吧!',
-                    keyName: 'title',
-                    type: 'label',
-                },
-                1: {
-                    value: '中文系',
-                    keyName: 'maj',
-                    type: 'select',
-                    wording: '原主修科系',
-                    options: [],
-                    remark: '如不想透漏，可以只填學院或其他。',
+                    // page - step
+                    0: {
+                        value: '留下更多資訊給學弟妹吧!',
+                        keyName: 'title',
+                        type: 'label',
+                    },
+                    1: {
+                        value: '中文系',
+                        keyName: 'maj',
+                        type: 'select',
+                        wording: '原主修科系',
+                        options: [],
+                        remark: '如不想透漏，可以只填學院或其他。',
+                    },
                 },
             },
             2: {
                 // page - step
-                0: { value: '選擇你要分享的統計資料', type: 'label' },
+                0: {
+                    0: { value: '選擇你要分享的統計資料', type: 'label' },
+                },
                 1: {
                     0: {
                         // stat - id
@@ -66,31 +57,104 @@ export default (function () {
                                 id: 1, // stat - id
                                 title: '學年平均',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'score',
+                                    type: 'input',
+                                    wording: '學年平均',
+                                    customAnyValueRemark: 're',
+                                },
                             },
                             2: {
                                 id: 2, // stat - id
                                 title: '上學期平均',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'score1',
+                                    type: 'input',
+                                    wording: '上學期平均',
+                                },
                             },
                             3: {
                                 id: 3, // stat - id
                                 title: '下學期平均',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'score2',
+                                    type: 'input',
+                                    wording: '下學期平均',
+                                },
                             },
                             4: {
                                 id: 4, // stat - id
                                 title: 'TOELF',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'toelf',
+                                    type: 'input',
+                                    wording: 'TOELF',
+                                },
                             },
                             5: {
                                 id: 5, // stat - id
                                 title: 'GPA',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'gpa',
+                                    type: 'input',
+                                    wording: 'GPA',
+                                },
                             },
                             6: {
                                 id: 6, // stat - id
                                 title: 'IELTS',
                                 value: false,
+                                instance: {
+                                    // stat - id
+                                    value: '',
+                                    elementAttrs: {
+                                        type: 'number',
+                                        min: 0,
+                                        max: 100,
+                                    },
+                                    keyName: 'ielts',
+                                    type: 'input',
+                                    wording: 'IELTS',
+                                },
                             },
                             7: {
                                 id: 7, // stat - id
@@ -119,106 +183,19 @@ export default (function () {
                         width: '100%',
                         type: 'toggle_button_group',
                     },
-                    1: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'score',
-                        type: 'input',
-                        wording: '學年平均',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    2: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'score1',
-                        type: 'input',
-                        wording: '上學期平均',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    3: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'score2',
-                        type: 'input',
-                        wording: '下學期平均',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    4: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'toelf',
-                        type: 'input',
-                        wording: 'TOELF',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    5: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'gpa',
-                        type: 'input',
-                        wording: 'GPA',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    6: {
-                        // stat - id
-                        value: '',
-                        elementAttrs: {
-                            type: 'number',
-                            min: 0,
-                            max: 100,
-                        },
-                        keyName: 'ielts',
-                        type: 'input',
-                        wording: 'IELTS',
-                        anyValue: mapToCustomizeRemark(),
-                        customHandleChange: mapToCustomizeFunction(),
-                    },
-                    type: 'toggle_spawn_input',
                 },
-                2: {
-                    children: {},
-                    keyName: 'other',
-                    type: 'group_input',
-                }, //only for other statistic
+                2: {}, //only for other statistic
                 3: {
-                    value: '',
-                    keyName: 'comment',
-                    type: 'textarea',
-                    wording: '心得',
-                    width: 2,
-                    elementAttrs: {
-                        style: {
-                            marginTop: '20px',
+                    0: {
+                        value: '',
+                        keyName: 'comment',
+                        type: 'textarea',
+                        wording: '心得',
+                        width: 2,
+                        elementAttrs: {
+                            style: {
+                                marginTop: '20px',
+                            },
                         },
                     },
                 },

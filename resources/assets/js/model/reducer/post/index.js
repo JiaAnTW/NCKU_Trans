@@ -10,6 +10,8 @@ import {
     TOGGLE_STATIS_DATA,
 } from '../../action/post';
 import initState from './initState';
+import cloneDeep from 'lodash/cloneDeep';
+import { mapToCustomizeRemark } from '~/utils/redux/components/post/mapToRemark';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -58,30 +60,25 @@ const postReducer = (state = initState, action) => {
                 }))
             );
             const out_maj = { ...state.form.comment.out_maj, options };
-            const maj = { ...state.form.study.pageMap[1][1], options };
+            const maj = { ...state.form.study.pageMap[1][0][1], options };
 
             stateNext.form.comment.out_maj = out_maj;
-            stateNext.form.study.pageMap[1][1] = maj;
+            stateNext.form.study.pageMap[1][0][1] = maj;
             return stateNext;
         }
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const { keyName, value, customHandleChange, elementIndex } =
+            const { keyName, value, elementArea, elementIndex } =
                 action.payload;
             if (stateNext.type === 'comment') {
                 stateNext.form[stateNext.type][keyName].value = value;
             } else {
-                const thisPage = stateNext.form[type].pageMap[step / 2];
-                if (customHandleChange) {
-                    customHandleChange(stateNext, elementIndex, value);
-                    return stateNext;
-                }
-                const nextValue = {
-                    ...thisPage[elementIndex],
-                };
-                nextValue.value = value;
-                thisPage[elementIndex] = nextValue;
+                const thisArea =
+                    stateNext.form[type].pageMap[step / 2][elementArea];
+                const nextAreaValue = { ...thisArea[elementIndex] };
+                nextAreaValue.value = value;
+                thisArea[elementIndex] = nextAreaValue;
             }
             return stateNext;
         }
@@ -138,16 +135,23 @@ const postReducer = (state = initState, action) => {
                 thisButton.customHandleClick(stateNext, thisButton.instance);
                 return stateNext;
             }
+            if (!relationInput) {
+                thisButton.value = !thisButton.value;
+                const preSpawn = cloneDeep(thisButton.instance);
+                thisPage[1][id] = preSpawn;
+                return stateNext;
+            }
             if (thisButton.value !== undefined && !relationInput.value) {
                 //is must not other
                 thisButton.value = !thisButton.value;
+                delete thisPage[1][id]; // drop input
                 delete relationInput.remark; // drop remark label
             }
             if (thisButton.value !== undefined && relationInput.value) {
                 //set remark
-                relationInput.remark = relationInput.anyValue
-                    ? relationInput.anyValue
-                    : 'Invalid';
+                relationInput.remark = mapToCustomizeRemark(
+                    relationInput.customAnyValueRemark
+                );
             }
             return stateNext;
         }
