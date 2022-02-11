@@ -151,7 +151,7 @@ const postReducer = (state = initState, action) => {
                 //set remark
                 relationInput.remark = relationInput.customAnyValueRemark
                     ? wording[relationInput.customAnyValueRemark]
-                    : '請先清除輸入的資料，確認後再移除此項目';
+                    : wording['default'];
             }
             return stateNext;
         }
