@@ -1,12 +1,15 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { SET_POST_FORM } from '~/model/action/post';
-
 import { InputLayout, RemarkSpan } from './style';
 import Input from '~/components/atom/Input';
 import Select from '~/components/atom/Select';
 import TextArea from '~/components/atom/TextArea';
+import Label from '~/components/atom/Label';
+import ToggleButton from '~/components/atom/ToggleButton';
+import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
+import ToggleSpawnInput from '~/components/Form/ToggleSpawnInput';
+import PairInput from '~/components/atom/PairInput';
 
 const mapTypeToElement = (type) => {
     switch (type) {
@@ -16,24 +19,36 @@ const mapTypeToElement = (type) => {
             return Select;
         case 'textarea':
             return TextArea;
+        case 'label':
+            return Label;
+        case 'toggle_button':
+            return ToggleButton;
+        case 'toggle_button_group':
+            return ToggleButtonGroup;
+        case 'toggle_spawn_input':
+            return ToggleSpawnInput;
+        case 'pair_input':
+            return PairInput;
         default:
             return Input;
     }
 };
-
 function PostInput(props) {
     const dispatch = useDispatch();
-
     const handleChange = useCallback(
         (e) => {
             dispatch({
                 type: SET_POST_FORM,
-                payload: { keyName: props.keyName, value: e.target.value },
+                payload: {
+                    keyName: props.keyName,
+                    value: e.target.value,
+                    elementIndex: props.elementIndex,
+                    layer: props.layer ? props.layer : 'base',
+                },
             });
         },
-        [dispatch, props.keyName, props.value]
+        [dispatch, props.keyName, props.layer, props.elementIndex]
     );
-
     const Element = mapTypeToElement(props.type);
     return (
         <InputLayout width={props.width}>

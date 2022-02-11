@@ -6,7 +6,7 @@ export const color = {
     backgroundYellow: 'rgba(254, 218, 106, 0.4)',
     lightYellow: 'rgba(255, 238, 173, 1)',
     darkYellow: 'rgba(225, 175, 19, 1)', // #E1AF13
-    white: 'white',
+    white: '#FFFFFF',
     darkWhite: '#F8F8F8',
     lightGray: 'rgba(212, 212, 220, 1)',
     darkGray: 'rgba(163,158,158,1)',
@@ -102,9 +102,10 @@ export const CardsContainer = styled.section`
     align-items: flex-start;
     background-color: ${color.white};
     width: 100%;
-    height: fit-content;
+    height: 100%;
     max-height: 100%;
     border-radius: 10px;
+    overflow-x: hidden;
 
     @media (max-width: 576px) {
         display: block;

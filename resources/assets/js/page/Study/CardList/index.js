@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { studyDataSelector } from '~/model/selector/study';
+import StudyCard from '~/components/StudyCard';
 import InfiniteScroll from '~/components/InfiniteScroll';
 import useFetchData from './useFetchData';
 
@@ -17,6 +18,7 @@ function CardsList({ isAdmin }) {
             <InfiniteScroll
                 data={studyData}
                 setOverscanStopIndex={setOverscanStopIndex}
+                ListItemComponent={StudyCard}
             />
         </ScrollableContainer>
     );
