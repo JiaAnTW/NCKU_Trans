@@ -13,6 +13,7 @@ export const Title = styled.p`
     display: flex;
     justify-content: center;
     color: ${color.darkGray};
+    margin-bottom: 74.38px;
 `;
 
 export const AvatarList = styled.div`
@@ -20,6 +21,7 @@ export const AvatarList = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 `;
 export const AvatarLayout = styled.div`
     display: flex;
@@ -28,12 +30,10 @@ export const AvatarLayout = styled.div`
     text-align: center;
     opacity: ${(props) => (props.selected ? 1 : 0.5)};
     display: ${(props) => (props.selected ? 'block' : 'none')};
-    margin: 10px;
 `;
 
 export const AvatarText = styled.div`
-    width: 230px;
+    width: 316px;
     height: 42px;
-    margin: 10px;
     text-align: center;
 `;

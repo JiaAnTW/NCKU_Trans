@@ -8,6 +8,5 @@ export const ToggleBtn = styled(Button)`
     background-color: ${(props) =>
         props.selected ? color.yellow : color.white};
     border: 1px solid ${color.yellow};
-    width: 90px;
-    padding: 10px;
+    padding: 5px 10px 5px 10px;
 `;
