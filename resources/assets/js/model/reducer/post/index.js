@@ -19,67 +19,64 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
 
             // 初始化學系
-            const out_options = state.form.comment.out_maj.options.concat(
-                action.payload.departmentArr.map((department) => ({
-                    value: department.name,
-                    text: department.name,
-                }))
-            );
+            const out_options =
+                state.form.comment.pageMap[1][0][2].options.concat(
+                    action.payload.departmentArr.map((department) => ({
+                        value: department.name,
+                        text: department.name,
+                    }))
+                );
 
             // in沒有college，要獨立寫
-            const in_options = state.form.comment.in_maj.options.concat(
-                action.payload.departmentArr.map((department) => ({
-                    value: department.name,
-                    text: department.name,
-                }))
-            );
+            const in_options =
+                state.form.comment.pageMap[1][0][3].options.concat(
+                    action.payload.departmentArr.map((department) => ({
+                        value: department.name,
+                        text: department.name,
+                    }))
+                );
 
             const out_maj = {
-                ...state.form.comment.out_maj,
+                ...state.form.comment.pageMap[1][0][2],
                 options: out_options,
             };
             const in_maj = {
-                ...state.form.comment.in_maj,
+                ...state.form.comment.pageMap[1][0][3],
                 options: in_options,
             };
 
             stateNext.form.comment.id = -1;
-            stateNext.form.comment.out_maj = out_maj;
-            stateNext.form.comment.in_maj = in_maj;
-
+            stateNext.form.comment.pageMap[1][0][2] = out_maj;
+            stateNext.form.comment.pageMap[1][0][3] = in_maj;
             return stateNext;
         }
         case INIT_POST_OPTION_COLLEGE: {
             const stateNext = state;
 
             // 初始化學系
-            const options = state.form.comment.out_maj.options.concat(
+            const options = state.form.comment.pageMap[1][0][2].options.concat(
                 action.payload.collegeArr.map((college) => ({
                     value: college.name,
                     text: college.name,
                 }))
             );
-            const out_maj = { ...state.form.comment.out_maj, options };
+            const out_maj = { ...state.form.comment.pageMap[1][0][2], options };
             const maj = { ...state.form.study.pageMap[1][0][1], options };
 
-            stateNext.form.comment.out_maj = out_maj;
+            stateNext.form.comment.pageMap[1][0][2] = out_maj;
             stateNext.form.study.pageMap[1][0][1] = maj;
+
             return stateNext;
         }
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const { keyName, value, elementArea, elementIndex } =
-                action.payload;
-            if (stateNext.type === 'comment') {
-                stateNext.form[stateNext.type][keyName].value = value;
-            } else {
-                const thisArea =
-                    stateNext.form[type].pageMap[step / 2][elementArea];
-                const nextAreaValue = { ...thisArea[elementIndex] };
-                nextAreaValue.value = value;
-                thisArea[elementIndex] = nextAreaValue;
-            }
+            const { value, elementArea, elementIndex } = action.payload;
+            const thisArea =
+                stateNext.form[type].pageMap[step / 2][elementArea];
+            const nextAreaValue = { ...thisArea[elementIndex] };
+            nextAreaValue.value = value;
+            thisArea[elementIndex] = nextAreaValue;
             return stateNext;
         }
         case SET_POST_ON_NEXT: {
