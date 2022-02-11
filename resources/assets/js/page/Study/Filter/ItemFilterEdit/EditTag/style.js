@@ -25,47 +25,8 @@ export const useStyles = makeStyles((theme) => ({
             transform: 'translate(0, 1.5px)',
             color: color.darkYellow,
         },
-        '& label + .MuiInput-formControl': {
-            marginTop: 26,
-        },
-    },
-    formControl: {
-        width: 'fit-content !important',
-    },
-    select: {
-        width: 90,
-        marginRight: 30,
-    },
-    numberInput: {
-        width: 50,
-        marginLeft: 3,
-        '& input': {
-            textAlign: 'right',
-        },
     },
 }));
-
-export const MenuPropsStyle = {
-    top: 20,
-};
-
-export const FormControlGroup = styled.div`
-    margin-top: 15px;
-    height: 48px;
-
-    &:not(:last-of-type) {
-        margin-right: 15px;
-    }
-
-    &:last-of-type {
-        flex-grow: 1;
-    }
-`;
-
-export const BetweenSymbol = styled.span`
-    content: '~';
-    margin: 10px;
-`;
 
 export const ToolsContainer = styled.div`
     display: flex;

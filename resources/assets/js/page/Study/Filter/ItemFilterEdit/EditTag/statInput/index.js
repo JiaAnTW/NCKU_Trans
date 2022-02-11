@@ -1,18 +1,17 @@
 import FormGroup from '@material-ui/core/FormGroup';
-import SelectElement from '@material-ui/core/Select';
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import InputLabel from '~/components/atom/InputLabel';
-import Option from '~/components/atom/Option/index';
 import { adminActionSelector } from '~/model/selector/study';
 import useFilterTagContext from '~/utils/redux/components/useFilterTagContext';
 import InputWithPrefix from '~/components/atom/InputWithPrefix';
+import Select from '~/components/atom/Select';
 import {
-    useStyles,
     MenuPropsStyle,
     FormControlGroup,
     BetweenSymbol,
+    useStyles,
 } from './style';
 
 const statTypes = [
@@ -49,19 +48,14 @@ function StatInput() {
     return (
         <FormGroup row>
             <FormControlGroup className={classes.formControl}>
-                <InputLabel>數據類別</InputLabel>
-                <SelectElement
+                <Select
+                    wording="數據類別"
                     value={tag.dataType}
                     onChange={(e) => onChangeTag({ dataType: e.target.value })}
-                    MenuProps={{ style: MenuPropsStyle }}
-                    className={classes.select}
-                >
-                    {statTypes.map((item) => (
-                        <Option {...item} key={item.value}>
-                            {item.text}
-                        </Option>
-                    ))}
-                </SelectElement>
+                    menuProps={{ style: MenuPropsStyle }}
+                    classes={[classes.root, classes.select]}
+                    options={statTypes}
+                />
             </FormControlGroup>
 
             <FormControlGroup className={classes.formControl}>
