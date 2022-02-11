@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { majorIndexByIdSelector } from '~/model/selector/major';
+import { studyIndexByIdSelector } from '~/model/selector/study';
 import { useModalOpen, useModalContext, useSetModalFlow } from '~/utils/index';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 import { changeHeaderInfo } from '~/utils/seo/header';
@@ -27,16 +27,16 @@ function useCommentFlow({ studyData }) {
     const [{ index }, setModalContent] = useModalContext();
     const [setModalOnBefore, setModalOnNext] = useSetModalFlow();
     const history = useHistory();
-    // const indexById = useSelector(majorIndexByIdSelector);
+    const indexById = useSelector(studyIndexByIdSelector);
 
     // Open Reader if id is sets by url when user enter the website.
     useEffect(() => {
-        if (index >= 0) {
-            let itemData = studyData[index];
-            setModalContent(transIntoModalData('study', itemData, index));
+        if (!index && indexById >= 0) {
+            let itemData = studyData[indexById];
+            setModalContent(transIntoModalData('study', itemData, indexById));
             setIsModalOpen(true);
         }
-    }, [index, studyData, setIsModalOpen, setModalContent]);
+    }, [index, indexById, studyData, setIsModalOpen, setModalContent]);
 
     useEffect(() => {
         if (index !== 0) {

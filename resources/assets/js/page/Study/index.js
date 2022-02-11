@@ -7,6 +7,7 @@ import { Container } from './style';
 import useInitData from './useInitData';
 import ReaderModal from '~/components/Modal/ReaderModal';
 import useCloseReader from '~/utils/seo/useCloseReader';
+import StudyReader from '~/components/StudyReader';
 
 export default function Study({ isAdmin }) {
     const isFinishRequest = useInitData({ isAdmin, num: 30 });
@@ -19,7 +20,11 @@ export default function Study({ isAdmin }) {
                 <Filter />
                 <CardList />
             </Container>
-            <ReaderModal isAdmin={isAdmin} onClose={handleCloseReader} />
+            <ReaderModal
+                isAdmin={isAdmin}
+                readerComponent={StudyReader}
+                onClose={handleCloseReader}
+            />
         </LoadingFrame>
     );
 }

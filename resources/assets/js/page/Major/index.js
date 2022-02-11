@@ -11,6 +11,7 @@ import CardList from './CardList';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
 import useInitData from './useInitData';
+import Reader from '~/components/Reader';
 
 function Major({ isAdmin }) {
     const isFinishRequest = useInitData({ isAdmin, num: 30 });
@@ -25,7 +26,11 @@ function Major({ isAdmin }) {
                 <CardsContainer>
                     <CardList isAdmin={isAdmin} />
                 </CardsContainer>
-                <ReaderModal isAdmin={isAdmin} onClose={handleCloseReader} />
+                <ReaderModal
+                    isAdmin={isAdmin}
+                    readerComponent={Reader}
+                    onClose={handleCloseReader}
+                />
             </Main>
         </LoadingFrame>
     );

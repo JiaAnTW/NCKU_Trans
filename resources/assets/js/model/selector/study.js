@@ -27,7 +27,7 @@ export const studyDisplaySelector = createSelector(
 );
 
 export const studyIndexByIdSelector = createSelector(
-    studyDisplaySelector,
+    studyDataSelector,
     (studyData) => {
         const urlParams = new URLSearchParams(window.location.search);
         const urlId = urlParams.get('id');
