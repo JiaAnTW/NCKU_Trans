@@ -4,22 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Study extends Model
+class Category extends Model
 {
     //
-    protected $table='Study';
+    protected $table='Category';
     public $timestamps = false;
 
     // prevent laravel casting id to integer
     protected $casts = [
-        'id' => 'string',
-        'study_id' => 'string'
+        'id' => 'string'
       ];
 
-    public function categories()
+    public function study()
     {
-        return $this->hasMany('App\Category');
+        return $this->belongsTo('App\Study');
     }
-
-
 }

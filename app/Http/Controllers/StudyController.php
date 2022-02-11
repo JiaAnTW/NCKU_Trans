@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 use App\Study;
+use App\Category;
 class StudyController extends Controller
 {
 
@@ -24,12 +25,15 @@ class StudyController extends Controller
                 "content" => $studies[$i]->content,
                 "timestamp" => $studies[$i]->created_at,
                 "confirm" => $studies[$i]->confirm,
-                "category" => array(["id" => 3, "name" => "出國交換"],["id" => 2, "name" => "QA"]),
+                //select specific columns in Category without showing study_id
+                "category" => $studies[$i]->categories->map( 
+                    function($category){
+                        return $category->only(['id','name']);
+                    }
+                ),
                 "statistic" =>  array(["id" => 1, "name" => "TOEFL" , "value" => "110"], ["id" => 2, "name" => "GPA4.3" , "value" => "4.2"]),
             ];
-
         }
-
         return $studies;
     }
 
@@ -49,6 +53,13 @@ class StudyController extends Controller
         $study->confirm = $request->confirm;
         $study->timestamps = true;
         
+        foreach ( $request["category"] as $element ) {
+            $category = new Category;
+            $category->name = $element["name"];
+            $uuid = Str::uuid()->toString();
+            $category->id = $uuid;
+            $study->categories()->save($category);
+        }
         $study->save();
     }
 
@@ -68,8 +79,15 @@ class StudyController extends Controller
         $study->title = $request->title;
         $study->content = $request->content;
         $study->confirm = $request->confirm;
-        
-    }
+
+        $study->categories()->delete();
+        foreach ( $request["category"] as $element ) {
+            $category = new Category;
+            $category->name = $element["name"];
+            $uuid = Str::uuid()->toString();
+            $category->id = $uuid;
+            $study->categories()->save($category);
+        }
 
 
         $study->save();
@@ -88,6 +106,7 @@ class StudyController extends Controller
             error_log("Error:".$e);
             return array('status' => "fail");
         }
+        $study->categories()->delete();
         $study->delete();
         return array('status' => "success");
     }
