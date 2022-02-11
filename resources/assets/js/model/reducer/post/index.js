@@ -11,7 +11,7 @@ import {
 } from '../../action/post';
 import initState from './initState';
 import cloneDeep from 'lodash/cloneDeep';
-import { customizeRemark } from '~/utils/redux/components/post/mapToRemark';
+import wording from '~/wording/toggleRemark.json';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -149,9 +149,8 @@ const postReducer = (state = initState, action) => {
             }
             if (thisButton.value !== undefined && relationInput.value) {
                 //set remark
-                console.log(relationInput.customAnyValueRemark);
                 relationInput.remark = relationInput.customAnyValueRemark
-                    ? customizeRemark[relationInput.customAnyValueRemark]
+                    ? wording[relationInput.customAnyValueRemark]
                     : '請先清除輸入的資料，確認後再移除此項目';
             }
             return stateNext;
