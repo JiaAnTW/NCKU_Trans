@@ -7,7 +7,6 @@ import usePostControl from '../usePostControl';
 import { InputArrLayout } from './style';
 import { StepLayout } from '../style';
 import { typePage } from '~/components/Form/typeList.js';
-import omit from 'lodash/omit';
 
 const PostForm = forwardRef((props, ref) => {
     const step = useSelector((state) => state.post.step);
@@ -15,11 +14,7 @@ const PostForm = forwardRef((props, ref) => {
 
     const formInputArr = useSelector((state) =>
         type === 'study'
-            ? {
-                  ...omit(state.post.form[type].pageMap[step / 2], [
-                      'dictionary',
-                  ]),
-              }
+            ? { ...state.post.form[type].pageMap[step / 2] }
             : { ...state.post.form[type] }
     );
     const { onNext, onPreview, onBefore } = usePostControl('major', 700);
@@ -37,15 +32,27 @@ const PostForm = forwardRef((props, ref) => {
         <StepLayout ref={ref}>
             <InputArrLayout>
                 {map(formInputArr, (formInputItem, index) => {
-                    return (
-                        typeof formInputItem === 'object' && (
-                            <PostInput
-                                elementIndex={index}
-                                key={formInputItem.keyName}
-                                {...formInputItem}
-                            />
-                        )
-                    );
+                    const elementArea = index;
+                    return type === 'comment'
+                        ? typeof formInputItem === 'object' && (
+                              <PostInput
+                                  elementIndex={index}
+                                  key={formInputItem.keyName}
+                                  {...formInputItem}
+                              />
+                          )
+                        : map(formInputItem, (block, index) => {
+                              return (
+                                  typeof block === 'object' && (
+                                      <PostInput
+                                          elementArea={elementArea}
+                                          elementIndex={index}
+                                          key={block.keyName}
+                                          {...block}
+                                      />
+                                  )
+                              );
+                          });
                 })}
             </InputArrLayout>
             <ControlArea

@@ -53,7 +53,6 @@ export default (function () {
                 max: 200,
             },
             keyName: 'rank_1',
-            type: 'number',
             wording: '排名上',
         },
         rank_2: {
