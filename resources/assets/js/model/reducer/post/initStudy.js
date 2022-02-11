@@ -68,7 +68,6 @@ export default (function () {
                                     keyName: 'score',
                                     type: 'input',
                                     wording: '學年平均',
-                                    customAnyValueRemark: 're',
                                 },
                             },
                             2: {
