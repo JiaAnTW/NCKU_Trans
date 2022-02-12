@@ -51,13 +51,12 @@ function transFormData(dataObj, settingKeyName, onlySettingKeyName = false) {
         });
         omitArray.push(dataObjKey);
     }
-
     const tagObj = omit(previousKeysTable, omitArray);
 
     const tags = [];
-    map(tagObj, (pathArrs) => {
-        map(pathArrs, (pathArr) => {
-            const item = result(dataObj, pathArr.join('.'));
+    map(tagObj, (keyPaths) => {
+        map(keyPaths, (keyPath) => {
+            const item = result(dataObj, keyPath);
             tags.push({
                 type: item.wording,
                 value: majorWording[item.keyName]
