@@ -7,7 +7,8 @@ import { useModalOpen, useSetModalFlow } from '~/utils/index';
 import { postDataList } from './postDataList';
 import transFormData from '~/utils/redux/components/modal/transFormData';
 
-function useSubmit(editType, formData) {
+function useSubmit(editType, form) {
+    const formData = form.pageMap;
     const dispatch = useDispatch();
     const [setModalOnBefore, setModalOnNext, setModalOnConfirm] =
         useSetModalFlow();
@@ -17,9 +18,14 @@ function useSubmit(editType, formData) {
 
     // -------送出-------
     const onMajorSubmit = useCallback(() => {
-        const params = transFormData(formData, postDataList[type], true);
+        const params = transFormData(
+            formData,
+            postDataList[type],
+            form.id,
+            form.confirm,
+            true
+        );
         params.year = params.year.toString();
-
         dispatch(postMajorData(params));
 
         if (location.pathname.substr(0, 6) === '/admin') {

@@ -12,6 +12,8 @@ import {
 import initState from './initState';
 import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
+import set from 'lodash/set';
+import { travelObj } from '../../../utils/redux/components/modal/transFormData';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -97,22 +99,24 @@ const postReducer = (state = initState, action) => {
         }
         case OVERWRITE_POST: {
             const dataNext = action.payload;
-            const stateNext = state;
-            const commentForm = stateNext.form.comment;
-
-            for (let props in dataNext) {
-                if (!commentForm[props]) {
-                    commentForm[props] = dataNext[props];
-                } else if (commentForm[props].value !== undefined) {
-                    commentForm[props].value = dataNext[props];
-                } else {
-                    commentForm[props] = dataNext[props];
-                }
+            const queryObj = {};
+            for (let key in dataNext) {
+                queryObj[key] = key;
             }
-
-            stateNext.form.comment = commentForm;
+            const stateNext = state;
+            const keysTable = travelObj(stateNext.form[stateNext.type]);
+            for (let key in dataNext) {
+                if (!keysTable[key]) {
+                    stateNext.form[stateNext.type][key] = dataNext[key];
+                    continue;
+                }
+                set(
+                    stateNext.form[stateNext.type],
+                    keysTable[key][0].concat('value'),
+                    dataNext[key]
+                );
+            }
             stateNext.step = 2;
-
             return stateNext;
         }
         case SET_POST_TYPE: {

@@ -13,7 +13,8 @@ Interface settingKeyName = {
     ...
 }
 */
-function travelObj(obj) {
+export function travelObj(obj) {
+    // maybe later can separate to a new js file
     const previousKeysTable = {};
     const stack = [
         {
@@ -39,7 +40,13 @@ function travelObj(obj) {
     }
     return previousKeysTable;
 }
-function transFormData(dataObj, settingKeyName, onlySettingKeyName = false) {
+function transFormData(
+    dataObj,
+    settingKeyName,
+    id = -1,
+    confirm = false,
+    onlySettingKeyName = false
+) {
     const specialSetting = {};
     const omitArray = [];
     const previousKeysTable = travelObj(dataObj, previousKeysTable);
@@ -52,25 +59,25 @@ function transFormData(dataObj, settingKeyName, onlySettingKeyName = false) {
         omitArray.push(dataObjKey);
     }
     const tagObj = omit(previousKeysTable, omitArray);
-
     const tags = [];
     map(tagObj, (keyPaths) => {
         map(keyPaths, (keyPath) => {
             const item = result(dataObj, keyPath);
-            tags.push({
-                type: item.wording,
-                value: majorWording[item.keyName]
-                    ? majorWording[item.keyName][item.value]
-                    : item.value,
-            });
+            if (keyPath.length > 1)
+                tags.push({
+                    type: item.wording,
+                    value: majorWording[item.keyName]
+                        ? majorWording[item.keyName][item.value]
+                        : item.value,
+                });
         });
     });
 
     const returnValue = {
-        id: -1,
+        id: id,
         tags: tags,
         index: -1,
-        confirm: false,
+        confirm: confirm,
         ...specialSetting,
     };
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;

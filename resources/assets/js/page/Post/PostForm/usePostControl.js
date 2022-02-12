@@ -11,10 +11,11 @@ import { postDataList } from './postDataList';
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
     const type = useSelector((state) => state.post.type);
-    const formData = useSelector((state) => ({
-        ...state.post.form[type].pageMap,
+    const form = useSelector((state) => ({
+        ...state.post.form[type],
     }));
-    useSubmit(editType, formData);
+    const formData = form.pageMap;
+    useSubmit(editType, form);
 
     // ---------------------
     // -------切換階段-------
@@ -55,7 +56,13 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const params = transFormData(formData, postDataList[type], true);
+        const params = transFormData(
+            form,
+            postDataList[type],
+            form.id,
+            form.confirm,
+            true
+        );
         params.year = params.year.toString();
         if (editType === 'comment') dispatch(postMajorData(params));
     }, [editType, formData]);
