@@ -99,10 +99,6 @@ const postReducer = (state = initState, action) => {
         }
         case OVERWRITE_POST: {
             const dataNext = action.payload;
-            const queryObj = {};
-            for (let key in dataNext) {
-                queryObj[key] = key;
-            }
             const stateNext = state;
             const keysTable = travelObj(stateNext.form[stateNext.type]);
             for (let key in dataNext) {
