@@ -15,26 +15,26 @@ Interface settingKeyName = {
 */
 function travelObj(obj) {
     const previousKeysTable = {};
-    const queue = [
+    const stack = [
         {
             obj: obj,
             key: [],
         },
     ];
-    let front;
-    while (queue.length > 0) {
-        front = queue.pop();
-        for (let key in front.obj) {
-            if (typeof front.obj[key] === 'object' && key !== 'instance')
-                queue.push({ obj: front.obj[key], key: [...front.key, key] });
+    let top;
+    while (stack.length > 0) {
+        top = stack.pop();
+        for (let key in top.obj) {
+            if (typeof top.obj[key] === 'object' && key !== 'instance')
+                stack.push({ obj: top.obj[key], key: [...top.key, key] });
         }
-        if (front.obj.keyName && previousKeysTable[front.obj.keyName]) {
-            previousKeysTable[front.obj.keyName] = previousKeysTable[
-                front.obj.keyName
-            ].push(front.key);
+        if (top.obj.keyName && previousKeysTable[top.obj.keyName]) {
+            previousKeysTable[top.obj.keyName] = previousKeysTable[
+                top.obj.keyName
+            ].push(top.key);
         }
-        if (front.obj.keyName && !previousKeysTable[front.obj.keyName]) {
-            previousKeysTable[front.obj.keyName] = front.key;
+        if (top.obj.keyName && !previousKeysTable[top.obj.keyName]) {
+            previousKeysTable[top.obj.keyName] = top.key;
         }
     }
     return previousKeysTable;
