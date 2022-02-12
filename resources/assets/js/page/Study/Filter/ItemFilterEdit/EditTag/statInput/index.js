@@ -42,8 +42,14 @@ function StatInput() {
         );
     };
 
-    const maxTextField = useMemo(() => getTextFieldWithPrefix('max'), [tag]);
-    const minTextField = useMemo(() => getTextFieldWithPrefix('min'), [tag]);
+    const maxTextField = useMemo(
+        () => getTextFieldWithPrefix('max'),
+        [tag.max]
+    );
+    const minTextField = useMemo(
+        () => getTextFieldWithPrefix('min'),
+        [tag.min]
+    );
 
     return (
         <FormGroup row>

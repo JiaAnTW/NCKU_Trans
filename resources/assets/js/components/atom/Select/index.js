@@ -7,14 +7,14 @@ import isString from 'lodash/isString';
 import isArray from 'lodash/isArray';
 
 function combineClassName(rootClass, propsClass) {
-    if (propsClass !== undefined) {
-        if (isString(propsClass)) {
-            return `${rootClass} ${propsClass}`;
-        } else if (isArray(propsClass)) {
-            return `${rootClass} ${propsClass.join(' ')}`;
-        }
-    } else {
+    if (!propsClass) {
         return rootClass;
+    }
+    if (isString(propsClass)) {
+        return `${rootClass} ${propsClass}`;
+    }
+    if (isArray(propsClass)) {
+        return `${rootClass} ${propsClass.join(' ')}`;
     }
 }
 
