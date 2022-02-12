@@ -34,7 +34,7 @@ function travelObj(obj) {
             ].push(top.key);
         }
         if (top.obj.keyName && !previousKeysTable[top.obj.keyName]) {
-            previousKeysTable[top.obj.keyName] = top.key;
+            previousKeysTable[top.obj.keyName] = [top.key];
         }
     }
     return previousKeysTable;
@@ -43,24 +43,28 @@ function transFormData(dataObj, settingKeyName, onlySettingKeyName = false) {
     const specialSetting = {};
     const omitArray = [];
     const previousKeysTable = travelObj(dataObj, previousKeysTable);
-
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
-        const keyPath = previousKeysTable[dataObjKey];
-        specialSetting[key] = result(dataObj, keyPath).value;
+        const keyPaths = previousKeysTable[dataObjKey];
+        map(keyPaths, (keyPath) => {
+            specialSetting[key] = result(dataObj, keyPath).value;
+        });
         omitArray.push(dataObjKey);
     }
 
     const tagObj = omit(previousKeysTable, omitArray);
 
-    const tags = map(tagObj, (pathArr) => {
-        const item = result(dataObj, pathArr.join('.'));
-        return {
-            type: item.wording,
-            value: majorWording[item.keyName]
-                ? majorWording[item.keyName][item.value]
-                : item.value,
-        };
+    const tags = [];
+    map(tagObj, (pathArrs) => {
+        map(pathArrs, (pathArr) => {
+            const item = result(dataObj, pathArr.join('.'));
+            tags.push({
+                type: item.wording,
+                value: majorWording[item.keyName]
+                    ? majorWording[item.keyName][item.value]
+                    : item.value,
+            });
+        });
     });
 
     const returnValue = {
