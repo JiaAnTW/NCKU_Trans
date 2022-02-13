@@ -13,24 +13,25 @@ test('[Post] Should transForm data correctly when preivew new comment', () => {
         id: -1,
         tags: [
             {
-                type: '申請結果',
-                value: '未通過',
+                type: '申請年度',
+                value: '110',
+            },
+            {
+                type: '排名上',
+                value: '5',
+            },
+
+            {
+                type: '排名下',
+                value: '6',
             },
             {
                 type: '學年分數',
                 value: '78',
             },
             {
-                type: '排名下',
-                value: '6',
-            },
-            {
-                type: '排名上',
-                value: '5',
-            },
-            {
-                type: '申請年度',
-                value: '110',
+                type: '申請結果',
+                value: '未通過',
             },
         ],
         index: -1,
