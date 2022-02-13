@@ -23,40 +23,41 @@ export function travelObj(obj) {
             key: [],
         },
     ];
-    let top;
+    let front;
     while (stack.length > 0) {
-        top = stack.pop();
-        for (let key in top.obj) {
+        front = stack[0];
+        stack.shift();
+        for (let key in front.obj) {
             if (
-                typeof top.obj[key] === 'object' &&
+                typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                instanceableTable[top.obj[key].keyName]
+                instanceableTable[front.obj[key].keyName]
             ) {
-                instanceableTable[top.obj[key].keyName] = instanceableTable[
-                    top.obj[key].keyName
-                ].push(top.key.concat('instance'));
+                instanceableTable[front.obj[key].keyName] = instanceableTable[
+                    front.obj[key].keyName
+                ].push(front.key.concat('instance'));
                 continue;
             }
             if (
-                typeof top.obj[key] === 'object' &&
+                typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                !instanceableTable[top.obj[key].keyName]
+                !instanceableTable[front.obj[key].keyName]
             ) {
-                instanceableTable[top.obj[key].keyName] = [
-                    top.key.concat('instance'),
+                instanceableTable[front.obj[key].keyName] = [
+                    front.key.concat('instance'),
                 ];
                 continue;
             }
-            if (typeof top.obj[key] === 'object')
-                stack.push({ obj: top.obj[key], key: [...top.key, key] });
+            if (typeof front.obj[key] === 'object')
+                stack.push({ obj: front.obj[key], key: [...front.key, key] });
         }
-        if (top.obj.keyName && keysTable[top.obj.keyName]) {
-            keysTable[top.obj.keyName] = keysTable[top.obj.keyName].push(
-                top.key
+        if (front.obj.keyName && keysTable[front.obj.keyName]) {
+            keysTable[front.obj.keyName] = keysTable[front.obj.keyName].push(
+                front.key
             );
         }
-        if (top.obj.keyName && !keysTable[top.obj.keyName]) {
-            keysTable[top.obj.keyName] = [top.key];
+        if (front.obj.keyName && !keysTable[front.obj.keyName]) {
+            keysTable[front.obj.keyName] = [front.key];
         }
     }
     return { keysTable, instanceableTable };
@@ -96,7 +97,6 @@ function transFormData(
                 });
         });
     });
-
     const returnValue = {
         id: id,
         tags: tags,
