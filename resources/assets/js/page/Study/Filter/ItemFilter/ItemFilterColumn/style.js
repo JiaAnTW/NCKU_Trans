@@ -1,12 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
-import styled from 'styled-components';
-import { color } from '~/theme/global';
 import CategoryIcon from '@material-ui/icons/Category';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import styled from 'styled-components';
+import { color } from '~/theme/global';
 
 export const ItemFilterColContainer = styled.div`
-    width: 115px;
+    width: 105px;
     padding: 5px;
 
     &:not(:last-of-type) {
