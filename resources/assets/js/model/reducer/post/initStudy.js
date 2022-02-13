@@ -50,6 +50,7 @@ export default (function () {
                     0: { value: '選擇你要分享的統計資料', type: 'label' },
                 },
                 1: {
+                    selectedStatistic: 0,
                     0: {
                         // stat - id
                         value: {
@@ -181,6 +182,12 @@ export default (function () {
                         },
                         width: '100%',
                         type: 'toggle_button_group',
+                    },
+                    alertWord: {
+                        value: '*目前沒有選擇任何統計資料項目',
+                        type: 'label',
+                        color: 'black',
+                        align: 'left',
                     },
                 },
                 2: {}, //only for other statistic

@@ -147,24 +147,31 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
             const step = stateNext.step / 2;
             const thisPage = stateNext.form[stateNext.type].pageMap[step];
-            const { id } = action.payload;
-            const thisButton = thisPage[1][0].value[id];
+            const { id, elementArea, elementIndex } = action.payload;
+            const thisButton = thisPage[elementArea][elementIndex].value[id];
 
-            const relationInput = thisPage[1][id];
+            const relationInput = thisPage[elementArea][id];
             if (thisButton.customHandleClick) {
                 thisButton.customHandleClick(stateNext, thisButton.instance);
+                thisPage[elementArea].selectedStatistic++;
+                thisPage[elementArea].alertWord['display'] =
+                    thisPage[1].selectedStatistic > 0 ? 'none' : '';
                 return stateNext;
             }
             if (!relationInput) {
+                thisPage[elementArea].selectedStatistic++;
                 thisButton.value = !thisButton.value;
                 const preSpawn = cloneDeep(thisButton.instance);
-                thisPage[1][id] = preSpawn;
+                thisPage[elementArea][id] = preSpawn;
+                thisPage[elementArea].alertWord['display'] =
+                    thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
                 return stateNext;
             }
             if (thisButton.value !== undefined && !relationInput.value) {
                 //is must not other
+                thisPage[elementArea].selectedStatistic--;
                 thisButton.value = !thisButton.value;
-                delete thisPage[1][id]; // drop input
+                delete thisPage[elementArea][id]; // drop input
                 delete relationInput.remark; // drop remark label
             }
             if (thisButton.value !== undefined && relationInput.value) {
@@ -173,6 +180,10 @@ const postReducer = (state = initState, action) => {
                     ? wording[relationInput.customAnyValueRemark]
                     : wording['default'];
             }
+            if (thisPage[elementArea].alertWord)
+                thisPage[elementArea].alertWord['display'] =
+                    thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
+
             return stateNext;
         }
         default:

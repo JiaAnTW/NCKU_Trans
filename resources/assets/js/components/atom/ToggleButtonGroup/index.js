@@ -11,11 +11,13 @@ function ToggleButtonGroup(props) {
             dispatch({
                 type: TOGGLE_STATIS_DATA,
                 payload: {
+                    elementArea: props.elementArea,
+                    elementIndex: props.elementIndex,
                     ...data,
                 },
             });
         },
-        [dispatch]
+        [dispatch, props.elementArea, props.elementIndex]
     );
     return map(props.value, (button) => {
         return (
