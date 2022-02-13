@@ -6,7 +6,7 @@ import { useModalOpen } from '~/utils';
 import { useDispatch } from 'react-redux';
 import { CLEAR_MODAL_CONTEXT } from '~/model/action/modal';
 
-function ReaderModal({ isAdmin, onClose, readerComponent }) {
+function ReaderModal({ isAdmin, onClose, readerComponent: ReaderComponent }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ function ReaderModal({ isAdmin, onClose, readerComponent }) {
                 dispatch({ type: CLEAR_MODAL_CONTEXT });
             }}
         >
-            {readerComponent && readerComponent({ isAdmin })}
+            {ReaderComponent && <ReaderComponent isAdmin={isAdmin} />}
         </Modal>
     );
 }

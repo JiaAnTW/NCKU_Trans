@@ -31,12 +31,12 @@ function useCommentFlow({ studyData }) {
 
     // Open Reader if id is sets by url when user enter the website.
     useEffect(() => {
-        if (!index && indexById >= 0) {
+        if (indexById >= 0) {
             let itemData = studyData[indexById];
             setModalContent(transIntoModalData('study', itemData, indexById));
             setIsModalOpen(true);
         }
-    }, [index, indexById, studyData, setIsModalOpen, setModalContent]);
+    }, []);
 
     useEffect(() => {
         if (index !== 0) {
