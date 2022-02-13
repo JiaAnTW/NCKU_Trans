@@ -14,7 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import { travelObj } from '../../../utils/redux/components/modal/transFormData';
+import { travelObj } from '~/utils/redux/components/modal/transFormData';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
