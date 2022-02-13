@@ -13,6 +13,7 @@ import initState from './initState';
 import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
+import result from 'lodash/result';
 import { travelObj } from '../../../utils/redux/components/modal/transFormData';
 
 const postReducer = (state = initState, action) => {
@@ -100,10 +101,32 @@ const postReducer = (state = initState, action) => {
         case OVERWRITE_POST: {
             const dataNext = action.payload;
             const stateNext = state;
-            const keysTable = travelObj(stateNext.form[stateNext.type]);
+            const { keysTable, instanceableTable } = travelObj(
+                stateNext.form[stateNext.type]
+            );
             for (let key in dataNext) {
-                if (!keysTable[key]) {
+                if (!keysTable[key] && !instanceableTable[key]) {
                     stateNext.form[stateNext.type][key] = dataNext[key];
+                    continue;
+                }
+                if (!keysTable[key] && instanceableTable[key]) {
+                    const instanceParent = result(
+                        stateNext.form[stateNext.type],
+                        keysTable[key][0].slice(-1),
+                        undefined
+                    );
+                    if (!instanceParent) continue;
+                    const instance = instanceParent.instance;
+                    instance.value = dataNext[key];
+                    customHandleClick
+                        ? customHandleClick(stateNext, instance)
+                        : set(
+                              stateNext.form[stateNext.type],
+                              keysTable[key][0]
+                                  .slice(-1)
+                                  .concat(instanceParent.id),
+                              instance
+                          );
                     continue;
                 }
                 set(

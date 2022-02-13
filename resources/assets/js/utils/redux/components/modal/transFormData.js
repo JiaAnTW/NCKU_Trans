@@ -15,7 +15,8 @@ Interface settingKeyName = {
 */
 export function travelObj(obj) {
     // maybe later can separate to a new js file
-    const previousKeysTable = {};
+    const keysTable = {};
+    const instanceableTable = {};
     const stack = [
         {
             obj: obj,
@@ -26,19 +27,39 @@ export function travelObj(obj) {
     while (stack.length > 0) {
         top = stack.pop();
         for (let key in top.obj) {
-            if (typeof top.obj[key] === 'object' && key !== 'instance')
+            if (
+                typeof top.obj[key] === 'object' &&
+                key === 'instance' &&
+                instanceableTable[top.obj[key].keyName]
+            ) {
+                instanceableTable[top.obj[key].keyName] = instanceableTable[
+                    top.obj[key].keyName
+                ].push(top.key.concat('instance'));
+                continue;
+            }
+            if (
+                typeof top.obj[key] === 'object' &&
+                key === 'instance' &&
+                !instanceableTable[top.obj[key].keyName]
+            ) {
+                instanceableTable[top.obj[key].keyName] = [
+                    top.key.concat('instance'),
+                ];
+                continue;
+            }
+            if (typeof top.obj[key] === 'object')
                 stack.push({ obj: top.obj[key], key: [...top.key, key] });
         }
-        if (top.obj.keyName && previousKeysTable[top.obj.keyName]) {
-            previousKeysTable[top.obj.keyName] = previousKeysTable[
-                top.obj.keyName
-            ].push(top.key);
+        if (top.obj.keyName && keysTable[top.obj.keyName]) {
+            keysTable[top.obj.keyName] = keysTable[top.obj.keyName].push(
+                top.key
+            );
         }
-        if (top.obj.keyName && !previousKeysTable[top.obj.keyName]) {
-            previousKeysTable[top.obj.keyName] = [top.key];
+        if (top.obj.keyName && !keysTable[top.obj.keyName]) {
+            keysTable[top.obj.keyName] = [top.key];
         }
     }
-    return previousKeysTable;
+    return { keysTable, instanceableTable };
 }
 function transFormData(
     dataObj,
@@ -49,20 +70,23 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const previousKeysTable = travelObj(dataObj, previousKeysTable);
+    const { keysTable } = travelObj(dataObj, keysTable);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
-        const keyPaths = previousKeysTable[dataObjKey];
+        const keyPaths = keysTable[dataObjKey];
         map(keyPaths, (keyPath) => {
-            specialSetting[key] = result(dataObj, keyPath).value;
+            const item = result(dataObj, keyPath, undefined);
+            if (!item) return;
+            specialSetting[key] = item.value;
         });
         omitArray.push(dataObjKey);
     }
-    const tagObj = omit(previousKeysTable, omitArray);
+    const tagObj = omit(keysTable, omitArray);
     const tags = [];
     map(tagObj, (keyPaths) => {
         map(keyPaths, (keyPath) => {
-            const item = result(dataObj, keyPath);
+            const item = result(dataObj, keyPath, undefined);
+            if (!item) return;
             if (keyPath.length > 1)
                 tags.push({
                     type: item.wording,
