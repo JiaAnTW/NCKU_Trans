@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import ToggleButton from '../ToggleButton';
+import ToggleButton from './ToggleButton';
 import map from 'lodash/map';
 import { useDispatch } from 'react-redux';
 import { TOGGLE_STATIS_DATA } from '~/model/action/post';

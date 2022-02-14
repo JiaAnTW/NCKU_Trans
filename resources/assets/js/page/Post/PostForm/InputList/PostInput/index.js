@@ -6,7 +6,6 @@ import Input from '~/components/atom/Input';
 import Select from '~/components/atom/Select';
 import TextArea from '~/components/atom/TextArea';
 import Label from '~/components/atom/Label';
-import ToggleButton from '~/components/atom/ToggleButton';
 import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
 import PairInput from '~/components/atom/PairInput';
 
@@ -20,8 +19,6 @@ const mapTypeToElement = (type) => {
             return TextArea;
         case 'label':
             return Label;
-        case 'toggle_button':
-            return ToggleButton;
         case 'toggle_button_group':
             return ToggleButtonGroup;
         case 'pair_input':

@@ -150,31 +150,36 @@ const postReducer = (state = initState, action) => {
             const { id, elementArea, elementIndex } = action.payload;
             const thisButton = thisPage[elementArea][elementIndex].value[id];
 
+            let skipAction = false;
             const relationInput = thisPage[elementArea][id];
             if (thisButton.customHandleClick) {
                 thisButton.customHandleClick(stateNext, thisButton.instance);
                 thisPage[elementArea].selectedStatistic++;
-                thisPage[elementArea].alertWord['display'] =
-                    thisPage[1].selectedStatistic > 0 ? 'none' : '';
-                return stateNext;
+                skipAction = true;
             }
-            if (!relationInput) {
+            if (!skipAction && !relationInput) {
                 thisPage[elementArea].selectedStatistic++;
                 thisButton.value = !thisButton.value;
                 const preSpawn = cloneDeep(thisButton.instance);
                 thisPage[elementArea][id] = preSpawn;
-                thisPage[elementArea].alertWord['display'] =
-                    thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
-                return stateNext;
+                skipAction = true;
             }
-            if (thisButton.value !== undefined && !relationInput.value) {
+            if (
+                !skipAction &&
+                thisButton.value !== undefined &&
+                !relationInput.value
+            ) {
                 //is must not other
                 thisPage[elementArea].selectedStatistic--;
                 thisButton.value = !thisButton.value;
                 delete thisPage[elementArea][id]; // drop input
                 delete relationInput.remark; // drop remark label
             }
-            if (thisButton.value !== undefined && relationInput.value) {
+            if (
+                !skipAction &&
+                thisButton.value !== undefined &&
+                relationInput.value
+            ) {
                 //set remark
                 relationInput.remark = relationInput.customAnyValueRemark
                     ? wording[relationInput.customAnyValueRemark]
