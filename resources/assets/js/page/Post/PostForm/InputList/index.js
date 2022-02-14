@@ -7,14 +7,15 @@ import usePostControl from '../usePostControl';
 import { InputArrLayout } from './style';
 import { StepLayout } from '../style';
 import { typePage } from '~/components/Form/typeList.js';
+import useDisplayStep from './useDisplayStep';
 
 const PostForm = forwardRef((props, ref) => {
     const step = useSelector((state) => state.post.step);
     const type = useSelector((state) => state.post.type);
-
-    const formInputArr = useSelector((state) => ({
-        ...state.post.form[type].pageMap[step / 2],
-    }));
+    const lastStep = useDisplayStep(step);
+    const formInputArr = useSelector((state) => {
+        return { ...state.post.form[type].pageMap[lastStep / 2] };
+    });
     const { onNext, onPreview, onBefore } = usePostControl('major', 700);
     const handleOnClickNext = useCallback(() => {
         if (step === (typePage[type].length - 2) * 2) {
