@@ -14,7 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import { travelObj } from '~/utils/redux/components/modal/transFormData';
+import { transObjToKeysTable } from '~/utils/redux/components/modal/transFormData';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -101,7 +101,7 @@ const postReducer = (state = initState, action) => {
         case OVERWRITE_POST: {
             const dataNext = action.payload;
             const stateNext = state;
-            const { keysTable, instanceableTable } = travelObj(
+            const { keysTable, instanceableTable } = transObjToKeysTable(
                 stateNext.form[stateNext.type]
             );
             for (let key in dataNext) {

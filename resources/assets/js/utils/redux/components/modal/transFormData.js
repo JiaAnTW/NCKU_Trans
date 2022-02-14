@@ -13,7 +13,7 @@ Interface settingKeyName = {
     ...
 }
 */
-export function travelObj(obj) {
+export function transObjToKeysTable(obj) {
     // maybe later can separate to a new js file
     const keysTable = {};
     const instanceableTable = {};
@@ -71,7 +71,7 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const { keysTable } = travelObj(dataObj, keysTable);
+    const { keysTable } = transObjToKeysTable(dataObj, keysTable);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
         const keyPaths = keysTable[dataObjKey];
