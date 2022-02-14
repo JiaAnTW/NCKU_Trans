@@ -154,8 +154,11 @@ const postReducer = (state = initState, action) => {
             if (thisButton.customHandleClick) {
                 thisButton.customHandleClick(stateNext, thisButton.instance);
                 thisPage[elementArea].selectedStatistic++;
-                thisPage[elementArea].alertWord['display'] =
-                    thisPage[1].selectedStatistic > 0 ? 'none' : '';
+                if (thisPage[elementArea].alertWord)
+                    thisPage[elementArea].alertWord['display'] =
+                        thisPage[elementArea].selectedStatistic > 0
+                            ? 'none'
+                            : '';
                 return stateNext;
             }
             if (!relationInput) {
@@ -163,8 +166,11 @@ const postReducer = (state = initState, action) => {
                 thisButton.value = !thisButton.value;
                 const preSpawn = cloneDeep(thisButton.instance);
                 thisPage[elementArea][id] = preSpawn;
-                thisPage[elementArea].alertWord['display'] =
-                    thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
+                if (thisPage[elementArea].alertWord)
+                    thisPage[elementArea].alertWord['display'] =
+                        thisPage[elementArea].selectedStatistic > 0
+                            ? 'none'
+                            : '';
                 return stateNext;
             }
             if (thisButton.value !== undefined && !relationInput.value) {
