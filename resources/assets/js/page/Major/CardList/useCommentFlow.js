@@ -36,7 +36,7 @@ function useCommentFlow({ majorData }) {
             setModalContent(transIntoModalData('trans', itemData, indexById));
             setIsModalOpen(true);
         }
-    }, []);
+    }, [indexById, majorData, setIsModalOpen, setModalContent]);
 
     useEffect(() => {
         if (index !== 0) {
