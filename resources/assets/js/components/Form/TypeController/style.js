@@ -3,7 +3,9 @@ import { color, Button } from '~/theme/global';
 
 export const TypeButtonList = styled.div`
     display: flex;
-    margin: auto;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 59px;
 `;
 export const BoxList = styled.div`
     display: flex;
@@ -31,5 +33,5 @@ export const SwitchButton = styled(Button)`
     padding: 10px;
     border-radius: 50px;
     border: 3px solid ${color.yellow};
-    margin: 0 25px 59px 25px;
+    margin: 0 25px;
 `;
