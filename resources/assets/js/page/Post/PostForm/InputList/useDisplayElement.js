@@ -6,16 +6,13 @@ import { typePage } from '~/components/Form/typeList.js';
 function useDisplayElement() {
     const stepNow = useSelector((state) => state.post.step);
     const type = useSelector((state) => state.post.type);
-    const [isTrigger, setIstrigger] = useState(false);
     const [displayStep, setDisplayStep] = useState(2);
     const { onNext, onPreview, onBefore } = usePostControl('major', 700);
 
     useEffect(() => {
-        if (stepNow % 2 === 0) setIstrigger(!isTrigger);
+        if (stepNow % 2 === 0) setDisplayStep(stepNow);
     }, [stepNow]);
-    useEffect(() => {
-        setDisplayStep(stepNow);
-    }, [isTrigger]);
+
     const formInputArr = useSelector((state) => {
         return { ...state.post.form[type].pageMap[displayStep / 2] };
     });
@@ -26,10 +23,10 @@ function useDisplayElement() {
         } else {
             onNext();
         }
-    });
+    }, [onPreview, onNext]);
     const handleOnClickBefore = useCallback(() => {
         onBefore();
-    });
+    }, [onBefore]);
     return { formInputArr, handleOnClickNext, handleOnClickBefore };
 }
 
