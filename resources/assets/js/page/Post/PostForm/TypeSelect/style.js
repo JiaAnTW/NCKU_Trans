@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { color } from '~/theme/global';
 
 export const TypeSelectLayout = styled.div`
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 25px;
+    padding: 25px 0;
 `;
 
 export const Title = styled.p`
@@ -36,4 +35,8 @@ export const AvatarText = styled.div`
     width: 316px;
     height: 42px;
     text-align: center;
+    @media (max-width: 368px) {
+        width: 100%;
+        height: auto;
+    }
 `;

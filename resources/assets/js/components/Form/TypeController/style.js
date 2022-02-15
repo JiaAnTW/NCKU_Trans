@@ -8,6 +8,7 @@ export const TypeButtonList = styled.div`
     margin-bottom: 59px;
 `;
 export const BoxList = styled.div`
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 29px;
@@ -34,4 +35,10 @@ export const SwitchButton = styled(Button)`
     border-radius: 50px;
     border: 3px solid ${color.yellow};
     margin: 0 25px;
+    @media (max-width: 368px) {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        margin: 0 10px;
+    }
 `;

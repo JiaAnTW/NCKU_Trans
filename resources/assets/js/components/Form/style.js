@@ -4,7 +4,7 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { color } from '~/theme/global';
 
 export const FormContainer = styled.div`
-    width: 550px;
+    width: 458px;
     background-color: white;
     border-radius: 5px;
     margin-bottom: 20px;
