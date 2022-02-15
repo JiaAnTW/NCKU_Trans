@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import Input from '../Input';
 import Label from '../Label';
-import { PairInputLayout } from './style';
+import { PairInputLayout, InputLayout } from './style';
 
 const labelStyle = {
     size: '17px',
@@ -30,16 +30,20 @@ function PairInput(props) {
         <>
             <Label {...labelStyle} value={wording} />
             <PairInputLayout>
-                <Input
-                    value={title}
-                    wording={subWording[0]}
-                    onChange={handleTitleChange}
-                />
-                <Input
-                    value={value}
-                    wording={subWording[1]}
-                    onChange={handleValueChange}
-                />
+                <InputLayout>
+                    <Input
+                        value={title}
+                        wording={subWording[0]}
+                        onChange={handleTitleChange}
+                    />
+                </InputLayout>
+                <InputLayout>
+                    <Input
+                        value={value}
+                        wording={subWording[1]}
+                        onChange={handleValueChange}
+                    />
+                </InputLayout>
             </PairInputLayout>
         </>
     );

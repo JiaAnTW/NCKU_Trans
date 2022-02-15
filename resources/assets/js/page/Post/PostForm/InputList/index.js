@@ -1,31 +1,14 @@
-import React, { forwardRef, useCallback } from 'react';
+import React, { forwardRef } from 'react';
 import map from 'lodash/map';
-import { useSelector } from 'react-redux';
 import ControlArea from '~/components/Form/ControlArea';
 import PostInput from './PostInput/index';
-import usePostControl from '../usePostControl';
 import { InputArrLayout } from './style';
 import { StepLayout } from '../style';
-import { typePage } from '~/components/Form/typeList.js';
+import useDisplayElement from './useDisplayElement';
 
 const PostForm = forwardRef((props, ref) => {
-    const step = useSelector((state) => state.post.step);
-    const type = useSelector((state) => state.post.type);
-
-    const formInputArr = useSelector((state) => ({
-        ...state.post.form[type].pageMap[step / 2],
-    }));
-    const { onNext, onPreview, onBefore } = usePostControl('major', 700);
-    const handleOnClickNext = useCallback(() => {
-        if (step === (typePage[type].length - 2) * 2) {
-            onPreview();
-        } else {
-            onNext();
-        }
-    });
-    const handleOnClickBefore = useCallback(() => {
-        onBefore();
-    });
+    const { formInputArr, handleOnClickNext, handleOnClickBefore } =
+        useDisplayElement();
     return (
         <StepLayout ref={ref}>
             <InputArrLayout>
