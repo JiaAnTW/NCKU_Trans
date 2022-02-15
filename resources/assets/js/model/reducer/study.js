@@ -179,9 +179,9 @@ const studyReducer = (state = initState, action) => {
             return { ...state, filter };
         }
         case ADD_STUDY_STAT: {
-            const { type, tag } = action.payload;
-
+            let { type, tag } = action.payload;
             let tagList = [...state.filter[type]];
+            tag.value = tag.name;
             tagList.push(tag);
 
             return {

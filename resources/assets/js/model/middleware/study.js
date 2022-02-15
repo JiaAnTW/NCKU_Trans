@@ -30,8 +30,8 @@ export const createItemFilterOption = (option) => {
                     payload: {
                         type: option.type,
                         tag: {
-                            id: data.id,
                             ...option,
+                            id: data.id,
                         },
                     },
                 });

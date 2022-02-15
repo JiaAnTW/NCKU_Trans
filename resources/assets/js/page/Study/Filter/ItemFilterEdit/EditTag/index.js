@@ -34,9 +34,9 @@ function EditTag() {
             <form className={classes.root}>
                 <TextField
                     fullWidth
-                    value={tag.value}
+                    value={tag.name}
                     label={getDataNameLabel(tag.type)}
-                    onChange={(e) => onChangeTag({ value: e.target.value })}
+                    onChange={(e) => onChangeTag({ name: e.target.value })}
                 />
                 {tag.type === 'statInfo' && <StatInput />}
             </form>

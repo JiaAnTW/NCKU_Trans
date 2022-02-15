@@ -34,7 +34,7 @@ function ItemFilterEditColumn({ optionsArr }) {
                 tag: {
                     type,
                     id: 'temp',
-                    value: '',
+                    name: '',
                     dataType: 'integer',
                     min: 0,
                     max: 0,
