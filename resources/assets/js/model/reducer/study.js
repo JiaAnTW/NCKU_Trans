@@ -28,16 +28,19 @@ const fakeData = {
 
 const fakeCategory = [
     {
+        id: 'cat1',
         name: '校內學程',
         value: '校內學程',
         selected: false,
     },
     {
+        id: 'cat2',
         name: '海外交換',
         value: '海外交換',
         selected: false,
     },
     {
+        id: 'cat3',
         name: '跨校修課',
         value: '跨校修課',
         selected: false,
@@ -46,6 +49,7 @@ const fakeCategory = [
 
 const fakeStatInfo = [
     {
+        id: 'stat1',
         name: 'TOFEL',
         value: 'TOFEL',
         dataType: 'integer',
@@ -54,6 +58,7 @@ const fakeStatInfo = [
         selected: false,
     },
     {
+        id: 'stat2',
         name: 'IELTS',
         value: 'IELTS',
         dataType: 'decimal',
@@ -62,6 +67,7 @@ const fakeStatInfo = [
         selected: false,
     },
     {
+        id: 'stat3',
         name: 'JLPT',
         value: 'JLPT',
         dataType: 'integer',
@@ -72,12 +78,12 @@ const fakeStatInfo = [
 ];
 
 const date = new Date();
-
 const getYearArr = () => {
     const currentYear = date.getFullYear();
     let arr = [];
     for (let i = currentYear; i > currentYear - 5; i--) {
-        arr.push({ name: (i - 1911).toString() + '年', value: i - 1911 });
+        let year = (i - 1911).toString();
+        arr.push({ id: year, name: year + '年', value: year });
     }
     return arr.slice(0, 4);
 };
@@ -89,6 +95,7 @@ const initState = {
         isEditTag: false,
         action: undefined,
         tag: {
+            id: undefined,
             type: undefined,
             value: undefined,
             dataType: undefined,
@@ -107,13 +114,12 @@ const initState = {
 const studyReducer = (state = initState, action) => {
     switch (action.type) {
         case START_EDIT_TAG: {
-            const { type, value, dataType, max, min } = action.payload.tag;
             return {
                 ...state,
                 admin: {
                     isEditTag: true,
                     action: action.payload.action,
-                    tag: { type, value, dataType, max, min },
+                    tag: { ...action.payload.tag },
                 },
             };
         }
@@ -124,6 +130,7 @@ const studyReducer = (state = initState, action) => {
                     isEditTag: false,
                     action: undefined,
                     tag: {
+                        id: undefined,
                         type: undefined,
                         value: undefined,
                         dataType: undefined,
@@ -147,12 +154,19 @@ const studyReducer = (state = initState, action) => {
             };
         }
         case SET_STUDY_FILTER: {
-            const { tagType, tagKey, checked } = action.payload;
-            let filter = { ...state.filter };
+            const { tagType, tagId, checked } = action.payload;
 
-            const tagIndex = findIndex(filter[tagType], { value: tagKey });
-            filter[tagType][tagIndex].selected = checked;
-            return { ...state, filter };
+            let tagList = [...state.filter[tagType]];
+            const tagIndex = findIndex(tagList, { id: tagId });
+            tagList[tagIndex].selected = checked;
+
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [tagType]: tagList,
+                },
+            };
         }
         case CLEAR_STUDY_FILTER: {
             let filter = { ...state.filter };
@@ -165,13 +179,48 @@ const studyReducer = (state = initState, action) => {
             return { ...state, filter };
         }
         case ADD_STUDY_STAT: {
-            return {};
+            const { type, tag } = action.payload;
+
+            let tagList = [...state.filter[type]];
+            tagList.push(tag);
+
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [type]: tagList,
+                },
+            };
         }
         case UPDATE_STUDY_STAT: {
-            return {};
+            const { type, tag } = action.payload;
+
+            let tagList = [...state.filter[type]];
+            const tagIndex = findIndex(tagList, { id: tag.id });
+            tagList[tagIndex] = { ...tag };
+
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [type]: tagList,
+                },
+            };
         }
         case DELETE_STUDY_STAT: {
-            return {};
+            const { type, tagId } = action.payload;
+
+            let tagList = [...state.filter[type]];
+            const tagIndex = findIndex(tagList, { id: tagId });
+            tagList.splice(tagIndex, 1);
+
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [type]: tagList,
+                },
+            };
         }
         default:
             return state;

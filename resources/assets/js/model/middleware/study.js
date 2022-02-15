@@ -1,36 +1,121 @@
-import { STOP_EDIT_TAG } from '../action/study';
+import Cookies from 'js-cookie';
+
+import {
+    ADD_STUDY_STAT,
+    DELETE_STUDY_STAT,
+    STOP_EDIT_TAG,
+    UPDATE_STUDY_STAT,
+} from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
 
 export const createItemFilterOption = (option) => {
     return (dispatch) => {
-        dispatch({ type: STOP_EDIT_TAG });
-        // TODO: fetch api to create option from backend
-        console.log('TODO: fetch api to create option from backend');
-        option =
-            option.type === 'category'
-                ? { type: option.type, value: option.value }
-                : option;
-        console.log(option);
+        dispatch({ type: ADD_REQUEST });
+
+        let url = getFilterOpsUrl('post', option.type);
+        fetch(url, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(option),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({ type: STOP_EDIT_TAG });
+                dispatch({
+                    type: ADD_STUDY_STAT,
+                    payload: {
+                        type: option.type,
+                        tag: {
+                            id: data.id,
+                            ...option,
+                        },
+                    },
+                });
+                dispatch({ type: FINISH_REQUEST });
+            })
+            .catch((e) => console.error('錯誤:', e));
     };
 };
 
 export const updateItemFilterOption = (option) => {
     return (dispatch) => {
-        dispatch({ type: STOP_EDIT_TAG });
-        // TODO: fetch api to update option from backend
-        console.log('TODO: fetch api to update option from backend');
-        console.log(option);
+        dispatch({ type: ADD_REQUEST });
+
+        let url = getFilterOpsUrl('post', option.type);
+        url += `?id=${option.id}`;
+
+        fetch(url, {
+            method: 'PUT',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(option),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({ type: STOP_EDIT_TAG });
+                dispatch({
+                    type: UPDATE_STUDY_STAT,
+                    payload: {
+                        type: option.type,
+                        tag: option,
+                    },
+                });
+                dispatch({ type: FINISH_REQUEST });
+            })
+            .catch((e) => console.error('錯誤:', e));
     };
 };
 
 export const deleteItemFilterOption = (option) => {
     return (dispatch) => {
-        dispatch({ type: STOP_EDIT_TAG });
-        // TODO: fetch api to delete option from backend
-        console.log('TODO: fetch api to delete option from backend');
-        console.log(option);
+        dispatch({ type: ADD_REQUEST });
+
+        let url = getFilterOpsUrl('delete', option.type);
+        url += `?id=${option.id}`;
+
+        fetch(url, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({ type: STOP_EDIT_TAG });
+                dispatch({
+                    type: DELETE_STUDY_STAT,
+                    payload: {
+                        type: option.type,
+                        tagId: option.id,
+                    },
+                });
+                dispatch({ type: FINISH_REQUEST });
+            })
+            .catch((e) => console.error('錯誤:', e));
     };
+};
+
+const getFilterOpsUrl = (action, type) => {
+    let typeName =
+        type === 'category'
+            ? 'studyType'
+            : type === 'statInfo'
+            ? 'studyStat'
+            : undefined;
+
+    if (typeName === undefined) {
+        console.error('Unknown study filter option type');
+        return;
+    }
+
+    return `/api/${action}/${typeName}`;
 };
 
 export const fetchStudyAdmin = () => {
