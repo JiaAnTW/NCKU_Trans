@@ -12,6 +12,19 @@ export const itemFilterSelector = createSelector(studySelector, (state) => {
     return { category, statInfo, year };
 });
 
+export const selectedFilterSelector = createSelector(studySelector, (state) => {
+    let selected = [];
+    for (const [key, tagList] of Object.entries(state.filter)) {
+        for (const tag of tagList) {
+            if (tag.selected) {
+                tag.tagType = key;
+                selected.push(tag);
+            }
+        }
+    }
+    return selected;
+});
+
 export const studyDataSelector = createSelector(
     studySelector,
     (state) => state.data

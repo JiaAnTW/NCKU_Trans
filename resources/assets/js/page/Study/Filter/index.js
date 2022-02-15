@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -7,18 +7,19 @@ import InputLabel from '@material-ui/core/InputLabel';
 import ItemFilterEdit from './ItemFilterEdit';
 import ItemFilterManagement from './ItemFilterEdit/manage';
 import ItemFilter from './ItemFilter';
-import { FilterContainer, useStyles } from './style';
-import { CLEAR_STUDY_FILTER } from '~/model/action/study';
+import { FilterContainer, useStyles, FilterBadge } from './style';
+import { selectedFilterSelector } from '~/model/selector/study';
+import { SET_STUDY_FILTER } from '~/model/action/study';
 
 function Filter({ isAdmin }) {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const selectedFilter = useSelector(selectedFilterSelector);
     const [open, setOpen] = useState(false);
     const [isManaging, setIsManaging] = useState(false);
 
     const handleClose = () => {
         setOpen(false);
-        dispatch({ type: CLEAR_STUDY_FILTER });
     };
 
     const handleOpen = () => {
@@ -27,6 +28,13 @@ function Filter({ isAdmin }) {
 
     const toggleManage = (isManaging) => {
         setIsManaging(isManaging);
+    };
+
+    const unselectFilter = (tag) => {
+        dispatch({
+            type: SET_STUDY_FILTER,
+            payload: { tagType: tag.tagType, tagId: tag.id, checked: false },
+        });
     };
 
     return (
@@ -75,6 +83,13 @@ function Filter({ isAdmin }) {
                     )}
                 </Select>
             </FormControl>
+            {selectedFilter.map((tag) => (
+                <FilterBadge
+                    key={tag.id}
+                    value={tag.name}
+                    onClose={() => unselectFilter(tag)}
+                />
+            ))}
         </FilterContainer>
     );
 }
