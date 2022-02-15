@@ -1,4 +1,14 @@
-import { START_EDIT_TAG, STOP_EDIT_TAG, UPDATE_TAG } from '../action/study';
+import findIndex from 'lodash/findIndex';
+import {
+    ADD_STUDY_STAT,
+    CLEAR_STUDY_FILTER,
+    DELETE_STUDY_STAT,
+    SET_STUDY_FILTER,
+    START_EDIT_TAG,
+    STOP_EDIT_TAG,
+    UPDATE_STUDY_STAT,
+    UPDATE_TAG,
+} from '../action/study';
 
 const fakeData = {
     id: 145,
@@ -20,14 +30,17 @@ const fakeCategory = [
     {
         name: '校內學程',
         value: '校內學程',
+        selected: false,
     },
     {
         name: '海外交換',
         value: '海外交換',
+        selected: false,
     },
     {
         name: '跨校修課',
         value: '跨校修課',
+        selected: false,
     },
 ];
 
@@ -38,6 +51,7 @@ const fakeStatInfo = [
         dataType: 'integer',
         min: 0,
         max: 120,
+        selected: false,
     },
     {
         name: 'IELTS',
@@ -45,6 +59,7 @@ const fakeStatInfo = [
         dataType: 'decimal',
         min: 0,
         max: 9,
+        selected: false,
     },
     {
         name: 'JLPT',
@@ -52,8 +67,21 @@ const fakeStatInfo = [
         dataType: 'integer',
         min: 0,
         max: 100,
+        selected: false,
     },
 ];
+
+const date = new Date();
+
+const getYearArr = () => {
+    const currentYear = date.getFullYear();
+    let arr = [];
+    for (let i = currentYear; i > currentYear - 5; i--) {
+        arr.push({ name: (i - 1911).toString() + '年', value: i - 1911 });
+    }
+    return arr.slice(0, 4);
+};
+const yearArr = getYearArr();
 
 const initState = {
     data: new Array(10).fill(fakeData),
@@ -66,11 +94,13 @@ const initState = {
             dataType: undefined,
             max: undefined,
             min: undefined,
+            selected: false,
         },
     },
     filter: {
         category: fakeCategory,
         statInfo: fakeStatInfo,
+        year: yearArr,
     },
 };
 
@@ -99,6 +129,7 @@ const studyReducer = (state = initState, action) => {
                         dataType: undefined,
                         max: undefined,
                         min: undefined,
+                        selected: false,
                     },
                 },
             };
@@ -114,6 +145,33 @@ const studyReducer = (state = initState, action) => {
                     },
                 },
             };
+        }
+        case SET_STUDY_FILTER: {
+            const { tagType, tagKey, checked } = action.payload;
+            let filter = { ...state.filter };
+
+            const tagIndex = findIndex(filter[tagType], { value: tagKey });
+            filter[tagType][tagIndex].selected = checked;
+            return { ...state, filter };
+        }
+        case CLEAR_STUDY_FILTER: {
+            let filter = { ...state.filter };
+
+            Object.values(filter).forEach((tagList) => {
+                for (let tag of tagList) {
+                    tag.selected = false;
+                }
+            });
+            return { ...state, filter };
+        }
+        case ADD_STUDY_STAT: {
+            return {};
+        }
+        case UPDATE_STUDY_STAT: {
+            return {};
+        }
+        case DELETE_STUDY_STAT: {
+            return {};
         }
         default:
             return state;

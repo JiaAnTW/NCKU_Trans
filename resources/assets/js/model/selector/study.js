@@ -8,8 +8,8 @@ export const adminActionSelector = createSelector(studySelector, (state) => {
 });
 
 export const itemFilterSelector = createSelector(studySelector, (state) => {
-    const { category, statInfo } = state.filter;
-    return { category, statInfo };
+    const { category, statInfo, year } = state.filter;
+    return { category, statInfo, year };
 });
 
 export const studyDataSelector = createSelector(
