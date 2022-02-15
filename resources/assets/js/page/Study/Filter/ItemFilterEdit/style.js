@@ -36,7 +36,6 @@ export const ItemFilterEditContainer = styled.div`
     display: flex;
     flex-direction: row;
     padding: 10px 0;
-    height: 189px;
     width: 342px;
 `;
 

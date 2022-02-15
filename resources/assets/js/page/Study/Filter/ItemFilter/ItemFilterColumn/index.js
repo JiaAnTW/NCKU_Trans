@@ -33,7 +33,7 @@ function ItemFilterColumn({ optionsArr }) {
             <FormGroup>
                 {map(optionsArr.options, (option) => (
                     <FormControlLabel
-                        key={option.value}
+                        key={option.id}
                         control={
                             <Checkbox
                                 checked={isSelected(option.id)}

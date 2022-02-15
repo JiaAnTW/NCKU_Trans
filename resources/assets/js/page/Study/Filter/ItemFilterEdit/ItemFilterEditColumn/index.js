@@ -15,13 +15,13 @@ function ItemFilterEditColumn({ optionsArr }) {
     const dispatch = useDispatch();
 
     const editTag = (type, option) => {
-        const { id, value, dataType, max, min } = option;
+        const { id, name, dataType, max, min } = option;
 
         dispatch({
             type: START_EDIT_TAG,
             payload: {
                 action: 'update',
-                tag: { id, type, value, dataType, max, min },
+                tag: { id, type, name, dataType, max, min },
             },
         });
     };

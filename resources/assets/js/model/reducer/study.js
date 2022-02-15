@@ -30,19 +30,16 @@ const fakeCategory = [
     {
         id: 'cat1',
         name: '校內學程',
-        value: '校內學程',
         selected: false,
     },
     {
         id: 'cat2',
         name: '海外交換',
-        value: '海外交換',
         selected: false,
     },
     {
         id: 'cat3',
         name: '跨校修課',
-        value: '跨校修課',
         selected: false,
     },
 ];
@@ -51,7 +48,6 @@ const fakeStatInfo = [
     {
         id: 'stat1',
         name: 'TOFEL',
-        value: 'TOFEL',
         dataType: 'integer',
         min: 0,
         max: 120,
@@ -60,7 +56,6 @@ const fakeStatInfo = [
     {
         id: 'stat2',
         name: 'IELTS',
-        value: 'IELTS',
         dataType: 'decimal',
         min: 0,
         max: 9,
@@ -69,7 +64,6 @@ const fakeStatInfo = [
     {
         id: 'stat3',
         name: 'JLPT',
-        value: 'JLPT',
         dataType: 'integer',
         min: 0,
         max: 100,
@@ -97,7 +91,6 @@ const initState = {
         tag: {
             id: undefined,
             type: undefined,
-            value: undefined,
             dataType: undefined,
             max: undefined,
             min: undefined,
@@ -132,7 +125,6 @@ const studyReducer = (state = initState, action) => {
                     tag: {
                         id: undefined,
                         type: undefined,
-                        value: undefined,
                         dataType: undefined,
                         max: undefined,
                         min: undefined,
@@ -181,7 +173,6 @@ const studyReducer = (state = initState, action) => {
         case ADD_STUDY_STAT: {
             let { type, tag } = action.payload;
             let tagList = [...state.filter[type]];
-            tag.value = tag.name;
             tagList.push(tag);
 
             return {
