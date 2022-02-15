@@ -11,7 +11,7 @@ export const FormContainer = styled.div`
 
     @media (max-width: 870px) {
         padding: 0;
-        width: 100%;
+        width: 80%;
     }
 `;
 export const Title = styled.h4`
