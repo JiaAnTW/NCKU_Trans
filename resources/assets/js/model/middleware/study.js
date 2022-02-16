@@ -9,6 +9,8 @@ import {
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
 
+const FAILED = 'fail';
+
 export const createItemFilterOption = (option) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
@@ -24,6 +26,9 @@ export const createItemFilterOption = (option) => {
         })
             .then((res) => res.json())
             .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
                 dispatch({ type: STOP_EDIT_TAG });
                 dispatch({
                     type: ADD_STUDY_STAT,
@@ -37,7 +42,7 @@ export const createItemFilterOption = (option) => {
                 });
                 dispatch({ type: FINISH_REQUEST });
             })
-            .catch((e) => console.error('錯誤:', e));
+            .catch((e) => console.error('錯誤: ', e));
     };
 };
 
@@ -58,6 +63,9 @@ export const updateItemFilterOption = (option) => {
         })
             .then((res) => res.json())
             .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
                 dispatch({ type: STOP_EDIT_TAG });
                 dispatch({
                     type: UPDATE_STUDY_STAT,
@@ -68,7 +76,7 @@ export const updateItemFilterOption = (option) => {
                 });
                 dispatch({ type: FINISH_REQUEST });
             })
-            .catch((e) => console.error('錯誤:', e));
+            .catch((e) => console.error('錯誤: ', e));
     };
 };
 
@@ -88,6 +96,9 @@ export const deleteItemFilterOption = (option) => {
         })
             .then((res) => res.json())
             .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
                 dispatch({ type: STOP_EDIT_TAG });
                 dispatch({
                     type: DELETE_STUDY_STAT,
@@ -98,7 +109,7 @@ export const deleteItemFilterOption = (option) => {
                 });
                 dispatch({ type: FINISH_REQUEST });
             })
-            .catch((e) => console.error('錯誤:', e));
+            .catch((e) => console.error('錯誤: ', e));
     };
 };
 
