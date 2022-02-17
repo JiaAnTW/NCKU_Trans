@@ -1,41 +1,19 @@
-import Checkbox from '@material-ui/core/Checkbox';
 import React from 'react';
 import map from 'lodash/map';
+import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import {
-    CategoriesIcon,
-    ItemFilterColContainer,
-    StatInfosIcon,
-    Title,
-    useStyles,
-    YearsIcon,
-} from './style';
+import ItemFilterColumnTitle from './title';
 
-const mapTypeToIcon = (type) => {
-    switch (type) {
-        case 'category':
-            return CategoriesIcon;
-        case 'statInfo':
-            return StatInfosIcon;
-        case 'year':
-            return YearsIcon;
-        default:
-            return CategoriesIcon;
-    }
-};
+import { ItemFilterColContainer, useStyles } from './style';
 
 function ItemFilterColumn({ optionsArr }) {
-    const Icon = mapTypeToIcon(optionsArr.type);
     const classes = useStyles();
 
     return (
         <ItemFilterColContainer>
-            <Title>
-                <Icon />
-                {optionsArr.name}
-            </Title>
+            <ItemFilterColumnTitle optionsArr={optionsArr} />
             <FormGroup>
                 {map(optionsArr.options, (option) => (
                     <FormControlLabel

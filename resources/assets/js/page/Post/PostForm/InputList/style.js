@@ -3,7 +3,6 @@ import { color } from '~/theme/global';
 
 export const InputArrLayout = styled.div`
     width: 100%;
-    padding: 25px;
     /*display: flex;
     flex-wrap: wrap;*/
     grid-gap: 10px;
@@ -15,5 +14,4 @@ export const InputStepLayout = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 25px;
 `;

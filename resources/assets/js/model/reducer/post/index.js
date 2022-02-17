@@ -11,6 +11,10 @@ import {
 } from '../../action/post';
 import initState from './initState';
 import cloneDeep from 'lodash/cloneDeep';
+import wording from '~/wording/toggleRemark.json';
+import set from 'lodash/set';
+import result from 'lodash/result';
+import { transObjToKeysTable } from '~/utils/redux/components/modal/transFormData';
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
@@ -18,84 +22,64 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
 
             // 初始化學系
-            const out_options = state.form.comment.out_maj.options.concat(
-                action.payload.departmentArr.map((department) => ({
-                    value: department.name,
-                    text: department.name,
-                }))
-            );
+            const out_options =
+                state.form.comment.pageMap[1][0][2].options.concat(
+                    action.payload.departmentArr.map((department) => ({
+                        value: department.name,
+                        text: department.name,
+                    }))
+                );
 
             // in沒有college，要獨立寫
-            const in_options = state.form.comment.in_maj.options.concat(
-                action.payload.departmentArr.map((department) => ({
-                    value: department.name,
-                    text: department.name,
-                }))
-            );
+            const in_options =
+                state.form.comment.pageMap[1][0][3].options.concat(
+                    action.payload.departmentArr.map((department) => ({
+                        value: department.name,
+                        text: department.name,
+                    }))
+                );
 
             const out_maj = {
-                ...state.form.comment.out_maj,
+                ...state.form.comment.pageMap[1][0][2],
                 options: out_options,
             };
             const in_maj = {
-                ...state.form.comment.in_maj,
+                ...state.form.comment.pageMap[1][0][3],
                 options: in_options,
             };
 
             stateNext.form.comment.id = -1;
-            stateNext.form.comment.out_maj = out_maj;
-            stateNext.form.comment.in_maj = in_maj;
-
+            stateNext.form.comment.pageMap[1][0][2] = out_maj;
+            stateNext.form.comment.pageMap[1][0][3] = in_maj;
             return stateNext;
         }
         case INIT_POST_OPTION_COLLEGE: {
             const stateNext = state;
 
             // 初始化學系
-            const options = state.form.comment.out_maj.options.concat(
+            const options = state.form.comment.pageMap[1][0][2].options.concat(
                 action.payload.collegeArr.map((college) => ({
                     value: college.name,
                     text: college.name,
                 }))
             );
-            const out_maj = { ...state.form.comment.out_maj, options };
-            const maj = { ...state.form.study.pageMap[1][1], options };
+            const out_maj = { ...state.form.comment.pageMap[1][0][2], options };
+            const maj = { ...state.form.study.pageMap[1][0][1], options };
 
-            stateNext.form.comment.out_maj = out_maj;
-            stateNext.form.study.pageMap[1][1] = maj;
+            stateNext.form.comment.pageMap[1][0][2] = out_maj;
+            stateNext.form.study.pageMap[1][0][1] = maj;
+
             return stateNext;
         }
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const { keyName, value, layer, elementIndex } = action.payload;
-            if (stateNext.type === 'comment') {
-                stateNext.form[stateNext.type][keyName].value = value;
-            } else {
-                const thisPage = stateNext.form[type].pageMap[step / 2];
-                switch (layer) {
-                    case 'base': {
-                        const objId = thisPage.dictionary[keyName];
-                        const nextValue = {
-                            ...thisPage[objId],
-                        };
-                        nextValue.value = value;
-                        thisPage[objId] = nextValue;
-                        break;
-                    }
-                    case 'form_toggle_input': {
-                        const nextValue = {
-                            ...thisPage[1][elementIndex],
-                        };
-                        nextValue.value = value;
-                        thisPage[1][elementIndex] = nextValue;
-                        console.log(thisPage[1]);
-                        break;
-                    }
-                    default:
-                        break;
-                }
-            }
+            const { value, elementArea, elementIndex } = action.payload;
+            const thisArea =
+                stateNext.form[type].pageMap[step / 2][elementArea];
+            const nextAreaValue = { ...thisArea[elementIndex] };
+            nextAreaValue.value = value;
+            thisArea[elementIndex] = nextAreaValue;
             return stateNext;
         }
         case SET_POST_ON_NEXT: {
@@ -117,21 +101,41 @@ const postReducer = (state = initState, action) => {
         case OVERWRITE_POST: {
             const dataNext = action.payload;
             const stateNext = state;
-            const commentForm = stateNext.form.comment;
-
-            for (let props in dataNext) {
-                if (!commentForm[props]) {
-                    commentForm[props] = dataNext[props];
-                } else if (commentForm[props].value !== undefined) {
-                    commentForm[props].value = dataNext[props];
-                } else {
-                    commentForm[props] = dataNext[props];
+            const { keysTable, instanceableTable } = transObjToKeysTable(
+                stateNext.form[stateNext.type]
+            );
+            for (let key in dataNext) {
+                if (!keysTable[key] && !instanceableTable[key]) {
+                    stateNext.form[stateNext.type][key] = dataNext[key];
+                    continue;
                 }
+                if (!keysTable[key] && instanceableTable[key]) {
+                    const instanceParent = result(
+                        stateNext.form[stateNext.type],
+                        keysTable[key][0].slice(-1),
+                        undefined
+                    );
+                    if (!instanceParent) continue;
+                    const instance = instanceParent.instance;
+                    instance.value = dataNext[key];
+                    customHandleClick
+                        ? customHandleClick(stateNext, instance)
+                        : set(
+                              stateNext.form[stateNext.type],
+                              keysTable[key][0]
+                                  .slice(-1)
+                                  .concat(instanceParent.id),
+                              instance
+                          );
+                    continue;
+                }
+                set(
+                    stateNext.form[stateNext.type],
+                    keysTable[key][0].concat('value'),
+                    dataNext[key]
+                );
             }
-
-            stateNext.form.comment = commentForm;
             stateNext.step = 2;
-
             return stateNext;
         }
         case SET_POST_TYPE: {
@@ -143,39 +147,49 @@ const postReducer = (state = initState, action) => {
             const stateNext = state;
             const step = stateNext.step / 2;
             const thisPage = stateNext.form[stateNext.type].pageMap[step];
-            const { layer, id, index } = action.payload;
+            const { id, elementArea, elementIndex } = action.payload;
+            const thisButton = thisPage[elementArea][elementIndex].value[id];
 
-            const thisButton = thisPage[1][0].value[id];
-
-            switch (layer) {
-                case 'form_toggle_button':
-                    const relationInput = thisPage[1][id];
-                    if (
-                        thisButton.value !== undefined &&
-                        !relationInput.value
-                    ) {
-                        //is must not other
-                        thisButton.value = !thisButton.value;
-                        delete relationInput.remark; // drop remark label
-                    } else if (
-                        thisButton.value !== undefined &&
-                        relationInput.value
-                    ) {
-                        //set remark
-                        relationInput.remark = relationInput.anyValue
-                            ? relationInput.anyValue
-                            : 'Invalid';
-                    } else {
-                        const preSpawn = cloneDeep(thisButton.instantiate);
-                        preSpawn.wording += thisButton.instantiate.counter;
-                        thisPage[1][
-                            `${index + thisButton.instantiate.counter++ - 1}`
-                        ] = preSpawn;
-                    }
-                    break;
-                default:
-                    break;
+            const relationInput = thisPage[elementArea][id];
+            if (thisButton.customHandleClick) {
+                thisButton.customHandleClick(stateNext, thisButton.instance);
+                thisPage[elementArea].selectedStatistic++;
+                if (thisPage[elementArea].alertWord)
+                    thisPage[elementArea].alertWord['display'] =
+                        thisPage[elementArea].selectedStatistic > 0
+                            ? 'none'
+                            : '';
+                return stateNext;
             }
+            if (!relationInput) {
+                thisPage[elementArea].selectedStatistic++;
+                thisButton.value = !thisButton.value;
+                const preSpawn = cloneDeep(thisButton.instance);
+                thisPage[elementArea][id] = preSpawn;
+                if (thisPage[elementArea].alertWord)
+                    thisPage[elementArea].alertWord['display'] =
+                        thisPage[elementArea].selectedStatistic > 0
+                            ? 'none'
+                            : '';
+                return stateNext;
+            }
+            if (thisButton.value !== undefined && !relationInput.value) {
+                //is must not other
+                thisPage[elementArea].selectedStatistic--;
+                thisButton.value = !thisButton.value;
+                delete thisPage[elementArea][id]; // drop input
+                delete relationInput.remark; // drop remark label
+            }
+            if (thisButton.value !== undefined && relationInput.value) {
+                //set remark
+                relationInput.remark = relationInput.customAnyValueRemark
+                    ? wording[relationInput.customAnyValueRemark]
+                    : wording['default'];
+            }
+            if (thisPage[elementArea].alertWord)
+                thisPage[elementArea].alertWord['display'] =
+                    thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
+
             return stateNext;
         }
         default:

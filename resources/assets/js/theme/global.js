@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 export const color = {
-    yellow: 'rgba(254, 218, 106, 1)',
+    yellow: 'rgba(254, 218, 106, 1)', // #FEDA6A
     backgroundYellow: 'rgba(254, 218, 106, 0.4)',
-    lightYellow: 'rgba(255,238,173,1)',
-    darkYellow: '#e1af13',
+    lightYellow: 'rgba(255, 238, 173, 1)',
+    darkYellow: 'rgba(225, 175, 19, 1)', // #E1AF13
     white: '#FFFFFF',
     darkWhite: '#F8F8F8',
     lightGray: 'rgba(212, 212, 220, 1)',
