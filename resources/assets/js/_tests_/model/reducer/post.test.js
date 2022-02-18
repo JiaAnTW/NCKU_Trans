@@ -1,13 +1,12 @@
 import cloneDeep from 'lodash/cloneDeep';
 import postReducer from '~/model/reducer/post';
 import { SET_POST_FORM, TOGGLE_STATIS_DATA } from '~/model/action/post';
-import initPost from './post';
-import { initComment } from './post/initComment';
-import { initStudy } from './post/initStudy';
+import post from './post';
 import { transObjToKeysTable } from '~/utils/redux/components/modal/transFormData';
 import result from 'lodash/result';
 
 // init postForm
+const { initPost, initComment, initStudy } = post;
 const postForm = initPost;
 /**
  * global function
