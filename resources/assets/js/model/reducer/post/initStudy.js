@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-function mapToCustomizeFunction(type) {
+export function mapToCustomizeFunction(type) {
     switch (type) {
         case 'spawn_other':
             return (state, instance) => {
