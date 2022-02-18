@@ -16,7 +16,7 @@ Interface settingKeyName = {
 export function transObjToKeysTable(obj) {
     // maybe later can separate to a new js file
     const keysTable = {};
-    const instanceableTable = {};
+    const instanceAbleTable = {};
     const stack = [
         {
             obj: obj,
@@ -31,19 +31,19 @@ export function transObjToKeysTable(obj) {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                instanceableTable[front.obj[key].keyName]
+                instanceAbleTable[front.obj[key].keyName]
             ) {
-                instanceableTable[front.obj[key].keyName] = instanceableTable[
-                    front.obj[key].keyName
-                ].push(front.key.concat('instance'));
+                instanceAbleTable[front.obj[key].keyName].push(
+                    front.key.concat('instance')
+                );
                 continue;
             }
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                !instanceableTable[front.obj[key].keyName]
+                !instanceAbleTable[front.obj[key].keyName]
             ) {
-                instanceableTable[front.obj[key].keyName] = [
+                instanceAbleTable[front.obj[key].keyName] = [
                     front.key.concat('instance'),
                 ];
                 continue;
@@ -52,15 +52,13 @@ export function transObjToKeysTable(obj) {
                 stack.push({ obj: front.obj[key], key: [...front.key, key] });
         }
         if (front.obj.keyName && keysTable[front.obj.keyName]) {
-            keysTable[front.obj.keyName] = keysTable[front.obj.keyName].push(
-                front.key
-            );
+            keysTable[front.obj.keyName].push(front.key);
         }
         if (front.obj.keyName && !keysTable[front.obj.keyName]) {
             keysTable[front.obj.keyName] = [front.key];
         }
     }
-    return { keysTable, instanceableTable };
+    return { keysTable, instanceAbleTable };
 }
 function transFormData(
     dataObj,

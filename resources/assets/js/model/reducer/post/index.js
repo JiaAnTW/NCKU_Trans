@@ -101,15 +101,15 @@ const postReducer = (state = initState, action) => {
         case OVERWRITE_POST: {
             const dataNext = action.payload;
             const stateNext = state;
-            const { keysTable, instanceableTable } = transObjToKeysTable(
+            const { keysTable, instanceAbleTable } = transObjToKeysTable(
                 stateNext.form[stateNext.type]
             );
             for (let key in dataNext) {
-                if (!keysTable[key] && !instanceableTable[key]) {
+                if (!keysTable[key] && !instanceAbleTable[key]) {
                     stateNext.form[stateNext.type][key] = dataNext[key];
                     continue;
                 }
-                if (!keysTable[key] && instanceableTable[key]) {
+                if (!keysTable[key] && instanceAbleTable[key]) {
                     const instanceParent = result(
                         stateNext.form[stateNext.type],
                         keysTable[key][0].slice(-1),
