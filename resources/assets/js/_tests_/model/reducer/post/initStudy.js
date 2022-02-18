@@ -1,27 +1,5 @@
-import cloneDeep from 'lodash/cloneDeep';
-
-export function mapToCustomizeFunction(type) {
-    switch (type) {
-        case 'spawn_other':
-            return (state, instance) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                const preSpawn = cloneDeep(instance);
-                preSpawn.wording += instance.counter;
-                stateNext.form[type].pageMap[step / 2][2][instance.counter++] =
-                    preSpawn;
-            };
-        case 'onChange_other':
-            return (state, index, value) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][2][index].value = value;
-            };
-        default:
-            return undefined;
-    }
-}
-export default (function () {
+import { mapToCustomizeFunction } from '~/model/reducer/post/initStudy';
+export const initStudy = (function () {
     return {
         id: -1,
         confirm: false,
