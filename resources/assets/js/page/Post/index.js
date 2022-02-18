@@ -6,7 +6,7 @@ import useInitOptions from './useInitOptions';
 import PostForm from './PostForm/index';
 
 import { PostLayout } from './style';
-import LoadingFrame from '~/components/LoagingFrame';
+import LoadingFrame from '~/components/LoadingFrame';
 import { useHistory } from 'react-router';
 
 function Post() {

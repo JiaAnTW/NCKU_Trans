@@ -1,4 +1,8 @@
-import { createSelector } from 'reselect';
+import {
+    createSelector,
+    createSelectorCreator,
+    defaultMemoize,
+} from 'reselect';
 
 const studySelector = (state) => state.study;
 
@@ -36,8 +40,11 @@ export const studyDisplaySelector = createSelector(
         })
 );
 
-export const studyIndexByIdSelector = createSelector(
-    studyDisplaySelector,
+/* workaround: resolve returned selector not update and cause crash */
+const workaround = createSelectorCreator(defaultMemoize, () => false);
+
+export const studyIndexByIdSelector = workaround(
+    (state) => state.study.data,
     (studyData) => {
         const urlParams = new URLSearchParams(window.location.search);
         const urlId = urlParams.get('id');

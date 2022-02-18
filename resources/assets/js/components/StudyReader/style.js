@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { color } from '~/theme/global';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import Badge from '../atom/Badge';
 
 export const StudyReaderLayout = styled.div`
     display: grid;
@@ -28,12 +27,6 @@ export const StudyReaderContent = styled.div`
     position: relative;
     grid-column-start: 2;
     padding: 25px 0px;
-`;
-export const BadgeList = styled.div`
-    display: inline-flex;
-`;
-export const StatisticBadge = styled(Badge)`
-    margin-right: 10px;
 `;
 export const StudyReaderContext = styled.div`
     height: 100%;

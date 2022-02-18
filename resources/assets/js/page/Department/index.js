@@ -6,7 +6,7 @@ import CollegeList from './CollegeList';
 import useInitData from './useInitData';
 
 import EditPanel from './EditPanel';
-import LoadingFrame from '~/components/LoagingFrame';
+import LoadingFrame from '~/components/LoadingFrame';
 
 function Department() {
     const isFinishRequest = useInitData();
