@@ -74,7 +74,7 @@ class StatisticManageController extends Controller
         } 
         else 
         {
-            return array(["status"=>"fail"]);
+            return array(["status"=>"fail", "msg"=>"Same name in database."]);
         }
 
     }
@@ -89,6 +89,12 @@ class StatisticManageController extends Controller
         catch(Exception $e){
             error_log("Error:".$e);
             return array('status' => "fail");
+        }
+        //check if there is same name in database
+        $stat = StatisticManage::where('name', '=', $request->name)->first();
+        if ($stat != null)
+        {
+            return array(["status"=>"fail", "msg"=>"Same name in database."]);
         }
         $statistic->name = $request->name;
         if( strcmp($request->dataType, "string") != 0)

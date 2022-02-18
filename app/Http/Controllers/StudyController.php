@@ -101,6 +101,7 @@ class StudyController extends Controller
                 {
                     if($stat["max"] < $element['value'] or $stat["min"] > $element['value'])
                     {
+                        $study->categories()->delete();
                         return array('status' => "fail");
                     }
                 }
@@ -112,6 +113,7 @@ class StudyController extends Controller
             }
             else
             {
+                $study->categories()->delete();
                 return array('status' => "fail");
             }
         }
@@ -138,15 +140,6 @@ class StudyController extends Controller
         $study->content = $request->content;
         $study->confirm = $request->confirm;
 
-        $study->categories()->delete();
-        foreach ( $request["category"] as $element ) {
-            $category = new Category;
-            $category->name = $element["name"];
-            $uuid = Str::uuid()->toString();
-            $category->id = $uuid;
-            $study->categories()->save($category);
-        }
-
         //update statistic
         foreach ( $request["statistic"] as $element ) {
             $stat = StatisticManage::where('name', '=', $element['name'])->first();
@@ -168,6 +161,15 @@ class StudyController extends Controller
             {
                 return array('status' => "fail");
             }
+        }
+
+        $study->categories()->delete();
+        foreach ( $request["category"] as $element ) {
+            $category = new Category;
+            $category->name = $element["name"];
+            $uuid = Str::uuid()->toString();
+            $category->id = $uuid;
+            $study->categories()->save($category);
         }
 
         $study->save();
