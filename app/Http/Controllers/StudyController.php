@@ -22,6 +22,57 @@ class StudyController extends Controller
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
+            $studies = Study::select('id','title','content','created_at', 'confirm')->where('confirm','true')->orderBy('created_at', 'desc')->take($request->num)->get();
+        }else
+        {
+            //find the created time of target study 
+            try
+            {
+                $study = Study::findOrFail($request->from);
+            }
+            //query not found
+            catch(Exception $e){
+                error_log("Error:".$e);
+                return array('status' => "fail");
+            }
+            //find those studies craeted before target study
+            $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
+            $studies = Study::select('id','title','content','created_at', 'confirm')->where('confirm','true')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
+        }
+
+        for($i = 0; $i < count($studies); $i++) 
+        {
+            //get statistic 
+            $stats = StatisticManage::all();
+            $statistics = array();
+            foreach($stats as $stat){
+               $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
+               array_push($statistics, array("name" => $stat['name'], "value" => $value));
+            }
+            
+            $studies[$i] = [
+                "id" => $studies[$i]->id,
+                "title" => $studies[$i]->title,
+                "content" => $studies[$i]->content,
+                "timestamp" => $studies[$i]->created_at,
+                "confirm" => $studies[$i]->confirm,
+                //select specific columns in Category without showing study_id
+                "category" => $studies[$i]->categories->map( 
+                    function($category){
+                        return $category->only(['id','name']);
+                    }
+                ),
+                "statistic" => $statistics,
+            ];
+        }
+        return $studies;
+    }
+
+    public function index(Request $request)
+    {
+        //find some of studies craeted before target study
+        if(strcmp($request->from, "")==0)
+        {
             $studies = Study::select('id','title','content','created_at', 'confirm')->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
@@ -66,11 +117,6 @@ class StudyController extends Controller
             ];
         }
         return $studies;
-    }
-
-    public function index()
-    {
-        
         
     }
     //新增一筆資料
