@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call('CollegeTableSeeder');
         $this->call('DepartmentTableSeeder');
         $this->call('CommentTableSeeder');
+        $this->call('StatisticManageTableSeeder');
+        $this->call('CategoryManageTableSeeder');
+        $this->call('StudyTableSeeder');
     }
 }
