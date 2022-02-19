@@ -22,7 +22,7 @@ function ToggleButtonGroup(props) {
     return map(props.value, (button) => {
         return (
             typeof button === 'object' &&
-            props.ignore.indexOf(button.id) === -1 && (
+            props.ignore.indexOf(button.id.toString()) === -1 && (
                 <ToggleButton
                     key={button.title}
                     handleClick={() => handleClick(button)}

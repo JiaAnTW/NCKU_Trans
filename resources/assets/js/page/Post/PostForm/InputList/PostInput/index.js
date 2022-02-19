@@ -44,10 +44,17 @@ function PostInput(props) {
                     value: e.target.value,
                     elementArea: props.elementArea,
                     elementIndex: props.elementIndex,
+                    customHandleChange: props.customHandleChange,
                 },
             });
         },
-        [dispatch, props.keyName, props.elementArea, props.elementIndex]
+        [
+            dispatch,
+            props.keyName,
+            props.elementArea,
+            props.elementIndex,
+            props.customHandleChange,
+        ]
     );
     const Element = mapTypeToElement(props.type);
     return (
