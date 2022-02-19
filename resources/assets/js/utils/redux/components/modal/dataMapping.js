@@ -124,14 +124,14 @@ function transFormData(
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
 
-function dataMapping() {}
+function DataMapping() {}
 
 function preSpawnTable(form, action, queryKey = 'keyName') {
     transObjToKeysTable(form, action, queryKey);
 }
-dataMapping.action = action;
-dataMapping.queryKey = queryKey;
-dataMapping.transObjToKeysTable = transObjToKeysTable;
-dataMapping.transFormData = transFormData;
-dataMapping.preSpawnTable = preSpawnTable;
-export default dataMapping;
+DataMapping.action = action;
+DataMapping.queryKey = queryKey;
+DataMapping.transObjToKeysTable = transObjToKeysTable;
+DataMapping.transFormData = transFormData;
+DataMapping.preSpawnTable = preSpawnTable;
+export default DataMapping;
