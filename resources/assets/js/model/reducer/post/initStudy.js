@@ -12,6 +12,12 @@ export default (function () {
                         value: '留下更多資訊給學弟妹吧!',
                         type: 'label',
                     },
+                    2: {
+                        value: '普渡大學交換記錄',
+                        keyName: 'postTitle',
+                        type: 'input',
+                        wording: '心得標題',
+                    },
                     1: {
                         value: '',
                         keyName: 'postTitle',
