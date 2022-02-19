@@ -20,7 +20,7 @@ function action() {
 
 const blackList = []; //able use import to replace
 let defaultTable = {};
-function transObjToKeysTable(obj, type = 'remap') {
+function transObjToKeysTable(obj, type = 'remap', queryKey = 'keyName') {
     if (blackList.indexOf(type) !== -1 && !isEmpty(defaultTable)) {
         return defaultTable;
     }
@@ -41,9 +41,9 @@ function transObjToKeysTable(obj, type = 'remap') {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                instanceAbleTable[front.obj[key].keyName]
+                instanceAbleTable[front.obj[key][queryKey]]
             ) {
-                instanceAbleTable[front.obj[key].keyName].push(
+                instanceAbleTable[front.obj[key][queryKey]].push(
                     front.key.concat('instance')
                 );
                 continue;
@@ -51,9 +51,9 @@ function transObjToKeysTable(obj, type = 'remap') {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                !instanceAbleTable[front.obj[key].keyName]
+                !instanceAbleTable[front.obj[key][queryKey]]
             ) {
-                instanceAbleTable[front.obj[key].keyName] = [
+                instanceAbleTable[front.obj[key][queryKey]] = [
                     front.key.concat('instance'),
                 ];
                 continue;
@@ -61,11 +61,11 @@ function transObjToKeysTable(obj, type = 'remap') {
             if (typeof front.obj[key] === 'object')
                 stack.push({ obj: front.obj[key], key: [...front.key, key] });
         }
-        if (front.obj.keyName && keysTable[front.obj.keyName]) {
-            keysTable[front.obj.keyName].push(front.key);
+        if (front.obj[queryKey] && keysTable[front.obj[queryKey]]) {
+            keysTable[front.obj[queryKey]].push(front.key);
         }
-        if (front.obj.keyName && !keysTable[front.obj.keyName]) {
-            keysTable[front.obj.keyName] = [front.key];
+        if (front.obj[queryKey] && !keysTable[front.obj[queryKey]]) {
+            keysTable[front.obj[queryKey]] = [front.key];
         }
     }
     if (blackList.indexOf(type) !== -1 && isEmpty(defaultTable)) {
