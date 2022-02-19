@@ -45,6 +45,7 @@ function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
+                front.obj[key][queryKey] &&
                 instanceAbleTable[front.obj[key][queryKey]]
             ) {
                 instanceAbleTable[front.obj[key][queryKey]].push(
@@ -55,6 +56,7 @@ function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
+                front.obj[key][queryKey] &&
                 !instanceAbleTable[front.obj[key][queryKey]]
             ) {
                 instanceAbleTable[front.obj[key][queryKey]] = [
