@@ -16,65 +16,121 @@ import set from 'lodash/set';
 import result from 'lodash/result';
 import dataMapping from '~/utils/redux/components/modal/dataMapping';
 
+let commentTable, studyTable;
 const postReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_POST_OPTION_DEPARTMENT: {
+            commentTable = dataMapping.transObjToKeysTable(
+                state.form['comment'],
+                dataMapping.action.getInitComment
+            );
+            studyTable = dataMapping.transObjToKeysTable(
+                state.form['study'],
+                dataMapping.action.getInitStudy
+            );
             const stateNext = state;
 
             // 初始化學系
-            const out_options =
-                state.form.comment.pageMap[1][0][2].options.concat(
-                    action.payload.departmentArr.map((department) => ({
-                        value: department.name,
-                        text: department.name,
-                    }))
-                );
+            const out_options = result(
+                state.form['comment'],
+                commentTable.keysTable['out_maj'][0]
+            ).options.concat(
+                action.payload.departmentArr.map((department) => ({
+                    value: department.name,
+                    text: department.name,
+                }))
+            );
 
             // in沒有college，要獨立寫
-            const in_options =
-                state.form.comment.pageMap[1][0][3].options.concat(
-                    action.payload.departmentArr.map((department) => ({
-                        value: department.name,
-                        text: department.name,
-                    }))
-                );
+            const in_options = result(
+                state.form['comment'],
+                commentTable.keysTable['in_maj'][0]
+            ).options.concat(
+                action.payload.departmentArr.map((department) => ({
+                    value: department.name,
+                    text: department.name,
+                }))
+            );
 
             const out_maj = {
-                ...state.form.comment.pageMap[1][0][2],
+                ...result(
+                    state.form['comment'],
+                    commentTable.keysTable['out_maj'][0]
+                ),
                 options: out_options,
             };
             const in_maj = {
-                ...state.form.comment.pageMap[1][0][3],
+                ...result(
+                    state.form['comment'],
+                    commentTable.keysTable['in_maj'][0]
+                ),
                 options: in_options,
             };
 
             stateNext.form.comment.id = -1;
-            stateNext.form.comment.pageMap[1][0][2] = out_maj;
-            stateNext.form.comment.pageMap[1][0][3] = in_maj;
+            set(
+                state.form['comment'],
+                commentTable.keysTable['out_maj'][0],
+                out_maj
+            );
+            set(
+                state.form['comment'],
+                commentTable.keysTable['in_maj'][0],
+                in_maj
+            );
+
             return stateNext;
         }
         case INIT_POST_OPTION_COLLEGE: {
             const stateNext = state;
 
             // 初始化學系
-            const options = state.form.comment.pageMap[1][0][2].options.concat(
+            const options = result(
+                stateNext.form['comment'],
+                commentTable.keysTable['out_maj'][0]
+            ).options.concat(
                 action.payload.collegeArr.map((college) => ({
                     value: college.name,
                     text: college.name,
                 }))
             );
-            const out_maj = { ...state.form.comment.pageMap[1][0][2], options };
-            const maj = { ...state.form.study.pageMap[1][0][1], options };
-
-            stateNext.form.comment.pageMap[1][0][2] = out_maj;
-            stateNext.form.study.pageMap[1][0][1] = maj;
-
+            const out_maj = {
+                ...result(
+                    stateNext.form['comment'],
+                    commentTable.keysTable['out_maj'][0]
+                ),
+                options,
+            };
+            const maj = {
+                ...result(
+                    stateNext.form['study'],
+                    studyTable.keysTable['maj'][0]
+                ),
+                options,
+            };
+            set(
+                state.form['comment'],
+                commentTable.keysTable['out_maj'][0],
+                out_maj
+            );
+            set(state.form['study'], studyTable.keysTable['maj'][0], maj);
             return stateNext;
         }
         case SET_POST_FORM: {
             const stateNext = state;
             const { type, step } = stateNext;
-            const { value, elementArea, elementIndex } = action.payload;
+            const { value, elementArea, elementIndex, customHandleChange } =
+                action.payload;
+            if (customHandleChange) {
+                const preventDefault = !customHandleChange(
+                    stateNext,
+                    step,
+                    elementArea,
+                    elementIndex,
+                    value
+                );
+                if (preventDefault) return stateNext;
+            }
             const thisArea =
                 stateNext.form[type].pageMap[step / 2][elementArea];
             const nextAreaValue = { ...thisArea[elementIndex] };
@@ -122,7 +178,7 @@ const postReducer = (state = initState, action) => {
                         : set(
                               stateNext.form[stateNext.type],
                               keysTable[key][0]
-                                  .slice(-1)
+                                  .slice(0, -1)
                                   .concat(instanceParent.id),
                               instance
                           );
