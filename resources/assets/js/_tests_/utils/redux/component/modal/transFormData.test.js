@@ -1,9 +1,9 @@
-import transFormData from '~/utils/redux/components/modal/transFormData';
+import dataMapping from '~/utils/redux/components/modal/dataMapping';
 import transFormDataInput from './transFormData.input.json';
 
 test('[Post] Should transForm data correctly when preivew new comment', () => {
     expect(
-        transFormData(transFormDataInput, {
+        dataMapping.transFormData(transFormDataInput, {
             title: 'in_maj',
             subtitle: 'out_maj',
             type: 'category',

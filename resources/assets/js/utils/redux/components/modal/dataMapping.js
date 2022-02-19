@@ -1,5 +1,6 @@
 import map from 'lodash/map';
 import omit from 'lodash/omit';
+import isEmpty from 'lodash/isEmpty';
 import result from 'lodash/result';
 import majorWording from '~/wording/major.json';
 
@@ -13,7 +14,16 @@ Interface settingKeyName = {
     ...
 }
 */
-export function transObjToKeysTable(obj) {
+function action() {
+    this.remp = 'remap';
+}
+
+const blackList = []; //able use import to replace
+let defaultTable = {};
+function transObjToKeysTable(obj, type = 'remap') {
+    if (blackList.indexOf(type) !== -1 && !isEmpty(defaultTable)) {
+        return defaultTable;
+    }
     // maybe later can separate to a new js file
     const keysTable = {};
     const instanceAbleTable = {};
@@ -58,8 +68,12 @@ export function transObjToKeysTable(obj) {
             keysTable[front.obj.keyName] = [front.key];
         }
     }
+    if (blackList.indexOf(type) !== -1 && isEmpty(defaultTable)) {
+        defaultTable = { keysTable, instanceAbleTable };
+    }
     return { keysTable, instanceAbleTable };
 }
+
 function transFormData(
     dataObj,
     settingKeyName,
@@ -69,7 +83,7 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const { keysTable } = transObjToKeysTable(dataObj, keysTable);
+    const { keysTable } = transObjToKeysTable(dataObj);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
         const keyPaths = keysTable[dataObjKey];
@@ -105,4 +119,8 @@ function transFormData(
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
 
-export default transFormData;
+function dataMapping() {}
+dataMapping.action = action;
+dataMapping.transObjToKeysTable = transObjToKeysTable;
+dataMapping.transFormData = transFormData;
+export default dataMapping;
