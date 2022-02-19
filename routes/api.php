@@ -70,6 +70,7 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
 
     Route::put('post/announcement/{id}', 'AnnouncementController@update');
 
+    Route::get('get/study/all', 'StudyController@index');
     Route::patch('patch/study', 'StudyController@confirm');
     Route::put('post/study', 'StudyController@update');
     Route::delete('delete/study', 'StudyController@destroy');
