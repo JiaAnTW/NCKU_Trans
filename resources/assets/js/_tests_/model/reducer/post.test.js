@@ -91,7 +91,7 @@ test('[Study] Should change 1th page value without changing schema', () => {
             keyName: 'maj',
             value: '軟體測試系',
             elementArea: 0,
-            elementIndex: 1,
+            elementIndex: 2,
         },
     });
     let studyForm = formSelector(nextState, 'study');

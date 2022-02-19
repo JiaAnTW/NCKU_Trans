@@ -1,4 +1,4 @@
-import { mapToCustomizeFunction } from '~/model/reducer/post/initStudy';
+import { mapToCustomizeFunction } from '~/model/reducer/post/mapToCustomFunction';
 export const initStudy = (function () {
     return {
         id: -1,
@@ -9,10 +9,15 @@ export const initStudy = (function () {
                     // page - step
                     0: {
                         value: '留下更多資訊給學弟妹吧!',
-                        keyName: 'title',
                         type: 'label',
                     },
                     1: {
+                        value: '普渡大學交換記錄',
+                        keyName: 'postTitle',
+                        type: 'input',
+                        wording: '心得標題',
+                    },
+                    2: {
                         value: '中文系',
                         keyName: 'maj',
                         type: 'select',
@@ -25,7 +30,19 @@ export const initStudy = (function () {
             2: {
                 // page - step
                 0: {
-                    0: { value: '選擇你要分享的統計資料', type: 'label' },
+                    0: {
+                        keyName: 'postTitle',
+                        formType: 'study',
+                        placeHolder: '你未填寫該資料',
+                        type: 'preview_input',
+                    },
+                    1: { value: '選擇你要分享的統計資料', type: 'label' },
+                    2: {
+                        type: 'search_bar',
+                        value: '',
+                        customHandleChange:
+                            mapToCustomizeFunction('searchingAlgorithm'),
+                    },
                 },
                 1: {
                     selectedStatistic: 0,
@@ -118,20 +135,20 @@ export const initStudy = (function () {
                                 },
                             },
                             6: {
-                                id: 6, // stat - id
-                                title: 'IELTS',
-                                value: false,
+                                id: 6, // stat - id  //array index+1
+                                title: 'IELTS', //name
+                                value: false, //overwrite only
                                 instance: {
                                     // stat - id
                                     value: '',
                                     elementAttrs: {
-                                        type: 'number',
+                                        type: 'number', //dataType
                                         min: 0,
                                         max: 100,
                                     },
-                                    keyName: 'ielts',
-                                    type: 'input',
-                                    wording: 'IELTS',
+                                    keyName: 'ielts', //id
+                                    type: 'input', //always input
+                                    wording: 'IELTS', //name
                                 },
                             },
                             7: {
@@ -151,14 +168,11 @@ export const initStudy = (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
-                                    customHandleChange:
-                                        mapToCustomizeFunction(
-                                            'onChange_other'
-                                        ),
                                 },
                             },
+                            controller: 'search_bar',
                         },
-                        width: '100%',
+                        ignore: [],
                         type: 'toggle_button_group',
                     },
                     alertWord: {
