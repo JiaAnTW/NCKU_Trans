@@ -1,6 +1,5 @@
 import map from 'lodash/map';
 import omit from 'lodash/omit';
-import isEmpty from 'lodash/isEmpty';
 import result from 'lodash/result';
 import majorWording from '~/wording/major.json';
 
@@ -14,15 +13,15 @@ Interface settingKeyName = {
     ...
 }
 */
-function action() {
-    this.remp = 'remap';
-}
+let action = {
+    getPreview: 'getPreview',
+};
 
-const blackList = []; //able use import to replace
-let defaultTable = {};
-function transObjToKeysTable(obj, type = 'remap', queryKey = 'keyName') {
-    if (blackList.indexOf(type) !== -1 && !isEmpty(defaultTable)) {
-        return defaultTable;
+const blackList = Object.keys(action); //able use import to replace
+const defaultTable = {};
+function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
+    if (blackList.indexOf(action) !== -1 && defaultTable[action]) {
+        return defaultTable[action];
     }
     // maybe later can separate to a new js file
     const keysTable = {};
@@ -68,9 +67,10 @@ function transObjToKeysTable(obj, type = 'remap', queryKey = 'keyName') {
             keysTable[front.obj[queryKey]] = [front.key];
         }
     }
-    if (blackList.indexOf(type) !== -1 && isEmpty(defaultTable)) {
-        defaultTable = { keysTable, instanceAbleTable };
+    if (blackList.indexOf(action) !== -1 && !defaultTable[action]) {
+        defaultTable[action] = { keysTable, instanceAbleTable };
     }
+
     return { keysTable, instanceAbleTable };
 }
 
@@ -120,7 +120,12 @@ function transFormData(
 }
 
 function dataMapping() {}
+
+function preSpawnTable(form, action, queryKey = 'keyName') {
+    transObjToKeysTable(form, action, queryKey);
+}
 dataMapping.action = action;
 dataMapping.transObjToKeysTable = transObjToKeysTable;
 dataMapping.transFormData = transFormData;
+dataMapping.preSpawnTable = preSpawnTable;
 export default dataMapping;
