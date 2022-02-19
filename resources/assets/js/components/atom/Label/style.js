@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Title = styled.p`
+export const Title = styled.div`
     display: ${(props) => (props.display ? props.display : 'flex')};
     font-size: ${(props) => (props.size ? props.size : '15px')};
     justify-content: ${(props) => (props.align ? props.align : 'center')};
