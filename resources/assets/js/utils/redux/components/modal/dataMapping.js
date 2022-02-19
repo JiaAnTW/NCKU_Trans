@@ -13,10 +13,15 @@ Interface settingKeyName = {
     ...
 }
 */
-let action = {
-    getPreview: 'getPreview',
+const action = {
+    getInitComment: 'getInitComment',
+    getInitStudy: 'getInitStudy',
+    getController: 'getController',
 };
-
+const queryKey = {
+    keyName: 'keyName',
+    controller: 'controller',
+};
 const blackList = Object.keys(action); //able use import to replace
 const defaultTable = {};
 function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
@@ -125,6 +130,7 @@ function preSpawnTable(form, action, queryKey = 'keyName') {
     transObjToKeysTable(form, action, queryKey);
 }
 dataMapping.action = action;
+dataMapping.queryKey = queryKey;
 dataMapping.transObjToKeysTable = transObjToKeysTable;
 dataMapping.transFormData = transFormData;
 dataMapping.preSpawnTable = preSpawnTable;
