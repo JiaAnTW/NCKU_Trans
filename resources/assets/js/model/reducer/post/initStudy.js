@@ -1,5 +1,9 @@
 import cloneDeep from 'lodash/cloneDeep';
+import dataMapping from '~/utils/redux/components/modal/dataMapping';
 
+const customArea = {
+    other: 2,
+};
 export function mapToCustomizeFunction(type) {
     switch (type) {
         case 'spawn_other':
@@ -8,15 +12,20 @@ export function mapToCustomizeFunction(type) {
                 const { type, step } = stateNext;
                 const preSpawn = cloneDeep(instance);
                 preSpawn.wording += instance.counter;
-                stateNext.form[type].pageMap[step / 2][2][instance.counter++] =
-                    preSpawn;
+                stateNext.form[type].pageMap[step / 2][customArea.other][
+                    instance.counter++
+                ] = preSpawn;
             };
         case 'onChange_other':
             return (state, index, value) => {
                 const stateNext = state;
                 const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][2][index].value = value;
+                stateNext.form[type].pageMap[step / 2][customArea.other][
+                    index
+                ].value = value;
             };
+        case 'searchAlgorithm':
+            return (state, index, value) => {};
         default:
             return undefined;
     }
@@ -34,6 +43,12 @@ export default (function () {
                         keyName: 'title',
                         type: 'label',
                     },
+                    2: {
+                        value: '普渡大學交換記錄',
+                        keyName: 'postTitle',
+                        type: 'input',
+                        wording: '心得標題',
+                    },
                     1: {
                         value: '中文系',
                         keyName: 'maj',
@@ -47,7 +62,19 @@ export default (function () {
             2: {
                 // page - step
                 0: {
-                    0: { value: '選擇你要分享的統計資料', type: 'label' },
+                    0: {
+                        keyName: 'postTitle',
+                        formType: 'study',
+                        placeHolder: '你未填寫該資料',
+                        type: 'preview_input',
+                    },
+                    1: { value: '選擇你要分享的統計資料', type: 'label' },
+                    2: {
+                        type: 'search_bar',
+                        value: '',
+                        customHandleChange:
+                            mapToCustomizeFunction('searchAlgorithm'),
+                    },
                 },
                 1: {
                     selectedStatistic: 0,
@@ -179,8 +206,9 @@ export default (function () {
                                         ),
                                 },
                             },
+                            controller: 'search_bar',
                         },
-                        width: '100%',
+                        ignore: [],
                         type: 'toggle_button_group',
                     },
                     alertWord: {

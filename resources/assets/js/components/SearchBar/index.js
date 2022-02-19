@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { InputField, SearchIconYellow, Button, Container } from './style';
 
-function SearchBar({ className, width, onSubmit }) {
+function SearchBar({ className, width, onSubmit, onChange, value }) {
     const [hidden, setHidden] = useState(false);
     const inputRef = useRef('');
     const onFocus = useCallback(() => setHidden(true), []);
@@ -18,7 +18,13 @@ function SearchBar({ className, width, onSubmit }) {
 
     return (
         <Container className={className} style={{ width }}>
-            <InputField ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
+            <InputField
+                onChange={onChange}
+                ref={inputRef}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                value={value}
+            />
             <Button hidden={hidden} onClick={handleClick}>
                 <SearchIconYellow fontSize="large"></SearchIconYellow>
             </Button>

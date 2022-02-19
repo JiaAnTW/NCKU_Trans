@@ -8,6 +8,8 @@ import TextArea from '~/components/atom/TextArea';
 import Label from '~/components/atom/Label';
 import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
 import PairInput from '~/components/atom/PairInput';
+import PreviewInput from '~/components/atom/PreviewInput';
+import SearchBar from '~/components/SearchBar';
 
 const mapTypeToElement = (type) => {
     switch (type) {
@@ -23,6 +25,10 @@ const mapTypeToElement = (type) => {
             return ToggleButtonGroup;
         case 'pair_input':
             return PairInput;
+        case 'preview_input':
+            return PreviewInput;
+        case 'search_bar':
+            return SearchBar;
         default:
             return Input;
     }
