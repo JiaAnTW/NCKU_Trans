@@ -1,35 +1,5 @@
-import cloneDeep from 'lodash/cloneDeep';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import { mapToCustomizeFunction } from './mapToCustomFunction';
 
-const customArea = {
-    other: 2,
-};
-export function mapToCustomizeFunction(type) {
-    switch (type) {
-        case 'spawn_other':
-            return (state, instance) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                const preSpawn = cloneDeep(instance);
-                preSpawn.wording += instance.counter;
-                stateNext.form[type].pageMap[step / 2][customArea.other][
-                    instance.counter++
-                ] = preSpawn;
-            };
-        case 'onChange_other':
-            return (state, index, value) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][customArea.other][
-                    index
-                ].value = value;
-            };
-        case 'searchAlgorithm':
-            return (state, index, value) => {};
-        default:
-            return undefined;
-    }
-}
 export default (function () {
     return {
         id: -1,
@@ -40,16 +10,15 @@ export default (function () {
                     // page - step
                     0: {
                         value: '留下更多資訊給學弟妹吧!',
-                        keyName: 'title',
                         type: 'label',
                     },
-                    2: {
+                    1: {
                         value: '普渡大學交換記錄',
                         keyName: 'postTitle',
                         type: 'input',
                         wording: '心得標題',
                     },
-                    1: {
+                    2: {
                         value: '中文系',
                         keyName: 'maj',
                         type: 'select',
@@ -73,7 +42,7 @@ export default (function () {
                         type: 'search_bar',
                         value: '',
                         customHandleChange:
-                            mapToCustomizeFunction('searchAlgorithm'),
+                            mapToCustomizeFunction('searchingAlgorithm'),
                     },
                 },
                 1: {
@@ -167,20 +136,20 @@ export default (function () {
                                 },
                             },
                             6: {
-                                id: 6, // stat - id
-                                title: 'IELTS',
-                                value: false,
+                                id: 6, // stat - id  //array index+1
+                                title: 'IELTS', //name
+                                value: false, //overwrite only
                                 instance: {
                                     // stat - id
                                     value: '',
                                     elementAttrs: {
-                                        type: 'number',
+                                        type: 'number', //dataType
                                         min: 0,
                                         max: 100,
                                     },
-                                    keyName: 'ielts',
-                                    type: 'input',
-                                    wording: 'IELTS',
+                                    keyName: 'ielts', //id
+                                    type: 'input', //always input
+                                    wording: 'IELTS', //name
                                 },
                             },
                             7: {
@@ -200,10 +169,6 @@ export default (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
-                                    customHandleChange:
-                                        mapToCustomizeFunction(
-                                            'onChange_other'
-                                        ),
                                 },
                             },
                             controller: 'search_bar',
