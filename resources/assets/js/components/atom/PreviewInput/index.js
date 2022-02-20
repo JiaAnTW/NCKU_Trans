@@ -13,7 +13,8 @@ function PreviewInput({ keyName, placeHolder, formType }) {
         targetForm,
         DataMapping.action.GET_INIT_STUDY
     );
-    const obj = result(targetForm, keysTable[keyName][0], {}); //already handle exception
+    const obj = { ...result(targetForm, keysTable[keyName][0], {}) }; //already handle exception
+    obj.value = obj.value.trim();
     const data = !obj.value
         ? { value: placeHolder, color: color.red }
         : { value: obj.value };
