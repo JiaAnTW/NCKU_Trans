@@ -14,18 +14,19 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     const onBlur = useCallback(() => setHidden(false), []);
     const handleClick = useCallback(
         (e) => {
+            e.preventDefault();
             if (hidden) {
-                e.preventDefault();
+                if (!onSubmit) return;
                 if (!inputRef.current.value) return;
 
                 onSubmit(inputRef.current.value);
             } else {
+                if (!onChange) return;
                 onChange({
                     target: {
                         value: '',
                     },
                 });
-                e.preventDefault();
             }
         },
         [onSubmit, onChange, hidden]
