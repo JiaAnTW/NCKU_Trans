@@ -35,6 +35,7 @@ export function mapToCustomizeFunction(type) {
                 let ignoreTable = [];
                 let regs = {};
                 let skipAction = false;
+                value = value.toUpperCase();
                 map(buttons, (button, index) => {
                     if (value === '') {
                         skipAction = true;
