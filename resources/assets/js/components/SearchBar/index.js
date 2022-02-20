@@ -1,5 +1,11 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { InputField, SearchIconYellow, Button, Container } from './style';
+import {
+    InputField,
+    SearchIconYellow,
+    Button,
+    Container,
+    ClearIcon,
+} from './style';
 
 function SearchBar({ className, width, onSubmit, onChange, value }) {
     const [hidden, setHidden] = useState(false);
@@ -8,12 +14,22 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     const onBlur = useCallback(() => setHidden(false), []);
     const handleClick = useCallback(
         (e) => {
-            e.preventDefault();
-            if (!inputRef.current.value) return;
+            console.log(hidden);
+            if (hidden) {
+                e.preventDefault();
+                if (!inputRef.current.value) return;
 
-            onSubmit(inputRef.current.value);
+                onSubmit(inputRef.current.value);
+            } else {
+                onChange({
+                    target: {
+                        value: '',
+                    },
+                });
+                e.preventDefault();
+            }
         },
-        [onSubmit]
+        [onSubmit, onChange, hidden]
     );
 
     return (
@@ -25,8 +41,12 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
                 onBlur={onBlur}
                 value={value}
             />
-            <Button hidden={hidden} onClick={handleClick}>
-                <SearchIconYellow fontSize="large"></SearchIconYellow>
+            <Button onClick={handleClick}>
+                <SearchIconYellow
+                    hidden={hidden}
+                    fontSize="large"
+                ></SearchIconYellow>
+                <ClearIcon hidden={!hidden} fontSize="large"></ClearIcon>
             </Button>
         </Container>
     );
