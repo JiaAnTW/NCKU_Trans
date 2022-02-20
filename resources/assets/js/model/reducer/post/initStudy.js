@@ -152,8 +152,8 @@ export default (function () {
                                     wording: 'IELTS', //name
                                 },
                             },
-                            7: {
-                                id: 7, // stat - id
+                            999999: {
+                                id: 999999, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
                                     mapToCustomizeFunction('spawn_other'),

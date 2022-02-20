@@ -41,15 +41,17 @@ export function mapToCustomizeFunction(type) {
                         return;
                     }
                     if (typeof button === 'object' && button.title !== value) {
-                        for (let i = 0; i < value.length; i++) {
-                            for (let j = 0; j < button.title.length; j++) {
-                                if (button.title[j] === value[i]) {
-                                    if (regs[index]) {
-                                        regs[index]++;
-                                    } else {
-                                        regs[index] = 1;
-                                    }
-                                    break;
+                        const hashMap = {};
+                        let i; //counter
+                        for (i = 0; i < button.title.length; i++) {
+                            hashMap[button.title[i]] = 1;
+                        }
+                        for (i = 0; i < value.length; i++) {
+                            if (hashMap[value[i]]) {
+                                if (regs[index]) {
+                                    regs[index]++;
+                                } else {
+                                    regs[index] = 1;
                                 }
                             }
                         }
@@ -81,6 +83,7 @@ export function mapToCustomizeFunction(type) {
                         trigger = true;
                     }
                 });
+                ignoreTable = ignoreTable.slice(0, -1); // others selection always is the last one
                 set(
                     stateNext.form[type],
                     keysTable['search_bar'][0].slice(0, -1).concat('ignore'),
@@ -90,6 +93,11 @@ export function mapToCustomizeFunction(type) {
                     stateNext.form[type].pageMap[step / 2][elementArea][
                         elementIndex
                     ].remark = '猜你想找';
+                else {
+                    stateNext.form[type].pageMap[step / 2][elementArea][
+                        elementIndex
+                    ].remark = '查無選項';
+                }
                 return true; // this is preventDefault
             };
         default:
