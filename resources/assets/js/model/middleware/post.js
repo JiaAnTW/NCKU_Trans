@@ -10,7 +10,7 @@ export const postStudyData = (formData) => {
     const url =
         formData.id === -1
             ? '/api/post/study'
-            : `/api/post/study?${formData.id.toString()}`;
+            : `/api/post/study?id={${formData.id.toString()}}`;
 
     const headerSettings = {
         'Content-Type': 'application/json',
