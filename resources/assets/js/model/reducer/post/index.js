@@ -14,19 +14,19 @@ import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 
 let commentTable, studyTable;
 const postReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_POST_OPTION_DEPARTMENT: {
-            commentTable = dataMapping.transObjToKeysTable(
+            commentTable = DataMapping.transObjToKeysTable(
                 state.form['comment'],
-                dataMapping.action.getInitComment
+                DataMapping.action.getInitComment
             );
-            studyTable = dataMapping.transObjToKeysTable(
+            studyTable = DataMapping.transObjToKeysTable(
                 state.form['study'],
-                dataMapping.action.getInitStudy
+                DataMapping.action.getInitStudy
             );
             const stateNext = state;
 
@@ -158,7 +158,7 @@ const postReducer = (state = initState, action) => {
             const dataNext = action.payload;
             const stateNext = state;
             const { keysTable, instanceAbleTable } =
-                dataMapping.transObjToKeysTable(stateNext.form[stateNext.type]);
+                DataMapping.transObjToKeysTable(stateNext.form[stateNext.type]);
             for (let key in dataNext) {
                 if (!keysTable[key] && !instanceAbleTable[key]) {
                     stateNext.form[stateNext.type][key] = dataNext[key];

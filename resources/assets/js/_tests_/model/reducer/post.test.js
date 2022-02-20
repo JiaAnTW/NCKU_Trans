@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import postReducer from '~/model/reducer/post';
 import { SET_POST_FORM, TOGGLE_STATIS_DATA } from '~/model/action/post';
 import post from './post';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 import result from 'lodash/result';
 
 // init postForm
@@ -17,7 +17,7 @@ const setPage = (page) => (postForm.step = page * 2);
 const setType = (type) => (postForm.type = type);
 const formSelector = (state, type) => state.form[type];
 const getTable = (obj, type) =>
-    dataMapping.forceTransObjToKeysTable(obj.form[type]);
+    DataMapping.forceTransObjToKeysTable(obj.form[type]);
 /**
  * global function end
  */

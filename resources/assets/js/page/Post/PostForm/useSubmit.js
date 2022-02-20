@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router';
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useSetModalFlow } from '~/utils/index';
 import { postDataList } from './postDataList';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 
 function useSubmit(editType, form) {
     const formData = form.pageMap;
@@ -18,7 +18,7 @@ function useSubmit(editType, form) {
 
     // -------送出-------
     const onMajorSubmit = useCallback(() => {
-        const params = dataMapping.transFormData(
+        const params = DataMapping.transFormData(
             formData,
             postDataList[type],
             form.id,

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 import { postDataList } from './postDataList';
@@ -42,9 +42,9 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
-        dataMapping.forceTransObjToKeysTable(formData);
+        DataMapping.forceTransObjToKeysTable(formData);
         setModalContext(
-            dataMapping.transFormData(formData, {
+            DataMapping.transFormData(formData, {
                 title: 'in_maj',
                 subtitle: 'out_maj',
                 type: 'category',
@@ -57,7 +57,7 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const params = dataMapping.transFormData(
+        const params = DataMapping.transFormData(
             form,
             postDataList[type],
             form.id,

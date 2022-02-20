@@ -1,6 +1,6 @@
 import React from 'react';
 import { PreviewLayout, TagIcon } from './style';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 import Label from '../Label';
 import { useSelector } from 'react-redux';
 import result from 'lodash/result';
@@ -9,9 +9,9 @@ import { color } from '~/theme/global';
 function PreviewInput({ keyName, placeHolder, formType }) {
     const form = useSelector((state) => state.post.form);
     const targetForm = form[formType];
-    const { keysTable } = dataMapping.transObjToKeysTable(
+    const { keysTable } = DataMapping.transObjToKeysTable(
         targetForm,
-        dataMapping.action.getInitStudy
+        DataMapping.action.getInitStudy
     );
     const obj = result(targetForm, keysTable[keyName][0], {}); //already handle exception
     const data = !obj.value

@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import map from 'lodash/map';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/DataMapping';
 
 const customArea = {
     other: 2,
@@ -23,10 +23,10 @@ export function mapToCustomizeFunction(type) {
             return (state, step, elementArea, elementIndex, value) => {
                 const stateNext = state;
                 const type = stateNext.type;
-                const { keysTable } = dataMapping.transObjToKeysTable(
+                const { keysTable } = DataMapping.transObjToKeysTable(
                     stateNext.form[type],
-                    dataMapping.action.getController,
-                    dataMapping.queryKey.controller
+                    DataMapping.action.getController,
+                    DataMapping.queryKey.controller
                 );
                 const buttons = result(
                     stateNext.form[type],
