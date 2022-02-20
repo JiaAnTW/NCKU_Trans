@@ -14,7 +14,7 @@ const FAILED = 'fail';
 export const initStudy = ({ num = 0 }) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/get/study?from=0&num=${num}`)
+        fetch(`/api/get/study?num=${num}`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({

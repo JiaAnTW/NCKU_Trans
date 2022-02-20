@@ -17,7 +17,7 @@ export default function Study({ isAdmin }) {
         <LoadingFrame isFinishRequest={isFinishRequest}>
             <Container>
                 <Search />
-                <Filter />
+                <Filter isAdmin={isAdmin} />
                 <CardList />
             </Container>
             <ReaderModal
