@@ -3,10 +3,12 @@ import {
     ADD_STUDY_STAT,
     CLEAR_STUDY_FILTER,
     DELETE_STUDY_STAT,
+    INIT_STUDY,
     SET_STUDY_FILTER,
     START_EDIT_TAG,
     STOP_EDIT_TAG,
     UPDATE_STUDY_STAT,
+    UPDATE_TAG,
 } from '../action/study';
 
 const fakeData = {
