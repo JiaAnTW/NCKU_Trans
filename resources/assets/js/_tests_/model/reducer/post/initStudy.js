@@ -13,7 +13,7 @@ export const initStudy = (function () {
                     },
                     1: {
                         value: '',
-                        keyName: 'postTitle',
+                        keyName: 'title',
                         type: 'input',
                         wording: '心得標題',
                     },
@@ -31,8 +31,8 @@ export const initStudy = (function () {
                 // page - step
                 0: {
                     0: {
-                        keyName: 'postTitle',
                         formType: 'study',
+                        previewTarget: 'title',
                         placeHolder: '你未填寫心得標題',
                         type: 'preview_input',
                     },
@@ -186,7 +186,7 @@ export const initStudy = (function () {
                 3: {
                     0: {
                         value: '',
-                        keyName: 'comment',
+                        keyName: 'content',
                         type: 'textarea',
                         wording: '心得',
                         width: 2,

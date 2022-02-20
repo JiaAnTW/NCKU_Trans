@@ -95,7 +95,7 @@ export default (function () {
                     },
                     8: {
                         value: '',
-                        keyName: 'comment',
+                        keyName: 'content',
                         type: 'textarea',
                         wording: '心得',
                         width: 2,

@@ -6,9 +6,13 @@ export const postDataList = {
         score: 'score',
         out_maj: 'out_maj',
         in_maj: 'in_maj',
-        comment: 'comment',
+        content: 'content',
         isPass: 'isPass',
         category: 'category',
     },
-    study: {},
+    study: {
+        settingKeys: ['title', 'content'],
+        category: [],
+        //statistic decided by which obj has keyName attribute
+    },
 };
