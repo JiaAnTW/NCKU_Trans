@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import postReducer from '~/model/reducer/post';
 import { SET_POST_FORM, TOGGLE_STATIS_DATA } from '~/model/action/post';
 import post from './post';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import result from 'lodash/result';
 
 // init postForm

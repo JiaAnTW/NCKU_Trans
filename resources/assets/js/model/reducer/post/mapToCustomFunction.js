@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import map from 'lodash/map';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
 const customArea = {
     other: 2,

@@ -14,7 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
 import result from 'lodash/result';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
 let commentTable, studyTable;
 const postReducer = (state = initState, action) => {

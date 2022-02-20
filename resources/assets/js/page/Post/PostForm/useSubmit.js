@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router';
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useSetModalFlow } from '~/utils/index';
 import { postDataList } from './postDataList';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
 function useSubmit(editType, form) {
     const formData = form.pageMap;

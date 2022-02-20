@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 import { postDataList } from './postDataList';

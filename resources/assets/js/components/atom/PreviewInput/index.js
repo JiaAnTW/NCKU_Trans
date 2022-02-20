@@ -1,6 +1,6 @@
 import React from 'react';
 import { PreviewLayout, TagIcon } from './style';
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import Label from '../Label';
 import { useSelector } from 'react-redux';
 import result from 'lodash/result';
