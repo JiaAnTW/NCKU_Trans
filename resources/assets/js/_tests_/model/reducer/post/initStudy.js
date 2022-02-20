@@ -12,7 +12,7 @@ export const initStudy = (function () {
                         type: 'label',
                     },
                     1: {
-                        value: '普渡大學交換記錄',
+                        value: '',
                         keyName: 'postTitle',
                         type: 'input',
                         wording: '心得標題',
@@ -33,7 +33,7 @@ export const initStudy = (function () {
                     0: {
                         keyName: 'postTitle',
                         formType: 'study',
-                        placeHolder: '你未填寫該資料',
+                        placeHolder: '你未填寫心得標題',
                         type: 'preview_input',
                     },
                     1: { value: '選擇你要分享的統計資料', type: 'label' },
@@ -151,8 +151,8 @@ export const initStudy = (function () {
                                     wording: 'IELTS', //name
                                 },
                             },
-                            7: {
-                                id: 7, // stat - id
+                            999999: {
+                                id: 999999, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
                                     mapToCustomizeFunction('spawn_other'),

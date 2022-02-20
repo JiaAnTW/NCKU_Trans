@@ -4,6 +4,7 @@ import dataMapping from '~/utils/redux/components/modal/dataMapping';
 import Label from '../Label';
 import { useSelector } from 'react-redux';
 import result from 'lodash/result';
+import { color } from '~/theme/global';
 
 function PreviewInput({ keyName, placeHolder, formType }) {
     const form = useSelector((state) => state.post.form);
@@ -13,11 +14,13 @@ function PreviewInput({ keyName, placeHolder, formType }) {
         dataMapping.action.getInitStudy
     );
     const obj = result(targetForm, keysTable[keyName][0], {}); //already handle exception
-    const value = !obj.value ? placeHolder : obj.value;
+    const data = !obj.value
+        ? { value: placeHolder, color: color.red }
+        : { value: obj.value };
     return (
         <PreviewLayout>
             <TagIcon />
-            <Label value={value} align="left" size="18px" />
+            <Label {...data} align="left" size="18px" />
         </PreviewLayout>
     );
 }

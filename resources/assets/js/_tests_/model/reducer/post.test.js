@@ -244,7 +244,7 @@ test('[Study] Should Normal Button(Toggle Button) work and change value to expec
         payload: {
             elementArea: 1,
             elementIndex: 0,
-            id: 7,
+            id: 999999,
         },
     });
     let instance = {
@@ -275,7 +275,7 @@ test('[Study] Should Normal Button(Toggle Button) work and change value to expec
         payload: {
             elementArea: 1,
             elementIndex: 0,
-            id: 7,
+            id: 999999,
         },
     });
     studyForm = formSelector(nextState, 'study');

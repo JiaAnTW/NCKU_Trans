@@ -13,7 +13,7 @@ export default (function () {
                         type: 'label',
                     },
                     1: {
-                        value: '普渡大學交換記錄',
+                        value: '',
                         keyName: 'postTitle',
                         type: 'input',
                         wording: '心得標題',
@@ -34,7 +34,7 @@ export default (function () {
                     0: {
                         keyName: 'postTitle',
                         formType: 'study',
-                        placeHolder: '你未填寫該資料',
+                        placeHolder: '你未填寫心得標題',
                         type: 'preview_input',
                     },
                     1: { value: '選擇你要分享的統計資料', type: 'label' },
