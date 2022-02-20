@@ -11,6 +11,28 @@ import { INIT_STUDY } from '../action/study';
 
 const FAILED = 'fail';
 
+export const initStudy = ({ num = 0 }) => {
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/get/study?from=0&num=${num}`)
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: INIT_STUDY,
+                    payload: { data },
+                });
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+            })
+            .catch((e) => console.log('錯誤:', e));
+    };
+};
+
+export const fetchStudy = ({ from = 0, num = 0 }) => {
+    return (dispatch) => {};
+};
+
 export const createItemFilterOption = (option) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });

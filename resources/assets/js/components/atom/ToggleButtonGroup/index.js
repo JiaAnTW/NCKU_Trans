@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import ToggleButton from '../ToggleButton';
+import ToggleButton from './ToggleButton';
 import map from 'lodash/map';
 import { useDispatch } from 'react-redux';
 import { TOGGLE_STATIS_DATA } from '~/model/action/post';
@@ -11,11 +11,13 @@ function ToggleButtonGroup(props) {
             dispatch({
                 type: TOGGLE_STATIS_DATA,
                 payload: {
+                    elementArea: props.elementArea,
+                    elementIndex: props.elementIndex,
                     ...data,
                 },
             });
         },
-        [dispatch]
+        [dispatch, props.elementArea, props.elementIndex]
     );
     return map(props.value, (button) => {
         return (

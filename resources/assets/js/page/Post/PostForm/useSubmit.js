@@ -1,32 +1,31 @@
 import { useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useSetModalFlow } from '~/utils/index';
+import { postDataList } from './postDataList';
+import transFormData from '~/utils/redux/components/modal/transFormData';
 
-function useSubmit(type, formData) {
+function useSubmit(editType, form) {
+    const formData = form.pageMap;
     const dispatch = useDispatch();
     const [setModalOnBefore, setModalOnNext, setModalOnConfirm] =
         useSetModalFlow();
     const [isModalOpen] = useModalOpen();
     const history = useHistory();
+    const type = useSelector((state) => state.post.type);
 
     // -------送出-------
     const onMajorSubmit = useCallback(() => {
-        const params = {};
-        for (let key in formData) {
-            const item = formData[key];
-            if (typeof item !== 'object') {
-                params[key] = item;
-                continue;
-            }
-            if (item.keyName === 'year') {
-                params[item.keyName] = item.value.toString();
-                continue;
-            }
-            params[item.keyName] = item.value;
-        }
+        const params = transFormData(
+            formData,
+            postDataList[type],
+            form.id,
+            form.confirm,
+            true
+        );
+        params.year = params.year.toString();
         dispatch(postMajorData(params));
 
         if (location.pathname.substr(0, 6) === '/admin') {
@@ -38,7 +37,7 @@ function useSubmit(type, formData) {
         if (isModalOpen) {
             setModalOnBefore(undefined);
             setModalOnNext(undefined);
-            setModalOnConfirm(type === 'major' ? onMajorSubmit : () => {});
+            setModalOnConfirm(editType === 'major' ? onMajorSubmit : () => {});
         }
     }, [isModalOpen]);
 }

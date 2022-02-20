@@ -6,10 +6,11 @@ import { ModalStyle, PreviewLayout, PreviewTitle } from './style';
 import Reader from '~/components/Reader';
 import ControlArea from '~/components/Form/ControlArea';
 import { useModalOpen } from '~/utils';
+import { modalOnConfirmSelector } from '~/model/selector/modal';
 
 function PreviewModal(props) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
-    const onConfirm = useSelector((state) => state.modal.onConfirm);
+    const onConfirm = useSelector(modalOnConfirmSelector);
 
     return (
         <Modal

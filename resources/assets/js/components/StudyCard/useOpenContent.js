@@ -13,18 +13,19 @@ export default function useOpenContent(itemData, index) {
     const history = useHistory();
 
     const handleOpenContent = useCallback(() => {
-        const strMap = {
+        setModalContext(transIntoModalData('study', itemData, index));
+        /*         const strMap = {
             schoolName: wording['schoolName'],
             year: itemData['year'],
             in_maj: itemData['in_maj'],
             category: itemData['category'],
             websiteTitleShort: wording['websiteTitleShort'],
         };
-        setModalContext(transIntoModalData(itemData, index));
         changeHeaderInfo(
             trans(wording['header']['title'], strMap),
             itemData['comment']
         );
+ */
         history.push(`?id=${itemData.id}`);
         setIsModalOpen(true);
     }, [itemData, setIsModalOpen, index]);
