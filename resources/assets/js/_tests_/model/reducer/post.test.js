@@ -16,7 +16,8 @@ const postForm = initPost;
 const setPage = (page) => (postForm.step = page * 2);
 const setType = (type) => (postForm.type = type);
 const formSelector = (state, type) => state.form[type];
-const getTable = (obj, type) => dataMapping.transObjToKeysTable(obj.form[type]);
+const getTable = (obj, type) =>
+    dataMapping.forceTransObjToKeysTable(obj.form[type]);
 /**
  * global function end
  */

@@ -22,10 +22,10 @@ const queryKey = {
     keyName: 'keyName',
     controller: 'controller',
 };
-const blackList = Object.keys(action); //able use import to replace
+
 const defaultTable = {};
 function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
-    if (blackList.indexOf(action) !== -1 && defaultTable[action]) {
+    if (defaultTable[action]) {
         return defaultTable[action];
     }
     // maybe later can separate to a new js file
@@ -72,11 +72,20 @@ function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
             keysTable[front.obj[queryKey]] = [front.key];
         }
     }
-    if (blackList.indexOf(action) !== -1 && !defaultTable[action]) {
+    if (!defaultTable[action]) {
         defaultTable[action] = { keysTable, instanceAbleTable };
     }
 
     return { keysTable, instanceAbleTable };
+}
+
+function forceTransObjToKeysTable(
+    obj,
+    action = 'default',
+    queryKey = 'keyName'
+) {
+    delete defaultTable[action];
+    return transObjToKeysTable(obj, action, queryKey);
 }
 
 function transFormData(
@@ -88,7 +97,7 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const { keysTable } = transObjToKeysTable(dataObj);
+    const { keysTable } = forceTransObjToKeysTable(dataObj);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
         const keyPaths = keysTable[dataObjKey];
@@ -123,15 +132,11 @@ function transFormData(
     };
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
-
 function DataMapping() {}
 
-function preSpawnTable(form, action, queryKey = 'keyName') {
-    transObjToKeysTable(form, action, queryKey);
-}
 DataMapping.action = action;
 DataMapping.queryKey = queryKey;
 DataMapping.transObjToKeysTable = transObjToKeysTable;
 DataMapping.transFormData = transFormData;
-DataMapping.preSpawnTable = preSpawnTable;
+DataMapping.forceTransObjToKeysTable = forceTransObjToKeysTable;
 export default DataMapping;
