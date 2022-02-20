@@ -46,7 +46,7 @@ export const postStudyData = (formData) => {
 
 export const postMajorData = (formData) => {
     const params = formData;
-    params.content = params.content.replace(/\n|\r\n/g, '<br>');
+    params.comment = params.comment.replace(/\n|\r\n/g, '<br>');
 
     const url =
         formData.id === -1

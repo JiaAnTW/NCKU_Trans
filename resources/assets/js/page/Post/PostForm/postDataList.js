@@ -6,7 +6,7 @@ export const postDataList = {
         score: 'score',
         out_maj: 'out_maj',
         in_maj: 'in_maj',
-        content: 'content',
+        comment: 'comment',
         isPass: 'isPass',
         category: 'category',
     },

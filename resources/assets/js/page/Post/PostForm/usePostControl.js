@@ -52,7 +52,7 @@ function usePostControl(editType, timeout) {
                 title: 'in_maj',
                 subtitle: 'out_maj',
                 type: 'category',
-                content: 'comment',
+                content: 'content',
             })
         );
         setIsModalOpen(true);
