@@ -97,7 +97,7 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const { keysTable } = forceTransObjToKeysTable(dataObj);
+    const { keysTable } = transObjToKeysTable(dataObj);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
         const keyPaths = keysTable[dataObjKey];

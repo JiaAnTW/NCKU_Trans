@@ -42,6 +42,7 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
+        dataMapping.forceTransObjToKeysTable(formData);
         setModalContext(
             dataMapping.transFormData(formData, {
                 title: 'in_maj',
@@ -63,8 +64,9 @@ function usePostControl(editType, timeout) {
             form.confirm,
             true
         );
+        console.log(params);
         params.year = params.year.toString();
-        if (editType === 'comment') dispatch(postMajorData(params));
+        //if (editType === 'comment') dispatch(postMajorData(params));
     }, [editType, formData]);
 
     return { onSubmit, onNext, onBefore, onPreview };
