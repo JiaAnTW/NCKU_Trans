@@ -14,7 +14,6 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     const onBlur = useCallback(() => setHidden(false), []);
     const handleClick = useCallback(
         (e) => {
-            console.log(hidden);
             if (hidden) {
                 e.preventDefault();
                 if (!inputRef.current.value) return;
