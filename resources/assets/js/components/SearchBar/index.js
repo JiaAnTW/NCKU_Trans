@@ -14,6 +14,7 @@ const SearchBar = forwardRef(
         const [originValue, setOriginValue] = useState('');
 
         const inputRef = useRef('');
+
         useEffect(() => {
             setOriginValue(value);
         }, []);

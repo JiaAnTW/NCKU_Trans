@@ -33,6 +33,7 @@ function InputBar({
             return { onChange: onChange, value: inputRef.current.value };
         else return {};
     }, [value]);
+
     return (
         <InputField
             onKeyPress={handlePressEnter}
