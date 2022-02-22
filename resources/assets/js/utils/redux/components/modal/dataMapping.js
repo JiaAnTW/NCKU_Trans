@@ -14,9 +14,9 @@ Interface settingKeyName = {
 }
 */
 const action = {
-    getInitComment: 'getInitComment',
-    getInitStudy: 'getInitStudy',
-    getController: 'getController',
+    GetInitComment: 'GetInitComment',
+    GetInitStudy: 'GetInitStudy',
+    GetController: 'GetController',
 };
 const queryKey = {
     keyName: 'keyName',

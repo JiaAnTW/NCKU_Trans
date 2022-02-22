@@ -22,11 +22,11 @@ const postReducer = (state = initState, action) => {
         case INIT_POST_OPTION_DEPARTMENT: {
             commentTable = DataMapping.transObjToKeysTable(
                 state.form['comment'],
-                DataMapping.action.getInitComment
+                DataMapping.action.GetInitComment
             );
             studyTable = DataMapping.transObjToKeysTable(
                 state.form['study'],
-                DataMapping.action.getInitStudy
+                DataMapping.action.GetInitStudy
             );
             const stateNext = state;
 
