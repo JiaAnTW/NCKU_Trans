@@ -35,35 +35,41 @@ export function mapToCustomizeFunction(type) {
                 let ignoreTable = [];
                 let regs = {};
                 let skipAction = false;
-                value = value.toUpperCase();
-                map(buttons, (button, index) => {
-                    if (value === '') {
-                        skipAction = true;
-                        return;
-                    }
-                    if (typeof button === 'object' && button.title !== value) {
-                        const hashMap = {};
-                        let i; //counter
-                        for (i = 0; i < button.title.length; i++) {
-                            hashMap[button.title[i]] = 1;
-                        }
-                        for (i = 0; i < value.length; i++) {
-                            if (hashMap[value[i]]) {
-                                if (regs[index]) {
-                                    regs[index]++;
-                                } else {
-                                    regs[index] = 1;
+                if (!value) {
+                    skipAction = true;
+                } else {
+                    value = value.toUpperCase();
+                    map(buttons, (button, index) => {
+                        if (
+                            typeof button === 'object' &&
+                            button.title !== value
+                        ) {
+                            const hashMap = {};
+                            let i; //counter
+                            for (i = 0; i < button.title.length; i++) {
+                                hashMap[button.title[i]] = 1;
+                            }
+                            for (i = 0; i < value.length; i++) {
+                                if (hashMap[value[i]]) {
+                                    if (regs[index]) {
+                                        regs[index]++;
+                                    } else {
+                                        regs[index] = 1;
+                                    }
                                 }
                             }
+                            ignoreTable.push(index);
                         }
-                        ignoreTable.push(index);
-                    }
-                    if (typeof button === 'object' && button.title === value) {
-                        // matched
-                        skipAction = true;
-                        return;
-                    }
-                });
+                        if (
+                            typeof button === 'object' &&
+                            button.title === value
+                        ) {
+                            // matched
+                            skipAction = true;
+                            return;
+                        }
+                    });
+                }
                 if (skipAction) {
                     delete stateNext.form[type].pageMap[step / 2][elementArea][
                         elementIndex
@@ -99,7 +105,7 @@ export function mapToCustomizeFunction(type) {
                         elementIndex
                     ].remark = '查無選項';
                 }
-                return true; // this is preventDefault
+                return true; // this is preventDefault if this value be false
             };
         default:
             return undefined;
