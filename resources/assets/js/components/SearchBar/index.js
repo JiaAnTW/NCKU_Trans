@@ -37,7 +37,7 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     const inputRef = useRef('');
     useEffect(() => {
         originValue = value;
-        return originValue === undefined ? handleFocusClick() : () => {};
+        return originValue === undefined ? handleClearClick() : () => {};
     }, []);
     const onFocus = useCallback(
         () => setTimeout(() => setHidden(true), 200),
@@ -47,7 +47,7 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
         () => setTimeout(() => setHidden(false), 200),
         [setHidden]
     );
-    const handleClick = useCallback(
+    const handleSearchClick = useCallback(
         (e) => {
             e.preventDefault();
             if (!onSubmit) return;
@@ -57,7 +57,7 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
         },
         [onSubmit]
     );
-    const handleFocusClick = useCallback(
+    const handleClearClick = useCallback(
         (e) => {
             const demoEvent = {
                 target: {
@@ -76,10 +76,10 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     return (
         <Container className={className} style={{ width }}>
             {spawnInput(inputRef, onChange, onFocus, onBlur, value)}
-            <Button hidden={!hidden} onClick={handleFocusClick}>
+            <Button hidden={!hidden} onClick={handleClearClick}>
                 <ClearIcon fontSize="large" />
             </Button>
-            <Button hidden={hidden} onClick={handleClick}>
+            <Button hidden={hidden} onClick={handleSearchClick}>
                 <SearchIconYellow fontSize="large" />
             </Button>
         </Container>
