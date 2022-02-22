@@ -8,29 +8,36 @@ import {
 } from './style';
 
 var originValue = '';
-function spawnInput(inputRef, onChange, onFocus, onBlur, value) {
+function spawnInput(
+    inputRef,
+    onChange,
+    onFocus,
+    onBlur,
+    value,
+    handleSearchClick
+) {
+    const handlePressEnter = useCallback((e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSearchClick(e);
+        }
+    });
     let temp;
     if (onChange && originValue !== undefined)
-        temp = (
-            <InputField
-                onChange={onChange}
-                value={value}
-                ref={inputRef}
-                onFocus={onFocus}
-                onBlur={onBlur}
-            />
-        );
-    else if (onChange)
-        temp = (
-            <InputField
-                onChange={onChange}
-                ref={inputRef}
-                onFocus={onFocus}
-                onBlur={onBlur}
-            />
-        );
-    else temp = <InputField ref={inputRef} onFocus={onFocus} onBlur={onBlur} />;
-    return temp;
+        temp = {
+            onChange: onChange,
+            value: value,
+        };
+    else if (onChange) temp = { onChange: onChange };
+    return (
+        <InputField
+            onKeyPress={handlePressEnter}
+            ref={inputRef}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            {...temp}
+        />
+    );
 }
 function SearchBar({ className, width, onSubmit, onChange, value }) {
     const [hidden, setHidden] = useState(false);
@@ -52,7 +59,6 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
             e.preventDefault();
             if (!onSubmit) return;
             if (!inputRef.current.value) return;
-
             onSubmit(inputRef.current.value);
         },
         [onSubmit]
@@ -64,6 +70,7 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
                     value: '',
                 },
             };
+
             if (e) e.preventDefault();
             if (originValue === undefined) {
                 inputRef.current.value = '';
@@ -75,7 +82,14 @@ function SearchBar({ className, width, onSubmit, onChange, value }) {
     );
     return (
         <Container className={className} style={{ width }}>
-            {spawnInput(inputRef, onChange, onFocus, onBlur, value)}
+            {spawnInput(
+                inputRef,
+                onChange,
+                onFocus,
+                onBlur,
+                value,
+                handleSearchClick
+            )}
             <Button hidden={!hidden} onClick={handleClearClick}>
                 <ClearIcon fontSize="large" />
             </Button>
