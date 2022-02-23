@@ -17,7 +17,7 @@ import {
 const statTypes = [
     {
         text: '整數',
-        value: 'integer',
+        value: 'int',
     },
     {
         text: '小數',

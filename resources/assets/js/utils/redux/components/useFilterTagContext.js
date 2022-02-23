@@ -38,7 +38,7 @@ function useFilterTagContext() {
     // tag contains changed part only
     const onChangeTag = useCallback(
         (tag) => {
-            if (filterTagContext.dataType === 'integer') {
+            if (filterTagContext.dataType === 'int') {
                 if (tag.max) tag.max = toInteger(tag.max).toString();
                 if (tag.min) tag.min = toInteger(tag.min).toString();
             }

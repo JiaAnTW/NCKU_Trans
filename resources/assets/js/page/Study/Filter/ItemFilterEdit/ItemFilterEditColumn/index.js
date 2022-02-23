@@ -35,7 +35,7 @@ function ItemFilterEditColumn({ optionsArr }) {
                     type,
                     id: 'temp',
                     name: '',
-                    dataType: 'integer',
+                    dataType: 'int',
                     min: 0,
                     max: 0,
                 },
