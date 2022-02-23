@@ -29,7 +29,7 @@ const InputBar = forwardRef(
             else if (onChange)
                 return { onChange: onChange, value: ref.current.value };
             else return {};
-        }, [value]);
+        }, [onChange, originValue, value, ref]);
 
         return (
             <InputField
