@@ -11,7 +11,7 @@ function PreviewInput({ keyName, placeHolder, formType }) {
     const targetForm = form[formType];
     const { keysTable } = DataMapping.transObjToKeysTable(
         targetForm,
-        DataMapping.action.GetInitStudy
+        DataMapping.action.GET_INIT_STUDY
     );
     const obj = result(targetForm, keysTable[keyName][0], {}); //already handle exception
     const data = !obj.value
