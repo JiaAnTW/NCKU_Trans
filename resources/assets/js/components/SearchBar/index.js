@@ -13,8 +13,6 @@ const SearchBar = forwardRef(
         const [hidden, setHidden] = useState(false);
         const [originValue, setOriginValue] = useState('');
 
-        const inputRef = useRef('');
-
         useEffect(() => {
             setOriginValue(value);
         }, []);
@@ -22,8 +20,8 @@ const SearchBar = forwardRef(
             (e) => {
                 e.preventDefault();
                 if (!onSubmit) return;
-                if (!inputRef.current.value) return;
-                onSubmit(inputRef.current.value);
+                if (!ref.current.value) return;
+                onSubmit(ref.current.value);
             },
             [onSubmit]
         );
@@ -37,7 +35,7 @@ const SearchBar = forwardRef(
 
                 if (e) e.preventDefault();
                 if (originValue === undefined) {
-                    inputRef.current.value = '';
+                    ref.current.value = '';
                     demoEvent.target.value = undefined;
                 }
                 if (onChange) onChange(demoEvent);
@@ -49,7 +47,6 @@ const SearchBar = forwardRef(
             <Container className={className} style={{ width }}>
                 <InputBar
                     ref={ref}
-                    inputRef={inputRef}
                     onChange={onChange}
                     setHidden={setHidden}
                     value={value}
