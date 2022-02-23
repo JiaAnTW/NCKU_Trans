@@ -21,7 +21,7 @@ const statTypes = [
     },
     {
         text: '小數',
-        value: 'decimal',
+        value: 'float',
     },
 ];
 
