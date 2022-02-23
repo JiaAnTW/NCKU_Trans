@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import {
     ADD_STUDY_STAT,
     DELETE_STUDY_STAT,
+    INIT_STUDY_STAT,
     STOP_EDIT_TAG,
     UPDATE_STUDY_STAT,
 } from '../action/study';
@@ -33,7 +34,43 @@ export const fetchStudy = ({ from = 0, num = 0 }) => {
     return (dispatch) => {};
 };
 
-export const createItemFilterOption = (option) => {
+export const fetchStudyType = () => {
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/get/studyType`)
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: INIT_STUDY_STAT,
+                    payload: { type: 'category', data },
+                });
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+            })
+            .catch((e) => console.log('錯誤:', e));
+    };
+};
+
+export const fetchStudyStat = () => {
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/get/studyStat`)
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: INIT_STUDY_STAT,
+                    payload: { type: 'statInfo', data },
+                });
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+            })
+            .catch((e) => console.log('錯誤:', e));
+    };
+};
+
+export const createStudyTypeOrStat = (option) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
 
@@ -68,7 +105,7 @@ export const createItemFilterOption = (option) => {
     };
 };
 
-export const updateItemFilterOption = (option) => {
+export const updateStudyTypeOrStat = (option) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
 
@@ -102,7 +139,7 @@ export const updateItemFilterOption = (option) => {
     };
 };
 
-export const deleteItemFilterOption = (option) => {
+export const deleteStudyTypeOrStat = (option) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
 

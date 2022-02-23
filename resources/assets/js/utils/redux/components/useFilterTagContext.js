@@ -4,9 +4,9 @@ import toInteger from 'lodash/toInteger';
 
 import { STOP_EDIT_TAG, UPDATE_TAG } from '~/model/action/study';
 import {
-    deleteItemFilterOption,
-    createItemFilterOption,
-    updateItemFilterOption,
+    deleteStudyTypeOrStat,
+    createStudyTypeOrStat,
+    updateStudyTypeOrStat,
 } from '~/model/middleware/study';
 
 function useFilterTagContext() {
@@ -15,7 +15,7 @@ function useFilterTagContext() {
 
     const deleteTag = useCallback(
         (tag) => {
-            dispatch(deleteItemFilterOption(tag));
+            dispatch(deleteStudyTypeOrStat(tag));
         },
         [dispatch]
     );
@@ -27,9 +27,9 @@ function useFilterTagContext() {
     const updateTag = useCallback(
         (tag, action) => {
             if (action === 'create') {
-                dispatch(createItemFilterOption(tag));
+                dispatch(createStudyTypeOrStat(tag));
             } else if (action === 'update') {
-                dispatch(updateItemFilterOption(tag));
+                dispatch(updateStudyTypeOrStat(tag));
             }
         },
         [dispatch]
