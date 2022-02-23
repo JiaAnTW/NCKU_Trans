@@ -11,11 +11,8 @@ import { SearchIconYellow, Button, Container, ClearIcon } from './style';
 const SearchBar = forwardRef(
     ({ className, width, onSubmit, onChange, value }, ref) => {
         const [hidden, setHidden] = useState(false);
-        const [originValue, setOriginValue] = useState('');
+        const originValue = useRef(value);
 
-        useEffect(() => {
-            setOriginValue(value);
-        }, []);
         const handleSearchClick = useCallback(
             (e) => {
                 e.preventDefault();
