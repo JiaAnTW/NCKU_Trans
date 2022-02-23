@@ -46,8 +46,11 @@ class StudyController extends Controller
             $stats = StatisticManage::all();
             $statistics = array();
             foreach($stats as $stat){
-               $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
-               array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
+                if($value != null)
+                {
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                }
             }
             
             $studies[$i] = [
@@ -97,8 +100,11 @@ class StudyController extends Controller
             $stats = StatisticManage::all();
             $statistics = array();
             foreach($stats as $stat){
-               $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
-               array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
+                if($value != null)
+                {
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                }
             }
             
             $studies[$i] = [

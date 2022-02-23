@@ -33,7 +33,7 @@ class CategoryManageController extends Controller
         }
         $category->save();
 
-        return array('status' => "success");
+        return array('status' => "success", "id" => $uuid);
     }
 
     public function update(Request $request)

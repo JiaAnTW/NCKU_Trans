@@ -70,7 +70,7 @@ class StatisticManageController extends Controller
             $this->createTable($request->dataType, $request->max, $request->min, $uuid);
 
             $statistic->save();
-            return array(["status"=>"success"]);
+            return array("status"=>"success", "id" => $uuid);
         } 
         else 
         {
