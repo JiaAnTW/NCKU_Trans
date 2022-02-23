@@ -78,7 +78,7 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     Route::put('post/studyType', 'CategoryManageController@update');
     Route::delete('delete/studyType', 'CategoryManageController@destroy');
 
-    Route::put('update/studyStat', 'StatisticManageController@update');
+    Route::put('post/studyStat', 'StatisticManageController@update');
     Route::delete('delete/studyStat', 'StatisticManageController@destroy');
 
     Route::get('get/users/list', function(){
