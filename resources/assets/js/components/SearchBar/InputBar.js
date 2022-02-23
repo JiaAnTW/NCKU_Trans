@@ -11,12 +11,15 @@ const InputBar = forwardRef(
             () => setTimeout(() => setHidden(false), 200),
             []
         );
-        const handlePressEnter = useCallback((e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                handleSearchClick(e);
-            }
-        });
+        const handlePressEnter = useCallback(
+            (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleSearchClick(e);
+                }
+            },
+            [handleSearchClick]
+        );
         const temp = useMemo(() => {
             if (onChange && originValue !== undefined)
                 return {
