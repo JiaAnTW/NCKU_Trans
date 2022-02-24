@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import InputLabel from '~/components/atom/InputLabel';
 import { adminActionSelector } from '~/model/selector/study';
-import useFilterTagContext from '~/utils/redux/components/useFilterTagContext';
+import useFilterTagContext from '~/utils/redux/components/study/useFilterTagContext';
 import InputWithPrefix from '~/components/atom/InputWithPrefix';
 import Select from '~/components/atom/Select';
 import {

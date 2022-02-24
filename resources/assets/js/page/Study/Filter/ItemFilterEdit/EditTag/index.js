@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { adminActionSelector } from '~/model/selector/study';
-import useFilterTagContext from '~/utils/redux/components/useFilterTagContext';
+import useFilterTagContext from '~/utils/redux/components/study/useFilterTagContext';
 import StatInput from './statInput';
 import {
     EditTagContainer,

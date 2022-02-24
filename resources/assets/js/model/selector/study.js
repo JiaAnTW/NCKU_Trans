@@ -7,8 +7,8 @@ import {
 const studySelector = (state) => state.study;
 
 export const adminActionSelector = createSelector(studySelector, (state) => {
-    const { isEditTag, action, tag } = state.admin;
-    return { isEditTag, action, tag };
+    const { action, tag } = state.admin;
+    return { action, tag };
 });
 
 export const itemFilterSelector = createSelector(studySelector, (state) => {
@@ -16,13 +16,20 @@ export const itemFilterSelector = createSelector(studySelector, (state) => {
     return { category, statInfo, year };
 });
 
+export const filterStatusSelector = createSelector(studySelector, (state) => {
+    const { status } = state.filter;
+    return status;
+});
+
 export const selectedFilterSelector = createSelector(studySelector, (state) => {
     let selected = [];
     for (const [key, tagList] of Object.entries(state.filter)) {
-        for (const tag of tagList) {
-            if (tag.selected) {
-                tag.tagType = key;
-                selected.push(tag);
+        if (tagList.length > 0) {
+            for (const tag of tagList) {
+                if (tag.selected) {
+                    tag.tagType = key;
+                    selected.push(tag);
+                }
             }
         }
     }

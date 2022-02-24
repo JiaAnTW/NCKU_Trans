@@ -48,7 +48,6 @@ function useFilterTagContext() {
     );
 
     return {
-        filterTagContext,
         deleteTag,
         cancelEditTag,
         updateTag,

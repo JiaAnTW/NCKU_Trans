@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { adminActionSelector } from '~/model/selector/study';
+import { filterStatusSelector } from '~/model/selector/study';
 import EditTag from './EditTag';
 import {
     StartManageIcon,
@@ -24,11 +24,11 @@ const getManageBtn = (isManaging) => {
 };
 
 function ItemFilterManagement({ toggleManage, toggleEditTag, isManaging }) {
-    const filterManageState = useSelector(adminActionSelector);
+    const filterStatus = useSelector(filterStatusSelector);
 
     return (
         <>
-            {filterManageState.isEditTag ? (
+            {filterStatus.isEditTag ? (
                 <EditTag toggleEditTag={toggleEditTag} />
             ) : (
                 <ManageButtonContainer

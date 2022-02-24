@@ -1,3 +1,5 @@
+export const SET_FILTER_OPEN = 'SET_FILTER_OPEN';
+export const SET_FILTER_MANAGE = 'SET_FILTER_MANAGE';
 export const START_EDIT_TAG = 'START_EDIT_TAG';
 export const STOP_EDIT_TAG = 'STOP_EDIT_TAG';
 export const UPDATE_TAG = 'UPDATE_TAG';
