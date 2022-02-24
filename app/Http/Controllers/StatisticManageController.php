@@ -116,6 +116,7 @@ class StatisticManageController extends Controller
         }
 
         $statistic->save();
+        return array('status' => "success");
     }
 
     public function destroy(Request $request)
