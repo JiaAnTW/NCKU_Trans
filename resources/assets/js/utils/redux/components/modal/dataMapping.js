@@ -13,7 +13,21 @@ Interface settingKeyName = {
     ...
 }
 */
-export function transObjToKeysTable(obj) {
+const action = {
+    GET_INIT_COMMENT: 'GET_INIT_COMMENT',
+    GET_INIT_STUDY: 'GET_INIT_STUDY',
+    GET_CONTROLLER: 'GET_CONTROLLER',
+};
+const queryKey = {
+    keyName: 'keyName',
+    controller: 'controller',
+};
+
+const defaultTable = {};
+function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
+    if (defaultTable[action]) {
+        return defaultTable[action];
+    }
     // maybe later can separate to a new js file
     const keysTable = {};
     const instanceAbleTable = {};
@@ -31,9 +45,9 @@ export function transObjToKeysTable(obj) {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                instanceAbleTable[front.obj[key].keyName]
+                instanceAbleTable[front.obj[key][queryKey]]
             ) {
-                instanceAbleTable[front.obj[key].keyName].push(
+                instanceAbleTable[front.obj[key][queryKey]].push(
                     front.key.concat('instance')
                 );
                 continue;
@@ -41,9 +55,9 @@ export function transObjToKeysTable(obj) {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
-                !instanceAbleTable[front.obj[key].keyName]
+                !instanceAbleTable[front.obj[key][queryKey]]
             ) {
-                instanceAbleTable[front.obj[key].keyName] = [
+                instanceAbleTable[front.obj[key][queryKey]] = [
                     front.key.concat('instance'),
                 ];
                 continue;
@@ -51,15 +65,29 @@ export function transObjToKeysTable(obj) {
             if (typeof front.obj[key] === 'object')
                 stack.push({ obj: front.obj[key], key: [...front.key, key] });
         }
-        if (front.obj.keyName && keysTable[front.obj.keyName]) {
-            keysTable[front.obj.keyName].push(front.key);
+        if (front.obj[queryKey] && keysTable[front.obj[queryKey]]) {
+            keysTable[front.obj[queryKey]].push(front.key);
         }
-        if (front.obj.keyName && !keysTable[front.obj.keyName]) {
-            keysTable[front.obj.keyName] = [front.key];
+        if (front.obj[queryKey] && !keysTable[front.obj[queryKey]]) {
+            keysTable[front.obj[queryKey]] = [front.key];
         }
     }
+    if (!defaultTable[action]) {
+        defaultTable[action] = { keysTable, instanceAbleTable };
+    }
+
     return { keysTable, instanceAbleTable };
 }
+
+function forceTransObjToKeysTable(
+    obj,
+    action = 'default',
+    queryKey = 'keyName'
+) {
+    delete defaultTable[action];
+    return transObjToKeysTable(obj, action, queryKey);
+}
+
 function transFormData(
     dataObj,
     settingKeyName,
@@ -69,7 +97,7 @@ function transFormData(
 ) {
     const specialSetting = {};
     const omitArray = [];
-    const { keysTable } = transObjToKeysTable(dataObj, keysTable);
+    const { keysTable } = transObjToKeysTable(dataObj);
     for (let key in settingKeyName) {
         const dataObjKey = settingKeyName[key];
         const keyPaths = keysTable[dataObjKey];
@@ -104,5 +132,11 @@ function transFormData(
     };
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
+function DataMapping() {}
 
-export default transFormData;
+DataMapping.action = action;
+DataMapping.queryKey = queryKey;
+DataMapping.transObjToKeysTable = transObjToKeysTable;
+DataMapping.transFormData = transFormData;
+DataMapping.forceTransObjToKeysTable = forceTransObjToKeysTable;
+export default DataMapping;

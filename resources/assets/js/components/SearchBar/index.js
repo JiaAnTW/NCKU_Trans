@@ -1,29 +1,64 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { InputField, SearchIconYellow, Button, Container } from './style';
+import React, {
+    forwardRef,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
+import InputBar from './InputBar';
+import { SearchIconYellow, Button, Container, ClearIcon } from './style';
 
-function SearchBar({ className, width, onSubmit }) {
-    const [hidden, setHidden] = useState(false);
-    const inputRef = useRef('');
-    const onFocus = useCallback(() => setHidden(true), []);
-    const onBlur = useCallback(() => setHidden(false), []);
-    const handleClick = useCallback(
-        (e) => {
-            e.preventDefault();
-            if (!inputRef.current.value) return;
+const SearchBar = forwardRef(
+    ({ className, width, onSubmit, onChange, value }, ref) => {
+        const [hidden, setHidden] = useState(false);
+        const originValue = useRef(value);
 
-            onSubmit(inputRef.current.value);
-        },
-        [onSubmit]
-    );
+        const handleSearchClick = useCallback(
+            (e) => {
+                e.preventDefault();
+                if (!onSubmit) return;
+                if (!ref.current.value) return;
+                onSubmit(ref.current.value);
+            },
+            [onSubmit]
+        );
+        const handleClearClick = useCallback(
+            (e) => {
+                const demoEvent = {
+                    target: {
+                        value: '',
+                    },
+                };
 
-    return (
-        <Container className={className} style={{ width }}>
-            <InputField ref={inputRef} onFocus={onFocus} onBlur={onBlur} />
-            <Button hidden={hidden} onClick={handleClick}>
-                <SearchIconYellow fontSize="large"></SearchIconYellow>
-            </Button>
-        </Container>
-    );
-}
+                if (e) e.preventDefault();
+                if (originValue === undefined) {
+                    ref.current.value = '';
+                    demoEvent.target.value = undefined;
+                }
+                if (onChange) onChange(demoEvent);
+            },
+            [onChange, originValue]
+        );
+
+        return (
+            <Container className={className} style={{ width }}>
+                <InputBar
+                    ref={ref}
+                    onChange={onChange}
+                    setHidden={setHidden}
+                    value={value}
+                    handleSearchClick={handleSearchClick}
+                    originValue={originValue}
+                />
+                <Button hidden={!hidden} onClick={handleClearClick}>
+                    <ClearIcon fontSize="large" />
+                </Button>
+                <Button hidden={hidden} onClick={handleSearchClick}>
+                    <SearchIconYellow fontSize="large" />
+                </Button>
+            </Container>
+        );
+    }
+);
 
 export default SearchBar;
