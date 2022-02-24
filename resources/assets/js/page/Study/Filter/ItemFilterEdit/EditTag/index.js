@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { adminActionSelector } from '~/model/selector/study';
-import useFilterTagContext from '~/utils/redux/components/study/useFilterTagContext';
+import useEditFilterContext from '~/utils/redux/components/study/useEditFilterContext';
 import StatInput from './statInput';
 import {
     EditTagContainer,
@@ -27,7 +27,7 @@ function EditTag() {
     const { action, tag } = useSelector(adminActionSelector);
     const classes = useStyles();
     const { deleteTag, cancelEditTag, updateTag, onChangeTag } =
-        useFilterTagContext();
+        useEditFilterContext();
 
     return (
         <EditTagContainer>

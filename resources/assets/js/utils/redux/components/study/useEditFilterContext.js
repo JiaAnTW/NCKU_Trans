@@ -9,7 +9,7 @@ import {
     updateStudyTypeOrStat,
 } from '~/model/middleware/study';
 
-function useFilterTagContext() {
+function useEditFilterContext() {
     const dispatch = useDispatch();
     const filterTagContext = useSelector((state) => state.study.admin.tag);
 
@@ -55,4 +55,4 @@ function useFilterTagContext() {
     };
 }
 
-export default useFilterTagContext;
+export default useEditFilterContext;
