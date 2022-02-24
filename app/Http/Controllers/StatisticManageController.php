@@ -57,6 +57,13 @@ class StatisticManageController extends Controller
             $statistic->id = $uuid;
             $statistic->name = $request->name;
             $statistic->dataType = $request->dataType;
+            
+            //check valid dataType
+            if(strcmp($request->dataType, "string") != 0 and strcmp($request->dataType, "int") != 0 and strcmp($request->dataType, "float") != 0)
+            {
+                return array(["status"=>"fail", "msg"=>"Invalid dataType."]);
+            }
+            
             if( strcmp($request->dataType, "string") != 0)
             {
                 $statistic->max = $request->max;
@@ -96,6 +103,7 @@ class StatisticManageController extends Controller
         {
             return array(["status"=>"fail", "msg"=>"Same name in database."]);
         }
+
         $statistic->name = $request->name;
         if( strcmp($request->dataType, "string") != 0)
         {

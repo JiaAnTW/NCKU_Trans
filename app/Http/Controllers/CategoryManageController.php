@@ -24,9 +24,9 @@ class CategoryManageController extends Controller
         $category = new CategoryManage;
         $uuid = Str::uuid()->toString();
         $category->id = $uuid;
-        $category->name = $request->studyType;
+        $category->name = $request->name;
         //check if there is same name in database
-        $studyType = CategoryManage::where('name', '=', $request->studyType)->first();
+        $studyType = CategoryManage::where('name', '=', $request->name)->first();
         if ($studyType != null)
         {
             return array(["status"=>"fail", "msg"=>"Same name in database."]);
@@ -48,12 +48,12 @@ class CategoryManageController extends Controller
             return array('status' => "fail");
         }
         //check if there is same name in database
-        $studyType = CategoryManage::where('name', '=', $request->studyType)->first();
+        $studyType = CategoryManage::where('name', '=', $request->name)->first();
         if ($studyType != null)
         {
             return array(["status"=>"fail", "msg"=>"Same name in database."]);
         }
-        $category->name = $request->studyType;
+        $category->name = $request->name;
         $category->save();
 
         return array('status' => "success");
