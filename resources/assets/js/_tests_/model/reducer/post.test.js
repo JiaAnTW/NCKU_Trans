@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import postReducer from '~/model/reducer/post';
 import { SET_POST_FORM, TOGGLE_STATIS_DATA } from '~/model/action/post';
 import post from './post';
-import { transObjToKeysTable } from '~/utils/redux/components/modal/transFormData';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import result from 'lodash/result';
 
 // init postForm
@@ -16,7 +16,8 @@ const postForm = initPost;
 const setPage = (page) => (postForm.step = page * 2);
 const setType = (type) => (postForm.type = type);
 const formSelector = (state, type) => state.form[type];
-const getTable = (obj, type) => transObjToKeysTable(obj.form[type]);
+const getTable = (obj, type) =>
+    DataMapping.forceTransObjToKeysTable(obj.form[type]);
 /**
  * global function end
  */
@@ -91,7 +92,7 @@ test('[Study] Should change 1th page value without changing schema', () => {
             keyName: 'maj',
             value: '軟體測試系',
             elementArea: 0,
-            elementIndex: 1,
+            elementIndex: 2,
         },
     });
     let studyForm = formSelector(nextState, 'study');
@@ -243,7 +244,7 @@ test('[Study] Should Normal Button(Toggle Button) work and change value to expec
         payload: {
             elementArea: 1,
             elementIndex: 0,
-            id: 7,
+            id: 999999,
         },
     });
     let instance = {
@@ -274,7 +275,7 @@ test('[Study] Should Normal Button(Toggle Button) work and change value to expec
         payload: {
             elementArea: 1,
             elementIndex: 0,
-            id: 7,
+            id: 999999,
         },
     });
     studyForm = formSelector(nextState, 'study');

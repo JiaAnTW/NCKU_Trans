@@ -1,26 +1,5 @@
-import cloneDeep from 'lodash/cloneDeep';
+import { mapToCustomizeFunction } from './mapToCustomFunction';
 
-export function mapToCustomizeFunction(type) {
-    switch (type) {
-        case 'spawn_other':
-            return (state, instance) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                const preSpawn = cloneDeep(instance);
-                preSpawn.wording += instance.counter;
-                stateNext.form[type].pageMap[step / 2][2][instance.counter++] =
-                    preSpawn;
-            };
-        case 'onChange_other':
-            return (state, index, value) => {
-                const stateNext = state;
-                const { type, step } = stateNext;
-                stateNext.form[type].pageMap[step / 2][2][index].value = value;
-            };
-        default:
-            return undefined;
-    }
-}
 export default (function () {
     return {
         id: -1,
@@ -31,10 +10,15 @@ export default (function () {
                     // page - step
                     0: {
                         value: '留下更多資訊給學弟妹吧!',
-                        keyName: 'title',
                         type: 'label',
                     },
                     1: {
+                        value: '',
+                        keyName: 'postTitle',
+                        type: 'input',
+                        wording: '心得標題',
+                    },
+                    2: {
                         value: '中文系',
                         keyName: 'maj',
                         type: 'select',
@@ -47,7 +31,19 @@ export default (function () {
             2: {
                 // page - step
                 0: {
-                    0: { value: '選擇你要分享的統計資料', type: 'label' },
+                    0: {
+                        keyName: 'postTitle',
+                        formType: 'study',
+                        placeHolder: '你未填寫心得標題',
+                        type: 'preview_input',
+                    },
+                    1: { value: '選擇你要分享的統計資料', type: 'label' },
+                    2: {
+                        type: 'search_bar',
+                        value: '',
+                        customHandleChange:
+                            mapToCustomizeFunction('searchingAlgorithm'),
+                    },
                 },
                 1: {
                     selectedStatistic: 0,
@@ -140,24 +136,24 @@ export default (function () {
                                 },
                             },
                             6: {
-                                id: 6, // stat - id
-                                title: 'IELTS',
-                                value: false,
+                                id: 6, // stat - id  //array index+1
+                                title: 'IELTS', //name
+                                value: false, //overwrite only
                                 instance: {
                                     // stat - id
                                     value: '',
                                     elementAttrs: {
-                                        type: 'number',
+                                        type: 'number', //dataType
                                         min: 0,
                                         max: 100,
                                     },
-                                    keyName: 'ielts',
-                                    type: 'input',
-                                    wording: 'IELTS',
+                                    keyName: 'ielts', //id
+                                    type: 'input', //always input
+                                    wording: 'IELTS', //name
                                 },
                             },
-                            7: {
-                                id: 7, // stat - id
+                            999999: {
+                                id: 999999, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
                                     mapToCustomizeFunction('spawn_other'),
@@ -173,14 +169,11 @@ export default (function () {
                                     },
                                     remark: '其他項目將會由管理員決定是否列為正式項目，不會大幅改動數據，但可能會就格式上進行修改、調整。',
                                     confirm: false,
-                                    customHandleChange:
-                                        mapToCustomizeFunction(
-                                            'onChange_other'
-                                        ),
                                 },
                             },
+                            controller: 'search_bar',
                         },
-                        width: '100%',
+                        ignore: [],
                         type: 'toggle_button_group',
                     },
                     alertWord: {

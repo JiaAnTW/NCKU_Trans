@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
-import transFormData from '~/utils/redux/components/modal/transFormData';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 import { postDataList } from './postDataList';
@@ -42,8 +42,9 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
+        DataMapping.forceTransObjToKeysTable(formData);
         setModalContext(
-            transFormData(formData, {
+            DataMapping.transFormData(formData, {
                 title: 'in_maj',
                 subtitle: 'out_maj',
                 type: 'category',
@@ -56,15 +57,16 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const params = transFormData(
+        const params = DataMapping.transFormData(
             form,
             postDataList[type],
             form.id,
             form.confirm,
             true
         );
+        console.log(params);
         params.year = params.year.toString();
-        if (editType === 'comment') dispatch(postMajorData(params));
+        //if (editType === 'comment') dispatch(postMajorData(params));
     }, [editType, formData]);
 
     return { onSubmit, onNext, onBefore, onPreview };

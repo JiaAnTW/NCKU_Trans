@@ -99,7 +99,7 @@ class StatisticManageController extends Controller
         }
         //check if there is same name in database
         $stat = StatisticManage::where('name', '=', $request->name)->first();
-        if ($stat != null)
+        if ($stat != null and $stat->id !== $request->id)
         {
             return array(["status"=>"fail", "msg"=>"Same name in database."]);
         }
@@ -116,6 +116,7 @@ class StatisticManageController extends Controller
         }
 
         $statistic->save();
+        return array('status' => "success");
     }
 
     public function destroy(Request $request)
