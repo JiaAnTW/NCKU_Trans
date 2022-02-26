@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import InputLabel from '~/components/atom/InputLabel';
 import { adminActionSelector } from '~/model/selector/study';
-import useFilterTagContext from '~/utils/redux/components/useFilterTagContext';
+import useEditFilterContext from '~/utils/redux/components/study/useEditFilterContext';
 import InputWithPrefix from '~/components/atom/InputWithPrefix';
 import Select from '~/components/atom/Select';
 import {
@@ -17,18 +17,18 @@ import {
 const statTypes = [
     {
         text: '整數',
-        value: 'integer',
+        value: 'int',
     },
     {
         text: '小數',
-        value: 'decimal',
+        value: 'float',
     },
 ];
 
 function StatInput() {
     const { tag } = useSelector(adminActionSelector);
     const classes = useStyles();
-    const { onChangeTag } = useFilterTagContext();
+    const { onChangeTag } = useEditFilterContext();
 
     const getTextFieldWithPrefix = (type) => {
         return (

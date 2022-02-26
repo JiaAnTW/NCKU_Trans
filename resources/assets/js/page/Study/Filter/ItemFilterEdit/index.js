@@ -2,7 +2,7 @@ import map from 'lodash/map';
 import React, { forwardRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { adminActionSelector } from '~/model/selector/study';
+import { filterStatusSelector } from '~/model/selector/study';
 import ItemFilterColumn from '../ItemFilter/ItemFilterColumn';
 import ItemFilterEditColumn from './ItemFilterEditColumn';
 import useItemFilter from '../useItemFilter';
@@ -14,7 +14,7 @@ import {
 
 const ItemFilterEdit = forwardRef(() => {
     const filterObjArr = useItemFilter();
-    const filterManageState = useSelector(adminActionSelector);
+    const filterStatus = useSelector(filterStatusSelector);
 
     return (
         <ItemFilterEditContainer>
@@ -22,7 +22,7 @@ const ItemFilterEdit = forwardRef(() => {
                 return arr.type === 'year' ? (
                     <div key={arr.type ? arr.type : index}>
                         <FilterEditDisabledContainer>
-                            {!filterManageState.isEditTag && (
+                            {!filterStatus.isEditTag && (
                                 <FilterDisabledText>
                                     學年自動產生
                                     <br />
@@ -37,7 +37,7 @@ const ItemFilterEdit = forwardRef(() => {
                     </div>
                 ) : (
                     <div key={arr.type ? arr.type : index}>
-                        {filterManageState.isEditTag && (
+                        {filterStatus.isEditTag && (
                             <FilterEditDisabledContainer />
                         )}
                         <ItemFilterEditColumn optionsArr={arr} />

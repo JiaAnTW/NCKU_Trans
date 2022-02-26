@@ -10,5 +10,5 @@ export default function useInitNotification() {
 
     useEffect(() => {
         dispatch(fetchAnnouncement());
-    }, []);
+    }, [dispatch]);
 }

@@ -15,13 +15,13 @@ function ItemFilterEditColumn({ optionsArr }) {
     const dispatch = useDispatch();
 
     const editTag = (type, option) => {
-        const { value, dataType, max, min } = option;
+        const { id, name, dataType, max, min } = option;
 
         dispatch({
             type: START_EDIT_TAG,
             payload: {
                 action: 'update',
-                tag: { type, value, dataType, max, min },
+                tag: { id, type, name, dataType, max, min },
             },
         });
     };
@@ -33,8 +33,9 @@ function ItemFilterEditColumn({ optionsArr }) {
                 action: 'create',
                 tag: {
                     type,
-                    value: '',
-                    dataType: 'integer',
+                    id: 'temp',
+                    name: '',
+                    dataType: 'int',
                     min: 0,
                     max: 0,
                 },
@@ -47,7 +48,7 @@ function ItemFilterEditColumn({ optionsArr }) {
             <div>
                 <FilterEditColumnTitle optionsArr={optionsArr} />
                 {map(optionsArr.options, (option) => (
-                    <EditItemContainer key={option.value}>
+                    <EditItemContainer key={option.id}>
                         <EditItemIcon
                             onClick={() => editTag(optionsArr.type, option)}
                         />

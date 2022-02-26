@@ -4,18 +4,18 @@ import toInteger from 'lodash/toInteger';
 
 import { STOP_EDIT_TAG, UPDATE_TAG } from '~/model/action/study';
 import {
-    deleteItemFilterOption,
-    createItemFilterOption,
-    updateItemFilterOption,
+    deleteStudyTypeOrStat,
+    createStudyTypeOrStat,
+    updateStudyTypeOrStat,
 } from '~/model/middleware/study';
 
-function useFilterTagContext() {
+function useEditFilterContext() {
     const dispatch = useDispatch();
     const filterTagContext = useSelector((state) => state.study.admin.tag);
 
     const deleteTag = useCallback(
         (tag) => {
-            dispatch(deleteItemFilterOption(tag));
+            dispatch(deleteStudyTypeOrStat(tag));
         },
         [dispatch]
     );
@@ -27,9 +27,9 @@ function useFilterTagContext() {
     const updateTag = useCallback(
         (tag, action) => {
             if (action === 'create') {
-                dispatch(createItemFilterOption(tag));
+                dispatch(createStudyTypeOrStat(tag));
             } else if (action === 'update') {
-                dispatch(updateItemFilterOption(tag));
+                dispatch(updateStudyTypeOrStat(tag));
             }
         },
         [dispatch]
@@ -38,7 +38,7 @@ function useFilterTagContext() {
     // tag contains changed part only
     const onChangeTag = useCallback(
         (tag) => {
-            if (filterTagContext.dataType === 'integer') {
+            if (filterTagContext.dataType === 'int') {
                 if (tag.max) tag.max = toInteger(tag.max).toString();
                 if (tag.min) tag.min = toInteger(tag.min).toString();
             }
@@ -48,7 +48,6 @@ function useFilterTagContext() {
     );
 
     return {
-        filterTagContext,
         deleteTag,
         cancelEditTag,
         updateTag,
@@ -56,4 +55,4 @@ function useFilterTagContext() {
     };
 }
 
-export default useFilterTagContext;
+export default useEditFilterContext;
