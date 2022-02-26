@@ -1,7 +1,6 @@
 function transIntoModalData(type, itemData, index) {
     function parseTimestamp(timestamp) {
-        const dateObj = new Date(timestamp * 1000);
-        return `${dateObj.getFullYear()}/${dateObj.getMonth()}/${dateObj.getDay()}`;
+        return /\d{4}-\d{2}-\d{2}/.exec(timestamp)[0];
     }
 
     switch (type) {

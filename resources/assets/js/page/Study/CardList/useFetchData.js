@@ -1,15 +1,30 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchStudy } from '~/model/middleware/study';
+import { fetchStudy, fetchStudyAdmin } from '~/model/middleware/study';
 import { studyDataSelector } from '~/model/selector/study';
 
-function useFetchData({ overscanStopIndex, num, isAdmin }) {
+function useFetchData({ isAdmin, overscanStopIndex, num }) {
     const dispatch = useDispatch();
     const studyData = useSelector(studyDataSelector);
+    const idByIndex = useCallback(
+        (index) => studyData[index]['id'],
+        [studyData]
+    );
+
     useEffect(() => {
-        if (isAdmin) return;
-        if (overscanStopIndex === studyData.length - 1) {
-            dispatch(fetchStudy({ from: overscanStopIndex + 1, num }));
+        if (overscanStopIndex === studyData.length - 2) {
+            if (isAdmin) {
+                dispatch(
+                    fetchStudyAdmin({
+                        id: idByIndex(studyData.length - 1),
+                        num,
+                    })
+                );
+            } else {
+                dispatch(
+                    fetchStudy({ id: idByIndex(studyData.length - 1), num })
+                );
+            }
         }
     }, [studyData, overscanStopIndex, num, isAdmin]);
 }
