@@ -39,12 +39,13 @@ function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
     ];
     let front;
     while (stack.length > 0) {
-        front = stack[0];
-        stack.shift();
+        front = stack.shift();
+
         for (let key in front.obj) {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
+                front.obj[key][queryKey] &&
                 instanceAbleTable[front.obj[key][queryKey]]
             ) {
                 instanceAbleTable[front.obj[key][queryKey]].push(
@@ -55,6 +56,7 @@ function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
             if (
                 typeof front.obj[key] === 'object' &&
                 key === 'instance' &&
+                front.obj[key][queryKey] &&
                 !instanceAbleTable[front.obj[key][queryKey]]
             ) {
                 instanceAbleTable[front.obj[key][queryKey]] = [
