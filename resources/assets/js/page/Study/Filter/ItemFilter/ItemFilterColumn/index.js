@@ -16,10 +16,10 @@ function ItemFilterColumn({ optionsArr }) {
     const dispatch = useDispatch();
     const selectedFilter = useSelector(selectedFilterSelector);
 
-    const onChangeCheckbox = (id, checked) => {
+    const onChangeCheckbox = (tagType, tagId, checked) => {
         dispatch({
             type: SET_STUDY_FILTER,
-            payload: { tagType: optionsArr.type, tagId: id, checked },
+            payload: { tagType, tagId, checked },
         });
     };
 
@@ -39,6 +39,7 @@ function ItemFilterColumn({ optionsArr }) {
                                 checked={isSelected(option.id)}
                                 onChange={(e) =>
                                     onChangeCheckbox(
+                                        optionsArr.type,
                                         option.id,
                                         e.target.checked
                                     )
