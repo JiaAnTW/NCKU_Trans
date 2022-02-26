@@ -11,7 +11,7 @@ function useInitData({ isAdmin, num }) {
     useEffect(() => {
         dispatch(fetchStudyType());
         dispatch(fetchStudyStat());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         if (isAdmin) {
