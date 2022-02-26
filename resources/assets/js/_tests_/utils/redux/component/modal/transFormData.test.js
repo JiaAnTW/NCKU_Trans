@@ -1,4 +1,4 @@
-import DataMapping from '~/utils/redux/components/modal/DataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import transFormDataInput from './transFormData.input.json';
 
 test('[Post] Should transForm data correctly when preivew new comment', () => {

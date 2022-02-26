@@ -10,7 +10,6 @@ import omit from 'lodash/omit';
 import map from 'lodash/map';
 
 import { postDataList } from './postDataList';
-import { pick } from 'lodash';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
@@ -52,7 +51,7 @@ function usePostControl(editType, timeout) {
                 title: 'in_maj',
                 subtitle: 'out_maj',
                 type: 'category',
-                content: 'content',
+                content: 'comment',
             })
         );
         setIsModalOpen(true);
@@ -61,13 +60,13 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const { keysTable } = dataMapping.forceTransObjToKeysTable(form);
+        const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
         let pickData = {};
         for (let key in keysTable) {
             pickData[key] = key;
         }
 
-        let paramPackage = dataMapping.transFormData(
+        let paramPackage = DataMapping.transFormData(
             form,
             pickData,
             form.id,
