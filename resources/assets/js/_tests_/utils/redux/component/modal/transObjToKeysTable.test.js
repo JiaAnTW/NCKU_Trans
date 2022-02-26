@@ -1,8 +1,8 @@
-import dataMapping from '~/utils/redux/components/modal/dataMapping';
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import testCase from './transObjToKeysTable.json';
 
 test('[Utils] transObjToKeysTable should work correctly', () => {
-    let result = dataMapping.forceTransObjToKeysTable(testCase, '', 'keyName');
+    let result = DataMapping.forceTransObjToKeysTable(testCase, '', 'keyName');
     expect(result).toEqual({
         keysTable: {
             ggbox: [['a']],
@@ -16,7 +16,7 @@ test('[Utils] transObjToKeysTable should work correctly', () => {
             ],
         },
     });
-    result = dataMapping.transObjToKeysTable(testCase, '', 'value');
+    result = DataMapping.transObjToKeysTable(testCase, '', 'value');
     expect(result).toEqual({
         keysTable: {
             ggbox: [['a']],
@@ -31,7 +31,7 @@ test('[Utils] transObjToKeysTable should work correctly', () => {
         },
     });
 
-    result = dataMapping.forceTransObjToKeysTable(testCase, '', 'value');
+    result = DataMapping.forceTransObjToKeysTable(testCase, '', 'value');
     expect(result).toEqual({
         keysTable: {
             '[object Object]': [['a'], ['c']],
@@ -41,7 +41,7 @@ test('[Utils] transObjToKeysTable should work correctly', () => {
             '[object Object]': [['c', 'value', 'instance']],
         },
     });
-    result = dataMapping.forceTransObjToKeysTable(testCase, '', 'controller');
+    result = DataMapping.forceTransObjToKeysTable(testCase, '', 'controller');
     expect(result).toEqual({
         keysTable: { kkbox: [['a']] },
         instanceAbleTable: {
@@ -51,7 +51,7 @@ test('[Utils] transObjToKeysTable should work correctly', () => {
             ],
         },
     });
-    result = dataMapping.forceTransObjToKeysTable(
+    result = DataMapping.forceTransObjToKeysTable(
         testCase,
         '',
         'never_give_up_oh_oh_oh_jump_jump_jump_yeah'

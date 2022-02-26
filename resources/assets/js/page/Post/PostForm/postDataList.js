@@ -10,5 +10,9 @@ export const postDataList = {
         isPass: 'isPass',
         category: 'category',
     },
-    study: {},
+    study: {
+        settingKeys: ['title', 'content'],
+        category: [],
+        //statistic decided by which obj has keyName attribute
+    },
 };

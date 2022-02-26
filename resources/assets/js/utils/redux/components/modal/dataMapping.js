@@ -24,7 +24,7 @@ const queryKey = {
 };
 
 const defaultTable = {};
-function transObjToKeysTable(obj, action = '', queryKey = 'keyName') {
+function transObjToKeysTable(obj, action = 'default', queryKey = 'keyName') {
     if (defaultTable[action]) {
         return defaultTable[action];
     }
@@ -106,7 +106,14 @@ function transFormData(
         map(keyPaths, (keyPath) => {
             const item = result(dataObj, keyPath, undefined);
             if (!item) return;
-            specialSetting[key] = item.value;
+            if (specialSetting[key] && specialSetting[key].length >= 1) {
+                specialSetting[key].push(item.value);
+            }
+            if (specialSetting[key] && !specialSetting[key].length) {
+                specialSetting[key] = [specialSetting[key]];
+                specialSetting[key].push(item.value);
+            }
+            if (!specialSetting[key]) specialSetting[key] = item.value;
         });
         omitArray.push(dataObjKey);
     }
