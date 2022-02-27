@@ -1,14 +1,12 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-import { postMajorData, postStudyData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
-import omit from 'lodash/omit';
-import map from 'lodash/map';
-import { postDataList, previewDataList } from './postDataList';
+import useSubmitTransData from './useSubmitTransData';
+import { previewDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
@@ -65,64 +63,10 @@ function usePostControl(editType, timeout) {
 
     // ---------------------
     // -------送出-------
+    const postData = useSubmitTransData(form, type);
     const onSubmit = useCallback(() => {
-        if (type == 'comment') {
-            const params = DataMapping.transFormData(
-                form,
-                postDataList[type],
-                undefined,
-                form.id,
-                form.confirm,
-                true
-            );
-            params.year = params.year.toString();
-            dispatch(postMajorData(params));
-        } else {
-            const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
-            let pickData = {};
-            for (let key in keysTable) {
-                pickData[key] = key;
-            }
-
-            let paramPackage = DataMapping.transFormData(
-                form,
-                pickData,
-                undefined,
-                form.id,
-                form.confirm,
-                true
-            );
-            let params = {};
-
-            const settingKeys = postDataList[type].settingKeys;
-            map(settingKeys, (key) => {
-                params[key] = paramPackage[key];
-            });
-            pickData = omit(pickData, settingKeys);
-
-            params.category = {}; //init
-            const category = postDataList[type].category;
-            map(category, (key) => {
-                params.category[key] = paramPackage[key];
-            });
-            pickData = omit(pickData, category);
-
-            const tags = [];
-            map(pickData, (pack) => {
-                tags.push({
-                    name: pack,
-                    value: paramPackage[pack],
-                });
-            });
-            params.statistic = tags;
-            paramPackage = omit(
-                paramPackage,
-                Object.keys(pickData).concat(settingKeys)
-            );
-            params = { ...params, ...paramPackage };
-            dispatch(postStudyData(params));
-        }
-    }, [editType, form]);
+        postData();
+    }, [postData]);
 
     return { onSubmit, onNext, onBefore, onPreview };
 }
