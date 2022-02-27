@@ -16,7 +16,6 @@ function usePostControl(editType, timeout) {
     const form = useSelector((state) => ({
         ...state.post.form[type],
     }));
-    const formData = form.pageMap;
     useSubmit(editType, form);
 
     // ---------------------
@@ -44,11 +43,11 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
-        DataMapping.forceTransObjToKeysTable(formData);
+        DataMapping.forceTransObjToKeysTable(form);
         let transedData;
         if (type === 'study') {
             transedData = DataMapping.transFormData(
-                formData,
+                form,
                 previewDataList[type],
                 'name'
             );
@@ -56,20 +55,20 @@ function usePostControl(editType, timeout) {
             transedData.postTime = DataMapping.dateSpawner;
         } else {
             transedData = DataMapping.transFormData(
-                formData,
+                form,
                 previewDataList[type]
             );
         }
         setModalContext(transedData);
         setIsModalOpen(true);
-    }, [formData]);
+    }, [form]);
 
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
         if (type == 'comment') {
             const params = DataMapping.transFormData(
-                formData,
+                form,
                 postDataList[type],
                 undefined,
                 form.id,
@@ -123,7 +122,7 @@ function usePostControl(editType, timeout) {
             params = { ...params, ...paramPackage };
             dispatch(postStudyData(params));
         }
-    }, [editType, formData]);
+    }, [editType, form]);
 
     return { onSubmit, onNext, onBefore, onPreview };
 }

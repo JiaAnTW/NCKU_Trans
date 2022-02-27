@@ -9,7 +9,6 @@ import { postDataList } from './postDataList';
 import { postMajorData, postStudyData } from '~/model/middleware/post';
 
 function useSubmit(editType, form) {
-    const formData = form.pageMap;
     const dispatch = useDispatch();
     const [setModalOnBefore, setModalOnNext, setModalOnConfirm] =
         useSetModalFlow();
@@ -20,7 +19,7 @@ function useSubmit(editType, form) {
     const onMajorSubmit = useCallback(() => {
         if (type == 'comment') {
             const params = DataMapping.transFormData(
-                formData,
+                form,
                 postDataList[type],
                 undefined,
                 form.id,
@@ -77,7 +76,7 @@ function useSubmit(editType, form) {
         if (location.pathname.substr(0, 6) === '/admin') {
             history.push('/admin/major');
         }
-    }, [formData]);
+    }, [form]);
 
     useEffect(() => {
         if (isModalOpen) {
