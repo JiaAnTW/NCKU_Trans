@@ -21,6 +21,7 @@ function useSubmit(editType, form) {
         const params = DataMapping.transFormData(
             formData,
             postDataList[type],
+            undefined,
             form.id,
             form.confirm,
             true

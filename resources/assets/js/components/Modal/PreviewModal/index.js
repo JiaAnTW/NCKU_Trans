@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import Divider from '@material-ui/core/Divider';
 import { ModalStyle, PreviewLayout, PreviewTitle } from './style';
-import Reader from '~/components/Reader';
 import ControlArea from '~/components/Form/ControlArea';
 import { useModalOpen } from '~/utils';
 import { modalOnConfirmSelector } from '~/model/selector/modal';
 
-function PreviewModal(props) {
+function PreviewModal({ Reader }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
     const onConfirm = useSelector(modalOnConfirmSelector);
 

@@ -7,10 +7,7 @@ function useDisplayElement() {
     const stepNow = useSelector((state) => state.post.step);
     const type = useSelector((state) => state.post.type);
     const [displayStep, setDisplayStep] = useState(2);
-    const { onNext, onPreview, onBefore, onSubmit } = usePostControl(
-        'major',
-        700
-    );
+    const { onNext, onPreview, onBefore } = usePostControl('major', 700);
 
     useEffect(() => {
         if (stepNow % 2 === 0) setDisplayStep(stepNow);
@@ -22,7 +19,7 @@ function useDisplayElement() {
 
     const handleOnClickNext = useCallback(() => {
         if (stepNow === (typePage[type].length - 2) * 2) {
-            type === 'comment' ? onPreview() : onSubmit();
+            onPreview();
         } else {
             onNext();
         }

@@ -5,6 +5,11 @@ export default (function () {
         id: -1,
         confirm: false,
         pageMap: {
+            temporaryHandle: {
+                //only for handle preview error
+                keyName: 'category',
+                value: [],
+            },
             1: {
                 0: {
                     // page - step

@@ -9,7 +9,7 @@ import useSubmit from './useSubmit';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 
-import { postDataList } from './postDataList';
+import { postDataList, previewDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
@@ -46,14 +46,22 @@ function usePostControl(editType, timeout) {
 
     const onPreview = useCallback(() => {
         DataMapping.forceTransObjToKeysTable(formData);
-        setModalContext(
-            DataMapping.transFormData(formData, {
-                title: 'in_maj',
-                subtitle: 'out_maj',
-                type: 'category',
-                content: 'comment',
-            })
-        );
+        let transedData;
+        if (type === 'study') {
+            transedData = DataMapping.transFormData(
+                formData,
+                previewDataList[type],
+                'name'
+            );
+            transedData.statistic = transedData.tags;
+            transedData.time = new Date().getFullYear();
+        } else {
+            transedData = DataMapping.transFormData(
+                formData,
+                previewDataList[type]
+            );
+        }
+        setModalContext(transedData);
         setIsModalOpen(true);
     }, [formData]);
 
@@ -69,6 +77,7 @@ function usePostControl(editType, timeout) {
         let paramPackage = DataMapping.transFormData(
             form,
             pickData,
+            undefined,
             form.id,
             form.confirm,
             true
