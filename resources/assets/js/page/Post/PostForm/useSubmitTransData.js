@@ -43,14 +43,6 @@ function useSubmitTransData(form, type) {
             params[key] = paramPackage[key];
         });
         pickData = omit(pickData, settingKeys);
-
-        params.category = {}; //init
-        const category = postDataList[type].category;
-        map(category, (key) => {
-            params.category[key] = paramPackage[key];
-        });
-        pickData = omit(pickData, category);
-
         const tags = [];
         map(pickData, (pack) => {
             tags.push({

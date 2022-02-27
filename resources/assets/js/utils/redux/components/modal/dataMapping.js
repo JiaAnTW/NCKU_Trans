@@ -150,7 +150,7 @@ function transFormData(
         confirm: confirm,
         ...specialSetting,
     };
-    return onlySettingKeyName ? omit(returnValue, [tags]) : returnValue;
+    return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
 let date = new Date();
 function dateSpawner() {
