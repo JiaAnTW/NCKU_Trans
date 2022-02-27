@@ -8,7 +8,6 @@ import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
-
 import { postDataList, previewDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
@@ -54,7 +53,7 @@ function usePostControl(editType, timeout) {
                 'name'
             );
             transedData.statistic = transedData.tags;
-            transedData.time = new Date().getFullYear();
+            transedData.postTime = DataMapping.dateSpawner;
         } else {
             transedData = DataMapping.transFormData(
                 formData,
@@ -68,49 +67,62 @@ function usePostControl(editType, timeout) {
     // ---------------------
     // -------送出-------
     const onSubmit = useCallback(() => {
-        const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
-        let pickData = {};
-        for (let key in keysTable) {
-            pickData[key] = key;
-        }
+        if (type == 'comment') {
+            const params = DataMapping.transFormData(
+                formData,
+                postDataList[type],
+                undefined,
+                form.id,
+                form.confirm,
+                true
+            );
+            params.year = params.year.toString();
+            dispatch(postMajorData(params));
+        } else {
+            const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
+            let pickData = {};
+            for (let key in keysTable) {
+                pickData[key] = key;
+            }
 
-        let paramPackage = DataMapping.transFormData(
-            form,
-            pickData,
-            undefined,
-            form.id,
-            form.confirm,
-            true
-        );
-        let params = {};
+            let paramPackage = DataMapping.transFormData(
+                form,
+                pickData,
+                undefined,
+                form.id,
+                form.confirm,
+                true
+            );
+            let params = {};
 
-        const settingKeys = postDataList[type].settingKeys;
-        map(settingKeys, (key) => {
-            params[key] = paramPackage[key];
-        });
-        pickData = omit(pickData, settingKeys);
-
-        params.category = {}; //init
-        const category = postDataList[type].category;
-        map(category, (key) => {
-            params.category[key] = paramPackage[key];
-        });
-        pickData = omit(pickData, category);
-
-        const tags = [];
-        map(pickData, (pack) => {
-            tags.push({
-                name: pack,
-                value: paramPackage[pack],
+            const settingKeys = postDataList[type].settingKeys;
+            map(settingKeys, (key) => {
+                params[key] = paramPackage[key];
             });
-        });
-        params.statistic = tags;
-        paramPackage = omit(
-            paramPackage,
-            Object.keys(pickData).concat(settingKeys)
-        );
-        params = { ...params, ...paramPackage };
-        dispatch(postStudyData(params));
+            pickData = omit(pickData, settingKeys);
+
+            params.category = {}; //init
+            const category = postDataList[type].category;
+            map(category, (key) => {
+                params.category[key] = paramPackage[key];
+            });
+            pickData = omit(pickData, category);
+
+            const tags = [];
+            map(pickData, (pack) => {
+                tags.push({
+                    name: pack,
+                    value: paramPackage[pack],
+                });
+            });
+            params.statistic = tags;
+            paramPackage = omit(
+                paramPackage,
+                Object.keys(pickData).concat(settingKeys)
+            );
+            params = { ...params, ...paramPackage };
+            dispatch(postStudyData(params));
+        }
     }, [editType, formData]);
 
     return { onSubmit, onNext, onBefore, onPreview };
