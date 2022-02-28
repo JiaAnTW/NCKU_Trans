@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 function useSubmitTransData(form, type) {
     const dispatch = useDispatch();
 
-    const comment = () => {
+    const submitCommitPost = useCallback(() => {
         const params = DataMapping.transFormData(
             form,
             postDataList[type],
@@ -20,8 +20,9 @@ function useSubmitTransData(form, type) {
         );
         params.year = params.year.toString();
         dispatch(postMajorData(params));
-    };
-    const study = () => {
+    }, [form, type, form.id, form.confirm]);
+
+    const submitStudyPost = useCallback(() => {
         const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
         let pickData = {};
         for (let key in keysTable) {
@@ -57,8 +58,9 @@ function useSubmitTransData(form, type) {
         );
         params = { ...params, ...paramPackage };
         dispatch(postStudyData(params));
-    };
-    let table = { comment: comment, study: study };
+    }, [form, type, form.id, form.confirm]);
+
+    const table = { comment: submitCommitPost, study: submitStudyPost };
     return table[type];
 }
 

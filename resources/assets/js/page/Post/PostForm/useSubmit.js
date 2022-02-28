@@ -11,13 +11,13 @@ function useSubmit(editType, form) {
     const history = useHistory();
     const type = useSelector((state) => state.post.type);
     // -------送出-------
-    const postData = useSubmitTransData(form, type);
+    const handleSubmit = useSubmitTransData(form, type);
     const onMajorSubmit = useCallback(() => {
-        postData();
+        handleSubmit();
         if (location.pathname.substr(0, 6) === '/admin') {
             history.push('/admin/major');
         }
-    }, [postData]);
+    }, [handleSubmit]);
 
     useEffect(() => {
         if (isModalOpen) {

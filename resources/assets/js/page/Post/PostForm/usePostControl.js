@@ -50,7 +50,7 @@ function usePostControl(editType, timeout) {
                 'name'
             );
             transedData.statistic = transedData.tags;
-            transedData.postTime = DataMapping.dateSpawner;
+            transedData.postTime = DataMapping.dateSpawner();
         } else {
             transedData = DataMapping.transFormData(
                 form,
@@ -63,10 +63,10 @@ function usePostControl(editType, timeout) {
 
     // ---------------------
     // -------送出-------
-    const postData = useSubmitTransData(form, type);
+    const handleSubmit = useSubmitTransData(form, type);
     const onSubmit = useCallback(() => {
-        postData();
-    }, [postData]);
+        handleSubmit();
+    }, [handleSubmit]);
 
     return { onSubmit, onNext, onBefore, onPreview };
 }

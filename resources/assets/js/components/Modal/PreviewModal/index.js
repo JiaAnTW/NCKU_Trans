@@ -7,7 +7,7 @@ import ControlArea from '~/components/Form/ControlArea';
 import { useModalOpen } from '~/utils';
 import { modalOnConfirmSelector } from '~/model/selector/modal';
 
-function PreviewModal({ Reader }) {
+function PreviewModal({ readerComponent: Reader }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
     const onConfirm = useSelector(modalOnConfirmSelector);
 

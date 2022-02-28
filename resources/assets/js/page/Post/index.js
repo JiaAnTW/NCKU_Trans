@@ -21,7 +21,7 @@ function Post() {
             <PostLayout>
                 <StepArea />
                 <PostForm />
-                <PreviewModal Reader={readerList[type]} />
+                <PreviewModal readerComponent={readerList[type]} />
             </PostLayout>
         </LoadingFrame>
     );
