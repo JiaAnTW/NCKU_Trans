@@ -23,7 +23,7 @@ function useSubmitTransData(form, type) {
     }, [form, type, form.id, form.confirm]);
 
     const submitStudyPost = useCallback(() => {
-        const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
+        const { keysTable } = DataMapping.transObjToKeysTable(form);
         let pickData = {};
         for (let key in keysTable) {
             pickData[key] = key;
