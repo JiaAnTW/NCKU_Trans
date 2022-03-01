@@ -93,7 +93,7 @@ function forceTransObjToKeysTable(
 function transFormData(
     dataObj,
     settingKeyName,
-    customTagsKey = 'tags',
+    customTagsKey = 'type',
     id = -1,
     confirm = false,
     onlySettingKeyName = false
