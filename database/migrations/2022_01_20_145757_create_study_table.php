@@ -12,6 +12,7 @@ class CreateStudyTable extends BaseMigration
             'id' => function (Blueprint $table) { $table->uuid('id')->primary(); },
             'title' => function (Blueprint $table) { $table->text('title'); },
             'content' => function (Blueprint $table) { $table->text('content'); },
+            'year' => function(Blueprint $table) { $table->integer('year'); },
             'timestamp' => function (Blueprint $table) { $table->timestamps(); },
             'confirm' => function (Blueprint $table) { $table->string('confirm', 10); },
         ]);

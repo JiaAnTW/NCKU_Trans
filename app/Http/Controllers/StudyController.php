@@ -22,7 +22,7 @@ class StudyController extends Controller
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
-            $studies = Study::select('id','title','content','created_at', 'confirm')->where('confirm','true')->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('confirm','true')->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
             //find the created time of target study 
@@ -37,7 +37,7 @@ class StudyController extends Controller
             }
             //find those studies craeted before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content','created_at', 'confirm')->where('confirm','true')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content', 'year','created_at', 'confirm')->where('confirm','true')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
 
         for($i = 0; $i < count($studies); $i++) 
@@ -57,6 +57,7 @@ class StudyController extends Controller
                 "id" => $studies[$i]->id,
                 "title" => $studies[$i]->title,
                 "content" => $studies[$i]->content,
+                "year" => $studies[$i]->year,
                 "timestamp" => $studies[$i]->created_at,
                 "confirm" => $studies[$i]->confirm,
                 //select specific columns in Category without showing study_id
@@ -76,7 +77,7 @@ class StudyController extends Controller
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
-            $studies = Study::select('id','title','content','created_at', 'confirm')->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
             //find the created time of target study 
@@ -91,7 +92,7 @@ class StudyController extends Controller
             }
             //find those studies craeted before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content','created_at', 'confirm')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
 
         for($i = 0; $i < count($studies); $i++) 
@@ -111,6 +112,7 @@ class StudyController extends Controller
                 "id" => $studies[$i]->id,
                 "title" => $studies[$i]->title,
                 "content" => $studies[$i]->content,
+                "year" => $studies[$i]->year,
                 "timestamp" => $studies[$i]->created_at,
                 "confirm" => $studies[$i]->confirm,
                 //select specific columns in Category without showing study_id
@@ -133,6 +135,7 @@ class StudyController extends Controller
         $study->id = $uuid;
         $study->title = $request->title;
         $study->content = $request->content;
+        $study->year = $request->year;
         $study->confirm = $request->confirm;
         $study->timestamps = true;
         
@@ -190,6 +193,7 @@ class StudyController extends Controller
         }
         $study->title = $request->title;
         $study->content = $request->content;
+        $study->year = $request->year;
         $study->confirm = $request->confirm;
 
         //update statistic
