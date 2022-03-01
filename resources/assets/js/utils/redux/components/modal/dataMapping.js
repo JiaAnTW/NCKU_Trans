@@ -153,17 +153,15 @@ function transFormData(
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
 
-function dateSpawner() {
-    return `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}`;
-}
-
 function DataMapping() {}
 DataMapping.date = new Date();
+DataMapping.dateSpawner = function () {
+    return `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}`;
+};
 
 DataMapping.action = action;
 DataMapping.queryKey = queryKey;
 DataMapping.transObjToKeysTable = transObjToKeysTable;
 DataMapping.transFormData = transFormData;
 DataMapping.forceTransObjToKeysTable = forceTransObjToKeysTable;
-DataMapping.dateSpawner = dateSpawner;
 export default DataMapping;
