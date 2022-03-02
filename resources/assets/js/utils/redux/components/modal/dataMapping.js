@@ -93,6 +93,7 @@ function forceTransObjToKeysTable(
 function transFormData(
     dataObj,
     settingKeyName,
+    customTagsKey = 'type',
     id = -1,
     confirm = false,
     onlySettingKeyName = false
@@ -123,13 +124,23 @@ function transFormData(
         map(keyPaths, (keyPath) => {
             const item = result(dataObj, keyPath, undefined);
             if (!item) return;
-            if (keyPath.length > 1)
-                tags.push({
-                    type: item.wording,
-                    value: majorWording[item.keyName]
-                        ? majorWording[item.keyName][item.value]
-                        : item.value,
-                });
+            if (keyPath.length > 1) {
+                let temp;
+                if (typeof item.value == 'object') {
+                    temp = {
+                        value: item.value.value,
+                    };
+                    temp[customTagsKey] = item.value.title;
+                } else {
+                    temp = {
+                        value: majorWording[item.keyName]
+                            ? majorWording[item.keyName][item.value]
+                            : item.value,
+                    };
+                    temp[customTagsKey] = item.wording;
+                }
+                tags.push(temp);
+            }
         });
     });
     const returnValue = {
@@ -141,7 +152,12 @@ function transFormData(
     };
     return onlySettingKeyName ? omit(returnValue, ['tags']) : returnValue;
 }
+
 function DataMapping() {}
+DataMapping.date = new Date();
+DataMapping.dateSpawner = function () {
+    return `${this.date.getFullYear()}-${this.date.getMonth()}-${this.date.getDate()}`;
+};
 
 DataMapping.action = action;
 DataMapping.queryKey = queryKey;

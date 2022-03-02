@@ -1,15 +1,12 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-import { postMajorData, postStudyData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
-import omit from 'lodash/omit';
-import map from 'lodash/map';
-
-import { postDataList } from './postDataList';
+import useSubmitTransData from './useSubmitTransData';
+import { previewDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
@@ -17,7 +14,6 @@ function usePostControl(editType, timeout) {
     const form = useSelector((state) => ({
         ...state.post.form[type],
     }));
-    const formData = form.pageMap;
     useSubmit(editType, form);
 
     // ---------------------
@@ -45,64 +41,32 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
-        DataMapping.forceTransObjToKeysTable(formData);
-        setModalContext(
-            DataMapping.transFormData(formData, {
-                title: 'in_maj',
-                subtitle: 'out_maj',
-                type: 'category',
-                content: 'comment',
-            })
-        );
+        DataMapping.forceTransObjToKeysTable(form);
+        let transedData;
+        if (type === 'study') {
+            transedData = DataMapping.transFormData(
+                form,
+                previewDataList[type],
+                'name'
+            );
+            transedData.statistic = transedData.tags;
+            transedData.postTime = DataMapping.dateSpawner();
+        } else {
+            transedData = DataMapping.transFormData(
+                form,
+                previewDataList[type]
+            );
+        }
+        setModalContext(transedData);
         setIsModalOpen(true);
-    }, [formData]);
+    }, [form]);
 
     // ---------------------
     // -------送出-------
+    const handleSubmit = useSubmitTransData(form, type);
     const onSubmit = useCallback(() => {
-        const { keysTable } = DataMapping.forceTransObjToKeysTable(form);
-        let pickData = {};
-        for (let key in keysTable) {
-            pickData[key] = key;
-        }
-
-        let paramPackage = DataMapping.transFormData(
-            form,
-            pickData,
-            form.id,
-            form.confirm,
-            true
-        );
-        let params = {};
-
-        const settingKeys = postDataList[type].settingKeys;
-        map(settingKeys, (key) => {
-            params[key] = paramPackage[key];
-        });
-        pickData = omit(pickData, settingKeys);
-
-        params.category = {}; //init
-        const category = postDataList[type].category;
-        map(category, (key) => {
-            params.category[key] = paramPackage[key];
-        });
-        pickData = omit(pickData, category);
-
-        const tags = [];
-        map(pickData, (pack) => {
-            tags.push({
-                name: pack,
-                value: paramPackage[pack],
-            });
-        });
-        params.statistic = tags;
-        paramPackage = omit(
-            paramPackage,
-            Object.keys(pickData).concat(settingKeys)
-        );
-        params = { ...params, ...paramPackage };
-        dispatch(postStudyData(params));
-    }, [editType, formData]);
+        handleSubmit();
+    }, [handleSubmit]);
 
     return { onSubmit, onNext, onBefore, onPreview };
 }

@@ -1,3 +1,16 @@
+export const previewDataList = {
+    comment: {
+        title: 'in_maj',
+        subtitle: 'out_maj',
+        type: 'category',
+        content: 'comment',
+    },
+    study: {
+        title: 'title',
+        content: 'content',
+        category: 'category',
+    },
+};
 export const postDataList = {
     comment: {
         rank_1: 'rank_1',
@@ -11,8 +24,7 @@ export const postDataList = {
         category: 'category',
     },
     study: {
-        settingKeys: ['title', 'content'],
-        category: [],
+        settingKeys: ['title', 'content', 'category'],
         //statistic decided by which obj has keyName attribute
     },
 };

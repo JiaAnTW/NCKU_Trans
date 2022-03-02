@@ -1,37 +1,23 @@
 import { useEffect, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-
-import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useSetModalFlow } from '~/utils/index';
-import { postDataList } from './postDataList';
-import DataMapping from '~/utils/redux/components/modal/dataMapping';
+import useSubmitTransData from './useSubmitTransData';
 
 function useSubmit(editType, form) {
-    const formData = form.pageMap;
-    const dispatch = useDispatch();
     const [setModalOnBefore, setModalOnNext, setModalOnConfirm] =
         useSetModalFlow();
     const [isModalOpen] = useModalOpen();
     const history = useHistory();
     const type = useSelector((state) => state.post.type);
-
     // -------送出-------
+    const handleSubmit = useSubmitTransData(form, type);
     const onMajorSubmit = useCallback(() => {
-        const params = DataMapping.transFormData(
-            formData,
-            postDataList[type],
-            form.id,
-            form.confirm,
-            true
-        );
-        params.year = params.year.toString();
-        dispatch(postMajorData(params));
-
+        handleSubmit();
         if (location.pathname.substr(0, 6) === '/admin') {
             history.push('/admin/major');
         }
-    }, [formData]);
+    }, [handleSubmit]);
 
     useEffect(() => {
         if (isModalOpen) {
