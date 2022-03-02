@@ -11,7 +11,7 @@ function useInitData() {
     useEffect(() => {
         dispatch(fetchDepartment());
         dispatch(fetchCollege());
-    }, []);
+    }, [dispatch]);
 
     return isFinishRequest;
 }

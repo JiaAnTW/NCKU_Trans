@@ -1,0 +1,28 @@
+{
+    "a": {
+        "controller": "kkbox",
+        "keyName": "ggbox",
+        "value": {
+            "keyName": "vvbox"
+        }
+    },
+    "b": {
+        "instance": {
+            "controller": "kkbox",
+            "keyName": "ggbox",
+            "value": "求求你做個人"
+        }
+    },
+    "c": {
+        "value": {
+            "instance": {
+                "controller": "kkbox",
+                "keyName": "ggbox",
+                "value": {
+                    "keyName": "vvbox"
+                }
+            }
+        },
+        "keyName": "如來神掌"
+    }
+}

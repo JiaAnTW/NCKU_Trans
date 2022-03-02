@@ -37,7 +37,7 @@ export const adminRouters = [
     {
         text: '審查學業',
         icon: <SchoolIcon style={iconStyle} />,
-        url: '/admin/',
+        url: '/admin/study',
     },
     {
         text: '審查轉輔轉',

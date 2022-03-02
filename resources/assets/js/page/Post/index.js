@@ -6,11 +6,13 @@ import useInitOptions from './useInitOptions';
 import PostForm from './PostForm/index';
 
 import { PostLayout } from './style';
-import LoadingFrame from '~/components/LoagingFrame';
-import { useHistory } from 'react-router';
+import LoadingFrame from '~/components/LoadingFrame';
+import { readerList } from '~/components/Form/typeList';
+import { useSelector } from 'react-redux';
 
 function Post() {
     const isFinishRequest = useInitOptions();
+    const type = useSelector((state) => state.post.type);
     /*     const history = useHistory()
     useCustomHook(history.location.state)
  */
@@ -19,7 +21,7 @@ function Post() {
             <PostLayout>
                 <StepArea />
                 <PostForm />
-                <PreviewModal />
+                <PreviewModal readerComponent={readerList[type]} />
             </PostLayout>
         </LoadingFrame>
     );

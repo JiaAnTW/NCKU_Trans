@@ -51,32 +51,26 @@ function StudyCard({ data, index, style }) {
     }, [windowWidth]);
 
     return (
-        <Card isConfirmed={itemData['confirm'] === 'true'} style={style}>
+        <Card isConfirmed={itemData['confirm']} style={style}>
             <CardContent>
                 <BadgeList>
-                    {(Array.isArray(itemData['category'])
-                        ? itemData['category']
-                        : ['海外交換', '行政']
-                    ).map((item, index) => (
-                        <StatisticBadge key={index} value={item} />
+                    {itemData['category'].map((itemObj) => (
+                        <StatisticBadge
+                            key={itemObj['id']}
+                            value={itemObj['name']}
+                        />
                     ))}
                 </BadgeList>
-                <CardTitle>
-                    {itemData['title'] || "標題, it's title placeholder here."}
-                </CardTitle>
+                <CardTitle>{itemData['title']}</CardTitle>
                 <CardText>
-                    {contentMiddleware(
-                        itemData['content'] || itemData['comment'],
-                        wordsNumber
-                    )}
+                    {contentMiddleware(itemData['content'], wordsNumber)}
                 </CardText>
             </CardContent>
             <TagSpanList>
-                {(Array.isArray(itemData['statistic'])
-                    ? itemData['statistic']
-                    : ['109', 'TOFEL', 'GPA']
-                ).map((item, index) => (
-                    <TagSpan key={index}>{'#' + item}</TagSpan>
+                {itemData['statistic'].map((itemObj) => (
+                    <TagSpan key={itemObj['id']}>
+                        {'#' + itemObj['name']}
+                    </TagSpan>
                 ))}
             </TagSpanList>
             <ShowBtn onClick={handleOpenContent}></ShowBtn>

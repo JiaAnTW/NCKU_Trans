@@ -1,11 +1,11 @@
 import React from 'react';
 import { Statistic, StatisticItemContainer, Value } from './style';
 
-function StatisticItem({ data: { statistic, value } }) {
+function StatisticItem({ data }) {
     return (
         <StatisticItemContainer>
-            <Statistic>{statistic}</Statistic>
-            <Value>{value}</Value>
+            <Statistic>{data['name']}</Statistic>
+            <Value>{data['value']}</Value>
         </StatisticItemContainer>
     );
 }

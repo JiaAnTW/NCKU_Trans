@@ -2,11 +2,13 @@ import React from 'react';
 import Modal from 'react-modal';
 
 import { ModalStyle } from './style';
-import Reader from '../../Reader';
 import { useModalOpen } from '~/utils';
+import { useDispatch } from 'react-redux';
+import { CLEAR_MODAL_CONTEXT } from '~/model/action/modal';
 
-function ReaderModal({ isAdmin, onClose }) {
+function ReaderModal({ isAdmin, onClose, readerComponent: ReaderComponent }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
+    const dispatch = useDispatch();
 
     return (
         <Modal
@@ -19,8 +21,11 @@ function ReaderModal({ isAdmin, onClose }) {
                 setIsModalOpen(false);
                 if (onClose) onClose();
             }}
+            onAfterClose={() => {
+                dispatch({ type: CLEAR_MODAL_CONTEXT });
+            }}
         >
-            <Reader isAdmin={isAdmin} />
+            {ReaderComponent && <ReaderComponent isAdmin={isAdmin} />}
         </Modal>
     );
 }

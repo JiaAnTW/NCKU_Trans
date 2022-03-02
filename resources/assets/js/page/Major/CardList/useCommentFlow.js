@@ -31,18 +31,20 @@ function useCommentFlow({ majorData }) {
 
     // Open Reader if id is sets by url when user enter the website.
     useEffect(() => {
-        if (!index && indexById >= 0) {
-            let itemData = majorData[indexById];
-            setModalContent(transIntoModalData(itemData, indexById));
+        if (indexById >= 0) {
+            const itemData = majorData[indexById];
+            setModalContent(transIntoModalData('trans', itemData, indexById));
             setIsModalOpen(true);
         }
-    }, [indexById, index, majorData, setIsModalOpen, setModalContent]);
+    }, [indexById, majorData, setIsModalOpen, setModalContent]);
 
     useEffect(() => {
         if (index !== 0) {
             setModalOnBefore(() => {
                 let itemData = majorData[index - 1];
-                setModalContent(transIntoModalData(itemData, index - 1));
+                setModalContent(
+                    transIntoModalData('trans', itemData, index - 1)
+                );
                 handleHeaderChange(itemData);
                 history.push(`?id=${itemData['id']}`);
             });
@@ -55,7 +57,9 @@ function useCommentFlow({ majorData }) {
         if (index + 1 !== majorData.length) {
             setModalOnNext(() => {
                 let itemData = majorData[index + 1];
-                setModalContent(transIntoModalData(itemData, index + 1));
+                setModalContent(
+                    transIntoModalData('trans', itemData, index + 1)
+                );
                 handleHeaderChange(itemData);
                 history.push(`?id=${itemData['id']}`);
             });

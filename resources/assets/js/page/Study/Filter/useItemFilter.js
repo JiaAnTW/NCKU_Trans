@@ -1,68 +1,39 @@
 import { useState, useEffect } from 'react';
 import isEmpty from 'lodash/isEmpty';
-
-const date = new Date();
-
-const categories = {
-    type: 'category',
-    name: '心得類別',
-    options: [
-        {
-            name: '校內學程',
-            value: '校內學程',
-        },
-        {
-            name: '海外交換',
-            value: '海外交換',
-        },
-        {
-            name: '跨校修課',
-            value: '跨校修課',
-        },
-    ],
-};
-
-const statInfos = {
-    type: 'statInfo',
-    name: '數據資訊',
-    options: [
-        {
-            name: 'TOFEL',
-            value: 'TOFEL',
-        },
-        {
-            name: 'IELTS',
-            value: 'IELTS',
-        },
-        {
-            name: 'JLPT',
-            value: 'JLPT',
-        },
-    ],
-};
-
-const getYearArr = () => {
-    const currentYear = date.getFullYear();
-    let arr = [];
-    for (let i = currentYear; i > currentYear - 5; i--) {
-        arr.push({ name: (i - 1911).toString() + '年', value: i - 1911 });
-    }
-    return arr.slice(0, 4);
-};
-const yearArr = getYearArr();
+import { useSelector } from 'react-redux';
+import { itemFilterSelector } from '~/model/selector/study';
 
 function useItemFilter() {
+    const [categories, setCategories] = useState({});
+    const [statInfos, setStatInfos] = useState({});
     const [years, setYears] = useState({});
+    const filterOps = useSelector(itemFilterSelector);
 
     useEffect(() => {
         if (isEmpty(years)) {
             setYears({
                 type: 'year',
                 name: '涵蓋學年',
-                options: yearArr,
+                options: filterOps.year,
             });
         }
     }, [years]);
+
+    useEffect(() => {
+        setCategories({
+            type: 'category',
+            name: '心得類別',
+            options: filterOps.category,
+        });
+    }, [filterOps.category]);
+
+    useEffect(() => {
+        setStatInfos({
+            type: 'statInfo',
+            name: '數據資訊',
+            options: filterOps.statInfo,
+        });
+    }, [filterOps.statInfo]);
 
     return { categories, statInfos, years };
 }

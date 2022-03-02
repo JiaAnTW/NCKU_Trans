@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import { color } from '~/theme/global';
+import Badge from '~/components/atom/Badge';
 
 export const FilterContainer = styled.section`
     display: flex;
@@ -44,3 +45,7 @@ export const useStyles = makeStyles((theme) => ({
         },
     },
 }));
+
+export const FilterBadge = styled(Badge)`
+    margin-right: 10px;
+`;
