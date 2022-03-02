@@ -5,7 +5,7 @@ import { useModalOpen, useModalContext } from '~/utils/index';
 import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
-import wording from '~/wording/general';
+import wording from '~/wording/general.json';
 
 export default function useOpenContent(itemData, index) {
     const [, setIsModalOpen] = useModalOpen();
@@ -20,7 +20,7 @@ export default function useOpenContent(itemData, index) {
             category: itemData['category'],
             websiteTitleShort: wording['websiteTitleShort'],
         };
-        setModalContext(transIntoModalData(itemData, index));
+        setModalContext(transIntoModalData('trans', itemData, index));
         changeHeaderInfo(
             trans(wording['header']['title'], strMap),
             itemData['comment']

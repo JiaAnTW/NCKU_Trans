@@ -5,19 +5,18 @@ import {
     SET_MODAL_ON_BEFORE,
     SET_MODAL_ON_NEXT,
     SET_MODAL_ON_CONFIRM,
+    CLEAR_MODAL_CONTEXT,
 } from '../action/modal';
+
+const initContext = {
+    id: -1,
+    content: '',
+    rawData: undefined,
+};
 
 const initState = {
     isOpen: false,
-    context: {
-        id: -1,
-        type: '',
-        title: '',
-        subtitle: '',
-        tags: [],
-        content: '',
-        rawData: undefined,
-    },
+    context: initContext,
     onBefore: undefined,
     onNext: undefined,
     onConfirm: undefined,
@@ -31,31 +30,13 @@ const modalReducer = (state = initState, action) => {
         case CLOSE_MODAL: {
             return { ...state, isOpen: false };
         }
+        case CLEAR_MODAL_CONTEXT:
+            return { ...state, context: initContext };
         case SET_MODAL_CONTEXT: {
-            const {
-                id,
-                type,
-                title,
-                subtitle,
-                tags,
-                content,
-                index,
-                confirm,
-                rawData,
-            } = action.payload.content;
+            const content = action.payload.content;
             return {
                 ...state,
-                context: {
-                    id,
-                    type,
-                    title,
-                    subtitle,
-                    tags,
-                    content,
-                    index,
-                    confirm,
-                    rawData,
-                },
+                context: content,
             };
         }
         case SET_MODAL_ON_BEFORE: {

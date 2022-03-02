@@ -1,22 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
-import Badge from '~/components/atom/Badge';
+import ItemFilterEdit from './ItemFilterEdit';
+import ItemFilterManagement from './ItemFilterEdit/manage';
 import ItemFilter from './ItemFilter';
-import { FilterContainer, useStyles } from './style';
+import { FilterContainer, useStyles, FilterBadge } from './style';
+import {
+    selectedFilterSelector,
+    filterStatusSelector,
+} from '~/model/selector/study';
+import { SET_STUDY_FILTER } from '~/model/action/study';
+import useFilterStatusContext from '~/utils/redux/components/study/useFilterStatusContext';
 
-function Filter() {
+function Filter({ isAdmin }) {
     const classes = useStyles();
-    const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
+    const selectedFilter = useSelector(selectedFilterSelector);
+    const filterStatus = useSelector(filterStatusSelector);
+    const { openFilter, closeFilter, startManageFilter, endManageFilter } =
+        useFilterStatusContext();
 
-    const handleClose = () => {
-        setOpen(false);
+    const toggleManage = (isManaging) => {
+        isManaging ? startManageFilter() : endManageFilter();
     };
 
-    const handleOpen = () => {
-        setOpen(true);
+    const unselectFilter = (tag) => {
+        dispatch({
+            type: SET_STUDY_FILTER,
+            payload: { tagType: tag.tagType, tagId: tag.id, checked: false },
+        });
     };
 
     return (
@@ -38,9 +53,9 @@ function Filter() {
                 <Select
                     labelId="item-filter-label"
                     id="item-filter"
-                    open={open}
-                    onClose={handleClose}
-                    onOpen={handleOpen}
+                    open={filterStatus.isOpen}
+                    onClose={closeFilter}
+                    onOpen={openFilter}
                     MenuProps={{
                         style: {
                             top: 40,
@@ -50,9 +65,28 @@ function Filter() {
                         },
                     }}
                 >
-                    <ItemFilter />
+                    {isAdmin && (
+                        <ItemFilterManagement
+                            toggleManage={(isManaging) =>
+                                toggleManage(isManaging)
+                            }
+                            isManaging={filterStatus.isManage}
+                        />
+                    )}
+                    {isAdmin && filterStatus.isManage ? (
+                        <ItemFilterEdit />
+                    ) : (
+                        <ItemFilter />
+                    )}
                 </Select>
             </FormControl>
+            {selectedFilter.map((tag) => (
+                <FilterBadge
+                    key={tag.id}
+                    value={tag.name}
+                    onClose={() => unselectFilter(tag)}
+                />
+            ))}
         </FilterContainer>
     );
 }

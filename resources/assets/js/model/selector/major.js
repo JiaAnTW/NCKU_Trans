@@ -1,4 +1,8 @@
-import { createSelector } from 'reselect';
+import {
+    createSelector,
+    createSelectorCreator,
+    defaultMemoize,
+} from 'reselect';
 
 const majorSelector = (state) => state.major;
 
@@ -26,7 +30,10 @@ export const majorDisplaySelector = createSelector(
         })
 );
 
-export const majorIndexByIdSelector = createSelector(
+/* workaround: resolve returned selector not update and cause crash */
+const workaround = createSelectorCreator(defaultMemoize, () => false);
+
+export const majorIndexByIdSelector = workaround(
     majorDisplaySelector,
     (majorData) => {
         const urlParams = new URLSearchParams(window.location.search);

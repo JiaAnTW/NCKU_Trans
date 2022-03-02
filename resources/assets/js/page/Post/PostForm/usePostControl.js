@@ -1,20 +1,20 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-
-import { postMajorData } from '~/model/middleware/post';
 import { useModalOpen, useModalContext } from '~/utils/index';
-import transFormData from '~/utils/redux/components/modal/transFormData';
-
+import DataMapping from '~/utils/redux/components/modal/dataMapping';
 import { SET_POST_ON_NEXT, SET_POST_ON_BEFORE } from '~/model/action/post';
 import useSubmit from './useSubmit';
+import useSubmitTransData from './useSubmitTransData';
+import { previewDataList } from './postDataList';
 
 function usePostControl(editType, timeout) {
     const dispatch = useDispatch();
-    const formData = useSelector(
-        (state) => state.post.form[editType === 'major' ? 'comment' : editType]
-    );
-    useSubmit(editType, formData);
+    const type = useSelector((state) => state.post.type);
+    const form = useSelector((state) => ({
+        ...state.post.form[type],
+    }));
+    useSubmit(editType, form);
 
     // ---------------------
     // -------切換階段-------
@@ -41,32 +41,32 @@ function usePostControl(editType, timeout) {
     const [, setModalContext] = useModalContext();
 
     const onPreview = useCallback(() => {
-        setModalContext(
-            transFormData(formData, {
-                title: 'in_maj',
-                subtitle: 'out_maj',
-                type: 'category',
-                content: 'comment',
-            })
-        );
+        DataMapping.forceTransObjToKeysTable(form);
+        let transedData;
+        if (type === 'study') {
+            transedData = DataMapping.transFormData(
+                form,
+                previewDataList[type],
+                'name'
+            );
+            transedData.statistic = transedData.tags;
+            transedData.postTime = DataMapping.dateSpawner();
+        } else {
+            transedData = DataMapping.transFormData(
+                form,
+                previewDataList[type]
+            );
+        }
+        setModalContext(transedData);
         setIsModalOpen(true);
-    }, [formData]);
+    }, [form]);
 
     // ---------------------
     // -------送出-------
+    const handleSubmit = useSubmitTransData(form, type);
     const onSubmit = useCallback(() => {
-        const params = {
-            rank_1: formData.rank_1.value,
-            rank_2: formData.rank_2.value,
-            year: formData.year.value.toString(),
-            score: formData.score.value,
-            out_maj: formData.out_maj.value,
-            in_maj: formData.in_maj.value,
-            comment: formData.comment.value,
-            isPass: formData.isPass.value,
-        };
-        if (editType === 'comment') dispatch(postMajorData(params));
-    }, [editType, formData]);
+        handleSubmit();
+    }, [handleSubmit]);
 
     return { onSubmit, onNext, onBefore, onPreview };
 }

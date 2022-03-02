@@ -11,6 +11,7 @@ export const StepAreaContainer = styled.div`
     align-items: center;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    width: 80%;
 `;
 
 export const QontoConnector = withStyles({

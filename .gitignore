@@ -17,3 +17,5 @@ yarn-error.log
 
 /resources/assets/js/calcLoc
 ngrok.exe
+jsconfig.json
+/.vscode

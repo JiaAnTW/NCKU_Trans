@@ -1,4 +1,5 @@
 import SearchIcon from '@material-ui/icons/Search';
+import CancelIcon from '@material-ui/icons/Cancel';
 import styled from 'styled-components';
 import { color } from '~/theme/global';
 
@@ -25,7 +26,7 @@ export const InputField = styled.input`
     }
 `;
 export const Button = styled.button`
-    display: ${({ hidden }) => (hidden ? 'none' : 'inline-flex')};
+    display: 'inline-flex';
     position: absolute;
     right: 12px;
     cursor: pointer;
@@ -35,5 +36,11 @@ export const Button = styled.button`
 `;
 
 export const SearchIconYellow = styled(SearchIcon)`
+    display: ${({ hidden }) => (hidden ? 'none' : 'inline-flex')};
     color: ${color.yellow};
+`;
+
+export const ClearIcon = styled(CancelIcon)`
+    display: ${({ hidden }) => (hidden ? 'none' : 'inline-flex')};
+    color: ${color.red};
 `;

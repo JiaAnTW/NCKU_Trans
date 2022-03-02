@@ -12,7 +12,7 @@ export const LoginLayout = styled.main`
 
 export const FormLayout = styled.div`
     width: 350px;
-    padding: 25px 25px;
+    padding: 25px 0;
 `;
 
 export const TopicLayout = styled.div`

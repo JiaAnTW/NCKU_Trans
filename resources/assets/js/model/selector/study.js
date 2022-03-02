@@ -1,6 +1,40 @@
-import { createSelector } from 'reselect';
+import {
+    createSelector,
+    createSelectorCreator,
+    defaultMemoize,
+} from 'reselect';
 
 const studySelector = (state) => state.study;
+
+export const adminActionSelector = createSelector(studySelector, (state) => {
+    const { action, tag } = state.admin;
+    return { action, tag };
+});
+
+export const itemFilterSelector = createSelector(studySelector, (state) => {
+    const { category, statInfo, year } = state.filter;
+    return { category, statInfo, year };
+});
+
+export const filterStatusSelector = createSelector(studySelector, (state) => {
+    const { status } = state.filter;
+    return status;
+});
+
+export const selectedFilterSelector = createSelector(studySelector, (state) => {
+    let selected = [];
+    for (const [key, tagList] of Object.entries(state.filter)) {
+        if (tagList.length > 0) {
+            for (const tag of tagList) {
+                if (tag.selected) {
+                    tag.tagType = key;
+                    selected.push(tag);
+                }
+            }
+        }
+    }
+    return selected;
+});
 
 export const studyDataSelector = createSelector(
     studySelector,
@@ -26,8 +60,11 @@ export const studyDisplaySelector = createSelector(
         })
 );
 
-export const studyIndexByIdSelector = createSelector(
-    studyDisplaySelector,
+/* workaround: resolve returned selector not update and cause crash */
+const workaround = createSelectorCreator(defaultMemoize, () => false);
+
+export const studyIndexByIdSelector = workaround(
+    (state) => state.study.data,
     (studyData) => {
         const urlParams = new URLSearchParams(window.location.search);
         const urlId = urlParams.get('id');

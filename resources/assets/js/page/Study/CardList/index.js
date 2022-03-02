@@ -6,12 +6,13 @@ import InfiniteScroll from '~/components/InfiniteScroll';
 import useFetchData from './useFetchData';
 
 import { ScrollableContainer } from './style';
+import useCommentFlow from './useCommentFlow';
 
 function CardsList({ isAdmin }) {
     const studyData = useSelector(studyDataSelector);
     const [overscanStopIndex, setOverscanStopIndex] = useState(0);
     useFetchData({ overscanStopIndex, num: 15, isAdmin });
-    //useCommentFlow({ majorData: majorData });
+    useCommentFlow({ studyData });
 
     return (
         <ScrollableContainer>

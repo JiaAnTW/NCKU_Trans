@@ -6,6 +6,7 @@ import { color } from '~/theme/global';
 export default styled(TextField)`
     width: 100%;
     height: 250px;
+    margin-bottom: 30px;
 `;
 
 export const useStyles = makeStyles((theme) => ({
