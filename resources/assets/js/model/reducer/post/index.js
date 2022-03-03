@@ -8,11 +8,13 @@ import {
     OVERWRITE_POST,
     SET_POST_TYPE,
     TOGGLE_STATIS_DATA,
+    SET_STUDY_STATIS_OPTIONS,
 } from '../../action/post';
 import initState from './initState';
 import cloneDeep from 'lodash/cloneDeep';
 import wording from '~/wording/toggleRemark.json';
 import set from 'lodash/set';
+import map from 'lodash/map';
 import result from 'lodash/result';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
@@ -246,6 +248,27 @@ const postReducer = (state = initState, action) => {
                     thisPage[elementArea].selectedStatistic > 0 ? 'none' : '';
 
             return stateNext;
+        }
+        case SET_STUDY_STATIS_OPTIONS: {
+            const stateNext = state;
+            const stats = action.payload;
+            map(stats, (stat, index) => {
+                stateNext.form['study'].pageMap[2][1][0].value[index + 1] = {
+                    id: index + 1,
+                    title: stat.name,
+                    instance: {
+                        value: '',
+                        elementAttrs: {
+                            type: stat.dataType,
+                            min: stat.min,
+                            max: stat.max,
+                        },
+                        keyName: stat.name,
+                        type: 'input',
+                        wording: stat.name,
+                    },
+                };
+            });
         }
         default:
             return state;
