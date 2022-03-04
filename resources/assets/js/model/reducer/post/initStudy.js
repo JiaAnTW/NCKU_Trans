@@ -1,6 +1,8 @@
+import getYearOption from './function/getYearOption';
 import { mapToCustomizeFunction } from './mapToCustomFunction';
 
 export default (function () {
+    const { latestYear, yearOption } = getYearOption;
     return {
         id: -1,
         confirm: false,
@@ -30,6 +32,13 @@ export default (function () {
                         wording: '原主修科系',
                         options: [],
                         remark: '如不想透漏，可以只填學院或其他。',
+                    },
+                    3: {
+                        value: latestYear,
+                        type: 'select',
+                        keyName: 'year',
+                        wording: '年份',
+                        options: yearOption,
                     },
                 },
             },
