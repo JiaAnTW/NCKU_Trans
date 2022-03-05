@@ -24,7 +24,7 @@ export const postDataList = {
         category: 'category',
     },
     study: {
-        settingKeys: ['title', 'content', 'category'],
-        //statistic decided by which obj has keyName attribute
+        settingKeys: ['title', 'content', 'category', 'maj', 'year'],
+        //statistic decided by which obj has keyName attribute & didn't in settingKeys
     },
 };

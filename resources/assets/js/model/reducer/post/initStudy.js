@@ -1,6 +1,8 @@
+import getYearOption from './function/getYearOption';
 import { mapToCustomizeFunction } from './mapToCustomFunction';
 
 export default (function () {
+    const { latestYear, yearOption } = getYearOption;
     return {
         id: -1,
         confirm: false,
@@ -31,6 +33,13 @@ export default (function () {
                         options: [],
                         remark: '如不想透漏，可以只填學院或其他。',
                     },
+                    3: {
+                        value: latestYear,
+                        type: 'select',
+                        keyName: 'year',
+                        wording: '年份',
+                        options: yearOption,
+                    },
                 },
             },
             2: {
@@ -55,108 +64,6 @@ export default (function () {
                     0: {
                         // stat - id
                         value: {
-                            1: {
-                                id: 1, // stat - id
-                                title: '學年平均',
-                                value: false,
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number',
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'score',
-                                    type: 'input',
-                                    wording: '學年平均',
-                                },
-                            },
-                            2: {
-                                id: 2, // stat - id
-                                title: '上學期平均',
-                                value: false,
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number',
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'score1',
-                                    type: 'input',
-                                    wording: '上學期平均',
-                                },
-                            },
-                            3: {
-                                id: 3, // stat - id
-                                title: '下學期平均',
-                                value: false,
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number',
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'score2',
-                                    type: 'input',
-                                    wording: '下學期平均',
-                                },
-                            },
-                            4: {
-                                id: 4, // stat - id
-                                title: 'TOELF',
-                                value: false,
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number',
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'toelf',
-                                    type: 'input',
-                                    wording: 'TOELF',
-                                },
-                            },
-                            5: {
-                                id: 5, // stat - id
-                                title: 'GPA',
-                                value: false,
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number',
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'gpa',
-                                    type: 'input',
-                                    wording: 'GPA',
-                                },
-                            },
-                            6: {
-                                id: 6, // stat - id  //array index+1
-                                title: 'IELTS', //name
-                                value: false, //overwrite only
-                                instance: {
-                                    // stat - id
-                                    value: '',
-                                    elementAttrs: {
-                                        type: 'number', //dataType
-                                        min: 0,
-                                        max: 100,
-                                    },
-                                    keyName: 'ielts', //id
-                                    type: 'input', //always input
-                                    wording: 'IELTS', //name
-                                },
-                            },
                             999999: {
                                 id: 999999, // stat - id
                                 title: '+ 其他類別',

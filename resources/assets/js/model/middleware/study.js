@@ -9,6 +9,7 @@ import {
 } from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
+import { SET_STUDY_STATIS_OPTIONS } from '../action/post';
 
 const FAILED = 'fail';
 
@@ -62,6 +63,7 @@ export const fetchStudyStat = () => {
                     type: INIT_STUDY_STAT,
                     payload: { type: 'statInfo', data },
                 });
+                dispatch({ type: SET_STUDY_STATIS_OPTIONS, payload: data });
                 dispatch({
                     type: FINISH_REQUEST,
                 });
