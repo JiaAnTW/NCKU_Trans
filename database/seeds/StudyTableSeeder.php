@@ -27,9 +27,10 @@ class StudyTableSeeder extends Seeder
             $request = new Request([
                 "title" => "心得1",
                 "content" => "test",
+                "year" => 110,
                 "category" => $categories,
                 "statistic" => $statistics,
-                "confirm" => "false"
+                "confirm" => "true"
             ]);
             $request->setMethod('POST');
             $controller->create($request);
@@ -42,6 +43,7 @@ class StudyTableSeeder extends Seeder
             $request = new Request([
                 "title" => "某公司實習心得",
                 "content" => "在某公司實習後，覺得不賴，推薦其他人應徵",
+                "year" => 109,
                 "category" => $categories,
                 "statistic" => $statistics,
                 "confirm" => "false"

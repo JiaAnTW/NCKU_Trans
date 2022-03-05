@@ -18,17 +18,17 @@ class CategoryManageTableSeeder extends Seeder
         {
             $controller = new CategoryManageController;
             $request = new Request([
-                "studyType" => "QA",
+                "name" => "QA",
             ]);
             $request->setMethod('POST');
             $controller->create($request);
             $request = new Request([
-                "studyType" => "出國交換",
+                "name" => "出國交換",
             ]);
             $request->setMethod('POST');
             $controller->create($request);
             $request = new Request([
-                "studyType" => "實習",
+                "name" => "實習",
             ]);
             $request->setMethod('POST');
             $controller->create($request);
