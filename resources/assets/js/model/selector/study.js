@@ -36,6 +36,24 @@ export const selectedFilterSelector = createSelector(studySelector, (state) => {
     return selected;
 });
 
+export const selectedStatFilterSelector = createSelector(
+    studySelector,
+    (state) => {
+        let selected = [];
+        for (const [key, tagList] of Object.entries(state.filter)) {
+            if (key === 'statInfo' && tagList.length > 0) {
+                for (const tag of tagList) {
+                    if (tag.selected) {
+                        tag.tagType = key;
+                        selected.push(tag);
+                    }
+                }
+            }
+        }
+        return selected;
+    }
+);
+
 export const studyDataSelector = createSelector(
     studySelector,
     (state) => state.data

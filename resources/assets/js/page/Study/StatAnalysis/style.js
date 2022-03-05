@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StatAnalysisContainer = styled.section`
-    display: flex;
+    display: ${(props) => (props.isShow ? 'flex' : 'none')};
     flex-direction: row;
     margin-left: 15px;
     padding: 0 5px;

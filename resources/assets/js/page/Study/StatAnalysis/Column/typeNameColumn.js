@@ -11,14 +11,12 @@ function TypeNameColumn({ dataArray }) {
     return (
         <ColumnContainer>
             <Title> 資料類別 </Title>
-            <FixHeightContainer>
-                <DataType>title</DataType>
-                <DataTypeRemark>remark</DataTypeRemark>
-            </FixHeightContainer>
-            <FixHeightContainer>
-                <DataType>title</DataType>
-                <DataTypeRemark>remark</DataTypeRemark>
-            </FixHeightContainer>
+            {dataArray.map((data) => (
+                <FixHeightContainer>
+                    <DataType>{data}</DataType>
+                    <DataTypeRemark>remark</DataTypeRemark>
+                </FixHeightContainer>
+            ))}
         </ColumnContainer>
     );
 }
