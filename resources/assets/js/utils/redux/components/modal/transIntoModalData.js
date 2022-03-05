@@ -8,9 +8,9 @@ function transIntoModalData(type, itemData, index) {
             return {
                 id: itemData['id'],
                 title: itemData['title'],
-                postTime: `109(未回傳，固定)（發文時間：${parseTimestamp(
-                    itemData['timestamp']
-                )}）`,
+                postTime:
+                    itemData['year'] +
+                    `（發文時間：${parseTimestamp(itemData['timestamp'])}）`,
                 statistic: itemData['statistic'],
                 category: itemData['category'],
                 content: itemData['content'],
