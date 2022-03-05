@@ -3,7 +3,9 @@ import LoadingFrame from '~/components/LoadingFrame';
 import Search from './Search';
 import Filter from './Filter';
 import CardList from './CardList';
-import { Container } from './style';
+import StatAnalysis from './StatAnalysis';
+
+import { Container, RowContainer } from './style';
 import useInitData from './useInitData';
 import ReaderModal from '~/components/Modal/ReaderModal';
 import useCloseReader from '~/utils/seo/useCloseReader';
@@ -18,7 +20,10 @@ export default function Study({ isAdmin }) {
             <Container>
                 <Search />
                 <Filter isAdmin={isAdmin} />
-                <CardList />
+                <RowContainer>
+                    <CardList />
+                    <StatAnalysis />
+                </RowContainer>
             </Container>
             <ReaderModal
                 isAdmin={isAdmin}
