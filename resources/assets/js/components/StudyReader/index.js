@@ -27,7 +27,7 @@ function StudyReader({ isAdmin }) {
             {isAdmin && <Confirm id={id} isConfirmed={confirm === 'true'} />}
             {onBefore && <ChangeBtn direction="left" onClick={onBefore} />}
             <StudyReaderContent>
-                <CategoryBlock data={category} />
+                <CategoryBlock isAdmin={isAdmin} data={category} />
                 <Title title={title} postTime={postTime} />
                 <StatisticBlock data={statistic} />
                 <StudyReaderContext>{content}</StudyReaderContext>
