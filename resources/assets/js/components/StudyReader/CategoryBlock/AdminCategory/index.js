@@ -1,24 +1,10 @@
 import { FormControl, InputLabel, Select } from '@material-ui/core';
-import { filter } from 'lodash';
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import DropdownContext from './DropdownContext';
 import ItemFilter from './ItemFilter';
 import ItemFilterEdit from './ItemFilterEdit';
 import ItemFilterManagement from './ItemFilterEdit/manage';
 import { Container, useStyles } from './style';
-
-function reducer(state, action) {
-    switch (action.type) {
-        case 'edit':
-            return state;
-        case 'manage':
-            return state;
-        case 'create':
-            return state;
-        default:
-            return state;
-    }
-}
 
 export const STATE = Object.freeze({
     NORMAL: 'normal',
@@ -27,13 +13,15 @@ export const STATE = Object.freeze({
     CREATE: 'create',
 });
 
-function AdminCategory({ data }) {
+function AdminCategory({ id, data }) {
     const classes = useStyles();
-    // const [filterState, dispatch] = useReducer(reducer, 'edit');
     const [state, setState] = useState(STATE.NORMAL);
+    const [context, setContext] = useState(data);
 
     return (
-        <DropdownContext.Provider value={{ state, setState }}>
+        <DropdownContext.Provider
+            value={{ id, state, setState, context, setContext }}
+        >
             <Container>
                 <FormControl
                     size="small"

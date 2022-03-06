@@ -241,7 +241,7 @@ export const fetchStudyAdmin = ({ id, num = 0 }) => {
     };
 };
 
-export const updateStudy = (id, confirm) => {
+export const updateStudyConfirm = (id, confirm) => {
     const body = { id, confirm };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
@@ -285,6 +285,28 @@ export const deleteStudy = (id) => {
                     type: FINISH_REQUEST,
                 });
                 dispatch(initStudyAdmin({ num: 30 }));
+            })
+            .catch((e) => console.error('錯誤: ', e));
+    };
+};
+
+export const updateStudy = (data) => {
+    const body = data;
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/put/study/${id.toString()}`, {
+            method: 'PATCH',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(body),
+        })
+            .then((data) => {
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+                dispatch(fetchStudyAdmin());
             })
             .catch((e) => console.error('錯誤: ', e));
     };
