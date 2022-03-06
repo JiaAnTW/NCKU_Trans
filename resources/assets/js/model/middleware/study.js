@@ -291,22 +291,32 @@ export const deleteStudy = (id) => {
 };
 
 export const updateStudy = (data) => {
-    const body = data;
+    const body = {
+        title: data.title,
+        content: data.content,
+        category: data.category,
+        statistic: data.statistic,
+        confirm: data.confirm,
+    };
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/put/study/${id.toString()}`, {
-            method: 'PATCH',
+        fetch(`/api/post/study?id=${data.id}`, {
+            method: 'PUT',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + Cookies.get('adminToken'),
             }),
             body: JSON.stringify(body),
         })
+            .then((res) => res.json())
             .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
                 dispatch({
                     type: FINISH_REQUEST,
                 });
-                dispatch(fetchStudyAdmin());
+                dispatch(initStudyAdmin({ num: 30 }));
             })
             .catch((e) => console.error('錯誤: ', e));
     };

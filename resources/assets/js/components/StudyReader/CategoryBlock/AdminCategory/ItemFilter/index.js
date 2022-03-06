@@ -12,12 +12,12 @@ import { updateStudy } from '~/model/middleware/study';
 function ItemFilter() {
     const filterObjArr = useItemFilter();
     const [, setIsModalOpen] = useModalOpen();
-    const [context] = useContext(DropdownContext);
+    const { context } = useContext(DropdownContext);
     const [modalContext] = useModalContext();
     const dispatch = useDispatch();
     const handleClick = () => {
         setIsModalOpen(false);
-        dispatch(updateStudy({ ...modalContext, category: context.context }));
+        dispatch(updateStudy({ ...modalContext, category: context }));
     };
 
     return (
