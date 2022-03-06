@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
-import { STATE } from '..';
-import DropdownContext from '../DropdownContext';
+import { FilterState } from '../Context/FilterState';
+import FilterContext from '../Context/FilterContext';
 
 import EditTag from './EditTag';
 import {
@@ -10,7 +10,7 @@ import {
 } from './style';
 
 function getManageBtn(state) {
-    return state === STATE.NORMAL ? (
+    return state === FilterState.NORMAL ? (
         <>
             <StartManageIcon />
             管理類別設定
@@ -24,20 +24,23 @@ function getManageBtn(state) {
 }
 
 function ItemFilterManagement() {
-    const { state, setState } = useContext(DropdownContext);
+    const { filterState, setFilterState } = useContext(FilterContext);
     const handleClick = useCallback(() => {
-        setState((prev) => {
-            if (prev === STATE.NORMAL) return STATE.MANAGE;
-            else if (prev === STATE.MANAGE) return STATE.NORMAL;
+        setFilterState((prev) => {
+            if (prev === FilterState.NORMAL) return FilterState.MANAGE;
+            else if (prev === FilterState.MANAGE) return FilterState.NORMAL;
         });
-    }, [state, setState]);
+    }, [filterState, setFilterState]);
 
-    if (state === STATE.MODIFY || state === STATE.CREATE) {
+    if (
+        filterState === FilterState.MODIFY ||
+        filterState === FilterState.CREATE
+    ) {
         return <EditTag />;
     } else {
         return (
             <ManageButtonContainer onClick={handleClick}>
-                {getManageBtn(state)}
+                {getManageBtn(filterState)}
             </ManageButtonContainer>
         );
     }

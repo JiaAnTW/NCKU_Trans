@@ -1,14 +1,19 @@
 import React from 'react';
-import AdminCategory from './AdminCategory';
+import AdminEditCategory from './AdminCategoryManagement';
+import Provider from './AdminCategoryManagement/Context/Provider';
 import { BadgeList, CategoryBadge } from './style';
 
-function CategoryBlock({ isAdmin, data }) {
+function CategoryBlock({ id, data }) {
     return (
         <BadgeList>
             {data.map((itemObj) => (
                 <CategoryBadge key={itemObj['id']} value={itemObj['name']} />
             ))}
-            {true && <AdminCategory data={data} />}
+            {true && (
+                <Provider value={{ id, data }}>
+                    <AdminEditCategory />
+                </Provider>
+            )}
         </BadgeList>
     );
 }

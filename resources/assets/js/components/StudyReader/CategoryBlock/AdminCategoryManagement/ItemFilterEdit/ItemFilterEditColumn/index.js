@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import map from 'lodash/map';
-import { START_EDIT_TAG } from '~/model/action/study';
 import { AddItemButton, AddItemIcon } from '../style';
 
 import {
@@ -9,38 +8,23 @@ import {
     EditItemIcon,
     EditItemContainer,
 } from './style';
-import FilterEditColumnTitle from './../../ItemFilter/ItemFilterColumn/title';
+import FilterEditColumnTitle from '../../ItemFilter/ItemFilterColumn/title';
+import FilterContext from '../../Context/FilterContext';
+import { FilterState } from '../../Context/FilterState';
 
 function ItemFilterEditColumn({ optionsArr }) {
     const dispatch = useDispatch();
+    const { filterState, setFilterState, setTagEditing } =
+        useContext(FilterContext);
 
     const editTag = (type, option) => {
-        const { id, name, dataType, max, min } = option;
-
-        dispatch({
-            type: START_EDIT_TAG,
-            payload: {
-                action: 'update',
-                tag: { id, type, name, dataType, max, min },
-            },
-        });
+        setTagEditing(option);
+        setFilterState(FilterState.MODIFY);
     };
 
     const createTag = (type) => {
-        dispatch({
-            type: START_EDIT_TAG,
-            payload: {
-                action: 'create',
-                tag: {
-                    type,
-                    id: 'temp',
-                    name: '',
-                    dataType: 'int',
-                    min: 0,
-                    max: 0,
-                },
-            },
-        });
+        setTagEditing({ id: '', name: '' });
+        setFilterState(FilterState.CREATE);
     };
 
     return (
