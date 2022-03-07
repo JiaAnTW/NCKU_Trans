@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 
 use App\Study;
 use App\Category;
+use App\CategoryManage;
 use App\StatisticManage;
 
 class StudyController extends Controller
@@ -142,8 +143,17 @@ class StudyController extends Controller
         foreach ( $request["category"] as $element ) {
             $category = new Category;
             $category->name = $element["name"];
-            $uuid = Str::uuid()->toString();
-            $category->id = $uuid;
+            $exist = CategoryManage::where('name', $element["name"])->exists();
+            if (!$exist)
+            {
+                $uuid = Str::uuid()->toString();
+                DB::table('CategoryManage')->insert(['id' => $uuid, 'name' => $element["name"]]);
+                $category->id = $uuid;
+            }
+            else
+            {
+                $category->id = CategoryManage::where('name', $element["name"])->value('id');
+            }
             $study->categories()->save($category);
         }
         //create statistic
