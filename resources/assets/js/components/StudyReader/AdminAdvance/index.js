@@ -23,6 +23,7 @@ function AdminAdvance({ id }) {
         });
     };
     const handleConfirm = () => {
+        setModalOpen(false);
         dispatch(deleteStudy(id));
     };
     return (

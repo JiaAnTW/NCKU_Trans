@@ -5,6 +5,7 @@ import {
     DELETE_STUDY_STAT,
     INIT_STUDY_STAT,
     STOP_EDIT_TAG,
+    UPDATE_STUDY,
     UPDATE_STUDY_STAT,
 } from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
@@ -31,8 +32,18 @@ export const initStudy = ({ num = 0 }) => {
     };
 };
 
-export const fetchStudy = ({ from = 0, num = 0 }) => {
-    return (dispatch) => {};
+export const fetchStudy = ({ id, num = 0 }) => {
+    return (dispatch) => {
+        fetch(`/api/get/study?from=${id}&num=${num}`)
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: UPDATE_STUDY,
+                    payload: { data },
+                });
+            })
+            .catch((e) => console.error('錯誤: ', e));
+    };
 };
 
 export const fetchStudyType = () => {
@@ -190,75 +201,125 @@ const getFilterOpsUrl = (action, type) => {
     return `/api/${action}/${typeName}`;
 };
 
-export const fetchStudyAdmin = () => {
+export const initStudyAdmin = ({ num = 0 }) => {
     return (dispatch) => {
-        // dispatch({ type: ADD_REQUEST });
-        // fetch('http://localhost:8000' + '/api/get/study/all', {
-        //     method: 'GET',
-        //     headers: new Headers({
-        //         Authorization: 'Bearer ' + Cookies.get('adminToken'),
-        //     }),
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         dispatch({
-        //             type: INIT_STUDY,
-        //             payload: { data },
-        //         });
-        //         dispatch({
-        //             type: FINISH_REQUEST,
-        //         });
-        //     })
-        //     .catch(e => {
-        //         location.href = '/#/admin/login';
-        //     });
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/get/study/all?num=${num}`, {
+            method: 'GET',
+            headers: new Headers({
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: INIT_STUDY,
+                    payload: { data },
+                });
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+            })
+            .catch((e) => console.error('錯誤: ', e));
     };
 };
 
-export const updateStudy = (id, confirm) => {
+export const fetchStudyAdmin = ({ id, num = 0 }) => {
+    return (dispatch) => {
+        fetch(`/api/get/study/all?from=${id}&num=${num}`, {
+            method: 'GET',
+            headers: new Headers({
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({
+                    type: UPDATE_STUDY,
+                    payload: { data },
+                });
+            })
+            .catch((e) => console.error('錯誤: ', e));
+    };
+};
+
+export const updateStudyConfirm = (id, confirm) => {
     const body = { id, confirm };
     return (dispatch) => {
-        // dispatch({ type: ADD_REQUEST });
-        // fetch('http://localhost:8000' + `/api/patch/study/${id.toString()}`, {
-        //     method: 'PATCH',
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json',
-        //         Authorization: 'Bearer ' + Cookies.get('adminToken'),
-        //     }),
-        //     body: JSON.stringify(body),
-        // })
-        //     .then((data) => {
-        //         dispatch({
-        //             type: FINISH_REQUEST,
-        //         });
-        //         dispatch(fetchStudyAdmin());
-        //     })
-        //     .catch((e) => {
-        //         location.href = '/#/admin/login';
-        //     });
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/patch/study?id=${id}`, {
+            method: 'PATCH',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(body),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+                dispatch(initStudyAdmin({ num: 30 }));
+            })
+            .catch((e) => console.error('錯誤: ', e));
     };
 };
 
 export const deleteStudy = (id) => {
-    const body = { id };
     return (dispatch) => {
-        // dispatch({ type: ADD_REQUEST });
-        // fetch('http://localhost:8000' + `/api/post/study/${id.toString()}`, {
-        //     method: 'DELETE',
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json',
-        //         Authorization: 'Bearer ' + Cookies.get('adminToken'),
-        //     }),
-        //     body: JSON.stringify(body),
-        // })
-        //     .then(data => {
-        //         dispatch({
-        //             type: FINISH_REQUEST,
-        //         });
-        //         dispatch(fetchMajorAdmin());
-        //     })
-        //     .catch(e => {
-        //         location.href = '/#/admin/login';
-        //     });
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/delete/study?id=${id}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+                dispatch(initStudyAdmin({ num: 30 }));
+            })
+            .catch((e) => console.error('錯誤: ', e));
+    };
+};
+
+export const updateStudy = (data) => {
+    const body = {
+        title: data.title,
+        content: data.content,
+        category: data.category,
+        statistic: data.statistic,
+        confirm: data.confirm,
+    };
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch(`/api/post/study?id=${data.id}`, {
+            method: 'PUT',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+            body: JSON.stringify(body),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.status === FAILED) {
+                    throw new Error('API call failed at backend');
+                }
+                dispatch({
+                    type: FINISH_REQUEST,
+                });
+                dispatch(initStudyAdmin({ num: 30 }));
+            })
+            .catch((e) => console.error('錯誤: ', e));
     };
 };

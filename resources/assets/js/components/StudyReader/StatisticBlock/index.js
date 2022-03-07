@@ -5,8 +5,8 @@ import { StatisticContainer } from './style';
 function StatisticBlock({ data }) {
     return (
         <StatisticContainer>
-            {data.map((val) => (
-                <StatisticItem key={val['id']} data={val} />
+            {data.map((val, idx) => (
+                <StatisticItem key={idx} data={val} />
             ))}
         </StatisticContainer>
     );

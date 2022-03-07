@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRequest } from '../../utils/index';
-import { fetchStudyAdmin, initStudy } from '~/model/middleware/study';
+import { initStudyAdmin, initStudy } from '~/model/middleware/study';
 import { fetchStudyStat, fetchStudyType } from '../../model/middleware/study';
 
 function useInitData({ isAdmin, num }) {
@@ -15,7 +15,7 @@ function useInitData({ isAdmin, num }) {
 
     useEffect(() => {
         if (isAdmin) {
-            dispatch(fetchStudyAdmin());
+            dispatch(initStudyAdmin({ num }));
         } else {
             dispatch(initStudy({ num }));
         }

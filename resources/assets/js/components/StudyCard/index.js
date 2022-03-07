@@ -51,14 +51,11 @@ function StudyCard({ data, index, style }) {
     }, [windowWidth]);
 
     return (
-        <Card isConfirmed={itemData['confirm']} style={style}>
+        <Card isConfirmed={itemData['confirm'] === 'true'} style={style}>
             <CardContent>
                 <BadgeList>
-                    {itemData['category'].map((itemObj) => (
-                        <StatisticBadge
-                            key={itemObj['id']}
-                            value={itemObj['name']}
-                        />
+                    {itemData['category'].map((itemObj, index) => (
+                        <StatisticBadge key={index} value={itemObj['name']} />
                     ))}
                 </BadgeList>
                 <CardTitle>{itemData['title']}</CardTitle>
@@ -67,10 +64,8 @@ function StudyCard({ data, index, style }) {
                 </CardText>
             </CardContent>
             <TagSpanList>
-                {itemData['statistic'].map((itemObj) => (
-                    <TagSpan key={itemObj['id']}>
-                        {'#' + itemObj['name']}
-                    </TagSpan>
+                {itemData['statistic'].map((itemObj, index) => (
+                    <TagSpan key={index}>{'#' + itemObj['name']}</TagSpan>
                 ))}
             </TagSpanList>
             <ShowBtn onClick={handleOpenContent}></ShowBtn>
