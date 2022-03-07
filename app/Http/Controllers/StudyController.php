@@ -233,8 +233,7 @@ class StudyController extends Controller
         foreach ( $request["category"] as $element ) {
             $category = new Category;
             $category->name = $element["name"];
-            $uuid = Str::uuid()->toString();
-            $category->id = $uuid;
+            $category->id = CategoryManage::where('id', $element["id"])->value('id');
             $study->categories()->save($category);
         }
 
