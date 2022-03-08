@@ -19,7 +19,7 @@ function useInitData({ isAdmin, num }) {
         } else {
             dispatch(initStudy({ num }));
         }
-    }, [isAdmin]);
+    }, [isAdmin, dispatch]);
 
     return isFinishRequest;
 }

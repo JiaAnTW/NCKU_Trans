@@ -26,7 +26,7 @@ function useFetchData({ isAdmin, overscanStopIndex, num }) {
                 );
             }
         }
-    }, [studyData, overscanStopIndex, num, isAdmin]);
+    }, [studyData, overscanStopIndex, num, isAdmin, dispatch]);
 }
 
 export default useFetchData;
