@@ -4,7 +4,7 @@ export const StatAnalysisContainer = styled.section`
     display: ${(props) => (props.isShow ? 'flex' : 'none')};
     flex-direction: row;
     margin-left: 15px;
-    padding: 0 5px;
+    padding: 15px 5px;
 
     height: fit-content;
 

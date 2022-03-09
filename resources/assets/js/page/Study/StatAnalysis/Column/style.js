@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ColumnContainer = styled.div`
     width: 75px;
-    padding: 15px;
+    padding: 0 15px;
     text-align: center;
     &:not(:last-of-type) {
         border-right: 1px solid rgba(0, 0, 0, 0.05);

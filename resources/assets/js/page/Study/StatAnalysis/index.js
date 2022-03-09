@@ -16,8 +16,8 @@ function StatAnalysis() {
             <TypeNameColumn
                 dataArray={statFilters.map((filter) => filter.name)}
             />
-            <DataColumn title="平均數字" />
-            <DataColumn title="最小數字" />
+            <DataColumn title="平均數字" dataArray={['123', '456']} />
+            <DataColumn title="最小數字" dataArray={['789', '098']} />
         </StatAnalysisContainer>
     );
 }

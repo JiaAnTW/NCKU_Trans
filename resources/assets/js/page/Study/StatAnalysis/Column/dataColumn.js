@@ -1,12 +1,20 @@
 import React from 'react';
-import { ColumnContainer, Number, Title } from './style';
+import {
+    ColumnContainer,
+    DataType,
+    DataTypeRemark,
+    FixHeightContainer,
+    Number,
+    Title,
+} from './style';
 
 function DataColumn({ title, dataArray }) {
     return (
         <ColumnContainer>
             <Title> {title} </Title>
-            <Number>123</Number>
-            <Number>456</Number>
+            {dataArray.map((data) => (
+                <Number>{data}</Number>
+            ))}
         </ColumnContainer>
     );
 }
