@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 //for uuid
@@ -63,7 +64,7 @@ class CategoryManageController extends Controller
     {
         try
         {
-            $category = CategoryManage::findOrFail($request->id);
+            $category_manage = CategoryManage::findOrFail($request->id);
         }
         //query not found
         catch(Exception $e){
@@ -71,7 +72,8 @@ class CategoryManageController extends Controller
             return array('status' => "fail");
         }
         
-        $category->delete();
+        $category_manage->categories()->delete();
+        $category_manage->delete();
         return array('status' => "success");
     }
 

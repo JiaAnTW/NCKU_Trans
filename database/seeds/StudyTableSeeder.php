@@ -1,5 +1,6 @@
 <?php
 
+use App\CategoryManage;
 use Illuminate\Database\Seeder;
 
 use App\Http\Controllers\StudyController;
@@ -19,11 +20,11 @@ class StudyTableSeeder extends Seeder
         try
         {
             $controller = new StudyController;
-            $categories = array(["name" => "出國交換"]);
-            array_push($categories, array("name" => "QA"));
-            $statistics = array(["name" => "TOEIC","value" => "110"]);
-            array_push($statistics, array("name" => "GPA4.3","value" => "4.0"));
-            array_push($statistics, array("name" => "GPA4.0","value" => "3.9"));
+            $categories = array(["id" => CategoryManage::all(['id'])->pluck('id')[0]]);
+            array_push($categories, array("id" => CategoryManage::all(['id'])->pluck('id')[1]));
+            $statistics = array(["name" => "TOEIC", "value" => "110"]);
+            array_push($statistics, array("name" => "GPA4.3", "value" => "4.0"));
+            array_push($statistics, array("name" => "GPA4.0", "value" => "3.9"));
             $request = new Request([
                 "title" => "心得1",
                 "content" => "test",
@@ -35,11 +36,11 @@ class StudyTableSeeder extends Seeder
             $request->setMethod('POST');
             $controller->create($request);
 
-            $categories = array(["name" => "實習"]);
-            array_push($categories, array("name" => "某公司"));
-            $statistics = array(["name" => "TOEIC","value" => "550"]);
-            array_push($statistics, array("name" => "GPA4.3","value" => "3.7"));
-            array_push($statistics, array("name" => "GPA4.0","value" => "3.5"));
+            $categories = array(["id" => CategoryManage::all(['id'])->pluck('id')[1]]);
+            array_push($categories, array("id" => CategoryManage::all(['id'])->pluck('id')[2]));
+            $statistics = array(["name" => "TOEIC", "value" => "550"]);
+            array_push($statistics, array("name" => "GPA4.3", "value" => "3.7"));
+            array_push($statistics, array("name" => "GPA4.0", "value" => "3.5"));
             $request = new Request([
                 "title" => "某公司實習心得",
                 "content" => "在某公司實習後，覺得不賴，推薦其他人應徵",
@@ -50,7 +51,7 @@ class StudyTableSeeder extends Seeder
             ]);
             $request->setMethod('POST');
             $controller->create($request);
-            
+
         }
         catch(Exception $e)
         {

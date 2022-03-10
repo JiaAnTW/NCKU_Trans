@@ -14,4 +14,9 @@ class CategoryManage extends Model
     protected $casts = [
         'id' => 'string'
       ];
+
+    public function categories()
+    {
+      return $this->hasMany('App\Category', 'id');
+    }
 }

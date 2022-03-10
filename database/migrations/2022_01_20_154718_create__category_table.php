@@ -10,7 +10,6 @@ class CreateCategoryTable extends BaseMigration
         parent::setTableName('Category');
         parent::setCols([
             'id' => function (Blueprint $table) { $table->uuid('id'); },
-            'name' => function (Blueprint $table) { $table->string('name',20); },
             'study_id' => function (Blueprint $table) { $table->uuid('study_id'); },
         ]);
     }

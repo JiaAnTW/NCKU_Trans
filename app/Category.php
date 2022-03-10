@@ -17,6 +17,11 @@ class Category extends Model
 
     public function study()
     {
-        return $this->belongsTo('App\Study');
+        return $this->belongsTo('App\Study', 'study_id');
+    }
+    
+    public function category_manage()
+    {
+        return $this->belongsTo('App\CategoryManage', 'id');
     }
 }
