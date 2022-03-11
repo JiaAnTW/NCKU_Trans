@@ -81,6 +81,9 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     Route::put('post/studyStat', 'StatisticManageController@update');
     Route::delete('delete/studyStat', 'StatisticManageController@destroy');
 
+    Route::get('get/otherStat', 'OtherStatisticController@show');
+    Route::post('post/transformStudyStat', 'OtherStatisticController@transform');
+
     Route::get('get/users/list', function(){
         $users = App\User::all();
         
