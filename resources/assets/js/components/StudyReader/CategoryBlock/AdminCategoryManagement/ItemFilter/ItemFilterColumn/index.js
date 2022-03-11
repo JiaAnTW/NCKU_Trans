@@ -15,10 +15,9 @@ function ItemFilterColumn({ optionsArr }) {
             setCategories((prev) => {
                 if (isChecked) {
                     return [...prev, { id: tagId, name: tagName }];
-                } else {
-                    const next = prev.filter((el) => el.id !== tagId);
-                    return next;
                 }
+                const next = prev.filter((el) => el.id !== tagId);
+                return next;
             });
         },
         [setCategories]

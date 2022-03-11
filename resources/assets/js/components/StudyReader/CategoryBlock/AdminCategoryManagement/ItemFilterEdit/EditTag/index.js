@@ -54,15 +54,15 @@ function EditTag() {
                     type: 'category',
                 })
             );
-        } else {
-            dispatch(
-                updateStudyTypeOrStat({
-                    id: tagEditing.id,
-                    name: tagEditing.name,
-                    type: 'category',
-                })
-            );
+            return;
         }
+        dispatch(
+            updateStudyTypeOrStat({
+                id: tagEditing.id,
+                name: tagEditing.name,
+                type: 'category',
+            })
+        );
     };
 
     return (

@@ -7,10 +7,15 @@ import { ConfirmBar, ConfirmText, StyledToggle } from './style';
 function Confirm({ id, isConfirmed }) {
     const [, setIsModalOpen] = useModalOpen();
     const dispatch = useDispatch();
-    const handleChange = useCallback((e) => {
-        setIsModalOpen(false);
-        dispatch(updateStudyConfirm(id, e.target.checked ? 'true' : 'false'));
-    }, []);
+    const handleChange = useCallback(
+        (e) => {
+            setIsModalOpen(false);
+            dispatch(
+                updateStudyConfirm(id, e.target.checked ? 'true' : 'false')
+            );
+        },
+        [dispatch]
+    );
 
     return (
         <ConfirmBar isConfirmed={isConfirmed}>
