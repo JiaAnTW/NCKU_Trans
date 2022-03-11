@@ -34,6 +34,8 @@ function ItemFilterEditColumn({ optionsArr }) {
                 {map(optionsArr.options, (option) => (
                     <EditItemContainer key={option.id}>
                         <EditItemIcon
+                            role="button"
+                            aria-hidden={false}
                             onClick={() => editTag(optionsArr.type, option)}
                         />
                         {option.name}
