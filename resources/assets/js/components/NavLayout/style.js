@@ -17,12 +17,16 @@ export const Container = styled.div`
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 50px auto;
+    grid-template-rows: ${(props) => (props.isShowSearch ? '120px' : '50px')} auto;
     width: 100%;
     height: 100vh;
     padding: 20px 30px;
     background-color: ${color.white};
     overflow-y: auto;
+
+    @media (max-width: 992px) {
+        grid-template-rows: 50px auto;
+    }
 
     @media (max-width: 576px) {
         padding: 20px 10px;

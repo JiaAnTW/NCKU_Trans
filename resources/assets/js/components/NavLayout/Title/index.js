@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
-import { H1, Header } from './style';
+import { H1, Header, Search } from './style';
 import titleWording from './title.json';
 
 const mapPathnameToTitle = (pathname) => {
@@ -21,15 +21,15 @@ const mapPathnameToTitle = (pathname) => {
     }
 };
 
-function Title() {
+function Title({ isShowSearch }) {
     const location = useLocation();
     const { id } = useParams();
 
     const TitleElement = id ? H2 : H1;
-
     return (
         <Header>
             <TitleElement>{mapPathnameToTitle(location.pathname)}</TitleElement>
+            <Search isShow={isShowSearch} />
         </Header>
     );
 }
