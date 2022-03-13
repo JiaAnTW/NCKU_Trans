@@ -81,10 +81,13 @@ class StudyController extends Controller
 
     public function index(Request $request)
     {
+        $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
-            $studies = Study::select('id','title','content','year','created_at', 'confirm')->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
+                $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
+            })->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
             //find the created time of target study 
@@ -99,7 +102,9 @@ class StudyController extends Controller
             }
             //find those studies craeted before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
+                $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
+            })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
 
         for($i = 0; $i < count($studies); $i++) 
