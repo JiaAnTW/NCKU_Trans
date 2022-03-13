@@ -42,8 +42,7 @@ export const studyDataSelector = createSelector(
 );
 
 export const filterSelector = createSelector(studySelector, (state) => {
-    const { in_maj, year, department, category } = state.filter;
-    return { in_maj, year, department, category };
+    return state;
 });
 
 export const studyDisplaySelector = createSelector(

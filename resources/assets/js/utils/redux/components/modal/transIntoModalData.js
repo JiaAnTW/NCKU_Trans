@@ -14,6 +14,7 @@ function transIntoModalData(type, itemData, index) {
                 statistic: itemData['statistic'],
                 category: itemData['category'],
                 content: itemData['content'],
+                year: itemData['year'],
                 confirm: itemData['confirm'],
                 index: index,
                 rawData: itemData,
