@@ -21,5 +21,10 @@ class Study extends Model
         return $this->hasMany('App\Category');
     }
 
+    public function otherStatistic()
+    {
+        return $this->hasMany('App\OtherStatistic');
+    }
+
 
 }

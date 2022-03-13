@@ -14,6 +14,7 @@ use App\Study;
 use App\Category;
 use App\CategoryManage;
 use App\StatisticManage;
+use App\OtherStatistic;
 
 class StudyController extends Controller
 {
@@ -170,6 +171,16 @@ class StudyController extends Controller
                 $study->categories()->delete();
                 return array('status' => "fail");
             }
+        }
+
+        //create other statistic
+        foreach ( $request["otherStatistic"] as $element ) {
+            $otherStat = new OtherStatistic;
+            $otherStat->name = $element["name"];
+            $otherStat->value = $element["value"];
+            $uuid = Str::uuid()->toString();
+            $otherStat->id = $uuid;
+            $study->otherStatistic()->save($otherStat);
         }
 
         $study->save();

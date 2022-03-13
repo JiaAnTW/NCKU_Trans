@@ -11,7 +11,7 @@ import useCommentFlow from './useCommentFlow';
 function CardsList({ isAdmin }) {
     const studyData = useSelector(studyDataSelector);
     const [overscanStopIndex, setOverscanStopIndex] = useState(0);
-    useFetchData({ overscanStopIndex, num: 15, isAdmin });
+    useFetchData({ isAdmin, overscanStopIndex, num: 15 });
     useCommentFlow({ studyData });
 
     return (

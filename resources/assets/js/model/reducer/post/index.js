@@ -19,6 +19,8 @@ import result from 'lodash/result';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
 let commentTable, studyTable;
+let initializedStats = false;
+
 const postReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_POST_OPTION_DEPARTMENT: {
@@ -251,15 +253,26 @@ const postReducer = (state = initState, action) => {
         }
         case SET_STUDY_STATIS_OPTIONS: {
             const stateNext = state;
+            if (initializedStats) return stateNext;
+
+            const switchToType = {
+                int: 'number',
+                float: 'number',
+            };
+
+            initializedStats = true;
+
+            const statisticPlace =
+                stateNext.form['study'].pageMap[2][1][0].value;
             const stats = action.payload;
             map(stats, (stat, index) => {
-                stateNext.form['study'].pageMap[2][1][0].value[index + 1] = {
+                statisticPlace[index + 1] = {
                     id: index + 1,
                     title: stat.name,
                     instance: {
                         value: '',
                         elementAttrs: {
-                            type: stat.dataType,
+                            type: switchToType[stat.dataType],
                             min: stat.min,
                             max: stat.max,
                         },

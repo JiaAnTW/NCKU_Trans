@@ -18,7 +18,7 @@ export default function Study({ isAdmin }) {
             <Container>
                 <Search />
                 <Filter isAdmin={isAdmin} />
-                <CardList />
+                <CardList isAdmin={isAdmin} />
             </Container>
             <ReaderModal
                 isAdmin={isAdmin}

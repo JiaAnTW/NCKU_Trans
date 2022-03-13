@@ -12,6 +12,7 @@ import {
     UPDATE_TAG,
     SET_FILTER_OPEN,
     SET_FILTER_MANAGE,
+    UPDATE_STUDY,
 } from '../action/study';
 
 const date = new Date();
@@ -54,79 +55,18 @@ const initState = {
 const studyReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_STUDY: {
-            // const initData = action.payload.data.data.map((item) : {
-            //     item.content = item.content.replace(/<br>/g, '\n');
-            //     return item;
-            // });
-            const initData = [
-                {
-                    id: 1,
-                    title: '心得1',
-                    content: 'test',
-                    timestamp: 36400,
-                    category: [
-                        { id: 3, name: '出國交換' },
-                        { id: 2, name: 'QA' },
-                    ],
-                    statistic: [
-                        { id: 1, name: 'TOEFL', value: 110 },
-                        { id: 4, name: 'GPA4.3', value: 4.2 },
-                    ],
-                    confirm: true,
-                },
-                {
-                    id: 2,
-                    title: '心得2',
-                    content: 'test',
-                    timestamp: 36400,
-                    category: [
-                        { id: 4, name: '實習' },
-                        { id: 2, name: 'QA' },
-                    ],
-                    statistic: [
-                        { id: 3, name: 'TOEIC', value: 700 },
-                        { id: 4, name: 'GPA4.3', value: 3.7 },
-                    ],
-                    confirm: false,
-                },
-                {
-                    id: 3,
-                    title: '心得3',
-                    content: 'test',
-                    timestamp: 36400,
-                    category: [{ id: 3, name: '出國交換' }],
-                    statistic: [
-                        { id: 3, name: 'IELTS', value: 5.5 },
-                        { id: 4, name: 'GPA4.3', value: 3.5 },
-                    ],
-                    confirm: true,
-                },
-                {
-                    id: 4,
-                    title: '心得4',
-                    content: 'test',
-                    timestamp: 36400,
-                    category: [{ id: 3, name: '出國交換' }],
-                    statistic: [
-                        { id: 3, name: 'TOEIC', value: 730 },
-                        { id: 4, name: 'GPA4.3', value: 3.8 },
-                    ],
-                    confirm: false,
-                },
-                {
-                    id: 5,
-                    title: '心得5',
-                    content: 'test',
-                    timestamp: 36400,
-                    category: [{ id: 4, name: '實習' }],
-                    statistic: [
-                        { id: 3, name: 'TOEIC', value: 500 },
-                        { id: 4, name: 'GPA4.3', value: 3.0 },
-                    ],
-                    confirm: false,
-                },
-            ];
+            const initData = action.payload.data.map((item) => {
+                item.content = item.content.replace(/<br>/g, '\n');
+                return item;
+            });
             return { ...state, data: initData };
+        }
+        case UPDATE_STUDY: {
+            const data = action.payload.data.map((item) => {
+                item.content = item.content.replace(/<br>/g, '\n');
+                return item;
+            });
+            return { ...state, data: [...state.data, ...data] };
         }
         case SET_FILTER_OPEN: {
             return {
