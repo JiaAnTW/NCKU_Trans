@@ -197,9 +197,19 @@ const studyReducer = (state = initState, action) => {
             let tagList = [...state.filter[type]];
             const tagIndex = findIndex(tagList, { id: tag.id });
             tagList[tagIndex] = { ...tag };
+            const newData = state.data.map((data) => {
+                const newCategory = data.category.map((obj) => {
+                    if (obj.id === tag.id) {
+                        obj.name = tag.name;
+                    }
+                    return obj;
+                });
+                return { ...data, category: newCategory };
+            });
 
             return {
                 ...state,
+                data: newData,
                 filter: {
                     ...state.filter,
                     [type]: tagList,
@@ -212,9 +222,16 @@ const studyReducer = (state = initState, action) => {
             let tagList = [...state.filter[type]];
             const tagIndex = findIndex(tagList, { id: tagId });
             tagList.splice(tagIndex, 1);
+            const newData = state.data.map((data) => {
+                const newCategory = data.category.filter(
+                    (obj) => obj.id !== tagId
+                );
+                return { ...data, category: newCategory };
+            });
 
             return {
                 ...state,
+                data: newData,
                 filter: {
                     ...state.filter,
                     [type]: tagList,

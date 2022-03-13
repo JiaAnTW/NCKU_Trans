@@ -120,7 +120,7 @@ class StudyController extends Controller
                 //select specific columns in Category without showing study_id
                 "category" => $studies[$i]->categories->map( 
                     function($category){
-                        return $category->only(['id','name']);
+                        return CategoryManage::find($category["id"]);
                     }
                 ),
                 "statistic" => $statistics,
