@@ -1,5 +1,6 @@
 <?php
 
+use App\CategoryManage;
 use Illuminate\Database\Seeder;
 
 use App\Http\Controllers\StudyController;
@@ -19,11 +20,11 @@ class StudyTableSeeder extends Seeder
         try
         {
             $controller = new StudyController;
-            $categories = array(["name" => "出國交換"]);
-            array_push($categories, array("name" => "QA"));
-            $statistics = array(["name" => "TOEIC","value" => "110"]);
-            array_push($statistics, array("name" => "GPA4.3","value" => "4.0"));
-            array_push($statistics, array("name" => "GPA4.0","value" => "3.9"));
+            $categories = array(["id" => CategoryManage::all(['id'])->pluck('id')[0]]);
+            array_push($categories, array("id" => CategoryManage::all(['id'])->pluck('id')[1]));
+            $statistics = array(["name" => "TOEIC", "value" => "110"]);
+            array_push($statistics, array("name" => "GPA4.3", "value" => "4.0"));
+            array_push($statistics, array("name" => "GPA4.0", "value" => "3.9"));
             $otherstat = array(["name" => "TOEFL","value" => "100"]);
             array_push($otherstat, array("name" => "PET","value" => "pass"));
             array_push($otherstat, array("name" => "IELTS","value" => "5.5"));
@@ -39,11 +40,11 @@ class StudyTableSeeder extends Seeder
             $request->setMethod('POST');
             $controller->create($request);
 
-            $categories = array(["name" => "實習"]);
-            array_push($categories, array("name" => "某公司"));
-            $statistics = array(["name" => "TOEIC","value" => "550"]);
-            array_push($statistics, array("name" => "GPA4.3","value" => "3.7"));
-            array_push($statistics, array("name" => "GPA4.0","value" => "3.5"));
+            $categories = array(["id" => CategoryManage::all(['id'])->pluck('id')[1]]);
+            array_push($categories, array("id" => CategoryManage::all(['id'])->pluck('id')[2]));
+            $statistics = array(["name" => "TOEIC", "value" => "550"]);
+            array_push($statistics, array("name" => "GPA4.3", "value" => "3.7"));
+            array_push($statistics, array("name" => "GPA4.0", "value" => "3.5"));
             $otherstat = array(["name" => "TOEFL","value" => "10"]);
             array_push($otherstat, array("name" => "PET","value" => "fail"));
             array_push($otherstat, array("name" => "IELTS","value" => "2.0"));
@@ -58,7 +59,7 @@ class StudyTableSeeder extends Seeder
             ]);
             $request->setMethod('POST');
             $controller->create($request);
-            
+
         }
         catch(Exception $e)
         {

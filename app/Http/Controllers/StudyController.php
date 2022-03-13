@@ -65,7 +65,7 @@ class StudyController extends Controller
                 //select specific columns in Category without showing study_id
                 "category" => $studies[$i]->categories->map( 
                     function($category){
-                        return $category->only(['id','name']);
+                        return CategoryManage::find($category["id"]);
                     }
                 ),
                 "statistic" => $statistics,
@@ -143,18 +143,7 @@ class StudyController extends Controller
         
         foreach ( $request["category"] as $element ) {
             $category = new Category;
-            $category->name = $element["name"];
-            $exist = CategoryManage::where('name', $element["name"])->exists();
-            if (!$exist)
-            {
-                $uuid = Str::uuid()->toString();
-                DB::table('CategoryManage')->insert(['id' => $uuid, 'name' => $element["name"]]);
-                $category->id = $uuid;
-            }
-            else
-            {
-                $category->id = CategoryManage::where('name', $element["name"])->value('id');
-            }
+            $category->id = $element["id"];
             $study->categories()->save($category);
         }
         //create statistic
@@ -243,8 +232,7 @@ class StudyController extends Controller
         $study->categories()->delete();
         foreach ( $request["category"] as $element ) {
             $category = new Category;
-            $category->name = $element["name"];
-            $category->id = CategoryManage::where('id', $element["id"])->value('id');
+            $category->id = $element["id"];
             $study->categories()->save($category);
         }
 
