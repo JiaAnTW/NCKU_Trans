@@ -71,7 +71,7 @@ export default (function () {
                                     mapToCustomizeFunction('spawn_other'),
                                 instance: {
                                     counter: 1,
-                                    value: { title: '', value: '' },
+                                    value: { name: '', value: '' },
                                     keyName: 'other',
                                     type: 'pair_input',
                                     wording: '其他選項 - ',
