@@ -7,13 +7,13 @@ const labelStyle = {
     size: '17px',
     align: 'left',
 };
-function packDataToElement(title, value) {
-    return { target: { value: { title: title, value: value } } };
+function packDataToElement(name, value) {
+    return { target: { value: { name: name, value: value } } };
 }
 
 function PairInput(props) {
     const { wording, subWording, onChange } = props;
-    const { title, value } = props.value;
+    const { name, value } = props.value;
     const handleTitleChange = useCallback(
         (e) => {
             onChange(packDataToElement(e.target.value, value));
@@ -22,9 +22,9 @@ function PairInput(props) {
     );
     const handleValueChange = useCallback(
         (e) => {
-            onChange(packDataToElement(title, e.target.value));
+            onChange(packDataToElement(name, e.target.value));
         },
-        [onChange, title]
+        [onChange, name]
     );
     return (
         <>
@@ -32,7 +32,7 @@ function PairInput(props) {
             <PairInputLayout>
                 <InputLayout>
                     <Input
-                        value={title}
+                        value={name}
                         wording={subWording[0]}
                         onChange={handleTitleChange}
                     />

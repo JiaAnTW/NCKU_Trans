@@ -38,23 +38,45 @@ function useSubmitTransData(form, type) {
             true
         );
         let params = {};
+        const isForceTransToArr = postDataList[type].isForceTransToArr;
 
         const settingKeys = postDataList[type].settingKeys;
         map(settingKeys, (key) => {
-            params[key] = paramPackage[key];
+            params[key] =
+                isForceTransToArr.has(key) && !Array.isArray(paramPackage[key])
+                    ? [paramPackage[key]]
+                    : paramPackage[key];
         });
         pickData = omit(pickData, settingKeys);
-        const tags = [];
+
+        const projectKeys = postDataList[type].projectKeys;
+        for (let key in projectKeys) {
+            if (!paramPackage[key] && isForceTransToArr.has(key)) {
+                params[projectKeys[key]] = [];
+                continue;
+            } else if (!paramPackage[key]) continue;
+
+            params[projectKeys[key]] =
+                isForceTransToArr.has(key) && !Array.isArray(paramPackage[key])
+                    ? [paramPackage[key]]
+                    : paramPackage[key];
+        }
+        pickData = omit(pickData, Object.keys(projectKeys));
+
+        const statistic = [];
         map(pickData, (pack) => {
             tags.push({
                 name: pack,
                 value: paramPackage[pack],
             });
         });
-        params.statistic = tags;
+        params.statistic = statistic;
+
         paramPackage = omit(
             paramPackage,
-            Object.keys(pickData).concat(settingKeys)
+            Object.keys(pickData)
+                .concat(settingKeys)
+                .concat(Object.keys(projectKeys))
         );
         params = { ...params, ...paramPackage };
         dispatch(postStudyData(params));
