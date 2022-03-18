@@ -1,6 +1,5 @@
 import React from 'react';
 import LoadingFrame from '~/components/LoadingFrame';
-import Search from './Search';
 import Filter from './Filter';
 import CardList from './CardList';
 import { Container } from './style';
@@ -16,7 +15,6 @@ export default function Study({ isAdmin }) {
     return (
         <LoadingFrame isFinishRequest={isFinishRequest}>
             <Container>
-                <Search />
                 <Filter isAdmin={isAdmin} />
                 <CardList isAdmin={isAdmin} />
             </Container>

@@ -5,14 +5,14 @@ import { MenuIconStyle } from '../style';
 import Title from '../Title';
 import { Nav } from './style';
 
-function Banner({ open, setOpen }) {
+function Banner({ open, setOpen, isShowSearch }) {
     const device = useMedia();
 
-    if (device === 'PC') return <Title />;
+    if (device === 'PC') return <Title isShowSearch={isShowSearch} />;
     return (
         <Nav>
             <MenuIcon style={MenuIconStyle} onClick={() => setOpen(!open)} />
-            <Title />
+            <Title isShowSearch={isShowSearch} />
         </Nav>
     );
 }
