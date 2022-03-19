@@ -22,6 +22,14 @@ class StudyController extends Controller
     public function show(Request $request)
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
+        try {
+            $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
+            $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
+        } catch(Exception $e) {
+            error_log("Error:".$e);
+            return array('status' => "fail");
+        }
+
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
@@ -56,7 +64,7 @@ class StudyController extends Controller
                 $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
                 if($value != null)
                 {
-                    array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
                 }
             }
             
@@ -76,13 +84,45 @@ class StudyController extends Controller
                 "statistic" => $statistics,
             ];
         }
-        return $studies;
+        
+        try {
+            // ------ This is workaround for filter feature ------
+            // Return data that match all the statistics and category filters from url query params 
+            return $studies->filter(function($studyItem) use($statFilter, $categoryFilter) {
+                // stat set
+                $statArr = $studyItem["statistic"];
+                $statArr = array_map(function($stat){
+                    return $stat["id"];
+                }, $statArr);
+                $isInStat = count($statFilter) == 0 ? true : (array_intersect($statFilter, $statArr) == $statFilter);
+
+                // category set
+                $categoryArr = $studyItem["category"];
+                $categoryArr = array_map(function($cat){
+                    return $cat["id"];
+                }, $categoryArr->toArray()); // Laravel object isn't array
+                $isInCat = count($categoryFilter) == 0 ? true : (array_intersect($categoryFilter, $categoryArr) == $categoryFilter);
+
+                return $isInStat && $isInCat;
+            });
+        } catch(Exception $e) {
+            error_log("Error:".$e);
+            return $studies;
+        }
     }
 
     public function index(Request $request)
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
-        //find some of studies craeted before target study
+        try {
+            $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
+            $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
+        } catch(Exception $e) {
+            error_log("Error:".$e);
+            return array('status' => "fail");
+        }
+
+        //find some of studies created before target study
         if(strcmp($request->from, "")==0)
         {
             $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
@@ -116,7 +156,7 @@ class StudyController extends Controller
                 $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
                 if($value != null)
                 {
-                    array_push($statistics, array("name" => $stat['name'], "value" => $value));
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
                 }
             }
             
@@ -136,8 +176,31 @@ class StudyController extends Controller
                 "statistic" => $statistics,
             ];
         }
-        return $studies;
-        
+
+        try {
+            // ------ This is workaround for filter feature ------
+            // Return data that match all the statistics and category filters from url query params 
+            return $studies->filter(function($studyItem) use($statFilter, $categoryFilter) {
+                // stat set
+                $statArr = $studyItem["statistic"];
+                $statArr = array_map(function($stat){
+                    return $stat["id"];
+                }, $statArr);
+                $isInStat = count($statFilter) == 0 ? true : (array_intersect($statFilter, $statArr) == $statFilter);
+
+                // category set
+                $categoryArr = $studyItem["category"];
+                $categoryArr = array_map(function($cat){
+                    return $cat["id"];
+                }, $categoryArr->toArray()); // Laravel object isn't array
+                $isInCat = count($categoryFilter) == 0 ? true : (array_intersect($categoryFilter, $categoryArr) == $categoryFilter);
+
+                return $isInStat && $isInCat;
+            });
+        } catch(Exception $e) {
+            error_log("Error:".$e);
+            return $studies;
+        } 
     }
     //新增一筆資料
     public function create(Request $request)
