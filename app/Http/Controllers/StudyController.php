@@ -33,7 +33,7 @@ class StudyController extends Controller
         //find some of studies craeted before target study
         if(strcmp($request->from, "")==0)
         {
-            $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
+            $studies = Study::select('id','title','content','year','major','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             }) ->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
@@ -50,7 +50,7 @@ class StudyController extends Controller
             }
             //find those studies craeted before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content', 'year','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
+            $studies = Study::select('id','title','content', 'year','major','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
@@ -73,6 +73,7 @@ class StudyController extends Controller
                 "title" => $studies[$i]->title,
                 "content" => $studies[$i]->content,
                 "year" => $studies[$i]->year,
+                "major" => $studies[$i]->major,
                 "timestamp" => $studies[$i]->created_at,
                 "confirm" => $studies[$i]->confirm,
                 //select specific columns in Category without showing study_id
@@ -125,7 +126,7 @@ class StudyController extends Controller
         //find some of studies created before target study
         if(strcmp($request->from, "")==0)
         {
-            $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
+            $studies = Study::select('id','title','content','year','major','created_at', 'confirm')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
@@ -142,7 +143,7 @@ class StudyController extends Controller
             }
             //find those studies craeted before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
+            $studies = Study::select('id','title','content','year', 'major','created_at', 'confirm')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
@@ -165,6 +166,7 @@ class StudyController extends Controller
                 "title" => $studies[$i]->title,
                 "content" => $studies[$i]->content,
                 "year" => $studies[$i]->year,
+                "major" => $studies[$i]->major,
                 "timestamp" => $studies[$i]->created_at,
                 "confirm" => $studies[$i]->confirm,
                 //select specific columns in Category without showing study_id
@@ -211,6 +213,7 @@ class StudyController extends Controller
         $study->title = $request->title;
         $study->content = $request->content;
         $study->year = $request->year;
+        $study->major = $request->major;
         $study->confirm = $request->confirm;
         $study->timestamps = true;
         
@@ -277,6 +280,7 @@ class StudyController extends Controller
         $study->title = $request->title;
         $study->content = $request->content;
         $study->year = $request->year;
+        $study->major = $request->major;
         $study->confirm = $request->confirm;
 
         //update statistic
