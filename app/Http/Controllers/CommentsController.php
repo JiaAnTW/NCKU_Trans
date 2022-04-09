@@ -24,8 +24,10 @@ class CommentsController extends Controller
             if(!$id) {
                 return null;
             }
-
-            $data = Comments::where('id', $id)-> firstOrFail();
+            
+            $data = Comments::where('id', $id) -> firstOrFail();
+            if($data -> confirm == "false")
+                return null;
             return $data;
         } catch(Exception $e){
             return null;
