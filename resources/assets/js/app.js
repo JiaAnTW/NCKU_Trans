@@ -17,6 +17,7 @@ import { Provider } from 'react-redux';
 import { store } from './model/store.js';
 
 import { ThemeProvider } from '@material-ui/styles';
+import { NavSearchProvider } from './components/NavLayout/NavSearchProvider';
 import { materialTheme } from './theme/global';
 import RouteAdmin from './RouteAuth.js';
 
@@ -31,47 +32,49 @@ function App() {
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <ThemeProvider theme={materialTheme}>
-                    <GlobalStyle />
-                    <Switch>
-                        <NavLayout>
-                            <Route exact path="/" component={Study} />
-                            <Route path="/major" component={Major} />
-                            <Route path="/post" component={Post} />
-                            <Route
-                                path="/admin/login"
-                                render={(props) => (
-                                    <Login setToken={updateToken} />
-                                )}
-                            />
-                            <RouteAdmin
-                                path="/admin/study"
-                                component={Study}
-                                token={token}
-                            />
-                            <RouteAdmin
-                                path="/admin/major"
-                                component={Major}
-                                token={token}
-                            />
-                            <RouteAdmin
-                                path="/admin/post"
-                                component={Post}
-                                token={token}
-                            />
-                            <RouteAdmin
-                                path="/admin/department"
-                                component={Department}
-                                token={token}
-                            />
-                            <RouteAdmin
-                                path="/admin/announcement"
-                                component={Announcement}
-                                token={token}
-                            />
-                        </NavLayout>
-                    </Switch>
-                </ThemeProvider>
+                <NavSearchProvider>
+                    <ThemeProvider theme={materialTheme}>
+                        <GlobalStyle />
+                        <Switch>
+                            <NavLayout>
+                                <Route exact path="/" component={Study} />
+                                <Route path="/major" component={Major} />
+                                <Route path="/post" component={Post} />
+                                <Route
+                                    path="/admin/login"
+                                    render={(props) => (
+                                        <Login setToken={updateToken} />
+                                    )}
+                                />
+                                <RouteAdmin
+                                    path="/admin/study"
+                                    component={Study}
+                                    token={token}
+                                />
+                                <RouteAdmin
+                                    path="/admin/major"
+                                    component={Major}
+                                    token={token}
+                                />
+                                <RouteAdmin
+                                    path="/admin/post"
+                                    component={Post}
+                                    token={token}
+                                />
+                                <RouteAdmin
+                                    path="/admin/department"
+                                    component={Department}
+                                    token={token}
+                                />
+                                <RouteAdmin
+                                    path="/admin/announcement"
+                                    component={Announcement}
+                                    token={token}
+                                />
+                            </NavLayout>
+                        </Switch>
+                    </ThemeProvider>
+                </NavSearchProvider>
             </Provider>
         </BrowserRouter>
     );
