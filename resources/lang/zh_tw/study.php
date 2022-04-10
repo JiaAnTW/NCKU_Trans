@@ -12,6 +12,6 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'essayTitle' =>  ':title - :schoolName | :websiteTitleShort',
+    'essayTitle' =>  ':title - :schoolName學業心得分享 | :websiteTitleShort',
 
 ];
