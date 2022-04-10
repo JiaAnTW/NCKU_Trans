@@ -17,8 +17,7 @@ const SearchBar = forwardRef(
             (e) => {
                 e.preventDefault();
                 if (!onSubmit) return;
-                if (!ref.current.value) return;
-                onSubmit(ref.current.value);
+                onSubmit(e.target.value);
             },
             [onSubmit]
         );
