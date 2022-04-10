@@ -5,10 +5,6 @@ import { initStudyAdmin, initStudy } from '~/model/middleware/study';
 import { fetchStudyStat, fetchStudyType } from '~/model/middleware/study';
 import { SetNavSearchContext } from '~/components/NavLayout/NavSearchProvider';
 
-const handleSearch = (value) => {
-    console.log(value);
-};
-
 function useInitData({ isAdmin, num }) {
     const dispatch = useDispatch();
     const isFinishRequest = useRequest();
