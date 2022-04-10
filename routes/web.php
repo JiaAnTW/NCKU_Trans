@@ -22,7 +22,6 @@ Route::get('/major', function (Request $request) {
     $title = null;
     // Try to find target id in DB
     $data = CommentsController::showById($request);
-    error_log($data);
     if($data){
         $title = trans('comment.essayTitle', array(
             'websiteTitleShort' => $websiteTitleShort,
