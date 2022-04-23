@@ -14,10 +14,10 @@ import { SET_STUDY_STATIS_OPTIONS } from '../action/post';
 
 const FAILED = 'fail';
 
-export const initStudy = ({ num = 0 }) => {
+export const initStudy = ({ num = 0, p }) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/get/study?num=${num}`)
+        fetch(`/api/get/study?num=${num}${p ? '&p=' + p : ''}`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -32,9 +32,9 @@ export const initStudy = ({ num = 0 }) => {
     };
 };
 
-export const fetchStudy = ({ id, num = 0 }) => {
+export const fetchStudy = ({ id, num = 0, p }) => {
     return (dispatch) => {
-        fetch(`/api/get/study?from=${id}&num=${num}`)
+        fetch(`/api/get/study?from=${id}&num=${num}${p ? '&p=' + p : ''}`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
