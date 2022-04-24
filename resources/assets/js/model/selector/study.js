@@ -67,6 +67,6 @@ export const studyIndexByIdSelector = workaround(
     (studyData) => {
         const urlParams = new URLSearchParams(window.location.search);
         const urlId = urlParams.get('id');
-        return studyData.findIndex(({ id }) => id === Number(urlId));
+        return studyData.findIndex(({ id }) => id === urlId);
     }
 );
