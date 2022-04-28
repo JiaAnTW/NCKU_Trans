@@ -319,4 +319,67 @@ class StudyController extends Controller
 
         return array('status' => "success");
     }
+
+    public function result(Request $request)
+    {
+
+        $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
+        try {
+            $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
+            $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
+        } catch(Exception $e) {
+            error_log("Error:".$e);
+            return array('status' => "fail");
+        }
+
+
+        $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
+            $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
+        }) ->orderBy('created_at', 'desc')->get();
+
+        $studies = $this->join_statistic_study($studies);
+
+        $studies = $this->filter_study_with_category_stat($studies, $statFilter, $categoryFilter);
+        
+        $stats = StatisticManage::all();
+        $stats_result = array();
+
+        foreach($stats as $stat)
+        { 
+            $stats_result[$stat["name"]] = array("id" => $stat["id"], "list" => array());
+        }
+
+        //store each statistic in list
+        foreach($studies as $study){
+            foreach($study["statistic"] as $stat)
+            {
+                if( is_numeric($stat["value"]))
+                {
+                    array_push($stats_result[$stat["name"]]["list"], $stat["value"]);
+                }
+            }
+        }
+
+        //calculate average and min for each statistic
+        $stats_average_min = array();
+        foreach($stats_result as $key=>$value){
+            if(count($value["list"]) == 0)
+            {
+                array_push($stats_average_min, array("id" => $value["id"],
+                                                    "name" => $key,
+                                                    "average" => "",
+                                                    "min" => "",
+                                                    "count" => 0));
+            }
+            else
+            {
+                array_push($stats_average_min, array("id" => $value["id"],
+                                                    "name" => $key,
+                                                    "average" => round(array_sum($value["list"])/count($value["list"]),2),
+                                                    "min" => min($value["list"]),
+                                                    "count" => count($value["list"])));
+            }
+        }
+        return $stats_average_min;
+    }
 }
