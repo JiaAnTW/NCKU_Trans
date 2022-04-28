@@ -35,7 +35,9 @@ function Statistic() {
                         <StyledGrid>
                             {['資料類別', '平均數字', '最小數字'].map(
                                 (item, idx) => (
-                                    <StyledTitle key={idx}>{item}</StyledTitle>
+                                    <StyledTitle key={idx} pos={idx}>
+                                        {item}
+                                    </StyledTitle>
                                 )
                             )}
                             {fakeData.map((item, idx) => (

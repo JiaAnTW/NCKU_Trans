@@ -6,7 +6,7 @@ function StatisticItem({ data }) {
         <>
             <Type>{data.name}</Type>
             <Value>{data.avg}</Value>
-            <Value>{data.min}</Value>
+            <Value last={true}>{data.min}</Value>
         </>
     );
 }

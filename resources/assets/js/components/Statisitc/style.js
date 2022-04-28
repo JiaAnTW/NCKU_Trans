@@ -8,8 +8,10 @@ export const StatisticSection = styled.section`
 export const StatisticContainer = styled.div`
     display: flex;
     margin-left: 15px;
+    padding-bottom: 10px;
     width: 315px;
     border: rgba(0, 0, 0, 0.13) 1px solid;
+    border-radius: 5px;
 `;
 
 export const StyledGrid = styled.div`
@@ -20,5 +22,12 @@ export const StyledGrid = styled.div`
 `;
 
 export const StyledTitle = styled.div`
-    margin: 12px 0px 10px;
+    margin-top: 12px;
+    padding: 0px 22px 3px;
+    ${({ pos }) =>
+        pos != 2
+            ? '\
+        border-right: rgba(0, 0, 0, 0.13) 1px solid;\
+    '
+            : ''}
 `;
