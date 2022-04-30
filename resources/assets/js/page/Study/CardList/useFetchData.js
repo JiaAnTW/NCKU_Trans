@@ -13,6 +13,7 @@ function useFetchData({ isAdmin, overscanStopIndex, num }) {
 
     useEffect(() => {
         if (overscanStopIndex === studyData.length - 2) {
+            if (studyData.length <= 2) return;
             if (isAdmin) {
                 dispatch(
                     fetchStudyAdmin({
