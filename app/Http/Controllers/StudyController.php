@@ -41,6 +41,10 @@ class StudyController extends Controller
         try {
             $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
             $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
+            if(count($statFilter) || count($categoryFilter)) {
+                $idSet = $this->getIdSetByFilter($request);
+                return $this->showByIdSet($request, $idSet);
+            }
         } catch(Exception $e) {
             error_log("Error:".$e);
             return array('status' => "fail");
@@ -125,6 +129,105 @@ class StudyController extends Controller
             error_log("Error:".$e);
             return $studies;
         }
+    }
+
+    public function showByIdSet(Request $request, $idArr)
+    {
+        $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
+
+        //find some of studies craeted before target study
+        if(strcmp($request->from, "")==0)
+        {
+            $studies = Study::select('id','title','content','year','created_at', 'confirm')-> whereIn('id', $idArr)->where('confirm','true')-> where(function ($query) use($p) {
+                $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
+            }) ->orderBy('created_at', 'desc')->take($request->num)->get();
+        }else
+        {
+            //find the created time of target study 
+            try
+            {
+                $study = Study::findOrFail($request->from);
+            }
+            //query not found
+            catch(Exception $e){
+                error_log("Error:".$e);
+                return array('status' => "fail");
+            }
+            //find those studies craeted before target study
+            $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
+            $studies = Study::select('id','title','content', 'year','created_at', 'confirm')-> whereIn('id', $idArr)->where('confirm','true')-> where(function ($query) use($p) {
+                $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
+            })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
+        }
+        
+        for($i = 0; $i < count($studies); $i++) 
+        {
+            //get statistic 
+            $stats = StatisticManage::all();
+            $statistics = array();
+            foreach($stats as $stat){
+                $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
+                if($value != null)
+                {
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
+                }
+            }
+
+            $studies[$i] = [
+                "id" => $studies[$i]->id,
+                "title" => $studies[$i]->title,
+                "content" => $studies[$i]->content,
+                "year" => $studies[$i]->year,
+                "timestamp" => $studies[$i]->created_at,
+                "confirm" => $studies[$i]->confirm,
+                //select specific columns in Category without showing study_id
+                "category" => $studies[$i]->categories->map( 
+                    function($category){
+                        return CategoryManage::find($category["id"]);
+                    }
+                ),
+                "statistic" => $statistics,
+            ];
+        }
+        return $studies;
+    }
+
+    public function getIdSetByFilter(Request $request) {
+        $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
+        $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
+        $catRes = DB::table('category')->select('study_id')->where(function ($query) use ($categoryFilter){    
+            foreach ($categoryFilter as $catId) {
+                $query->where('id', '=', $catId);  
+            }
+        })-> groupBy('study_id') ->get()->map( 
+            function($study){
+                return $study->study_id;
+            }
+        )->toArray();
+
+        $statRes = [];
+        foreach ($statFilter as $stat) {
+            if(count($statRes) == 0) {
+                $statRes = DB::table($stat)->select('study_uuid')->get()->map( 
+                    function($study){
+                        return $study->study_uuid;
+                    }
+                );
+                continue;
+            }
+            $statRes = array_intersect($statRes->toArray(), DB::table($stat)->select('study_uuid')->get()->map( 
+                function($study){
+                    return $study->study_uuid;
+                }
+            )->toArray());
+        }
+
+        if(count($categoryFilter)=== 0)
+            return $statRes;
+        if(count($statFilter)=== 0)
+            return $catRes;
+        
+        return array_intersect($catRes, $statRes);
     }
 
     public function index(Request $request)
