@@ -7,17 +7,31 @@ import {
     STOP_EDIT_TAG,
     UPDATE_STUDY,
     UPDATE_STUDY_STAT,
+    SET_STUDY_FILTER,
 } from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
 import { SET_STUDY_STATIS_OPTIONS } from '../action/post';
 
+import { filterParamsReducer } from '../selector/study';
+
 const FAILED = 'fail';
 
-export const initStudy = ({ num = 0, p }) => {
+export const initStudy = ({ id, num = 0, p, category, statInfo, year }) => {
     return (dispatch) => {
+        let url = `/api/get/study?from=${id ? id : ''}&num=${num}`;
+        url += p ? `&p=${p}` : '';
+        url +=
+            category && category.length > 0
+                ? `&categoryFilter=${category.join(',')}`
+                : '';
+        url +=
+            statInfo && statInfo.length > 0
+                ? `&statFilter=${statInfo.join(',')}`
+                : '';
+        url += year && year.length > 0 ? `&year=${year.join(',')}` : '';
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/get/study?num=${num}${p ? '&p=' + p : ''}`)
+        fetch(url)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -115,6 +129,26 @@ export const createStudyTypeOrStat = (option) => {
                 dispatch({ type: FINISH_REQUEST });
             })
             .catch((e) => console.error('錯誤: ', e));
+    };
+};
+
+export const setStudyTypeOrStat = ({ payload }) => {
+    return (dispatch, getState) => {
+        const { tagType, tagId, checked } = payload;
+        const { study } = getState();
+        const { filter } = study;
+
+        const filterNext = filterParamsReducer(filter);
+        if (checked) {
+            filterNext[tagType].push(tagId);
+        } else {
+            const index = filterNext[tagType].findIndex((id) => id === tagId);
+            filterNext[tagType].splice(index);
+        }
+
+        const { category, statInfo, year } = filterNext;
+        dispatch({ type: SET_STUDY_FILTER, payload });
+        dispatch(initStudy({ num: 30, category, statInfo, year }));
     };
 };
 

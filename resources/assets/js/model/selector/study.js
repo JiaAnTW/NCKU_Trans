@@ -36,6 +36,18 @@ export const selectedFilterSelector = createSelector(studySelector, (state) => {
     return selected;
 });
 
+export const filterParamsReducer = (filters) => {
+    const params = {};
+    for (const type in filters) {
+        const typeData = filters[type];
+        if (!Array.isArray(typeData)) continue;
+        params[type] = typeData
+            .filter(({ selected }) => selected)
+            .map(({ id }) => id);
+    }
+    return params;
+};
+
 export const studyDataSelector = createSelector(
     studySelector,
     (state) => state.data
