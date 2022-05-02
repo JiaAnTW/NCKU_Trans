@@ -105,30 +105,7 @@ class StudyController extends Controller
             ];
         }
         
-        try {
-            // ------ This is workaround for filter feature ------
-            // Return data that match all the statistics and category filters from url query params 
-            return $studies->filter(function($studyItem) use($statFilter, $categoryFilter) {
-                // stat set
-                $statArr = $studyItem["statistic"];
-                $statArr = array_map(function($stat){
-                    return $stat["id"];
-                }, $statArr);
-                $isInStat = count($statFilter) == 0 ? true : (array_intersect($statFilter, $statArr) == $statFilter);
-
-                // category set
-                $categoryArr = $studyItem["category"];
-                $categoryArr = array_map(function($cat){
-                    return $cat["id"];
-                }, $categoryArr->toArray()); // Laravel object isn't array
-                $isInCat = count($categoryFilter) == 0 ? true : (array_intersect($categoryFilter, $categoryArr) == $categoryFilter);
-
-                return $isInStat && $isInCat;
-            });
-        } catch(Exception $e) {
-            error_log("Error:".$e);
-            return $studies;
-        }
+        return $studies;
     }
 
     public function showByIdSet(Request $request, $idArr)
@@ -295,31 +272,7 @@ class StudyController extends Controller
                 "statistic" => $statistics,
             ];
         }
-
-        try {
-            // ------ This is workaround for filter feature ------
-            // Return data that match all the statistics and category filters from url query params 
-            return $studies->filter(function($studyItem) use($statFilter, $categoryFilter) {
-                // stat set
-                $statArr = $studyItem["statistic"];
-                $statArr = array_map(function($stat){
-                    return $stat["id"];
-                }, $statArr);
-                $isInStat = count($statFilter) == 0 ? true : (array_intersect($statFilter, $statArr) == $statFilter);
-
-                // category set
-                $categoryArr = $studyItem["category"];
-                $categoryArr = array_map(function($cat){
-                    return $cat["id"];
-                }, $categoryArr->toArray()); // Laravel object isn't array
-                $isInCat = count($categoryFilter) == 0 ? true : (array_intersect($categoryFilter, $categoryArr) == $categoryFilter);
-
-                return $isInStat && $isInCat;
-            });
-        } catch(Exception $e) {
-            error_log("Error:".$e);
-            return $studies;
-        } 
+        return $studies;
     }
     //新增一筆資料
     public function create(Request $request)
