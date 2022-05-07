@@ -50,7 +50,7 @@ class StudyController extends Controller
             return array('status' => "fail");
         }
 
-        //find some of studies craeted before target study
+        //find some of studies created before target study
         if(strcmp($request->from, "")==0)
         {
             $studies = Study::select('id','title','content','year','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
@@ -68,7 +68,7 @@ class StudyController extends Controller
                 error_log("Error:".$e);
                 return array('status' => "fail");
             }
-            //find those studies craeted before target study
+            //find those studies created before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
             $studies = Study::select('id','title','content', 'year','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
@@ -112,7 +112,7 @@ class StudyController extends Controller
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
 
-        //find some of studies craeted before target study
+        //find some of studies created before target study
         if(strcmp($request->from, "")==0)
         {
             $studies = Study::select('id','title','content','year','created_at', 'confirm')-> whereIn('id', $idArr)-> where(function ($query) use($p) {
@@ -132,7 +132,7 @@ class StudyController extends Controller
                 error_log("Error:".$e);
                 return array('status' => "fail");
             }
-            //find those studies craeted before target study
+            //find those studies created before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
             $studies = Study::select('id','title','content', 'year','created_at', 'confirm')-> whereIn('id', $idArr)-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
@@ -243,7 +243,7 @@ class StudyController extends Controller
                 error_log("Error:".$e);
                 return array('status' => "fail");
             }
-            //find those studies craeted before target study
+            //find those studies created before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
             $studies = Study::select('id','title','content','year','created_at', 'confirm')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
