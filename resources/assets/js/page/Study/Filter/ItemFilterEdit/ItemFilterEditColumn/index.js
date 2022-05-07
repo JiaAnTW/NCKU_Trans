@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import map from 'lodash/map';
 import { START_EDIT_TAG } from '~/model/action/study';
 import { AddItemButton, AddItemIcon } from '../style';
+import { setStudyTypeOrStat } from '~/model/middleware/study';
 
 import {
     FilterEditColumnContainer,

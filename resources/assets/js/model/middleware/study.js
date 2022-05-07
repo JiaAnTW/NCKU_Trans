@@ -47,8 +47,23 @@ export const initStudy = ({ id, num = 0, p, category, statInfo, year }) => {
 };
 
 export const fetchStudy = ({ id, num = 0, p }) => {
-    return (dispatch) => {
-        fetch(`/api/get/study?from=${id}&num=${num}${p ? '&p=' + p : ''}`)
+    return (dispatch, getState) => {
+        const { study } = getState();
+        const { filter } = study;
+        const { category, statInfo, year } = filterParamsReducer(filter);
+
+        let url = `/api/get/study?from=${id ? id : ''}&num=${num}`;
+        url += p ? `&p=${p}` : '';
+        url +=
+            category && category.length > 0
+                ? `&categoryFilter=${category.join(',')}`
+                : '';
+        url +=
+            statInfo && statInfo.length > 0
+                ? `&statFilter=${statInfo.join(',')}`
+                : '';
+        url += year && year.length > 0 ? `&year=${year.join(',')}` : '';
+        fetch(url)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -235,10 +250,29 @@ const getFilterOpsUrl = (action, type) => {
     return `/api/${action}/${typeName}`;
 };
 
-export const initStudyAdmin = ({ num = 0 }) => {
+export const initStudyAdmin = ({
+    id,
+    num = 0,
+    p,
+    category,
+    statInfo,
+    year,
+}) => {
+    let url = `/api/get/study/all?from=${id ? id : ''}&num=${num}`;
+    url += p ? `&p=${p}` : '';
+    url +=
+        category && category.length > 0
+            ? `&categoryFilter=${category.join(',')}`
+            : '';
+    url +=
+        statInfo && statInfo.length > 0
+            ? `&statFilter=${statInfo.join(',')}`
+            : '';
+    url += year && year.length > 0 ? `&year=${year.join(',')}` : '';
+
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch(`/api/get/study/all?num=${num}`, {
+        fetch(url, {
             method: 'GET',
             headers: new Headers({
                 Authorization: 'Bearer ' + Cookies.get('adminToken'),
@@ -258,9 +292,25 @@ export const initStudyAdmin = ({ num = 0 }) => {
     };
 };
 
-export const fetchStudyAdmin = ({ id, num = 0 }) => {
-    return (dispatch) => {
-        fetch(`/api/get/study/all?from=${id}&num=${num}`, {
+export const fetchStudyAdmin = ({ id, num = 0, p }) => {
+    return (dispatch, getState) => {
+        const { study } = getState();
+        const { filter } = study;
+        const { category, statInfo, year } = filterParamsReducer(filter);
+
+        let url = `/api/get/study/all?from${id ? id : ''}&num=${num}`;
+        url += p ? `&p=${p}` : '';
+        url +=
+            category && category.length > 0
+                ? `&categoryFilter=${category.join(',')}`
+                : '';
+        url +=
+            statInfo && statInfo.length > 0
+                ? `&statFilter=${statInfo.join(',')}`
+                : '';
+        url += year && year.length > 0 ? `&year=${year.join(',')}` : '';
+
+        fetch(url, {
             method: 'GET',
             headers: new Headers({
                 Authorization: 'Bearer ' + Cookies.get('adminToken'),

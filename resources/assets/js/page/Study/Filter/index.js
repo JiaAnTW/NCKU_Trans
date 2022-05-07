@@ -13,6 +13,7 @@ import {
     filterStatusSelector,
 } from '~/model/selector/study';
 import { SET_STUDY_FILTER } from '~/model/action/study';
+import { setStudyTypeOrStat } from '~/model/middleware/study';
 import useFilterStatusContext from '~/utils/redux/components/study/useFilterStatusContext';
 
 function Filter({ isAdmin }) {
@@ -27,11 +28,12 @@ function Filter({ isAdmin }) {
         isManaging ? startManageFilter() : endManageFilter();
     };
 
-    const unselectFilter = (tag) => {
-        dispatch({
-            type: SET_STUDY_FILTER,
-            payload: { tagType: tag.tagType, tagId: tag.id, checked: false },
-        });
+    const unselectFilter = ({ tagType, id }) => {
+        dispatch(
+            setStudyTypeOrStat({
+                payload: { tagType, tagId: id, checked: false },
+            })
+        );
     };
 
     return (
