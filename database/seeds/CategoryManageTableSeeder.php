@@ -18,7 +18,7 @@ class CategoryManageTableSeeder extends Seeder
         {
             $controller = new CategoryManageController;
             $request = new Request([
-                "name" => "QA",
+                "name" => "學校行政",
             ]);
             $request->setMethod('POST');
             $controller->create($request);
@@ -26,9 +26,18 @@ class CategoryManageTableSeeder extends Seeder
                 "name" => "出國交換",
             ]);
             $request->setMethod('POST');
+            $request = new Request([
+                "name" => "學程",
+            ]);
+            $request->setMethod('POST');
             $controller->create($request);
             $request = new Request([
                 "name" => "實習",
+            ]);
+            $request->setMethod('POST');
+            $controller->create($request);
+            $request = new Request([
+                "name" => "獎學金",
             ]);
             $request->setMethod('POST');
             $controller->create($request);
