@@ -27,7 +27,7 @@ export default (function () {
                     },
                     2: {
                         value: '中文系',
-                        keyName: 'maj',
+                        keyName: 'major',
                         type: 'select',
                         wording: '原主修科系',
                         options: [],

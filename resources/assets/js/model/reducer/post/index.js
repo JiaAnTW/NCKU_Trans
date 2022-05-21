@@ -108,7 +108,7 @@ const postReducer = (state = initState, action) => {
             const maj = {
                 ...result(
                     stateNext.form['study'],
-                    studyTable.keysTable['maj'][0]
+                    studyTable.keysTable['major'][0]
                 ),
                 options,
             };
@@ -117,7 +117,7 @@ const postReducer = (state = initState, action) => {
                 commentTable.keysTable['out_maj'][0],
                 out_maj
             );
-            set(state.form['study'], studyTable.keysTable['maj'][0], maj);
+            set(state.form['study'], studyTable.keysTable['major'][0], maj);
             return stateNext;
         }
         case SET_POST_FORM: {

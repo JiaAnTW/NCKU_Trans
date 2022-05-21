@@ -43,7 +43,7 @@ export const postDataList = {
          * - data will be pack in base layer
          * - must fixed input can't be dynamic input
          */
-        settingKeys: ['title', 'content', 'category', 'maj', 'year'],
+        settingKeys: ['title', 'content', 'category', 'major', 'year'],
 
         /** Statistic
          * - statistic decided by which obj has keyName attribute
