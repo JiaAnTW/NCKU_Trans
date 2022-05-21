@@ -9,19 +9,18 @@ import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
 import wording from '~/wording/general.json';
 
-/* const handleHeaderChange = (itemData) => {
-  changeHeaderInfo(
-      trans(wording['header']['title'], {
-          schoolName: wording['schoolName'],
-          year: itemData['year'],
-          in_maj: itemData['in_maj'],
-          category: itemData['category'],
-          websiteTitleShort: wording['websiteTitleShort'],
-      }),
-      itemData['comment']
-  );
+const handleHeaderChange = (itemData) => {
+    const strMap = {
+        schoolName: wording['schoolName'],
+        title: itemData['title'],
+        websiteTitleShort: wording['websiteTitleShort'],
+    };
+    changeHeaderInfo(
+        trans(wording['header']['studyTitle'], strMap),
+        itemData['content']
+    );
 };
- */
+
 function useCommentFlow({ studyData }) {
     const [, setIsModalOpen] = useModalOpen();
     const [{ index }, setModalContent] = useModalContext();
@@ -45,7 +44,7 @@ function useCommentFlow({ studyData }) {
                 setModalContent(
                     transIntoModalData('study', itemData, index - 1)
                 );
-                // handleHeaderChange(itemData);
+                handleHeaderChange(itemData);
                 history.push(`?id=${itemData['id']}`);
             });
         } else {
@@ -60,7 +59,7 @@ function useCommentFlow({ studyData }) {
                 setModalContent(
                     transIntoModalData('study', itemData, index + 1)
                 );
-                // handleHeaderChange(itemData);
+                handleHeaderChange(itemData);
                 history.push(`?id=${itemData['id']}`);
             });
         } else {
