@@ -148,35 +148,8 @@ class StudyController extends Controller
             $studies = $confirm ? $studies ->where('confirm', $confirm)->get() : $studies->get();
         }
 
-        for($i = 0; $i < count($studies); $i++) 
-        {
-            //get statistic 
-            $stats = StatisticManage::all();
-            $statistics = array();
-            foreach($stats as $stat){
-                $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
-                if($value != null)
-                {
-                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
-                }
-            }
-
-            $studies[$i] = [
-                "id" => $studies[$i]->id,
-                "title" => $studies[$i]->title,
-                "content" => $studies[$i]->content,
-                "year" => $studies[$i]->year,
-                "timestamp" => $studies[$i]->created_at,
-                "confirm" => $studies[$i]->confirm,
-                //select specific columns in Category without showing study_id
-                "category" => $studies[$i]->categories->map( 
-                    function($category){
-                        return CategoryManage::find($category["id"]);
-                    }
-                ),
-                "statistic" => $statistics,
-            ];
-        }
+        $studies = $this->join_statistic_study($studies);
+        
         return $studies;
     }
 
