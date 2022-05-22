@@ -8,8 +8,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ItemFilterColumnTitle from './title';
 
 import { ItemFilterColContainer, useStyles } from './style';
-import { SET_STUDY_FILTER } from '~/model/action/study';
 import { selectedFilterSelector } from '~/model/selector/study';
+import { setStudyTypeOrStat } from '~/model/middleware/study';
 
 function ItemFilterColumn({ optionsArr }) {
     const classes = useStyles();
@@ -17,10 +17,11 @@ function ItemFilterColumn({ optionsArr }) {
     const selectedFilter = useSelector(selectedFilterSelector);
 
     const onChangeCheckbox = (tagType, tagId, checked) => {
-        dispatch({
-            type: SET_STUDY_FILTER,
-            payload: { tagType, tagId, checked },
-        });
+        dispatch(
+            setStudyTypeOrStat({
+                payload: { tagType, tagId, checked },
+            })
+        );
     };
 
     const isSelected = (id) => {

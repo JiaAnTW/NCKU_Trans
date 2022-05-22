@@ -89,7 +89,7 @@ test('[Study] Should change 1th page value without changing schema', () => {
     let nextState = postReducer(initState, {
         type: SET_POST_FORM,
         payload: {
-            keyName: 'maj',
+            keyName: 'major',
             value: '軟體測試系',
             elementArea: 0,
             elementIndex: 2,
@@ -99,14 +99,17 @@ test('[Study] Should change 1th page value without changing schema', () => {
 
     const studyTable = getTable(initState, 'study');
     // Should Change value correctly
-    const scoreValue = result(studyForm, studyTable.keysTable['maj'][0]).value;
+    const scoreValue = result(
+        studyForm,
+        studyTable.keysTable['major'][0]
+    ).value;
     expect(scoreValue).toBe('軟體測試系');
 
     // Should have same schema after set post
     nextState = postReducer(nextState, {
         type: SET_POST_FORM,
         payload: {
-            keyName: 'maj',
+            keyName: 'major',
             value: '',
             elementArea: 0,
             elementIndex: 1,
