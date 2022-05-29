@@ -3,8 +3,9 @@ import Badge from '~/components/atom/Badge';
 import { color, colorMap } from '~/theme/global';
 
 export const Card = styled.div`
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     border-left: 0;
+    box-sizing: border-box;
     background-color: ${({ isConfirmed }) =>
         isConfirmed ? color.white : color.lightYellow};
 

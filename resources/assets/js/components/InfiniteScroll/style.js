@@ -4,8 +4,7 @@ import { ScrollBarStyle } from '~/theme/global';
 
 export const ListContainer = styled(FixedSizeList)`
     height: fit-content !important;
-    max-height: 100%;
-
+    overflow-x: hidden !important;
     @media (max-width: 576px) {
         display: block;
         margin: 0px 10px;

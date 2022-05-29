@@ -13,7 +13,7 @@ function InfiniteScroll({ data, setOverscanStopIndex, ListItemComponent }) {
         <ListContainer
             height={650}
             itemCount={data.length}
-            itemSize={154}
+            itemSize={160}
             width={600}
             onItemsRendered={onItemsRendered}
             itemData={data}

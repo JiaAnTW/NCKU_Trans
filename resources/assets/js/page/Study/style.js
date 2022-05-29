@@ -5,9 +5,7 @@ export const Container = styled.div`
     grid-template-columns: auto;
     overflow-y: hidden;
 
-    @media (min-width: 576px) {
-        grid-template-rows: 50px 100px auto;
-    }
+    grid-template-rows: 50px auto;
 
     @media (max-width: 576px) {
         grid-template-rows: 100px auto;

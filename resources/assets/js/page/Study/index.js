@@ -13,16 +13,16 @@ export default function Study({ isAdmin }) {
     const { handleCloseReader } = useCloseReader();
 
     return (
-        <LoadingFrame isFinishRequest={isFinishRequest}>
+        <>
             <Container>
                 <Filter isAdmin={isAdmin} />
-                <CardList isAdmin={isAdmin} />
+                <CardList isAdmin={isAdmin} isFinishRequest />
             </Container>
             <ReaderModal
                 isAdmin={isAdmin}
                 readerComponent={StudyReader}
                 onClose={handleCloseReader}
             />
-        </LoadingFrame>
+        </>
     );
 }
