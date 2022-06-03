@@ -29,7 +29,8 @@ export const Container = styled.div`
     }
 
     @media (max-width: 576px) {
-        padding: 20px 10px;
+        padding: 10px 10px;
+        padding-bottom: 0;
     }
 
     ::-webkit-scrollbar {

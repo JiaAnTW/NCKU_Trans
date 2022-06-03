@@ -25,7 +25,7 @@ export const Text = styled.div``;
 export const SwitchButton = styled(Button)`
     display: flex;
     width: 128px;
-    height: 56px;
+    height: 36px;
     align-items: center;
     justify-content: center;
     background-color: ${(props) =>
@@ -35,8 +35,8 @@ export const SwitchButton = styled(Button)`
     border-radius: 50px;
     border: 3px solid ${color.yellow};
     margin: 0 25px;
-    @media (max-width: 368px) {
-        width: auto;
+    @media (max-width: 576px) {
+        width: 170px;
         height: auto;
         padding: 10px;
         margin: 0 10px;

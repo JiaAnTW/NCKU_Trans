@@ -7,7 +7,7 @@ export const CARD_HEIGHT_MOBILE = 145;
 
 export const Card = styled.div`
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
     padding: 5px;
     background-color: ${(props) =>
         props.dark ? color.lightYellow : color.white};
