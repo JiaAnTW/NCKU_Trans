@@ -37,8 +37,12 @@ function App() {
                         <GlobalStyle />
                         <Switch>
                             <NavLayout>
-                                <Route exact path="/" component={Study} />
-                                <Route path="/major" component={Major} />
+                                <Route
+                                    exact
+                                    path={['/', '/major:id?']}
+                                    component={Major}
+                                />
+                                <Route path="/study" component={Study} />
                                 <Route path="/post" component={Post} />
                                 <Route
                                     path="/admin/login"
