@@ -64,6 +64,7 @@ function StudyCard({ data, index, style }) {
                 </CardText>
             </CardContent>
             <TagSpanList>
+                <TagSpan>{`#${itemData['year']}`}</TagSpan>
                 {itemData['statistic'].map((itemObj, index) => (
                     <TagSpan key={index}>{'#' + itemObj['name']}</TagSpan>
                 ))}
