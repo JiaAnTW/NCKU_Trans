@@ -18,6 +18,9 @@ export const Card = styled.div`
     box-sizing: border-box;
 
     @media (max-width: 576px) {
+        border-left: none;
+        border-right: none;
+        border-top: none;
         width: 100%;
         margin: 0;
         border-radius: 0;

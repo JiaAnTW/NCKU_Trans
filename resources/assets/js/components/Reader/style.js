@@ -15,7 +15,7 @@ export const ReaderLayout = styled.div`
         width: 360px;
         height: 500px;
         height: 75vh;
-        min-width: 80vw;
+        min-width: 95vw;
     }
 `;
 
@@ -30,7 +30,7 @@ export const ReaderText = styled.div`
     line-height: 2.8rem;
     letter-spacing: 2.5px;
     overflow-y: auto;
-    line-break: auto;
+    line-break: anywhere;
     text-align: justify;
     white-space: pre-line;
     font-size: 17px;

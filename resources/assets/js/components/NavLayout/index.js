@@ -6,12 +6,12 @@ import { Container } from './style';
 import Banner from './Banner';
 import { useLocation } from 'react-router-dom';
 
-const switchOfSearchBar = new Set('/');
+const switchOfSearchBar = ['/study'];
 
 function NavLayout({ children }) {
     const [open, setOpen] = useState(true);
     const location = useLocation();
-
+    const isShowSearch = switchOfSearchBar.includes(location.pathname);
     return (
         <div style={{ display: 'flex' }}>
             <SideBar
@@ -20,9 +20,9 @@ function NavLayout({ children }) {
                 onOpen={() => setOpen(true)}
             />
             <Notification />
-            <Container isShowSearch={switchOfSearchBar.has(location.pathname)}>
+            <Container isShowSearch={isShowSearch}>
                 <Banner
-                    isShowSearch={switchOfSearchBar.has(location.pathname)}
+                    isShowSearch={isShowSearch}
                     open={open}
                     setOpen={setOpen}
                 />

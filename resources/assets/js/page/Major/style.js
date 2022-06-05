@@ -11,7 +11,7 @@ export const Main = styled.main`
     }
 
     @media (max-width: 576px) {
-        grid-template-rows: 100px auto;
+        grid-template-rows: 90px auto;
         margin: 0px -10px;
     }
 `;

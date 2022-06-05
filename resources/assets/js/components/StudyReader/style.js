@@ -13,8 +13,8 @@ export const StudyReaderLayout = styled.div`
 
     @media (max-width: 992px) {
         width: 360px;
-        height: 75vh;
-        min-width: 80vw;
+        height: 85vh;
+        min-width: 95vw;
     }
 `;
 export const ArrowIcon = styled(NavigateBeforeIcon)`
@@ -36,7 +36,7 @@ export const StudyReaderContext = styled.div`
     line-height: 2.8rem;
     letter-spacing: 2.5px;
     overflow-y: auto;
-    line-break: auto;
+    line-break: anywhere;
     white-space: pre-line;
 
     ::-webkit-scrollbar {

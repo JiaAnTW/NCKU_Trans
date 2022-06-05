@@ -8,7 +8,7 @@ export const H1 = styled.h1`
     width: 100%;
 
     @media (max-width: 992px) {
-        padding-left: 25px;
+        padding-left: 20px;
         width: auto;
         align-items: center;
     }
@@ -21,7 +21,7 @@ export const H2 = styled.h2`
     width: 100%;
 
     @media (max-width: 992px) {
-        padding-left: 25px;
+        padding-left: 20px;
         width: auto;
         align-items: center;
     }

@@ -65,7 +65,7 @@ function useSubmitTransData(form, type) {
 
         const statistic = [];
         map(pickData, (pack) => {
-            tags.push({
+            statistic.push({
                 name: pack,
                 value: paramPackage[pack],
             });
