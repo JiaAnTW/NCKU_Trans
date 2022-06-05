@@ -52,16 +52,13 @@ Route::get('/major', function (Request $request) {
     return view('index', compact('title', 'description'));
 });
 
-Route::get('/{any}', function (Request $request) {
+Route::get('/study', function (Request $request) {
     $schoolName = trans('comment.schoolName');
-    $websiteTitleShort = trans('comment.websiteTitleShort'); 
-    $title = trans('comment.websiteTitle', [
-        'websiteTitleShort' => $websiteTitleShort,
-        'schoolName' => $schoolName,
-    ]);
-    $description = trans('comment.description');
+    $websiteTitleShort = trans('comment.websiteTitleShort');
 
-    // For single essay url
+    $description = null;
+    $title = null;
+    // Try to find target id in DB
     $data = StudyController::showById($request);
     if($data){
         $title = trans('study.essayTitle', array(
@@ -71,6 +68,43 @@ Route::get('/{any}', function (Request $request) {
         ));
         $description = str_replace("<br>","", $data['content']); 
     }
+    try {
+        if(mb_strlen($description) > 85) {
+            $description = mb_substr($description, 0, 85) . "......";
+        }
+    } catch(Exception $e){
+        error_log($e);
+    }
+
+    // If not found
+    if(!$title) $title = trans('comment.websiteTitle', [
+        'websiteTitleShort' => $websiteTitleShort,
+        'schoolName' => $schoolName,
+    ]);
+
+    if(!$description) $description = trans('comment.description');
+    
+    // Preprocess
+    try {
+        if(mb_strlen($description) > 85) {
+            $description = mb_substr($description, 0, 85) . "......";
+        }
+    } catch(Exception $e){
+        error_log($e);
+    }
+
+    return view('index', compact('title', 'description'));
+});
+
+Route::get('/{any}', function (Request $request) {
+    $schoolName = trans('comment.schoolName');
+    $websiteTitleShort = trans('comment.websiteTitleShort'); 
+    $title = trans('comment.websiteTitle', [
+        'websiteTitleShort' => $websiteTitleShort,
+        'schoolName' => $schoolName,
+    ]);
+    $description = trans('comment.description');
+
     try {
         if(mb_strlen($description) > 85) {
             $description = mb_substr($description, 0, 85) . "......";

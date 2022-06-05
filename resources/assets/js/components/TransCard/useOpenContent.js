@@ -25,7 +25,7 @@ export default function useOpenContent(itemData, index) {
             trans(wording['header']['title'], strMap),
             itemData['comment']
         );
-        history.push(`?id=${itemData.id}`);
+        history.push(`/major?id=${itemData.id}`);
         setIsModalOpen(true);
     }, [itemData, setIsModalOpen, index]);
 
