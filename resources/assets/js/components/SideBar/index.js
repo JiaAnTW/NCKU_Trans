@@ -15,6 +15,13 @@ import useSideBarClick from './useSideBarClick';
 
 const drawerWidth = 110;
 
+function checkIsActiveUrl(target, condition) {
+    if (Array.isArray(condition)) {
+        return condition.includes(target);
+    }
+    return target === condition;
+}
+
 export default function SideBar({ open, onClose, onOpen }) {
     const classes = useStyle();
     const device = useMedia();
@@ -49,11 +56,20 @@ export default function SideBar({ open, onClose, onOpen }) {
                             key={item.text}
                             className={classes.listItem}
                             component="a"
-                            onClick={() => handleClick(item.url)}
+                            onClick={() =>
+                                handleClick(
+                                    Array.isArray(item.url)
+                                        ? item.url[0]
+                                        : item.url
+                                )
+                            }
                         >
                             <ListItemIcon
                                 className={
-                                    location.pathname === item.url
+                                    checkIsActiveUrl(
+                                        location.pathname,
+                                        item.url
+                                    )
                                         ? classes.listItemIconSelected
                                         : classes.listItemIcon
                                 }

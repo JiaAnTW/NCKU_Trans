@@ -11,6 +11,8 @@ export const FilterContainer = styled.section`
     width: fit-content;
     height: 50px;
     margin-bottom: 10px;
+    grid-row: 1;
+    grid-column: 1 / 2;
 `;
 
 const fontSize = '1.5rem';

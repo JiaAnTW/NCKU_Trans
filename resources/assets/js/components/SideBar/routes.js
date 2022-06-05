@@ -12,14 +12,14 @@ const iconStyle = { width: '1.9rem', height: '1.9rem' };
 
 export const routers = [
     {
-        text: '學業心得',
-        icon: <SchoolIcon style={iconStyle} />,
-        url: '/',
-    },
-    {
         text: '轉輔雙主',
         icon: <ImportContactsIcon style={iconStyle} />,
-        url: '/major',
+        url: ['/', '/major'],
+    },
+    {
+        text: '學業心得',
+        icon: <SchoolIcon style={iconStyle} />,
+        url: '/study',
     },
     {
         text: '我要分享',
