@@ -17,15 +17,15 @@ function CardsList({ isAdmin, isFinishRequest }) {
     useCommentFlow({ studyData });
 
     return (
-        <LoadingFrame isFinishRequest={isFinishRequest}>
-            <ScrollableContainer>
+        <ScrollableContainer>
+            <LoadingFrame isFinishRequest={isFinishRequest}>
                 <InfiniteScroll
                     data={studyData}
                     setOverscanStopIndex={setOverscanStopIndex}
                     ListItemComponent={StudyCard}
                 />
-            </ScrollableContainer>
-        </LoadingFrame>
+            </LoadingFrame>
+        </ScrollableContainer>
     );
 }
 export default CardsList;
