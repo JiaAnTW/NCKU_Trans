@@ -8,7 +8,6 @@ export const Container = styled.div`
 
     @media (max-width: 576px) {
         grid-template-columns: 600px auto;
-        grid-template-rows: auto;
         margin: 0px -10px;
     }
 `;
