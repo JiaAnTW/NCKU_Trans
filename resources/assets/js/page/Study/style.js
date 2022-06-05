@@ -6,11 +6,12 @@ export const Container = styled.div`
     overflow-y: hidden;
 
     @media (min-width: 576px) {
-        grid-template-rows: 50px 100px auto;
+        grid-template-rows: 50px auto;
+        grid-template-columns: 600px auto;
     }
 
     @media (max-width: 576px) {
-        grid-template-rows: 100px auto;
+        grid-template-rows: auto;
         margin: 0px -10px;
     }
 `;

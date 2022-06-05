@@ -7,6 +7,7 @@ import useInitData from './useInitData';
 import ReaderModal from '~/components/Modal/ReaderModal';
 import useCloseReader from '~/utils/seo/useCloseReader';
 import StudyReader from '~/components/StudyReader';
+import Statistic from '~/components/Statisitc';
 
 export default function Study({ isAdmin }) {
     const isFinishRequest = useInitData({ isAdmin, num: 30 });
@@ -17,6 +18,7 @@ export default function Study({ isAdmin }) {
             <Container>
                 <Filter isAdmin={isAdmin} />
                 <CardList isAdmin={isAdmin} />
+                <Statistic />
             </Container>
             <ReaderModal
                 isAdmin={isAdmin}
