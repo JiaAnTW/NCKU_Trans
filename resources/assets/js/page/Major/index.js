@@ -22,10 +22,8 @@ function Major({ isAdmin }) {
         <LoadingFrame isFinishRequest={isFinishRequest}>
             <Main>
                 <EssayFilter />
-                {device !== 'mobile' && <Statistic />}
-                <CardsContainer>
-                    <CardList isAdmin={isAdmin} />
-                </CardsContainer>
+                <Statistic />
+                <CardList isAdmin={isAdmin} />
                 <ReaderModal
                     isAdmin={isAdmin}
                     readerComponent={Reader}

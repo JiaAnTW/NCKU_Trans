@@ -3,11 +3,11 @@ import { ScrollBarStyle } from '../../theme/global';
 
 export const Main = styled.main`
     display: grid;
-    grid-template-columns: auto;
+    grid-template-rows: 50px 160px auto;
     overflow-y: hidden;
 
-    @media (min-width: 576px) {
-        grid-template-rows: 50px 160px auto;
+    @media (max-width: 990px) {
+        grid-template-rows: 100px auto;
     }
 
     @media (max-width: 576px) {
