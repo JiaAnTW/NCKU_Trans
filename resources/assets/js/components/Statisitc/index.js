@@ -10,13 +10,13 @@ import {
     StyledTitle,
 } from './style';
 
-function Statistic() {
+function Statistic({ isFinishRequest }) {
     const device = useMedia();
     const { statInfo } = useSelector(itemFilterSelector);
 
     return (
         <>
-            {device === 'PC' && (
+            {isFinishRequest && device === 'PC' && (
                 <StatisticSection>
                     <StatisticContainer>
                         <StyledGrid>
