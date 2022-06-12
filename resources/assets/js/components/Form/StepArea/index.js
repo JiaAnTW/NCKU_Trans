@@ -6,7 +6,13 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Check from '@material-ui/icons/Check';
 
-import { QontoConnector, useQontoStepIconStyles } from './style';
+import { postStepSelector } from '~/model/selector/post';
+
+import {
+    QontoConnector,
+    useQontoStepIconStyles,
+    StepAreaContainer,
+} from './style';
 
 function QontoStepIcon(props) {
     const classes = useQontoStepIconStyles();
@@ -14,39 +20,40 @@ function QontoStepIcon(props) {
     //console.log(props);
 
     return (
-        <div className={classes.active}>
+        <div className={active ? classes.active : classes.inactive}>
             {completed ? (
                 <Check className={classes.completed} />
             ) : (
-                <Check className={classes.completed} />
+                <div className={classes.circle} />
             )}
         </div>
     );
 }
 
-const stepArr = [
-    { number: 0, description: '選擇分享類別' },
-    { number: 1, description: '填寫基本資訊和心得內文' },
-    { number: 2, description: '等待送出成功' },
-];
+const defaultStepArr = [];
 
 function StepArea() {
     const activeStep = useSelector((state) => state.post.step);
+    const stepInfo = useSelector(postStepSelector);
+    const currentStep = Math.floor(activeStep / 2);
+    const stepArr = currentStep === 0 ? defaultStepArr : stepInfo;
 
     return (
-        <Stepper
-            alternativeLabel
-            activeStep={Math.floor(activeStep / 2)}
-            connector={<QontoConnector />}
-        >
-            {stepArr.map((label) => (
-                <Step key={label.number}>
-                    <StepLabel StepIconComponent={QontoStepIcon}>
-                        {label.description}
-                    </StepLabel>
-                </Step>
-            ))}
-        </Stepper>
+        <StepAreaContainer>
+            <Stepper
+                alternativeLabel
+                activeStep={Math.floor(currentStep)}
+                connector={<QontoConnector />}
+            >
+                {stepArr.map((label) => (
+                    <Step key={label.index}>
+                        <StepLabel StepIconComponent={QontoStepIcon}>
+                            {label.description}
+                        </StepLabel>
+                    </Step>
+                ))}
+            </Stepper>
+        </StepAreaContainer>
     );
 }
 

@@ -6,6 +6,12 @@ export default (function () {
     return {
         id: -1,
         confirm: false,
+        stepInfo: [
+            { index: 0, description: '選擇分享類別' },
+            { index: 1, description: '填寫基本資訊' },
+            { index: 2, description: '填寫統計資料和心得內文' },
+            { index: 3, description: '等待送出成功' },
+        ],
         pageMap: {
             temporaryHandle: {
                 //only for handle preview error

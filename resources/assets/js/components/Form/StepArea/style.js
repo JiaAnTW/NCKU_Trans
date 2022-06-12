@@ -4,14 +4,12 @@ import StepConnector from '@material-ui/core/StepConnector';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 export const StepAreaContainer = styled.div`
-    background-color: ${color.white};
-    height: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    width: 80%;
+    margin: auto;
+    width: 650px;
+
+    @media (max-width: 576px) {
+        width: 100%;
+    }
 `;
 
 export const QontoConnector = withStyles({
@@ -45,7 +43,20 @@ export const useQontoStepIconStyles = makeStyles({
         alignItems: 'center',
     },
     active: {
+        width: '18px',
+        height: '23px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         color: color.yellow,
+    },
+    inactive: {
+        width: '18px',
+        height: '23px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#eaeaf0',
     },
     circle: {
         width: 8,
