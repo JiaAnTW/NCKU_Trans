@@ -379,6 +379,7 @@ export const deleteStudy = (id) => {
 export const updateStudy = (data) => {
     const body = {
         title: data.title,
+        major: data.rawData.major,
         content: data.content,
         category: data.category,
         statistic: data.statistic,
