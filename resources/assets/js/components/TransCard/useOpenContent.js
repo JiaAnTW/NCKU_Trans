@@ -1,17 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { useModalOpen, useModalContext } from '~/utils/index';
 import { changeHeaderInfo } from '~/utils/seo/header';
 import trans from '~/utils/transition';
 import transIntoModalData from '~/utils/redux/components/modal/transIntoModalData';
 import wording from '~/wording/general.json';
+import urlMapping from './orientedURL';
 
 export default function useOpenContent(itemData, index) {
     const [, setIsModalOpen] = useModalOpen();
     const [, setModalContext] = useModalContext();
     const history = useHistory();
-
+    const location = useLocation();
     const handleOpenContent = useCallback(() => {
         const strMap = {
             schoolName: wording['schoolName'],
@@ -25,9 +26,9 @@ export default function useOpenContent(itemData, index) {
             trans(wording['header']['title'], strMap),
             itemData['comment']
         );
-        history.push(`/major?id=${itemData.id}`);
+        history.push(`${urlMapping(location.pathname)}?id=${itemData.id}`);
         setIsModalOpen(true);
-    }, [itemData, setIsModalOpen, index]);
+    }, [itemData, setIsModalOpen, index, location]);
 
     return handleOpenContent;
 }
