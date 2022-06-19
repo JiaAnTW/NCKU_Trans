@@ -34,7 +34,7 @@ Route::get('get/announcement', 'AnnouncementController@index');
 
 Route::get('get/study', 'StudyController@show');
 Route::get('get/study/result', 'StudyController@result');
-Route::post('post/study', 'StudyController@create');
+Route::middleware('studyNotify')->post('post/study', 'StudyController@create');
 
 Route::get('get/studyType', 'CategoryManageController@show');
 
