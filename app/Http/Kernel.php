@@ -53,6 +53,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'commentNotify'=>\App\Http\Middleware\NewCommentNotify::class,
+        'studyNotify'=>\App\Http\Middleware\NewStudyNotify::class,
         'QANotify'=>\App\Http\Middleware\NewQANotify::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

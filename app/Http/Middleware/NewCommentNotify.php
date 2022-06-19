@@ -28,11 +28,11 @@ class NewCommentNotify
         $comment = $data["comment"];
         $isPass = $data["isPass"] == 'true' ? 'true' : 'false';
 
-        $webhookurl = env('DISCORD_WEBHOOK');
+        $webhookurl = env('DISCORD_WEBHOOK_MAJOR');
         try{
             $timestamp = date("c", strtotime("now"));
             $json_data = json_encode([
-                "content" => "<@&857153250213756928> 有一則新的心得需要你審查歐!",      
+                "content" => "<@&857153250213756928> 有一則新的[轉雙輔系心得]需要你審查喔!",      
                 "username" => "心得審查通知",
                 "tts" => false,
                 "embeds" => [
