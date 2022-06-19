@@ -6,14 +6,14 @@ import { studyDataSelector } from '~/model/selector/study';
 function useFetchData({ isAdmin, overscanStopIndex, num }) {
     const dispatch = useDispatch();
     const studyData = useSelector(studyDataSelector);
+    const stopFetch = useSelector((state) => state.study.stopFetch);
     const idByIndex = useCallback(
         (index) => studyData[index]['id'],
         [studyData]
     );
 
     useEffect(() => {
-        if (overscanStopIndex === studyData.length - 2) {
-            if (studyData.length <= 2) return;
+        if (!stopFetch && overscanStopIndex === studyData.length - 2) {
             if (isAdmin) {
                 dispatch(
                     fetchStudyAdmin({
@@ -27,7 +27,7 @@ function useFetchData({ isAdmin, overscanStopIndex, num }) {
                 );
             }
         }
-    }, [studyData, overscanStopIndex, num, isAdmin, dispatch]);
+    }, [studyData, overscanStopIndex, num, isAdmin, dispatch, stopFetch]);
 }
 
 export default useFetchData;
