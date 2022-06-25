@@ -28,9 +28,9 @@ class StudyTableSeeder extends Seeder
                 "year" => 108,
                 "major" => "其他",
                 "category" => $categories,
-                "statistic" => $statistics,
+                "statistic" => [],
                 "confirm" => "true",
-                "otherStatistic" => $otherstat
+                "otherStatistic" => []
             ]);
             $request->setMethod('POST');
             $controller->create($request);
