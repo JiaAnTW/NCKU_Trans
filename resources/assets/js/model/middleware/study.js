@@ -36,7 +36,7 @@ export const initStudy = ({ id, num = 0, p, category, statInfo, year }) => {
             .then((data) => {
                 dispatch({
                     type: INIT_STUDY,
-                    payload: { data },
+                    payload: { data, num },
                 });
                 dispatch({
                     type: FINISH_REQUEST,
@@ -68,7 +68,7 @@ export const fetchStudy = ({ id, num = 0, p }) => {
             .then((data) => {
                 dispatch({
                     type: UPDATE_STUDY,
-                    payload: { data },
+                    payload: { data, num },
                 });
             })
             .catch((e) => console.error('錯誤: ', e));

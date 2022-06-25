@@ -29,6 +29,7 @@ const yearArr = getYearArr();
 
 const initState = {
     data: [],
+    stopFetch: false,
     admin: {
         action: undefined,
         tag: {
@@ -59,14 +60,33 @@ const studyReducer = (state = initState, action) => {
                 item.content = item.content.replace(/<br>/g, '\n');
                 return item;
             });
-            return { ...state, data: initData };
+            const stopFetch =
+                initData.length < action.payload.num ? true : false;
+            return { ...state, data: initData, stopFetch };
         }
         case UPDATE_STUDY: {
+            const { num } = action.payload;
             const data = action.payload.data.map((item) => {
                 item.content = item.content.replace(/<br>/g, '\n');
                 return item;
             });
-            return { ...state, data: [...state.data, ...data] };
+            let stopFetch = data.length < num ? true : false;
+            if (stopFetch)
+                return { ...state, data: [...state.data, ...data], stopFetch };
+
+            const dataSize = state.data.length;
+            for (let i = 0; i < num; i++) {
+                const compareTarget = state.data[dataSize - i - 1];
+                for (let j = 1; j < num; j++) {
+                    const dataNext = data[j];
+                    if (compareTarget.id === dataNext.id) {
+                        stopFetch = true;
+                        return { ...state, stopFetch };
+                    }
+                }
+            }
+
+            return { ...state, data: [...state.data, ...data], stopFetch };
         }
         case SET_FILTER_OPEN: {
             return {
