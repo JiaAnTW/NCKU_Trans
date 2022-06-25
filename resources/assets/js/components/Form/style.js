@@ -23,12 +23,20 @@ export const StyledSchoolIcon = styled(SchoolIcon)`
     width: 86.25px;
     fill: ${color.yellow};
     margin-bottom: 54.37px;
+
+    @media (max-width: 576px) {
+        margin-bottom: 10px;
+    }
 `;
 export const StyledImportContactsIcon = styled(ImportContactsIcon)`
     height: 105.42px;
     width: 86.25px;
     fill: ${color.yellow};
     margin-bottom: 54.37px;
+
+    @media (max-width: 576px) {
+        margin-bottom: 10px;
+    }
 `;
 
 export const Subtitle = styled.div``;

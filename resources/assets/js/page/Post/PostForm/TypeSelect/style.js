@@ -6,6 +6,10 @@ export const TypeSelectLayout = styled.div`
     justify-content: center;
     flex-direction: column;
     padding: 25px 0;
+
+    @media (max-width: 576px) {
+        padding: 0;
+    }
 `;
 
 export const Title = styled.p`
@@ -13,6 +17,10 @@ export const Title = styled.p`
     justify-content: center;
     color: ${color.darkGray};
     margin-bottom: 74.38px;
+
+    @media (max-width: 576px) {
+        margin-bottom: 20px;
+    }
 `;
 
 export const AvatarList = styled.div`
