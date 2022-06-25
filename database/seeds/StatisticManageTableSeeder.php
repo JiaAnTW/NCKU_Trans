@@ -18,9 +18,16 @@ class StatisticManageTableSeeder extends Seeder
         try
         {
             $controller = new StatisticManageController;
-                
             $request = new Request([
-                    "name" => "GPA4.0",
+                "name" => "學年成績",
+                "dataType" => "float",
+                "max" => 100.0,
+                "min" => 0.0,
+            ]);
+            $request->setMethod('POST');
+            $controller->create($request);
+            $request = new Request([
+                    "name" => "GPA(4.0)",
                     "dataType" => "float",
                     "max" => 4.0,
                     "min" => 0.0,
@@ -28,7 +35,7 @@ class StatisticManageTableSeeder extends Seeder
             $request->setMethod('POST');
             $controller->create($request);
             $request = new Request([
-                "name" => "GPA4.3",
+                "name" => "GPA(4.3)",
                 "dataType" => "float",
                 "max" => 4.3,
                 "min" => 0.0,
@@ -43,7 +50,28 @@ class StatisticManageTableSeeder extends Seeder
             ]);
             $request->setMethod('POST');
             $controller->create($request);
-
+            $request = new Request([
+                "name" => "TOFEL iBT",
+                "dataType" => "int",
+                "max" => 990,
+                "min" => 0,
+            ]);
+            $request->setMethod('POST');
+            $controller->create($request);
+            $request = new Request([
+                "name" => "IELTS",
+                "dataType" => "float",
+                "max" => 9.0,
+                "min" => 0.0,
+            ]);
+            $request->setMethod('POST');
+            $controller->create($request);
+            $request = new Request([
+                "name" => "JLPT",
+                "dataType" => "string",
+            ]);
+            $request->setMethod('POST');
+            $controller->create($request);
         }
         catch(Exception $e)
         {
