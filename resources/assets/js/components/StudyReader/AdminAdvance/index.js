@@ -5,10 +5,12 @@ import ConfirmModal from '~/components/Modal/ConfirmModal';
 import { useDispatch } from 'react-redux';
 import { deleteStudy } from '~/model/middleware/study';
 import { useHistory } from 'react-router';
-import { useModalOpen } from '~/utils';
+import { useModalOpen, useModalContext } from '~/utils';
+import { OVERWRITE_POST } from '~/model/action/post';
 
 function AdminAdvance({ id }) {
     const [onDelete, setOnDelete] = useState(false);
+    const [{ rawData }] = useModalContext();
     const [, setModalOpen] = useModalOpen();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -16,9 +18,13 @@ function AdminAdvance({ id }) {
         setOnDelete(true);
     };
     const handleEdit = () => {
+        dispatch({
+            type: OVERWRITE_POST,
+            payload: { data: rawData, type: 'study' },
+        });
         setModalOpen(false);
         history.push({
-            pathname: '/post',
+            pathname: '/admin/post',
             state: { id },
         });
     };

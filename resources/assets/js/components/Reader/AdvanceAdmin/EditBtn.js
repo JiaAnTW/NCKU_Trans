@@ -14,7 +14,10 @@ export default function EditBtn() {
     const dispatch = useDispatch();
 
     const handleEdit = useCallback(() => {
-        dispatch({ type: OVERWRITE_POST, payload: rawData });
+        dispatch({
+            type: OVERWRITE_POST,
+            payload: { data: rawData, type: 'comment' },
+        });
         setIsModalOpen(false);
         history.push('/admin/post');
     }, [rawData, history, setIsModalOpen]);
