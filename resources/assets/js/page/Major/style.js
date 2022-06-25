@@ -5,6 +5,7 @@ export const Main = styled.main`
     display: grid;
     grid-template-rows: 50px 160px auto;
     overflow-y: hidden;
+    overflow-x: hidden;
 
     @media (max-width: 990px) {
         grid-template-rows: 100px auto;

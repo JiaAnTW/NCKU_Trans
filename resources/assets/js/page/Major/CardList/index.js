@@ -20,7 +20,7 @@ function CardsList() {
     const { cardWidth, cardHeight } = useCardSize();
     const columnCount =
         parentWidth <= cardWidth ? 1 : Math.floor(parentWidth / cardWidth);
-    const rowCount = Math.ceil(majorData.length / columnCount);
+    const rowCount = Math.ceil(majorData.length / columnCount) + 2; // +2 is for padding-bottom
 
     const Card = useCard(columnCount);
 
