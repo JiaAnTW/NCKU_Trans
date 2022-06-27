@@ -159,42 +159,86 @@ const postReducer = (state = initState, action) => {
             return initState;
         }
         case OVERWRITE_POST: {
-            const dataNext = action.payload;
-            const stateNext = state;
+            const dataNext = action.payload.data;
+            const type = action.payload.type;
+            const stateNext = initState;
+
             const { keysTable, instanceAbleTable } =
-                DataMapping.transObjToKeysTable(stateNext.form[stateNext.type]);
+                DataMapping.transObjToKeysTable(stateNext.form[type]);
+
+            // restore study form
+            if (type === 'study') {
+                const statisticsArea = result(
+                    stateNext.form[type],
+                    instanceAbleTable['other'][0].slice(0, -4),
+                    undefined
+                );
+
+                const othersArea = result(
+                    stateNext.form[type],
+                    instanceAbleTable['other'][0].slice(0, -5).concat(2),
+                    undefined
+                );
+
+                for (let index in statisticsArea) {
+                    if (index === '0') continue;
+                    delete statisticsArea[index];
+                }
+
+                for (let index in othersArea) {
+                    delete statisticsArea[index];
+                }
+
+                map(statisticsArea[0].value, (controller) => {
+                    typeof controller === 'object'
+                        ? (controller.value = false)
+                        : '';
+                });
+            }
+            // restore done
+
             for (let key in dataNext) {
-                if (!keysTable[key] && !instanceAbleTable[key]) {
-                    stateNext.form[stateNext.type][key] = dataNext[key];
+                if (key === 'statistic') {
+                    // able instance but not exist
+                    map(dataNext[key], (statistic) => {
+                        const instanceParent = result(
+                            stateNext.form[type],
+                            instanceAbleTable[statistic.name][0].slice(0, -1),
+                            undefined
+                        );
+
+                        if (!instanceParent) return; // can't match
+
+                        const instance = cloneDeep(instanceParent.instance);
+                        instanceParent.value = true;
+                        instance.value = statistic.value;
+
+                        instance.customHandleClick
+                            ? customHandleClick(stateNext, instance)
+                            : set(
+                                  stateNext.form[type],
+                                  instanceAbleTable[statistic.name][0]
+                                      .slice(0, -4)
+                                      .concat(instanceParent.id),
+                                  instance
+                              );
+                    });
                     continue;
                 }
-                if (!keysTable[key] && instanceAbleTable[key]) {
-                    const instanceParent = result(
-                        stateNext.form[stateNext.type],
-                        keysTable[key][0].slice(-1),
-                        undefined
-                    );
-                    if (!instanceParent) continue;
-                    const instance = instanceParent.instance;
-                    instance.value = dataNext[key];
-                    customHandleClick
-                        ? customHandleClick(stateNext, instance)
-                        : set(
-                              stateNext.form[stateNext.type],
-                              keysTable[key][0]
-                                  .slice(0, -1)
-                                  .concat(instanceParent.id),
-                              instance
-                          );
+                if (!keysTable[key] && !instanceAbleTable[key]) {
+                    // abstract data
+                    stateNext.form[type][key] = dataNext[key];
                     continue;
                 }
                 set(
-                    stateNext.form[stateNext.type],
+                    stateNext.form[type],
                     keysTable[key][0].concat('value'),
                     dataNext[key]
                 );
             }
+            stateNext.type = type;
             stateNext.step = 2;
+
             return stateNext;
         }
         case SET_POST_TYPE: {
