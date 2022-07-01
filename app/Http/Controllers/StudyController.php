@@ -17,6 +17,22 @@ use App\Statistic;
 
 class StudyController extends Controller
 {
+    static public function showById(Request $request)
+    {
+        try {
+            $id = $request->input('id');
+            if (!$id) {
+                return null;
+            }
+            $data = Study::select('id', 'title', 'content')->where('id', $id)->firstOrFail();
+            if ($data->confirm == 0)
+                return null;
+            return $data;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
     /**
      * 取出符合條件的已審核資料，並以創建時間遞減排序
      * 
