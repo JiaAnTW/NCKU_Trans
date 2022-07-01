@@ -14,38 +14,34 @@ class CategoryManageTableSeeder extends Seeder
      */
     public function run()
     {
-        try
-        {
+        try {
             $controller = new CategoryManageController;
-            $request = new Request([
-                "name" => "學校行政",
-            ]);
-            $request->setMethod('POST');
-            $controller->create($request);
-            $request = new Request([
+            $controller->create(new Request([
+                "name" => "QA",
+            ]));
+            $controller->create(new Request([
                 "name" => "出國交換",
-            ]);
-            $request->setMethod('POST');
-            $request = new Request([
-                "name" => "學程",
-            ]);
-            $request->setMethod('POST');
-            $controller->create($request);
-            $request = new Request([
+            ]));
+            $controller->create(new Request([
                 "name" => "實習",
-            ]);
-            $request->setMethod('POST');
-            $controller->create($request);
-            $request = new Request([
+            ]));
+            $controller->create(new Request([
+                "name" => "預研",
+            ]));
+            $controller->create(new Request([
+                "name" => "推甄",
+            ]));
+            $controller->create(new Request([
                 "name" => "獎學金",
-            ]);
-            $request->setMethod('POST');
-            $controller->create($request);
-        }
-        catch(Exception $e)
-        {
+            ]));
+            $controller->create(new Request([
+                "name" => "學程",
+            ]));
+            $controller->create(new Request([
+                "name" => "學校行政",
+            ]));
+        } catch (Exception $e) {
             error_log($e->getMessage());
         }
-
     }
 }

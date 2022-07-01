@@ -22,7 +22,7 @@ class NewStudyNotify
         $year = $request->year;
         $major = $request->major;
         $statistic = $request["statistic"];
-        $otherStatistic = $request["otherStatistic"];
+        // $otherStatistic = $request["otherStatistic"];
 
         $basicData = [
             [
@@ -41,13 +41,13 @@ class NewStudyNotify
             return array('name' => $element['name'], 'value' => $element['value'], "inline" => false);
         }, $statistic);
 
-        $otherStatisticData = array_map(function($element) {
-            $name = $element['name'];
-            return array('name' => "[其他數據] {$name}", 'value' => $element['value'], "inline" => false);
-        }, $otherStatistic);
+        // $otherStatisticData = array_map(function($element) {
+        //     $name = $element['name'];
+        //     return array('name' => "[其他數據] {$name}", 'value' => $element['value'], "inline" => false);
+        // }, $otherStatistic);
 
         $basicData = array_merge($basicData, $statisticData);
-        $basicData = array_merge($basicData, $otherStatisticData);
+        // $basicData = array_merge($basicData, $otherStatisticData);
         
         $webhookurl = env('DISCORD_WEBHOOK_STUDY');
         try{
