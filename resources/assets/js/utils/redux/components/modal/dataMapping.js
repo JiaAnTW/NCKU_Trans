@@ -130,7 +130,7 @@ function transFormData(
                     temp = {
                         value: item.value.value,
                     };
-                    temp[customTagsKey] = item.value.title;
+                    temp[customTagsKey] = item.value.name;
                 } else {
                     temp = {
                         value: majorWording[item.keyName]
