@@ -7,24 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 class Study extends Model
 {
     //
-    protected $table='Study';
+    protected $table = 'Study';
+    public $increamenting = false;
     public $timestamps = false;
 
-    // prevent laravel casting id to integer
     protected $casts = [
-        'id' => 'string',
-        'study_id' => 'string'
-      ];
+        'id' => 'string'
+    ];
 
     public function categories()
     {
-        return $this->hasMany('App\Category');
+        return $this->hasMany(Category::class);
+    }
+
+    public function statistics()
+    {
+        return $this->hasMany(Statistic::class);
     }
 
     public function otherStatistic()
     {
-        return $this->hasMany('App\OtherStatistic');
+        return $this->hasMany(OtherStatistic::class);
     }
-
-
 }

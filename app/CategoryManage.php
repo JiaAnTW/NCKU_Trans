@@ -7,16 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryManage extends Model
 {
     //
-    protected $table='CategoryManage';
+    protected $table = 'CategoryManage';
     public $timestamps = false;
 
     // prevent laravel casting id to integer
     protected $casts = [
-        'id' => 'string'
-      ];
+        'id' => 'string',
+        'name' => 'string'
+    ];
 
     public function categories()
     {
-      return $this->hasMany('App\Category', 'id');
+        return $this->hasMany(Category::class, 'id');
     }
 }

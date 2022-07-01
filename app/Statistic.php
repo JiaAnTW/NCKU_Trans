@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Statistic extends Model
 {
     //
-    protected $table = 'Category';
+    protected $table = 'Statistic';
     public $timestamps = false;
 
     // prevent laravel casting id to integer
@@ -21,8 +21,8 @@ class Category extends Model
         return $this->belongsTo(Study::class);
     }
 
-    public function categoryManage()
+    public function statistiManage()
     {
-        return $this->belongsTo(CategoryManage::class, 'id');
+        return $this->belongsTo(StatisticManage::class, 'id');
     }
 }
