@@ -74,11 +74,11 @@ export default (function () {
                                 id: 999999, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
-                                    mapToCustomizeFunction('spawn_other'),
+                                    mapToCustomizeFunction('spawn_otherStat'),
                                 instance: {
                                     counter: 1,
                                     value: { name: '', value: '' },
-                                    keyName: 'other',
+                                    keyName: 'otherStat',
                                     type: 'pair_input',
                                     wording: '其他選項 - ',
                                     subWording: {
@@ -101,7 +101,7 @@ export default (function () {
                         align: 'left',
                     },
                 },
-                2: {}, //only for other statistic
+                2: {}, //only for otherStat
                 3: {
                     0: {
                         value: '',
