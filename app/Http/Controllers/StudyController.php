@@ -57,32 +57,57 @@ class StudyController extends Controller
                 if (!$input)
                     return;
                 $query->where('title', 'like', '%' . $input . '%')->orWhere('content', 'like', '%' . $input . '%');
-            })
-            ->joinSub(function ($query) use ($request) {
+            });
+
+        $cFilter = $request->input("categoryFilter");
+        $sFilter = $request->input("statFilter");
+        if ($cFilter) {
+            $studies = $studies->joinSub(function ($query) use ($cFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
                     ->from('Category')
-                    ->joinSub(function ($query) use ($request) {
+                    ->joinSub(function ($query) use ($cFilter) {
                         $query->from('CategoryManage');
-                        $input = $request->input("categoryFilter");
-                        if (!$input)
+                        if (!$cFilter)
                             return;
-                        $query->whereIn('id', explode(',', $input));
+                        $query->whereIn('id', explode(',', $cFilter));
                     }, 'filter1', 'Category.id', '=', 'filter1.id')
                     ->groupBy('study_id');
-            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id')
-            ->joinSub(function ($query) use ($request) {
+            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id');
+        } else {
+            $studies = $studies->leftJoinSub(function ($query) {
+                $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
+                    ->from('Category')
+                    ->joinSub(function ($query) {
+                        $query->from('CategoryManage');
+                    }, 'filter1', 'Category.id', '=', 'filter1.id')
+                    ->groupBy('study_id');
+            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id');
+        }
+
+        if ($sFilter) {
+            $studies = $studies->joinSub(function ($query) use ($sFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
-                    ->joinSub(function ($query) use ($request) {
+                    ->joinSub(function ($query) use ($sFilter) {
                         $query->from('StatisticManage');
-                        $input = $request->input("statFilter");
-                        if (!$input)
+                        if (!$sFilter)
                             return;
-                        $query->whereIn('id', explode(',', $input));
+                        $query->whereIn('id', explode(',', $sFilter));
                     }, 'filter2', 'Statistic.id', '=', 'filter2.id')
                     ->groupBy('study_id');
-            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id')
-            ->orderBy("created_at", "desc")
+            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
+        } else {
+            $studies = $studies->leftJoinSub(function ($query) {
+                $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
+                    ->from('Statistic')
+                    ->joinSub(function ($query) {
+                        $query->from('StatisticManage');
+                    }, 'filter2', 'Statistic.id', '=', 'filter2.id')
+                    ->groupBy('study_id');
+            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
+        }
+
+        $studies = $studies->orderBy("created_at", "desc")
             ->take($request->input("num", 25))
             ->get();
 
@@ -124,39 +149,65 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('id', 'title', 'year', 'major', 'confirm', 'created_at as timestamp', 'content', 'tmp1.category', 'tmp2.statistic')
+            ->where('confirm', "true")
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
                 if (!$input)
                     return;
                 $query->where('title', 'like', '%' . $input . '%')->orWhere('content', 'like', '%' . $input . '%');
-            })
-            ->joinSub(function ($query) use ($request) {
+            });
+
+        $cFilter = $request->input("categoryFilter");
+        $sFilter = $request->input("statFilter");
+        if ($cFilter) {
+            $studies = $studies->joinSub(function ($query) use ($cFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
                     ->from('Category')
-                    ->joinSub(function ($query) use ($request) {
+                    ->joinSub(function ($query) use ($cFilter) {
                         $query->from('CategoryManage');
-                        $input = $request->input("categoryFilter");
-                        if (!$input)
+                        if (!$cFilter)
                             return;
-                        $query->whereIn('id', explode(',', $input));
+                        $query->whereIn('id', explode(',', $cFilter));
                     }, 'filter1', 'Category.id', '=', 'filter1.id')
                     ->groupBy('study_id');
-            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id')
-            ->joinSub(function ($query) use ($request) {
+            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id');
+        } else {
+            $studies = $studies->leftJoinSub(function ($query) {
+                $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
+                    ->from('Category')
+                    ->joinSub(function ($query) {
+                        $query->from('CategoryManage');
+                    }, 'filter1', 'Category.id', '=', 'filter1.id')
+                    ->groupBy('study_id');
+            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id');
+        }
+
+        if ($sFilter) {
+            $studies = $studies->joinSub(function ($query) use ($sFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
-                    ->joinSub(function ($query) use ($request) {
+                    ->joinSub(function ($query) use ($sFilter) {
                         $query->from('StatisticManage');
-                        $input = $request->input("statFilter");
-                        if (!$input)
+                        if (!$sFilter)
                             return;
-                        $query->whereIn('id', explode(',', $input));
+                        $query->whereIn('id', explode(',', $sFilter));
                     }, 'filter2', 'Statistic.id', '=', 'filter2.id')
                     ->groupBy('study_id');
-            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id')
-            ->orderBy("created_at", "desc")
-            ->take(10)
+            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
+        } else {
+            $studies = $studies->leftJoinSub(function ($query) {
+                $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
+                    ->from('Statistic')
+                    ->joinSub(function ($query) {
+                        $query->from('StatisticManage');
+                    }, 'filter2', 'Statistic.id', '=', 'filter2.id')
+                    ->groupBy('study_id');
+            }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
+        }
+
+        $studies = $studies->orderBy("created_at", "desc")
+            ->take($request->input("num", 25))
             ->get();
 
         foreach ($studies as $study) {
