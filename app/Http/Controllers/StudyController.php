@@ -73,7 +73,7 @@ class StudyController extends Controller
     public function show(Request $request)
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
-        $year = $request->input('year') ? $request->input('year') : '%%';
+        $year = $request->input('year') ? explode(",", $request->input('year')) : [];
         try {
             $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
             $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
@@ -92,7 +92,8 @@ class StudyController extends Controller
             $studies = Study::select('id','title','content','year','major','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             }) ->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
@@ -108,10 +109,11 @@ class StudyController extends Controller
             }
             //find those studies created before target study
             $date = Carbon::parse($study->created_at)->format('Y-m-d H:i:s');
-            $studies = Study::select('id','title','content', 'year','major','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p, $year) {
+            $studies = Study::select('id','title','content', 'year','major','created_at', 'confirm')->where('confirm','true')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
         
@@ -124,14 +126,15 @@ class StudyController extends Controller
     public function showByIdSet(Request $request, $idArr, $confirm)
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
-        $year = $request->input('year') ? $request->input('year') : '%%';
+        $year = $request->input('year') ? explode(",", $request->input('year')) : [];
         //find some of studies created before target study
         if(strcmp($request->from, "")==0)
         {
             $studies = Study::select('id','title','content','year','major','created_at', 'confirm')-> whereIn('id', $idArr)-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             }) ->orderBy('created_at', 'desc')->take($request->num);
 
             $studies = $confirm ? $studies ->where('confirm', $confirm)->get() : $studies->get();
@@ -152,7 +155,8 @@ class StudyController extends Controller
             $studies = Study::select('id','title','content', 'year','major','created_at', 'confirm')-> whereIn('id', $idArr)-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num);
             $studies = $confirm ? $studies ->where('confirm', $confirm)->get() : $studies->get();
         }
@@ -203,7 +207,7 @@ class StudyController extends Controller
     public function index(Request $request)
     {
         $p = $request->input('p') ? '%' . $request->input('p') . '%' : '%%';
-        $year = $request->input('year') ? $request->input('year') : '%%';
+        $year = $request->input('year') ? explode(",", $request->input('year')) : [];
         try {
             $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
             $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
@@ -222,7 +226,8 @@ class StudyController extends Controller
             $studies = Study::select('id','title','content','year','major','created_at', 'confirm')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             })->orderBy('created_at', 'desc')->take($request->num)->get();
         }else
         {
@@ -241,7 +246,8 @@ class StudyController extends Controller
             $studies = Study::select('id','title','content','year', 'major','created_at', 'confirm')-> where(function ($query) use($p) {
                 $query->where('title', 'like', $p)->orWhere('content', 'like', $p);
             })-> where(function ($query) use($year) {
-                $query->where('year', 'like', $year);
+                if(count($year) > 0)
+                    $query->whereIn('year', $year);
             })->where('created_at', '<=', $date)->orderBy('created_at', 'desc')->take($request->num)->get();
         }
 
