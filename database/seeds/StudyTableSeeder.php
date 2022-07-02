@@ -45,7 +45,7 @@ class StudyTableSeeder extends Seeder
                     return ($categories[$key]);
                 }, array_rand($categories, rand(2, 3))),
                 "statistic" => [],
-                "confirm" => 1,
+                "confirm" => "true",
                 // "otherStatistic" => []
             ]));
             sleep(2);
@@ -60,7 +60,7 @@ class StudyTableSeeder extends Seeder
                 "statistic" => array_map(function ($key) use ($statistics) {
                     return $this->genByType($statistics[$key]);
                 }, array_rand($categories, rand(2, 3))),
-                "confirm" => 1,
+                "confirm" => "true",
                 // "otherStatistic" => $otherstat
             ]));
             sleep(2);
@@ -75,7 +75,7 @@ class StudyTableSeeder extends Seeder
                 "statistic" => array_map(function ($key) use ($statistics) {
                     return $this->genByType($statistics[$key]);
                 }, array_rand($categories, rand(2, 3))),
-                "confirm" => 0,
+                "confirm" => "false",
                 // "otherStatistic" => $otherstat
             ]));
             sleep(2);
@@ -90,7 +90,7 @@ class StudyTableSeeder extends Seeder
                 "statistic" => array_map(function ($key) use ($statistics) {
                     return $this->genByType($statistics[$key]);
                 }, array_rand($categories, rand(2, 3))),
-                "confirm" => 1,
+                "confirm" => "true",
                 // "otherStatistic" => $otherstat
             ]));
             sleep(2);
@@ -105,7 +105,7 @@ class StudyTableSeeder extends Seeder
                 "statistic" => array_map(function ($key) use ($statistics) {
                     return $this->genByType($statistics[$key]);
                 }, array_rand($categories, rand(2, 3))),
-                "confirm" => 0,
+                "confirm" => "false",
                 // "otherStatistic" => $otherstat
             ]));
         } catch (Exception $e) {

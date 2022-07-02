@@ -20,13 +20,13 @@ class CreateStudyTable extends BaseMigration
                 $table->string('major', 128);
             },
             'year' => function (Blueprint $table) {
-                $table->char('year', 3);
+                $table->string('year', 8);
             },
             'content' => function (Blueprint $table) {
                 $table->text('content');
             },
             'confirm' => function (Blueprint $table) {
-                $table->boolean('confirm');
+                $table->string('confirm', 16);
             },
             'timestamp' => function (Blueprint $table) {
                 $table->timestamps();

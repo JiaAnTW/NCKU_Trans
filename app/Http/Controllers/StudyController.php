@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 use App\Study;
 use App\Category;
 use App\Statistic;
+use App\StatisticManage;
 
 class StudyController extends Controller
 {
@@ -49,7 +50,7 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('id', 'title', 'year', 'major', 'confirm', 'created_at as timestamp', 'content', 'tmp1.category', 'tmp2.statistic')
-            ->where('confirm', true)
+            ->where('confirm', "true")
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
@@ -62,7 +63,7 @@ class StudyController extends Controller
                     ->from('Category')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('CategoryManage');
-                        $input = $request->input("category");
+                        $input = $request->input("categoryFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
@@ -74,7 +75,7 @@ class StudyController extends Controller
                     ->from('Statistic')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('StatisticManage');
-                        $input = $request->input("statistic");
+                        $input = $request->input("statFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
@@ -90,6 +91,18 @@ class StudyController extends Controller
             $study['category'] = $json["data"];
             $json = json_decode("{\"data\":[" . $study['statistic'] . "]}", true);
             $study['statistic'] = $json["data"];
+
+            $statistics = array();
+            foreach ((array) $study['statistic'] as $statistic) {
+                if ($type = StatisticManage::find($statistic['id'])['dataType']) {
+                    if (!strcmp($type, "int"))
+                        $statistic["value"] = (int) $statistic["value"];
+                    else if (!strcmp($type, "float"))
+                        $statistic["value"] = (float) $statistic["value"];
+                }
+                array_push($statistics, $statistic);
+            }
+            $study['statistic'] = $statistics;
         }
 
         return $studies;
@@ -123,7 +136,7 @@ class StudyController extends Controller
                     ->from('Category')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('CategoryManage');
-                        $input = $request->input("category");
+                        $input = $request->input("categoryFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
@@ -135,7 +148,7 @@ class StudyController extends Controller
                     ->from('Statistic')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('StatisticManage');
-                        $input = $request->input("statistic");
+                        $input = $request->input("statFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
@@ -151,6 +164,18 @@ class StudyController extends Controller
             $study['category'] = $json["data"];
             $json = json_decode("{\"data\":[" . $study['statistic'] . "]}", true);
             $study['statistic'] = $json["data"];
+
+            $statistics = array();
+            foreach ((array) $study['statistic'] as $statistic) {
+                if ($type = StatisticManage::find($statistic['id'])['dataType']) {
+                    if (!strcmp($type, "int"))
+                        $statistic["value"] = (int) $statistic["value"];
+                    else if (!strcmp($type, "float"))
+                        $statistic["value"] = (float) $statistic["value"];
+                }
+                array_push($statistics, $statistic);
+            }
+            $study['statistic'] = $statistics;
         }
 
         return $studies;
@@ -180,7 +205,15 @@ class StudyController extends Controller
         foreach ($request["statistic"] as $element) {
             $statistic = new Statistic;
             $statistic->id = $element["id"];
-            $statistic->value = $element["value"];
+            if ($type = StatisticManage::find($statistic->id)['dataType']) {
+                if (!strcmp($type, "int"))
+                    $val = number_format($element["value"]);
+                else if (!strcmp($type, "float"))
+                    $val = number_format($element["value"], 1);
+                else
+                    $val = $element["value"];
+                $statistic->value = $val;
+            }
             $study->statistics()->save($statistic);
         }
 
@@ -273,7 +306,7 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('tmp2.statistic')
-            ->where('confirm', true)
+            ->where('confirm', 'true')
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
@@ -286,7 +319,7 @@ class StudyController extends Controller
                     ->from('Category')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('CategoryManage');
-                        $input = $request->input("category");
+                        $input = $request->input("categoryFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
@@ -298,7 +331,7 @@ class StudyController extends Controller
                     ->from('Statistic')
                     ->joinSub(function ($query) use ($request) {
                         $query->from('StatisticManage');
-                        $input = $request->input("statistic");
+                        $input = $request->input("statFilter");
                         if (!$input)
                             return;
                         $query->whereIn('id', explode(',', $input));
