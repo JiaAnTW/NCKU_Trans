@@ -155,7 +155,7 @@ export const initStudy = (function () {
                                 id: 999999, // stat - id
                                 title: '+ 其他類別',
                                 customHandleClick:
-                                    mapToCustomizeFunction('spawn_other'),
+                                    mapToCustomizeFunction('spawn_otherStat'),
                                 instance: {
                                     counter: 1,
                                     value: { title: '', value: '' },

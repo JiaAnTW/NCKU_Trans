@@ -166,17 +166,20 @@ const postReducer = (state = initState, action) => {
             const { keysTable, instanceAbleTable } =
                 DataMapping.transObjToKeysTable(stateNext.form[type]);
 
+            stateNext.type = type;
+            stateNext.step = 2;
+
             // restore study form
             if (type === 'study') {
                 const statisticsArea = result(
                     stateNext.form[type],
-                    instanceAbleTable['other'][0].slice(0, -4),
+                    instanceAbleTable['otherStat'][0].slice(0, -4),
                     undefined
                 );
 
                 const othersArea = result(
                     stateNext.form[type],
-                    instanceAbleTable['other'][0].slice(0, -5).concat(2),
+                    instanceAbleTable['otherStat'][0].slice(0, -5).concat(2),
                     undefined
                 );
 
@@ -198,6 +201,35 @@ const postReducer = (state = initState, action) => {
             // restore done
 
             for (let key in dataNext) {
+                if (key === 'otherStat') {
+                    map(dataNext[key], (otherStat) => {
+                        const instanceParent = result(
+                            stateNext.form[type],
+                            instanceAbleTable['otherStat'][0].slice(0, -1),
+                            undefined
+                        );
+
+                        if (!instanceParent) return; // can't match
+
+                        const instance = cloneDeep(instanceParent.instance);
+                        instance.value = otherStat;
+
+                        instanceParent.customHandleClick
+                            ? instanceParent.customHandleClick(
+                                  stateNext,
+                                  instance
+                              )
+                            : set(
+                                  stateNext.form[type],
+                                  instanceAbleTable['otherStat'][0]
+                                      .slice(0, -4)
+                                      .concat(instanceParent.id),
+                                  instance
+                              );
+                        instanceParent.instance.counter++;
+                    });
+                    continue;
+                }
                 if (key === 'statistic') {
                     // able instance but not exist
                     map(dataNext[key], (statistic) => {
@@ -213,8 +245,11 @@ const postReducer = (state = initState, action) => {
                         instanceParent.value = true;
                         instance.value = statistic.value;
 
-                        instance.customHandleClick
-                            ? customHandleClick(stateNext, instance)
+                        instanceParent.customHandleClick
+                            ? instanceParent.customHandleClick(
+                                  stateNext,
+                                  instance
+                              )
                             : set(
                                   stateNext.form[type],
                                   instanceAbleTable[statistic.name][0]
@@ -236,8 +271,6 @@ const postReducer = (state = initState, action) => {
                     dataNext[key]
                 );
             }
-            stateNext.type = type;
-            stateNext.step = 2;
 
             return stateNext;
         }
@@ -277,7 +310,7 @@ const postReducer = (state = initState, action) => {
                 return stateNext;
             }
             if (thisButton.value !== undefined && !relationInput.value) {
-                //is must not other
+                //is must not otherStat
                 thisPage[elementArea].selectedStatistic--;
                 thisButton.value = !thisButton.value;
                 delete thisPage[elementArea][id]; // drop input
