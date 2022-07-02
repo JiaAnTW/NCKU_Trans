@@ -48,6 +48,8 @@ class StudyController extends Controller
                     array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
                 }
             }
+
+            $otherStatArray = OtherStatistic::select('id','name', 'value')->where('study_id', '=', $studies[$i]->id)->get();
             
             $studies[$i] = [
                 "id" => $studies[$i]->id,
@@ -64,7 +66,9 @@ class StudyController extends Controller
                     }
                 ),
                 "statistic" => $statistics,
+                "otherStat" => ($studies[$i]->confirm === "true") ? [] : $otherStatArray,
             ];
+
         }
         return $studies;
     }

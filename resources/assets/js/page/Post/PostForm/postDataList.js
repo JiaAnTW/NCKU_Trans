@@ -29,14 +29,14 @@ export const postDataList = {
          * - force change object which has the key to array
          * - if object already in array type will auto ignore
          * */
-        isForceTransToArr: new Set(['other']),
+        isForceTransToArr: new Set(['otherStat']),
 
         /** ProjectKeys
          * - change keyName to the expected value data will be pack in base layer
          * - able handle dynamic input(means will leave empty array if doesn't match key of input)
          */
         projectKeys: {
-            other: 'otherStatistic',
+            otherStat: 'otherStatistic',
         },
 
         /** SettingKeys

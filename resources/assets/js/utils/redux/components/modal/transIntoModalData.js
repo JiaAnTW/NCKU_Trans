@@ -5,13 +5,18 @@ function transIntoModalData(type, itemData, index) {
 
     switch (type) {
         case 'study':
+            const otherStatistic = itemData['otherStat'].map((item) => ({
+                ...item,
+                isOther: true,
+            }));
+
             return {
                 id: itemData['id'],
                 title: itemData['title'],
                 postTime:
                     itemData['year'] +
                     `（發文時間：${parseTimestamp(itemData['timestamp'])}）`,
-                statistic: itemData['statistic'],
+                statistic: itemData['statistic'].concat(otherStatistic),
                 category: itemData['category'],
                 content: itemData['content'],
                 year: itemData['year'],

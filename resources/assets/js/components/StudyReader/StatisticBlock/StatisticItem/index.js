@@ -2,10 +2,14 @@ import React from 'react';
 import { Statistic, StatisticItemContainer, Value } from './style';
 
 function StatisticItem({ data }) {
+    const { name, value, isOther } = data;
     return (
         <StatisticItemContainer>
-            <Statistic>{data['name']}</Statistic>
-            <Value>{data['value']}</Value>
+            <Statistic>
+                {isOther && '其他:'}
+                {name}
+            </Statistic>
+            <Value>{value}</Value>
         </StatisticItemContainer>
     );
 }
