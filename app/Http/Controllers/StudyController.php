@@ -45,14 +45,11 @@ class StudyController extends Controller
                 $value = DB::table($stat['id'])->where('study_uuid', '=', $studies[$i]->id)->select('value')->value('value');
                 if($value != null)
                 {
-                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id'], "isOther" => false));
+                    array_push($statistics, array("name" => $stat['name'], "value" => $value, "id" => $stat['id']));
                 }
             }
 
             $otherStatArray = OtherStatistic::select('id','name', 'value')->where('study_id', '=', $studies[$i]->id)->get();
-            foreach($otherStatArray as $otherStat){
-                array_push($statistics, array("name" => $otherStat->name, "value" => $otherStat->value, "id" => $otherStat->id, "isOther" => true));
-            }
             
             $studies[$i] = [
                 "id" => $studies[$i]->id,
@@ -69,7 +66,9 @@ class StudyController extends Controller
                     }
                 ),
                 "statistic" => $statistics,
+                "otherStat" => ($studies[$i]->confirm === "true") ? [] : $otherStatArray,
             ];
+
         }
         return $studies;
     }
