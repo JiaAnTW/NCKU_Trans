@@ -61,6 +61,9 @@ class StudyController extends Controller
 
         $cFilter = $request->input("categoryFilter");
         $sFilter = $request->input("statFilter");
+        $yFilter = $request->input("year");
+        if ($yFilter)
+            $studies = $studies->whereIn("year", explode(",", $yFilter));
         if ($cFilter) {
             $studies = $studies->joinSub(function ($query) use ($cFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
@@ -160,6 +163,9 @@ class StudyController extends Controller
 
         $cFilter = $request->input("categoryFilter");
         $sFilter = $request->input("statFilter");
+        $yFilter = $request->input("year");
+        if ($yFilter)
+            $studies = $studies->whereIn("year", explode(",", $yFilter));
         if ($cFilter) {
             $studies = $studies->joinSub(function ($query) use ($cFilter) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
@@ -364,19 +370,24 @@ class StudyController extends Controller
                 if (!$input)
                     return;
                 $query->where('title', 'like', '%' . $input . '%')->orWhere('content', 'like', '%' . $input . '%');
-            })
-            ->joinSub(function ($query) use ($request) {
-                $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
-                    ->from('Category')
-                    ->joinSub(function ($query) use ($request) {
-                        $query->from('CategoryManage');
-                        $input = $request->input("categoryFilter");
-                        if (!$input)
-                            return;
-                        $query->whereIn('id', explode(',', $input));
-                    }, 'filter1', 'Category.id', '=', 'filter1.id')
-                    ->groupBy('study_id');
-            }, 'tmp1', 'Study.id', '=', 'tmp1.study_id')
+            });
+
+        $yFilter = $request->input("year");
+        if ($yFilter)
+            $studies = $studies->whereIn("year", explode(",", $yFilter));
+
+        $studies = $studies->joinSub(function ($query) use ($request) {
+            $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter1.id, '\",\"name\": \"', filter1.name,'\" }') as category"))
+                ->from('Category')
+                ->joinSub(function ($query) use ($request) {
+                    $query->from('CategoryManage');
+                    $input = $request->input("categoryFilter");
+                    if (!$input)
+                        return;
+                    $query->whereIn('id', explode(',', $input));
+                }, 'filter1', 'Category.id', '=', 'filter1.id')
+                ->groupBy('study_id');
+        }, 'tmp1', 'Study.id', '=', 'tmp1.study_id')
             ->joinSub(function ($query) use ($request) {
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
