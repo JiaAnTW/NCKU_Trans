@@ -379,6 +379,21 @@ class StudyController extends Controller
         }
 
         $study->save();
+
+        //delete other statistic
+        OtherStatistic::where('study_id', '=', $study->id)->delete();
+        //create other statistic
+        foreach ( $request["otherStatistic"] as $element ) {
+            $otherStat = new OtherStatistic;
+            $otherStat->name = $element["name"];
+            $otherStat->value = $element["value"];
+            $uuid = Str::uuid()->toString();
+            $otherStat->id = $uuid;
+            $study->otherStatistic()->save($otherStat);
+        }
+
+        $study->save();
+
         return array('status' => "success");
     }
 
