@@ -1,8 +1,16 @@
 import React from 'react';
-import { Title } from './style';
+import { Title, DeleteButton } from './style';
 
 function Label(props) {
-    return <Title {...props}>{props.value}</Title>;
+    const { value, enableDelete, onDelete } = props;
+    return (
+        <Title {...props}>
+            {props.value}{' '}
+            {enableDelete && (
+                <DeleteButton onClick={onDelete}>X 刪除</DeleteButton>
+            )}
+        </Title>
+    );
 }
 
 export default Label;

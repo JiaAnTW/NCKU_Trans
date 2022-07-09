@@ -28,7 +28,7 @@ function PairInput(props) {
     );
     return (
         <>
-            <Label {...labelStyle} value={wording} />
+            <Label {...labelStyle} value={wording} enableDelete />
             <PairInputLayout>
                 <InputLayout>
                     <Input
