@@ -1,6 +1,7 @@
 ## 目錄
 
 -   通用
+
     -   心得
         -   [取得已審核心得](#取得已審核心得)
         -   [取得所有心得](#取得所有心得)
@@ -9,16 +10,19 @@
         -   [更新心得](#更新心得)
         -   [更新心得審核狀態](#更新心得審核狀態)
         -   [刪除心得](#刪除心得)
+
     -   分類項目
         -   [取得所有分類項目](#取得所有分類項目)
         -   [新增分類項目](#新增分類項目)
         -   [更新分類項目](#更新分類項目)
         -   [刪除分類項目](#刪除分類項目)
+
     -   統計數據
         -   [取得所有統計數據](#取得所有統計數據)
         -   [新增統計數據](#新增統計數據)
         -   [更新統計數據](#更新統計數據)
         -   [刪除統計數據](#刪除統計數據)
+
     -   其他統計數據
 
 ---
@@ -26,7 +30,7 @@
 ### 取得已審核心得
 
 ```
-GET https://api.nckustudy.com/study?from={id}&num={num}&p={words}&cate={id1,id2}&stat={id1,id2}
+GET  https://api.nckustudy.com/study?from={id}&num={num}&p={words}&cate={id1,id2}&stat={id1,id2}
 ```
 
 -   query
@@ -71,19 +75,21 @@ GET https://api.nckustudy.com/study?from={id}&num={num}&p={words}&cate={id1,id2}
 ### 取得所有心得
 
 ```
-GET https://api.nckustudy.com/study?from={id}&num={num}&p={words}&cate={id1,id2}&stat={id1,id2}
+GET  https://api.nckustudy.com/study?from={id}&num={num}&p={words}&cate={id1,id2}&stat={id1,id2}
 ```
 
 -   authorization
 -   query : 同 [取得已審核心得](#取得已審核心得)
 -   response :
+
     -   data :
+
         -   同 [取得已審核心得](#取得已審核心得)
 
 ### 取得心得的統計數據
 
 ```
-GET https://api.nckustudy.com/study/result?p={words}&cate={id1,id2}&stat={id1,id2}
+GET  https://api.nckustudy.com/study/result?p={words}&cate={id1,id2}&stat={id1,id2}
 ```
 
 -   query : 同 [取得已審核心得](#取得已審核心得)
@@ -101,11 +107,13 @@ GET https://api.nckustudy.com/study/result?p={words}&cate={id1,id2}&stat={id1,id
 ### 新增心得
 
 ```
-POST https://api.nckustudy.com/study
+POST  https://api.nckustudy.com/study
 ```
 
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     -   | Name      | Type    | Description    |
@@ -131,18 +139,21 @@ POST https://api.nckustudy.com/study
             | value | string | 統計數據數值    |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 更新心得
 
 ```
-PUT https://api.nckustudy.com/study?id={id}
+PUT  https://api.nckustudy.com/study?id={id}
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     -   | Name      | Type    | Description    |
@@ -169,18 +180,21 @@ PUT https://api.nckustudy.com/study?id={id}
             | value | string | 統計數據數值    |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 更新心得審核狀態
 
 ```
-PATCH https://api.nckustudy.com/study?id={id}
+PATCH  https://api.nckustudy.com/study?id={id}
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     -   | Name    | Type    | Description |
@@ -188,24 +202,26 @@ PATCH https://api.nckustudy.com/study?id={id}
         | confirm | integer | 審核狀態    |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 刪除心得
 
 ```
-DELETE https://api.nckustudy.com/study?id={id}
+DELETE  https://api.nckustudy.com/study?id={id}
 ```
 
 -   authorization
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 取得所有分類項目
 
 ```
-GET https://api.nckustudy.com/studyType
+GET  https://api.nckustudy.com/studyType
 ```
 
 -   response :
@@ -218,12 +234,14 @@ GET https://api.nckustudy.com/studyType
 ### 新增分類項目
 
 ```
-POST https://api.nckustudy.com/studyType
+POST  https://api.nckustudy.com/studyType
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     | Name | Type   | Description  |
@@ -231,18 +249,21 @@ POST https://api.nckustudy.com/studyType
     | name | string | 分類項目名稱 |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 更新分類項目
 
 ```
-PUT https://api.nckustudy.com/studyType?id={id}
+PUT  https://api.nckustudy.com/studyType?id={id}
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     | Name | Type   | Description  |
@@ -250,24 +271,26 @@ PUT https://api.nckustudy.com/studyType?id={id}
     | name | string | 分類項目名稱 |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 刪除分類項目
 
 ```
-DELETE https://api.nckustudy.com/studyType?id={id}
+DELETE  https://api.nckustudy.com/studyType?id={id}
 ```
 
 -   authorization
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 取得所有統計數據
 
 ```
-GET https://api.nckustudy.com/studyStat
+GET  https://api.nckustudy.com/studyStat
 ```
 
 -   response :
@@ -283,12 +306,14 @@ GET https://api.nckustudy.com/studyStat
 ### 新增統計數據
 
 ```
-POST https://api.nckustudy.com/studyStat
+POST  https://api.nckustudy.com/studyStat
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     | Name     | Type          | Description            |
@@ -299,18 +324,21 @@ POST https://api.nckustudy.com/studyStat
     | max      | integer/float | 此統計數據允許的最小值 |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 更新統計數據
 
 ```
-PUT https://api.nckustudy.com/studyStat?id={id}
+PUT  https://api.nckustudy.com/studyStat?id={id}
 ```
 
 -   authorization
 -   header :
+
     -   Content-Type : application/json
+
 -   body :
 
     | Name     | Type          | Description            |
@@ -321,16 +349,18 @@ PUT https://api.nckustudy.com/studyStat?id={id}
     | max      | integer/float | 此統計數據允許的最小值 |
 
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
 ### 刪除統計數據
 
 ```
-DELETE https://api.nckustudy.com/studyStat?id={id}
+DELETE  https://api.nckustudy.com/studyStat?id={id}
 ```
 
 -   authorization
 -   response :
+
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
