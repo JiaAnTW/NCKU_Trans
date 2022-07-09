@@ -13,6 +13,9 @@ import {
     SET_FILTER_OPEN,
     SET_FILTER_MANAGE,
     UPDATE_STUDY,
+    INIT_OTHER_STAT,
+    SET_OTHER_STAT_DATA,
+    SET_PENDING_SUBMIT,
 } from '../action/study';
 
 const date = new Date();
@@ -51,6 +54,7 @@ const initState = {
             isEditTag: false,
         },
     },
+    otherStatData: [],
 };
 
 const studyReducer = (state = initState, action) => {
@@ -257,6 +261,41 @@ const studyReducer = (state = initState, action) => {
                     [type]: tagList,
                 },
             };
+        }
+        case INIT_OTHER_STAT: {
+            const stateNext = state;
+            const data = action.payload;
+
+            data.map((otherStatData) => {
+                const nextOtherStatData = { ...otherStatData };
+                nextOtherStatData['nextName'] = otherStatData.name;
+                nextOtherStatData['nextValue'] = otherStatData.value;
+                stateNext.otherStatData.push(nextOtherStatData);
+            });
+
+            return stateNext;
+        }
+        case SET_OTHER_STAT_DATA: {
+            const stateNext = state;
+            const { name, value, elementIndex } = action.payload;
+
+            const nextOtherStatData = Array.from(stateNext.otherStatData);
+            nextOtherStatData[elementIndex]['nextName'] = name;
+            nextOtherStatData[elementIndex]['nextValue'] = value;
+
+            stateNext.otherStatData = nextOtherStatData;
+            return stateNext;
+        }
+        case SET_PENDING_SUBMIT: {
+            const stateNext = state;
+            const { elementIndex, target } = action.payload;
+
+            const nextOtherStatData = Array.from(stateNext.otherStatData);
+            nextOtherStatData[elementIndex][target] =
+                !nextOtherStatData[elementIndex][target];
+            stateNext.otherStatData = nextOtherStatData;
+
+            return stateNext;
         }
         default:
             return state;

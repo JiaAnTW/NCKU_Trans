@@ -20,6 +20,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { NavSearchProvider } from './components/NavLayout/NavSearchProvider';
 import { materialTheme } from './theme/global';
 import RouteAdmin from './RouteAuth.js';
+import Other from './page/Other';
 
 function App() {
     const [token, setToken] = useState('');
@@ -49,6 +50,11 @@ function App() {
                                     render={(props) => (
                                         <Login setToken={updateToken} />
                                     )}
+                                />
+                                <RouteAdmin
+                                    path="/admin/other"
+                                    component={Other}
+                                    token={token}
                                 />
                                 <RouteAdmin
                                     path="/admin/study"
