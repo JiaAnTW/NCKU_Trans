@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh_tw',
 
     /*
     |--------------------------------------------------------------------------
@@ -230,5 +230,6 @@ return [
         'JWTFactory' => Tymon\JWTAuthFacades\JWTFactory::class
 
     ],
-    'discord_webhook' => env('DISCORD_WEBHOOK'),
+    'discord_webhook_major' => env('DISCORD_WEBHOOK_MAJOR'),
+    'discord_webhook_study' => env('DISCORD_WEBHOOK_STUDY'),
 ];

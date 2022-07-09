@@ -3,7 +3,7 @@ import { useAverage, useMin } from './useStatistic';
 import useFetchGAS from './useFetchGAS';
 import { ProgressListLayout } from './style';
 import { useSelector } from 'react-redux';
-import Progress from '@/components/Progress/index';
+import Progress from '~/components/Progress/index';
 
 function ProgressList() {
     const { year, department, in_maj, category } = useSelector(

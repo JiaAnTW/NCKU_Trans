@@ -1,8 +1,8 @@
 import useRequest from './redux/useRequest';
 import useWindowWidth from './useWindowWidth';
+import useParentSize from './useParentSize';
 import useMedia from './useMedia';
 import useSetMajorFilter from './redux/useSetMajorFilter';
-import useCleanMajorFilter from './redux/useCleanMajorFilter';
 
 import useModalOpen from './redux/components/modal/useModalOpen';
 import useModalContext from './redux/components/modal/useModalContext';
@@ -13,8 +13,8 @@ export {
     useModalOpen,
     useModalContext,
     useWindowWidth,
+    useParentSize,
     useMedia,
     useSetMajorFilter,
-    useCleanMajorFilter,
     useSetModalFlow,
 };

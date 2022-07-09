@@ -27,7 +27,6 @@ function MenuItem({ name, num, selected, onClick }) {
                     height: '100%',
                     backgroundColor: 'white',
                     width: '5%',
-                    height: '100%',
                     top: '0',
                     left: '0',
                 }}

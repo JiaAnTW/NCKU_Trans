@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
 
-import SideBar from '@/components/SideBar';
+import SideBar from '~/components/SideBar';
 import Notification from './Notification';
-import Title from './Title';
-import { H1, Header, Container, MenuIconStyle } from './style';
+import { Container } from './style';
+import Banner from './Banner';
+import { useLocation } from 'react-router-dom';
+
+const switchOfSearchBar = ['/study'];
 
 function NavLayout({ children }) {
     const [open, setOpen] = useState(true);
+    const location = useLocation();
+    const isShowSearch = switchOfSearchBar.includes(location.pathname);
     return (
         <div style={{ display: 'flex' }}>
             <SideBar
@@ -16,14 +20,12 @@ function NavLayout({ children }) {
                 onOpen={() => setOpen(true)}
             />
             <Notification />
-            <Container>
-                <nav>
-                    <MenuIcon
-                        style={MenuIconStyle}
-                        onClick={() => setOpen(!open)}
-                    />
-                </nav>
-                <Title />
+            <Container isShowSearch={isShowSearch}>
+                <Banner
+                    isShowSearch={isShowSearch}
+                    open={open}
+                    setOpen={setOpen}
+                />
                 {children}
             </Container>
         </div>

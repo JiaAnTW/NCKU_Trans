@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WhiteContainer } from '@/theme/global';
+import { WhiteContainer } from '~/theme/global';
 
 export const ProgressListLayout = styled(WhiteContainer)`
     display: flex;

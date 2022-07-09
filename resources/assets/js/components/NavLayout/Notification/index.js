@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { isShowedSelector, msgSelector } from '@/model/selector/announcement';
-import useSetAnnIsShowed from '@/utils/redux/useSetAnnIsShowed';
+import { isShowedSelector, msgSelector } from '~/model/selector/announcement';
+import useSetAnnIsShowed from '~/utils/redux/useSetAnnIsShowed';
 
 import useInitNotification from './useInitNotification';
 import { YellowSnackbar, BtnClose } from './style';

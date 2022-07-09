@@ -1,12 +1,15 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { SET_POST_FORM } from '@/model/action/post';
-
+import { SET_POST_FORM } from '~/model/action/post';
 import { InputLayout, RemarkSpan } from './style';
-import Input from '@/components/atom/Input';
-import Select from '@/components/atom/Select';
-import TextArea from '@/components/atom/TextArea';
+import Input from '~/components/atom/Input';
+import Select from '~/components/atom/Select';
+import TextArea from '~/components/atom/TextArea';
+import Label from '~/components/atom/Label';
+import ToggleButtonGroup from '~/components/atom/ToggleButtonGroup';
+import PairInput from '~/components/atom/PairInput';
+import PreviewInput from '~/components/atom/PreviewInput';
+import SearchBar from '~/components/SearchBar';
 
 const mapTypeToElement = (type) => {
     switch (type) {
@@ -16,24 +19,43 @@ const mapTypeToElement = (type) => {
             return Select;
         case 'textarea':
             return TextArea;
+        case 'label':
+            return Label;
+        case 'toggle_button_group':
+            return ToggleButtonGroup;
+        case 'pair_input':
+            return PairInput;
+        case 'preview_input':
+            return PreviewInput;
+        case 'search_bar':
+            return SearchBar;
         default:
             return Input;
     }
 };
-
 function PostInput(props) {
     const dispatch = useDispatch();
-
     const handleChange = useCallback(
         (e) => {
             dispatch({
                 type: SET_POST_FORM,
-                payload: { keyName: props.keyName, value: e.target.value },
+                payload: {
+                    keyName: props.keyName,
+                    value: e.target.value,
+                    elementArea: props.elementArea,
+                    elementIndex: props.elementIndex,
+                    customHandleChange: props.customHandleChange,
+                },
             });
         },
-        [dispatch, props.keyName, props.value]
+        [
+            dispatch,
+            props.keyName,
+            props.elementArea,
+            props.elementIndex,
+            props.customHandleChange,
+        ]
     );
-
     const Element = mapTypeToElement(props.type);
     return (
         <InputLayout width={props.width}>

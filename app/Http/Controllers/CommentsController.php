@@ -12,14 +12,31 @@ class CommentsController extends Controller
     //顯示所有資料
     public function show()
     {
-        $data=Comments::where('confirm',"true")->get();
+        $data=Comments::where('confirm',"true")->orderBy('id', 'desc')->get();
         return $data;
         //
     }
 
+    static public function showById(Request $request)
+    {
+        try{
+            $id = $request->input('id');
+            if(!$id) {
+                return null;
+            }
+            
+            $data = Comments::where('id', $id) -> firstOrFail();
+            if($data -> confirm == "false")
+                return null;
+            return $data;
+        } catch(Exception $e){
+            return null;
+        }
+    }
+
     public function index()
     {
-        $data=Comments::all();
+        $data=Comments::orderBy('id', 'desc')->get();
         return $data;
         //
     }

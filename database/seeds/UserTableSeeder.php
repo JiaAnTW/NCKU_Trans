@@ -7,13 +7,14 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('users')->delete();
-
-        User::create([
-            'id' => 0,
-            'name' => 'nckutrans',
-            'email'    => 'nckutrans@gmail.com',
-            'password' => Hash::make('nckutrans001'),
-        ]);
+        try{
+            User::create([
+                'name' => env('ADMIN_NAME'),
+                'email' => env('ADMIN_EMAIL'),
+                'password' => Hash::make(env('ADMIN_PASSWORD')),
+            ]);
+        } catch(Exception $e) {
+            error_log($e->getMessage());
+        }
     }
 }

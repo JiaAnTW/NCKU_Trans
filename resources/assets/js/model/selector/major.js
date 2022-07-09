@@ -1,4 +1,8 @@
-import { createSelector } from 'reselect';
+import {
+    createSelector,
+    createSelectorCreator,
+    defaultMemoize,
+} from 'reselect';
 
 const majorSelector = (state) => state.major;
 
@@ -24,4 +28,16 @@ export const majorDisplaySelector = createSelector(
                 (item['category'] === category || category === 'none')
             );
         })
+);
+
+/* workaround: resolve returned selector not update and cause crash */
+const workaround = createSelectorCreator(defaultMemoize, () => false);
+
+export const majorIndexByIdSelector = workaround(
+    majorDisplaySelector,
+    (majorData) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlId = urlParams.get('id');
+        return majorData.findIndex(({ id }) => id === Number(urlId));
+    }
 );

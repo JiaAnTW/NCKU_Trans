@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { RESET_POST_FORM } from '@/model/action/post';
+import { RESET_POST_FORM } from '~/model/action/post';
 
 import {
     ThankYouLayout,

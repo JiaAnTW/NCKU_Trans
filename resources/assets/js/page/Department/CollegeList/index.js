@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { colSelector } from '@/model/selector/college';
+import { colSelector } from '~/model/selector/college';
 
 import colSelectedContext from '../context';
 import { ListYellow } from './style';

@@ -2,11 +2,11 @@ import React from 'react';
 import Toggle from 'react-toggle';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { isShowSelector, msgNextSelector } from '@/model/selector/announcement';
-import { EDIT_ANNOOUNCE_MSG } from '@/model/action/announcement';
-import { updateAnnouncement } from '@/model/middleware/announcement';
-import useSetAnnIsShowed from '@/utils/redux/useSetAnnIsShowed';
-import { useRequest } from '@/utils/index';
+import { isShowSelector, msgNextSelector } from '~/model/selector/announcement';
+import { EDIT_ANNOOUNCE_MSG } from '~/model/action/announcement';
+import { updateAnnouncement } from '~/model/middleware/announcement';
+import useSetAnnIsShowed from '~/utils/redux/useSetAnnIsShowed';
+import { useRequest } from '~/utils/index';
 
 import { AnnounceLayout, ToggleLayout, TextArea, SubmitButton } from './style';
 

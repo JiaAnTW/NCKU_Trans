@@ -16,7 +16,7 @@ const Button = styled.button`
     border-radius: 4px;
     outline: none;
     border: none;
-    height: ${(props) => (props.width ? props.width : '30px')};
+    height: ${(props) => (props.height ? props.height : '30px')};
     width: ${(props) => (props.width ? props.width : '140px')};
     color: ${(props) => theme[props.theme].color};
     background-color: ${(props) => theme[props.theme].backgroundColor};

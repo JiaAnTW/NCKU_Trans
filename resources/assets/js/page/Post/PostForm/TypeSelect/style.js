@@ -1,19 +1,26 @@
 import styled from 'styled-components';
-import Avatar from '@material-ui/core/Avatar';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 export const TypeSelectLayout = styled.div`
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 25px;
+    padding: 25px 0;
+
+    @media (max-width: 576px) {
+        padding: 0;
+    }
 `;
 
 export const Title = styled.p`
     display: flex;
     justify-content: center;
     color: ${color.darkGray};
+    margin-bottom: 74.38px;
+
+    @media (max-width: 576px) {
+        margin-bottom: 20px;
+    }
 `;
 
 export const AvatarList = styled.div`
@@ -21,24 +28,23 @@ export const AvatarList = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 `;
-
-export const AvatarYellow = styled(Avatar)`
-    height: 70px;
-    width: 70px;
-    background-color: ${color.yellow};
-    margin: 5px;
-    & svg {
-        font-size: 30px;
-    }
-`;
-
 export const AvatarLayout = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
     opacity: ${(props) => (props.selected ? 1 : 0.5)};
-    margin: 10px;
+    display: ${(props) => (props.selected ? 'block' : 'none')};
 `;
 
-export const AvatarText = styled.span``;
+export const AvatarText = styled.div`
+    width: 316px;
+    height: 42px;
+    text-align: center;
+    @media (max-width: 368px) {
+        width: 100%;
+        height: auto;
+    }
+`;
