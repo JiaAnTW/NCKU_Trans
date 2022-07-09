@@ -125,6 +125,18 @@ const postReducer = (state = initState, action) => {
             const { type, step } = stateNext;
             const { value, elementArea, elementIndex, customHandleChange } =
                 action.payload;
+
+            /**
+             * avoid delete the non-spawnable input & anti destroy form by user
+             */
+            if (value.secret === '/!delete_this_input') {
+                const thisArea =
+                    stateNext.form[type].pageMap[step / 2][elementArea];
+
+                delete thisArea[elementIndex];
+                return stateNext;
+            }
+
             if (customHandleChange) {
                 const preventDefault = !customHandleChange(
                     stateNext,

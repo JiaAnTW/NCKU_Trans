@@ -11,6 +11,10 @@ function packDataToElement(name, value) {
     return { target: { value: { name: name, value: value } } };
 }
 
+function packDeleteCommand(secret) {
+    return { target: { value: { secret: secret } } };
+}
+
 function PairInput(props) {
     const { wording, subWording, onChange } = props;
     const { name, value } = props.value;
@@ -26,9 +30,22 @@ function PairInput(props) {
         },
         [onChange, name]
     );
+    const handleDelete = useCallback(
+        (e) => {
+            // avoid delete the non-spawnable input & anti destroy form by user
+            onChange(packDeleteCommand('/!delete_this_input'));
+        },
+        [onChange]
+    );
+
     return (
         <>
-            <Label {...labelStyle} value={wording} enableDelete />
+            <Label
+                {...labelStyle}
+                value={wording}
+                onDelete={handleDelete}
+                enableDelete
+            />
             <PairInputLayout>
                 <InputLayout>
                     <Input
