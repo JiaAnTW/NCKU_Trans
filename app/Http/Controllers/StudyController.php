@@ -339,7 +339,12 @@ class StudyController extends Controller
         $study->major = $request->major;
         $study->confirm = $request->confirm;
 
-        //update statistic
+        //delete statistic
+        $stats = StatisticManage::all();
+        foreach($stats as $stat){
+            $value = DB::table($stat['id'])->where('study_uuid', '=', $study->id)->delete();
+        }
+        //reinsert statistic
         foreach ( $request["statistic"] as $element ) {
             $stat = StatisticManage::where('name', '=', $element['name'])->first();
             if($stat != null)
@@ -352,9 +357,13 @@ class StudyController extends Controller
                         return array('status' => "fail");
                     }
                 }
-                DB::table($stat['id'])
-                    ->where('study_uuid', '=', $study->id)
-                    ->update(['value' => $element["value"]]);
+
+                DB::table($stat['id'])->insert(
+                    [ "value" => $element['value'],
+                        "study_uuid" => $request->id ]
+                );
+                
+                
             }
             else
             {
