@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import { color } from '~/theme/global';
 
 export const Title = styled.div`
@@ -12,11 +13,10 @@ export const Title = styled.div`
             : 'rgba(0, 0, 0, 0.54)'}; // the color global theme doesn't exist
 `;
 
-export const DeleteButton = styled.button`
+export const DeleteButton = styled(HighlightOffIcon)`
     color: ${color.red};
+    font-size: ${(props) => (props.size ? props.size : '25px')};
     position: absolute;
     right: 0;
-    background-color: transparent;
-    border: none;
-    outline: none;
+    cursor: pointer;
 `;
