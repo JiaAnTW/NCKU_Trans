@@ -34,6 +34,20 @@ class StudyController extends Controller
         }
     }
 
+    public function castToOldAPI($studies)
+    {
+        foreach ($studies as  $study) {
+            $study['confirm'] = $study['confirm'] == 0 ? 'false' : 'true';
+        }
+        return $studies;
+    }
+
+    public function castFromOldAPI($study)
+    {
+        $study['confirm'] = strcmp($study['confirm'], 'true') ? 0 : 1;
+        return $study;
+    }
+
     /**
      * 取出符合條件的已審核資料，並以創建時間遞減排序
      * 
@@ -132,6 +146,8 @@ class StudyController extends Controller
             }
             $study['statistic'] = $statistics;
         }
+
+        $studies = $this->castToOldAPI($studies);
 
         return $studies;
     }
@@ -234,6 +250,8 @@ class StudyController extends Controller
             $study['statistic'] = $statistics;
         }
 
+        $studies = $this->castToOldAPI($studies);
+
         return $studies;
     }
 
@@ -273,6 +291,8 @@ class StudyController extends Controller
             $study->statistics()->save($statistic);
         }
 
+        $study = $this->castFromOldAPI($study);
+
         $study->save();
         return array('status' => "success");
     }
@@ -310,6 +330,8 @@ class StudyController extends Controller
             $study->statistics()->save($category);
         }
 
+        $study = $this->castFromOldAPI($study);
+
         $study->save();
         return array('status' => "success");
     }
@@ -343,6 +365,9 @@ class StudyController extends Controller
         }
 
         $study->confirm = $request->confirm;
+
+        $study = $this->castFromOldAPI($study);
+
         $study->save();
 
         return array('status' => "success");
