@@ -9,6 +9,7 @@ import {
     UPDATE_STUDY_STAT,
     SET_STUDY_FILTER,
     INIT_OTHER_STAT,
+    SET_STUDY_OTHER_STAT_OPTIONS,
 } from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
@@ -105,6 +106,7 @@ export const fetchStudyStat = () => {
                     payload: { type: 'statInfo', data },
                 });
                 dispatch({ type: SET_STUDY_STATIS_OPTIONS, payload: data });
+                dispatch({ type: SET_STUDY_OTHER_STAT_OPTIONS, payload: data });
                 dispatch({
                     type: FINISH_REQUEST,
                 });

@@ -8,6 +8,7 @@ import Submit from './Submit';
 function Other() {
     const isFinishRequest = useInitData();
     const otherStatData = useSelector((state) => state.study.otherStatData);
+    const otherStatOption = useSelector((state) => state.study.otherStatOption);
     const handleClick = useCallback(
         (e) => {
             e.preventDefault();
@@ -17,7 +18,11 @@ function Other() {
     );
     return (
         <LoadingFrame isFinishRequest={isFinishRequest}>
-            {otherStatData ? <Table data={otherStatData} /> : ''}
+            {otherStatData ? (
+                <Table data={otherStatData} option={otherStatOption} />
+            ) : (
+                ''
+            )}
             <Submit onClick={handleClick} />
         </LoadingFrame>
     );

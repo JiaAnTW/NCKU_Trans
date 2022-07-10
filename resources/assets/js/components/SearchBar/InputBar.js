@@ -35,6 +35,7 @@ const InputBar = forwardRef(
             <InputField
                 onKeyPress={handlePressEnter}
                 ref={ref}
+                value={value}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 {...temp}

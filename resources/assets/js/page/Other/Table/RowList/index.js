@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { SET_OTHER_STAT_DATA, SET_PENDING_SUBMIT } from '~/model/action/study';
 import {
@@ -32,6 +32,8 @@ function RowList(props) {
         nextValue,
         pendingChange,
         pendingDelete,
+        onFocus,
+        ...replacingProps
     } = props;
     const dispatch = useDispatch();
     const handleChangeName = useCallback(
@@ -44,8 +46,9 @@ function RowList(props) {
                     elementIndex: elementIndex,
                 },
             });
+            handleFocus(e);
         },
-        [dispatch, nextName, elementIndex]
+        [dispatch, nextValue, elementIndex]
     );
     const handleChangeValue = useCallback(
         (e) => {
@@ -79,11 +82,26 @@ function RowList(props) {
         },
         [dispatch, elementIndex]
     );
-
+    const handleFocus = useCallback(
+        (e) => {
+            onFocus(elementIndex, e);
+        },
+        [elementIndex]
+    );
+    useEffect(() => {
+        if (replacingProps.onFocusIndex === elementIndex)
+            handleChangeName({
+                target: { value: replacingProps.pendingReplace },
+            });
+    }, [handleChangeName, replacingProps.pendingReplace, elementIndex]);
     return (
         <Row color={colorController(pendingChange, pendingDelete)}>
             <NameBox>
-                <Input value={nextName} onChange={handleChangeName} />
+                <Input
+                    value={nextName}
+                    onChange={handleChangeName}
+                    onFocus={handleFocus}
+                />
             </NameBox>
             <ValueBox>
                 <Input value={nextValue} onChange={handleChangeValue} />

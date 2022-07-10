@@ -2,6 +2,17 @@ import styled from 'styled-components';
 import { color } from '~/theme/global';
 
 export const TableContainer = styled.div`
+    display: flex;
+`;
+
+export const SearchingPlace = styled.div`
+    padding: 20px;
+    width: 28%;
+    background-color: ${color.darkGray};
+`;
+
+export const EditPlace = styled.div`
+    width: 70%;
     background-color: ${color.lightGray};
 `;
 

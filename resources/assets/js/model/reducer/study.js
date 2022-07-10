@@ -16,6 +16,7 @@ import {
     INIT_OTHER_STAT,
     SET_OTHER_STAT_DATA,
     SET_PENDING_SUBMIT,
+    SET_STUDY_OTHER_STAT_OPTIONS,
 } from '../action/study';
 
 const date = new Date();
@@ -55,6 +56,7 @@ const initState = {
         },
     },
     otherStatData: [],
+    otherStatOption: [],
 };
 
 const studyReducer = (state = initState, action) => {
@@ -294,6 +296,14 @@ const studyReducer = (state = initState, action) => {
             nextOtherStatData[elementIndex][target] =
                 !nextOtherStatData[elementIndex][target];
             stateNext.otherStatData = nextOtherStatData;
+
+            return stateNext;
+        }
+        case SET_STUDY_OTHER_STAT_OPTIONS: {
+            const stateNext = state;
+            const data = action.payload;
+
+            stateNext.otherStatOption = data;
 
             return stateNext;
         }
