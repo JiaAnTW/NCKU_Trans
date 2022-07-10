@@ -19,19 +19,23 @@ import result from 'lodash/result';
 import DataMapping from '~/utils/redux/components/modal/dataMapping';
 
 let commentTable, studyTable;
+let initializedTable = false;
 let initializedStats = false;
 
 const postReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_POST_OPTION_DEPARTMENT: {
-            commentTable = DataMapping.transObjToKeysTable(
-                state.form['comment'],
-                DataMapping.action.GET_INIT_COMMENT
-            );
-            studyTable = DataMapping.transObjToKeysTable(
-                state.form['study'],
-                DataMapping.action.GET_INIT_STUDY
-            );
+            if (!initializedTable) {
+                initializedTable = true;
+                commentTable = DataMapping.transObjToKeysTable(
+                    state.form['comment'],
+                    DataMapping.action.GET_INIT_COMMENT
+                );
+                studyTable = DataMapping.transObjToKeysTable(
+                    state.form['study'],
+                    DataMapping.action.GET_INIT_STUDY
+                );
+            }
             const stateNext = state;
 
             // 初始化學系
@@ -86,6 +90,17 @@ const postReducer = (state = initState, action) => {
             return stateNext;
         }
         case INIT_POST_OPTION_COLLEGE: {
+            if (!initializedTable) {
+                initializedTable = true;
+                commentTable = DataMapping.transObjToKeysTable(
+                    state.form['comment'],
+                    DataMapping.action.GET_INIT_COMMENT
+                );
+                studyTable = DataMapping.transObjToKeysTable(
+                    state.form['study'],
+                    DataMapping.action.GET_INIT_STUDY
+                );
+            }
             const stateNext = state;
 
             // 初始化學系
