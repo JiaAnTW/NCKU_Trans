@@ -152,7 +152,6 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('id', 'title', 'year', 'major', 'confirm', 'created_at as timestamp', 'content', 'tmp1.category', 'tmp2.statistic')
-            ->where('confirm', 1)
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
