@@ -19,56 +19,60 @@ class CategoryManageController extends Controller
 
     public function create(Request $request)
     {
-        //check if there is same name in database
-        $collision = CategoryManage::where('name', '=', $request->name)->first();
-        if ($collision) {
-            return array(["status" => "fail", "msg" => "Same name in database."]);
-        }
+        $name = $request->input('name');
+        if (!$name)
+            return array(['status' => 'fail', 'msg' => 'Empty name is inavailable.']);
+
+        // check if there is same name in database
+        $collision = CategoryManage::where('name', '=', $name)->first();
+        if ($collision)
+            return array(['status' => 'fail', 'msg' => 'Same name in database.']);
 
         $category = new CategoryManage;
         $uuid = Str::uuid()->toString();
         $category->id = $uuid;
-        $category->name = $request->name;
+        $category->name = $name;
         $category->save();
 
-        return array('status' => "success", "id" => $uuid);
+        return array('status' => 'success', 'id' => $uuid);
     }
 
     public function update(Request $request)
     {
         try {
-            $category = CategoryManage::findOrFail($request->id);
-        }
-        catch (Exception $e) {
-            error_log("Error:" . $e);
-            return array('status' => "fail");
-        }
-
-        //check if there is same name in database
-        $collision = CategoryManage::where('name', '=', $request->name)->first();
-        if ($collision) {
-            return array(["status" => "fail", "msg" => "Same name in database."]);
+            $category = CategoryManage::findOrFail($request->input('id'));
+        } catch (Exception $e) {
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
         }
 
-        $category->name = $request->name;
+        $name = $request->input('name');
+        if (!$name)
+            return array(['status' => 'fail', 'msg' => 'Empty name is inavailable.']);
+
+        // check if there is same name in database
+        $collision = CategoryManage::where('name', '=', $name)->first();
+        if ($collision)
+            return array(['status' => 'fail', 'msg' => 'Same name in database.']);
+
+        $category->name = $name;
         $category->save();
 
-        return array('status' => "success");
+        return array('status' => 'success');
     }
 
     public function destroy(Request $request)
     {
         try {
-            $categoryManage = CategoryManage::findOrFail($request->id);
-        }
-        catch (Exception $e) {
-            error_log("Error:" . $e);
-            return array('status' => "fail");
+            $categoryManage = CategoryManage::findOrFail($request->input('id'));
+        } catch (Exception $e) {
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
         }
 
         $categoryManage->categories()->delete();
         $categoryManage->delete();
 
-        return array('status' => "success");
+        return array('status' => 'success');
     }
 }

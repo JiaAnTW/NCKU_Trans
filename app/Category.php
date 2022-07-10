@@ -6,15 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    //
     protected $table = 'Category';
-    public $timestamps = false;
+    protected $keyType = 'string';
 
-    // prevent laravel casting id to integer
-    protected $casts = [
-        'id' => 'string',
-        'study_id' => 'string'
-    ];
+    public $increamenting = false;
+    public $timestamps = false;
 
     public function study()
     {

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Exception;
 
 //for uuid
@@ -21,61 +19,75 @@ class StatisticManageController extends Controller
 
     public function create(Request $request)
     {
-        //check if there is same name in database
-        $collision = StatisticManage::where('name', '=', $request->name)->first();
-        if ($collision) {
-            return array(["status" => "fail", "msg" => "Same name in database."]);
-        }
+        $name = $request->input('name');
+        $dataType = $request->input('dataType');
+        if (!$name)
+            return array(['status' => 'fail', 'msg' => 'Empty name is inavailable.']);
+        if (!$dataType)
+            return array(['status' => 'fail', 'msg' => 'Empty dataType is inavailable.']);
+
+        // check if there is same name in database
+        $collision = StatisticManage::where('name', '=', $name)->first();
+        if ($collision)
+            return array(['status' => 'fail', 'msg' => 'Same name in database.']);
 
         $statisticManage = new StatisticManage;
         $uuid = Str::uuid()->toString();
         $statisticManage->id = $uuid;
-        $statisticManage->name = $request->name;
-        $statisticManage->dataType = $request->dataType;
+        $statisticManage->name = $name;
+        $statisticManage->dataType = $dataType;
 
-        //check valid dataType
-        if (strcmp($request->dataType, "string") && strcmp($request->dataType, "int") && strcmp($request->dataType, "float")) {
-            return array(["status" => "fail", "msg" => "Invalid dataType."]);
+        // check valid dataType
+        if (strcmp($dataType, 'string') && strcmp($dataType, 'int') && strcmp($dataType, 'float'))
+            return array(['status' => 'fail', 'msg' => 'Invalid dataType.']);
+
+        if (strcmp($dataType, 'string')) {
+            $statisticManage->max = $request->input('max') ?: 0;
+            $statisticManage->min = $request->input('min') ?: 0;
         }
-
-        if (strcmp($request->dataType, "string")) {
-            $statisticManage->max = $request->max;
-            $statisticManage->min = $request->min;
-        } else {
-            $statisticManage->max = 0;
-            $statisticManage->min = 0;
-        }
-
         $statisticManage->save();
-        return array("status" => "success", "id" => $uuid);
+
+        return array('status' => 'success', 'id' => $uuid);
     }
 
-    //not allow to update dataType
     public function update(Request $request)
     {
         try {
             $statisticManage = StatisticManage::findOrFail($request->id);
         } catch (Exception $e) {
-            error_log("Error:" . $e);
-            return array('status' => "fail");
-        }
-        //check if there is same name in database
-        $collision = StatisticManage::where('name', '=', $request->name)->first();
-        if ($collision) {
-            return array(["status" => "fail", "msg" => "Same name in database."]);
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
         }
 
-        $statisticManage->name = $request->name;
-        if (strcmp($request->dataType, "string")) {
-            $statisticManage->max = $request->max;
-            $statisticManage->min = $request->min;
+        $name = $request->input('name');
+        $dataType = $request->input('dataType');
+        if (!$name)
+            return array(['status' => 'fail', 'msg' => 'Empty name is inavailable.']);
+        if (!$dataType)
+            return array(['status' => 'fail', 'msg' => 'Empty dataType is inavailable.']);
+
+        // check if there is same name in database
+        $collision = StatisticManage::where('name', '=', $name)->first();
+        if ($collision)
+            return array(['status' => 'fail', 'msg' => 'Same name in database.']);
+
+        // check valid dataType
+        if (strcmp($dataType, 'string') && strcmp($dataType, 'int') && strcmp($dataType, 'float'))
+            return array(['status' => 'fail', 'msg' => 'Invalid dataType.']);
+
+        $statisticManage->name = $name;
+        $statisticManage->dataType = $dataType;
+
+        if (strcmp($request->dataType, 'string')) {
+            $statisticManage->max = $request->input('max') ?: 0;
+            $statisticManage->min = $request->input('min') ?: 0;
         } else {
             $statisticManage->max = 0;
             $statisticManage->min = 0;
         }
-
         $statisticManage->save();
-        return array('status' => "success");
+
+        return array('status' => 'success');
     }
 
     public function destroy(Request $request)
@@ -83,13 +95,13 @@ class StatisticManageController extends Controller
         try {
             $statisticManage = StatisticManage::findOrFail($request->id);
         } catch (Exception $e) {
-            error_log("Error:" . $e);
-            return array('status' => "fail");
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
         }
 
         $statisticManage->statistics()->delete();
         $statisticManage->delete();
 
-        return array('status' => "success");
+        return array('status' => 'success');
     }
 }

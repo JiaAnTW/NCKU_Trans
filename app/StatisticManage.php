@@ -6,15 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class StatisticManage extends Model
 {
-    //
     protected $table = 'StatisticManage';
-    public $timestamps = false;
+    protected $keyType = 'string';
 
-    // prevent laravel casting id to integer
-    protected $casts = [
-        'id' => 'string',
-        'name' => 'string'
-    ];
+    public $increamenting = false;
+    public $timestamps = false;
 
     public function statistics()
     {

@@ -6,14 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Study extends Model
 {
-    //
     protected $table = 'Study';
+    protected $keyType = 'string';
+
     public $increamenting = false;
     public $timestamps = false;
-
-    protected $casts = [
-        'id' => 'string'
-    ];
 
     public function categories()
     {

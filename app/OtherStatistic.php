@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class OtherStatistic extends Model
 {
     protected $table='OtherStatistic';
-    public $timestamps = false;
+    protected $keyType = 'string';
 
-    // prevent laravel casting id to integer
-    protected $casts = [
-        'id' => 'string'
-      ];
+    public $increamenting = false;
+    public $timestamps = false;
 
     public function study()
     {
-        return $this->belongsTo('App\Study');
+        return $this->belongsTo(Study::class);
     }
 }
