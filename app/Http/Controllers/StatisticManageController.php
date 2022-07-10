@@ -14,7 +14,12 @@ class StatisticManageController extends Controller
 {
     public function show()
     {
-        return StatisticManage::all();;
+        return StatisticManage::where('confirm', '=', 1)->get();
+    }
+
+    public function index()
+    {
+        return StatisticManage::all();
     }
 
     public function create(Request $request)
@@ -36,6 +41,7 @@ class StatisticManageController extends Controller
         $statisticManage->id = $uuid;
         $statisticManage->name = $name;
         $statisticManage->dataType = $dataType;
+        $statisticManage->confirm = 1;
 
         // check valid dataType
         if (strcmp($dataType, 'string') && strcmp($dataType, 'int') && strcmp($dataType, 'float'))
@@ -77,6 +83,7 @@ class StatisticManageController extends Controller
 
         $statisticManage->name = $name;
         $statisticManage->dataType = $dataType;
+        $statisticManage->confirm = $request->input('confirm', 0);
 
         if (strcmp($request->dataType, 'string')) {
             $statisticManage->max = $request->input('max') ?: 0;
@@ -86,6 +93,35 @@ class StatisticManageController extends Controller
             $statisticManage->min = 0;
         }
         $statisticManage->save();
+
+        return array('status' => 'success');
+    }
+
+    public function merge(Request $request)
+    {
+        $src_id = $request->input('id');
+        $dest_id = $request->input('dest');
+        if (!$src_id || !$dest_id)
+            return array(['status' => 'fail', 'msg' => 'Error, expecting two arguments.']);
+
+        try {
+            $src_manage = StatisticManage::findOrFail($src_id);
+        } catch (Exception $e) {
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
+        }
+        try {
+            $dest_manage = StatisticManage::findOrFail($dest_id);
+        } catch (Exception $e) {
+            error_log('Error:' . $e);
+            return array('status' => 'fail');
+        }
+
+        if (strcmp($src_manage->dataType, $dest_manage->dataType))
+            return array(['status' => 'fail', 'msg' => 'Error, dataType is incompatible.']);
+
+        $src_manage->statistics()->update(['id' => $dest_id]);
+        $src_manage->delete();
 
         return array('status' => 'success');
     }

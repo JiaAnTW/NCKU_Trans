@@ -39,7 +39,6 @@ Route::middleware('studyNotify')->post('post/study', 'StudyController@create');
 Route::get('get/studyType', 'CategoryManageController@show');
 
 Route::get('get/studyStat', 'StatisticManageController@show');
-Route::post('post/studyStat', 'StatisticManageController@create');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -79,6 +78,9 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
     Route::put('post/studyType', 'CategoryManageController@update');
     Route::delete('delete/studyType', 'CategoryManageController@destroy');
 
+    Route::get('get/studyStat/all', 'StatisticManageController@index');
+    Route::post('post/studyStat', 'StatisticManageController@create');
+    Route::patch('patch/studyStat', 'StatisticManageController@merge');
     Route::put('post/studyStat', 'StatisticManageController@update');
     Route::delete('delete/studyStat', 'StatisticManageController@destroy');
 

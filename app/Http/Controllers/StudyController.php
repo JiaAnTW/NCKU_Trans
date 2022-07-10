@@ -50,7 +50,7 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('id', 'title', 'year', 'major', 'confirm', 'created_at as timestamp', 'content', 'tmp1.category', 'tmp2.statistic')
-            ->where('confirm', "true")
+            ->where('confirm', 1)
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
@@ -92,7 +92,7 @@ class StudyController extends Controller
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
                     ->joinSub(function ($query) use ($sFilter) {
-                        $query->from('StatisticManage');
+                        $query->from('StatisticManage')->where('confirm', 1);
                         if (!$sFilter)
                             return;
                         $query->whereIn('id', explode(',', $sFilter));
@@ -104,7 +104,7 @@ class StudyController extends Controller
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
                     ->joinSub(function ($query) {
-                        $query->from('StatisticManage');
+                        $query->from('StatisticManage')->where('confirm', 1);
                     }, 'filter2', 'Statistic.id', '=', 'filter2.id')
                     ->groupBy('study_id');
             }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
@@ -152,7 +152,7 @@ class StudyController extends Controller
         $date = $from ? Carbon::parse(Study::find($from)['created_at'])->format('Y-m-d H:i:s') : Carbon::now()->toDateTimeString();
 
         $studies = Study::select('id', 'title', 'year', 'major', 'confirm', 'created_at as timestamp', 'content', 'tmp1.category', 'tmp2.statistic')
-            ->where('confirm', "true")
+            ->where('confirm', 1)
             ->where('created_at', '<=', $date)
             ->where(function ($query) use ($request) {
                 $input = $request->input("p");
@@ -194,7 +194,7 @@ class StudyController extends Controller
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
                     ->joinSub(function ($query) use ($sFilter) {
-                        $query->from('StatisticManage');
+                        $query->from('StatisticManage')->where('confirm', 1);
                         if (!$sFilter)
                             return;
                         $query->whereIn('id', explode(',', $sFilter));
@@ -206,7 +206,7 @@ class StudyController extends Controller
                 $query->select(DB::raw("study_id, group_concat('{ \"id\": \"', filter2.id, '\", \"name\": \"', filter2.name, '\", \"dataType\": \"', filter2.dataType, '\", \"value\": \"', Statistic.value, '\" }') as statistic"))
                     ->from('Statistic')
                     ->joinSub(function ($query) {
-                        $query->from('StatisticManage');
+                        $query->from('StatisticManage')->where('confirm', 1);
                     }, 'filter2', 'Statistic.id', '=', 'filter2.id')
                     ->groupBy('study_id');
             }, 'tmp2', 'Study.id', '=', 'tmp2.study_id');
@@ -273,14 +273,6 @@ class StudyController extends Controller
             }
             $study->statistics()->save($statistic);
         }
-
-        //create other statistic
-        // foreach ($request["otherStatistic"] as $element) {
-        //     $otherStat = new OtherStatistic;
-        //     $otherStat->name = $element["name"];
-        //     $otherStat->value = $element["value"];
-        //     $study->otherStatistic()->save($otherStat);
-        // }
 
         $study->save();
         return array('status' => "success");

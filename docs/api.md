@@ -3,6 +3,7 @@
 -   通用
 
     -   心得
+
         -   [取得已審核心得](#取得已審核心得)
         -   [取得所有心得](#取得所有心得)
         -   [取得心得的統計數據](#取得心得的統計數據)
@@ -12,15 +13,19 @@
         -   [刪除心得](#刪除心得)
 
     -   分類項目
+
         -   [取得所有分類項目](#取得所有分類項目)
         -   [新增分類項目](#新增分類項目)
         -   [更新分類項目](#更新分類項目)
         -   [刪除分類項目](#刪除分類項目)
 
     -   統計數據
+
+        -   [取得已審核統計數據](#取得已審核統計數據)
         -   [取得所有統計數據](#取得所有統計數據)
         -   [新增統計數據](#新增統計數據)
         -   [更新統計數據](#更新統計數據)
+        -   [合併統計數據](#合併統計數據)
         -   [刪除統計數據](#刪除統計數據)
 
     -   其他統計數據
@@ -287,7 +292,7 @@ DELETE  https://api.nckustudy.com/studyType?id={id}
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
-### 取得所有統計數據
+### 取得已審核統計數據
 
 ```
 GET  https://api.nckustudy.com/studyStat
@@ -302,6 +307,24 @@ GET  https://api.nckustudy.com/studyStat
         | dataType | string        | 資料類型               |
         | max      | integer/float | 此統計數據允許的最大值 |
         | max      | integer/float | 此統計數據允許的最小值 |
+
+### 取得所有統計數據
+
+```
+GET  https://api.nckustudy.com/studyStat/all
+```
+
+-   authorization
+-   response :
+
+    -   | Name     | Type          | Description            |
+        | :------- | :------------ | :--------------------- |
+        | id       | string        | 統計數據的 uuid        |
+        | name     | string        | 統計數據名稱           |
+        | dataType | string        | 資料類型               |
+        | max      | integer/float | 此統計數據允許的最大值 |
+        | max      | integer/float | 此統計數據允許的最小值 |
+        | confirm  | integer       | 審核狀態               |
 
 ### 新增統計數據
 
@@ -347,6 +370,29 @@ PUT  https://api.nckustudy.com/studyStat?id={id}
     | dataType | string        | 資料類型               |
     | max      | integer/float | 此統計數據允許的最大值 |
     | max      | integer/float | 此統計數據允許的最小值 |
+    | confirm  | integer       | 審核狀態               |
+
+-   response :
+
+    -   success : `{ status: success }`
+    -   fail : `{ status: fail }`
+
+### 合併統計數據
+
+```
+PATCH  https://api.nckustudy.com/studyStat?id={id}
+```
+
+-   authorization
+-   header :
+
+    -   Content-Type : application/json
+
+-   body :
+
+    | Name | Type   | Description |
+    | :--- | :----- | :---------- |
+    | dest | string | 合併目的地  |
 
 -   response :
 
