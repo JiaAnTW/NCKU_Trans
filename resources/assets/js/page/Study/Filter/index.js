@@ -78,7 +78,7 @@ function Filter({ isAdmin }) {
                     {isAdmin && filterStatus.isManage ? (
                         <ItemFilterEdit />
                     ) : (
-                        <ItemFilter />
+                        <ItemFilter isAdmin={isAdmin} />
                     )}
                 </Select>
             </FormControl>

@@ -156,7 +156,7 @@ class StudyController extends Controller
     public function getIdSetByFilter(Request $request) {
         $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
         $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
-        $catRes = DB::table('category')->select('study_id')->where(function ($query) use ($categoryFilter){    
+        $catRes = DB::table('Category')->select('study_id')->where(function ($query) use ($categoryFilter){    
             foreach ($categoryFilter as $catId) {
                 $query->where('id', '=', $catId);  
             }
@@ -173,10 +173,10 @@ class StudyController extends Controller
                     function($study){
                         return $study->study_uuid;
                     }
-                );
+                )->toArray();
                 continue;
             }
-            $statRes = array_intersect($statRes->toArray(), DB::table($stat)->select('study_uuid')->get()->map( 
+            $statRes = array_intersect($statRes, DB::table($stat)->select('study_uuid')->get()->map( 
                 function($study){
                     return $study->study_uuid;
                 }
@@ -199,7 +199,7 @@ class StudyController extends Controller
             $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
             if(count($statFilter) || count($categoryFilter)) {
                 $idSet = $this->getIdSetByFilter($request);
-                return $this->showByIdSet($request, $idSet);
+                return $this->showByIdSet($request, $idSet, $request->confirm);
             }
         } catch(Exception $e) {
             error_log("Error:".$e);

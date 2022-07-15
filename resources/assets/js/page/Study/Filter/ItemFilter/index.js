@@ -5,7 +5,7 @@ import { ItemFilterContainer } from './style';
 import ItemFilterColumn from './ItemFilterColumn';
 import useItemFilter from '../useItemFilter';
 
-const ItemFilter = forwardRef(() => {
+const ItemFilter = forwardRef(({ isAdmin }) => {
     const filterObjArr = useItemFilter();
 
     return (
@@ -14,6 +14,7 @@ const ItemFilter = forwardRef(() => {
                 <ItemFilterColumn
                     key={arr.type ? arr.type : index}
                     optionsArr={arr}
+                    isAdmin={isAdmin}
                 />
             ))}
         </ItemFilterContainer>

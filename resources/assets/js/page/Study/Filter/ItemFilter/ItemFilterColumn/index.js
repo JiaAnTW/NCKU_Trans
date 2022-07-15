@@ -11,14 +11,14 @@ import { ItemFilterColContainer, useStyles } from './style';
 import { selectedFilterSelector } from '~/model/selector/study';
 import { setStudyTypeOrStat } from '~/model/middleware/study';
 
-function ItemFilterColumn({ optionsArr }) {
+function ItemFilterColumn({ isAdmin, optionsArr }) {
     const classes = useStyles();
     const dispatch = useDispatch();
     const selectedFilter = useSelector(selectedFilterSelector);
 
     const onChangeCheckbox = (tagType, tagId, checked) => {
         dispatch(
-            setStudyTypeOrStat({
+            setStudyTypeOrStat(isAdmin, {
                 payload: { tagType, tagId, checked },
             })
         );
