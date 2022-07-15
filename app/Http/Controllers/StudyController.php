@@ -156,7 +156,7 @@ class StudyController extends Controller
     public function getIdSetByFilter(Request $request) {
         $statFilter = $request->input('statFilter') ? explode(",", $request->input('statFilter')) : [];
         $categoryFilter = $request->input('categoryFilter') ? explode(",", $request->input('categoryFilter')) : [];
-        $catRes = DB::table('category')->select('study_id')->where(function ($query) use ($categoryFilter){    
+        $catRes = DB::table('Category')->select('study_id')->where(function ($query) use ($categoryFilter){    
             foreach ($categoryFilter as $catId) {
                 $query->where('id', '=', $catId);  
             }
