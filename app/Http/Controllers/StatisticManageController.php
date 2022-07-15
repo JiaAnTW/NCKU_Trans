@@ -104,6 +104,9 @@ class StatisticManageController extends Controller
         if (!$src_id || !$dest_id)
             return array(['status' => 'fail', 'msg' => 'Error, expecting two arguments.']);
 
+        if (!strcmp($src_id, $dest_id))
+            return array(['status' => 'fail', 'msg' => 'Error, source and destination cannot be same.']);
+
         try {
             $src_manage = StatisticManage::findOrFail($src_id);
         } catch (Exception $e) {
@@ -139,5 +142,20 @@ class StatisticManageController extends Controller
         $statisticManage->delete();
 
         return array('status' => 'success');
+    }
+
+    public function confirm(Request $request)
+    {
+        try {
+            $statisticManage = StatisticManage::findOrFail($request->id);
+        } catch (Exception $e) {
+            error_log("Error:" . $e);
+            return array('status' => "fail");
+        }
+
+        $statisticManage->confirm = $request->confirm;
+        $statisticManage->save();
+
+        return array('status' => "success");
     }
 }

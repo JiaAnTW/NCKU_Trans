@@ -25,6 +25,7 @@
         -   [取得所有統計數據](#取得所有統計數據)
         -   [新增統計數據](#新增統計數據)
         -   [更新統計數據](#更新統計數據)
+        -   [更新統計數據審核狀態](#更新統計數據審核狀態)
         -   [合併統計數據](#合併統計數據)
         -   [刪除統計數據](#刪除統計數據)
 
@@ -377,7 +378,7 @@ PUT  https://api.nckustudy.com/studyStat?id={id}
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
 
-### 合併統計數據
+### 更新統計數據審核狀態
 
 ```
 PATCH  https://api.nckustudy.com/studyStat?id={id}
@@ -390,14 +391,31 @@ PATCH  https://api.nckustudy.com/studyStat?id={id}
 
 -   body :
 
-    | Name | Type   | Description |
-    | :--- | :----- | :---------- |
-    | dest | string | 合併目的地  |
+    | Name    | Type    | Description |
+    | :------ | :------ | :---------- |
+    | confirm | integer | 審核狀態    |
 
 -   response :
 
     -   success : `{ status: success }`
     -   fail : `{ status: fail }`
+
+### 合併統計數據
+
+```
+PATCH  https://api.nckustudy.com/studyState/merge?id={id}
+```
+
+-   authorization
+-   header :
+
+    -   Content-Type : application/json
+
+-   body :
+
+    -   | Name | Type   | Description |
+        | :--- | :----- | :---------- |
+        | dest | string | 合併目的地  |
 
 ### 刪除統計數據
 

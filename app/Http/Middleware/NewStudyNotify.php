@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Exception;
 
+use App\StatisticManage;
+
 class NewStudyNotify 
 {
     /**
@@ -38,7 +40,8 @@ class NewStudyNotify
         ];
 
         $statisticData = array_map(function($element) {
-            return array('name' => $element['name'], 'value' => $element['value'], "inline" => false);
+            $statistic_name = StatisticManage::select('name')->where('id', $element['id'])->get();
+            return array('name' => $statistic_name, 'value' => $element['value'], "inline" => false);
         }, $statistic);
 
         // $otherStatisticData = array_map(function($element) {

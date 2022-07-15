@@ -80,7 +80,8 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
 
     Route::get('get/studyStat/all', 'StatisticManageController@index');
     Route::post('post/studyStat', 'StatisticManageController@create');
-    Route::patch('patch/studyStat', 'StatisticManageController@merge');
+    Route::patch('patch/studyStat', 'StatisticManageController@confirm');
+    Route::patch('patch/studyStat/merge', 'StatisticManageController@merge');
     Route::put('post/studyStat', 'StatisticManageController@update');
     Route::delete('delete/studyStat', 'StatisticManageController@destroy');
 
