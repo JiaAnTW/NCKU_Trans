@@ -15,7 +15,7 @@ export const ReaderLayout = styled.div`
     @media (max-width: 992px) {
         width: 360px;
         height: 500px;
-        height: 75vh;
+        height: 65vh;
         min-width: 95vw;
     }
 `;
