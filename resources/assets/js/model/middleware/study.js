@@ -147,7 +147,7 @@ export const createStudyTypeOrStat = (option) => {
     };
 };
 
-export const setStudyTypeOrStat = ({ payload }) => {
+export const setStudyTypeOrStat = (isAdmin, { payload }) => {
     return (dispatch, getState) => {
         const { tagType, tagId, checked } = payload;
         const { study } = getState();
@@ -163,7 +163,11 @@ export const setStudyTypeOrStat = ({ payload }) => {
 
         const { category, statInfo, year } = filterNext;
         dispatch({ type: SET_STUDY_FILTER, payload });
-        dispatch(initStudy({ num: 30, category, statInfo, year }));
+        dispatch(
+            isAdmin
+                ? initStudyAdmin({ num: 30, category, statInfo, year })
+                : initStudy({ num: 30, category, statInfo, year })
+        );
     };
 };
 
