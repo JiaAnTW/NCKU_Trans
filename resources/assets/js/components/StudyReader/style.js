@@ -13,7 +13,7 @@ export const StudyReaderLayout = styled.div`
 
     @media (max-width: 992px) {
         width: 360px;
-        height: 85vh;
+        height: 65vh;
         min-width: 95vw;
     }
 `;
