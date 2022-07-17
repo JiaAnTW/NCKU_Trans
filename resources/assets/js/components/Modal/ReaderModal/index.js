@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
+import usePageChange from './usePageChange';
 import { ModalStyle } from './style';
 import { useModalOpen } from '~/utils';
 import { useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ import { CLEAR_MODAL_CONTEXT } from '~/model/action/modal';
 function ReaderModal({ isAdmin, onClose, readerComponent: ReaderComponent }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
     const dispatch = useDispatch();
+    usePageChange();
 
     return (
         <Modal
