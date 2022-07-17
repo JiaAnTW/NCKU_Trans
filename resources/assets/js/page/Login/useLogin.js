@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { fetchLoginInfo } from '@/model/middleware/login.js';
+import { fetchLoginInfo } from '~/model/middleware/login.js';
 
 function useLogin() {
     const [token, setToken] = useState(undefined);

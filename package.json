@@ -19,7 +19,7 @@
         "@babel/preset-react": "^7.0.0",
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
-        "axios": "^0.17",
+        "axios": "^0.21",
         "babel-eslint": "^10.1.0",
         "babel-preset-react": "^6.23.0",
         "bootstrap-sass": "^3.3.7",
@@ -65,6 +65,7 @@
         "react-sanfona": "^1.4.0",
         "react-tagsinput": "^3.19.0",
         "react-toggle": "^4.1.1",
+        "react-window": "^1.8.6",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
         "reselect": "^4.0.0",
@@ -73,6 +74,9 @@
     "jest": {
         "transform": {
             "\\.js$": "<rootDir>/node_modules/babel-jest"
+        },
+        "moduleNameMapper": {
+            "^~(.*)$": "<rootDir>/resources/assets/js$1"
         }
     }
 }

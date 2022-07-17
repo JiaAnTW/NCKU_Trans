@@ -1,36 +1,36 @@
 import React from 'react';
 
-import { Main } from './style';
-import useInitData from './useInitData';
-import { CardsContainer, LoadingContainer } from '@/theme/global';
+import { CardsContainer } from '~/theme/global';
+import ReaderModal from '~/components/Modal/ReaderModal';
+import LoadingFrame from '~/components/LoadingFrame';
+import useCloseReader from '~/utils/seo/useCloseReader';
+import { useMedia } from '~/utils';
 
-import Icon from '@/components/Icon/index.js';
+import { Main } from './style';
 import CardList from './CardList';
-import ReaderModal from '@/components/Modal/ReaderModal';
 import EssayFilter from './EssayFilter';
 import Statistic from './Statistic';
+import useInitData from './useInitData';
+import Reader from '~/components/Reader';
 
 function Major({ isAdmin }) {
-    const isFinishRequest = useInitData(isAdmin);
+    const isFinishRequest = useInitData({ isAdmin, num: 30 });
+    const { handleCloseReader } = useCloseReader();
+    const device = useMedia();
 
-    //---------------資料尚未取得---------------
-    if (!isFinishRequest) {
-        return (
-            <LoadingContainer>
-                <Icon style={{ marginTop: '0' }} />
-            </LoadingContainer>
-        );
-    }
-    //---------------一般狀況---------------
     return (
-        <Main>
-            <EssayFilter />
-            <Statistic />
-            <CardsContainer>
-                <CardList />
-            </CardsContainer>
-            <ReaderModal isAdmin={isAdmin} />
-        </Main>
+        <LoadingFrame isFinishRequest={isFinishRequest}>
+            <Main>
+                <EssayFilter />
+                <Statistic />
+                <CardList isAdmin={isAdmin} />
+                <ReaderModal
+                    isAdmin={isAdmin}
+                    readerComponent={Reader}
+                    onClose={handleCloseReader}
+                />
+            </Main>
+        </LoadingFrame>
     );
 }
 

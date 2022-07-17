@@ -1,11 +1,16 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { ModalStyle } from './style';
-import Reader from '../../Reader';
-import { useModalOpen } from '@/utils';
 
-function ReaderModal({ isAdmin }) {
+import usePageChange from './usePageChange';
+import { ModalStyle } from './style';
+import { useModalOpen } from '~/utils';
+import { useDispatch } from 'react-redux';
+import { CLEAR_MODAL_CONTEXT } from '~/model/action/modal';
+
+function ReaderModal({ isAdmin, onClose, readerComponent: ReaderComponent }) {
     const [isModalOpen, setIsModalOpen] = useModalOpen();
+    const dispatch = useDispatch();
+    usePageChange();
 
     return (
         <Modal
@@ -16,9 +21,13 @@ function ReaderModal({ isAdmin }) {
             overlayClassName="Overlay"
             onRequestClose={() => {
                 setIsModalOpen(false);
+                if (onClose) onClose();
+            }}
+            onAfterClose={() => {
+                dispatch({ type: CLEAR_MODAL_CONTEXT });
             }}
         >
-            <Reader isAdmin={isAdmin} />
+            {ReaderComponent && <ReaderComponent isAdmin={isAdmin} />}
         </Modal>
     );
 }

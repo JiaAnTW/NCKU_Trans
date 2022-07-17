@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useModalOpen } from '@/utils';
-import { createDepartment } from '@/model/middleware/department';
-import EditList from '@/components/EditList';
-import ConfirmModal from '@/components/Modal/ConfirmModal';
+import { useModalOpen } from '~/utils';
+import { createDepartment } from '~/model/middleware/department';
+import EditList from '~/components/EditList';
+import ConfirmModal from '~/components/Modal/ConfirmModal';
 import colSelectedContext from '../../../context';
 
 import { ConfirmLayout, CollegeSpan } from '../../style';

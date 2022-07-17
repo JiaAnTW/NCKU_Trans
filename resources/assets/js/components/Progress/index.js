@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Circle } from 'rc-progress';
 
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import useProgress from './useProgress';

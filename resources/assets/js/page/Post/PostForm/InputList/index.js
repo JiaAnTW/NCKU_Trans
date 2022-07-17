@@ -1,36 +1,37 @@
 import React, { forwardRef } from 'react';
 import map from 'lodash/map';
-import { useSelector } from 'react-redux';
-
-import ControlArea from '@/components/Form/ControlArea';
+import ControlArea from '~/components/Form/ControlArea';
 import PostInput from './PostInput/index';
-
-import usePostControl from '../usePostControl';
-
 import { InputArrLayout } from './style';
-import { StepLayout, Title } from '../style';
+import { StepLayout } from '../style';
+import useDisplayElement from './useDisplayElement';
 
 const PostForm = forwardRef((props, ref) => {
-    const type = useSelector((state) => state.post.type);
-    const formInputArr = useSelector((state) => ({ ...state.post.form[type] }));
-    const { onPreview, onBefore } = usePostControl('major', 700);
-
+    const { formInputArr, handleOnClickNext, handleOnClickBefore } =
+        useDisplayElement();
     return (
         <StepLayout ref={ref}>
-            <Title>留下更多資訊給學弟妹吧!</Title>
             <InputArrLayout>
-                {map(formInputArr, (formInputItem) => {
-                    return (
-                        typeof formInputItem === 'object' && (
-                            <PostInput
-                                key={formInputItem.keyName}
-                                {...formInputItem}
-                            />
-                        )
-                    );
+                {map(formInputArr, (formInputItem, index) => {
+                    const elementArea = index;
+                    return map(formInputItem, (block, index) => {
+                        return (
+                            typeof block === 'object' && (
+                                <PostInput
+                                    elementArea={elementArea}
+                                    elementIndex={index}
+                                    key={block.keyName}
+                                    {...block}
+                                />
+                            )
+                        );
+                    });
                 })}
             </InputArrLayout>
-            <ControlArea onNext={onPreview} onBefore={onBefore} />
+            <ControlArea
+                onNext={handleOnClickNext}
+                onBefore={handleOnClickBefore}
+            />
         </StepLayout>
     );
 });

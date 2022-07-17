@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import Input from '@/components/atom/Input';
-import ConfirmModal from '@/components/Modal/ConfirmModal';
-import { useModalOpen } from '@/utils';
-import { createCollege } from '@/model/middleware/college';
+import Input from '~/components/atom/Input';
+import ConfirmModal from '~/components/Modal/ConfirmModal';
+import { useModalOpen } from '~/utils';
+import { createCollege } from '~/model/middleware/college';
 
 import { AddCollegeLayout, SubmitLayout, SubmitButton } from './style';
 

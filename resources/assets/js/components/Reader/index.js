@@ -6,13 +6,17 @@ import TitleBar from './TitleBar';
 import DetailList from './DetailList';
 import Confirm from './Confirm';
 import AdvanceAdmin from './AdvanceAdmin';
-import { useModalContext } from '@/utils';
+import { useModalContext } from '~/utils';
+import {
+    modalOnBeforeSelector,
+    modalOnNextSelector,
+} from '~/model/selector/modal';
 
 function Reader({ isAdmin }) {
     const [{ id, type, title, subtitle, tags, content, confirm }] =
         useModalContext();
-    const onBefore = useSelector((state) => state.modal.onBefore);
-    const onNext = useSelector((state) => state.modal.onNext);
+    const onBefore = useSelector(modalOnBeforeSelector);
+    const onNext = useSelector(modalOnNextSelector);
 
     return (
         <ReaderLayout isAdmin={isAdmin}>

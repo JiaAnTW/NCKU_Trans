@@ -1,20 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
-import Form from '@/components/Form/index';
-
-import TypeSelect from './TypeSelect';
-import InputList from './InputList';
+import Form from '~/components/Form/index';
 import SlideStep from './SlideStep';
-import ThankYou from './ThankYou';
-
+import { typePage } from '~/components/Form/typeList';
 import { FormLayout, InputBackground } from './style';
 
-const stepPageArr = [TypeSelect, InputList, ThankYou];
-
 function PostForm() {
-    const step = useSelector((state) => state.post.step);
-
+    const { step, type } = useSelector((state) => state.post);
+    const [stepPageArr, setStepPageArr] = useState(typePage[type]);
+    useEffect(() => {
+        setStepPageArr(typePage[type]);
+    }, [type]);
     return (
         <FormLayout>
             <Form>

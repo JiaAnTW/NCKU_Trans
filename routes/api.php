@@ -32,6 +32,16 @@ Route::get('get/college','DepartmentCollege@indexCollege');
 
 Route::get('get/announcement', 'AnnouncementController@index');
 
+Route::get('get/study', 'StudyController@show');
+Route::get('get/study/result', 'StudyController@result');
+Route::middleware('studyNotify')->post('post/study', 'StudyController@create');
+
+Route::get('get/studyType', 'CategoryManageController@show');
+
+Route::get('get/studyStat', 'StatisticManageController@show');
+Route::post('post/studyStat', 'StatisticManageController@create');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -60,6 +70,20 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
 
     Route::put('post/announcement/{id}', 'AnnouncementController@update');
 
+    Route::get('get/study/all', 'StudyController@index');
+    Route::patch('patch/study', 'StudyController@confirm');
+    Route::put('post/study', 'StudyController@update');
+    Route::delete('delete/study', 'StudyController@destroy');
+
+    Route::post('post/studyType', 'CategoryManageController@create');
+    Route::put('post/studyType', 'CategoryManageController@update');
+    Route::delete('delete/studyType', 'CategoryManageController@destroy');
+
+    Route::put('post/studyStat', 'StatisticManageController@update');
+    Route::delete('delete/studyStat', 'StatisticManageController@destroy');
+
+    Route::get('get/otherStat', 'OtherStatisticController@show');
+    Route::post('post/transformStudyStat', 'OtherStatisticController@transform');
 
     Route::get('get/users/list', function(){
         $users = App\User::all();

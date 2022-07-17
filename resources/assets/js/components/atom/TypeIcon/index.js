@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorMap } from '@/theme/global';
+import { colorMap } from '~/theme/global';
 
 export default styled.div`
     display: flex;

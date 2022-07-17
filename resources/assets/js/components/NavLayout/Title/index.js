@@ -1,7 +1,8 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 
-import { H1, Header } from './style';
+import NavSearchContext from '../NavSearchProvider';
+import { H1, Header, Search } from './style';
 import titleWording from './title.json';
 
 const mapPathnameToTitle = (pathname) => {
@@ -21,11 +22,16 @@ const mapPathnameToTitle = (pathname) => {
     }
 };
 
-function Title() {
+function Title({ isShowSearch }) {
     const location = useLocation();
+    const { id } = useParams();
+    const handleSearch = useContext(NavSearchContext);
+
+    const TitleElement = id ? H2 : H1;
     return (
         <Header>
-            <H1>{mapPathnameToTitle(location.pathname)}</H1>
+            <TitleElement>{mapPathnameToTitle(location.pathname)}</TitleElement>
+            <Search isShow={isShowSearch} onSubmit={handleSearch} />
         </Header>
     );
 }

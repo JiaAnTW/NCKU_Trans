@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { OVERWRITE_POST } from '@/model/action/post';
-import { useModalContext } from '@/utils';
-import { useModalOpen } from '@/utils';
+import { OVERWRITE_POST } from '~/model/action/post';
+import { useModalContext } from '~/utils';
+import { useModalOpen } from '~/utils';
 import { BtnDark } from './style';
 
 export default function EditBtn() {
@@ -14,7 +14,10 @@ export default function EditBtn() {
     const dispatch = useDispatch();
 
     const handleEdit = useCallback(() => {
-        dispatch({ type: OVERWRITE_POST, payload: rawData });
+        dispatch({
+            type: OVERWRITE_POST,
+            payload: { data: rawData, type: 'comment' },
+        });
         setIsModalOpen(false);
         history.push('/admin/post');
     }, [rawData, history, setIsModalOpen]);

@@ -5,7 +5,7 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import { FilterContainer, ListItem } from './style';
-import { color } from '@/theme/global';
+import { color } from '~/theme/global';
 
 const fontSize = '1.5rem';
 
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     formControl: {
-        margin: theme.spacing(1),
+        margin: '0px 10px',
         minWidth: 120,
     },
     labelText: {

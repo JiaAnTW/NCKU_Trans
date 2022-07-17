@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { color, colorMap } from '@/theme/global';
+import { color, colorMap } from '~/theme/global';
+
+export const CARD_WIDTH_PC = 220;
+export const CARD_HEIGHT_PC = 180;
+export const CARD_HEIGHT_MOBILE = 145;
 
 export const Card = styled.div`
     position: relative;
@@ -8,16 +12,19 @@ export const Card = styled.div`
     background-color: ${(props) =>
         props.dark ? color.lightYellow : color.white};
     color: ${color.black};
-    margin: 5px;
     border-radius: 15px;
-    height: 180px;
-    width: 220px;
+    height: ${CARD_HEIGHT_PC}px;
+    width: ${CARD_WIDTH_PC}px;
+    box-sizing: border-box;
 
     @media (max-width: 576px) {
+        border-left: none;
+        border-right: none;
+        border-top: none;
         width: 100%;
         margin: 0;
         border-radius: 0;
-        height: 145px;
+        height: ${CARD_HEIGHT_MOBILE}px;
     }
 `;
 
@@ -37,6 +44,8 @@ export const CardText = styled.p`
     font-size: 1.3rem;
     text-align: justify;
     line-break: anywhere;
+    margin-top: 0;
+    margin-bottom: 1rem;
 
     @media (max-width: 576px) {
         font-size: 1.5rem;
@@ -45,6 +54,7 @@ export const CardText = styled.p`
 
 export const CardContent = styled.div`
     display: grid;
+    box-sizing: border-box;
     grid-template-columns: 57px auto;
     grid-template-rows: auto 30px;
     grid-template-areas:

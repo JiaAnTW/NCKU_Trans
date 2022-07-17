@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, Button } from '@/theme/global';
+import { color, Button } from '~/theme/global';
 
 export const AnnounceLayout = styled.div`
     min-width: 350px;

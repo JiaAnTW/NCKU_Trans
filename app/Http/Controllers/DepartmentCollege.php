@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\College;
 use App\Comments;
 use App\Department;
+use App\Study;
 use Illuminate\Support\Facades\DB;
 
 class DepartmentCollege extends Controller
@@ -83,6 +84,7 @@ class DepartmentCollege extends Controller
         Department::where('college', $name_old) -> update(array('college'=> $name));
         Comments::where('out_maj', $name_old) -> update(array('out_maj'=> $name));
         Comments::where('department', $name_old) -> update(array('department'=> $name));
+        Study::where('major', $name_old) -> update(array('major'=> $name));
         return array('status' => "success");
     }
 
@@ -97,6 +99,7 @@ class DepartmentCollege extends Controller
         Department::where('id',$id)->update(array('id'=>$new_id,'name' => $name,'college'=>$college)) or die('MySQL query error');
         Comments::where('in_maj', $name_old) -> update(array('in_maj'=> $name, 'college'=>$college));
         Comments::where('out_maj', $name_old) -> update(array('out_maj'=> $name));
+        Study::where('major', $name_old) -> update(array('major'=> $name));
         return array('status' => "success");
     }
 

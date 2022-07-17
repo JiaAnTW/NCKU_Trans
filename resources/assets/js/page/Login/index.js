@@ -3,7 +3,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import LockIcon from '@material-ui/icons/Lock';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import BoxIcon from '@/img/box.svg';
+import BoxIcon from '~/img/box.svg';
 import {
     LoginLayout,
     FormLayout,

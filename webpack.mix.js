@@ -26,7 +26,7 @@ mix.extract();
 mix.webpackConfig({
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'resources/assets/js'),
+            '~': path.resolve(__dirname, 'resources/assets/js'),
         },
     },
 });

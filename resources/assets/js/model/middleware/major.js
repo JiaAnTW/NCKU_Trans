@@ -1,11 +1,11 @@
-import { INIT_MAJOR } from '../action/major';
+import { INIT_MAJOR, ADD_MAJOR } from '../action/major';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import Cookies from 'js-cookie';
 
-export const fetchMajor = () => {
+export const initMajor = ({ num = 0 }) => {
     return (dispatch) => {
         dispatch({ type: ADD_REQUEST });
-        fetch('/api/get/major')
+        fetch(`/api/get/major?from=0&num=${num}`)
             .then((res) => res.json())
             .then((data) => {
                 dispatch({
@@ -17,6 +17,20 @@ export const fetchMajor = () => {
                 });
             })
             .catch((e) => console.log('錯誤:', e));
+    };
+};
+
+export const fetchMajor = ({ from = 0, num = 0 }) => {
+    return (dispatch) => {
+        // fetch(`/api/get/major?from=${from}&num=${num}`)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         dispatch({
+        //             type: ADD_MAJOR,
+        //             payload: { data },
+        //         });
+        //     })
+        //     .catch((e) => console.log('錯誤:', e));
     };
 };
 
@@ -40,7 +54,7 @@ export const fetchMajorAdmin = () => {
                 });
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
@@ -65,7 +79,7 @@ export const updateMajor = (id, confirm) => {
                 dispatch(fetchMajorAdmin());
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
@@ -90,7 +104,7 @@ export const deleteMajor = (id) => {
                 dispatch(fetchMajorAdmin());
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
