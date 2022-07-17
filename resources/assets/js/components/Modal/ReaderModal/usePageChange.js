@@ -9,7 +9,7 @@ function usePageChange() {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         if (!location.search || !params.get('id')) setIsModalOpen(false);
-    }, [locationm, setIsModalOpen]);
+    }, [location, setIsModalOpen]);
     return;
 }
 
