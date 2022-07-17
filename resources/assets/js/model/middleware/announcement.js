@@ -40,7 +40,7 @@ export const updateAnnouncement = ({ id, msg, isShow }) => {
                 });
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };

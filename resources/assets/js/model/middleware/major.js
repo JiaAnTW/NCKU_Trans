@@ -54,7 +54,7 @@ export const fetchMajorAdmin = () => {
                 });
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
@@ -79,7 +79,7 @@ export const updateMajor = (id, confirm) => {
                 dispatch(fetchMajorAdmin());
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
@@ -104,7 +104,7 @@ export const deleteMajor = (id) => {
                 dispatch(fetchMajorAdmin());
             })
             .catch((e) => {
-                location.href = '/#/admin/login';
+                location.href = '/admin/login';
             });
     };
 };
