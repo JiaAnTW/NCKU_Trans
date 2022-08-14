@@ -8,6 +8,8 @@ import {
     UPDATE_STUDY,
     UPDATE_STUDY_STAT,
     SET_STUDY_FILTER,
+    INIT_OTHER_STAT,
+    SET_STUDY_OTHER_STAT_OPTIONS,
 } from '../action/study';
 import { ADD_REQUEST, FINISH_REQUEST } from '../action/request';
 import { INIT_STUDY } from '../action/study';
@@ -104,6 +106,7 @@ export const fetchStudyStat = () => {
                     payload: { type: 'statInfo', data },
                 });
                 dispatch({ type: SET_STUDY_STATIS_OPTIONS, payload: data });
+                dispatch({ type: SET_STUDY_OTHER_STAT_OPTIONS, payload: data });
                 dispatch({
                     type: FINISH_REQUEST,
                 });
@@ -252,6 +255,22 @@ const getFilterOpsUrl = (action, type) => {
     }
 
     return `/api/${action}/${typeName}`;
+};
+
+export const getOtherStatAdmin = () => {
+    return (dispatch) => {
+        dispatch({ type: ADD_REQUEST });
+        fetch('/api/get/otherStat', {
+            headers: new Headers({
+                Authorization: 'Bearer ' + Cookies.get('adminToken'),
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                dispatch({ type: INIT_OTHER_STAT, payload: data });
+                dispatch({ type: FINISH_REQUEST });
+            });
+    };
 };
 
 export const initStudyAdmin = ({
